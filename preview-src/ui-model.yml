@@ -1,4 +1,7 @@
 antoraVersion: '1.0.0'
+asciidoc:
+  extensions:
+  - '@asciidoctor/tabs'
 site:
   url: http://localhost:5252
   title: Brand Docs
