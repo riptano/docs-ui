@@ -1,6 +1,6 @@
 = DataStax Docs UI
 // Variables:
-:current-release: prod-19
+:current-release:
 // Settings:
 :!example-caption:
 :experimental:
