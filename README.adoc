@@ -120,7 +120,7 @@ If the command doesn't report an https://nodejs.org/en[LTS version] of Node.js, 
 While you can install Node.js from the official packages, we strongly recommend that you use {url-nvm}[nvm] (Node Version Manager) to manage your Node.js installation(s).
 Follow the {url-nvm-install}[nvm installation instructions] to set up nvm on your machine.
 
-Once you've installed nvm, open a new terminal and install Node.js 10 using the following command:
+Once you've installed nvm, open a new terminal and install Node.js LTS using the following command:
 
 [source,shell]
 ----
@@ -134,7 +134,7 @@ You can switch to this version of Node.js at any time using the following comman
 nvm use --lts
 ----
 
-To make Node.js 10 the default in new terminals, type:
+To make Node.js LTS the default in new terminals, type:
 
 [source,shell]
 ----
