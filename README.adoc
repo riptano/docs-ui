@@ -36,24 +36,24 @@ endif::[]
 :url-gulp: http://gulpjs.com
 :url-opendevise: https://opendevise.com
 :url-nodejs: https://nodejs.org
-:url-nvm: https://github.com/creationix/nvm
-:url-nvm-install: {url-nvm}#installation
+:url-nvm: https://github.com/nvm-sh/nvm
+:url-nvm-install: {url-nvm}#installing-and-updating
 :url-source-maps: https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map
 :url-create-release: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release
 
 // image:{img-ci-status}[CI Status (GitLab CI), link={url-ci-pipelines}]
-ifdef::badges[]
-image:https://img.shields.io/static/v1?label=release&amp;message={current-release}&amp;color=blue[Latest Release,link={url-project}/releases/download/{current-release}/ui-bundle.zip,format=svg]
-endif::[]
+// ifdef::badges[]
+// image:https://img.shields.io/static/v1?label=release&amp;message={current-release}&amp;color=blue[Latest Release,link={url-project}/releases/download/{current-release}/ui-bundle.zip,format=svg]
+// endif::[]
 
-This project is used to develop and distribute the UI template for {url-site}.
+This project is used to develop and distribute the UI template for {url-datastax-docs}.
 It is a fork of the {url-antora-default-ui}[Antora Default UI] that has been customized for our needs.
 
-This repository produces a UI bundle that can be applied when generating a site using {url-antora}[Antora] (in our case, {url-datastax-docs-repo}[docs-site]).
+The repository itself produces a UI bundle that can be applied when generating a static documentation site using {url-antora}[Antora] -- in our case, we apply it when generating {url-datastax-docs-repo}[docs-site].
 The UI bundle contains the HTML templates (layouts, partials, and helpers), CSS, JavaScript, fonts, and (site-wide) images.
 As such, it provides both the visual theme and user interactions for the documentation site.
 
-// You can see a preview of the default UI at {url-preview}.
+// You can see a preview of the DataStax Docs UI at {url-preview}.
 
 
 toc::[]
@@ -254,7 +254,7 @@ gulp bundle
 If any errors are reported by lint, you'll need to fix them.
 
 When the command completes successfully, the UI bundle will be available at [.path]_build/ui-bundle.zip_.
-You can point Antora at the local path to this bundle using the `--ui-bundle-url` command-line option or the https://docs.antora.org/antora/latest/playbook/ui-bundle-url/#url-key[ui.bundle.url] key in the site playbook.
+You can point Antora at the local path to this bundle using the `--ui-bundle-url` command-line option or the https://docs.antora.org/antora/latest/playbook/ui-bundle-url/#url-key[`ui.bundle.url`] key in the site playbook.
 
 If you have the preview running, and you want to bundle without causing the preview to be clobbered, use:
 
@@ -289,7 +289,8 @@ In this case, the bundle will include the source maps, which can be used for deb
 Once you're satisfied with the changes you've made to the UI, you'll need to open a pull request to merge your changes into the `main` branch.
 After your changes have been reviewed and merged, you can then choose to make those changes available in the production UI by publishing a new release to this repository and attaching the latest `ui-bundle.zip` file.
 
-.To release a new UI bundle
+=== Bundle release procedure
+
 . Start by making sure you've completed the <<prerequisites>>.
 
 . Create the release commit.
