@@ -30,6 +30,7 @@ endif::[]
 // External URLs:
 :url-antora: https://antora.org
 :url-antora-docs: https://docs.antora.org
+:url-antora-ui-docs: https://docs.antora.org/antora-ui-default/
 :url-antora-default-ui: https://gitlab.com/antora/antora-ui-default
 :url-git: https://git-scm.com
 :url-git-dl: {url-git}/downloads
@@ -83,7 +84,7 @@ Read on to learn how to develop the UI.
 == Development quickstart
 
 This section offers a basic tutorial to teach you how to set up the UI project, preview it locally, and bundle it for use with Antora.
-A more comprehensive tutorial can be found in the documentation at {url-antora-docs}.
+A more comprehensive tutorial can be found in the documentation at {url-antora-ui-docs}.
 
 [#prerequisites]
 === Prerequisites
