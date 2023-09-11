@@ -95,7 +95,7 @@
   --caption-font-style: italic;
   --caption-font-weight: var(--body-font-weight-bold);
   --code-background: var(--ds-neutral-soft-bg);
-  --code-font-color: var(--ds-text-primary);
+  --code-font-color: var(--ds-text-secondary);
   --example-background: var(--ds-background-body);
   --example-border-color: var(--ds-divider);
   --kbd-background: var(--ds-background-body);
