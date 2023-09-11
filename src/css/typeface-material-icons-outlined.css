@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Material Icons Outlined";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url(~@fontsource/material-icons-outlined/files/material-icons-outlined-latin-400-normal.woff2) format("woff2"),
+    url(~@fontsource/material-icons-outlined/files/material-icons-outlined-latin-400-normal.woff) format("woff");
+}

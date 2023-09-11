@@ -1,4 +1,4 @@
-@import "typeface-roboto.css";
+/* Default Antora UI */
 @import "typeface-roboto-mono.css";
 @import "vars.css";
 @import "base.css";
@@ -15,3 +15,10 @@
 @import "footer.css";
 @import "highlight.css";
 @import "print.css";
+
+/* Added for DataStax */
+@import "typeface-material-icons-outlined.css";
+@import "typeface-roboto-flex.css";
+@import "material-icons.css";
+@import "ds-tokens.css";
+@import "ds-typography.css";

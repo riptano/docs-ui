@@ -25,15 +25,35 @@
 .doc h5,
 .doc h6 {
   color: var(--heading-font-color);
-  font-weight: var(--heading-font-weight);
   hyphens: none;
-  line-height: 1.3;
+  line-height: 1.5;
   margin: 1rem 0 0;
 }
 
 .doc > h1.page:first-child {
-  font-size: calc(36 / var(--rem-base) * 1rem);
+  /* font-size: calc(36 / var(--rem-base) * 1rem); */
   margin: 1.5rem 0;
+}
+
+.doc h1 {
+  /* .ds-text-h1 */
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.doc h2 {
+  /* .ds-text-h2 */
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.doc h3 {
+  /* .ds-text-h3 { */
+  font-size: 1rem;
+  font-weight: 600;
+}
+.doc h4 {
+  /* .ds-text-h4 */
+  font-size: 0.938rem;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 769px) {
@@ -82,12 +102,13 @@
 .doc h6 .anchor {
   position: absolute;
   text-decoration: none;
-  width: 1.75ex;
-  margin-left: -1.5ex;
+  width: 2.75ex;
+  margin-left: -2.5ex;
   visibility: hidden;
-  font-size: 0.8em;
+  /* font-size: 0.8em; */
   font-weight: normal;
-  padding-top: 0.05em;
+  /* padding-top: 0.05em; */
+  color: var(--ds-primary-soft-hover-bg)
 }
 
 .doc h1 .anchor::before,
@@ -96,7 +117,8 @@
 .doc h4 .anchor::before,
 .doc h5 .anchor::before,
 .doc h6 .anchor::before {
-  content: "\00a7";
+  font-family: "Material Icons Outlined";
+  content: "\f1cd";
 }
 
 .doc h1:hover .anchor,

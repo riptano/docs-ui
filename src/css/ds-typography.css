@@ -1,0 +1,73 @@
+.ds-text-display {
+    font-size: 2.125rem;
+    font-weight: 600;
+}
+
+.ds-text-h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.ds-text-h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.ds-text-h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.ds-text-h4 {
+    font-size: 0.938rem;
+    font-weight: 600;
+}
+
+.ds-text-body {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.ds-text-body-small {
+    font-size: 0.906rem;
+    font-weight: 400;
+}
+
+.ds-text-caption {
+    font-size: 0.906rem;
+    font-weight: 500;
+}
+
+.ds-text-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.ds-text-overline {
+    font-size: 0.75rem;
+    font-weight: 650;
+    letter-spacing: 0.075rem;
+    text-transform: uppercase;
+}
+
+.ds-text-button {
+    font-size: 0.90625rem;
+    font-weight: 600;
+}
+
+.ds-text-tab {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.ds-text-mono {
+    font-family: Roboto Mono;
+    font-size: 0.96875rem;
+    font-weight: 400;
+}
+
+.ds-text-mono-small {
+    font-family: Roboto Mono;
+    font-size: 0.875rem;
+    font-weight: 400;
+}

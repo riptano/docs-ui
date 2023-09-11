@@ -15,8 +15,9 @@
   ],
   "devDependencies": {
     "@asciidoctor/core": "~2.2",
-    "@fontsource/roboto": "~4.5",
-    "@fontsource/roboto-mono": "~4.5",
+    "@fontsource/material-icons-outlined": "~5.0",
+    "@fontsource/roboto-flex": "~5.0",
+    "@fontsource/roboto-mono": "~5.0",
     "autoprefixer": "~9.7",
     "browser-pack-flat": "~3.4",
     "browserify": "~16.5",
