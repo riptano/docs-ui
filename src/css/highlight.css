@@ -1,86 +1,91 @@
-/*! Adapted from the GitHub style by Vasily Polovnyov <vast@whiteants.net> */
-.hljs-comment,
+.hljs-comment {
+  color: var(--ds-text-tertiary)
+}
 .hljs-quote {
-  color: #998;
-  font-style: italic;
+  color: var(--ds-text-tertiary)
 }
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: var(--monospace-font-weight-bold);
+.hljs-variable {
+  color: var(--ds-error-main)
 }
-
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
+.hljs-template-variable {
+  color: var(--ds-error-main)
 }
-
-.hljs-string,
-.hljs-doctag {
-  color: #d14;
+.hljs-tag {
+  color: var(--ds-error-main)
 }
-
-.hljs-title,
-.hljs-section,
+.hljs-name {
+  color: var(--ds-error-main)
+}
 .hljs-selector-id {
-  color: #900;
-  font-weight: var(--monospace-font-weight-bold);
+  color: var(--ds-error-main)
 }
-
-.hljs-subst {
-  font-weight: normal;
+.hljs-selector-class {
+  color: var(--ds-cyan-main)
 }
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: var(--monospace-font-weight-bold);
+.hljs-regexp {
+  color: var(--ds-cyan-main)
 }
-
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-  color: #000080;
-  font-weight: normal;
-}
-
-.hljs-regexp,
-.hljs-link {
-  color: #009926;
-}
-
-.hljs-symbol,
-.hljs-bullet {
-  color: #990073;
-}
-
-.hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3;
-}
-
-.hljs-meta {
-  color: #999;
-  font-weight: var(--monospace-font-weight-bold);
-}
-
 .hljs-deletion {
-  background: #fdd;
+  color: var(--ds-error-main)
 }
-
+.hljs-number {
+  color: var(--ds-orange-main)
+}
+.hljs-built_in {
+  color: var(--ds-teal-main)
+}
+.hljs-builtin-name {
+  color: var(--ds-orange-main)
+}
+.hljs-literal {
+  color: var(--ds-orange-main)
+}
+.hljs-type {
+  color: var(--ds-orange-main)
+}
+.hljs-params {
+  color: var(--ds-orange-main)
+}
+.hljs-meta {
+  color: var(--ds-orange-main)
+}
+.hljs-link {
+  color: var(--ds-orange-main)
+}
+.hljs-attribute {
+  color: var(--ds-orange-main)
+}
+.hljs-string {
+  color: var(--ds-orange-main)
+}
+.hljs-symbol {
+  color: var(--ds-success-main)
+}
+.hljs-bullet {
+  color: var(--ds-success-main)
+}
 .hljs-addition {
-  background: #dfd;
+  color: var(--ds-success-main)
 }
-
+.hljs-title {
+  color: var(--ds-cyan-main)
+}
+.hljs-section {
+  color: var(--ds-cyan-main)
+}
+.hljs-keyword {
+  color: var(--ds-primary-main)
+}
+.hljs-selector-tag {
+  color: var(--ds-primary-main)
+}
 .hljs-emphasis {
-  font-style: italic;
+  font-style: italic
 }
-
 .hljs-strong {
-  font-weight: var(--monospace-font-weight-bold);
+  font-weight: bold
+}
+.hljs {
+  border-radius: 6px;
+  border: 1px solid var(--ds-neutral-outlined-border)
 }

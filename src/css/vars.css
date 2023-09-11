@@ -100,7 +100,7 @@
   --example-border-color: var(--ds-divider);
   --kbd-background: var(--ds-background-body);
   --kbd-border-color: var(--ds-divider);
-  --pre-background: var(--ds-background-body);
+  --pre-background: var(--ds-neutral-soft-bg);
   --pre-border-color: var(--panel-border-color);
   --pre-annotation-font-color: var(--ds-text-tertiary);
   --quote-background: var(--ds-background-body);
@@ -114,13 +114,13 @@
   /* toc */
   --toc-font-color: var(--nav-muted-color);
   --toc-heading-font-color: var(--doc-font-color);
-  --toc-border-color: var(--panel-border-color);
+  --toc-border-color: var(--ds-divider);
   --toc-line-height: 1.2;
   /* footer */
   --footer-line-height: var(--doc-line-height);
-  --footer-background: var(--color-smoke-90);
-  --footer-font-color: var(--color-gray-70);
-  --footer-link-font-color: var(--color-jet-80);
+  --footer-background: var(--ds-neutral-soft-bg);
+  --footer-font-color: var(--ds-text-primary);
+  --footer-link-font-color: var(--link-font-color);
   /* dimensions and positioning */
   --navbar-height: calc(63 / var(--rem-base) * 1rem);
   --toolbar-height: calc(45 / var(--rem-base) * 1rem);

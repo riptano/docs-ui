@@ -256,3 +256,14 @@ html.is-clipped--nav {
   opacity: 0.9;
   font-weight: var(--body-font-weight-bold);
 }
+
+#datastax-docs-logo-main {
+  width: 287px;
+  height: 40px;
+}
+html[data-theme="dark"] #datastax-docs-logo-main {
+  background: url('../img/datastax-docs-logo-light-bg.svg') no-repeat center / contain;
+}
+html[data-theme="light"] #datastax-docs-logo-main {
+  background: url('../img/datastax-docs-logo-dark-bg.svg') no-repeat center / contain;
+}
