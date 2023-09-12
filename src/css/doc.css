@@ -40,16 +40,19 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
+
 .doc h2 {
   /* .ds-text-h2 */
   font-size: 1.25rem;
   font-weight: 600;
 }
+
 .doc h3 {
   /* .ds-text-h3 { */
   font-size: 1rem;
   font-weight: 600;
 }
+
 .doc h4 {
   /* .ds-text-h4 */
   font-size: 0.938rem;
@@ -108,7 +111,7 @@
   /* font-size: 0.8em; */
   font-weight: normal;
   /* padding-top: 0.05em; */
-  color: var(--ds-primary-soft-hover-bg)
+  color: var(--ds-primary-soft-hover-bg);
 }
 
 .doc h1 .anchor::before,
@@ -117,7 +120,7 @@
 .doc h4 .anchor::before,
 .doc h5 .anchor::before,
 .doc h6 .anchor::before {
-  font-family: "Material Icons Outlined";
+  font-family: "Material Icons Outlined", sans-serif;
   content: "\f1cd";
 }
 

@@ -1,91 +1,120 @@
 .hljs-comment {
-  color: var(--ds-text-tertiary)
+  color: var(--ds-text-tertiary);
 }
+
 .hljs-quote {
-  color: var(--ds-text-tertiary)
+  color: var(--ds-text-tertiary);
 }
+
 .hljs-variable {
-  color: var(--ds-error-main)
+  color: var(--ds-error-main);
 }
+
 .hljs-template-variable {
-  color: var(--ds-error-main)
+  color: var(--ds-error-main);
 }
+
 .hljs-tag {
-  color: var(--ds-error-main)
+  color: var(--ds-error-main);
 }
+
 .hljs-name {
-  color: var(--ds-error-main)
+  color: var(--ds-error-main);
 }
+
 .hljs-selector-id {
-  color: var(--ds-error-main)
+  color: var(--ds-error-main);
 }
+
 .hljs-selector-class {
-  color: var(--ds-cyan-main)
+  color: var(--ds-cyan-main);
 }
+
 .hljs-regexp {
-  color: var(--ds-cyan-main)
+  color: var(--ds-cyan-main);
 }
+
 .hljs-deletion {
-  color: var(--ds-error-main)
+  color: var(--ds-error-main);
 }
+
 .hljs-number {
-  color: var(--ds-orange-main)
+  color: var(--ds-orange-main);
 }
+
 .hljs-built_in {
-  color: var(--ds-teal-main)
+  color: var(--ds-teal-main);
 }
+
 .hljs-builtin-name {
-  color: var(--ds-orange-main)
+  color: var(--ds-orange-main);
 }
+
 .hljs-literal {
-  color: var(--ds-orange-main)
+  color: var(--ds-orange-main);
 }
+
 .hljs-type {
-  color: var(--ds-orange-main)
+  color: var(--ds-orange-main);
 }
+
 .hljs-params {
-  color: var(--ds-orange-main)
+  color: var(--ds-orange-main);
 }
+
 .hljs-meta {
-  color: var(--ds-orange-main)
+  color: var(--ds-orange-main);
 }
+
 .hljs-link {
-  color: var(--ds-orange-main)
+  color: var(--ds-orange-main);
 }
+
 .hljs-attribute {
-  color: var(--ds-orange-main)
+  color: var(--ds-orange-main);
 }
+
 .hljs-string {
-  color: var(--ds-orange-main)
+  color: var(--ds-orange-main);
 }
+
 .hljs-symbol {
-  color: var(--ds-success-main)
+  color: var(--ds-success-main);
 }
+
 .hljs-bullet {
-  color: var(--ds-success-main)
+  color: var(--ds-success-main);
 }
+
 .hljs-addition {
-  color: var(--ds-success-main)
+  color: var(--ds-success-main);
 }
+
 .hljs-title {
-  color: var(--ds-cyan-main)
+  color: var(--ds-cyan-main);
 }
+
 .hljs-section {
-  color: var(--ds-cyan-main)
+  color: var(--ds-cyan-main);
 }
+
 .hljs-keyword {
-  color: var(--ds-primary-main)
+  color: var(--ds-primary-main);
 }
+
 .hljs-selector-tag {
-  color: var(--ds-primary-main)
+  color: var(--ds-primary-main);
 }
+
 .hljs-emphasis {
-  font-style: italic
+  font-style: italic;
 }
+
 .hljs-strong {
-  font-weight: bold
+  font-weight: bold;
 }
+
 .hljs {
   border-radius: 6px;
-  border: 1px solid var(--ds-neutral-outlined-border)
+  border: 1px solid var(--ds-neutral-outlined-border);
 }
