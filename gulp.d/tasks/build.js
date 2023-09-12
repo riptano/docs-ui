@@ -47,7 +47,8 @@ module.exports = (src, dest, preview) => () => {
         },
       },
     ]),
-    postcssVar({ preserve: preview }),
+    // NOTE because css vars are our theme switching mechanism we must preserve them with preserve: true
+    postcssVar({ preserve: true }),
     // NOTE to make vars.css available to all top-level stylesheets, use the next line in place of the previous one
     //postcssVar({ importFrom: path.join(src, 'css', 'vars.css'), preserve: preview }),
     preview ? postcssCalc : () => {}, // cssnano already applies postcssCalc

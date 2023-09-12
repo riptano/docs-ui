@@ -1,22 +1,4 @@
 :root {
-  /* colors */
-  --color-white: #fff;
-  --color-smoke-10: #fefefe;
-  --color-smoke-30: #fafafa;
-  --color-smoke-50: #f5f5f5;
-  --color-smoke-70: #f0f0f0;
-  --color-smoke-90: #e1e1e1;
-  --color-gray-10: #c1c1c1;
-  --color-gray-30: #9c9c9c;
-  --color-gray-40: #8e8e8e;
-  --color-gray-50: #808080;
-  --color-gray-70: #5d5d5d;
-  --color-jet-20: #4a4a4a;
-  --color-jet-30: #424242;
-  --color-jet-50: #333;
-  --color-jet-70: #222;
-  --color-jet-80: #191919;
-  --color-black: #000;
   /* fonts */
   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
   --body-font-size: 1.0625em; /* 17px */
