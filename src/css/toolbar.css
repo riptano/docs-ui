@@ -4,12 +4,16 @@
   background-color: var(--toolbar-background);
   box-shadow: 0 1px 0 var(--toolbar-border-color);
   display: flex;
-  font-size: calc(15 / var(--rem-base) * 1rem);
+  font-size: calc(14.5 / var(--rem-base) * 1rem);
   height: var(--toolbar-height);
   justify-content: flex-start;
   position: sticky;
   top: var(--navbar-height);
   z-index: var(--z-index-toolbar);
+}
+
+.toolbar ul li:last-of-type {
+  color: var(--toolbar-muted-color);
 }
 
 .toolbar a {
@@ -64,5 +68,5 @@
 }
 
 .toolbar .edit-this-page a {
-  color: var(--toolbar-muted-color);
+  color: var(--toolbar-font-color);
 }

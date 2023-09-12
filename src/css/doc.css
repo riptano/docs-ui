@@ -37,26 +37,36 @@
 
 .doc h1 {
   /* .ds-text-h1 */
-  font-size: 1.5rem;
+  font-size: calc(24 / var(--rem-base) * 1rem);
   font-weight: 600;
 }
 
 .doc h2 {
   /* .ds-text-h2 */
-  font-size: 1.25rem;
+  font-size: calc(20 / var(--rem-base) * 1rem);
   font-weight: 600;
 }
 
 .doc h3 {
-  /* .ds-text-h3 { */
-  font-size: 1rem;
+  /* .ds-text-h3  */
+  font-size: calc(20 / var(--rem-base) * 1rem);
   font-weight: 600;
 }
 
 .doc h4 {
   /* .ds-text-h4 */
-  font-size: 0.938rem;
+  font-size: calc(16 / var(--rem-base) * 1rem);
   font-weight: 600;
+}
+
+.doc h5 {
+  /* .ds-text-h4 */
+  font-size: calc(15 / var(--rem-base) * 1rem);
+  font-weight: 600;
+}
+
+.doc a.link {
+  color: var(--heading-font-color);
 }
 
 @media screen and (min-width: 769px) {
@@ -121,7 +131,7 @@
 .doc h5 .anchor::before,
 .doc h6 .anchor::before {
   font-family: "Material Icons Outlined", sans-serif;
-  content: "\f1cd";
+  content: "";
 }
 
 .doc h1:hover .anchor,
@@ -175,7 +185,7 @@
 }
 
 .doc pre {
-  font-size: calc(16 / var(--rem-base) * 1rem);
+  font-size: calc(14 / var(--rem-base) * 1rem);
   line-height: 1.5;
   margin: 0;
 }
@@ -185,7 +195,7 @@
 }
 
 .doc .paragraph.lead > p {
-  font-size: calc(18 / var(--rem-base) * 1rem);
+  font-size: calc(14 / var(--rem-base) * 1rem);
 }
 
 .doc .right {
@@ -243,7 +253,7 @@
 }
 
 .doc table.tableblock {
-  font-size: calc(15 / var(--rem-base) * 1rem);
+  font-size: calc(14.5 / var(--rem-base) * 1rem);
 }
 
 .doc .tablecontainer,
@@ -268,7 +278,7 @@
 
 .doc table.tableblock,
 .doc table.tableblock > * > tr > * {
-  border: 0 solid var(--table-border-color);
+  border-bottom: 0 solid var(--table-border-color);
 }
 
 .doc table.grid-all > * > tr > * {
@@ -511,7 +521,7 @@
 }
 
 .doc .verseblock {
-  font-size: 1.15em;
+  font-size: 1em;
   padding: 1rem 2rem;
 }
 
@@ -752,7 +762,7 @@
 .doc .sidebarblock > .content > .title {
   font-size: calc(22.5 / var(--rem-base) * 1rem);
   font-weight: var(--alt-heading-font-weight);
-  line-height: 1.3;
+  line-height: 1.5;
   margin-bottom: -0.3em;
   text-align: center;
 }
@@ -929,9 +939,9 @@
   border-radius: 100%;
   display: inline-block;
   font-family: var(--body-font-family);
-  font-size: calc(13.5 / var(--rem-base) * 1rem);
+  font-size: calc(12 / var(--rem-base) * 1rem);
   font-style: normal;
-  line-height: 1.2;
+  line-height: 1.5;
   text-align: center;
   width: 1.25em;
   height: 1.25em;
