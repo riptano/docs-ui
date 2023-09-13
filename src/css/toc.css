@@ -57,6 +57,10 @@
   .toc .toc-menu ul {
     font-size: calc(16 / var(--rem-base) * 1rem);
   }
+
+  .toc.sidebar .toc-menu {
+    margin-left: calc(40 / var(--rem-base) * 1rem);
+  }
 }
 
 .toc .toc-menu li {

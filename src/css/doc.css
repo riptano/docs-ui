@@ -3,16 +3,18 @@
   font-size: var(--doc-font-size);
   hyphens: auto;
   line-height: var(--doc-line-height);
-  margin: var(--doc-margin);
+  margin: 0; /* var(--doc-margin); */
   max-width: var(--doc-max-width);
-  padding: 0 1rem 4rem;
+  padding-right: calc(40 / var(--rem-base) * 1rem);
+  padding-left: calc(24 / var(--rem-base) * 1rem);
+  padding-bottom: 4rem;
 }
 
 @media screen and (min-width: 1024px) {
   .doc {
     flex: auto;
     font-size: var(--doc-font-size--desktop);
-    margin: var(--doc-margin--desktop);
+    margin: 0; /* var(--doc-margin--desktop); */
     max-width: var(--doc-max-width--desktop);
     min-width: 0;
   }
@@ -32,7 +34,7 @@
 
 .doc > h1.page:first-child {
   /* font-size: calc(36 / var(--rem-base) * 1rem); */
-  margin: 1.5rem 0;
+  margin: calc(24 / var(--rem-base) * 1rem) 0;
 }
 
 .doc h1 {
@@ -60,18 +62,19 @@
 }
 
 .doc h5 {
-  /* .ds-text-h4 */
+  /* .ds-text-h5 */
   font-size: calc(15 / var(--rem-base) * 1rem);
   font-weight: 600;
 }
 
-.doc a.link {
+.doc a.link,
+.doc a.link:hover {
   color: var(--heading-font-color);
 }
 
 @media screen and (min-width: 769px) {
   .doc > h1.page:first-child {
-    margin-top: 2.5rem;
+    margin-top: calc(8 / var(--rem-base) * 1rem);
   }
 }
 
@@ -85,7 +88,7 @@
 
 #preamble + .sect1,
 .doc .sect1 + .sect1 {
-  margin-top: 2rem;
+  margin-top: calc(48 / var(--rem-base) * 1rem);
 }
 
 .doc h1.sect0 {
@@ -97,9 +100,10 @@
 
 .doc h2:not(.discrete) {
   border-bottom: 1px solid var(--section-divider-color);
-  margin-left: -1rem;
-  margin-right: -1rem;
-  padding: 0.4rem 1rem 0.1rem;
+  /* margin-left: -1rem;
+  margin-right: -1rem; */
+  margin: 0;
+  padding: 0 0 calc(16 / var(--rem-base) * 1rem);
 }
 
 .doc h3:not(.discrete),
@@ -131,7 +135,7 @@
 .doc h5 .anchor::before,
 .doc h6 .anchor::before {
   font-family: "Material Icons Outlined", sans-serif;
-  content: "";
+  content: "\f1cd";
 }
 
 .doc h1:hover .anchor,
