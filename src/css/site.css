@@ -3,6 +3,8 @@
 @import "typeface-roboto-mono.css";
 @import "ds-typography.css";
 @import "ds-vars.css";
+@import "ds-light.css";
+@import "ds-dark.css";
 @import "vars.css";
 @import "base.css";
 @import "body.css";
