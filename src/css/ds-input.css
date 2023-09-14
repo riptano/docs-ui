@@ -1,0 +1,54 @@
+.ds-input-container {
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ds-text-primary);
+  transition: var(--ds-transition);
+  border-radius: 6px;
+  border: 1px solid var(--ds-neutral-outlined-border);
+  display: inline-flex;
+  align-items: center;
+  cursor: text;
+}
+
+.ds-input-container:hover {
+  border-color: var(--ds-neutral-outlined-hover-border);
+}
+
+.ds-input-container:focus-within {
+  outline: 2px solid var(--ds-focus-visible);
+  outline-offset: -2px;
+}
+
+.ds-input {
+  font: inherit;
+  letter-spacing: inherit;
+  color: currentColor;
+  border: 0;
+  box-sizing: content-box;
+  background: none;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  min-width: 0;
+  width: 100%;
+  padding: 5.5px 10px;
+}
+
+.ds-input::placeholder {
+  color: var(--ds-text-placeholder);
+}
+
+.ds-input:focus {
+  outline: 0;
+}
+
+.ds-input--leading-icon {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.ds-input--trailing-icon {
+  margin-right: 10px;
+  font-size: 20px;
+}

@@ -3,9 +3,9 @@ var toggle = document.getElementById('theme-toggle')
 
 function setIcon (theme) {
   if (theme === 'dark') {
-    toggle.innerHTML = '<span class="material-icons">light_mode</span>'
+    toggle.innerHTML = '<span class="material-icons theme-icon-light">light_mode</span>'
   } else {
-    toggle.innerHTML = '<span class="material-icons">dark_mode</span>'
+    toggle.innerHTML = '<span class="material-icons theme-icon-dark">dark_mode</span>'
   }
 }
 
