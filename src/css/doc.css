@@ -29,7 +29,7 @@
   color: var(--heading-font-color);
   hyphens: none;
   line-height: 1.5;
-  margin: 1rem 0 0;
+  margin: calc(24 / var(--rem-base) * 1rem) 0 0;
 }
 
 .doc > h1.page:first-child {
@@ -70,6 +70,7 @@
 .doc a.link,
 .doc a.link:hover {
   color: var(--heading-font-color);
+  text-decoration: none;
 }
 
 @media screen and (min-width: 769px) {
@@ -92,16 +93,12 @@
 }
 
 .doc h1.sect0 {
-  background: var(--abstract-background);
-  font-size: 1.8em;
-  margin: 1.5rem -1rem 0;
-  padding: 0.5rem 1rem;
+  font-size: calc(24 / var(--rem-base) * 1rem);
+  margin: calc(24 / var(--rem-base) * 1rem) 0 0;
 }
 
 .doc h2:not(.discrete) {
   border-bottom: 1px solid var(--section-divider-color);
-  /* margin-left: -1rem;
-  margin-right: -1rem; */
   margin: 0;
   padding: 0 0 calc(16 / var(--rem-base) * 1rem);
 }
@@ -166,6 +163,14 @@
 
 .doc a.unresolved {
   color: var(--link_unresolved-font-color);
+}
+
+.doc a.external::after {
+  font-family: "Material Icons Outlined", sans-serif;
+  content: '\e89e';
+  font-size: calc(20 / var(--rem-base) * 1rem);
+  vertical-align: bottom;
+  margin-left: 2px;
 }
 
 .doc i.fa {
@@ -253,7 +258,7 @@
 .doc .partintro,
 .doc details,
 .doc hr {
-  margin: 1rem 0 0;
+  margin: calc(24 / var(--rem-base) * 1rem) 0 0;
 }
 
 .doc table.tableblock {
@@ -264,7 +269,7 @@
 .doc .tablecontainer + *,
 .doc :not(.tablecontainer) > table.tableblock,
 .doc :not(.tablecontainer) > table.tableblock + * {
-  margin-top: 1.5rem;
+  margin-top: calc(24 / var(--rem-base) * 1rem);
 }
 
 .doc p.tableblock + p.tableblock {
