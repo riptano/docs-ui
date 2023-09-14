@@ -9,15 +9,15 @@
   display: inline-flex;
   align-items: center;
   cursor: text;
-}
 
-.ds-input-container:hover {
-  border-color: var(--ds-neutral-outlined-hover-border);
-}
+  &:hover {
+    border-color: var(--ds-neutral-outlined-hover-border);
+  }
 
-.ds-input-container:focus-within {
-  outline: 2px solid var(--ds-focus-visible);
-  outline-offset: -2px;
+  &:focus-within {
+    outline: 2px solid var(--ds-focus-visible);
+    outline-offset: -2px;
+  }
 }
 
 .ds-input {
@@ -33,14 +33,14 @@
   min-width: 0;
   width: 100%;
   padding: 5.5px 10px;
-}
 
-.ds-input::placeholder {
-  color: var(--ds-text-placeholder);
-}
+  &::placeholder {
+    color: var(--ds-text-placeholder);
+  }
 
-.ds-input:focus {
-  outline: 0;
+  &:focus {
+    outline: 0;
+  }
 }
 
 .ds-input--leading-icon {
