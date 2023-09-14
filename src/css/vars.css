@@ -7,7 +7,7 @@
   --body-line-height: 1.5;
   --body-font-color: var(--ds-text-primary);
   --body-font-family: "Roboto Flex", sans-serif;
-  --body-font-weight-bold: 500;
+  --body-font-weight-bold: 600;
   --monospace-font-family: "Roboto Mono", monospace;
   --monospace-font-weight-bold: 500;
   /* base */
@@ -31,7 +31,7 @@
   /* nav */
   --nav-background: var(--ds-background-body);
   --nav-border-color: var(--ds-divider);
-  --nav-line-height: 1.35;
+  --nav-line-height: 1.5;
   --nav-heading-font-color: var(--ds-text-tertiary);
   --nav-muted-color: var(--ds-text-tertiary);
   --nav-panel-divider-color: var(--ds-divider);
@@ -39,8 +39,8 @@
   /* toolbar */
   --toolbar-background: var(--ds-background-body);
   --toolbar-border-color: var(--ds-divider);
-  --toolbar-font-color: var(--ds-text-primary);
-  --toolbar-muted-color: var(--ds-text-disabled);
+  --toolbar-font-color: var(--ds-primary-main);
+  --toolbar-muted-color: var(--ds-text-tertiary);
   --page-version-menu-background: var(--ds-background-level3);
   --page-version-missing-font-color: var(--ds-text-tertiary);
   /* admonitions */
@@ -57,8 +57,8 @@
   /* doc */
   --doc-font-color: var(--ds-text-secondary);
   --doc-font-size: inherit;
-  --doc-font-size--desktop: calc(17 / var(--rem-base) * 1rem);
-  --doc-line-height: 1.6;
+  --doc-font-size--desktop: calc(16 / var(--rem-base) * 1rem);
+  --doc-line-height: 1.5;
   --doc-margin: 0 auto;
   --doc-margin--desktop: 0 2rem;
   --heading-font-color: var(--ds-text-primary);
@@ -94,17 +94,17 @@
   --table-stripe-background: var(--ds-background-body);
   --table-footer-background: linear-gradient(to bottom, var(--ds-background-level1) 0%, var(--ds-background-body) 100%);
   /* toc */
-  --toc-font-color: var(--nav-muted-color);
+  --toc-font-color: var(--ds-text-secondary);
   --toc-heading-font-color: var(--doc-font-color);
   --toc-border-color: var(--ds-divider);
-  --toc-line-height: 1.2;
+  --toc-line-height: 1.5;
   /* footer */
   --footer-line-height: var(--doc-line-height);
   --footer-background: var(--ds-neutral-soft-bg);
   --footer-font-color: var(--ds-text-primary);
   --footer-link-font-color: var(--link-font-color);
   /* dimensions and positioning */
-  --navbar-height: calc(63 / var(--rem-base) * 1rem);
+  --navbar-height: calc(104 / var(--rem-base) * 1rem);
   --toolbar-height: calc(45 / var(--rem-base) * 1rem);
   --drawer-height: var(--toolbar-height);
   --body-top: var(--navbar-height);
