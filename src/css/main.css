@@ -35,5 +35,5 @@
 }
 
 main {
-  padding-left: calc(24 / var(--rem-base) * 1rem);
+  padding-right: calc(24 / var(--rem-base) * 1rem);
 }
