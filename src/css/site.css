@@ -1,7 +1,6 @@
 @import "typeface-material-icons-outlined.css";
 @import "typeface-roboto-flex.css";
 @import "typeface-roboto-mono.css";
-@import "ds-typography.css";
 @import "ds-vars.css";
 @import "ds-light.css";
 @import "ds-dark.css";
@@ -10,6 +9,9 @@
 @import "body.css";
 @import "nav.css";
 @import "main.css";
+@import "ds-typography.css";
+@import "ds-button.css";
+@import "ds-input.css";
 @import "toolbar.css";
 @import "breadcrumbs.css";
 @import "page-versions.css";

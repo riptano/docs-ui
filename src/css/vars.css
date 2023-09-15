@@ -20,14 +20,14 @@
   /* navbar */
   --navbar-background: var(--ds-background-body);
   --navbar-font-color: var(--ds-text-primary);
-  --navbar_hover-background: var(--ds-background-level1);
-  --navbar-button-background: "transparent";
-  --navbar-button-border-color: var(--ds-neutral-outlined-border);
-  --navbar-button-font-color: var(--ds-neutral-outlined-color);
+  --navbar_hover-background: var(--color-black);
+  --navbar-button-background: var(--color-white);
+  --navbar-button-border-color: var(--ds-divider);
+  --navbar-button-font-color: var(--ds-text-primary);
   --navbar-menu-border-color: var(--ds-divider);
-  --navbar-menu-background: var(--ds-background-level1);
+  --navbar-menu-background: var(--ds-background-body);
   --navbar-menu-font-color: var(--ds-text-primary);
-  --navbar-menu_hover-background: var(--ds-background-level2);
+  --navbar-menu_hover-background: var(--ds-background-body);
   /* nav */
   --nav-background: var(--ds-background-body);
   --nav-border-color: var(--ds-divider);
@@ -60,13 +60,13 @@
   --doc-font-size--desktop: calc(16 / var(--rem-base) * 1rem);
   --doc-line-height: 1.5;
   --doc-margin: 0 auto;
-  --doc-margin--desktop: 0 2rem;
+  --doc-margin--desktop: 0;
   --heading-font-color: var(--ds-text-primary);
   --heading-font-weight: normal;
   --alt-heading-font-weight: var(--body-font-weight-bold);
   --section-divider-color: var(--panel-border-color);
   --link-font-color: var(--ds-primary-main);
-  --link_hover-font-color: var(--ds-primary-solid-hover-bg);
+  --link_hover-font-color: var(--ds-primary-main);
   --link_unresolved-font-color: var(--important-color);
   --abstract-background: var(--ds-background-level1);
   --abstract-font-color: var(--ds-text-tertiary);
@@ -104,7 +104,8 @@
   --footer-font-color: var(--ds-text-primary);
   --footer-link-font-color: var(--link-font-color);
   /* dimensions and positioning */
-  --navbar-height: calc(104 / var(--rem-base) * 1rem);
+  --site-padding: calc(32 / var(--rem-base) * 1rem);
+  --navbar-height: calc(100 / var(--rem-base) * 1rem);
   --toolbar-height: calc(45 / var(--rem-base) * 1rem);
   --drawer-height: var(--toolbar-height);
   --body-top: var(--navbar-height);
@@ -113,7 +114,7 @@
   --nav-height--desktop: var(--body-min-height);
   --nav-panel-menu-height: calc(100% - var(--drawer-height));
   --nav-panel-explore-height: calc(50% + var(--drawer-height));
-  --nav-width: calc(270 / var(--rem-base) * 1rem);
+  --nav-width: calc(328 / var(--rem-base) * 1rem);
   --toc-top: calc(var(--body-top) + var(--toolbar-height));
   --toc-height: calc(100vh - var(--toc-top) - 2.5rem);
   --toc-width: calc(162 / var(--rem-base) * 1rem);
@@ -125,4 +126,6 @@
   --z-index-toolbar: 2;
   --z-index-page-version-menu: 3;
   --z-index-navbar: 4;
+  /* transitions */
+  --ds-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }

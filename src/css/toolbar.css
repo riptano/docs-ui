@@ -1,5 +1,4 @@
 .toolbar {
-  color: var(--toolbar-font-color);
   align-items: center;
   background-color: var(--toolbar-background);
   /* box-shadow: 0 1px 0 var(--toolbar-border-color); */
@@ -10,6 +9,7 @@
   position: sticky;
   top: var(--navbar-height);
   z-index: var(--z-index-toolbar);
+  padding: 0 var(--site-padding) 0 24px;
 }
 
 .toolbar ul li:last-of-type {
@@ -17,19 +17,13 @@
 }
 
 .toolbar a {
-  color: inherit;
+  color: var(--link-font-color);
 }
 
-.nav-toggle {
-  background: url(../img/menu.svg) no-repeat 50% 47.5%;
-  background-size: 49%;
-  border: none;
-  outline: none;
-  line-height: inherit;
-  padding: 0;
-  height: var(--toolbar-height);
-  width: var(--toolbar-height);
-  margin-right: -0.25rem;
+.nav-toggle::after {
+  font-family: "Material Icons Outlined", sans-serif;
+  font-size: 20px;
+  content: "\e9bd";
 }
 
 @media screen and (min-width: 1024px) {
@@ -38,22 +32,8 @@
   }
 }
 
-.nav-toggle.is-active {
-  background-image: url(../img/back.svg);
-  background-size: 41.5%;
-}
-
-.home-link {
-  display: block;
-  /* background: url(../img/home-o.svg) no-repeat center; */
-  height: calc(var(--toolbar-height) / 2);
-  width: calc(var(--toolbar-height) / 2);
-  margin: calc(var(--toolbar-height) / 4);
-}
-
-.home-link:hover,
-.home-link.is-current {
-  background-image: url(../img/home.svg);
+.nav-toggle.is-active::after {
+  content: "\e5c4";
 }
 
 .edit-this-page {

@@ -1,7 +1,6 @@
 .breadcrumbs {
   display: none;
   flex: 1 1;
-  padding: 0 0.5rem 0 calc(24 / var(--rem-base) * 1rem);
   line-height: var(--nav-line-height);
 }
 
