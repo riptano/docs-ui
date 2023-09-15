@@ -2,19 +2,27 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a href="{{{or site.url siteRootPath}}}" id="datastax-docs-logo-main"></a>
+      <button data-target="topbar-nav"
+        class="navbar-burger ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-plain"></button>
     </div>
-    {{!-- {{#if env.SITE_SEARCH_PROVIDER}} --}}
-    <div class="search hide-for-print">
-      <div class="ds-input-container">
-        <span class="material-icons ds-input--leading-icon">search</span>
-        <input id="search-input" class="ds-input" type="text" placeholder="Search the docs"{{#if page.home}} autofocus{{/if}}>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end hide-for-print">
+        {{!-- {{#if env.SITE_SEARCH_PROVIDER}} --}}
+        <div class="search">
+          <div class="ds-input-container search">
+            <span class="material-icons ds-input--leading-icon">search</span>
+            <input id="search-input" class="ds-input" type="text" placeholder="Search the docs" {{#if page.home}}
+              autofocus{{/if}}>
+          </div>
+          <button id="search-button" class="ds-button ds-button--color-neutral ds-button--variant-solid">Search</button>
+        </div>
+        {{!-- {{/if}} --}}
+        <button class="ds-button ds-button--color-neutral ds-button--variant-outlined" id="get-support"><span
+            class="material-icons ds-button--leading-icon">support_agent</span>Get Live Help</button>
+
+        <button class="ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-outlined"
+          id="theme-toggle"></button>
       </div>
-      <button id="search-button" class="ds-button ds-button--color-neutral ds-button--variant-solid">Search</button>
-    </div>
-    {{!-- {{/if}} --}}
-    <div id="topbar-nav" class="navbar-menu hide-for-print">
-      <button class="ds-button ds-button--color-neutral ds-button--variant-outlined" id="get-support"><span class="material-icons ds-button--leading-icon">support_agent</span>Get Live Help</button>
-      <button class="ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-outlined" id="theme-toggle"></button>
     </div>
   </nav>
 </header>

@@ -7,27 +7,14 @@ body {
 }
 
 .navbar {
-  background: var(--ds-background-body);
+  background: var(--navbar-background);
+  color: var(--navbar-font-color);
+  /* font-size: calc(16 / var(--rem-base) * 1rem); */
   height: var(--navbar-height);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: var(--z-index-navbar);
-  display: flex;
-  align-items: center;
-  padding: 0 var(--site-padding);
-  gap: 24px;
-}
-
-.navbar .search,
-.navbar #topbar-nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.navbar #topbar-nav {
-  margin-left: auto;
 }
 
 .navbar a {
@@ -36,7 +23,39 @@ body {
 
 .navbar-brand {
   display: flex;
-  width: calc(var(--nav-width) - var(--site-padding));
+  /* flex: auto; */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--site-padding);
+}
+
+.search {
+  display: flex;
+  gap: 8px;
+  margin-right: auto;
+}
+
+.navbar-end {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex: auto;
+}
+
+.navbar-menu {
+  display: flex;
+  flex: auto;
+  padding-right: var(--site-padding);
+}
+
+.navbar-burger::before {
+  font-family: "Material Icons Outlined", sans-serif;
+  font-size: 20px;
+  content: "\e5d2";
+}
+
+.navbar-burger.is-active::before {
+  content: "\e5cd";
 }
 
 #datastax-docs-logo-main {
@@ -59,10 +78,6 @@ html[data-theme="light"] #datastax-docs-logo-main {
 }
 
 @media screen and (max-width: 1023.5px) {
-  #search-button {
-    display: none;
-  }
-
   #get-support {
     width: 40px;
     padding: 0;
@@ -71,5 +86,68 @@ html[data-theme="light"] #datastax-docs-logo-main {
 
   #get-support .ds-button--leading-icon {
     margin: 0;
+  }
+}
+
+@media screen and (max-width: 768.5px) {
+  #search-button {
+    display: none;
+  }
+
+  #datastax-docs-logo-main {
+    width: 162px;
+    height: 40px;
+  }
+
+  html[data-theme="dark"] #datastax-docs-logo-main {
+    background: url('../img/datastax-docs-logo-small-light-bg.svg') no-repeat center / contain;
+  }
+
+  html[data-theme="light"] #datastax-docs-logo-main {
+    background: url('../img/datastax-docs-logo-small-dark-bg.svg') no-repeat center / contain;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #search-input {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 1023.5px) {
+  .navbar-brand {
+    height: inherit;
+  }
+
+  .navbar-brand .navbar-item {
+    align-items: center;
+    display: flex;
+  }
+
+  .navbar-menu {
+    background: var(--navbar-menu-background);
+    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+    max-height: var(--body-min-height);
+    overflow-y: auto;
+    overscroll-behavior: none;
+    padding: 16px var(--site-padding);
+    border-top: 1px solid var(--ds-divider);
+    border-bottom: 1px solid var(--ds-divider);
+  }
+
+  .navbar-menu:not(.is-active) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-burger {
+    display: none;
+  }
+
+  .navbar,
+  .navbar-menu,
+  .navbar-end {
+    display: flex;
   }
 }

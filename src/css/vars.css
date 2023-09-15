@@ -17,6 +17,17 @@
   --scrollbar-track-color: var(--ds-background-body);
   --scrollbar-thumb-color: var(--ds-neutral-outlined-border);
   --scrollbar_hover-thumb-color: var(--ds-neutral-outlined-hover-border);
+  /* navbar */
+  --navbar-background: var(--ds-background-body);
+  --navbar-font-color: var(--ds-text-primary);
+  --navbar_hover-background: var(--color-black);
+  --navbar-button-background: var(--color-white);
+  --navbar-button-border-color: var(--ds-divider);
+  --navbar-button-font-color: var(--ds-text-primary);
+  --navbar-menu-border-color: var(--ds-divider);
+  --navbar-menu-background: var(--ds-background-body);
+  --navbar-menu-font-color: var(--ds-text-primary);
+  --navbar-menu_hover-background: var(--ds-background-body);
   /* nav */
   --nav-background: var(--ds-background-body);
   --nav-border-color: var(--ds-divider);
