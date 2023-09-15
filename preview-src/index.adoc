@@ -1,10 +1,12 @@
-= Hardware and Software Requirements
+= Document Header
 Author Name
 :idprefix:
 :idseparator: -
 :!example-caption:
 :!table-caption:
 :page-pagination:
+
+== Headers and Titles
 
 [.float-group]
 --
@@ -22,7 +24,13 @@ Quisque pharetra tristique arcu fringilla dapibus.
 https://example.org[Curabitur,role=unresolved] ut massa aliquam, cursus enim et, accumsan lectus.
 Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
 
-== Cu solet
+== Headers and Titles
+
+=== Section Title (Level 1)
+
+==== Section Title (Level 2)
+
+===== Section Title (Level 3)
 
 Nominavi luptatum eos, an vim hinc philosophia intellegebat.
 Lorem pertinacia `expetenda` et nec, [.underline]#wisi# illud [.line-through]#sonet# qui ea.
@@ -30,6 +38,19 @@ H~2~0.
 E = mc^2^.
 Eum an doctus <<liber-recusabo,maiestatis efficiantur>>.
 Eu mea inani iriure.footnote:[Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae! Lorem ipsum dolor sit amet, consectetur adipiscing elit.]
+
+[%autowidth.stretch]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
 
 [,json]
 ----
@@ -301,7 +322,7 @@ Est in reque homero principes, meis deleniti mediocrem ad has.
 Ex nam suas nemore dignissim, vel apeirian democritum et.
 
 .Antora is a multi-repo documentation site generator
-image::multirepo-ssg.svg[Multirepo SSG,3000,opts=interactive]
+image::multirepo-ssg.svg[Multirepo SSG,300,opts=interactive]
 
 Make the switch today!
 

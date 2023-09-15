@@ -9,19 +9,18 @@ function setIcon (theme) {
   }
 }
 
-var storedTheme =
-  localStorage.getItem('theme') ||
-  (window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light')
+var storedTheme = localStorage.getItem('theme')
+var prefersTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 
 if (storedTheme) {
   document.documentElement.setAttribute('data-theme', storedTheme)
   setIcon(storedTheme)
+} else {
+  setIcon(prefersTheme)
 }
 
 toggle.onclick = function () {
-  var currentTheme = document.documentElement.getAttribute('data-theme')
+  var currentTheme = document.documentElement.getAttribute('data-theme') || prefersTheme
   var targetTheme = 'light'
 
   if (currentTheme === 'light') {
