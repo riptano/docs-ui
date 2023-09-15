@@ -9,7 +9,7 @@
   position: sticky;
   top: var(--navbar-height);
   z-index: var(--z-index-toolbar);
-  padding: 0 var(--site-padding) 0 24px;
+  padding-left: calc(24 / var(--rem-base) * 1rem);
 }
 
 .toolbar ul li:last-of-type {
@@ -22,6 +22,7 @@
 
 .nav-toggle::after {
   font-family: "Material Icons Outlined", sans-serif;
+  font-weight: 400;
   font-size: 20px;
   content: "\e9bd";
 }
@@ -49,4 +50,10 @@
 
 .toolbar .edit-this-page a {
   color: var(--toolbar-font-color);
+}
+
+@media screen and (max-width: 1023.5px) {
+  .toolbar {
+    padding-right: var(--site-padding--mobile);
+  }
 }

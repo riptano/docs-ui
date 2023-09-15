@@ -9,7 +9,6 @@ body {
 .navbar {
   background: var(--navbar-background);
   color: var(--navbar-font-color);
-  /* font-size: calc(16 / var(--rem-base) * 1rem); */
   height: var(--navbar-height);
   position: fixed;
   top: 0;
@@ -23,7 +22,6 @@ body {
 
 .navbar-brand {
   display: flex;
-  /* flex: auto; */
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--site-padding);
@@ -50,6 +48,7 @@ body {
 
 .navbar-burger::before {
   font-family: "Material Icons Outlined", sans-serif;
+  font-weight: 400;
   font-size: 20px;
   content: "\e5d2";
 }
@@ -58,22 +57,15 @@ body {
   content: "\e5cd";
 }
 
-#datastax-docs-logo-main {
-  width: 287px;
-  height: 40px;
-}
-
-html[data-theme="dark"] #datastax-docs-logo-main {
-  background: url('../img/datastax-docs-logo-light-bg.svg') no-repeat center / contain;
-}
-
-html[data-theme="light"] #datastax-docs-logo-main {
-  background: url('../img/datastax-docs-logo-dark-bg.svg') no-repeat center / contain;
-}
-
 @media screen and (min-width: 769px) {
   #search-input {
     width: 200px;
+  }
+}
+
+@media screen and (max-width: 768.5px) {
+  #search-button {
+    display: none;
   }
 }
 
@@ -87,36 +79,10 @@ html[data-theme="light"] #datastax-docs-logo-main {
   #get-support .ds-button--leading-icon {
     margin: 0;
   }
-}
 
-@media screen and (max-width: 768.5px) {
-  #search-button {
-    display: none;
-  }
-
-  #datastax-docs-logo-main {
-    width: 162px;
-    height: 40px;
-  }
-
-  html[data-theme="dark"] #datastax-docs-logo-main {
-    background: url('../img/datastax-docs-logo-small-light-bg.svg') no-repeat center / contain;
-  }
-
-  html[data-theme="light"] #datastax-docs-logo-main {
-    background: url('../img/datastax-docs-logo-small-dark-bg.svg') no-repeat center / contain;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  #search-input {
-    width: 200px;
-  }
-}
-
-@media screen and (max-width: 1023.5px) {
   .navbar-brand {
     height: inherit;
+    padding: 0 var(--site-padding--mobile);
   }
 
   .navbar-brand .navbar-item {
@@ -130,7 +96,7 @@ html[data-theme="light"] #datastax-docs-logo-main {
     max-height: var(--body-min-height);
     overflow-y: auto;
     overscroll-behavior: none;
-    padding: 16px var(--site-padding);
+    padding: var(--site-padding--mobile);
     border-top: 1px solid var(--ds-divider);
     border-bottom: 1px solid var(--ds-divider);
   }

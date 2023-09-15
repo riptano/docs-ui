@@ -3,9 +3,9 @@
   font-size: var(--doc-font-size);
   hyphens: auto;
   line-height: var(--doc-line-height);
-  margin: 0; /* var(--doc-margin); */
+  margin: var(--doc-margin);
   max-width: var(--doc-max-width);
-  padding-right: calc(40 / var(--rem-base) * 1rem);
+  padding-right: calc(24 / var(--rem-base) * 1rem);
   padding-left: calc(24 / var(--rem-base) * 1rem);
   padding-bottom: 4rem;
 }
@@ -14,7 +14,7 @@
   .doc {
     flex: auto;
     font-size: var(--doc-font-size--desktop);
-    margin: 0; /* var(--doc-margin--desktop); */
+    margin: var(--doc-margin--desktop);
     max-width: var(--doc-max-width--desktop);
     min-width: 0;
   }
@@ -135,6 +135,7 @@
 .doc h5 .anchor::before,
 .doc h6 .anchor::before {
   font-family: "Material Icons Outlined", sans-serif;
+  font-weight: 400;
   content: "\f1cd";
 }
 

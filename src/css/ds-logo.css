@@ -1,0 +1,51 @@
+html[data-theme="dark"] #datastax-docs-logo-main {
+  background: url('../img/datastax-docs-logo-light-bg.svg') no-repeat center / contain;
+}
+
+html[data-theme="light"] #datastax-docs-logo-main {
+  background: url('../img/datastax-docs-logo-dark-bg.svg') no-repeat center / contain;
+}
+
+#datastax-docs-logo-main {
+  width: 287px;
+  height: 40px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) #datastax-docs-logo-main {
+    background: url('../img/datastax-docs-logo-light-bg.svg') no-repeat center / contain;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) #datastax-docs-logo-main {
+    background: url('../img/datastax-docs-logo-light-bg.svg') no-repeat center / contain;
+  }
+}
+
+@media screen and (max-width: 768.5px) {
+  #datastax-docs-logo-main {
+    width: 162px;
+    height: 40px;
+  }
+
+  html[data-theme="dark"] #datastax-docs-logo-main {
+    background: url('../img/datastax-docs-logo-small-light-bg.svg') no-repeat center / contain;
+  }
+
+  html[data-theme="light"] #datastax-docs-logo-main {
+    background: url('../img/datastax-docs-logo-small-dark-bg.svg') no-repeat center / contain;
+  }
+}
+
+@media screen and (max-width: 768.5px) and (prefers-color-scheme: light) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) #datastax-docs-logo-main {
+    background: url('../img/datastax-docs-logo-small-dark-bg.svg') no-repeat center / contain;
+  }
+}
+
+@media screen and (max-width: 768.5px) and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) #datastax-docs-logo-main {
+    background: url('../img/datastax-docs-logo-small-light-bg.svg') no-repeat center / contain;
+  }
+}
