@@ -3,5 +3,6 @@
   "rules": {
     "comment-empty-line-before": null,
     "no-descending-specificity": null,
+    "at-rule-no-unknown": [true, { "ignoreAtRules": ["include", "mixin", "extend", "content", "if", "else", "for", "each", "while", "function", "return", "warn", "error", "debug"]}]
   }
 }

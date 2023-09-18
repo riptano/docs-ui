@@ -16,8 +16,8 @@
 
 @media screen and (min-width: 1024px) {
   .nav-container {
-    font-size: calc(14.5 / var(--rem-base) * 1rem);
-    flex: none;
+    /* font-size: calc(14.5 / var(--rem-base) * 1rem); */
+    /* flex: none; */
     position: static;
     top: 0;
     visibility: visible;
@@ -255,4 +255,8 @@ html.is-clipped--nav {
   border-color: currentColor;
   opacity: 0.9;
   font-weight: var(--body-font-weight-bold);
+}
+
+.nav-link {
+  padding: 1rem 0;
 }

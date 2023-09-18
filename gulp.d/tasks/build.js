@@ -11,7 +11,7 @@ const ospath = require('path')
 const path = ospath.posix
 const postcss = require('gulp-postcss')
 const postcssCalc = require('postcss-calc')
-const postcssNesting = require('postcss-nesting')
+const precss = require('precss')
 const postcssImport = require('postcss-import')
 const postcssUrl = require('postcss-url')
 const postcssVar = require('postcss-custom-properties')
@@ -48,7 +48,7 @@ module.exports = (src, dest, preview) => () => {
         },
       },
     ]),
-    postcssNesting,
+    precss,
     // NOTE because css vars are our theme switching mechanism we must preserve them with preserve: true
     postcssVar({ preserve: true }),
     // NOTE to make vars.css available to all top-level stylesheets, use the next line in place of the previous one
