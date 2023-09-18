@@ -29,7 +29,7 @@ a + .breadcrumbs {
 
 .breadcrumbs li::after {
   content: "/";
-  padding: 0 1rem;
+  padding: 0  var(--ds-space-1);
 }
 
 .breadcrumbs li:last-of-type::after {

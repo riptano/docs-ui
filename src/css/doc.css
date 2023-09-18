@@ -509,7 +509,7 @@
 }
 
 .doc .quoteblock {
-  padding: 0.25rem 2rem 1.25rem;
+  padding: var(--ds-space-h) var(--ds-space-4) var(--ds-space-2h);
 }
 
 .doc .quoteblock .attribution {

@@ -24,7 +24,7 @@
 }
 
 .ds-text-body {
-  font-size: 2rem;
+  font-size: var(--ds-space-2);
   font-weight: 400;
 }
 
