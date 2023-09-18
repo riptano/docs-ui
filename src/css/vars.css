@@ -41,8 +41,8 @@
   --toolbar-border-color: var(--ds-divider);
   --toolbar-font-color: var(--ds-primary-main);
   --toolbar-muted-color: var(--ds-text-tertiary);
-  --page-version-menu-background: var(--ds-background-level3);
-  --page-version-missing-font-color: var(--ds-text-tertiary);
+  --page-version-menu-background: var(--ds-background-body);
+  --page-version-missing-font-color: var(--ds-text-disabled);
   /* admonitions */
   --caution-color: var(--ds-primary-main);
   --caution-on-color: var(--ds-text-inverse);
@@ -105,6 +105,7 @@
   --footer-link-font-color: var(--link-font-color);
   /* dimensions and positioning */
   --site-padding: calc(32 / var(--rem-base) * 1rem);
+  --site-padding--mobile: calc(24 / var(--rem-base) * 1rem);
   --navbar-height: calc(100 / var(--rem-base) * 1rem);
   --toolbar-height: calc(45 / var(--rem-base) * 1rem);
   --drawer-height: var(--toolbar-height);

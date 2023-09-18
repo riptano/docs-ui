@@ -1,3 +1,7 @@
+main {
+  padding-right: var(--site-padding);
+}
+
 @media screen and (max-width: 1023.5px) {
   aside.toc.sidebar {
     display: none;
@@ -5,6 +9,10 @@
 
   main > .content {
     overflow-x: auto;
+  }
+
+  main {
+    padding-right: 0;
   }
 }
 
@@ -32,8 +40,4 @@
   aside.toc.sidebar {
     flex-basis: var(--toc-width--widescreen);
   }
-}
-
-main {
-  padding-right: calc(24 / var(--rem-base) * 1rem);
 }

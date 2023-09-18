@@ -21,6 +21,7 @@
   padding: 0.5rem 1.5rem 0.5rem 0.5rem;
   position: relative;
   z-index: var(--z-index-page-version-menu);
+  border-radius: 6px;
 }
 
 .page-versions .version-menu {
@@ -34,6 +35,8 @@
   top: 0;
   right: 0;
   white-space: nowrap;
+  border-radius: 6px;
+  border: 1px solid var(--ds-divider);
 }
 
 .page-versions:not(.is-active) .version-menu {
