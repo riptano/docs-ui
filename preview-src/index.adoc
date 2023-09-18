@@ -32,6 +32,30 @@ Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
 
 ===== Section Title (Level 3)
 
+== Paragraph & Links
+
+=== Paragraph
+
+In AsciiDoc, creating paragraphs is a straightforward process that does not require any special markup.
+A paragraph can be defined as one or more lines of consecutive text that are logically grouped together.
+To differentiate between paragraphs, you simply need to insert at least one blank line between them.
+
+=== Internal Link
+
+The absence of any specific markup for paragraphs in AsciiDoc allows for a more natural and intuitive writing experience.
+Instead of having to enclose text within <<liber-recusabo,tags or special characters>>,
+you can focus on expressing your ideas and content in a clear and concise manner.
+
+=== External Link
+
+By separating paragraphs with blank lines, you visually
+https://www.datastax.com/[distinguish each paragraph,role=external,window=_blank]
+
+
+=== Anchor Link
+
+By separating paragraphs with blank lines, you visually distinguish each paragraph
+
 Nominavi luptatum eos, an vim hinc philosophia intellegebat.
 Lorem pertinacia `expetenda` et nec, [.underline]#wisi# illud [.line-through]#sonet# qui ea.
 H~2~0.
