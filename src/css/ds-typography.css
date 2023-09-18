@@ -24,7 +24,7 @@
 }
 
 .ds-text-body {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 400;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .ds-text-button {
-  font-size: 0.90625rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 

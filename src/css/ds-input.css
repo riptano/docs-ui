@@ -1,6 +1,6 @@
 .ds-input-container {
   height: 40px;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 400;
   color: var(--ds-text-primary);
   transition: var(--ds-transition);
