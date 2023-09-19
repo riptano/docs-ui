@@ -51,7 +51,7 @@
 }
 
 .ds-text-button {
-  font-size: 1.8125rem;
+  font-size: calc(16 / var(--rem-base) * 1rem);
   font-weight: 600;
 }
 
