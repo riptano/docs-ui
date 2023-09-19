@@ -7,7 +7,7 @@
   max-width: var(--doc-max-width);
   padding-right: calc(24 / var(--rem-base) * 1rem);
   padding-left: calc(24 / var(--rem-base) * 1rem);
-  padding-bottom: 4rem;
+  padding-bottom: var(--ds-space-10);
 }
 
 @media screen and (min-width: 1024px) {
@@ -283,7 +283,7 @@
 
 .doc table.tableblock th,
 .doc table.tableblock td {
-  padding: 0.5rem;
+  padding: var(--ds-space-1h) var(--ds-space-2);
 }
 
 .doc table.tableblock,
@@ -376,7 +376,7 @@
 }
 
 .doc .admonitionblock {
-  margin: 1.4rem 0 0;
+  margin: var(--ds-space-3) 0 0;
 }
 
 .doc .admonitionblock p,
@@ -400,7 +400,7 @@
 }
 
 .doc .admonitionblock td.content {
-  padding: 1rem 1rem 0.75rem;
+  padding: var(--ds-space-2);
   background: var(--admonition-background);
   width: 100%;
   word-wrap: anywhere;
@@ -411,12 +411,12 @@
   top: 0;
   left: 0;
   font-size: calc(15 / var(--rem-base) * 1rem);
-  padding: 0 0.5rem;
-  height: 1.25rem;
+  padding: 0 var(--ds-space-1);
+  height: var(--ds-space-2h);
   line-height: 1;
   font-weight: var(--admonition-label-font-weight);
   text-transform: uppercase;
-  border-radius: 0.45rem;
+  border-radius: var(--ds-space-1);
   transform: translate(-0.5rem, -50%);
 }
 
@@ -515,7 +515,7 @@
 .doc .quoteblock .attribution {
   color: var(--quote-attribution-font-color);
   font-size: calc(15 / var(--rem-base) * 1rem);
-  margin-top: 0.75rem;
+  margin-top: var(--ds-space-1h);
 }
 
 .doc .quoteblock blockquote {
@@ -532,7 +532,7 @@
 
 .doc .verseblock {
   font-size: 1em;
-  padding: 1rem 2rem;
+  padding: var(--ds-space-2) var(--ds-space-4);
 }
 
 .doc .verseblock pre {
@@ -543,7 +543,7 @@
 .doc ol,
 .doc ul {
   margin: 0;
-  padding: 0 0 0 2rem;
+  padding: 0 0 0 var(--ds-space-4);
 }
 
 .doc ul.checklist,
@@ -558,7 +558,7 @@
 
 .doc ul.no-bullet,
 .doc ol.unnumbered {
-  padding-left: 1.25rem;
+  padding-left: var(--ds-space-2h);
 }
 
 .doc ul.unstyled,
@@ -613,7 +613,7 @@
 }
 
 .doc ul.checklist {
-  padding-left: 1.75rem;
+  padding-left: var(--ds-space-2h);
 }
 
 .doc ul.checklist p > i.fa-check-square-o:first-child,
@@ -674,6 +674,7 @@
 
 .doc .tableblock caption {
   text-align: left;
+  margin-bottom: var(--ds-space-3);
 }
 
 .doc .ulist .title,
@@ -689,7 +690,7 @@
 }
 
 .doc details {
-  margin-left: 1rem;
+  margin-left: var(--ds-space-2);
 }
 
 .doc details > summary {
@@ -710,7 +711,7 @@
   border-width: 0.3em 0 0.3em 0.5em;
   position: absolute;
   top: calc((var(--doc-line-height) * 0.5 - 0.3) * 1em);
-  left: -1rem;
+  left: calc(var(--ds-space-2) * -1);
   transform: translateX(15%);
 }
 
@@ -730,7 +731,7 @@
 }
 
 .doc details.result {
-  margin-top: 0.25rem;
+  margin-top: var(--ds-space-3);
 }
 
 .doc details.result > summary {
@@ -748,7 +749,7 @@
   background: var(--example-background);
   border: 0.25rem solid var(--example-border-color);
   border-radius: 0.5rem;
-  padding: 0.75rem;
+  padding: var(--ds-space-1h);
 }
 
 .doc .exampleblock > .content::after,
@@ -1044,11 +1045,11 @@
 #footnotes {
   font-size: 0.85em;
   line-height: 1.5;
-  margin: 2rem -0.5rem 0;
+  margin: var(--ds-space-3) calc(var(--ds-space-1) * -1) 0;
 }
 
 .doc td.tableblock > .content #footnotes {
-  margin: 2rem 0 0;
+  margin: var(--ds-space-3) 0 0;
 }
 
 #footnotes hr {
