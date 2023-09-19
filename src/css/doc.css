@@ -217,11 +217,11 @@
 }
 
 .doc .float-gap.right {
-  margin: 0 1rem 1rem 0;
+  margin: 0 var(--ds-space-2) var(--ds-space-2) 0;
 }
 
 .doc .float-gap.left {
-  margin: 0 0 1rem 1rem;
+  margin: 0 0 var(--ds-space-2) var(--ds-space-2);
 }
 
 .doc .float-group::after {
@@ -641,12 +641,12 @@
 .doc .ulist .dlist,
 .doc .ulist .olist,
 .doc .ulist .ulist {
-  margin-top: 0.5rem;
+  margin-top: var(--ds-space-1);
 }
 
 .doc .olist li + li,
 .doc .ulist li + li {
-  margin-top: 0.5rem;
+  margin-top: var(--ds-space-1);
 }
 
 .doc .ulist .listingblock,
@@ -681,11 +681,11 @@
 .doc .olist .title {
   font-style: var(--caption-font-style);
   font-weight: var(--caption-font-weight);
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--ds-space-h);
 }
 
 .doc .imageblock .title {
-  margin-top: 0.5rem;
+  margin-top: var(--ds-space-1);
   padding-bottom: 0;
 }
 
@@ -697,7 +697,7 @@
   display: block;
   position: relative;
   line-height: var(--doc-line-height);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--ds-space-1);
 }
 
 .doc details > summary::-webkit-details-marker {
@@ -717,13 +717,13 @@
 
 .doc details[open] > summary::before {
   border-color: currentColor transparent transparent;
-  border-width: 0.5rem 0.3rem 0;
+  border-width: 1rem 0.6rem 0;
   transform: translateY(15%);
 }
 
 .doc details > summary::after {
   content: "";
-  width: 1rem;
+  width: var(--ds-space-2);
   height: 1em;
   position: absolute;
   top: calc((var(--doc-line-height) * 0.5 - 0.5) * 1em);
@@ -767,7 +767,7 @@
 .doc .sidebarblock {
   background: var(--sidebar-background);
   border-radius: 0.75rem;
-  padding: 0.75rem 1.5rem;
+  padding: var(--ds-space-1h) var(--ds-space-3);
 }
 
 .doc .sidebarblock > .content > .title {
@@ -806,8 +806,8 @@
   display: flex;
   visibility: hidden;
   position: absolute;
-  top: 0.25rem;
-  right: 0.5rem;
+  top: var(--ds-space-h);
+  right: var(--ds-space-1);
   color: var(--pre-annotation-font-color);
   font-family: var(--body-font-family);
   font-size: calc(13 / var(--rem-base) * 1rem);
