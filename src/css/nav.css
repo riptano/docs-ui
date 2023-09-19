@@ -37,14 +37,14 @@
 
 @media screen and (min-width: 769px) {
   .nav {
-    box-shadow: 0.5px 0 3px var(--nav-border-color);
+    border-right: 1px solid var(--ds-divider);
   }
 }
 
 @media screen and (min-width: 1024px) {
   .nav {
     top: var(--navbar-height);
-    box-shadow: none;
+    border: none;
     position: sticky;
     height: var(--nav-height--desktop);
   }
@@ -131,9 +131,9 @@ html.is-clipped--nav {
   margin: 0;
 } */
 
-/* .nav-item:not(.is-active) > .nav-list {
+.nav-item:not(.is-active) > .nav-list {
   display: none;
-} */
+}
 
 .nav-item-toggle {
   background: transparent url(../img/caret.svg) no-repeat center / 50%;
@@ -162,6 +162,10 @@ html.is-clipped--nav {
 
   &:hover {
     background: var(--ds-neutral-soft-bg);
+  }
+
+  &:active {
+    background: var(--ds-neutral-soft-active-bg);
   }
 }
 
