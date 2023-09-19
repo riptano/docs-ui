@@ -1,5 +1,24 @@
-    {{#with site.keys.googleAnalytics}}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{this}}"></script>
-    <script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','{{this}}')</script>
-    {{/with}}
-    {{!-- <script>var uiRootPath = '{{{uiRootPath}}}'</script> --}}
+{{#with site.keys.googleAnalytics}}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{this}}"></script>
+<script>function gtag() { dataLayer.push(arguments) }; window.dataLayer = window.dataLayer || []; gtag('js', new Date()); gtag('config', '{{this}}')</script>
+{{/with}}
+{{!--
+<script>var uiRootPath = '{{{uiRootPath}}}'</script> --}}
+
+<link rel="preload" href="{{uiRootPath}}/font/material-icons-outlined-latin-400-normal.woff2" as="font"
+    type="font/woff2" crossorigin>
+<link rel="preload" href="{{uiRootPath}}/font/roboto-flex-latin-400-normal.woff2" as="font" type="font/woff2"
+    crossorigin>
+<link rel="preload" href="{{uiRootPath}}/font/roboto-mono-latin-500-normal.woff2" as="font" type="font/woff2"
+    crossorigin>
+
+<script>
+    var prefersTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    var storedTheme = localStorage.getItem('theme') || prefersTheme
+
+    if (storedTheme) {
+        document.documentElement.setAttribute('data-theme', storedTheme)
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light')
+    }
+</script>

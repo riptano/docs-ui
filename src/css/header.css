@@ -57,6 +57,19 @@ body {
   content: "\e5cd";
 }
 
+#theme-toggle::before {
+  font-family: "Material Icons Outlined", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  content: "\e51c";
+  color: var(--ds-primary-400);
+}
+
+html[data-theme="dark"] #theme-toggle::before {
+  content: "\e518";
+  color: var(--ds-warning-300);
+}
+
 @media screen and (min-width: 769px) {
   #search-input {
     width: 200px;
