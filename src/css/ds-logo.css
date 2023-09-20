@@ -7,8 +7,8 @@ html[data-theme="light"] #datastax-docs-logo-main {
 }
 
 #datastax-docs-logo-main {
-  width: 287px;
-  height: 40px;
+  width: calc(287 / var(--rem-base) * 1rem);
+  height: calc(40 / var(--rem-base) * 1rem);
 }
 
 @media (prefers-color-scheme: light) {
@@ -25,8 +25,8 @@ html[data-theme="light"] #datastax-docs-logo-main {
 
 @media screen and (max-width: 768.5px) {
   #datastax-docs-logo-main {
-    width: 162px;
-    height: 40px;
+    width: calc(162 / var(--rem-base) * 1rem);
+    height: calc(40 / var(--rem-base) * 1rem);
   }
 
   html[data-theme="dark"] #datastax-docs-logo-main {

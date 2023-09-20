@@ -159,7 +159,7 @@ html.is-clipped--nav {
   position: relative;
   display: flex;
   align-items: center;
-  padding: calc(8 / var(--rem-base) * 1rem) calc(8 / var(--rem-base) * 1rem) calc(8 / var(--rem-base) * 1rem) var(--site-padding);
+  padding: var(--ds-space-1) var(--ds-space-1) var(--ds-space-1) var(--site-padding);
   transition: var(--ds-transition);
 
   &:hover {
@@ -182,7 +182,7 @@ li[data-depth="1"] > .nav-text {
   @include text-overline;
 
   color: var(--ds-text-tertiary);
-  margin-top: 0.5rem;
+  margin-top: var(--ds-space-1);
 }
 
 .is-current-page > .nav-link,
@@ -203,7 +203,7 @@ li[data-depth="1"] > .nav-text {
 .secondary-nav-list {
   padding: 0;
   margin: 0;
-  padding-bottom: 2rem;
+  padding-bottom: var(--ds-space-2);
 }
 
 .secondary-nav-list .nav-item {
