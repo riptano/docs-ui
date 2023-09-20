@@ -1,7 +1,7 @@
 .ds-input-container {
-  height: 40px;
-  font-size: var(--ds-space-2);
-  font-weight: 400;
+  @include text-body;
+
+  height: var(--ds-space-5);
   color: var(--ds-text-primary);
   transition: var(--ds-transition);
   border-radius: 6px;
@@ -32,7 +32,7 @@
   display: block;
   min-width: 0;
   width: 100%;
-  padding: 5.5px 10px;
+  padding: 1.4545rem 1.25rem;
 
   &::placeholder {
     color: var(--ds-text-placeholder);
@@ -44,8 +44,8 @@
 }
 
 .ds-input--leading-icon {
-  margin-left: 10px;
-  font-size: 20px;
+  margin-left: 1.25rem;
+  font-size: 2.5rem;
 }
 
 .ds-input--leading-icon + .ds-input {
@@ -53,8 +53,8 @@
 }
 
 .ds-input--trailing-icon {
-  margin-right: 10px;
-  font-size: 20px;
+  margin-right: 1.25rem;
+  font-size: 2.5rem;
 }
 
 .ds-input--trailing-icon + .ds-input {

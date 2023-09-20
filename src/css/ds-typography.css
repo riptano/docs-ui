@@ -1,73 +1,78 @@
-.ds-text-display {
-  font-size: 2.125rem;
+@mixin text-display {
+  font-size: calc(34 / var(--rem-base) * 1rem);
   font-weight: 600;
 }
 
-.ds-text-h1 {
-  font-size: 1.5rem;
+@mixin text-h1 {
+  font-size: calc(24 / var(--rem-base) * 1rem);
   font-weight: 600;
 }
 
-.ds-text-h2 {
-  font-size: 1.25rem;
+@mixin text-h2 {
+  font-size: calc(20 / var(--rem-base) * 1rem);
   font-weight: 600;
 }
 
-.ds-text-h3 {
-  font-size: 1rem;
+@mixin text-h3 {
+  font-size: calc(20 / var(--rem-base) * 1rem);
   font-weight: 600;
 }
 
-.ds-text-h4 {
-  font-size: 0.938rem;
-  font-weight: 600;
-}
-
-.ds-text-body {
-  font-size: var(--ds-space-2);
-  font-weight: 400;
-}
-
-.ds-text-body-small {
-  font-size: 0.906rem;
-  font-weight: 400;
-}
-
-.ds-text-caption {
-  font-size: 0.906rem;
-  font-weight: 500;
-}
-
-.ds-text-label {
-  font-size: 0.8125rem;
-  font-weight: 600;
-}
-
-.ds-text-overline {
-  font-size: 0.75rem;
-  font-weight: 650;
-  letter-spacing: 0.075rem;
-  text-transform: uppercase;
-}
-
-.ds-text-button {
+@mixin text-h4 {
   font-size: calc(16 / var(--rem-base) * 1rem);
   font-weight: 600;
 }
 
-.ds-text-tab {
-  font-size: 1rem;
+@mixin text-h5 {
+  font-size: calc(15 / var(--rem-base) * 1rem);
+  font-weight: 600;
+}
+
+@mixin text-body {
+  font-size: calc(16 / var(--rem-base) * 1rem);
   font-weight: 400;
 }
 
-.ds-text-mono {
-  font-family: "Roboto Mono", monospace;
-  font-size: 0.96875rem;
+@mixin text-body-small {
+  font-size: calc(14.5 / var(--rem-base) * 1rem);
   font-weight: 400;
 }
 
-.ds-text-mono-small {
-  font-family: "Roboto Mono", monospace;
-  font-size: 0.875rem;
+@mixin text-caption {
+  font-size: calc(14.5 / var(--rem-base) * 1rem);
+  font-weight: 500;
+}
+
+@mixin text-label {
+  font-size: calc(13 / var(--rem-base) * 1rem);
+  font-weight: 600;
+}
+
+@mixin text-overline {
+  font-size: calc(12 / var(--rem-base) * 1rem);
+  font-weight: 650;
+  letter-spacing: calc(1.2 / var(--rem-base) * 1rem);
+  text-transform: uppercase;
+}
+
+@mixin text-button {
+  font-size: calc(14.5 / var(--rem-base) * 1rem);
+  font-weight: 600;
+}
+
+@mixin text-tab {
+  font-size: calc(16 / var(--rem-base) * 1rem);
   font-weight: 400;
+}
+
+@mixin text-mono {
+  font-size: calc(15.5 / var(--rem-base) * 1rem);
+  font-weight: 400;
+  font-family: "Roboto Mono", monospace;
+}
+
+@mixin text-mono-small {
+  font-size: calc(14 / var(--rem-base) * 1rem);
+  font-weight: 400;
+  font-family: "Roboto Mono", monospace;
 }

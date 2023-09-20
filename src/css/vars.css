@@ -104,8 +104,7 @@
   --footer-font-color: var(--ds-text-primary);
   --footer-link-font-color: var(--link-font-color);
   /* dimensions and positioning */
-  --site-padding: calc(32 / var(--rem-base) * 1rem);
-  --site-padding--mobile: calc(24 / var(--rem-base) * 1rem);
+  --site-padding: var(--ds-space-4);
   --navbar-height: calc(100 / var(--rem-base) * 1rem);
   --toolbar-height: calc(45 / var(--rem-base) * 1rem);
   --drawer-height: var(--toolbar-height);

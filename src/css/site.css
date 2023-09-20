@@ -5,11 +5,11 @@
 @import "ds-light.css";
 @import "ds-dark.css";
 @import "vars.css";
+@import "ds-typography.css";
 @import "base.css";
 @import "body.css";
 @import "nav.css";
 @import "main.css";
-@import "ds-typography.css";
 @import "ds-button.css";
 @import "ds-input.css";
 @import "ds-logo.css";
