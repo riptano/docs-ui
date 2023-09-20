@@ -7,7 +7,7 @@
   max-width: var(--doc-max-width);
   padding-right: calc(24 / var(--rem-base) * 1rem);
   padding-left: calc(24 / var(--rem-base) * 1rem);
-  padding-bottom: 4rem;
+  padding-bottom: var(--ds-space-10);
 }
 
 @media screen and (min-width: 1024px) {
@@ -204,11 +204,11 @@
 }
 
 .doc .float-gap.right {
-  margin: 0 1rem 1rem 0;
+  margin: 0 var(--ds-space-2) var(--ds-space-2) 0;
 }
 
 .doc .float-gap.left {
-  margin: 0 0 1rem 1rem;
+  margin: 0 0 var(--ds-space-2) var(--ds-space-2);
 }
 
 .doc .float-group::after {
@@ -270,7 +270,7 @@
 
 .doc table.tableblock th,
 .doc table.tableblock td {
-  padding: 0.5rem;
+  padding: var(--ds-space-1h) var(--ds-space-2);
 }
 
 .doc table.tableblock,
@@ -363,7 +363,7 @@
 }
 
 .doc .admonitionblock {
-  margin: 1.4rem 0 0;
+  margin: var(--ds-space-3) 0 0;
 }
 
 .doc .admonitionblock p,
@@ -387,7 +387,7 @@
 }
 
 .doc .admonitionblock td.content {
-  padding: 1rem 1rem 0.75rem;
+  padding: var(--ds-space-2);
   background: var(--admonition-background);
   width: 100%;
   word-wrap: anywhere;
@@ -398,12 +398,12 @@
   top: 0;
   left: 0;
   font-size: calc(15 / var(--rem-base) * 1rem);
-  padding: 0 0.5rem;
-  height: 1.25rem;
+  padding: 0 var(--ds-space-1);
+  height: var(--ds-space-2h);
   line-height: 1;
   font-weight: var(--admonition-label-font-weight);
   text-transform: uppercase;
-  border-radius: 0.45rem;
+  border-radius: var(--ds-space-1);
   transform: translate(-0.5rem, -50%);
 }
 
@@ -496,13 +496,13 @@
 }
 
 .doc .quoteblock {
-  padding: 0.25rem 2rem 1.25rem;
+  padding: var(--ds-space-h) var(--ds-space-4) var(--ds-space-2h);
 }
 
 .doc .quoteblock .attribution {
   color: var(--quote-attribution-font-color);
   font-size: calc(15 / var(--rem-base) * 1rem);
-  margin-top: 0.75rem;
+  margin-top: var(--ds-space-1h);
 }
 
 .doc .quoteblock blockquote {
@@ -519,7 +519,7 @@
 
 .doc .verseblock {
   font-size: 1em;
-  padding: 1rem 2rem;
+  padding: var(--ds-space-2) var(--ds-space-4);
 }
 
 .doc .verseblock pre {
@@ -530,7 +530,7 @@
 .doc ol,
 .doc ul {
   margin: 0;
-  padding: 0 0 0 2rem;
+  padding: 0 0 0 var(--ds-space-4);
 }
 
 .doc ul.checklist,
@@ -545,7 +545,7 @@
 
 .doc ul.no-bullet,
 .doc ol.unnumbered {
-  padding-left: 1.25rem;
+  padding-left: var(--ds-space-2h);
 }
 
 .doc ul.unstyled,
@@ -600,7 +600,7 @@
 }
 
 .doc ul.checklist {
-  padding-left: 1.75rem;
+  padding-left: var(--ds-space-2h);
 }
 
 .doc ul.checklist p > i.fa-check-square-o:first-child,
@@ -628,12 +628,12 @@
 .doc .ulist .dlist,
 .doc .ulist .olist,
 .doc .ulist .ulist {
-  margin-top: 0.5rem;
+  margin-top: var(--ds-space-1);
 }
 
 .doc .olist li + li,
 .doc .ulist li + li {
-  margin-top: 0.5rem;
+  margin-top: var(--ds-space-1);
 }
 
 .doc .ulist .listingblock,
@@ -661,29 +661,30 @@
 
 .doc .tableblock caption {
   text-align: left;
+  margin-bottom: var(--ds-space-3);
 }
 
 .doc .ulist .title,
 .doc .olist .title {
   font-style: var(--caption-font-style);
   font-weight: var(--caption-font-weight);
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--ds-space-h);
 }
 
 .doc .imageblock .title {
-  margin-top: 0.5rem;
+  margin-top: var(--ds-space-1);
   padding-bottom: 0;
 }
 
 .doc details {
-  margin-left: 1rem;
+  margin-left: var(--ds-space-2);
 }
 
 .doc details > summary {
   display: block;
   position: relative;
   line-height: var(--doc-line-height);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--ds-space-1);
 }
 
 .doc details > summary::-webkit-details-marker {
@@ -697,19 +698,19 @@
   border-width: 0.3em 0 0.3em 0.5em;
   position: absolute;
   top: calc((var(--doc-line-height) * 0.5 - 0.3) * 1em);
-  left: -1rem;
+  left: calc(var(--ds-space-2) * -1);
   transform: translateX(15%);
 }
 
 .doc details[open] > summary::before {
   border-color: currentColor transparent transparent;
-  border-width: 0.5rem 0.3rem 0;
+  border-width: 1rem 0.6rem 0;
   transform: translateY(15%);
 }
 
 .doc details > summary::after {
   content: "";
-  width: 1rem;
+  width: var(--ds-space-2);
   height: 1em;
   position: absolute;
   top: calc((var(--doc-line-height) * 0.5 - 0.5) * 1em);
@@ -717,7 +718,7 @@
 }
 
 .doc details.result {
-  margin-top: 0.25rem;
+  margin-top: var(--ds-space-3);
 }
 
 .doc details.result > summary {
@@ -735,7 +736,7 @@
   background: var(--example-background);
   border: 0.25rem solid var(--example-border-color);
   border-radius: 0.5rem;
-  padding: 0.75rem;
+  padding: var(--ds-space-1h);
 }
 
 .doc .exampleblock > .content::after,
@@ -753,7 +754,7 @@
 .doc .sidebarblock {
   background: var(--sidebar-background);
   border-radius: 0.75rem;
-  padding: 0.75rem 1.5rem;
+  padding: var(--ds-space-1h) var(--ds-space-3);
 }
 
 .doc .sidebarblock > .content > .title {
@@ -792,8 +793,8 @@
   display: flex;
   visibility: hidden;
   position: absolute;
-  top: 0.25rem;
-  right: 0.5rem;
+  top: var(--ds-space-h);
+  right: var(--ds-space-1);
   color: var(--pre-annotation-font-color);
   font-family: var(--body-font-family);
   font-size: calc(13 / var(--rem-base) * 1rem);
@@ -1032,11 +1033,11 @@
 #footnotes {
   font-size: 0.85em;
   line-height: 1.5;
-  margin: 2rem -0.5rem 0;
+  margin: var(--ds-space-3) calc(var(--ds-space-1) * -1) 0;
 }
 
 .doc td.tableblock > .content #footnotes {
-  margin: 2rem 0 0;
+  margin: var(--ds-space-3) 0 0;
 }
 
 #footnotes hr {

@@ -1,9 +1,9 @@
 :root {
   /* fonts */
-  --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
-  --body-font-size: 1.0625em; /* 17px */
-  --body-font-size--desktop: 1.125em; /* 18px */
-  --body-font-size--print: 0.9375em; /* 15px */
+  --rem-base: 8; /* used to compute rem value from desired pixel value (e.g., calc(16 / var(--rem-base) * 1rem) = 16px) */
+  --body-font-size: 0.5em; /* 8px */
+  --body-font-size--desktop: 0.5em; /* 8px */
+  --body-font-size--print: 0.5em; /* 8px */
   --body-line-height: 1.5;
   --body-font-color: var(--ds-text-primary);
   --body-font-family: "Roboto Flex", sans-serif;

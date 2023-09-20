@@ -91,4 +91,20 @@
   --ds-warning-700: #703c00;
   --ds-warning-800: #522b00;
   --ds-warning-900: #331900;
+  --ds-space-q: 0.25rem; /* 2px */
+  --ds-space-h: 0.5rem; /* 4px */
+  --ds-space-1: 1rem; /* 8px */
+  --ds-space-1h: 1.5rem; /* 12px */
+  --ds-space-2: 2rem; /* 16px */
+  --ds-space-2h: 2.5rem; /* 20px */
+  --ds-space-3: 3rem; /* 24px */
+  --ds-space-4: 4rem; /* 32px */
+  --ds-space-5: 5rem; /* 40px */
+  --ds-space-6: 6rem; /* 48px */
+  --ds-space-7: 7rem; /* 56px */
+  --ds-space-8: 8rem; /* 64px */
+  --ds-space-9: 9rem; /* 72 */
+  --ds-space-10: 10rem; /* 80px */
+  --ds-space-11: 11rem; /* 88px */
+  --ds-space-15: 15rem; /* 120px */
 }
