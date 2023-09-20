@@ -55,8 +55,13 @@
   text-transform: uppercase;
 }
 
+<<<<<<< HEAD
 @mixin text-button {
   font-size: calc(14.5 / var(--rem-base) * 1rem);
+=======
+.ds-text-button {
+  font-size: calc(16 / var(--rem-base) * 1rem);
+>>>>>>> d471ee30bcca2f95af38c08216a853d5965a99b7
   font-weight: 600;
 }
 
