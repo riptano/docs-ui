@@ -20,6 +20,13 @@
   }
 }
 
+@media screen and (max-width: 1023.5px) {
+  .doc {
+    padding-left: var(--site-padding);
+    padding-right: var(--site-padding);
+  }
+}
+
 .doc h1,
 .doc h2,
 .doc h3,

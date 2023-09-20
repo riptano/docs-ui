@@ -95,7 +95,7 @@ html[data-theme="dark"] #theme-toggle::before {
 
   .navbar-brand {
     height: inherit;
-    padding: 0 var(--site-padding--mobile);
+    padding: 0 var(--site-padding);
   }
 
   .navbar-brand .navbar-item {
@@ -109,7 +109,7 @@ html[data-theme="dark"] #theme-toggle::before {
     max-height: var(--body-min-height);
     overflow-y: auto;
     overscroll-behavior: none;
-    padding: var(--site-padding--mobile);
+    padding: var(--site-padding);
     border-top: 1px solid var(--ds-divider);
     border-bottom: 1px solid var(--ds-divider);
   }
