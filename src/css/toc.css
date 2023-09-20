@@ -3,7 +3,7 @@
 }
 
 .toc.sidebar .toc-menu {
-  margin-right: 0.75rem;
+  margin-right: var(--ds-space-1h);
   position: sticky;
   top: var(--toc-top);
 }
@@ -14,13 +14,13 @@
   font-weight: var(--body-font-weight-bold);
   line-height: 1.3;
   margin: 0 -0.5px;
-  padding-bottom: 0.25rem;
+  padding-bottom: var(--ds-space-h);
 }
 
 .toc.sidebar .toc-menu h3 {
   display: flex;
   flex-direction: column;
-  height: 2.5rem;
+  height: var(--ds-space-5);
   justify-content: flex-end;
 }
 
@@ -68,18 +68,18 @@
 }
 
 .toc .toc-menu li[data-level="2"] a {
-  padding-left: 1.25rem;
+  padding-left: var(--ds-space-2h);
 }
 
 .toc .toc-menu li[data-level="3"] a {
-  padding-left: 2rem;
+  padding-left: var(--ds-space-4);
 }
 
 .toc .toc-menu a {
   color: inherit;
   border-left: 2px solid var(--toc-border-color);
   display: inline-block;
-  padding: 0.25rem 0 0.25rem 0.5rem;
+  padding: var(--ds-space-h) 0 var(--ds-space-h) var(--ds-space-1);
   text-decoration: none;
   font-weight: var(--toc-menu-font-weight);
 }

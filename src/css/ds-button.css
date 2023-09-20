@@ -2,7 +2,7 @@
   border-radius: 6px;
   padding: 0 12px;
   height: 40px;
-  font-size: 0.90625rem;
+  font-size: calc(16 / var(--rem-base) * 1rem);
   font-weight: 600;
   transition: var(--ds-transition);
   border: 1px solid transparent;
