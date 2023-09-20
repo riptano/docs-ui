@@ -1,15 +1,96 @@
 footer.footer {
   background-color: var(--footer-background);
   color: var(--footer-font-color);
-  font-size: calc(12 / var(--rem-base) * 1rem);
+  font-size: calc(14.5 / var(--rem-base) * 1rem);
   line-height: var(--footer-line-height);
   padding: var(--ds-space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ds-space-3);
+  flex-shrink: 0;
 }
 
 .footer p {
-  margin: 0.5rem 0;
+  margin: 0;
 }
 
 .footer a {
   color: var(--footer-link-font-color);
+}
+
+.footer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  font-size: calc(14.5 / var(--rem-base) * 1rem);
+}
+
+.footer--divider {
+  background: var(--ds-divider);
+  height: calc(1 / var(--rem-base) * 1rem);
+  width: 100%;
+}
+
+.footer--contact-us a {
+  color: var(--footer-font-color);
+}
+
+.footer--trademarks {
+  font-size: calc(12 / var(--rem-base) * 1rem);
+  color: var(--text-tertiary);
+  max-width: 640px;
+  align-self: stretch;
+}
+
+.social-icons {
+  display: flex;
+  gap: var(--ds-space-2);
+}
+
+.social-icons a {
+  width: var(--ds-space-2h);
+  height: var(--ds-space-2h);
+  background-repeat: no-repeat;
+}
+
+/* footer icons */
+
+a.facebook-icon {
+  background-image: url('../img/social-facebook.svg');
+}
+
+a.x-icon {
+  background-image: url('../img/social-x.svg');
+}
+
+a.git-icon {
+  background-image: url('../img/social-github.svg');
+}
+
+a.medium-icon {
+  background-image: url('../img/social-medium.svg');
+}
+
+a.linkedin-icon {
+  background-image: url('../img/social-linkedin.svg');
+}
+
+a.twitch-icon {
+  content: url('../img/social-twitch.svg');
+}
+
+html[data-theme="dark"] {
+  .social-icons a {
+    filter: invert(1);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    .social-icons a {
+      filter: invert(1);
+    }
+  }
 }
