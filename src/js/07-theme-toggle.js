@@ -1,26 +1,11 @@
 /* eslint-disable no-undef */
 var toggle = document.getElementById('theme-toggle')
 
-function setIcon (theme) {
-  if (theme === 'dark') {
-    toggle.innerHTML = '<span class="material-icons theme-icon-light">light_mode</span>'
-  } else {
-    toggle.innerHTML = '<span class="material-icons theme-icon-dark">dark_mode</span>'
-  }
-}
-
-var storedTheme = localStorage.getItem('theme')
 var prefersTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-
-if (storedTheme) {
-  document.documentElement.setAttribute('data-theme', storedTheme)
-  setIcon(storedTheme)
-} else {
-  setIcon(prefersTheme)
-}
+var storedTheme = localStorage.getItem('theme') || prefersTheme
 
 toggle.onclick = function () {
-  var currentTheme = document.documentElement.getAttribute('data-theme') || prefersTheme
+  var currentTheme = document.documentElement.getAttribute('data-theme') || storedTheme || 'light'
   var targetTheme = 'light'
 
   if (currentTheme === 'light') {
@@ -29,5 +14,4 @@ toggle.onclick = function () {
 
   document.documentElement.setAttribute('data-theme', targetTheme)
   localStorage.setItem('theme', targetTheme)
-  setIcon(targetTheme)
 }
