@@ -6,20 +6,41 @@ html[data-theme="light"] #datastax-docs-logo-main {
   background: url('../img/datastax-docs-logo-dark-bg.svg') no-repeat center / contain;
 }
 
+html[data-theme="dark"] #datastax-docs-logo-text {
+  background: url('../img/datastax-docs-logo-text-dark.svg') no-repeat center / contain;
+}
+
+html[data-theme="light"] #datastax-docs-logo-text {
+  background: url('../img/datastax-docs-logo-text-light.svg') no-repeat center / contain;
+}
+
 #datastax-docs-logo-main {
   width: calc(287 / var(--rem-base) * 1rem);
   height: calc(40 / var(--rem-base) * 1rem);
+}
+
+#datastax-docs-logo-text {
+  width: calc(172 / var(--rem-base) * 1rem);
+  height: calc(16 / var(--rem-base) * 1rem);
 }
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="light"]):not([data-theme="dark"]) #datastax-docs-logo-main {
     background: url('../img/datastax-docs-logo-light-bg.svg') no-repeat center / contain;
   }
+
+  :root:not([data-theme="light"]):not([data-theme="dark"]) #datastax-docs-logo-text {
+    background: url('../img/datastax-docs-logo-text-light.svg') no-repeat center / contain;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]):not([data-theme="dark"]) #datastax-docs-logo-main {
     background: url('../img/datastax-docs-logo-light-bg.svg') no-repeat center / contain;
+  }
+
+  :root:not([data-theme="light"]):not([data-theme="dark"]) #datastax-docs-logo-text {
+    background: url('../img/datastax-docs-logo-text-dark.svg') no-repeat center / contain;
   }
 }
 

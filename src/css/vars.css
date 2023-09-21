@@ -100,7 +100,7 @@
   --toc-line-height: 1.5;
   /* footer */
   --footer-line-height: var(--doc-line-height);
-  --footer-background: var(--ds-neutral-soft-bg);
+  --footer-background: var(--ds-background-body);
   --footer-font-color: var(--ds-text-primary);
   --footer-link-font-color: var(--link-font-color);
   /* dimensions and positioning */
