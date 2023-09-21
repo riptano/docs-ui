@@ -1,5 +1,15 @@
 <script id="site-script" src="{{{uiRootPath}}}/js/site.js" data-ui-root-path="{{{uiRootPath}}}"></script>
 <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>
+  docsearch({
+    container: '#docsearch',
+    appId: '2ELPRZR9UC',
+    indexName: 'crawler_DocSearch Astra Serverless',
+    apiKey: 'c3a198c212847ff57cf811d4e45c7409',
+  })
+</script>
+
 {{#if env.SITE_SEARCH_PROVIDER}}
 {{> search-scripts}}
 {{/if}}
