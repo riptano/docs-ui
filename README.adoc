@@ -18,7 +18,7 @@ ifdef::env-github[]
 endif::[]
 // Project URLs:
 :url-project: https://github.com/riptano/docs-ui
-:url-preview: https://riptano.github.io/docs-ui/
+:url-preview: https://fantastic-adventure-593lpwy.pages.github.io/main/home/index.html
 // :url-ci-pipelines: {url-project}/pipelines
 // :img-ci-status: {url-project}/badges/master/pipeline.svg
 :url-docs-home: https://github.com/riptano/docs-home
@@ -54,7 +54,7 @@ The repository itself produces a UI bundle that can be applied when generating a
 The UI bundle contains the HTML templates (layouts, partials, and helpers), CSS, JavaScript, fonts, and (site-wide) images.
 As such, it provides both the visual theme and user interactions for the documentation site.
 
-// You can see a preview of the DataStax Docs UI at {url-preview}.
+You can see a preview of the DataStax Docs UI at {url-preview}.
 
 
 toc::[]

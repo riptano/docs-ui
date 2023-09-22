@@ -1,12 +1,10 @@
-= Document Header
+= Document Title (Level 0)
 Author Name
 :idprefix:
 :idseparator: -
 :!example-caption:
 :!table-caption:
 :page-pagination:
-
-== Headers and Titles
 
 [.float-group]
 --
@@ -24,15 +22,20 @@ Quisque pharetra tristique arcu fringilla dapibus.
 https://example.org[Curabitur,role=unresolved] ut massa aliquam, cursus enim et, accumsan lectus.
 Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
 
-xref:vector-home.adoc[Vector Home,role="ds-button ds-button\--color-primary ds-button\--variant-solid"]
+== Level 1 Section Title
 
-== Headers and Titles
+When the document type is article (the default), the document can only have one level 0 section title (`=`), which is the document title (i.e., doctitle).
 
-=== Section Title (Level 1)
+=== Level 2 Section Title
 
-==== Section Title (Level 2)
+==== Level 3 Section Title
 
-===== Section Title (Level 3)
+===== Level 4 Section Title
+
+====== Level 5 Section Title
+
+[discrete]
+== Level 1 Section Title (Discrete)
 
 == Paragraph & Links
 
@@ -292,41 +295,32 @@ Est in reque homero principes, meis deleniti mediocrem ad has.
 Altera atomorum his ex, has cu elitr melius propriae.
 Eos suscipit scaevola at.
 
-== Admonitions
+[TIP]
+This oughta do it!
+
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
 
 [NOTE]
 ====
-.Admonition Title 1
-
-By implementing the recursive Bayesian estimation algorithms,
-the parallelized neural networks obfuscate the
-omni-directional visual odometry,
-resulting in fractalized chaotic attractors
-within the autonomous robotic swarm control architecture.
-
-.Admonition Title 2
-
-. RoboGenix
-. Electromechina
-. Cybernetrix
-. RoboFusion
-. Automag
-
+You've been down _this_ road before.
 ====
 
-[TIP]
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+
+[WARNING]
 ====
-An admonition draws the reader’s attention to auxiliary information.
+Watch out!
 ====
 
 [CAUTION]
 ====
 [#inline]#I wouldn't try that if I were you.#
-====
-
-[WARNING]
-====
-Watch out!
 ====
 
 [IMPORTANT]
