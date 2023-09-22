@@ -1,9 +1,10 @@
 .nav-container {
+  @include text-caption;
+
   position: fixed;
   top: var(--navbar-height);
   left: 0;
   width: 100%;
-  font-size: calc(17 / var(--rem-base) * 1rem);
   z-index: var(--z-index-nav);
   visibility: hidden;
 }
@@ -16,7 +17,6 @@
 
 @media screen and (min-width: 1024px) {
   .nav-container {
-    /* font-size: calc(14.5 / var(--rem-base) * 1rem); */
     flex: none;
     position: static;
     top: 0;
@@ -75,95 +75,57 @@ html.is-clipped--nav {
   opacity: 0.75;
 }
 
-/* .nav-panel-menu:not(.is-active)::after {
-  content: "";
-  background: rgba(0, 0, 0, 0.5);
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-} */
-
 .nav-menu {
   min-height: 100%;
-  /* padding: 0.5rem 0.5rem 0.75rem var(--site-padding); */
   line-height: var(--nav-line-height);
   position: relative;
 }
 
-/* .nav-menu h3.title {
-  color: var(--nav-heading-font-color);
-  font-size: inherit;
-  font-weight: var(--body-font-weight-bold);
-  margin: 0;
-  padding: 0.25em 0 0.125em;
-} */
+.nav-menu > .nav-list {
+  gap: var(--ds-space-1);
+}
 
 .nav-list {
   display: flex;
   flex-direction: column;
   list-style: none;
   padding: 0;
-  margin: 0
-  /* margin: 0 0 0 0.75rem;
-  padding: 0; */
+  margin: 0;
 }
-
-/* .nav-menu > .nav-list + .nav-list {
-  margin-top: 0.5rem;
-} */
 
 .nav-item {
   display: flex;
   flex-direction: column;
 }
 
-/* adds some breathing room below a nested list */
-/* .nav-item-toggle ~ .nav-list {
-  padding-bottom: 0.125rem;
-} */
-
-/* matches list without a title */
-/* .nav-item[data-depth="0"] > .nav-list:first-child {
-  display: block;
-  margin: 0;
-} */
-
-.nav-item:not(.is-active) > .nav-list {
-  display: none;
-}
-
-.nav-item-toggle {
-  background: transparent url(../img/caret.svg) no-repeat center / 50%;
-  border: none;
-  outline: none;
-  line-height: inherit;
-  padding: 0;
-  position: absolute;
-  height: calc(var(--nav-line-height) * 1em);
-  width: calc(var(--nav-line-height) * 1em);
-  margin-top: -0.05em;
-  margin-left: calc(var(--nav-line-height) * -1em);
-}
-
-/* .nav-item.is-active > .nav-item-toggle {
-  transform: rotate(90deg);
-} */
-
 .nav-link,
 .nav-text {
-  @include text-caption;
-
   position: relative;
   display: flex;
   align-items: center;
-  padding: var(--ds-space-1) var(--ds-space-1) var(--ds-space-1) var(--site-padding);
+  padding: var(--ds-space-1) var(--site-padding);
+}
+
+.nav-link {
   transition: var(--ds-transition);
 
   &:hover {
     background: var(--ds-neutral-soft-bg);
+  }
+
+  &::after {
+    font-family: "Material Icons Outlined", sans-serif;
+    font-weight: 400;
+    content: "\e5c8";
+    position: absolute;
+    right: var(--ds-space-2);
+    color: var(--ds-text-tertiary);
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+
+  &:hover::after {
+    opacity: 1;
   }
 
   &:active {
@@ -171,22 +133,20 @@ html.is-clipped--nav {
   }
 }
 
-.nav-link > .material-icons,
-.nav-text > .material-icons {
+.nav-link > .material-icons {
   font-size: calc(16 / var(--rem-base) * 1rem);
-  margin-right: calc(8 / var(--rem-base) * 1rem);
+  margin-right: var(--ds-space-1);
 }
 
-li[data-depth="1"] > .nav-link,
-li[data-depth="1"] > .nav-text {
+.nav-item[data-depth="0"] > .nav-link,
+.nav-item[data-depth="0"] > .nav-text {
   @include text-overline;
 
   color: var(--ds-text-tertiary);
   margin-top: var(--ds-space-1);
 }
 
-.is-current-page > .nav-link,
-.is-current-page > .nav-text {
+.is-current-page > .nav-link {
   font-weight: 600;
   background: var(--ds-neutral-soft-bg);
 
@@ -201,14 +161,42 @@ li[data-depth="1"] > .nav-text {
 }
 
 .secondary-nav-list {
-  padding: 0;
   margin: 0;
-  padding-bottom: var(--ds-space-2);
+  padding: var(--ds-space-2) 0;
 }
 
 .secondary-nav-list .nav-item {
   color: var(--ds-text-secondary);
 }
+
+.secondary-nav-list .nav-link::after {
+  content: "\e89e";
+}
+
+/*** nav-item toggle styles, keeping for now as we might implement again when more content is added ***/
+
+/* .nav-item:not(.is-active) > .nav-list {
+  display: none;
+} */
+
+/* .nav-item-toggle {
+  background: transparent url(../img/caret.svg) no-repeat center / 50%;
+  border: none;
+  outline: none;
+  line-height: inherit;
+  padding: 0;
+  position: absolute;
+  height: calc(var(--nav-line-height) * 1em);
+  width: calc(var(--nav-line-height) * 1em);
+  margin-top: -0.05em;
+  margin-left: calc(var(--nav-line-height) * -1em);
+} */
+
+/* .nav-item.is-active > .nav-item-toggle {
+  transform: rotate(90deg);
+} */
+
+/*** nav-panel-explore styles, keeping for now as we might implement it elsewhere ***/
 
 /* .nav-panel-explore {
   background: var(--nav-background);
@@ -314,8 +302,4 @@ li[data-depth="1"] > .nav-text {
   border-color: currentColor;
   opacity: 0.9;
   font-weight: var(--body-font-weight-bold);
-} */
-
-/* .nav-link {
-  padding: 1rem 0;
 } */
