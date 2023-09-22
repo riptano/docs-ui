@@ -3,12 +3,12 @@
 
 Efficiently store and query vector embeddings for better similarity search. If you're new, read our xref:ROOT:templates/examples/concepts.adoc[introduction to vector databases].
 
-[.ds-feature]
+[.ds-feature.header-noline]
 == Get Started
 --
 Dive straight into Astra Vector with this concise guide tailored for developers. These essential steps will walk you through the setup process, ensuring you're up and running quickly.
 
-[.ds-feature-button]
+[.ds-feature-buttons]
 xref:ROOT:templates/examples/quickstart.adoc[Quick Start,role="ds-button ds-button\--color-neutral ds-button\--variant-outlined"] · https://astra.datastax.com[Create Astra Account^,role="ds-button ds-button\--color-neutral ds-button\--variant-outlined"]
 --
 
@@ -27,61 +27,84 @@ query_vector = [0.9, 2.2, 2.8]
 results = db.query(query_vector, limit=3)
 ----
 
-[.ds-row.noline]
+[.ds-row.header-noline.explore]
 == Explore Docs
 
 === Guides
 
 Concise how-tos of common tasks with Astra.
 
+[unstyled.landing-a]
 * link:{#}[Load vector data]
 * link:{#}[Explore my data]
 * link:{#}[Manage my embeddings]
+
+[.material-icons.landing-card-icon]
+fact_check
 
 === Tutorials
 
 Dive into step-by-step lessons to master the essentials.
 
+[unstyled.landing-a]
 * link:{#}[Build a chatbot]
 * link:{#}[Enhance a recommendation system]
 * link:{#}[Write an AI agent]
+
+[.material-icons.landing-card-icon]
+auto_stories
 
 === Clients
 
 Explore dedicated applications built to enhance your experience.
 
+[unstyled.landing-a]
 * link:{#}[How do I use the Python client]
 * link:{#}[How do I use the Node.js client]
 * link:{#}[Connect using the JSON API]
+
+[.material-icons.landing-card-icon]
+power
 
 === Integrations
 
 Seamlessly connect with your favorite tools and platforms
 
+[unstyled.landing-a]
 * link:{#}[Connect to OpenAI]
 * link:{#}[Connect to LangChain]
 * link:{#}[Connect to LlamaIndex]
 
-[.ds-row.noline]
+[.material-icons.landing-card-icon]
+integration_instructions
+
+
+[.ds-row.header-noline]
 == What's New?
 
 === DataStax Astra Integrations
 
 Amplify your development potential with integrations crafted for popular platforms and languages. Dive deep into how DataStax Astra seamlessly interacts with Python, Java, Node.js, and more.
 
+[.landing-a]
 link:{#}[Explore Astra Integrations]
 
+[.material-icons.landing-card-icon]
+integration_instructions
 
 === Scaling Production Workloads
 
 Equip yourself with the tools and techniques to scale your applications effectively. Meet the demands of today while preparing for the challenges of tomorrow.
 
+[.landing-a]
 link:{#}[Discover Scalability Techniques]
+
 
 === Securing Your Vector Databases
 
 Prioritize the protection of your invaluable data. Explore advanced strategies and tools designed to safeguard your vector databases from potential threats.
 
+[.landing-a]
 link:{#}[Learn about Database Security]
 
 
@@ -96,5 +119,6 @@ link:{#}[Join on Discord] · link:{#}[Follow on X]
 
 === Need More Help?
 
+[unstyled]
 * link:{#}[Ask the Astra community]
 * link:{#}[Get in touch with support]

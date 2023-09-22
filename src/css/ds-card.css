@@ -10,14 +10,22 @@
   border-radius: calc(10 / var(--rem-base) * 1rem);
 }
 
-#preamble + .sect1.ds-feature, 
+.doc .ds-feature.header-noline h2:not(.discrete) {
+  padding: 0;
+}
+
+.doc .ds-feature .paragraph {
+  margin-top: var(--ds-space-2);
+}
+
+#preamble + .sect1.ds-feature,
 .doc .sect1 + .sect1.ds-feature {
   margin-top: var(--ds-space-7);
 }
 
 .ds-feature .sectionbody {
   display: flex;
-}  
+}
 
 .ds-feature .sectionbody > * {
   flex: 1;
@@ -27,24 +35,19 @@
   max-width: calc(464 / var(--rem-base) * 1rem);
 }
 
-.doc .ds-feature h2:not(.discrete) {
-  border-bottom: none;
-  padding: 0;
-} 
-
-
 /* Feature Card - Button */
-.ds-feature-button {
+
+.doc .ds-feature-buttons.paragraph {
   margin-top: var(--ds-space-4);
 }
 
-.ds-feature-button p {
+.ds-feature-buttons p {
   display: flex;
 }
 
 /* Feature Card - Code */
 .doc .ds-feature-code code,
-.doc .ds-feature-code pre.highlight code{
+.doc .ds-feature-code pre.highlight code {
   background: var(--ds-text-primary);
   font-size: calc(15.5 / var(--rem-base) * 1rem);
 }
@@ -52,11 +55,17 @@
 .doc .ds-feature-code.listingblock {
   position: relative;
   margin: 0;
+  margin-top: calc(27 / var(--rem-base) * -1 * 1rem);
 }
 
-.ds-feature-code code {
+.doc .ds-feature-code.listingblock > .content {
   position: absolute;
   width: 100%;
+  top: calc(50%);
   transform: translateY(-50%);
-  margin-top: calc(54 / var(--rem-base) * 1rem);
+}
+
+.doc .ds-feature-code pre.highlight code,
+.doc .ds-feature-code.literalblock pre code {
+  padding: var(--ds-space-2) var(--ds-space-3);
 }

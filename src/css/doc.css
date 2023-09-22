@@ -640,7 +640,7 @@
 
 .doc .olist li + li,
 .doc .ulist li + li {
-  margin-top: var(--ds-space-1);
+  margin-top: var(--ds-space-2);
 }
 
 .doc .ulist .listingblock,
