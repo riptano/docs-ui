@@ -82,6 +82,7 @@ integration_instructions
 [.ds-row.header-noline]
 == What's New?
 
+[.ds-card]
 === DataStax Astra Integrations
 
 Amplify your development potential with integrations crafted for popular platforms and languages. Dive deep into how DataStax Astra seamlessly interacts with Python, Java, Node.js, and more.
@@ -92,6 +93,7 @@ link:{#}[Explore Astra Integrations]
 [.material-icons.landing-card-icon]
 integration_instructions
 
+[.ds-card]
 === Scaling Production Workloads
 
 Equip yourself with the tools and techniques to scale your applications effectively. Meet the demands of today while preparing for the challenges of tomorrow.
@@ -99,7 +101,7 @@ Equip yourself with the tools and techniques to scale your applications effectiv
 [.landing-a]
 link:{#}[Discover Scalability Techniques]
 
-
+[.ds-card]
 === Securing Your Vector Databases
 
 Prioritize the protection of your invaluable data. Explore advanced strategies and tools designed to safeguard your vector databases from potential threats.

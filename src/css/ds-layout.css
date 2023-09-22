@@ -5,8 +5,10 @@
  */
 
 /* Extend .doc max-width */
-[data-template="landing"] .doc {
-  --doc-max-width--desktop: calc(1280 / var(--rem-base) * 1rem);
+html[data-template="landing"] {
+  .doc {
+    max-width: calc(1280 / var(--rem-base) * 1rem);
+  }
 }
 
 /* Hide sidebar, a.anchor */
@@ -28,7 +30,7 @@
 .ds-row .sectionbody {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: var(--ds-space-3);
 }
