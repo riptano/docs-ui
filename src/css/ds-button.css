@@ -15,6 +15,10 @@
   }
 }
 
+a.ds-button:hover {
+  text-decoration: none;
+}
+
 /* icon button */
 .ds-button--is-icon {
   height: var(--ds-space-5);
@@ -24,10 +28,12 @@
 
 .ds-button--leading-icon {
   margin-right: var(--ds-space-1);
+  display: flex;
 }
 
 .ds-button--trailing-icon {
   margin-left: var(--ds-space-1);
+  display: flex;
 }
 
 .ds-button--variant-outlined {

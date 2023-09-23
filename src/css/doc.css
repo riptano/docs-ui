@@ -939,7 +939,8 @@
   padding: 0.25rem 0;
 }
 
-.doc .conum[data-value] {
+.doc .conum[data-value],
+.doc .step {
   @include text-overline;
 
   color: var(--ds-text-inverse);
@@ -961,6 +962,12 @@
 
 .doc .conum[data-value] + b {
   display: none;
+}
+
+.doc .step {
+  position: relative;
+  top: -0.25em;
+  margin-right: var(--ds-space-q);
 }
 
 .doc hr {
