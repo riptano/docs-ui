@@ -2,7 +2,9 @@
   {{#with page.title}}
   <h1 class="page">{{{this}}}</h1>
   {{/with}}
+  {{#if (eq page.layout 'tutorial')}}
   {{> tutorial-info}}
+  {{/if}}
   {{{page.contents}}}
   {{> pagination}}
 </article>
