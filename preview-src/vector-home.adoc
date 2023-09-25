@@ -27,7 +27,7 @@ query_vector = [0.9, 2.2, 2.8]
 results = db.query(query_vector, limit=3)
 ----
 
-[.ds-row.header-noline.explore]
+[.explore.header-noline.ds-row.ds-grid]
 == Explore Docs
 
 === Guides
@@ -82,7 +82,7 @@ integration_instructions
 [.ds-row.header-noline]
 == What's New?
 
-[.ds-card]
+[.ds-card.ds-grid]
 --
 [discrete]
 === DataStax Astra Integrations

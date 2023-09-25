@@ -5,25 +5,27 @@
  */
 
 /* Extend .doc max-width */
-html[data-layout="landing"] {
-  .doc {
-    max-width: calc(1280 / var(--rem-base) * 1rem);
+@media screen and (min-width: 1024px) {
+  html[data-layout="landing"] {
+    .doc {
+      max-width: calc(1280 / var(--rem-base) * 1rem);
+    }
   }
 }
 
 /* Hide sidebar, a.anchor */
-[data-layout="landing"] .toc.sidebar,
-[data-layout="landing"] a.anchor {
+html[data-layout="landing"] .toc.sidebar,
+html[data-layout="landing"] a.anchor {
   display: none;
 }
 
-[data-layout="landing"] .doc > h1.page:first-child {
+html[data-layout="landing"] .doc > h1.page:first-child {
   font-size: calc(34 / var(--rem-base) * 1rem);
   margin-top: var(--ds-space-3);
   margin-top: var(--ds-space-2);
 }
 
-[data-layout="landing"] #preamble {
+html[data-layout="landing"] #preamble {
   max-width: 650px;
 }
 
@@ -37,12 +39,12 @@ html[data-layout="landing"] {
 }
 
 .ds-row .sectionbody > * {
-  display: grid;
   flex: 1;
 }
 
-.ds-stretch {
-  align-self: stretch;
+.ds-grid .sectionbody > *,
+.ds-grid > .content {
+  display: grid;
 }
 
 @media screen and (min-width: 1200px) {
@@ -51,15 +53,16 @@ html[data-layout="landing"] {
   }
 }
 
-.ds-row.explore .sectionbody .sect2 > *:not(.landing-card-icon) {
-  margin-top: var(--ds-space-2);
-}
-
 .doc .header-noline h2:not(.discrete) {
   border-bottom: none;
   padding-bottom: var(--ds-space-3);
 }
 
+.ds-row.explore .sectionbody .sect2 > *:not(.landing-card-icon) {
+  margin-top: var(--ds-space-2);
+}
+
+/* Landing card icon */
 .material-icons.landing-card-icon {
   max-width: fit-content;
   font-size: calc(20 / var(--rem-base) * 1rem);
@@ -75,19 +78,13 @@ html[data-layout="landing"] {
   padding-right: var(--ds-space-2);
 }
 
-/*
-.doc .landing-a a:hover {
-  text-decoration: none;
-}
-*/
-
 .landing-a a::after {
   font-family: "Material Icons Outlined", sans-serif;
   content: '\e5c8';
   font-size: calc(20 / var(--rem-base) * 1rem);
   position: absolute;
   margin-left: var(--ds-space-h);
-  margin-top: calc(4 / var(--rem-base) * -1rem);
+  margin-top: calc(4 / var(--rem-base) * -1 * 1rem);
 }
 
 .landing-support a.support::before,

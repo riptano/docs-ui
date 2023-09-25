@@ -1,20 +1,13 @@
+/* card */
 .ds-card .content,
 .doc .exampleblock.ds-card > .content {
-  display: grid;
   padding: var(--ds-space-3);
   border-radius: calc(6 / var(--rem-base) * 1rem);
   border: 1px solid var(--ds-divider);
 }
 
-.ds-row .ds-card + .ds-card {
-  margin-top: 0;
-}
-
+.doc .paragraph.landing-card-icon,
 .doc .exampleblock.ds-card {
-  margin: 0;
-}
-
-.doc .paragraph.landing-card-icon {
   margin: 0;
 }
 
@@ -23,11 +16,19 @@
 }
 
 /* Feature Card */
-
 .ds-feature {
   padding: var(--ds-space-3);
   background: var(--ds-neutral-soft-bg);
   border-radius: calc(10 / var(--rem-base) * 1rem);
+}
+
+.ds-feature .sectionbody {
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-feature .sectionbody > * {
+  flex: 1;
 }
 
 .doc .ds-feature.header-noline h2:not(.discrete) {
@@ -43,28 +44,14 @@
   margin-top: var(--ds-space-7);
 }
 
-.ds-feature .sectionbody {
-  display: flex;
-  flex-direction: column;
-}
-
-.ds-feature .sectionbody > * {
-  flex: 1;
-}
-
-.ds-feature .sectionbody .openblock:first-of-type .content {
-  max-width: calc(464 / var(--rem-base) * 1rem);
-}
-
 /* Feature Card - Button */
-
-.doc .ds-feature-buttons.paragraph {
-  margin-top: var(--ds-space-4);
-}
-
 .ds-feature-buttons p {
   display: flex;
   gap: var(--ds-space-1);
+}
+
+.doc .ds-feature-buttons.paragraph {
+  margin-top: var(--ds-space-4);
 }
 
 /* Feature Card - Code */
