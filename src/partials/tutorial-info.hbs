@@ -1,0 +1,28 @@
+<div class="tutorial-info">
+  {{#with page.attributes.skill-level}}
+  <div class="info-item">
+    <span class="material-icons">network_check</span>
+    {{{this}}}
+  </div>
+  {{/with}}
+  {{#with (stepcount page.contents)}}
+  <div class="info-item">
+    <span class="material-icons">playlist_add_check</span>
+    {{{this}}} Steps
+  </div>
+  {{/with}}
+  {{#with page.attributes.time-commitment}}
+  <div class="info-item">
+    <span class="material-icons">query_builder</span>
+    {{{this}}}
+  </div>
+  {{/with}}
+  <div class="tutorial-actions">
+    {{#with page.attributes.colab-link}}
+    <a href="{{{this}}}" target="_blank" class="colab ds-button ds-button--variant-outlined ds-button--color-neutral">
+      <div class="ds-button--leading-icon">{{{svg 'colab'}}}</div>
+      Run this on Colab
+    </a>
+    {{/with}}
+  </div>
+</div>

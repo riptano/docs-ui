@@ -1,0 +1,15 @@
+.tutorial-info {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2h);
+  margin-bottom: var(--ds-space-3);
+}
+
+.tutorial-info .info-item {
+  display: flex;
+  gap: var(--ds-space-1);
+}
+
+.tutorial-info .tutorial-actions {
+  margin-left: auto;
+}
