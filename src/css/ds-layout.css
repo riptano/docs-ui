@@ -5,31 +5,32 @@
  */
 
 /* Extend .doc max-width */
-html[data-template="landing"] {
+html[data-layout="landing"] {
   .doc {
     max-width: calc(1280 / var(--rem-base) * 1rem);
   }
 }
 
 /* Hide sidebar, a.anchor */
-[data-template="landing"] .toc.sidebar,
-[data-template="landing"] a.anchor {
+[data-layout="landing"] .toc.sidebar,
+[data-layout="landing"] a.anchor {
   display: none;
 }
 
-[data-template="landing"] .doc > h1.page:first-child {
+[data-layout="landing"] .doc > h1.page:first-child {
   font-size: calc(34 / var(--rem-base) * 1rem);
   margin-top: var(--ds-space-3);
   margin-top: var(--ds-space-2);
 }
 
-[data-template="landing"] #preamble {
+[data-layout="landing"] #preamble {
   max-width: 650px;
 }
 
-.ds-row .sectionbody {
+.ds-row > .sectionbody,
+.ds-row > .content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: var(--ds-space-3);
@@ -37,21 +38,26 @@ html[data-template="landing"] {
 
 .ds-row .sectionbody > * {
   display: grid;
+  flex: 1;
 }
 
-@media screen and (min-width: 1280px) {
-  .ds-row .sectionbody > * {
-    flex: 1;
+.ds-stretch {
+  align-self: stretch;
+}
+
+@media screen and (min-width: 1200px) {
+  .ds-row .sectionbody {
+    flex-direction: row;
   }
 }
 
-.ds-row.explore .sectionbody .sect2 > * {
+.ds-row.explore .sectionbody .sect2 > *:not(.landing-card-icon) {
   margin-top: var(--ds-space-2);
 }
 
 .doc .header-noline h2:not(.discrete) {
   border-bottom: none;
-  padding-bottom: var(--ds-space-1);
+  padding-bottom: var(--ds-space-3);
 }
 
 .material-icons.landing-card-icon {
@@ -61,6 +67,7 @@ html[data-template="landing"] {
   border: 1px solid var(--ds-neutral-outlined-border);
   border-radius: calc(6 / var(--rem-base) * 1rem);
   grid-row-start: 1;
+  margin-top: 0;
 }
 
 /* Links */
@@ -68,9 +75,11 @@ html[data-template="landing"] {
   padding-right: var(--ds-space-2);
 }
 
+/*
 .doc .landing-a a:hover {
   text-decoration: none;
 }
+*/
 
 .landing-a a::after {
   font-family: "Material Icons Outlined", sans-serif;
@@ -79,4 +88,27 @@ html[data-template="landing"] {
   position: absolute;
   margin-left: var(--ds-space-h);
   margin-top: calc(4 / var(--rem-base) * -1rem);
+}
+
+.landing-support a.support::before,
+.landing-support a.community::before {
+  font-family: "Material Icons Outlined", sans-serif;
+  content: '\ef73';
+  font-size: calc(16 / var(--rem-base) * 1rem);
+  margin-right: var(--ds-space-1);
+  position: absolute;
+  left: 0;
+}
+
+.landing-support a.community::before {
+  content: '\e7ef';
+}
+
+.landing-support p {
+  position: relative;
+}
+
+.landing-support a.community,
+.landing-support a.support {
+  margin-left: var(--ds-space-3);
 }

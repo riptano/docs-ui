@@ -1,11 +1,25 @@
-.ds-card {
+.ds-card .content,
+.doc .exampleblock.ds-card > .content {
+  display: grid;
   padding: var(--ds-space-3);
   border-radius: calc(6 / var(--rem-base) * 1rem);
   border: 1px solid var(--ds-divider);
 }
 
+.ds-row .ds-card + .ds-card {
+  margin-top: 0;
+}
+
+.doc .exampleblock.ds-card {
+  margin: 0;
+}
+
 .doc .paragraph.landing-card-icon {
   margin: 0;
+}
+
+.ds-card .image.bottom img {
+  margin-bottom: calc(24 / var(--rem-base) * -1 * 1rem);
 }
 
 /* Feature Card */
@@ -31,6 +45,7 @@
 
 .ds-feature .sectionbody {
   display: flex;
+  flex-direction: column;
 }
 
 .ds-feature .sectionbody > * {
@@ -49,6 +64,7 @@
 
 .ds-feature-buttons p {
   display: flex;
+  gap: var(--ds-space-1);
 }
 
 /* Feature Card - Code */
@@ -58,20 +74,26 @@
   font-size: calc(15.5 / var(--rem-base) * 1rem);
 }
 
-.doc .ds-feature-code.listingblock {
-  position: relative;
-  margin: 0;
-  margin-top: calc(27 / var(--rem-base) * -1 * 1rem);
-}
-
-.doc .ds-feature-code.listingblock > .content {
-  position: absolute;
-  width: 100%;
-  top: calc(50%);
-  transform: translateY(-50%);
-}
-
 .doc .ds-feature-code pre.highlight code,
 .doc .ds-feature-code.literalblock pre code {
   padding: var(--ds-space-2) var(--ds-space-3);
+}
+
+@media screen and (min-width: 1200px) {
+  .ds-feature .sectionbody {
+    flex-direction: row;
+  }
+
+  .doc .ds-feature-code.listingblock > .content {
+    position: absolute;
+    width: 100%;
+    top: calc(50%);
+    transform: translateY(-50%);
+  }
+
+  .doc .ds-feature-code.listingblock {
+    position: relative;
+    margin: 0;
+    margin-top: calc(27 / var(--rem-base) * -1 * 1rem);
+  }
 }

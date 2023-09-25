@@ -1,126 +1,384 @@
-= DataStax Astra Vector
-:page-layout: landing
+= Document Header
+Author Name
+:idprefix:
+:idseparator: -
+:!example-caption:
+:!table-caption:
+:page-pagination:
 
-Efficiently store and query vector embeddings for better similarity search. If you're new, read our xref:ROOT:templates/examples/concepts.adoc[introduction to vector databases].
+== Headers and Titles
 
-[.ds-feature.header-noline]
-== Get Started
+[.float-group]
 --
-Dive straight into Astra Vector with this concise guide tailored for developers. These essential steps will walk you through the setup process, ensuring you're up and running quickly.
-
-[.ds-feature-buttons]
-xref:ROOT:templates/examples/quickstart.adoc[Quick Start,role="ds-button ds-button\--color-neutral ds-button\--variant-outlined"] · https://astra.datastax.com[Create Astra Account^,role="ds-button ds-button\--color-neutral ds-button\--variant-outlined"]
+image:multirepo-ssg.svg[Multirepo SSG,180,135,float=right,role=float-gap]
+Platonem complectitur mediocritatem ea eos.
+Ei nonumy deseruisse ius.
+Mel id omnes verear.
+Vis no velit audiam, sonet <<dependencies,praesent>> eum ne.
+*Prompta eripuit* nec ad.
+Integer diam enim, dignissim eget eros et, ultricies mattis odio.
 --
 
-[.ds-feature-code,python]
+Vestibulum consectetur nec urna a luctus.
+Quisque pharetra tristique arcu fringilla dapibus.
+https://example.org[Curabitur,role=unresolved] ut massa aliquam, cursus enim et, accumsan lectus.
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+
+xref:vector-home.adoc[Vector Home,role="ds-button ds-button\--color-primary ds-button\--variant-solid"]
+
+== Headers and Titles
+
+=== Section Title (Level 1)
+
+==== Section Title (Level 2)
+
+===== Section Title (Level 3)
+
+== Paragraph & Links
+
+=== Paragraph
+
+In AsciiDoc, creating paragraphs is a straightforward process that does not require any special markup.
+A paragraph can be defined as one or more lines of consecutive text that are logically grouped together.
+To differentiate between paragraphs, you simply need to insert at least one blank line between them.
+
+=== Internal Link
+
+The absence of any specific markup for paragraphs in AsciiDoc allows for a more natural and intuitive writing experience.
+Instead of having to enclose text within <<liber-recusabo,tags or special characters>>,
+you can focus on expressing your ideas and content in a clear and concise manner.
+
+=== External Link
+
+By separating paragraphs with blank lines, you visually
+https://www.datastax.com/[distinguish each paragraph,role=external,window=_blank]
+
+
+=== Anchor Link
+
+By separating paragraphs with blank lines, you visually distinguish each paragraph
+
+Nominavi luptatum eos, an vim hinc philosophia intellegebat.
+Lorem pertinacia `expetenda` et nec, [.underline]#wisi# illud [.line-through]#sonet# qui ea.
+H~2~0.
+E = mc^2^.
+Eum an doctus <<liber-recusabo,maiestatis efficiantur>>.
+Eu mea inani iriure.footnote:[Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae! Lorem ipsum dolor sit amet, consectetur adipiscing elit.]
+
+[%autowidth.stretch]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+[,json]
 ----
-import vector
-
-# Create a new vector database
-db = vector.Database("my_vector_db")
-
-# Ingest vectors into your database
-db.ingest("s3://vector-embeddings-bucket/")
-
-# Find the closest vectors
-query_vector = [0.9, 2.2, 2.8]
-results = db.query(query_vector, limit=3)
+{
+  "name": "module-name",
+  "version": "10.0.1",
+  "description": "An example module to illustrate the usage of package.json",
+  "author": "Author Name <author@example.com>",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint"
+  }
+}
 ----
 
-[.ds-row.header-noline.explore]
-== Explore Docs
+.Example paragraph syntax
+[,asciidoc]
+----
+.Optional title
+[example]
+This is an example paragraph.
+----
 
-=== Guides
+.Optional title
+[example]
+This is an example paragraph.
 
-Concise how-tos of common tasks with Astra.
+.Summary *Spoiler Alert!*
+[%collapsible]
+====
+Details.
 
-[unstyled.landing-a]
-* link:{#}[Load vector data]
-* link:{#}[Explore my data]
-* link:{#}[Manage my embeddings]
+Loads of details.
+====
 
-[.material-icons.landing-card-icon]
-fact_check
+[,asciidoc]
+----
+Voila!
+----
 
-=== Tutorials
+.Result
+[%collapsible.result]
+====
+Voila!
+====
 
-Dive into step-by-step lessons to master the essentials.
+=== Some Code
 
-[unstyled.landing-a]
-* link:{#}[Build a chatbot]
-* link:{#}[Enhance a recommendation system]
-* link:{#}[Write an AI agent]
+How about some code?
 
-[.material-icons.landing-card-icon]
-auto_stories
+[,js]
+----
+vfs
+  .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
+  .pipe(tap((file) => { // <.>
+    file.contents = browserify(file.relative, { basedir: 'src', detectGlobals: false }).bundle()
+  }))
+  .pipe(buffer()) // <.>
+  .pipe(uglify())
+  .pipe(gulp.dest('build'))
+----
+<.> The `tap` function is used to wiretap the data in the pipe.
+<.> Wrap each streaming file in a buffer so the files can be processed by uglify.
+Uglify can only work with buffers, not streams.
 
-=== Clients
+Execute these commands to validate and build your site:
 
-Explore dedicated applications built to enhance your experience.
+ $ podman run -v $PWD:/antora:Z --rm -t antora/antora \
+   version
+ 3.0.0
+ $ podman run -v $PWD:/antora:Z --rm -it antora/antora \
+   --clean \
+   antora-playbook.yml
 
-[unstyled.landing-a]
-* link:{#}[How do I use the Python client]
-* link:{#}[How do I use the Node.js client]
-* link:{#}[Connect using the JSON API]
+Cum dicat #putant# ne.
+Est in <<inline,reque>> homero principes, meis deleniti mediocrem ad has.
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
 
-[.material-icons.landing-card-icon]
-power
+....
+pom.xml
+src/
+  main/
+    java/
+      HelloWorld.java
+  test/
+    java/
+      HelloWorldTest.java
+....
 
-=== Integrations
+Eu mea munere vituperata constituam.
 
-Seamlessly connect with your favorite tools and platforms
+[%autowidth]
+|===
+|Input | Output | Example
 
-[unstyled.landing-a]
-* link:{#}[Connect to OpenAI]
-* link:{#}[Connect to LangChain]
-* link:{#}[Connect to LlamaIndex]
+m|"foo\nbar"
+l|foo
+bar
+a|
+[,ruby]
+----
+puts "foo\nbar"
+----
+|===
 
-[.material-icons.landing-card-icon]
-integration_instructions
+Here we just have some plain text.
 
+[source]
+----
+plain text
+----
 
-[.ds-row.header-noline]
-== What's New?
+[.rolename]
+=== Liber recusabo
 
-[.ds-card]
-=== DataStax Astra Integrations
+Select menu:File[Open Project] to open the project in your IDE.
+Per ea btn:[Cancel] inimicus.
+Ferri kbd:[F11] tacimates constituam sed ex, eu mea munere vituperata kbd:[Ctrl,T] constituam.
 
-Amplify your development potential with integrations crafted for popular platforms and languages. Dive deep into how DataStax Astra seamlessly interacts with Python, Java, Node.js, and more.
+.Sidebar Title
+****
+Platonem complectitur mediocritatem ea eos.
+Ei nonumy deseruisse ius.
+Mel id omnes verear.
 
-[.landing-a]
-link:{#}[Explore Astra Integrations]
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+****
 
-[.material-icons.landing-card-icon]
-integration_instructions
+No sea, at invenire voluptaria mnesarchum has.
+Ex nam suas nemore dignissim, vel apeirian democritum et.
+At ornatus splendide sed, phaedrum omittantur usu an, vix an noster voluptatibus.
 
-[.ds-card]
-=== Scaling Production Workloads
+---
 
-Equip yourself with the tools and techniques to scale your applications effectively. Meet the demands of today while preparing for the challenges of tomorrow.
+.Ordered list with customized numeration
+[upperalpha]
+. potenti donec cubilia tincidunt
+. etiam pulvinar inceptos velit quisque aptent himenaeos
+. lacus volutpat semper porttitor aliquet ornare primis nulla enim
 
-[.landing-a]
-link:{#}[Discover Scalability Techniques]
+Natum facilisis theophrastus an duo.
+No sea, at invenire voluptaria mnesarchum has.
 
-[.ds-card]
-=== Securing Your Vector Databases
+.Unordered list with customized marker
+[square]
+* ultricies sociosqu tristique integer
+* lacus volutpat semper porttitor aliquet ornare primis nulla enim
+* etiam pulvinar inceptos velit quisque aptent himenaeos
 
-Prioritize the protection of your invaluable data. Explore advanced strategies and tools designed to safeguard your vector databases from potential threats.
+Eu sed antiopam gloriatur.
+Ea mea agam graeci philosophia.
 
-[.landing-a]
-link:{#}[Learn about Database Security]
+[circle]
+* circles
+** circles
+*** and more circles!
 
+At ornatus splendide sed, phaedrum omittantur usu an, vix an noster voluptatibus.
 
-[.ds-row]
-== Community & Support
+* [ ] todo
+* [x] done!
 
-=== Join the Conversation
+Vis veri graeci legimus ad.
 
-Engage with our vibrant community of developers. Ask questions, share knowledge, or just hang out and chat about all things DataStax Astra.
+sed::
+splendide sed
 
-link:{#}[Join on Discord] · link:{#}[Follow on X]
+mea::
+agam graeci
 
-=== Need More Help?
+Let's look at that another way.
 
-[unstyled]
-* link:{#}[Ask the Astra community]
-* link:{#}[Get in touch with support]
+[horizontal]
+sed::
+splendide sed
+
+mea::
+agam graeci
+
+At ornatus splendide sed.
+
+.Library dependencies
+[#dependencies%autowidth%footer,stripes=hover]
+|===
+|Library |Version
+
+|eslint
+|^1.7.3
+
+|eslint-config-gulp
+|^2.0.0
+
+|expect
+|^1.20.2
+
+|istanbul
+|^0.4.3
+
+|istanbul-coveralls
+|^1.0.3
+
+|jscs
+|^2.3.5
+
+h|Total
+|6
+|===
+
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+
+[TIP]
+This oughta do it!
+
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+
+[NOTE]
+====
+You've been down _this_ road before.
+====
+
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+
+[WARNING]
+====
+Watch out!
+====
+
+[CAUTION]
+====
+[#inline]#I wouldn't try that if I were you.#
+====
+
+[IMPORTANT]
+====
+Don't forget this step!
+====
+
+.Key Points to Remember
+[TIP]
+====
+If you installed the CLI and the default site generator globally, you can upgrade both of them with the same command.
+
+ $ npm i -g @antora/cli @antora/site-generator
+
+Or you can install the metapackage to upgrade both packages at once.
+
+ $ npm i -g antora
+====
+
+Nominavi luptatum eos, an vim hinc philosophia intellegebat.
+Eu mea inani iriure.
+
+[discrete]
+== Voluptua singulis
+
+Cum dicat putant ne.
+Est in reque homero principes, meis deleniti mediocrem ad has.
+Ex nam suas nemore dignissim, vel apeirian democritum et.
+
+.Antora is a multi-repo documentation site generator
+image::multirepo-ssg.svg[Multirepo SSG,300,opts=interactive]
+
+Make the switch today!
+
+.Full Circle with Jake Blauvelt
+video::300817511[vimeo,640,360,align=left]
+
+[#english+中文]
+== English + 中文
+
+Altera atomorum his ex, has cu elitr melius propriae.
+Eos suscipit scaevola at.
+
+[,'Famous Person. Cum dicat putant ne.','Cum dicat putant ne. https://example.com[Famous Person Website]']
+____
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
+____
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+[verse]
+____
+The fog comes
+on little cat feet.
+____
+
+== Fin
+
+That's all, folks!
