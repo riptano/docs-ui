@@ -24,6 +24,8 @@ Quisque pharetra tristique arcu fringilla dapibus.
 https://example.org[Curabitur,role=unresolved] ut massa aliquam, cursus enim et, accumsan lectus.
 Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
 
+xref:vector-home.adoc[Vector Home,role="ds-button ds-button\--color-primary ds-button\--variant-solid"]
+
 == Headers and Titles
 
 === Section Title (Level 1)
