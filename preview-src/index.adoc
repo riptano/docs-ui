@@ -382,7 +382,140 @@ NOTE: The header is optional.
 |Column 2, Row 1
 |===
 
+== Code block
 
+[source,json]
+----
+{
+  "name": "module-name",
+  "version": "10.0.1",
+  "description": "An example module to illustrate the usage of package.json",
+  "author": "Author Name <author@example.com>",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint"
+  }
+}
+----
+
+.Console code block
+[source,console]
+----
+.Optional title
+[example]
+This is an example paragraph.
+----
+
+=== Callouts
+
+[source,js]
+----
+vfs
+  .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
+  .pipe(tap((file) => { // <.>
+    file.contents = browserify(file.relative, { basedir: 'src', detectGlobals: false }).bundle()
+  }))
+  .pipe(buffer()) // <.>
+  .pipe(uglify())
+  .pipe(gulp.dest('build'))
+----
+<.> The `tap` function is used to wiretap the data in the pipe.
+<.> Wrap each streaming file in a buffer so the files can be processed by uglify.
+Uglify can only work with buffers, not streams.
+
+== Collapsible block
+
+=== Basic collapsible block
+
+.Summary *Spoiler Alert!*
+[%collapsible]
+====
+Details.
+
+Loads of details.
+====
+
+=== Collapsible code block
+
+.Click for example code
+[%collapsible]
+====
+[source,asciidoc]
+----
+Some code.
+----
+====
+
+=== Collapsible code block w/ results
+
+[source,asciidoc]
+----
+Run this code.
+----
+
+.Result
+[%collapsible.result]
+====
+[source,console]
+----
+Voila!
+----
+====
+
+
+== Other blocks
+
+=== Listing and literal blocks
+
+.Listing block
+----
+This is a _delimited listing block_.
+
+The content inside is displayed as <pre> text.
+----
+
+.Literal block
+....
+error: 1954 Forbidden search
+absolutely fatal: operation lost in the dodecahedron of doom
+Would you like to try again? y/n
+....
+
+=== Sidebar block
+
+.Sidebar title
+****
+Sidebars are used to visually separate auxiliary bits of content that supplement the main text.
+****
+
+=== Example block
+
+.Example title
+====
+Here's a sample AsciiDoc document:
+
+[source,asciidoc]
+----
+= Title of Document
+Doc Writer
+:toc:
+
+This guide provides...
+----
+
+The document header is useful, but not required.
+====
+
+=== Blockquote
+
+[quote,Monty Python and the Holy Grail,Scene 1: Camelot]
+____
+Dennis: Come and see the violence inherent in the system. Help! Help! I'm being repressed!
+
+King Arthur: Bloody peasant!
+
+Dennis: Oh, what a giveaway! Did you hear that? Did you hear that, eh? That's what I'm on about! Did you see him repressing me? You saw him, Didn't you?
+____
 
 
 [%autowidth.stretch]
@@ -398,69 +531,14 @@ NOTE: The header is optional.
 |Cell in column 3, row 3
 |===
 
-[,json]
-----
-{
-  "name": "module-name",
-  "version": "10.0.1",
-  "description": "An example module to illustrate the usage of package.json",
-  "author": "Author Name <author@example.com>",
-  "scripts": {
-    "test": "mocha",
-    "lint": "eslint"
-  }
-}
-----
 
-.Example paragraph syntax
-[,asciidoc]
-----
-.Optional title
-[example]
-This is an example paragraph.
-----
 
-.Optional title
-[example]
-This is an example paragraph.
-
-.Summary *Spoiler Alert!*
-[%collapsible]
-====
-Details.
-
-Loads of details.
-====
-
-[,asciidoc]
-----
-Voila!
-----
-
-.Result
-[%collapsible.result]
-====
-Voila!
-====
 
 === Some Code
 
 How about some code?
 
-[,js]
-----
-vfs
-  .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
-  .pipe(tap((file) => { // <.>
-    file.contents = browserify(file.relative, { basedir: 'src', detectGlobals: false }).bundle()
-  }))
-  .pipe(buffer()) // <.>
-  .pipe(uglify())
-  .pipe(gulp.dest('build'))
-----
-<.> The `tap` function is used to wiretap the data in the pipe.
-<.> Wrap each streaming file in a buffer so the files can be processed by uglify.
-Uglify can only work with buffers, not streams.
+
 
 Execute these commands to validate and build your site:
 
