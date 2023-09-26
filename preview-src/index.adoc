@@ -292,32 +292,41 @@ Est in reque homero principes, meis deleniti mediocrem ad has.
 Altera atomorum his ex, has cu elitr melius propriae.
 Eos suscipit scaevola at.
 
-[TIP]
-This oughta do it!
-
-Cum dicat putant ne.
-Est in reque homero principes, meis deleniti mediocrem ad has.
-Altera atomorum his ex, has cu elitr melius propriae.
-Eos suscipit scaevola at.
+== Admonitions
 
 [NOTE]
 ====
-You've been down _this_ road before.
+.Admonition Title 1
+
+By implementing the recursive Bayesian estimation algorithms,
+the parallelized neural networks obfuscate the
+omni-directional visual odometry,
+resulting in fractalized chaotic attractors
+within the autonomous robotic swarm control architecture.
+
+.Admonition Title 2
+
+. RoboGenix
+. Electromechina
+. Cybernetrix
+. RoboFusion
+. Automag
+
 ====
 
-Cum dicat putant ne.
-Est in reque homero principes, meis deleniti mediocrem ad has.
-Altera atomorum his ex, has cu elitr melius propriae.
-Eos suscipit scaevola at.
-
-[WARNING]
+[TIP]
 ====
-Watch out!
+An admonition draws the reader’s attention to auxiliary information.
 ====
 
 [CAUTION]
 ====
 [#inline]#I wouldn't try that if I were you.#
+====
+
+[WARNING]
+====
+Watch out!
 ====
 
 [IMPORTANT]
