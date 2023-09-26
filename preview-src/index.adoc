@@ -5,7 +5,8 @@ Author Name
 :!example-caption:
 :!table-caption:
 :page-pagination:
-:stem:
+:experimental:
+:stem: latexmath
 
 In AsciiDoc, creating paragraphs is a straightforward process that does not require any special markup.
 A paragraph can be defined as one or more lines of consecutive text that are logically grouped together.
@@ -39,6 +40,9 @@ Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
 
 [discrete]
 == Level 1 Section Title (Discrete)
+
+[.rolename]
+== Level 1 Section Title (w/ custom role)
 
 ////
 .*Click for more about section titles...*
@@ -158,6 +162,17 @@ https://www.datastax.com[distinguish each paragraph]
 The UI should disregard these attributes and apply the same styling and behavior to each link.
 ====
 ////
+
+=== Keyboard, button, and menu macros
+
+To save the file, select menu:File[Save].
+Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
+
+Press the btn:[OK] button when you are finished.
+Select a file in the file navigator and click btn:[Open].
+
+Press kbd:[F11] to toggle fullscreen.
+Press kbd:[Ctrl+T] to open a new tab.
 
 == Admonitions
 
@@ -295,6 +310,21 @@ a|[lowergreek]
 . Electrons
 . Neutrons
 |===
+
+.Ordered list w/ customized numeration
+[upperalpha]
+. potenti donec cubilia tincidunt
+. etiam pulvinar inceptos velit quisque aptent himenaeos
+. lacus volutpat semper porttitor aliquet ornare primis nulla enim
+
+Natum facilisis theophrastus an duo.
+No sea, at invenire voluptaria mnesarchum has.
+
+.Unordered list w/ customized marker
+[square]
+* ultricies sociosqu tristique integer
+* lacus volutpat semper porttitor aliquet ornare primis nulla enim
+* etiam pulvinar inceptos velit quisque aptent himenaeos
 
 === Description list
 
@@ -478,6 +508,33 @@ NOTE: The header is optional.
 |Cell in column 3, row 3
 |===
 
+.With header row, footer row, and hover striping
+[#dependencies%footer,stripes=hover]
+|===
+|Library |Version
+
+|eslint
+|^1.7.3
+
+|eslint-config-gulp
+|^2.0.0
+
+|expect
+|^1.20.2
+
+|istanbul
+|^0.4.3
+
+|istanbul-coveralls
+|^1.0.3
+
+|jscs
+|^2.3.5
+
+h|Total
+|6
+|===
+
 === Complex tables
 
 .Table w/ header row, variable column widths, and AsciiDoc content
@@ -590,6 +647,20 @@ puts "foo\nbar"
 |B3
 |===
 
+== Images and videos
+
+.Unconstrained SVG image
+image::multirepo-ssg.svg[]
+
+.Constrained SVG image w/ alt text
+image::multirepo-ssg.svg[Multirepo SSG,300,opts=interactive]
+
+.Jpeg Image from a remote URL
+image::https://asciidoctor.org/images/octocat.jpg[GitHub mascot]
+
+.Full Circle with Jake Blauvelt
+video::300817511[vimeo,640,360,align=left]
+
 == Code block
 
 [source,json]
@@ -633,9 +704,7 @@ Uglify can only work with buffers, not streams.
 
 == Collapsible block
 
-=== Basic collapsible block
-
-.Summary *Spoiler Alert!*
+.Basic collapsible block
 [%collapsible]
 ====
 Details.
@@ -643,9 +712,7 @@ Details.
 Loads of details.
 ====
 
-=== Collapsible code block
-
-.Click for example code
+.Collapsible code block
 [%collapsible]
 ====
 [source,asciidoc]
@@ -654,7 +721,7 @@ Some code.
 ----
 ====
 
-=== Collapsible code block w/ results
+=== Results block
 
 [source,asciidoc]
 ----
@@ -906,218 +973,46 @@ King Arthur: Bloody peasant!
 Dennis: Oh, what a giveaway! Did you hear that? Did you hear that, eh? That's what I'm on about! Did you see him repressing me? You saw him, Didn't you?
 ____
 
+== Horizontal rule
+
+A line with three single quotation marks (i.e., `'''`) is a special macro that inserts a thematic break (aka horizontal rule):
+
+'''
+
+There are rare circumstances where a horizontal rule is required.
+
 == Equations and formulas (STEM)
 
+=== Inline stem macro
+
+stem:[sqrt(4) = 2]
+
+Water (stem:[H_2O]) is a critical component.
+
+A matrix can be written as stem:[[[a,b\],[c,d\]\]((n),(k))].
+
+=== Block STEM content
+
+[stem]
+++++
+sqrt(4) = 2
+++++
+
+=== Mixing STEM notations
+
+.An e-xciting limit with LaTeX!
+[stem]
+++++
+\lim_{n \to \infty}\frac{n}{\sqrt[n]{n!}} = {\large e}
+++++
+
+.A basic square root with AsciiMath
+[asciimath]
+++++
+sqrt(4) = 2
+++++
 
 
-
-
-=== Some Code
-
-How about some code?
-
-
-
-Execute these commands to validate and build your site:
-
- $ podman run -v $PWD:/antora:Z --rm -t antora/antora \
-   version
- 3.0.0
- $ podman run -v $PWD:/antora:Z --rm -it antora/antora \
-   --clean \
-   antora-playbook.yml
-
-Cum dicat #putant# ne.
-Est in <<inline,reque>> homero principes, meis deleniti mediocrem ad has.
-Altera atomorum his ex, has cu elitr melius propriae.
-Eos suscipit scaevola at.
-
-....
-pom.xml
-src/
-  main/
-    java/
-      HelloWorld.java
-  test/
-    java/
-      HelloWorldTest.java
-....
-
-Eu mea munere vituperata constituam.
-
-
-
-Here we just have some plain text.
-
-[source]
-----
-plain text
-----
-
-[.rolename]
-=== Liber recusabo
-
-Select menu:File[Open Project] to open the project in your IDE.
-Per ea btn:[Cancel] inimicus.
-Ferri kbd:[F11] tacimates constituam sed ex, eu mea munere vituperata kbd:[Ctrl,T] constituam.
-
-.Sidebar Title
-****
-Platonem complectitur mediocritatem ea eos.
-Ei nonumy deseruisse ius.
-Mel id omnes verear.
-
-Altera atomorum his ex, has cu elitr melius propriae.
-Eos suscipit scaevola at.
-****
-
-No sea, at invenire voluptaria mnesarchum has.
-Ex nam suas nemore dignissim, vel apeirian democritum et.
-At ornatus splendide sed, phaedrum omittantur usu an, vix an noster voluptatibus.
-
----
-
-.Ordered list w/ customized numeration
-[upperalpha]
-. potenti donec cubilia tincidunt
-. etiam pulvinar inceptos velit quisque aptent himenaeos
-. lacus volutpat semper porttitor aliquet ornare primis nulla enim
-
-Natum facilisis theophrastus an duo.
-No sea, at invenire voluptaria mnesarchum has.
-
-.Unordered list w/ customized marker
-[square]
-* ultricies sociosqu tristique integer
-* lacus volutpat semper porttitor aliquet ornare primis nulla enim
-* etiam pulvinar inceptos velit quisque aptent himenaeos
-
-Eu sed antiopam gloriatur.
-Ea mea agam graeci philosophia.
-
-[circle]
-* circles
-** circles
-*** and more circles!
-
-At ornatus splendide sed, phaedrum omittantur usu an, vix an noster voluptatibus.
-
-* [ ] todo
-* [x] done!
-
-Vis veri graeci legimus ad.
-
-sed::
-splendide sed
-
-mea::
-agam graeci
-
-Let's look at that another way.
-
-[horizontal]
-sed::
-splendide sed
-
-mea::
-agam graeci
-
-At ornatus splendide sed.
-
-.Library dependencies
-[#dependencies%autowidth%footer,stripes=hover]
-|===
-|Library |Version
-
-|eslint
-|^1.7.3
-
-|eslint-config-gulp
-|^2.0.0
-
-|expect
-|^1.20.2
-
-|istanbul
-|^0.4.3
-
-|istanbul-coveralls
-|^1.0.3
-
-|jscs
-|^2.3.5
-
-h|Total
-|6
-|===
-
-Cum dicat putant ne.
-Est in reque homero principes, meis deleniti mediocrem ad has.
-Altera atomorum his ex, has cu elitr melius propriae.
-Eos suscipit scaevola at.
-
-[TIP]
-This oughta do it!
-
-Cum dicat putant ne.
-Est in reque homero principes, meis deleniti mediocrem ad has.
-Altera atomorum his ex, has cu elitr melius propriae.
-Eos suscipit scaevola at.
-
-[NOTE]
-====
-You've been down _this_ road before.
-====
-
-Cum dicat putant ne.
-Est in reque homero principes, meis deleniti mediocrem ad has.
-Altera atomorum his ex, has cu elitr melius propriae.
-Eos suscipit scaevola at.
-
-[WARNING]
-====
-Watch out!
-====
-
-[CAUTION]
-====
-[#inline]#I wouldn't try that if I were you.#
-====
-
-[IMPORTANT]
-====
-Don't forget this step!
-====
-
-.Key Points to Remember
-[TIP]
-====
-If you installed the CLI and the default site generator globally, you can upgrade both of them with the same command.
-
- $ npm i -g @antora/cli @antora/site-generator
-
-Or you can install the metapackage to upgrade both packages at once.
-
- $ npm i -g antora
-====
-
-Nominavi luptatum eos, an vim hinc philosophia intellegebat.
-Eu mea inani iriure.
-
-[discrete]
-== Voluptua singulis
-
-Cum dicat putant ne.
-Est in reque homero principes, meis deleniti mediocrem ad has.
-Ex nam suas nemore dignissim, vel apeirian democritum et.
-
-.Antora is a multi-repo documentation site generator
-image::multirepo-ssg.svg[Multirepo SSG,300,opts=interactive]
-
-Make the switch today!
-
-.Full Circle with Jake Blauvelt
-video::300817511[vimeo,640,360,align=left]
 
 [#english+中文]
 == English + 中文
