@@ -39,6 +39,7 @@ Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
 [discrete]
 == Level 1 Section Title (Discrete)
 
+////
 .*Click for more about section titles...*
 [%collapsible]
 ====
@@ -56,6 +57,7 @@ The depth of the page TOC can be configured using the `page-toclevels` attribute
 
 A `discrete` heading is declared and styled in a manner similar to that of a section title, but it’s not part of the section hierarchy and not included in the table of contents,etc.
 ====
+////
 
 == Text formatting
 
@@ -66,9 +68,10 @@ E = mc^2^.
 Eum an doctus <<liber-recusabo,maiestatis efficiantur>>.
 Eu mea inani iriure.footnote:[Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae! Lorem ipsum dolor sit amet, consectetur adipiscing elit.]
 
-=== Constrained bold, italic, and monospace
-
-It has *strong* significance to me.
+[cols="1,2a",frame=none,grid=none]
+|===
+|Constrained bold, italic, and monospace
+|It has *strong* significance to me.
 
 I _cannot_ stress this enough.
 
@@ -78,9 +81,8 @@ That *_really_* has to go.
 
 Can't pick one? Let's use them `*_all_*`.
 
-=== Unconstrained bold, italic, and monospace
-
-**C**reate, **R**ead, **U**pdate, and **D**elete (CRUD)
+|Unconstrained bold, italic, and monospace
+|**C**reate, **R**ead, **U**pdate, and **D**elete (CRUD)
 
 That's fan__freakin__tastic!
 
@@ -88,9 +90,8 @@ Don't pass generic ``Object``s to methods that accept ``String``s!
 
 It was Beatle**__mania__**!
 
-=== Highlight, underline, strikethrough, and custom role
-
-Mark my words, #automation is essential#.
+|Highlight, underline, strikethrough, and custom role
+|Mark my words, #automation is essential#.
 
 ##Mark##up refers to text that contains formatting ##mark##s.
 
@@ -100,15 +101,13 @@ We need [.line-through]#ten# twenty VMs.
 
 A [.myrole]#custom role# must be fulfilled by the theme.
 
-=== Superscript and subscript
-
-^super^script
+|Superscript and subscript
+|^super^script
 
 ~sub~script
 
-=== Smart quotes and apostrophes
-
-"`double curved quotes`"
+|Smart quotes and apostrophes
+|"`double curved quotes`"
 
 '`single curved quotes`'
 
@@ -119,14 +118,15 @@ A ``std::vector```'s size is the number of items it contains.
 All of the werewolves`' desks were a mess.
 
 Olaf had been with the company since the `'00s.
+|===
 
-== Links
+=== Links
 
-=== Internal Link
+==== Internal Link
 
 Instead of having to enclose text within <<liber-recusabo,tags or special characters>>, you can focus on expressing your ideas and content in a clear and concise manner.
 
-=== External Link
+==== External Link
 
 By separating paragraphs with blank lines, you visually https://www.datastax.com[distinguish each paragraph,role=external,window=_blank]
 
@@ -134,6 +134,7 @@ By separating paragraphs with blank lines, you visually https://www.datastax.com
 
 By separating paragraphs with blank lines, you visually https://www.datastax.com[distinguish each paragraph]
 
+////
 .*Click for more about links...*
 [%collapsible]
 ====
@@ -155,6 +156,7 @@ https://www.datastax.com[distinguish each paragraph]
 
 The UI should disregard these attributes and apply the same styling and behavior to each link.
 ====
+////
 
 == Lists
 
@@ -194,41 +196,41 @@ The UI should disregard these attributes and apply the same styling and behavior
 
 ==== Ordered list numeration styles
 
-[cols="6*"]
+[cols="6*a"]
 |===
-| `decimal`
-| `loweralpha`
-| `upperalpha`
-| `lowerroman`
-| `upperroman`
-| `lowergreek`
+|`decimal`
+|`loweralpha`
+|`upperalpha`
+|`lowerroman`
+|`upperroman`
+|`lowergreek`
 
-a| [decimal]
+a|[decimal]
 . Protons
 . Electrons
 . Neutrons
 
-a| [loweralpha]
+a|[loweralpha]
 . Protons
 . Electrons
 . Neutrons
 
-a| [upperalpha]
+a|[upperalpha]
 . Protons
 . Electrons
 . Neutrons
 
-a| [lowerroman]
+a|[lowerroman]
 . Protons
 . Electrons
 . Neutrons
 
-a| [upperroman]
+a|[upperroman]
 . Protons
 . Electrons
 . Neutrons
 
-a| [lowergreek]
+a|[lowergreek]
 . Protons
 . Electrons
 . Neutrons
@@ -380,6 +382,151 @@ NOTE: The header is optional.
 
 |Column 1, Row 1
 |Column 2, Row 1
+|===
+
+== Tables
+
+=== Basic tables
+
+[cols="3*"]
+|===
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.With header row
+[%autowidth.stretch]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+=== Complex tables
+
+.Table w/ header row, variable column widths, and AsciiDoc content
+[cols="1,1,2a"]
+|===
+|Name |Category |Description
+
+|Firefox
+|Browser
+|Mozilla Firefox is an open source web browser.
+
+It's designed for:
+
+* standards compliance
+* performance
+* portability
+
+https://getfirefox.com[Get Firefox]!
+
+|Arquillian
+|Testing
+|An innovative and highly extensible testing platform.
+Empowers developers to easily create real, automated tests.
+
+Each Arquillian test is associated with at least one deployment.
+
+[NOTE]
+====
+The deployment is configured using a static method annotated with @Deployment that returns a ShrinkWrap archive. Here’s an example:
+
+[source,java]
+----
+@Deployment
+public static JavaArchive createDeployment() {
+    return ShrinkWrap.create(JavaArchive.class)
+        .addClass(Greeter.class)
+        .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+}
+----
+====
+|===
+
+.Table w/ header row, autowidth, and Asciidoc content
+[%autowidth]
+|===
+|Input |Output |Example
+
+m|"foo\nbar"
+l|foo
+bar
+a|
+[source,ruby]
+----
+puts "foo\nbar"
+----
+|===
+
+.Table w/ formatted, aligned, and merged cells
+[cols="e,m,^,>s"]
+|===
+|1 >s|2 |3 |4
+^|5 2.2+^.^|6 .3+<.>m|7
+^|8
+|9 2+>|10
+|===
+
+.Table w/ frame=none, grid=none
+[frame=none, grid=none]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Nested table
+[cols="1,2a"]
+|===
+| Col 1 | Col 2
+
+| Cell 1.1
+| Cell 1.2
+
+| Cell 2.1
+| Cell 2.2
+
+[cols="2,1"]
+!===
+! Col1 ! Col2
+
+! C11
+! C12
+
+!===
+|===
+
+.Striped table
+[cols=2*,stripes=even]
+|===
+|A1
+|B1
+|A2
+|B2
+|A3
+|B3
 |===
 
 == Code block
@@ -678,18 +825,7 @@ Dennis: Oh, what a giveaway! Did you hear that? Did you hear that, eh? That's wh
 ____
 
 
-[%autowidth.stretch]
-|===
-|Column 1, header row |Column 2, header row |Column 3, header row
 
-|Cell in column 1, row 2
-|Cell in column 2, row 2
-|Cell in column 3, row 2
-
-|Cell in column 1, row 3
-|Cell in column 2, row 3
-|Cell in column 3, row 3
-|===
 
 
 
@@ -727,19 +863,7 @@ src/
 
 Eu mea munere vituperata constituam.
 
-[%autowidth]
-|===
-|Input | Output | Example
 
-m|"foo\nbar"
-l|foo
-bar
-a|
-[,ruby]
-----
-puts "foo\nbar"
-----
-|===
 
 Here we just have some plain text.
 
@@ -771,7 +895,7 @@ At ornatus splendide sed, phaedrum omittantur usu an, vix an noster voluptatibus
 
 ---
 
-.Ordered list with customized numeration
+.Ordered list w/ customized numeration
 [upperalpha]
 . potenti donec cubilia tincidunt
 . etiam pulvinar inceptos velit quisque aptent himenaeos
@@ -780,7 +904,7 @@ At ornatus splendide sed, phaedrum omittantur usu an, vix an noster voluptatibus
 Natum facilisis theophrastus an duo.
 No sea, at invenire voluptaria mnesarchum has.
 
-.Unordered list with customized marker
+.Unordered list w/ customized marker
 [square]
 * ultricies sociosqu tristique integer
 * lacus volutpat semper porttitor aliquet ornare primis nulla enim
