@@ -1,11 +1,12 @@
 {
-  "name": "@antora/ui-default",
-  "description": "An archetype project that produces a UI for creating documentation sites with Antora",
-  "homepage": "https://gitlab.com/antora/antora-ui-default",
+  "name": "datastax-docs-ui",
+  "description": "The UI and theme for DataStax Docs.",
+  "homepage": "https://github.com/riptano/docs-ui",
   "license": "MPL-2.0",
+  "private": true,
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/antora/antora-ui-default.git"
+    "url": "https://github.com/riptano/docs-ui.git"
   },
   "engines": {
     "node": ">= 8.0.0"
