@@ -956,6 +956,19 @@ image::multirepo-ssg.svg[Multirepo SSG,300,float=left,role=float-gap]
 In AsciiDoc, creating paragraphs is a straightforward process that does not require any special markup. A paragraph can be defined as one or more lines of consecutive text that are logically grouped together. To differentiate between paragraphs, you simply need to insert at least one blank line between them.
 --
 
+== Video
+
+.YouTube (unconstrained; default alignment)
+video::n_LcVqqHSY8[youtube]
+
+.Vimeo (640x360; default alignment)
+video::300817511[vimeo,640,360]
+
+== Audio
+
+.Take a zen moment
+audio::ocean-waves.wav[]
+
 == Collapsible block
 
 .Basic collapsible block
@@ -966,7 +979,7 @@ Details.
 Loads of details.
 ====
 
-.Collapsible code block
+.Collapsible `code block`
 [%collapsible]
 ====
 [source,asciidoc]
@@ -991,49 +1004,32 @@ Voila!
 ----
 ====
 
-== Audio and video
-
-=== Audio
-
-.Take a zen moment
-audio::ocean-waves.wav[]
-
-=== Video
-
-.YouTube (unconstrained; default alignment)
-video::n_LcVqqHSY8[youtube]
-
-.Vimeo (640x360; default alignment)
-video::300817511[vimeo,640,360]
-
-== Other blocks
-
-=== Listing and literal blocks
-
-.Listing block
-----
-This is a _delimited listing block_.
-
-The content inside is displayed as <pre> text.
-----
-
-.Literal block
-....
-error: 1954 Forbidden search
-absolutely fatal: operation lost in the dodecahedron of doom
-Would you like to try again? y/n
-....
-
-=== Sidebar block
+== Sidebar
 
 .Sidebar title
 ****
 Sidebars are used to visually separate auxiliary bits of content that supplement the main text.
 ****
 
+== Horizontal rule
+
+A line with three single quotation marks (i.e., `'''`) is a special macro that inserts a thematic break (aka horizontal rule):
+
+'''
+
+There are rare circumstances where a horizontal rule is required.
+
+== More blocks
+
+As you might have seen in the examples further up on this page -- any block can have a title.
+A block title is defined using a line of text above the block that starts with a dot.
+That dot cannot be followed by a space.
+For block images, the title is displayed below the block.
+For all other blocks, the title is typically displayed above it.
+
 === Example block
 
-.Example title
+.Optional title
 ====
 Here's a sample AsciiDoc document:
 
@@ -1049,7 +1045,25 @@ This guide provides...
 The document header is useful, but not required.
 ====
 
-=== Blockquotes and verses
+=== Listing block
+
+.Optional title
+----
+This is a _delimited listing block_.
+
+The content inside is displayed as <pre> text.
+----
+
+=== Literal block
+
+.Optional title
+....
+error: 1954 Forbidden search
+absolutely fatal: operation lost in the dodecahedron of doom
+Would you like to try again? y/n
+....
+
+=== Blockquote
 
 [,'Famous Person. Cum dicat putant ne.','Cum dicat putant ne. https://example.com[Famous Person Website]']
 ____
@@ -1061,21 +1075,13 @@ Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
 Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
 ____
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+=== Verse
 
 [verse]
 ____
 The fog comes
 on little cat feet.
 ____
-
-== Horizontal rule
-
-A line with three single quotation marks (i.e., `'''`) is a special macro that inserts a thematic break (aka horizontal rule):
-
-'''
-
-There are rare circumstances where a horizontal rule is required.
 
 == Equations and formulas (STEM)
 
@@ -1108,10 +1114,11 @@ sqrt(4) = 2
 sqrt(4) = 2
 ++++
 
-== Other
+== Miscellaneous
+
+=== Textual symbol replacements
 
 [%autowidth,cols="~,^~,^~,^~,~"]
-.Textual symbol replacements
 |===
 |Name |Syntax |Unicode Replacement |Rendered |Notes
 
@@ -1180,7 +1187,7 @@ Otherwise, the em dash is followed by a zero-width space (\&#8203;) to provide a
 |===
 
 [#english+中文]
-== English + 中文
+=== English + 中文
 
 爱屋及乌 -- Love me, love my dog.
 
