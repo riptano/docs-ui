@@ -4,12 +4,13 @@
   /* box-shadow: 0 1px 0 var(--toolbar-border-color); */
   display: flex;
   font-size: calc(14.5 / var(--rem-base) * 1rem);
-  height: var(--toolbar-height);
+  height: calc(22 / var(--rem-base) * 1rem);
   justify-content: flex-start;
   position: sticky;
   top: var(--navbar-height);
   z-index: var(--z-index-toolbar);
   padding-left: calc(24 / var(--rem-base) * 1rem);
+  margin-top: calc(24 / var(--rem-base) * 1rem);
 }
 
 .toolbar ul li:last-of-type {
@@ -17,7 +18,7 @@
 }
 
 .toolbar a {
-  color: var(--link-font-color);
+  color: inherit;
 }
 
 .nav-toggle::after {
