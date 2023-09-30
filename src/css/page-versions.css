@@ -1,12 +1,15 @@
 .page-versions {
-  margin: 0 0.2rem 0 auto;
+  display: flex;
+  align-self: baseline;
+  align-items: center;
+  margin: 0;
   position: relative;
   line-height: 1;
 }
 
 @media screen and (min-width: 1024px) {
   .page-versions {
-    margin-right: 0.7rem;
+    margin-right: 0;
   }
 }
 
@@ -33,7 +36,7 @@
   padding: 2.75rem 3rem 1rem 1rem;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   white-space: nowrap;
   border-radius: 6px;
   border: 1px solid var(--ds-divider);

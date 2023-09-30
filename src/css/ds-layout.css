@@ -15,6 +15,7 @@
 
 /* Hide sidebar, a.anchor */
 html[data-layout="landing"] .toc.sidebar,
+html[data-layout="landing"] .toc.embedded,
 html[data-layout="landing"] a.anchor {
   display: none;
 }
@@ -34,8 +35,12 @@ html[data-layout="landing"] .doc .ulist li + li {
   margin-top: var(--ds-space-2);
 }
 
-.ds-row > .sectionbody,
-.ds-row > .content {
+html[data-layout="landing"] .ds-card,
+html[data-layout="landing"] .ds-card .content {
+  margin-top: 0;
+}
+
+.ds-row > * {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -47,12 +52,24 @@ html[data-layout="landing"] .doc .ulist li + li {
   flex: 1;
 }
 
+/* persist row direction max-width: 1200px */
+.ds-row.persistent > * {
+  flex-direction: row;
+}
+
 .ds-grid .sectionbody > *,
 .ds-grid > .content {
   display: grid;
 }
 
+.ds-column > p {
+  display: flex;
+  flex-direction: column;
+  justify-items: space-around;
+}
+
 @media screen and (min-width: 1200px) {
+  .ds-row > p,
   .ds-row .sectionbody {
     flex-direction: row;
   }

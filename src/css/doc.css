@@ -41,6 +41,9 @@
 
 .doc > h1.page:first-child {
   margin: calc(24 / var(--rem-base) * 1rem) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-1);
 }
 
 .doc h1 {

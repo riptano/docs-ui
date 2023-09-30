@@ -1,13 +1,24 @@
 /* card */
 .ds-card .content,
 .doc .exampleblock.ds-card > .content {
+  display: grid;
+  gap: var(--ds-space-2);
   padding: var(--ds-space-3);
   border-radius: calc(6 / var(--rem-base) * 1rem);
   border: 1px solid var(--ds-divider);
 }
 
-.doc .paragraph.landing-card-icon,
-.doc .exampleblock.ds-card {
+.ds-card .content {
+  margin-top: var(--ds-space-3);
+}
+
+.ds-card .content > *,
+.ds-card.exampleblock .content > *,
+.ds-card.openblock .content > * {
+  margin: 0;
+}
+
+.doc .paragraph.landing-card-icon {
   margin: 0;
 }
 
