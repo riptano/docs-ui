@@ -18,6 +18,10 @@
   margin: 0;
 }
 
+.doc .ds-card.exampleblock > .content::after {
+  display: none;
+}
+
 .doc .paragraph.landing-card-icon {
   margin: 0;
 }

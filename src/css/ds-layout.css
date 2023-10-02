@@ -40,6 +40,10 @@ html[data-layout="landing"] .ds-card .content {
   margin-top: 0;
 }
 
+html[data-layout="landing"] .text-h1 h2 {
+  @include text-h1;
+}
+
 .ds-row > * {
   display: flex;
   flex-direction: column;
@@ -87,6 +91,7 @@ html[data-layout="landing"] .ds-card .content {
 /* Landing card icon */
 .material-icons.landing-card-icon {
   max-width: fit-content;
+  color: var(--ds-neutral-900);
   font-size: calc(20 / var(--rem-base) * 1rem);
   padding: calc(10 / var(--rem-base) * 1rem);
   border: 1px solid var(--ds-neutral-outlined-border);
