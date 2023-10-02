@@ -239,6 +239,7 @@
 .doc .paragraph,
 .doc .dlist,
 .doc .hdlist,
+.doc .qlist,
 .doc .olist,
 .doc .ulist,
 .doc .exampleblock,
@@ -254,6 +255,11 @@
 .doc details,
 .doc hr {
   margin: calc(24 / var(--rem-base) * 1rem) 0 0;
+}
+
+.doc .dlist .paragraph,
+.doc .hdlist .paragraph{
+  margin: 0;
 }
 
 .doc table.tableblock {
@@ -610,6 +616,10 @@
   padding-left: var(--ds-space-2h);
 }
 
+.doc ul.checklist p{
+  padding: var(--ds-space-h) 0;
+}
+
 .doc ul.checklist p > i.fa-check-square-o:first-child,
 .doc ul.checklist p > i.fa-square-o:first-child {
   display: inline-flex;
@@ -635,12 +645,12 @@
 .doc .ulist .dlist,
 .doc .ulist .olist,
 .doc .ulist .ulist {
-  margin-top: var(--ds-space-1);
+  margin-top: 0;
 }
 
 .doc .olist li + li,
 .doc .ulist li + li {
-  margin-top: var(--ds-space-2);
+  margin-top: 0;
 }
 
 .doc .ulist .listingblock,
@@ -675,7 +685,7 @@
 .doc .olist .title {
   font-style: var(--caption-font-style);
   font-weight: var(--caption-font-weight);
-  margin-bottom: var(--ds-space-h);
+  margin-bottom: var(--ds-space-3);
 }
 
 .doc .imageblock .title {
@@ -1042,6 +1052,18 @@
 .doc .nobreak {
   hyphens: none;
   word-wrap: normal;
+}
+
+.doc .checklist input[type="checkbox" i] {
+  width: calc(16 / var(--rem-base) * 1rem);
+  height: calc(16 / var(--rem-base) * 1rem);
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.doc .checklist input[type="checkbox" i]:checked {
 }
 
 #footnotes {
