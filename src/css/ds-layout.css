@@ -35,11 +35,6 @@ html[data-layout="landing"] .doc .ulist li + li {
   margin-top: var(--ds-space-2);
 }
 
-html[data-layout="landing"] .ds-card,
-html[data-layout="landing"] .ds-card .content {
-  margin-top: 0;
-}
-
 html[data-layout="landing"] .text-h1 h2 {
   @include text-h1;
 }
@@ -81,7 +76,7 @@ html[data-layout="landing"] .text-h1 h2 {
 
 .doc .header-noline h2:not(.discrete) {
   border-bottom: none;
-  padding-bottom: var(--ds-space-3);
+  padding: 0;
 }
 
 .ds-row.explore .sectionbody .sect2 > *:not(.landing-card-icon) {
@@ -97,7 +92,6 @@ html[data-layout="landing"] .text-h1 h2 {
   border: 1px solid var(--ds-neutral-outlined-border);
   border-radius: calc(6 / var(--rem-base) * 1rem);
   grid-row-start: 1;
-  margin-top: 0;
 }
 
 /* Links */

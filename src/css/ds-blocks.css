@@ -1,0 +1,60 @@
+/* Source block */
+
+/*
+ * .show-lang : add tab with lang name
+ *
+ *  Usage: [source.show-lang,python]
+ */
+
+.listingblock.show-lang .content {
+  display: grid;
+}
+
+.listingblock.show-lang .content .source-toolbox {
+  position: relative;
+  padding: var(--ds-space-1) var(--ds-space-2);
+  visibility: visible;
+  justify-content: space-between;
+  background: var(--ds-neutral-100);
+  grid-row-start: 1;
+  border-top-left-radius: calc(6 / var(--rem-base) * 1rem);
+  border-top-right-radius: calc(6 / var(--rem-base) * 1rem);
+  top: 0;
+  left: 0;
+}
+
+.listingblock.show-lang .content .source-toolbox .source-lang::after {
+  display: none;
+}
+
+.listingblock.show-lang .content .source-toolbox .copy-button {
+  justify-content: flex-end;
+  flex-direction: column-reverse;
+}
+
+.source-toolbox .copy-button > .material-icons {
+  font-size: calc(16 / var(--rem-base) * 1rem);
+}
+
+.listingblock.show-lang .content .source-toolbox .source-lang {
+  color: var(--ds-text-primary);
+  text-transform: capitalize;
+  font-family: var(--body-font-family);
+  line-height: 1.5;
+  letter-spacing: 0.65px;
+  font-weight: var(--body-font-weight-bold);
+}
+
+.show-lang .hljs {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-color: var(--ds-neutral-100);
+}
+
+html[data-theme="dark"] .listingblock.show-lang .content .source-toolbox {
+  background: var(--ds-neutral-700);
+}
+
+html[data-theme="dark"] .show-lang .hljs {
+  border-top-color: var(--ds-neutral-700);
+}
