@@ -106,6 +106,13 @@ html.is-clipped--nav {
   padding: var(--ds-space-1) var(--site-padding);
 }
 
+@media screen and (max-width: 1023.5px) {
+  .nav-link,
+  .nav-text {
+    padding: var(--ds-space-1) var(--site-padding--mobile);
+  }
+}
+
 .nav-link {
   transition: var(--ds-transition);
 
