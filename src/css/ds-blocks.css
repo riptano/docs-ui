@@ -1,20 +1,20 @@
 /* Source block */
 
 /*
- * .show-lang : add tab with lang name
+ *  Usage: [source,python]
  *
- *  Usage: [source.show-lang,python]
+ *  Default style: [source.default,python]
  */
 
-.listingblock.show-lang .content {
+.listingblock:not(.default) .content {
   display: grid;
 }
 
-.listingblock.show-lang .content .source-toolbox {
+.listingblock:not(.default) .content .source-toolbox {
   position: relative;
   padding: var(--ds-space-1) var(--ds-space-2);
   visibility: visible;
-  justify-content: space-between;
+  justify-content: flex-end;
   background: var(--ds-neutral-100);
   grid-row-start: 1;
   border-top-left-radius: calc(6 / var(--rem-base) * 1rem);
@@ -23,11 +23,11 @@
   left: 0;
 }
 
-.listingblock.show-lang .content .source-toolbox .source-lang::after {
+.listingblock:not(.default) .content .source-toolbox .source-lang::after {
   display: none;
 }
 
-.listingblock.show-lang .content .source-toolbox .copy-button {
+.listingblock:not(.default) .content .source-toolbox .copy-button {
   justify-content: flex-end;
   flex-direction: column-reverse;
 }
@@ -36,25 +36,42 @@
   font-size: calc(16 / var(--rem-base) * 1rem);
 }
 
-.listingblock.show-lang .content .source-toolbox .source-lang {
+.listingblock:not(.default) .content .source-toolbox .source-lang {
   color: var(--ds-text-primary);
   text-transform: capitalize;
   font-family: var(--body-font-family);
   line-height: 1.5;
   letter-spacing: 0.65px;
   font-weight: var(--body-font-weight-bold);
+  flex: 1;
 }
 
-.show-lang .hljs {
+.listingblock:not(.default) .source-toolbox .copy-toast:not(:only-child)::after {
+  transform: rotate(90deg) translateX(135%) translateY(-45%);
+}
+
+.listingblock:not(.default) .source-toolbox .copy-button:not(:only-child) .copy-toast {
+  margin: 0 0 var(--ds-space-2h) 0;
+}
+
+.listingblock:not(.default) .source-toolbox .copy-button:only-child .copy-toast {
+  margin: 0 0 calc(14 / var(--rem-base) * 1rem) 0;
+}
+
+.listingblock:not(.default) .hljs {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-top-color: var(--ds-neutral-100);
 }
 
-html[data-theme="dark"] .listingblock.show-lang .content .source-toolbox {
+.listingblock .source-toolbox {
+  right: var(--ds-space-2);
+}
+
+html[data-theme="dark"] .listingblock:not(.default) .content .source-toolbox {
   background: var(--ds-neutral-700);
 }
 
-html[data-theme="dark"] .show-lang .hljs {
+html[data-theme="dark"] .listingblock:not(.default) .hljs {
   border-top-color: var(--ds-neutral-700);
 }

@@ -1,14 +1,13 @@
-= Quickstart tutorial
+= Quickstart
 :navtitle: Quickstart
 :page-layout: tutorial
-:page-colab-link: https://google.com
-:page-time-commitment: 15min
+:page-colab-link: https://colab.research.google.com/github/CassioML/cassio-website/blob/main/docs/frameworks/langchain/.colab/colab_qa-basic.ipynb
+:page-time-commitment: 15 min
 :page-skill-level: Beginner
 :astra-link: https://astra.datastax.com
 :astra-nodejs-link: https://docs.datastax.com/en/astra-serverless/docs/develop/sdks/rest-nodejs-client.html
 :astra-json-link: https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-json.html
 :keywords: Machine Learning Frameworks, Embeding Services, Astra, SDK
-
 
 == Objective
 
@@ -25,6 +24,10 @@ To get started, ensure you have an {astra-link}[active Astra account] with the r
 [source,shell]
 ----
 pip install astra-vector
+----
+
+[source,shell]
+----
 python
 ----
 
@@ -35,7 +38,7 @@ Additional clients, such as {astra-nodejs-link}[Node.js] and {astra-json-link}[J
 
 === [.step]#2# Connect to Astra and create a database.
 
-[source.show-lang,python]
+[source,python]
 ----
 import astra_vector
 
@@ -57,9 +60,9 @@ db.create_table(table_name)
 
 == Core steps
 
-=== [.step]#1# Prepare and ingest data.
+=== [.step]#3# Prepare and ingest data.
 
-[source.show-lang,python]
+[source,python]
 ----
 # Load sample vector data
 sample_vectors = [
@@ -71,18 +74,18 @@ for data in sample_vectors:
     db.insert_record(table_name, data)
 ----
 
-=== [.step]#2# Perform a similarity search.
+=== [.step]#4# Perform a similarity search.
 
-[source.show-lang,python]
+[source,python]
 ----
 # Run a similarity search
 query_vector = [0.2, 0.3, 0.4]
 results = db.similarity_search(table_name, query_vector, k=5)
 ----
 
-=== [.step]#3# Show the results.
+=== [.step]#5# Show the results.
 
-[source.show-lang,python]
+[source,python]
 ----
 # Similarity search results
 for result in results:
@@ -91,9 +94,9 @@ for result in results:
 
 == Cleanup
 
-=== [.step]#1# Delete all resources.
+=== [.step]#6# Delete all resources.
 
-[source.show-lang,python]
+[source,python]
 ----
 # Delete the table
 db.delete_table(table_name)

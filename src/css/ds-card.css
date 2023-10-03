@@ -23,7 +23,8 @@
   margin-top: 0;
 }
 
-.ds-card .paragraph.landing-card-icon {
+.ds-card .paragraph.landing-card-icon,
+.ds-card > .title {
   margin-top: 0;
   margin-bottom: var(--ds-space-3);
 }
