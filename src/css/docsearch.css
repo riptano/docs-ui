@@ -48,6 +48,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 }
 
 .DocSearch .DocSearch-Button {
+  transition: var(--ds-transition);
   height: var(--ds-space-5);
   border-radius: 6px;
   border: 1px solid var(--ds-neutral-outlined-border);
