@@ -77,7 +77,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
   --docsearch-icon-stroke-width: 1.4;
   --docsearch-highlight-color: var(--ds-text-primary);
   --docsearch-muted-color: var(--ds-text-placeholder);
-  --docsearch-container-background: rgba(101, 108, 133, 0.8);
+  --docsearch-container-background: rgba(0, 0, 0, 0.5);
   --docsearch-logo-color: var(--ds-text-primary);
 
   /* modal */
@@ -113,7 +113,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 
 html[data-theme='dark'] .DocSearch {
   --docsearch-text-color: var(--ds-text-primary);
-  --docsearch-container-background: rgba(9, 10, 17, 0.8);
+  --docsearch-container-background: rgba(20, 20, 20, 0.7);
   --docsearch-modal-background: var(--ds-background-body);
   --docsearch-modal-shadow: none;
   --docsearch-searchbox-background: none;
