@@ -37,7 +37,3 @@ a + .breadcrumbs {
 .breadcrumbs li:last-of-type::after {
   content: none;
 }
-
-.breadcrumbs li:not(:has(a)) {
-  display: none;
-}
