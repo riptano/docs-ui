@@ -43,11 +43,15 @@
         svg.appendChild(use)
         copy.appendChild(svg)
       } else {
-        var img = document.createElement('img')
-        img.src = uiRootPath + '/img/octicons-16.svg#view-clippy'
-        img.alt = 'copy icon'
-        img.className = 'copy-icon'
-        copy.appendChild(img)
+        //var img = document.createElement('img')
+        //img.src = uiRootPath + '/img/octicons-16.svg#view-clippy'
+        //img.alt = 'copy icon'
+        //img.className = 'copy-icon'
+        //copy.appendChild(img)
+        var span = document.createElement('span')
+        span.className = 'material-icons'
+        span.innerText = 'content_paste'
+        copy.appendChild(span)
       }
       ;(toast = document.createElement('span')).className = 'copy-toast'
       toast.appendChild(document.createTextNode('Copied!'))

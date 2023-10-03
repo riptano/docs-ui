@@ -41,6 +41,9 @@
 
 .doc > h1.page:first-child {
   margin: calc(24 / var(--rem-base) * 1rem) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-1);
 }
 
 .doc h1 {
@@ -192,6 +195,7 @@
   font-size: calc(14 / var(--rem-base) * 1rem);
   line-height: 1.5;
   margin: 0;
+  overflow-x: scroll;
 }
 
 .doc blockquote {
@@ -789,7 +793,7 @@
   box-shadow: inset 0 0 1.75px var(--pre-border-color);
   display: block;
   overflow-x: auto;
-  padding: 0.875em;
+  padding: var(--ds-space-2);
 }
 
 .doc .listingblock > .content {

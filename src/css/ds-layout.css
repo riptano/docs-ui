@@ -15,6 +15,7 @@
 
 /* Hide sidebar, a.anchor */
 html[data-layout="landing"] .toc.sidebar,
+html[data-layout="landing"] .toc.embedded,
 html[data-layout="landing"] a.anchor {
   display: none;
 }
@@ -34,8 +35,11 @@ html[data-layout="landing"] .doc .ulist li + li {
   margin-top: var(--ds-space-2);
 }
 
-.ds-row > .sectionbody,
-.ds-row > .content {
+html[data-layout="landing"] .text-h1 h2 {
+  @include text-h1;
+}
+
+.ds-row > * {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -47,12 +51,24 @@ html[data-layout="landing"] .doc .ulist li + li {
   flex: 1;
 }
 
+/* persist row direction max-width: 1200px */
+.ds-row.persistent > * {
+  flex-direction: row;
+}
+
 .ds-grid .sectionbody > *,
 .ds-grid > .content {
   display: grid;
 }
 
+.ds-column > p {
+  display: flex;
+  flex-direction: column;
+  justify-items: space-around;
+}
+
 @media screen and (min-width: 1200px) {
+  .ds-row > p,
   .ds-row .sectionbody {
     flex-direction: row;
   }
@@ -60,7 +76,7 @@ html[data-layout="landing"] .doc .ulist li + li {
 
 .doc .header-noline h2:not(.discrete) {
   border-bottom: none;
-  padding-bottom: var(--ds-space-3);
+  padding: 0;
 }
 
 .ds-row.explore .sectionbody .sect2 > *:not(.landing-card-icon) {
@@ -70,12 +86,12 @@ html[data-layout="landing"] .doc .ulist li + li {
 /* Landing card icon */
 .material-icons.landing-card-icon {
   max-width: fit-content;
+  color: var(--ds-neutral-900);
   font-size: calc(20 / var(--rem-base) * 1rem);
   padding: calc(10 / var(--rem-base) * 1rem);
   border: 1px solid var(--ds-neutral-outlined-border);
   border-radius: calc(6 / var(--rem-base) * 1rem);
   grid-row-start: 1;
-  margin-top: 0;
 }
 
 /* Links */

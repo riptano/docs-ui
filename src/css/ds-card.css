@@ -1,14 +1,40 @@
 /* card */
 .ds-card .content,
 .doc .exampleblock.ds-card > .content {
+  display: grid;
   padding: var(--ds-space-3);
   border-radius: calc(6 / var(--rem-base) * 1rem);
   border: 1px solid var(--ds-divider);
 }
 
-.doc .paragraph.landing-card-icon,
-.doc .exampleblock.ds-card {
+.ds-card {
+  margin-top: var(--ds-space-3);
+}
+
+.doc .ds-card .paragraph {
+  margin-top: var(--ds-space-2);
+}
+
+.doc .ds-card .image:not(.left):not(.right) > img {
+  margin-top: var(--ds-space-1);
+}
+
+.ds-card > .content > :first-child {
+  margin-top: 0;
+}
+
+.ds-card .paragraph.landing-card-icon,
+.ds-card > .title {
+  margin-top: 0;
+  margin-bottom: var(--ds-space-3);
+}
+
+.ds-row .ds-card + .ds-card {
   margin: 0;
+}
+
+.doc .ds-card.exampleblock > .content::after {
+  display: none;
 }
 
 .ds-card .image.bottom img {
@@ -83,4 +109,18 @@
     margin: 0;
     margin-top: calc(27 / var(--rem-base) * -1 * 1rem);
   }
+}
+
+/* Card child list anchor with tutorial/guide icon */
+
+.ds-card .unstyled li:first-of-type p {
+  display: flex;
+}
+
+.ds-card .unstyled li:first-of-type .material-icons {
+  margin-right: var(--ds-space-h);
+}
+
+.ds-card .unstyled li:first-of-type p a {
+  flex: 1;
 }
