@@ -5,7 +5,7 @@ site:
   homeUrl: &home_url /xyz/5.2/index.html
   components:
   - name: abc
-    title: Project ABC
+    title: Component ABC
     url: '#'
     versions:
     - &latest_version_abc
@@ -18,7 +18,7 @@ site:
     latestVersion: *latest_version_abc
   - &component
     name: xyz
-    title: &component_title Project XYZ
+    title: &component_title Component XYZ
     url: /xyz/6.0/index.html
     versions:
     - &latest_version_xyz
@@ -38,7 +38,7 @@ site:
       displayVersion: '5.0'
     latestVersion: *latest_version_xyz
   - name: '123'
-    title: Project 123
+    title: Component 123
     url: '#'
     versions:
     - &latest_version_123
