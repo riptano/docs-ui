@@ -16,8 +16,13 @@
 /* Hide sidebar, a.anchor */
 html[data-layout="landing"] .toc.sidebar,
 html[data-layout="landing"] .toc.embedded,
+html[data-layout="landing"] .breadcrumbs,
 html[data-layout="landing"] a.anchor {
   display: none;
+}
+
+html[data-layout="landing"] .toolbar {
+  justify-content: flex-end;
 }
 
 html[data-layout="landing"] .doc > h1.page:first-child {
@@ -84,14 +89,19 @@ html[data-layout="landing"] .text-h1 h2 {
 }
 
 /* Landing card icon */
-.material-icons.landing-card-icon {
+.doc .landing-card-icon {
   max-width: fit-content;
+  height: fit-content;
   color: var(--ds-neutral-900);
   font-size: calc(20 / var(--rem-base) * 1rem);
   padding: calc(10 / var(--rem-base) * 1rem);
   border: 1px solid var(--ds-neutral-outlined-border);
   border-radius: calc(6 / var(--rem-base) * 1rem);
   grid-row-start: 1;
+}
+
+html[data-theme="dark"] .doc .landing-card-icon {
+  color: var(--heading-font-color);
 }
 
 /* Links */

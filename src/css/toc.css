@@ -118,7 +118,8 @@
   margin-bottom: 0;
 }
 
-.toc .toc-tags > div {
+.toc .toc-tags > div,
+.tags-container > * {
   display: flex;
   padding: 0;
   align-items: flex-start;
@@ -128,7 +129,8 @@
   flex-wrap: wrap;
 }
 
-.toc .toc-tags span {
+.toc .toc-tags span,
+.tags-container span {
   display: flex;
   padding: var(--ds-space-q) var(--ds-space-1h);
   font-size: calc(12 / var(--rem-base) * 1rem);

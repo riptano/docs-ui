@@ -9,10 +9,10 @@ Efficiently store and query vector embeddings for better similarity search. If y
 Dive straight into Astra Vector with this concise guide tailored for developers. These essential steps will walk you through the setup process, ensuring you're up and running quickly.
 
 [.ds-feature-buttons]
-xref:ROOT:templates/examples/quickstart.adoc[Quick Start,role="ds-button ds-button\--color-primary ds-button\--variant-solid"] https://astra.datastax.com[Create Astra Account^,role="ds-button ds-button\--color-neutral ds-button\--variant-outlined"]
+xref:ROOT:templates/examples/quickstart.adoc[Quick Start,role="ds-button ds-button\--color-primary ds-button\--variant-solid"] https://astra.datastax.com[Create Astra Account^,role="ds-button ds-button\--color-neutral ds-button\--variant-outlined external"]
 --
 
-[.ds-feature-code,js]
+[.ds-feature-code.default,js]
 ----
 import vector
 
