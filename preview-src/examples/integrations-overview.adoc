@@ -1,0 +1,148 @@
+= Integrations
+:page-layout: tutorial
+:hugging-icon: image:hugging-face.svg[,20]
+:langchain-icon: image:langchain.svg[,20]
+:openai-icon: image:openai.svg[,20]
+:jina-icon: image:jina.svg[,20]
+:deepset-icon: image:deepset.svg[,20]
+:cohere-icon: image:cohere.svg[,20]
+:llamaindex-icon: image:llamaindex.svg[,20]
+:cassio-icon: image:cassio.svg[,20]
+
+Dive into our curated marketplace of integrations
+that elevate the capabilities of Astra's vector databases.
+Whether you're looking to amplify your machine learning workflows,
+visualize embeddings, or integrate real-time data processing,
+we've got you covered.
+
+[.ds-row.header-noline]
+== Recommended
+
+[.ds-row]
+--
+
+[.ds-card.ds-grid]
+====
+[discrete]
+==== Hugging Face
+
+[.text-overflow]
+Hugging Face offers one of the largest collections of pre-trained natural language processing (NLP) models. Its user-friendly Transformers library provides deep learning models optimized for tasks like text classification,
+sentiment analysis, and more. Integrating with Astra empowers developers
+to harness these models directly alongside their database operations.
+
+[.tags-container]
+[.tag]#Natural Language# [.tag]#Machine Learning# 
+
+[.landing-card-icon]
+{hugging-icon}
+====
+
+[.ds-card.ds-grid]
+====
+[discrete]
+==== OpenAI
+
+[.text-overflow]
+OpenAI, renowned for its groundbreaking models like GPT series, brings generative AI
+capabilities to the forefront. Through its API and tools, developers can generate
+human-like text, analyze data, or even create chatbots. Integration with Astra ensures
+that data can be fetched, analyzed, and stored seamlessly when working with OpenAI tools.
+
+[.tags-container]
+[.tag]#Natural Language# [.tag]#Machine Learning# 
+
+[.landing-card-icon.bg-black]
+{openai-icon}
+====
+
+--
+
+[.ds-row]
+--
+
+[.ds-card.ds-grid]
+====
+[discrete]
+==== LangChain
+
+[.text-overflow]
+LangChain provides an enriched environment for developers looking to infuse advanced
+language understanding into their applications. As a potent machine learning framework,
+it offers sophisticated models and tools tailored for natural language processing tasks.
+When integrated with Astra's vector databases, LangChain not only generates high-quality
+embeddings but also ensures real-time syncing of data, giving your applications
+an edge in language-based operations.
+
+[.tags-container]
+[.tag]#Natural Language# [.tag]#Machine Learning# 
+
+[.landing-card-icon]
+{langchain-icon}
+====
+
+[.ds-card.ds-grid]
+====
+[discrete]
+==== Jina
+
+[.text-overflow]
+Jina offers a neural search framework that aids in building search systems with deep learning.
+Whether it's text, images, or videos, Jina can index and retrieve data with high precision.
+Integration with Astra enables an optimized storage solution that complements Jina's search capabilities.
+
+[.tags-container]
+[.tag]#Natural Language# [.tag]#Machine Learning# 
+
+[.landing-card-icon]
+{jina-icon}
+====
+
+--
+
+
+== All Integrations
+
+[.ds-card]
+--
+[unstyled]
+* Deepset
++
+Deepset is known for its tools that specialize in extracting insights from text data. With capabilities like question-answering, document search, and more, Deepset stands out for textual data analysis. When integrated with Astra, it offers a robust solution for businesses that rely heavily on textual analytics.
+
+[.landing-card-icon.full]
+{deepset-icon}
+--
+
+[.ds-card]
+--
+[unstyled.guide]
+* Cohere
++
+Cohere provides advanced NLP models designed for a variety of tasks, ranging from text generation to understanding. Their models offer a balance between performance and efficiency. With Astra's integration, developers can effortlessly combine Cohere's capabilities with a powerful vector database solution.
+
+[.landing-card-icon]
+{cohere-icon}
+--
+
+[.ds-card]
+--
+[unstyled]
+* Llama Index
++
+Simplify data indexing with LlamaIndex. Integrate with Astra's vector capabilities to boost data retrieval speeds and accuracy.
+
+[.landing-card-icon.bg-black]
+{llamaindex-icon}
+--
+
+[.ds-card]
+--
+[unstyled]
+* CassIO
++
+A specialized library designed to abstract the intricacies of accessing Cassandra databases, perfect for AI and ML applications. Its integration with Astra enhances real-time data interactions.
+
+[.landing-card-icon]
+{cassio-icon}
+--

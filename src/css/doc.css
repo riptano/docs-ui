@@ -166,9 +166,16 @@
 .doc a.external::after {
   font-family: "Material Icons Outlined", sans-serif;
   content: '\e89e';
-  font-size: calc(20 / var(--rem-base) * 1rem);
+  font-size: calc(16 / var(--rem-base) * 1rem);
   vertical-align: bottom;
-  margin-left: 2px;
+  margin-left: var(--ds-space-h);
+  font-weight: normal;
+}
+
+.doc a.ds-button.external::after {
+  margin-left: calc(6 / var(--rem-base) * 1rem);
+  margin-bottom: var(--ds-space-q);
+  font-size: calc(20 / var(--rem-base) * 1rem);
 }
 
 .doc i.fa {
@@ -181,6 +188,7 @@
 .doc .colist > table code {
   color: var(--code-font-color);
   background: var(--code-background);
+  border: 1px solid var(--ds-neutral-200);
   border-radius: 0.25em;
   font-size: 0.95em;
   padding: 0.125em 0.25em;
@@ -195,7 +203,7 @@
   font-size: calc(14 / var(--rem-base) * 1rem);
   line-height: 1.5;
   margin: 0;
-  overflow-x: scroll;
+  white-space: pre-wrap;
 }
 
 .doc blockquote {
