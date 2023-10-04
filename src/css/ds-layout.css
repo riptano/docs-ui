@@ -154,7 +154,7 @@ html[data-layout="landing"] .doc .ulist li + li {
   margin-top: var(--ds-space-2);
 }
 
-.doc .admonitionblock td.content .ulist p{
+.doc .admonitionblock td.content .ulist p {
   margin-top: 0;
 }
 

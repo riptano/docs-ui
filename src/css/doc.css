@@ -259,7 +259,7 @@
 
 .doc .ulist .paragraph,
 .doc .dlist .paragraph,
-.doc .hdlist .paragraph{
+.doc .hdlist .paragraph {
   margin: 0;
 }
 
@@ -617,7 +617,7 @@
   padding-left: var(--ds-space-2h);
 }
 
-.doc ul.checklist p{
+.doc ul.checklist p {
   padding: var(--ds-space-h) 0;
 }
 
@@ -631,7 +631,7 @@
 }
 
 .doc ul.checklist i.fa-check-square-o::before,
-.doc ul.checklist i.fa-square-o::before{
+.doc ul.checklist i.fa-square-o::before {
   font-family: "Material Icons Outlined", sans-serif;
   border-radius: calc(3 / var(--rem-base) * 1rem);
   width: calc(16 / var(--rem-base) * 1rem);
@@ -1088,8 +1088,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
-  opacity: 0; 
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
 
 .doc .checklist input[type="checkbox" i]:checked::before {
