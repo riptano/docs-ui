@@ -106,7 +106,7 @@
   /* dimensions and positioning */
   --site-padding: var(--ds-space-4);
   --navbar-height: calc(100 / var(--rem-base) * 1rem);
-  --toolbar-height: calc(45 / var(--rem-base) * 1rem);
+  --toolbar-height: calc(22 / var(--rem-base) * 1rem);
   --drawer-height: var(--toolbar-height);
   --body-top: var(--navbar-height);
   --body-min-height: calc(100vh - var(--body-top));

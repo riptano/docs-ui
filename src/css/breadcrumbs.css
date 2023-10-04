@@ -25,11 +25,13 @@ a + .breadcrumbs {
 .breadcrumbs li {
   display: inline;
   margin: 0;
+  color: var(--ds-primary-main);
 }
 
 .breadcrumbs li::after {
   content: "/";
   padding: 0  var(--ds-space-1);
+  color: var(--toolbar-muted-color);
 }
 
 .breadcrumbs li:last-of-type::after {
