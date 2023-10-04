@@ -26,7 +26,7 @@ we've got you covered.
 [discrete]
 ==== Hugging Face
 
-[.text-overflow]
+[.text-overflow.line-3]
 Hugging Face offers one of the largest collections of pre-trained natural language processing (NLP) models. Its user-friendly Transformers library provides deep learning models optimized for tasks like text classification,
 sentiment analysis, and more. Integrating with Astra empowers developers
 to harness these models directly alongside their database operations.
@@ -43,7 +43,7 @@ to harness these models directly alongside their database operations.
 [discrete]
 ==== OpenAI
 
-[.text-overflow]
+[.text-overflow.line-3]
 OpenAI, renowned for its groundbreaking models like GPT series, brings generative AI
 capabilities to the forefront. Through its API and tools, developers can generate
 human-like text, analyze data, or even create chatbots. Integration with Astra ensures
@@ -66,7 +66,7 @@ that data can be fetched, analyzed, and stored seamlessly when working with Open
 [discrete]
 ==== LangChain
 
-[.text-overflow]
+[.text-overflow.line-3]
 LangChain provides an enriched environment for developers looking to infuse advanced
 language understanding into their applications. As a potent machine learning framework,
 it offers sophisticated models and tools tailored for natural language processing tasks.
@@ -86,7 +86,7 @@ an edge in language-based operations.
 [discrete]
 ==== Jina
 
-[.text-overflow]
+[.text-overflow.line-3]
 Jina offers a neural search framework that aids in building search systems with deep learning.
 Whether it's text, images, or videos, Jina can index and retrieve data with high precision.
 Integration with Astra enables an optimized storage solution that complements Jina's search capabilities.
@@ -103,45 +103,60 @@ Integration with Astra enables an optimized storage solution that complements Ji
 
 == All Integrations
 
-[.ds-card]
+[.ds-card.flow-col]
 --
 [unstyled]
-* Deepset
+* *Deepset*
 +
+[.text-overflow]
 Deepset is known for its tools that specialize in extracting insights from text data. With capabilities like question-answering, document search, and more, Deepset stands out for textual data analysis. When integrated with Astra, it offers a robust solution for businesses that rely heavily on textual analytics.
+
+[.material-icons]
+https://example.com[arrow_forward]
 
 [.landing-card-icon.full]
 {deepset-icon}
 --
 
-[.ds-card]
+[.ds-card.flow-col]
 --
 [unstyled.guide]
-* Cohere
+* *Cohere*
 +
+[.text-overflow]
 Cohere provides advanced NLP models designed for a variety of tasks, ranging from text generation to understanding. Their models offer a balance between performance and efficiency. With Astra's integration, developers can effortlessly combine Cohere's capabilities with a powerful vector database solution.
+
+[.material-icons]
+https://example.com[arrow_forward]
 
 [.landing-card-icon]
 {cohere-icon}
 --
 
-[.ds-card]
+[.ds-card.flow-col]
 --
 [unstyled]
-* Llama Index
+* *Llama Index*
 +
 Simplify data indexing with LlamaIndex. Integrate with Astra's vector capabilities to boost data retrieval speeds and accuracy.
+
+[.material-icons]
+https://example.com[arrow_forward]
 
 [.landing-card-icon.bg-black]
 {llamaindex-icon}
 --
 
-[.ds-card]
+[.ds-card.flow-col]
 --
 [unstyled]
-* CassIO
+* *CassIO*
 +
+[.text-overflow]
 A specialized library designed to abstract the intricacies of accessing Cassandra databases, perfect for AI and ML applications. Its integration with Astra enhances real-time data interactions.
+
+[.material-icons]
+https://example.com[arrow_forward]
 
 [.landing-card-icon]
 {cassio-icon}

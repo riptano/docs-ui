@@ -91,6 +91,7 @@ html[data-layout="landing"] .text-h1 h2 {
 /* Landing card icon */
 .doc .landing-card-icon {
   max-width: fit-content;
+  height: fit-content;
   color: var(--ds-neutral-900);
   font-size: calc(20 / var(--rem-base) * 1rem);
   padding: calc(10 / var(--rem-base) * 1rem);
