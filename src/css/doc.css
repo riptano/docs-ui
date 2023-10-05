@@ -251,6 +251,7 @@
 .doc .paragraph,
 .doc .dlist,
 .doc .hdlist,
+.doc .qlist,
 .doc .olist,
 .doc .ulist,
 .doc .exampleblock,
@@ -266,6 +267,12 @@
 .doc details,
 .doc hr {
   margin: calc(24 / var(--rem-base) * 1rem) 0 0;
+}
+
+.doc .ulist .paragraph,
+.doc .dlist .paragraph,
+.doc .hdlist .paragraph {
+  margin: 0;
 }
 
 .doc table.tableblock {
@@ -629,20 +636,36 @@
   padding-left: var(--ds-space-2h);
 }
 
+.doc ul.checklist p {
+  padding: var(--ds-space-h) 0;
+}
+
 .doc ul.checklist p > i.fa-check-square-o:first-child,
 .doc ul.checklist p > i.fa-square-o:first-child {
   display: inline-flex;
   justify-content: center;
-  width: 1.25rem;
-  margin-left: -1.25rem;
+  align-items: center;
+  vertical-align: middle;
+  line-height: calc(16 / var(--rem-base) * 1rem);
+}
+
+.doc ul.checklist i.fa-check-square-o::before,
+.doc ul.checklist i.fa-square-o::before {
+  font-family: "Material Icons Outlined", sans-serif;
+  border-radius: calc(3 / var(--rem-base) * 1rem);
+  width: calc(16 / var(--rem-base) * 1rem);
+  height: calc(16 / var(--rem-base) * 1rem);
 }
 
 .doc ul.checklist i.fa-check-square-o::before {
-  content: "\2713";
+  content: "\e876";
+  color: var(--ds-primary-solid-color);
+  background-color: var(--ds-primary-solid-bg);
 }
 
 .doc ul.checklist i.fa-square-o::before {
-  content: "\274f";
+  content: "";
+  border: 0.25rem solid var(--ds-text-primary);
 }
 
 .doc .dlist .dlist,
@@ -654,12 +677,12 @@
 .doc .ulist .dlist,
 .doc .ulist .olist,
 .doc .ulist .ulist {
-  margin-top: var(--ds-space-1);
+  margin-top: 0;
 }
 
 .doc .olist li + li,
 .doc .ulist li + li {
-  margin-top: var(--ds-space-2);
+  margin-top: 0;
 }
 
 .doc .ulist .listingblock,
@@ -695,9 +718,9 @@
 
 .doc .ulist .title,
 .doc .olist .title {
-  font-style: var(--caption-font-style);
   font-weight: var(--caption-font-weight);
-  margin-bottom: var(--ds-space-h);
+  margin-bottom: var(--ds-space-3);
+  color: var(--heading-font-color);
 }
 
 .doc .imageblock .title {
@@ -914,7 +937,7 @@
 }
 
 .doc .dlist dt {
-  font-style: italic;
+  color: var(--heading-font-color);
 }
 
 .doc .dlist dd {
@@ -939,6 +962,7 @@
 .doc td.hdlist1 {
   font-weight: var(--body-font-weight-bold);
   padding-right: 0.25rem;
+  color: var(--heading-font-color);
 }
 
 .doc td.hdlist2 {
@@ -1064,6 +1088,38 @@
 .doc .nobreak {
   hyphens: none;
   word-wrap: normal;
+}
+
+.doc .checklist input[type="checkbox" i] {
+  appearance: none;
+  vertical-align: middle;
+  position: relative;
+  border-radius: calc(3 / var(--rem-base) * 1rem);
+  border: 0.25rem solid var(--ds-text-primary);
+  width: calc(16 / var(--rem-base) * 1rem);
+  height: calc(16 / var(--rem-base) * 1rem);
+}
+
+.doc .checklist input[type="checkbox" i]:checked {
+  border-color: var(--ds-primary-solid-bg);
+}
+
+.doc .checklist input[type="checkbox" i]::before {
+  font-family: "Material Icons Outlined", sans-serif;
+  content: "\e876";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.doc .checklist input[type="checkbox" i]:checked::before {
+  opacity: 1;
+  font-size: calc(16 / var(--rem-base) * 1rem);
+  color: var(--ds-primary-solid-color);
+  background-color: var(--ds-primary-solid-bg);
+  border-radius: calc(3 / var(--rem-base) * 1rem);
 }
 
 #footnotes {

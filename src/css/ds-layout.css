@@ -180,6 +180,10 @@ html[data-theme="dark"] .doc .landing-card-icon {
   margin-top: var(--ds-space-2);
 }
 
+.doc .admonitionblock td.content .ulist p {
+  margin-top: 0;
+}
+
 .doc .admonitionblock td.content > .paragraph:first-child p:first-child,
 .doc .admonitionblock td.content > .title {
   margin: 0;
