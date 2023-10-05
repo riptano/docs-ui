@@ -70,18 +70,6 @@ html[data-theme="dark"] #theme-toggle::before {
   color: var(--ds-warning-300);
 }
 
-@media screen and (min-width: 769px) {
-  #search-input {
-    width: calc(200 / var(--rem-base) * 1rem);
-  }
-}
-
-@media screen and (max-width: 768.5px) {
-  #search-button {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 1023.5px) {
   #get-support {
     width: var(--ds-space-5);
@@ -95,7 +83,7 @@ html[data-theme="dark"] #theme-toggle::before {
 
   .navbar-brand {
     height: inherit;
-    padding: 0 var(--site-padding);
+    padding: 0 var(--site-padding--mobile);
   }
 
   .navbar-brand .navbar-item {
@@ -109,7 +97,7 @@ html[data-theme="dark"] #theme-toggle::before {
     max-height: var(--body-min-height);
     overflow-y: auto;
     overscroll-behavior: none;
-    padding: var(--site-padding);
+    padding: var(--site-padding--mobile);
     border-top: 1px solid var(--ds-divider);
     border-bottom: 1px solid var(--ds-divider);
   }

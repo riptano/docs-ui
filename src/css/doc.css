@@ -22,8 +22,8 @@
 
 @media screen and (max-width: 1023.5px) {
   .doc {
-    padding-left: var(--site-padding);
-    padding-right: var(--site-padding);
+    padding-left: var(--site-padding--mobile);
+    padding-right: var(--site-padding--mobile);
   }
 }
 
