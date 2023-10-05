@@ -289,7 +289,7 @@
 
 .doc table.tableblock th,
 .doc table.tableblock td {
-  padding: var(--ds-space-1h) var(--ds-space-2);
+  padding: calc(13 / var(--rem-base) * 1rem) var(--ds-space-2);
 }
 
 .doc table.tableblock,
@@ -311,7 +311,11 @@
 
 .doc table.grid-all > thead th,
 .doc table.grid-rows > thead th {
-  border-bottom-width: 2.5px;
+  border-bottom-width: var(--ds-space-q);
+  border-color: var(--ds-primary-outlined-border);
+  font-size: calc(13 / var(--rem-base) * 1rem);
+  color: var(--ds-text-tertiary);
+  letter-spacing: 0.65px;
 }
 
 .doc table.frame-all {
@@ -329,6 +333,9 @@
 .doc table.frame-none > colgroup + * > :first-child > *,
 .doc table.frame-sides > colgroup + * > :first-child > * {
   border-top-width: 0;
+  font-size: calc(13 / var(--rem-base) * 1rem);
+  color: var(--ds-text-tertiary);
+  letter-spacing: 0.65px;
 }
 
 /* NOTE let the grid win in case of frame-none */
@@ -681,6 +688,9 @@
 .doc .tableblock caption {
   text-align: left;
   margin-bottom: var(--ds-space-3);
+  font-style: normal;
+  letter-spacing: 0;
+  padding-bottom: 0;
 }
 
 .doc .ulist .title,
