@@ -1,0 +1,149 @@
+= Quickstart
+:navtitle: Quickstart
+:page-layout: tutorial
+:page-colab-link: https://colab.research.google.com/github/CassioML/cassio-website/blob/main/docs/frameworks/langchain/.colab/colab_qa-basic.ipynb
+:page-time-commitment: 15 min
+:page-skill-level: Beginner
+:astra-link: https://astra.datastax.com
+:astra-nodejs-link: https://docs.datastax.com/en/astra-serverless/docs/develop/sdks/rest-nodejs-client.html
+:astra-json-link: https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-json.html
+:keywords: Machine Learning Frameworks, Embeding Services, Astra, SDK
+
+== Objective
+
+Learn how to create a new database, connect to your database, load a set of vector embeddings, and perform a similarity search to find vectors that are close to the one in your query.
+
+image::ROOT:template-examples/quickstart-overview.png["Tutorial overview"]
+
+== Prerequisites
+
+To get started, ensure you have an {astra-link}[active Astra account] with the requisite permissions.
+
+=== [.step]#1# Install the Python SDK and open a Python REPL.
+
+[source,shell]
+----
+pip install astra-vector
+----
+
+[source,shell]
+----
+python
+----
+
+[TIP]
+====
+Additional clients, such as {astra-nodejs-link}[Node.js] and {astra-json-link}[JSON API], are available.
+====
+
+=== [.step]#2# Connect to Astra and create a database.
+
+[source,python]
+----
+import astra_vector
+
+# Authenticate to the SaaS database
+api_key = 'your_api_key'
+client = astra_vector.Client(api_key)
+
+# Create a new database
+database_name = 'my_vector_database'
+client.create_database(database_name)
+
+# Connect to the database
+db = client.connect(database_name)
+
+# Create a new table for vectors
+table_name = 'vector_data'
+db.create_table(table_name)
+----
+
+== Core steps
+
+=== [.step]#3# Prepare and ingest data.
+
+[source,python]
+----
+# Load sample vector data
+sample_vectors = [
+    {'id': 1, 'vector': [0.1, 0.2, 0.3]},
+    {'id': 2, 'vector': [0.4, 0.5, 0.7]}
+]
+
+for data in sample_vectors:
+    db.insert_record(table_name, data)
+----
+
+=== [.step]#4# Perform a similarity search.
+
+[source,python]
+----
+# Run a similarity search
+query_vector = [0.2, 0.3, 0.4]
+results = db.similarity_search(table_name, query_vector, k=5)
+----
+
+=== [.step]#5# Show the results.
+
+[source,python]
+----
+# Similarity search results
+for result in results:
+    print(f"ID: {result['id']}, Similarity Score: {result['score']}")
+----
+
+== Cleanup
+
+=== [.step]#6# Delete all resources.
+
+[source,python]
+----
+# Delete the table
+db.delete_table(table_name)
+print(f"Table '{table_name}' deleted.")
+
+# Delete the database
+client.delete_database(database_name)
+print(f"Database '{database_name}' deleted.")
+----
+
+== Conclusion
+
+In this tutorial, you learned how to:
+
+* [*] Create a new database
+* [*] Connect to your database
+* [*] Load a set of vector embeddings
+* [*] Perform a similarity search to find vectors that are close to the one in your query
+
+You're well on your way to becoming an Astra Vector expert!
+
+[.header-noline]
+== Next Steps
+
+[.ds-card]
+--
+[unstyled]
+* https://example.com[Grasp the basics] [.material-icons]#auto_stories# Tutorial 
++
+Before diving deep, ensure a solid understanding of foundational concepts surrounding vector databases.
+Delve into embeddings, the nature of high-dimensional data, and their profound impact on machine learning processes.
+--
+
+[.ds-card]
+--
+[unstyled.guide]
+* https://example.com[Installation] [.material-icons]#fact_check# Guide
++
+Before diving deep, ensure a solid understanding of foundational concepts surrounding vector databases.
+Delve into embeddings, the nature of high-dimensional data, and their profound impact on machine learning processes.
+--
+
+[.ds-card]
+--
+[unstyled]
+* https://example.com[Ingest and store vector data] [.material-icons]#auto_stories# Tutorial 
++
+Before diving deep, ensure a solid understanding of foundational concepts surrounding vector databases.
+Delve into embeddings, the nature of high-dimensional data, and their profound impact on machine learning processes.
+--

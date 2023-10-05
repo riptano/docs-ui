@@ -10,6 +10,7 @@
   top: var(--navbar-height);
   z-index: var(--z-index-toolbar);
   padding-left: calc(24 / var(--rem-base) * 1rem);
+  margin-top: calc(24 / var(--rem-base) * 1rem);
 }
 
 .toolbar ul li:last-of-type {
@@ -17,7 +18,7 @@
 }
 
 .toolbar a {
-  color: var(--link-font-color);
+  color: inherit;
 }
 
 .nav-toggle::after {

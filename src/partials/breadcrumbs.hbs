@@ -7,13 +7,11 @@
     {{/if}}
     {{/with}}
     {{#each page.breadcrumbs}}
-    <li>
     {{~#if (and ./url (eq ./urlType 'internal'))~}}
+    <li>
     <a href="{{{relativize ./url}}}">{{{./content}}}</a>
-    {{~else~}}
-    {{{./content}}}
-    {{~/if~}}
     </li>
+    {{~/if~}}
     {{/each}}
   </ul>
   {{/if}}

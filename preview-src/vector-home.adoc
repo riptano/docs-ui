@@ -9,10 +9,10 @@ Efficiently store and query vector embeddings for better similarity search. If y
 Dive straight into Astra Vector with this concise guide tailored for developers. These essential steps will walk you through the setup process, ensuring you're up and running quickly.
 
 [.ds-feature-buttons]
-xref:ROOT:templates/examples/quickstart.adoc[Quick Start,role="ds-button ds-button\--color-primary ds-button\--variant-solid"] https://astra.datastax.com[Create Astra Account^,role="ds-button ds-button\--color-neutral ds-button\--variant-outlined"]
+xref:ROOT:templates/examples/quickstart.adoc[Quick Start,role="ds-button ds-button\--color-primary ds-button\--variant-solid"] https://astra.datastax.com[Create Astra Account^,role="ds-button ds-button\--color-neutral ds-button\--variant-outlined external"]
 --
 
-[.ds-feature-code,js]
+[.ds-feature-code.default,js]
 ----
 import vector
 
@@ -27,7 +27,7 @@ query_vector = [0.9, 2.2, 2.8]
 results = db.query(query_vector, limit=3)
 ----
 
-[.explore.header-noline.ds-row.ds-grid]
+[.explore.header-noline.text-h1.ds-row.ds-grid]
 == Explore Docs
 
 === Guides
