@@ -910,6 +910,39 @@ public static JavaArchive createDeployment() {
 
 == Images
 
+=== Images for Light and Dark modes
+
+[source,adoc]
+----
+[.for-light]
+image::your-light-image.png[Description]
+[.for-dark]
+image::your-dark-image.png[Description]
+----
+
+[.for-light]
+image::light-mode-illustration.png[Description,400]
+[.for-dark]
+image::dark-mode-illustration.png[Description,400]
+
+=== SVG with CSS variables for Light and Dark modes
+
+[source,svg]
+----
+<svg viewBox="0 0 300 200" fill="none">
+  <path fill="var(--ds-text-primary)" d="..." />
+  <path stroke="var(--ds-primary-outlined-border)" d="..." />
+  <path fill="var(--ds-neutral-outlined-border)" d="..." />
+</svg>
+----
+
+[source,adoc]
+----
+image::your-diagram.svg[Description,300,opts=inline]
+----
+
+image::preview-src/simple-diagram.svg[Simple Diagram,192,opts=inline]
+
 === Inline images
 
 Click image:play_circle_FILL0_wght400_GRAD0_opsz24.svg[title=Play] to get the party started.
