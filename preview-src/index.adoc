@@ -938,8 +938,10 @@ image::dark-mode-illustration.png[Description,400]
 
 [source,adoc]
 ----
-image::your-diagram.svg[Description,300,opts=inline]
+image::your-diagram.svg[Description,300,opts=inline] <1>
 ----
+
+<1> The `opts=inline` attribute is required to embed the SVG directly into the HTML.
 
 image::preview-src/simple-diagram.svg[Simple Diagram,192,opts=inline]
 
