@@ -64,6 +64,10 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
   }
 }
 
+.DocSearch .DocSearch-Hit[aria-selected=false] mark {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 768px) {
   .DocSearch.DocSearch-Container {
     position: fixed;
