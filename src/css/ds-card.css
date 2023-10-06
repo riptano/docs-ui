@@ -11,7 +11,10 @@
   margin-top: var(--ds-space-3);
 }
 
-.doc .ds-card .paragraph {
+.doc .ds-card .paragraph,
+.doc .ds-card .ulist .paragraph,
+.doc .ds-card .dlist .paragraph,
+.doc .ds-card .hdlist .paragraph {
   margin-top: var(--ds-space-2);
 }
 
@@ -29,9 +32,9 @@
   margin-bottom: var(--ds-space-3);
 }
 
-.ds-card .paragraph.landing-card-icon img {
+.ds-card .landing-card-icon .image:not(.left):not(.right) img {
   display: flex;
-  margin: 0 !important;
+  margin: 0;
 }
 
 .ds-card .paragraph.landing-card-icon.full {
