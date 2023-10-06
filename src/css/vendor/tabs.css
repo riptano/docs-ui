@@ -1,0 +1,56 @@
+@import "@asciidoctor/tabs";
+
+/* Datastax styles */
+
+.tabpanel {
+  padding: var(--ds-space-2) 0;
+  border: none;
+  border-top: 1px solid var(--ds-divider);
+}
+
+.tablist > ul li {
+  background-color: transparent;
+  border: none;
+  font-weight: normal;
+  color: var(--ds-text-primary);
+  padding: var(--ds-space-1) var(--ds-space-1h);
+}
+
+.tablist.ulist > ul li + li {
+  margin: 0;
+}
+
+.tabs .tablist li::after {
+  height: calc(2 / var(--rem-base) * 1rem);
+}
+
+.tabs.is-loading .tablist li:not(:first-child),
+.tabs:not(.is-loading) .tablist li:not(.is-selected) {
+  color: var(--ds-text-tertiary);
+  background-color: transparent;
+}
+
+.tabs.is-loading .tablist li:first-child::after,
+.tabs:not(.is-loading) .tablist li.is-selected::after {
+  background-color: var(--ds-text-primary);
+}
+
+/* overflow tab title */
+.tabs.overflow .tablist > ul li p {
+  max-width: var(--ds-space-15);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+/* wrapping tab title */
+.tabs.wrapping .tablist > ul li p {
+  max-width: var(--ds-space-15);
+  display: flex;
+}
+
+.tabs.overflow .tablist > ul,
+.tabs.wrapping .tablist > ul {
+  flex-wrap: nowrap;
+}
