@@ -15,3 +15,11 @@ toggle.onclick = function () {
   document.documentElement.setAttribute('data-theme', targetTheme)
   localStorage.setItem('theme', targetTheme)
 }
+
+var help = document.getElementById('get-support')
+
+help.onclick = function () {
+  try {
+    window.Intercom('show')
+  } catch (e) {}
+}
