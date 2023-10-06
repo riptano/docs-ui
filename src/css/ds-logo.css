@@ -15,8 +15,8 @@ html[data-theme="light"] #datastax-docs-logo-text {
 }
 
 #datastax-docs-logo-main {
-  width: calc(287 / var(--rem-base) * 1rem);
-  height: calc(40 / var(--rem-base) * 1rem);
+  width: calc(268 / var(--rem-base) * 1rem);
+  height: calc(37.46 / var(--rem-base) * 1rem);
 }
 
 #datastax-docs-logo-text {
@@ -46,8 +46,8 @@ html[data-theme="light"] #datastax-docs-logo-text {
 
 @media screen and (max-width: 768.5px) {
   #datastax-docs-logo-main {
-    width: calc(162 / var(--rem-base) * 1rem);
-    height: calc(40 / var(--rem-base) * 1rem);
+    width: calc(151.57 / var(--rem-base) * 1rem);
+    height: calc(37.46 / var(--rem-base) * 1rem);
   }
 
   html[data-theme="dark"] #datastax-docs-logo-main {

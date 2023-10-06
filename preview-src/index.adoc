@@ -212,6 +212,8 @@ Eu mea inani iriure.footnote:[Quisque porta facilisis tortor, vitae bibendum vel
 
 ==== Ordered list numeration styles
 
+[.scrolltable]
+--
 [cols="6*a"]
 |===
 |`decimal`
@@ -251,6 +253,7 @@ a|[lowergreek]
 . Electrons
 . Neutrons
 |===
+--
 
 .Ordered list w/ customized numeration
 [upperalpha]

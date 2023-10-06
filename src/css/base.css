@@ -18,6 +18,8 @@ html {
 }
 
 body {
+  @include text-body;
+
   background: var(--body-background);
   color: var(--body-font-color);
   font-family: var(--body-font-family);
@@ -25,9 +27,6 @@ body {
   margin: 0;
   tab-size: 4;
   word-wrap: anywhere; /* aka overflow-wrap; used when hyphens are disabled or aren't sufficient */
-  /* ds-text-body */
-  font-size: var(--ds-space-2);
-  font-weight: 400;
 }
 
 a {

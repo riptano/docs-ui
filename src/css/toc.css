@@ -4,6 +4,8 @@
 
 .toc.sidebar .toc-menu-container {
   margin-right: var(--ds-space-1h);
+  margin-left: var(--ds-space-3);
+  padding-bottom: var(--ds-space-8);
   position: sticky;
   top: var(--toc-top);
 }
