@@ -455,7 +455,24 @@ Contains more than one block.
 
 === Example: Overflow tabset
 
-[tabs]
+[tabs.overflow]
+======
+Tab Name:: Contents of Tab.
+
+Longer Tab Name::
++
+Contents of Longer Tab.
+
+An Even Longer Tab Name::
++
+Contents of Even Longer Tab.
+
+This Is The Longest Tab Name::
++
+Contents of The Longest Tab.
+======
+
+[tabs.wrapping]
 ======
 Tab Name:: Contents of Tab.
 
