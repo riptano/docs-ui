@@ -918,6 +918,11 @@ public static JavaArchive createDeployment() {
 image::your-light-image.png[Description]
 [.for-dark]
 image::your-dark-image.png[Description]
+
+// You can also define the role within the macro itself
+
+image::light-mode-illustration.png[Description,role=for-light]
+image::dark-mode-illustration.png[Description,role=for-dark]
 ----
 
 [.for-light]
