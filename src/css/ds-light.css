@@ -143,8 +143,16 @@ html[data-theme="light"] {
   @include light-theme;
 }
 
+html[data-theme="light"] .for-dark {
+  display: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="light"]):not([data-theme="dark"]) {
     @include light-theme;
+  }
+
+  :root:not([data-theme="light"]):not([data-theme="dark"]) .for-dark {
+    display: none;
   }
 }
