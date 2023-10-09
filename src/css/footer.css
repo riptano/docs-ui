@@ -8,7 +8,6 @@ footer.footer {
   flex: 1;
   gap: var(--ds-space-3);
   padding-left: var(--ds-space-3);
-  /* border-top: 1px solid var(--ds-divider); */
 }
 
 .footer-column {
@@ -18,7 +17,7 @@ footer.footer {
   flex: 1 auto;
 }
 
-.footer-column.align-end {
+.footer-column.contact {
   align-items: flex-end;
 }
 
@@ -91,6 +90,31 @@ a.twitch-icon {
 html[data-theme="dark"] {
   .social-icons a {
     filter: invert(1);
+  }
+}
+
+@media screen and (max-width: 1023.5px) {
+  footer.footer {
+    padding-left: var(--site-padding--mobile);
+    padding-right: var(--site-padding--mobile);
+  }
+
+  .footer--divider {
+    margin: 0 var(--site-padding--mobile);
+  }
+}
+
+@media screen and (max-width: 768.5px) {
+  footer.footer {
+    flex-wrap: wrap;
+  }
+
+  .footer--contact-us {
+    text-align: left;
+  }
+
+  .footer-column.contact {
+    align-items: flex-start;
   }
 }
 
