@@ -927,6 +927,13 @@ image::dark-mode-illustration.png[Description,400]
 
 === SVG with CSS variables for Light and Dark modes
 
+.Currently unsupported
+[WARNING]
+====
+The method described below for embedding an SVG directly into the HTML won't work until Antora adds support for the `opts=inline` option (see https://gitlab.com/antora/antora/-/issues/1001).
+Therefore, unless a suitable workaround is discovered, we can't support SVGs with CSS variables until Antora fixes this issue.
+====
+
 [source,svg]
 ----
 <svg viewBox="0 0 300 200" fill="none">
