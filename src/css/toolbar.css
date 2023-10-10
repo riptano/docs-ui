@@ -1,7 +1,6 @@
 .toolbar {
   align-items: center;
   background-color: var(--toolbar-background);
-  /* box-shadow: 0 1px 0 var(--toolbar-border-color); */
   display: flex;
   font-size: calc(14.5 / var(--rem-base) * 1rem);
   height: var(--toolbar-height);
@@ -9,8 +8,7 @@
   position: sticky;
   top: var(--navbar-height);
   z-index: var(--z-index-toolbar);
-  padding-left: calc(24 / var(--rem-base) * 1rem);
-  margin-top: calc(24 / var(--rem-base) * 1rem);
+  padding-left: var(--ds-space-3);
 }
 
 .toolbar ul li:last-of-type {

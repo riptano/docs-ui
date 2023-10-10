@@ -27,6 +27,12 @@
   }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1104px) {
+  .doc {
+    max-width: calc(var(--doc-max-width--desktop) - 15rem);
+  }
+}
+
 .doc h1,
 .doc h2,
 .doc h3,
@@ -277,6 +283,10 @@
 
 .doc table.tableblock {
   font-size: calc(14.5 / var(--rem-base) * 1rem);
+}
+
+.doc .scrolltable {
+  overflow-x: auto;
 }
 
 .doc .tablecontainer,

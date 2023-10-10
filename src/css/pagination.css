@@ -2,8 +2,8 @@ nav.pagination {
   display: flex;
   border-top: 1px solid var(--toolbar-border-color);
   line-height: 1;
-  margin: var(--ds-space-3) calc(var(--ds-space-2h) * -1) calc(var(--ds-space-2h) * -1);
-  padding: var(--ds-space-1h) var(--ds-space-2) 0;
+  padding-top: var(--ds-space-2);
+  margin-top: var(--ds-space-5);
 }
 
 nav.pagination span {
@@ -14,12 +14,14 @@ nav.pagination span {
 
 nav.pagination .prev {
   padding-right: 0.5rem;
+  margin-left: var(--ds-space-2);
 }
 
 nav.pagination .next {
   margin-left: auto;
   padding-left: 0.5rem;
   text-align: right;
+  margin-right: var(--ds-space-2);
 }
 
 nav.pagination span::before {

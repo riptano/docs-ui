@@ -2,7 +2,15 @@ main {
   padding-right: var(--site-padding);
 }
 
-@media screen and (max-width: 1023.5px) {
+aside.toc.sidebar {
+  padding-left: var(--ds-space-3);
+}
+
+aside.toc.embedded {
+  margin-bottom: var(--ds-space-3);
+}
+
+@media screen and (max-width: 1329.5px) {
   aside.toc.sidebar {
     display: none;
   }
@@ -16,7 +24,7 @@ main {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1330px) {
   main {
     flex: auto;
     min-width: 0; /* min-width: 0 required for flexbox to constrain overflowing elements */
@@ -31,13 +39,13 @@ main {
   }
 
   aside.toc.sidebar {
-    flex: 0 0 var(--toc-width);
+    flex: 0 0 var(--toc-width--widescreen);
     order: 1;
   }
 }
 
-@media screen and (min-width: 1216px) {
+/* @media screen and (min-width: 1330px) {
   aside.toc.sidebar {
     flex-basis: var(--toc-width--widescreen);
   }
-}
+} */
