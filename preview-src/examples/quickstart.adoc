@@ -19,7 +19,8 @@ image::ROOT:template-examples/quickstart-overview.png["Tutorial overview"]
 
 To get started, ensure you have an {astra-link}[active Astra account] with the requisite permissions.
 
-=== [.step]#1# Install the Python SDK and open a Python REPL.
+[.step]
+=== Install the Python SDK and open a Python REPL.
 
 [source,shell]
 ----
@@ -36,7 +37,8 @@ python
 Additional clients, such as {astra-nodejs-link}[Node.js] and {astra-json-link}[JSON API], are available.
 ====
 
-=== [.step]#2# Connect to Astra and create a database.
+[.step]
+=== Connect to Astra and create a database.
 
 [source,python]
 ----
@@ -60,7 +62,8 @@ db.create_table(table_name)
 
 == Core steps
 
-=== [.step]#3# Prepare and ingest data.
+[.step]
+=== Prepare and ingest data.
 
 [source,python]
 ----
@@ -74,7 +77,8 @@ for data in sample_vectors:
     db.insert_record(table_name, data)
 ----
 
-=== [.step]#4# Perform a similarity search.
+[.step]
+=== Perform a similarity search.
 
 [source,python]
 ----
@@ -83,7 +87,8 @@ query_vector = [0.2, 0.3, 0.4]
 results = db.similarity_search(table_name, query_vector, k=5)
 ----
 
-=== [.step]#5# Show the results.
+[.step]
+=== Show the results.
 
 [source,python]
 ----
@@ -94,7 +99,8 @@ for result in results:
 
 == Cleanup
 
-=== [.step]#6# Delete all resources.
+[.step.step-reset]
+=== Delete all resources.
 
 [source,python]
 ----
