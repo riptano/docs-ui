@@ -68,7 +68,7 @@ html.is-clipped--nav {
 .nav-panel-menu {
   overflow-y: auto;
   overscroll-behavior: none;
-  height: var(--nav-panel-menu-height);
+  height: 100%;
 }
 
 .nav-panel-menu:not(.is-active) .nav-menu {
@@ -79,6 +79,8 @@ html.is-clipped--nav {
   min-height: 100%;
   line-height: var(--nav-line-height);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-menu > .nav-list {
@@ -170,6 +172,7 @@ html.is-clipped--nav {
 .secondary-nav-list {
   margin: 0;
   padding: var(--ds-space-2) 0;
+  margin-top: auto;
 }
 
 .secondary-nav-list .nav-item {

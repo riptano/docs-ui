@@ -6,6 +6,7 @@
   padding: var(--ds-space-2) 0;
   border: none;
   border-top: 1px solid var(--ds-divider);
+  background-color: var(--ds-background-body);
 }
 
 .tablist > ul li {

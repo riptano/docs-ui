@@ -107,13 +107,12 @@
   --site-padding: var(--ds-space-4);
   --site-padding--mobile: var(--ds-space-2);
   --navbar-height: calc(100 / var(--rem-base) * 1rem);
-  --toolbar-height: calc(40 / var(--rem-base) * 1rem);
+  --toolbar-height: calc(48 / var(--rem-base) * 1rem);
   --drawer-height: var(--toolbar-height);
   --body-top: var(--navbar-height);
   --body-min-height: calc(100vh - var(--body-top));
   --nav-height: calc(var(--body-min-height) - var(--toolbar-height));
   --nav-height--desktop: var(--body-min-height);
-  --nav-panel-menu-height: calc(100% - var(--drawer-height));
   --nav-panel-explore-height: calc(50% + var(--drawer-height));
   --nav-width: calc(300 / var(--rem-base) * 1rem);
   --logo-width: calc(300 / var(--rem-base) * 1rem);
@@ -130,4 +129,10 @@
   --z-index-navbar: 40;
   /* transitions */
   --ds-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+@media screen and (max-width: 1023.5px) {
+  :root {
+    --navbar-height: calc(74 / var(--rem-base) * 1rem);
+  }
 }

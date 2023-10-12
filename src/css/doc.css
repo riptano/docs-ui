@@ -329,8 +329,6 @@
 
 .doc table.grid-all > thead th,
 .doc table.grid-rows > thead th {
-  border-bottom-width: var(--ds-space-q);
-  border-color: var(--ds-primary-outlined-border);
   font-size: calc(13 / var(--rem-base) * 1rem);
   color: var(--ds-text-tertiary);
   letter-spacing: 0.65px;
