@@ -28,9 +28,6 @@ image::astra-browser.png[Browser,420,220,align=center,float=bottom]
 
 ''''
 
-[.header-noline.text-h3.row.hide]
-== _[blank]_
-
 [.grid]
 --
 [discrete]
@@ -46,7 +43,6 @@ https://docs.datastax.com/en/astra-serverless/docs/index.html[Discover Astra Ser
 [.material-icons.landing-card-icon]
 table_chart
 
-'''
 --
 
 [.grid]
@@ -64,8 +60,8 @@ https://docs.datastax.com/en/streaming/astra-streaming/index.html[Dive into Astr
 [.material-icons.landing-card-icon]
 air
 
-'''
 --
+
 
 [.header-noline.text-h1.ds-row.ds-grid]
 == Explore More of Astra
