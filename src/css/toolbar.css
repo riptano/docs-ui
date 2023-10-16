@@ -9,6 +9,7 @@
   top: var(--navbar-height);
   z-index: var(--z-index-toolbar);
   padding-left: var(--ds-space-3);
+  padding-bottom: var(--ds-space-1);
 }
 
 .toolbar ul li:last-of-type {
