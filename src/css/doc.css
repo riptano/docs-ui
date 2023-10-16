@@ -8,6 +8,7 @@
   padding-right: calc(24 / var(--rem-base) * 1rem);
   padding-left: calc(24 / var(--rem-base) * 1rem);
   padding-bottom: var(--ds-space-10);
+  counter-reset: step;
 }
 
 @media screen and (min-width: 1024px) {
@@ -328,8 +329,6 @@
 
 .doc table.grid-all > thead th,
 .doc table.grid-rows > thead th {
-  border-bottom-width: var(--ds-space-q);
-  border-color: var(--ds-primary-outlined-border);
   font-size: calc(13 / var(--rem-base) * 1rem);
   color: var(--ds-text-tertiary);
   letter-spacing: 0.65px;
@@ -995,8 +994,24 @@
   padding: 0.25rem 0;
 }
 
-.doc .conum[data-value],
-.doc .step {
+.step-reset {
+  counter-reset: step;
+}
+
+.doc .step h2::before,
+.doc .step h3::before,
+.doc .step h4::before {
+  counter-increment: step;
+  content: counter(step) ". ";
+}
+
+.doc .step h2 .anchor,
+.doc .step h3 .anchor,
+.doc .step h4 .anchor {
+  margin-left: -4.25ex;
+}
+
+.doc .conum[data-value] {
   @include text-overline;
 
   color: var(--ds-text-inverse);
@@ -1020,15 +1035,9 @@
   display: none;
 }
 
-.doc .step {
-  position: relative;
-  top: -0.25em;
-  margin-right: var(--ds-space-q);
-}
-
 .doc hr {
   border: solid var(--section-divider-color);
-  border-width: 2px 0 0;
+  border-width: 1px 0 0;
   height: 0;
 }
 

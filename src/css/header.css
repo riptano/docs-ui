@@ -50,7 +50,7 @@ body {
   font-family: "Material Icons Outlined", sans-serif;
   font-weight: 400;
   font-size: calc(20 / var(--rem-base) * 1rem);
-  content: "\e5d2";
+  content: "\e5d4";
 }
 
 .navbar-burger.is-active::before {

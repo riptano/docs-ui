@@ -1,5 +1,6 @@
 .tutorial-info {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--ds-space-2h);
   margin-bottom: var(--ds-space-3);

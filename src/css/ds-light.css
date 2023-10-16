@@ -2,11 +2,12 @@
   --ds-divider: var(--ds-neutral-200);
   --ds-focus-visible: var(--ds-neutral-900);
   --ds-background-body: var(--ds-common-white);
-  --ds-background-level1: var(--ds-neutral-100);
-  --ds-background-level2: var(--ds-neutral-200);
-  --ds-background-level3: var(--ds-neutral-300);
+  --ds-background-level1: var(--ds-neutral-0);
+  --ds-background-level2: var(--ds-neutral-50);
+  --ds-background-level3: var(--ds-neutral-100);
   --ds-background-surface: var(--ds-common-white);
   --ds-background-tooltip: var(--ds-neutral-900);
+  --ds-background-backdrop: rgba(0, 0, 0, 0.6);
   --ds-cyan-main: var(--ds-cyan-600);
   --ds-failure-main: var(--ds-failure-500);
   --ds-failure-outlined-active-bg: var(--ds-failure-100);

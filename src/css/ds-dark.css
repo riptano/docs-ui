@@ -7,6 +7,7 @@
   --ds-background-level3: var(--ds-neutral-600);
   --ds-background-surface: var(--ds-neutral-900);
   --ds-background-tooltip: var(--ds-neutral-0);
+  --ds-background-backdrop: rgba(10, 10, 10, 0.6);
   --ds-cyan-main: var(--ds-cyan-400);
   --ds-failure-main: var(--ds-failure-400);
   --ds-failure-outlined-active-bg: var(--ds-failure-500);

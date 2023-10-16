@@ -44,15 +44,17 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
   @include text-body;
 
   color: var(--ds-text-placeholder);
-  margin-right: var(--ds-space-3);
+  margin-right: var(--ds-space-5);
 }
 
 .DocSearch .DocSearch-Button {
+  min-width: var(--ds-space-5);
   transition: var(--ds-transition);
   height: var(--ds-space-5);
   border-radius: 6px;
   border: 1px solid var(--ds-neutral-outlined-border);
   margin: 0;
+  justify-content: center;
 
   &:hover {
     background-color: var(--ds-neutral-outlined-hover-bg);
@@ -66,6 +68,19 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 
 .DocSearch .DocSearch-Hit[aria-selected=false] mark {
   text-decoration: underline;
+}
+
+.DocSearch .DocSearch-Search-Icon {
+  display: none;
+}
+
+.DocSearch .DocSearch-Button-Container::before,
+.DocSearch .DocSearch-MagnifierLabel::before {
+  font-family: "Material Icons Outlined", sans-serif;
+  font-weight: 400;
+  font-size: calc(18 / var(--rem-base) * 1rem);
+  content: "\e8b6";
+  color: var(--ds-text-primary);
 }
 
 @media screen and (max-width: 768px) {
@@ -82,7 +97,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
   --docsearch-icon-stroke-width: 1.4;
   --docsearch-highlight-color: var(--ds-text-primary);
   --docsearch-muted-color: var(--ds-text-placeholder);
-  --docsearch-container-background: rgba(0, 0, 0, 0.5);
+  --docsearch-container-background: var(--ds-background-backdrop);
   --docsearch-logo-color: var(--ds-text-primary);
 
   /* modal */
@@ -118,7 +133,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 
 html[data-theme='dark'] .DocSearch {
   --docsearch-text-color: var(--ds-text-primary);
-  --docsearch-container-background: rgba(20, 20, 20, 0.7);
+  --docsearch-container-background: var(--ds-background-backdrop);
   --docsearch-modal-background: var(--ds-background-body);
   --docsearch-modal-shadow: none;
   --docsearch-searchbox-background: none;
