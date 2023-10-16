@@ -25,19 +25,6 @@ html[data-layout="full"] .content-container {
   align-content: center;
 }
 
-/* Hide sidebar, a.anchor */
-html[data-layout="landing"] .toc.sidebar,
-html[data-layout="landing"] .toc.embedded,
-html[data-layout="landing"] .breadcrumbs,
-html[data-layout="landing"] a.anchor,
-html[data-layout="full"] .nav-container,
-html[data-layout="full"] .toolbar,
-html[data-layout="full"] .toc.sidebar,
-html[data-layout="full"] a.anchor,
-html[data-layout="full"] .hide h2 {
-  display: none;
-}
-
 html[data-layout="landing"] .toolbar,
 html[data-layout="full"] .toolbar {
   justify-content: flex-end;

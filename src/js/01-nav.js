@@ -3,49 +3,53 @@
 
   var SECT_CLASS_RX = /^sect(\d)$/
 
-  var navContainer = document.querySelector('.nav-container')
-  var navToggle = document.querySelector('.nav-toggle')
-  var nav = navContainer.querySelector('.nav')
 
-  navToggle.addEventListener('click', showNav)
-  navContainer.addEventListener('click', trapEvent)
+  try {
+    var navContainer = document.querySelector('.nav-container')
+    var navToggle = document.querySelector('.nav-toggle')
+    var nav = navContainer.querySelector('.nav')
 
-  var menuPanel = navContainer.querySelector('[data-panel=menu]')
-  if (!menuPanel) return
-  var explorePanel = navContainer.querySelector('[data-panel=explore]')
+    navToggle.addEventListener('click', showNav)
+    navContainer.addEventListener('click', trapEvent)
 
-  var currentPageItem = menuPanel.querySelector('.is-current-page')
-  var originalPageItem = currentPageItem
-  if (currentPageItem) {
-    activateCurrentPath(currentPageItem)
-    scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
-  } else {
-    menuPanel.scrollTop = 0
-  }
+    var menuPanel = navContainer.querySelector('[data-panel=menu]')
+    if (!menuPanel) return
+    var explorePanel = navContainer.querySelector('[data-panel=explore]')
 
-  find(menuPanel, '.nav-item-toggle').forEach(function (btn) {
-    var li = btn.parentElement
-    btn.addEventListener('click', toggleActive.bind(li))
-    var navItemSpan = findNextElement(btn, '.nav-text')
-    if (navItemSpan) {
-      navItemSpan.style.cursor = 'pointer'
-      navItemSpan.addEventListener('click', toggleActive.bind(li))
+    var currentPageItem = menuPanel.querySelector('.is-current-page')
+    var originalPageItem = currentPageItem
+    if (currentPageItem) {
+      activateCurrentPath(currentPageItem)
+      scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
+    } else {
+      menuPanel.scrollTop = 0
     }
-  })
 
-  if (explorePanel) {
-    explorePanel.querySelector('.context').addEventListener('click', function () {
-      // NOTE logic assumes there are only two panels
-      find(nav, '[data-panel]').forEach(function (panel) {
-        panel.classList.toggle('is-active')
-      })
+    find(menuPanel, '.nav-item-toggle').forEach(function (btn) {
+      var li = btn.parentElement
+      btn.addEventListener('click', toggleActive.bind(li))
+      var navItemSpan = findNextElement(btn, '.nav-text')
+      if (navItemSpan) {
+        navItemSpan.style.cursor = 'pointer'
+        navItemSpan.addEventListener('click', toggleActive.bind(li))
+      }
     })
-  }
 
-  // NOTE prevent text from being selected by double click
-  menuPanel.addEventListener('mousedown', function (e) {
-    if (e.detail > 1) e.preventDefault()
-  })
+    if (explorePanel) {
+      explorePanel.querySelector('.context').addEventListener('click', function () {
+        // NOTE logic assumes there are only two panels
+        find(nav, '[data-panel]').forEach(function (panel) {
+          panel.classList.toggle('is-active')
+        })
+      })
+    }
+
+    // NOTE prevent text from being selected by double click
+    menuPanel.addEventListener('mousedown', function (e) {
+      if (e.detail > 1) e.preventDefault()
+    })
+
+  } catch (e) {}
 
   function onHashChange () {
     var navLink
@@ -85,10 +89,12 @@
     scrollItemToMidpoint(menuPanel, navLink)
   }
 
-  if (menuPanel.querySelector('.nav-link[href^="#"]')) {
-    if (window.location.hash) onHashChange()
-    window.addEventListener('hashchange', onHashChange)
-  }
+  try {
+    if (menuPanel.querySelector('.nav-link[href^="#"]')) {
+      if (window.location.hash) onHashChange()
+      window.addEventListener('hashchange', onHashChange)
+    }
+  } catch (e) {}
 
   function activateCurrentPath (navItem) {
     var ancestorClasses
