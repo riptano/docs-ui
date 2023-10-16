@@ -64,7 +64,7 @@
   --heading-font-color: var(--ds-text-primary);
   --heading-font-weight: normal;
   --alt-heading-font-weight: var(--body-font-weight-bold);
-  --section-divider-color: var(--panel-border-color);
+  --section-divider-color: var(--ds-divider);
   --link-font-color: var(--ds-primary-main);
   --link_hover-font-color: var(--ds-primary-main);
   --link_unresolved-font-color: var(--important-color);

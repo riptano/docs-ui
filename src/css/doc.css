@@ -1037,7 +1037,7 @@
 
 .doc hr {
   border: solid var(--section-divider-color);
-  border-width: 2px 0 0;
+  border-width: 1px 0 0;
   height: 0;
 }
 
