@@ -1,8 +1,6 @@
 = {company} Astra
 :page-layout: full
-:vector-icon: image:astra-vector.svg[,20]
 :vector-image: image::ROOT:ui/integrations-browser.png[Browser,420,220,align=center]
-:vector-image-local: 
 
 DataStax Astra is a cutting-edge cloud-native database platform designed to empower developers.
 Harnessing the strengths of vector databases, serverless computing, and real-time streaming, Astra propels application development into the next generation.
@@ -16,7 +14,8 @@ https://astra.datastax.com[Create Astra Account^,role="ds-button ds-button\--col
 == Vector
 --
 [.landing-card-icon]
-{vector-icon}
+image:astra-vector.svg[vector,20,role=for-light]
+image:astra-vector-dark.svg[vector,20,role=for-dark]
 
 Delve into a database optimized for AI-driven tasks.
 Astra Vector is tailored to offer unparalleled precision, speed, and scalability for AI applications, transforming how your applications perceive and interact with data.
