@@ -1,0 +1,12 @@
+<h2>All Integrations</h2>
+<div class="ds-list">
+  {{#each (pages-with-integration-tags)}}
+  <a class="ds-list-item" href="{{{relativize ./url}}}" data-tags="{{{./attributes.integration-tags}}}">
+    <div class="ds-list-item-icon">{{{./attributes.icon}}}</div>
+    <div class="ds-list-item-text">
+      <span class="ds-list-item-text--title">{{{./title}}}</span>
+      <p class="ds-list-item-text--description">{{{./description}}}</p>
+    </div>
+  </a>
+  {{/each}}
+</div>

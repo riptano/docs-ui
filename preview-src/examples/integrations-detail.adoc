@@ -1,13 +1,23 @@
+// tag::attrs[]
+:page-tags: Test 1, Test 2, BlahBlah
+:page-title: LangChain
+:page-description: LangChain is a natural language processing platform that provides a variety of linguistic capabilities, including text classification, sentiment analysis, and more. By integrating LangChain with Astra, you can seamlessly utilize advanced linguistic processing capabilities of LangChain within the Astra vector database environment. This combination enhances vector data analysis, allowing natural language data to be processed, stored, and queried with efficiency.
+:page-icon: image:langchain.svg[,20]
+:page-integration-tags: tutorial
+// end::attrs[]
 = Lang Chain
+
 
 == Overview
 
+// tag::details[]
 By integrating LangChain with Astra, you can seamlessly 
 utilize advanced linguistic processing capabilities of 
 LangChain within the Astra vector database environment. 
 This combination enhances vector data analysis, 
 allowing natural language data to be processed, 
 stored, and queried with efficiency.
+// end::details[]
 
 image::ROOT:template-examples/langchain-overview.png["Architecture diagram"]
 

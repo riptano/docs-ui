@@ -10,7 +10,3 @@
   display: flex;
   gap: var(--ds-space-1);
 }
-
-.tutorial-info .tutorial-actions {
-  margin-left: auto;
-}

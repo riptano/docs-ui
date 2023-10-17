@@ -1,12 +1,13 @@
-<aside class="toc sidebar" data-title="{{{or page.attributes.toctitle 'Contents'}}}" data-levels="{{{or page.attributes.toclevels 2}}}">
+<aside class="toc sidebar" data-title="{{{or page.attributes.toctitle 'Contents'}}}"
+  data-levels="{{{or page.attributes.toclevels 2}}}">
   <div class="toc-menu-container">
     <div class="toc-menu"></div>
     <div class="toc-menu toc-tags"></div>
-    <div class="toc-menu toc-dev">
+    {{> toc-developer-resources}}
     {{#if page.versions}}
-    <h3>Developer Resources</h3>
-    {{> page-versions}}
-    {{/if}}
+    <div class="toc-menu toc-versions">
+      {{> page-versions}}
     </div>
+    {{/if}}
   </div>
 </aside>

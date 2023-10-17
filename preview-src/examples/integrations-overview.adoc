@@ -8,6 +8,7 @@
 :cohere-icon: image:cohere.svg[,20]
 :llamaindex-icon: image:llamaindex.svg[,20]
 :cassio-icon: image:cassio.svg[,20]
+:page-integrations: preview-src/examples/integrations-detail.adoc
 
 Dive into our curated marketplace of integrations
 that elevate the capabilities of Astra's vector databases.
@@ -15,149 +16,146 @@ Whether you're looking to amplify your machine learning workflows,
 visualize embeddings, or integrate real-time data processing,
 we've got you covered.
 
-[.ds-row.header-noline]
-== Recommended
+// == LangChain
 
-[.ds-row]
---
+// [.ds-row.header-noline]
+// == Recommended
 
-[.ds-card.ds-grid]
-====
-[discrete]
-==== Hugging Face
+// [.ds-row]
+// --
 
-[.text-overflow.line-3]
-Hugging Face offers one of the largest collections of pre-trained natural language processing (NLP) models. Its user-friendly Transformers library provides deep learning models optimized for tasks like text classification,
-sentiment analysis, and more. Integrating with Astra empowers developers
-to harness these models directly alongside their database operations.
+// [.ds-card.ds-grid]
+// ====
+// [discrete]
+// ==== Hugging Face
 
-[.tags-container]
-[.tag]#Natural Language# [.tag]#Machine Learning# 
+// [.text-overflow.line-3]
+// Hugging Face offers one of the largest collections of pre-trained natural language processing (NLP) models. Its user-friendly Transformers library provides deep learning models optimized for tasks like text classification,
+// sentiment analysis, and more. Integrating with Astra empowers developers
+// to harness these models directly alongside their database operations.
 
-[.landing-card-icon]
-{hugging-icon}
-====
+// [.tags-container]
+// [.tag]#Natural Language# [.tag]#Machine Learning# 
 
-[.ds-card.ds-grid]
-====
-[discrete]
-==== OpenAI
+// [.landing-card-icon]
+// {hugging-icon}
+// ====
 
-[.text-overflow.line-3]
-OpenAI, renowned for its groundbreaking models like GPT series, brings generative AI
-capabilities to the forefront. Through its API and tools, developers can generate
-human-like text, analyze data, or even create chatbots. Integration with Astra ensures
-that data can be fetched, analyzed, and stored seamlessly when working with OpenAI tools.
+// [.ds-card.ds-grid]
+// ====
+// [discrete]
+// ==== OpenAI
 
-[.tags-container]
-[.tag]#Natural Language# [.tag]#Machine Learning# 
+// [.text-overflow.line-3]
+// OpenAI, renowned for its groundbreaking models like GPT series, brings generative AI
+// capabilities to the forefront. Through its API and tools, developers can generate
+// human-like text, analyze data, or even create chatbots. Integration with Astra ensures
+// that data can be fetched, analyzed, and stored seamlessly when working with OpenAI tools.
 
-[.landing-card-icon.bg-black]
-{openai-icon}
-====
+// [.tags-container]
+// [.tag]#Natural Language# [.tag]#Machine Learning# 
 
---
+// [.landing-card-icon.bg-black]
+// {openai-icon}
+// ====
 
-[.ds-row]
---
+// --
 
-[.ds-card.ds-grid]
-====
-[discrete]
-==== LangChain
+// [.ds-row]
+// --
 
-[.text-overflow.line-3]
-LangChain provides an enriched environment for developers looking to infuse advanced
-language understanding into their applications. As a potent machine learning framework,
-it offers sophisticated models and tools tailored for natural language processing tasks.
-When integrated with Astra's vector databases, LangChain not only generates high-quality
-embeddings but also ensures real-time syncing of data, giving your applications
-an edge in language-based operations.
+// [.ds-card.ds-grid]
+// ====
+// [discrete]
+// ==== LangChain
+// include::preview-src/examples/integrations-detail.adoc[tag=attrs]
+// [.text-overflow.line-3]
+// {page-details}
 
-[.tags-container]
-[.tag]#Natural Language# [.tag]#Machine Learning# 
+// [.tags-container]
+// [.tag]#Natural Language# [.tag]#Machine Learning# 
 
-[.landing-card-icon]
-{langchain-icon}
-====
+// [.landing-card-icon]
+// {page-icon}
+// ====
 
-[.ds-card.ds-grid]
-====
-[discrete]
-==== Jina
+// [.ds-card.ds-grid]
+// ====
+// [discrete]
+// ==== Jina
 
-[.text-overflow.line-3]
-Jina offers a neural search framework that aids in building search systems with deep learning.
-Whether it's text, images, or videos, Jina can index and retrieve data with high precision.
-Integration with Astra enables an optimized storage solution that complements Jina's search capabilities.
+// [.text-overflow.line-3]
+// Jina offers a neural search framework that aids in building search systems with deep learning.
+// Whether it's text, images, or videos, Jina can index and retrieve data with high precision.
+// Integration with Astra enables an optimized storage solution that complements Jina's search capabilities.
 
-[.tags-container]
-[.tag]#Natural Language# [.tag]#Machine Learning# 
+// [.tags-container]
+// [.tag]#Natural Language# [.tag]#Machine Learning# 
 
-[.landing-card-icon]
-{jina-icon}
-====
+// [.landing-card-icon]
+// {jina-icon}
+// ====
 
---
+// --
 
 
-== All Integrations
+// == All Integrations
 
-[.ds-card.flow-col]
---
-[unstyled]
-* *Deepset*
-+
-[.text-overflow]
-Deepset is known for its tools that specialize in extracting insights from text data. With capabilities like question-answering, document search, and more, Deepset stands out for textual data analysis. When integrated with Astra, it offers a robust solution for businesses that rely heavily on textual analytics.
+// [.ds-card.flow-col]
+// --
+// [unstyled]
+// * *Deepset*
+// +
+// [.text-overflow]
+// Deepset is known for its tools that specialize in extracting insights from text data. With capabilities like question-answering, document search, and more, Deepset stands out for textual data analysis. When integrated with Astra, it offers a robust solution for businesses that rely heavily on textual analytics.
 
-[.material-icons]
-https://example.com[arrow_forward]
+// [.material-icons]
+// https://example.com[arrow_forward]
 
-[.landing-card-icon.full]
-{deepset-icon}
---
+// [.landing-card-icon.full]
+// {deepset-icon}
+// --
 
-[.ds-card.flow-col]
---
-[unstyled.guide]
-* *Cohere*
-+
-[.text-overflow]
-Cohere provides advanced NLP models designed for a variety of tasks, ranging from text generation to understanding. Their models offer a balance between performance and efficiency. With Astra's integration, developers can effortlessly combine Cohere's capabilities with a powerful vector database solution.
+// [.ds-card.flow-col]
+// --
+// [unstyled.guide]
+// * *Cohere*
+// +
+// [.text-overflow]
+// Cohere provides advanced NLP models designed for a variety of tasks, ranging from text generation to understanding. Their models offer a balance between performance and efficiency. With Astra's integration, developers can effortlessly combine Cohere's capabilities with a powerful vector database solution.
 
-[.material-icons]
-https://example.com[arrow_forward]
+// [.material-icons]
+// https://example.com[arrow_forward]
 
-[.landing-card-icon]
-{cohere-icon}
---
+// [.landing-card-icon]
+// {cohere-icon}
+// --
 
-[.ds-card.flow-col]
---
-[unstyled]
-* *Llama Index*
-+
-Simplify data indexing with LlamaIndex. Integrate with Astra's vector capabilities to boost data retrieval speeds and accuracy.
+// [.ds-card.flow-col]
+// --
+// [unstyled]
+// * *Llama Index*
+// +
+// Simplify data indexing with LlamaIndex. Integrate with Astra's vector capabilities to boost data retrieval speeds and accuracy.
 
-[.material-icons]
-https://example.com[arrow_forward]
+// [.material-icons]
+// https://example.com[arrow_forward]
 
-[.landing-card-icon.bg-black]
-{llamaindex-icon}
---
+// [.landing-card-icon.bg-black]
+// {llamaindex-icon}
+// --
 
-[.ds-card.flow-col]
---
-[unstyled]
-* *CassIO*
-+
-[.text-overflow]
-A specialized library designed to abstract the intricacies of accessing Cassandra databases, perfect for AI and ML applications. Its integration with Astra enhances real-time data interactions.
+// [.ds-card.flow-col]
+// --
+// [unstyled]
+// * *CassIO*
+// +
+// [.text-overflow]
+// A specialized library designed to abstract the intricacies of accessing Cassandra databases, perfect for AI and ML applications. Its integration with Astra enhances real-time data interactions.
 
-[.material-icons]
-https://example.com[arrow_forward]
+// [.material-icons]
+// https://example.com[arrow_forward]
 
-[.landing-card-icon]
-{cassio-icon}
---
+// [.landing-card-icon]
+// {cassio-icon}
+// --

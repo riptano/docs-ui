@@ -17,12 +17,26 @@
       var container = toc.querySelector('.toc-tags')
       var tags = document.createElement('div')
       list.forEach((s) => {
-        var el = document.createElement('span')
-        el.textContent = s
-        tags.appendChild(el)
+        var tag = document.createElement('span')
+        tag.classList.add('tag')
+        tag.setAttribute('role', 'button')
+        tag.setAttribute('tabindex', '0')
+        tag.onclick = function () {
+          window.alert(toKebabCase(s.trim()))
+        }
+        tag.textContent = s
+        tags.appendChild(tag)
       })
       container.appendChild(title)
       container.appendChild(tags)
     }
+  }
+
+  function toKebabCase (str) {
+    if (!str) return undefined
+    return str
+      .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+      .map((x) => x.toLowerCase())
+      .join('-')
   }
 })()
