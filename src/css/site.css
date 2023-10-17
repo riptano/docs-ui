@@ -5,7 +5,6 @@
 @import "ds-light.css";
 @import "ds-dark.css";
 @import "vars.css";
-@import "ds-blocks.css";
 @import "ds-card.css";
 @import "ds-typography.css";
 @import "base.css";
@@ -21,6 +20,7 @@
 @import "toc.css";
 @import "doc.css";
 @import "ds-layout.css";
+@import "ds-blocks.css";
 @import "pagination.css";
 @import "header.css";
 @import "footer.css";

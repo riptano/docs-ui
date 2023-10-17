@@ -4,16 +4,38 @@
     <div class="sect2">
       <h4>Was This Helpful?</h4>
       <div class="paragraph">
-        <p class="navbar-end">
-        <button href="#_support_yes" id="_support_yes" class="ds-button ds-button--color-neutral 
-          ds-button--variant-outlined" data-track="Support - Was This Helpful: Yes!">
-          <span
-            class="material-icons ds-button--leading-icon">thumb_up</span>Yes</button>
-        <button href="#_support_no" id="_support_no" class="ds-button ds-button--color-neutral 
-          ds-button--variant-outlined" data-track="Support - Was This Helpful: No">
-          <span
-            class="material-icons ds-button--leading-icon">thumb_down</span>No</button>   
-        </p> 
+        <p class="survey navbar-end">
+          <button id="support_yes" class="ds-button ds-button--color-neutral
+            ds-button--variant-outlined" data-survey="Support Survey: Yes">
+            <span
+              class="material-icons ds-button--leading-icon">thumb_up</span>Yes</button>
+          <button id="support_no" class="ds-button ds-button--color-neutral
+            ds-button--variant-outlined" data-survey="Support Survey: No">
+            <span
+              class="material-icons ds-button--leading-icon">thumb_down</span>No</button>
+        </p>
+        <dialog id="dialog-survey">
+          <div class="header">
+            <p class="title">Give Feedback</p>
+            <p class="close-button"><kbd>ESC</kbd>
+              <button class="close"><span class="material-icons">close</span></button></p>
+          </div>
+          <form id="survey-form">
+            <div class="content">
+              <p class="message">Thanks for using Astra</p>
+              <p class="question">How can we improve the experience for you?</p>
+              <textarea name="message" required placeholder="Provide your feedback"></textarea>
+            </div>
+            <div class="action">
+              <button class="ds-button ds-button--color-neutral
+                ds-button--variant-outlined close" data-survey="Support Feedback: No, thanks">
+                  No, thanks</button>
+              <button id="support_submit" type="submit" class="ds-button ds-button--color-neutral
+                ds-button--variant-solid" data-survey="Support Feedback: Yes">
+                Submit Feedback</button>
+            </div>
+          </form>
+        </dialog>
       </div>
     </div>
     <div class="sect2">

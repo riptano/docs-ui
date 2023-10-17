@@ -3,7 +3,6 @@
 
   var SECT_CLASS_RX = /^sect(\d)$/
 
-
   try {
     var navContainer = document.querySelector('.nav-container')
     var navToggle = document.querySelector('.nav-toggle')
@@ -48,7 +47,6 @@
     menuPanel.addEventListener('mousedown', function (e) {
       if (e.detail > 1) e.preventDefault()
     })
-
   } catch (e) {}
 
   function onHashChange () {
