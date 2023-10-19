@@ -1,0 +1,158 @@
+name: Deploy Bundle Preview
+
+on:
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure Git Credentials
+        uses: de-vri-es/setup-git-credentials@v2
+        with:
+          credentials: ${{ secrets.GIT_CREDENTIALS }}
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.20.2
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Extract Branch Names
+        shell: bash
+        run: |
+          # transform branch names in form of `refs/heads/main` to `main`
+          draft_branch=$(basename ${{ github.event.pull_request.head.ref }})
+          echo "draft_branch=$draft_branch" >> $GITHUB_OUTPUT
+        id: extract_branch
+
+      - name: Build UI Bundle Preview
+        run: |
+          set -o pipefail
+          gulp lint |& tee $GITHUB_WORKSPACE/build.log
+          UI_ROOT_PATH_PREFIX=${{ github.event.repository.name }}/${{ steps.extract_branch.outputs.draft_branch }} \
+            gulp preview:build |& tee $GITHUB_WORKSPACE/build.log
+
+      - name: Check Build Result
+        id: logFail
+        if: failure()
+        run: |
+          MULTILINE_LOG=$(cat $GITHUB_WORKSPACE/build.log)
+          echo "BUILD_FAILURE<<EOF" >> $GITHUB_ENV
+          echo $MULTILINE_LOG >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Create Build Success Comment
+        if: ${{ success() && github.event.pull_request.number }}
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          token: ${{ secrets.COMMENT_GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            UI bundle preview build successful! :white_check_mark:
+            Deploying preview to GitHub Pages.
+          reactions: rocket
+
+      - name: Create Build Failure Comment
+        if: ${{ failure() && github.event.pull_request.number }}
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          token: ${{ secrets.COMMENT_GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            UI bundle preview build failure! :x:
+            > ${{ env.BUILD_FAILURE }}
+          reactions: confused
+
+      - name: Find Comment
+        if: ${{ success() && github.event.pull_request.number }}
+        uses: peter-evans/find-comment@v2
+        id: fc
+        with:
+          token: ${{ secrets.COMMENT_GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'mlr'
+          body-includes: UI bundle preview build successful!
+          direction: last
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        run: |
+          git clone https://github.com/$GITHUB_REPOSITORY.git pages
+          cd pages
+          git checkout gh-pages
+
+          # If there was previously a build for the preview, then remove it
+          # so we get a clean build. This is needed in case a follow up
+          # build of the same pull request contains content deletions.
+          rm -rf ${{ steps.extract_branch.outputs.draft_branch }}
+
+          mkdir -p ${{ steps.extract_branch.outputs.draft_branch }}
+          cp -r ../public/* ${{ steps.extract_branch.outputs.draft_branch }}/.
+
+          # Records the repository that originally triggered the build so we can post back
+          # comments upon clean up of a stale draft if it still has an open pull request.
+          echo "${{ github.event.repository.full_name }}" > ${{ steps.extract_branch.outputs.draft_branch }}/.github_source_repository
+
+          git add .
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git commit --allow-empty -m "Auto-deployed from GitHub Actions"
+          git push -u origin gh-pages
+
+      - name: Obtain GitHub Pages build URL
+        if: success()
+        run: |
+          sleep 5 # Allow time for build to initiate
+          build_url=$(curl -s -L \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.COMMENT_GITHUB_TOKEN }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" 'https://api.github.com/repos/${{ github.event.repository.full_name }}/pages/builds/latest' \
+          | jq -r .url)
+          echo "url=$build_url" >> $GITHUB_OUTPUT
+        id: ghpages_build
+
+      - name: Wait for Github Pages deployment
+        if: success()
+        run: |
+          for i in {1..60}; do
+            build_status=$(curl -s -L \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer ${{ secrets.COMMENT_GITHUB_TOKEN }}" \
+              -H "X-GitHub-Api-Version: 2022-11-28" '${{ steps.ghpages_build.outputs.url }}' \
+            | jq -r .status)
+
+            if [ "$build_status" == "built" ]; then echo "Deploy is complete."
+              exit 0
+            else
+              echo "Deploy is not complete. Status: $build_status. Retrying in 10 seconds..."
+              sleep 10
+            fi
+          done
+          echo "Deploy is still not complete after approximately 10 minutes."
+          exit 1
+
+      - name: Get GitHub Pages Preview URL
+        if: success()
+        shell: bash
+        run: |
+          echo "url=https://riptano.github.io/${{ github.event.repository.name }}/${{ steps.extract_branch.outputs.draft_branch }}/" >> $GITHUB_OUTPUT
+        id: draft_url
+
+      - name: Update comment
+        if: ${{ steps.fc.outputs.comment-id != '' }}
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          token: ${{ secrets.COMMENT_GITHUB_TOKEN }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          body: |
+            Deployment successful! [View preview](${{ steps.draft_url.outputs.url }})
+          reactions: hooray
