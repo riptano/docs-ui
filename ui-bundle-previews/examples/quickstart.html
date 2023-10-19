@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quickstart :: Brand Docs</title>
+    <meta name="generator" content="Antora 1.0.0">
+    <link rel="stylesheet" href="/_/css/site.css">
+    <link rel="stylesheet" href="/_/css/vendor/tabs.css">
+
+<script>var uiRootPath = '/_'</script>
+
+<link rel="preload" href="/_/font/material-icons-outlined-latin-400-normal.woff2" as="font"
+    type="font/woff2" crossorigin>
+<link rel="preload" href="/_/font/roboto-flex-latin-400-normal.woff2" as="font" type="font/woff2"
+    crossorigin>
+<link rel="preload" href="/_/font/roboto-mono-latin-500-normal.woff2" as="font" type="font/woff2"
+    crossorigin>
+
+<script>
+    var prefersTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    var storedTheme = localStorage.getItem('theme') || prefersTheme
+
+    if (storedTheme) {
+        document.documentElement.setAttribute('data-theme', storedTheme)
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light')
+    }
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="http://localhost:5252" id="datastax-docs-logo-main"></a>
+      <button data-target="topbar-nav"
+        class="navbar-burger ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-plain"></button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end hide-for-print">
+        <div class="search">
+          <div class="DocSearch" id="docsearch"></div>
+        </div>
+        <button class="ds-button ds-button--color-neutral ds-button--variant-outlined" id="get-support"><span
+            class="material-icons ds-button--leading-icon">support_agent</span>Get Live Help</button>
+
+        <button class="ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-outlined"
+          id="theme-toggle"></button>
+      </div>
+    </div>
+  </nav>
+</header><div class="body">
+  <div class="nav-container"  data-component="xyz"
+  data-version="5.2"  autofocus>
+  <aside class="nav">
+    <div class="panels">
+      <div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#">Quickstart</a>
+    <ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="index.html">Brand&#8217;s Hardware &amp; Software Requirements</a>
+      </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#cu-solet">Cu Solet</a>
+      </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#english+中文">English + 中文</a>
+      </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#liber-recusabo">Liber Recusabo</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text">Reference</span>
+    <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#">Keyboard Shortcuts</a>
+      </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#">Importing and Exporting</a>
+      </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#some-code">Some Code</a>
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+    <ul class="secondary-nav-list">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.datastax.com/" target="_self">
+      <span class="material-icons">home</span>
+      DataStax Home
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/en/glossary/doc" target="_blank">
+      <span class="material-icons">menu_book</span>
+      Glossary
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://support.datastax.com/" target="_blank">
+      <span class="material-icons">support</span>
+      Support
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://downloads.datastax.com/" target="_blank">
+      <span class="material-icons">downloading</span>
+      Downloads
+    </a>
+  </li>
+</ul>  </nav>
+</div>
+    </div>
+  </aside>
+</div>  <div class="content-container">
+    <main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle ds-button ds-button--color-neutral ds-button--variant-plain ds-button--is-icon"></button><nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="#">Component XYZ</a></li>
+<li>
+    <a href="index.html">Brand&#8217;s Hardware &amp; Software Requirements</a>
+    </li>  </ul>
+</nav>
+<div class="edit-this-page"><a href="http://example.com/project-xyz/blob/main/index.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu-container">
+    <div class="toc-menu"></div>
+    <div class="toc-menu toc-tags"></div>
+    <div class="toc-menu toc-dev">
+    <h3>Developer Resources</h3>
+    <div class="page-versions">
+  <span class="material-icons">task</span>
+  <button class="version-menu-toggle" title="Show other versions of page">5.2</button>
+  <div class="version-menu">
+    <a class="version" href="#">6.0</a>
+    <a class="version is-current" href="#">5.2</a>
+    <a class="version" href="#">5.1</a>
+    <a class="version is-missing" href="#">5.0</a>
+  </div>
+</div>
+    </div>
+  </div>
+</aside>
+<article class="doc">
+  <h1 class="page">Quickstart</h1>
+  <div class="tutorial-info is-before-toc">
+  <div class="info-item">
+    <span class="material-icons">network_check</span>
+    Beginner
+  </div>
+  <div class="info-item">
+    <span class="material-icons">playlist_add_check</span>
+    6 Steps
+  </div>
+  <div class="info-item">
+    <span class="material-icons">query_builder</span>
+    15 min
+  </div>
+  <div class="tutorial-actions">
+    <a href="https://colab.research.google.com/github/CassioML/cassio-website/blob/main/docs/frameworks/langchain/.colab/colab_qa-basic.ipynb" target="_blank" class="colab ds-button ds-button--variant-outlined ds-button--color-neutral">
+      <div class="ds-button--leading-icon"><img src="/_/img/colab.svg" alt="colab" /></div>
+      Run this on Colab
+    </a>
+  </div>
+</div>  <div class="sect1">
+<h2 id="_objective"><a class="anchor" href="#_objective"></a>Objective</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Learn how to create a new database, connect to your database, load a set of vector embeddings, and perform a similarity search to find vectors that are close to the one in your query.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="ROOT:template-examples/quickstart-overview.png" alt="Tutorial overview">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To get started, ensure you have an <a href="https://astra.datastax.com">active Astra account</a> with the requisite permissions.</p>
+</div>
+<div class="sect2 step">
+<h3 id="_install_the_python_sdk_and_open_a_python_repl"><a class="anchor" href="#_install_the_python_sdk_and_open_a_python_repl"></a>Install the Python SDK and open a Python REPL.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">pip install astra-vector</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">python</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Additional clients, such as <a href="https://docs.datastax.com/en/astra-serverless/docs/develop/sdks/rest-nodejs-client.html">Node.js</a> and <a href="https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-json.html">JSON API</a>, are available.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2 step">
+<h3 id="_connect_to_astra_and_create_a_database"><a class="anchor" href="#_connect_to_astra_and_create_a_database"></a>Connect to Astra and create a database.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">import astra_vector
+
+# Authenticate to the SaaS database
+api_key = 'your_api_key'
+client = astra_vector.Client(api_key)
+
+# Create a new database
+database_name = 'my_vector_database'
+client.create_database(database_name)
+
+# Connect to the database
+db = client.connect(database_name)
+
+# Create a new table for vectors
+table_name = 'vector_data'
+db.create_table(table_name)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_core_steps"><a class="anchor" href="#_core_steps"></a>Core steps</h2>
+<div class="sectionbody">
+<div class="sect2 step">
+<h3 id="_prepare_and_ingest_data"><a class="anchor" href="#_prepare_and_ingest_data"></a>Prepare and ingest data.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python"># Load sample vector data
+sample_vectors = [
+    {'id': 1, 'vector': [0.1, 0.2, 0.3]},
+    {'id': 2, 'vector': [0.4, 0.5, 0.7]}
+]
+
+for data in sample_vectors:
+    db.insert_record(table_name, data)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2 step">
+<h3 id="_perform_a_similarity_search"><a class="anchor" href="#_perform_a_similarity_search"></a>Perform a similarity search.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python"># Run a similarity search
+query_vector = [0.2, 0.3, 0.4]
+results = db.similarity_search(table_name, query_vector, k=5)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2 step">
+<h3 id="_show_the_results"><a class="anchor" href="#_show_the_results"></a>Show the results.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python"># Similarity search results
+for result in results:
+    print(f"ID: {result['id']}, Similarity Score: {result['score']}")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cleanup"><a class="anchor" href="#_cleanup"></a>Cleanup</h2>
+<div class="sectionbody">
+<div class="sect2 step step-reset">
+<h3 id="_delete_all_resources"><a class="anchor" href="#_delete_all_resources"></a>Delete all resources.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python"># Delete the table
+db.delete_table(table_name)
+print(f"Table '{table_name}' deleted.")
+
+# Delete the database
+client.delete_database(database_name)
+print(f"Database '{database_name}' deleted.")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this tutorial, you learned how to:</p>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-check-square-o"></i> Create a new database</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> Connect to your database</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> Load a set of vector embeddings</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> Perform a similarity search to find vectors that are close to the one in your query</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You&#8217;re well on your way to becoming an Astra Vector expert!</p>
+</div>
+</div>
+</div>
+<div class="sect1 header-noline">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="openblock ds-card">
+<div class="content">
+<div class="ulist unstyled">
+<ul class="unstyled">
+<li>
+<p><a href="https://example.com">Grasp the basics</a> <span class="material-icons">auto_stories</span> Tutorial</p>
+<div class="paragraph">
+<p>Before diving deep, ensure a solid understanding of foundational concepts surrounding vector databases.
+Delve into embeddings, the nature of high-dimensional data, and their profound impact on machine learning processes.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock ds-card">
+<div class="content">
+<div class="ulist unstyled guide">
+<ul class="unstyled">
+<li>
+<p><a href="https://example.com">Installation</a> <span class="material-icons">fact_check</span> Guide</p>
+<div class="paragraph">
+<p>Before diving deep, ensure a solid understanding of foundational concepts surrounding vector databases.
+Delve into embeddings, the nature of high-dimensional data, and their profound impact on machine learning processes.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock ds-card">
+<div class="content">
+<div class="ulist unstyled">
+<ul class="unstyled">
+<li>
+<p><a href="https://example.com">Ingest and store vector data</a> <span class="material-icons">auto_stories</span> Tutorial</p>
+<div class="paragraph">
+<p>Before diving deep, ensure a solid understanding of foundational concepts surrounding vector databases.
+Delve into embeddings, the nature of high-dimensional data, and their profound impact on machine learning processes.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </article>  </div>
+</main>
+    <div class="footer--divider"></div>
+
+<footer class="footer">
+  <div class="footer-column">
+    <a href="https://www.datastax.com" target="_blank" id="datastax-docs-logo-text"
+      title="Go to the DataStax Website"></a>
+    <p>
+      <span>©</span>
+      <span id="copyrightdate">2023</span>
+      <span>DataStax |
+        <a href="https://www.datastax.com/legal/datastax-website-privacy-policy" target="_blank">Privacy policy</a> |
+        <a href="https://www.datastax.com/legal/datastax-website-terms-use" target="_blank">Terms of use</a>
+      </span>
+    </p>
+    <p class="footer--trademarks">Apache, Apache Cassandra, Cassandra, Apache Tomcat, Tomcat, Apache Lucene,
+      Apache Solr, Apache Hadoop, Hadoop, Apache Pulsar, Pulsar, Apache Spark, Spark, Apache
+      TinkerPop, TinkerPop, Apache Kafka and Kafka are either registered trademarks or
+      trademarks of the Apache Software Foundation or its subsidiaries in Canada,
+      the United States and/or other countries. Kubernetes is the registered trademark
+      of the Linux Foundation.</p>
+  </div>
+  <div class="footer-column contact">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/datastax" target="_blank" class="facebook-icon"
+        title="Go to DataStax Facebook"></a>
+      <a href="https://twitter.com/datastax" target="_blank" class="x-icon" title="Go to DataStax X (Twitter)"></a>
+      <a href="https://github.com/datastax/" target="_blank" class="git-icon" title="Go to DataStax GitHub"></a>
+      <a href="https://www.twitch.tv/datastaxdevs" target="_blank" class="twitch-icon"
+        title="Go to DataStax Twitch"></a>
+      <a href="https://www.linkedin.com/company/datastax/" target="_blank" class="linkedin-icon"
+        title="Go to DataStax Linkedin"></a>
+      <a href="https://datastax.medium.com/" target="_blank" class="medium-icon" title="Go to DataStax Medium"></a>
+    </div>
+    <p class="footer--contact-us">General Inquiries:
+      <a href="tel:+1-650-389-6000">+1 (650) 389-6000</a>
+      <a href="mailto:info@datastax.com">info@datastax.com</a>
+    </p>
+  </div>
+</footer>  </div>
+</div>
+<script id="site-script" src="/_/js/site.js" data-ui-root-path="/_"></script>
+<script async src="/_/js/vendor/tabs.js"></script>
+<script async src="/_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>
+  docsearch({
+    container: '#docsearch',
+    appId: '2ELPRZR9UC',
+    indexName: 'crawler_DocSearch Astra Serverless',
+    apiKey: '1f4acbf51d118e4137e9a63b38bd8456',
+  })
+</script>  </body>
+</html>
