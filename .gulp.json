@@ -1,4 +1,0 @@
-{
-  "description": "Build tasks for the DataStax Docs UI project",
-  "flags.tasksDepth": 1
-}
