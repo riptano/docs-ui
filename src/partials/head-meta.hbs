@@ -1,1 +1,16 @@
     {{!-- Add additional meta tags here --}}
+    <meta property="og:site_name" content="DataStax Docs">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{site.url}}">
+    <meta property="og:title" content="{{page.title}} :: {{site.title}}">
+    <meta property="og:image" content="{{site.url}}/{{{uiRootPath}}}/img/datastax-docs-banner.png">
+    {{#with page.description}}
+    <meta property="og:description" content="{{this}}">
+    {{/with}}
+    <meta property="twitter:title" content="{{page.title}} :: {{site.title}}">
+    {{#with page.description}}
+    <meta property="twitter:description" content="{{this}}">
+    {{/with}}
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{site.url}}">
+    <meta property="twitter:image" content="{{site.url}}/{{{uiRootPath}}}/img/datastax-docs-banner.png">
