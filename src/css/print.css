@@ -68,7 +68,8 @@
   }
 
   .doc .admonitionblock td.icon {
-    color-adjust: exact;
+    /* stylelint-disable-next-line property-no-unknown */
+    print-color-adjust: exact;
   }
 
   .doc .listingblock code[data-lang]::before {
