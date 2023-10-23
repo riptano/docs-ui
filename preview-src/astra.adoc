@@ -1,37 +1,51 @@
-= {company} Astra
+= DataStax Astra
 :page-layout: full
-:vector-image: image::ROOT:ui/integrations-browser.png[Browser,420,220,align=center]
 
+[.max-w-[650px]]
 DataStax Astra is a cutting-edge cloud-native database platform designed to empower developers.
 Harnessing the strengths of vector databases, serverless computing, and real-time streaming, Astra propels application development into the next generation.
 From AI-driven capabilities to robust data stream management, Astra simplifies complex tasks, offering unparalleled performance and scalability.
 
-[.ds-feature-buttons]
-https://astra.datastax.com[Explore Astra Vector^,role="ds-button ds-button\--color-primary ds-button\--variant-solid"]
-https://astra.datastax.com[Create Astra Account^,role="ds-button ds-button\--color-primary ds-button\--variant-outlined external"]
+[.[&>h2]:hidden]
+== {empty}
 
-[.vector.header-noline.text-h1.row.border-bottom]
-== Vector
---
-[.landing-card-icon]
-image:astra-vector.svg[vector,20,role=for-light]
-image:astra-vector-dark.svg[vector,20,role=for-dark]
+++++
+<div class="flex rounded-[6px] bg-[var(--ds-neutral-soft-bg)] p-3 -mx-3">
+<div class="flex flex-col lg:basis-2/4">
+++++
+
+[discrete.[&>h2]:border-0.!m-0]
+== image:astra-vector.svg[vector,20,role="for-light landing-card-icon block mb-1"] image:astra-vector-dark.svg[vector,20,role="for-dark landing-card-icon block mb-1"] Vector
 
 Delve into a database optimized for AI-driven tasks.
 Astra Vector is tailored to offer unparalleled precision, speed, and scalability for AI applications, transforming how your applications perceive and interact with data.
 
-[.landing-a]
-xref:astra-vector::index.adoc[Learn More About Astra Vector]
---
-image::astra-browser.png[Browser,420,220,align=center,float=bottom]
+++++
+<div class="flex flex-nowrap gap-1">
+++++
 
-''''
+https://astra.datastax.com[Explore Astra Vector^,role="ds-button ds-button\--color-primary ds-button\--variant-solid"]
 
-[.grid]
---
-[discrete]
-=== Serverless C*
+https://astra.datastax.com[Create Astra Account^,role="ds-button ds-button\--color-primary ds-button\--variant-outlined external"]
 
+++++
+</div>
+</div>
+<div class="hidden lg:block flex basis-2/4 relative">
+++++
+
+[.absolute.-bottom-3.right-0]
+image::astra-browser.png[Browser,550,348,align=center,float=top]
+
+++++
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-3">
+<div class="flex-col">
+++++
+
+[discrete.m-0]
+=== [.material-icons.landing-card-icon.block.mb-1]#table_chart# Serverless C*
 Delve deep into high-dimensional spaces with Astra Vector.
 Engineered for AI-intensive tasks, it offers unparalleled precision, speed, and scalability.
 Bring complex AI models into production with confidence, leveraging Astra's robust architecture.
@@ -39,15 +53,13 @@ Bring complex AI models into production with confidence, leveraging Astra's robu
 [.landing-a]
 https://docs.datastax.com/en/astra-serverless/docs/index.html[Discover Astra Serverless C*]
 
-[.material-icons.landing-card-icon]
-table_chart
+++++
+</div>
+<div class="flex-col">
+++++
 
---
-
-[.grid]
---
 [discrete]
-=== Streaming
+=== [.material-icons.landing-card-icon.block.mb-1]#air# Streaming
 
 Harness real-time data with Astra Streaming.
 Process, analyze, and act on data as it's generated.
@@ -56,14 +68,17 @@ Whether you're analyzing user behavior or monitoring systems, Astra Streaming de
 [.landing-a]
 https://docs.datastax.com/en/streaming/astra-streaming/index.html[Dive into Astra Streaming]
 
-[.material-icons.landing-card-icon]
-air
+++++
+</div>
+</div>
+++++
 
---
-
-
-[.header-noline.text-h1.ds-row.ds-grid]
+[.text-h1.[&>h2]:!border-0]
 == Explore More of Astra
+
+++++
+<div class="flex flex-col lg:flex-row gap-3 mb-5">
+++++
 
 === Dive Deeper into Vector
 
@@ -91,3 +106,7 @@ Delve deeper into the real-time data processing capabilities of Astra.
 * link:{#}[Streaming Fundamentals]
 * link:{#}[Advanced Streaming Configurations]
 * link:{#}[Starlight Integrations: JMS, Kafka, RabbitMQ]
+
+++++
+</div>
+++++
