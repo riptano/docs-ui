@@ -5,6 +5,7 @@ asciidoc:
 site:
   url: http://localhost:5252
   title: Brand Docs
+  isPreviewSite: true
   homeUrl: &home_url /xyz/5.2/index.html
   components:
   - name: abc

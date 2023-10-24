@@ -992,13 +992,13 @@ image::screenshot.png[Screenshot of Astra Portal Home]
 image::screenshot.png[Screenshot of Astra Portal Home,300]
 
 .SVG image (300px width; default alignment). Image is rasterized (`opts=` _none_).
-image::multirepo-ssg.svg[Multirepo SSG,300]
+image::preview-src/multirepo-ssg.svg[Multirepo SSG,300]
 
 .SVG image (300px width; default alignment). Image embedded as a live, interactive object (`opts=interactive`).
-image::multirepo-ssg.svg[Multirepo SSG,300,opts=interactive]
+image::preview-src/multirepo-ssg.svg[Multirepo SSG,300,opts=interactive]
 
 .SVG image (300px width; default alignment). Image embedded directly into the HTML itself (`opts=inline`).
-image::multirepo-ssg.svg[Multirepo SSG,300,opts=inline]
+image::preview-src/multirepo-ssg.svg[Multirepo SSG,300,opts=inline]
 
 ==== Aligning block images
 

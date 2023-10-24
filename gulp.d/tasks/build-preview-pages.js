@@ -45,7 +45,17 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
             const uiModel = { ...baseUiModel }
             uiModel.page = { ...uiModel.page }
             uiModel.siteRootPath = siteRootPath
-            uiModel.uiRootPath = path.join(siteRootPath, '_')
+
+            // The following has been customized to enable pull request preview builds on Github Pages.
+            // It differs from the Antora Default UI by allowing for an optional UI_ROOT_PATH_PREFIX.
+            // This environment variable is set during build to add a prefix to the {{ uiRootPath }} variable.
+            // This enables us to have preview builds that live in their own subdirectory on GitHub Pages.
+            let uiRootPath = path.join(siteRootPath, '_')
+            if (uiModel.env.UI_ROOT_PATH_PREFIX) {
+              uiRootPath = path.join('/', uiModel.env.UI_ROOT_PATH_PREFIX, uiRootPath)
+            }
+            uiModel.uiRootPath = uiRootPath
+
             if (file.stem === '404') {
               uiModel.page = { layout: '404', title: 'Page Not Found' }
             } else {

@@ -1,0 +1,125 @@
+name: Cleanup GitHub Pages
+
+on:
+  schedule:
+    # Runs daily at 1AM UTC which is 6PM pacific
+    - cron:  '0 1 * * *'
+
+  workflow_dispatch:
+    inputs:
+      stale_threshold:
+        description: 'Threshold after which the preview build is considered to be stale'
+        default: '2 weeks'
+        type: string
+
+jobs:
+  remove_stale_previews:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: 'gh-pages'
+          fetch-depth: 0
+
+      - name: Determine Previews to Delete
+        id: find_previews
+        run: |
+          # Get the stale threshold from the workflow parameter
+          # and calculate the timestamp for the threshold
+          STALE_THRESHOLD="${{ github.event.inputs.stale_threshold || '2 weeks' }}"
+          THRESHOLD_DATE=$(date --date="$STALE_THRESHOLD ago" +%s)
+
+          # Find and collect previews older than the specified threshold, skipping "main" and ".git"
+          STALE_PREVIEWS=()
+          for dir in $(find . -type d -mindepth 1 -maxdepth 1); do
+            # Check if the preview name is "main" or ".git" and skip it
+            if [ "$(basename "$dir")" == "main" ] || [ "$(basename "$dir")" == ".git" ]; then
+              continue
+            fi
+
+            DIR_DATE=$(git log -1 --format="%ct" -- "$dir")
+            if [ -n "$DIR_DATE" ] && [ "$DIR_DATE" -lt "$THRESHOLD_DATE" ]; then
+              STALE_PREVIEWS+=("$(basename "$dir")")
+            fi
+          done
+
+          if [ -z "${STALE_PREVIEWS[*]}" ]; then
+            echo "Did not find any stale previews based on $STALE_THRESHOLD threshold. Done."
+          else
+            echo "Previews determined to be stale based on $STALE_THRESHOLD threshold: ${STALE_PREVIEWS[*]}"
+          fi
+
+          # Set the list of previews to be removed as an output
+          echo "previews_to_delete=${STALE_PREVIEWS[*]}" >> $GITHUB_OUTPUT
+
+      - name: Notify Open Pull Requests of Preview Removal
+        if: ${{ steps.find_previews.outputs.previews_to_delete != '' }}
+        run: |
+          # Notify open pull requests of their preview being deleted
+          # but don't fail on this step for any reason
+          set +e
+
+          STALE_PREVIEWS=(${{ steps.find_previews.outputs.previews_to_delete }})
+          STALE_THRESHOLD="${{ github.event.inputs.stale_threshold || '2 weeks' }}"
+
+          # Iterate through the previews and look for open PRs
+          for dir in "${STALE_PREVIEWS[@]}"; do
+            if [ -f "$dir/.github_source_repository" ]; then
+              # Get the source repository for the preview build
+              SOURCE_REPO=$(cat "$dir/.github_source_repository")
+              echo "Source repository for $dir is $SOURCE_REPO"
+            else
+              # Without .github_source_repository we don't know where to post the comment so we'll skip
+              echo "Could not determine source repository for $dir. Skipping."
+              continue
+            fi
+
+            # Check if there are open pull requests for the source repository
+            OPEN_PRS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$SOURCE_REPO/pulls?state=open")
+
+            # Check if any open pull requests match the preview branch name
+            PREVIEW_PRS=$(echo $OPEN_PRS | jq -r --arg dir "$dir" '.[] | select(.head.ref == $dir) | .number' 2>/dev/null)
+
+            if [[ -n "$PREVIEW_PRS" ]]; then
+              # Comment on the open PRs
+              for pr_number in $PREVIEW_PRS; do
+                COMMENT_BODY="The preview build for this pull request has been cleaned up due to being stale.\n\nPreview builds that were $STALE_THRESHOLD old or older were automatically removed to maintain a tidy GitHub Pages site.\n\nYou can rebuild the preview at any time by pushing a new commit to this pull request:\n\n\`\`\`\ngit checkout $dir\ngit commit --allow-empty -m 'rebuild preview'\ngit push origin $dir\n\`\`\`"
+                curl -X POST -d "{\"body\":\"$COMMENT_BODY\"}" -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$SOURCE_REPO/issues/$pr_number/comments"
+              done
+            else
+              echo "No open pull requests for $dir. No notification needed."
+            fi
+          done
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Remove Previews and Push to GitHub Pages
+        if: ${{ steps.find_previews.outputs.previews_to_delete != '' }}
+        run: |
+          # Get the list of directories to delete from the previous step's output
+          STALE_PREVIEWS=(${{ steps.find_previews.outputs.previews_to_delete }})
+
+          # Get the stale threshold from the workflow parameter
+          # and calculate the timestamp for the threshold
+          STALE_THRESHOLD="${{ github.event.inputs.stale_threshold || '2 weeks' }}"
+
+          echo "Removing stale previews based on $STALE_THRESHOLD threshold: ${STALE_PREVIEWS[*]}"
+
+          # Remove the directories and their contents
+          for dir in "${STALE_PREVIEWS[@]}"; do
+            rm -rf "$dir"
+          done
+
+          # Commit and push the changes
+          git add .
+
+          if [[ `git status --porcelain` ]]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email 'github-actions[bot]@users.noreply.github.com'
+            git commit -m "Removed previews older than $STALE_THRESHOLD via ${{ github.event_name }} by ${{ github.actor }}"
+            git push origin gh-pages
+          else
+            echo "No previews were deleted."
+          fi
