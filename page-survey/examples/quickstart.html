@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Quickstart :: Brand Docs</title>
     <meta name="generator" content="Antora 1.0.0">
-    <link rel="stylesheet" href="/docs-ui/_/css/site.css">
-    <link rel="stylesheet" href="/docs-ui/_/css/vendor/tabs.css">
+<link rel="stylesheet" href="/docs-ui/_/css/site.css">
+<link rel="stylesheet" href="/docs-ui/_/css/vendor/tabs.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script type="module">
+    import tailwindconfig from '//docs-ui/_/js/tailwind.config.js'
+    tailwind.config = tailwindconfig
+</script>
 
 
 <script>var uiRootPath = '/docs-ui/_'</script>
@@ -385,45 +390,45 @@ Delve into embeddings, the nature of high-dimensional data, and their profound i
 </div>
 </div>
 </div>
-  <div class="sect1 ds-row">
-	<h2 id="support"><a class="anchor" href="#support"></a> Support</h2>
+  <div class="sect1 row">
+	<h2>Support</h2>
 	<div class="sectionbody">
     <div class="sect2">
       <h4>Was This Helpful?</h4>
-      <div class="paragraph">
-        <p class="survey navbar-end">
+      <div class="paragraph dialog-action--container">
+        <p class="dialog-action navbar-end">
           <button id="support_yes" class="ds-button ds-button--color-neutral
-            ds-button--variant-outlined" data-survey="Support Survey: Yes">
+            ds-button--variant-outlined ds-button--not-disabled" data-survey="Was This Helpful?: Yes">
             <span
               class="material-icons ds-button--leading-icon">thumb_up</span>Yes</button>
           <button id="support_no" class="ds-button ds-button--color-neutral
-            ds-button--variant-outlined" data-survey="Support Survey: No">
+            ds-button--variant-outlined ds-button--not-disabled" data-survey="Was This Helpful?: No">
             <span
               class="material-icons ds-button--leading-icon">thumb_down</span>No</button>
         </p>
-        <dialog id="dialog-survey">
-          <form id="survey-form">
-            <div class="header">
-              <p class="title">Give Feedback</p>
-              <p class="close-button"><kbd>ESC</kbd>
-                <button class="close" aria-label="close" formnovalidate><span class="material-icons">close</span></button></p>
-            </div>
-            <div class="content">
-              <p class="message">Thanks for using Astra</p>
-              <p class="question">How can we improve the experience for you?</p>
-              <textarea name="message" required placeholder="Provide your feedback"></textarea>
-            </div>
-            <div class="action">
-              <button class="ds-button ds-button--color-neutral
-                ds-button--variant-outlined close" data-survey="Support Feedback: No, thanks">
-                  No, thanks</button>
-              <button id="support_submit" type="submit" class="ds-button ds-button--color-neutral
-                ds-button--variant-solid" data-survey="Support Feedback: Yes">
-                Submit Feedback</button>
-            </div>
-          </form>
-        </dialog>
       </div>
+      <dialog id="dialog-survey">
+        <form id="survey-form">
+          <div class="header">
+            <p class="title">Give Feedback</p>
+            <p class="close-button"><kbd>ESC</kbd>
+              <button class="close" aria-label="close" formnovalidate><span class="material-icons">close</span></button></p>
+          </div>
+          <div class="content">
+            <p class="message">Thanks for using Astra</p>
+            <p class="question">How can we improve the experience for you?</p>
+            <textarea name="message" placeholder="Provide your feedback"></textarea>
+          </div>
+          <div class="action">
+            <button class="ds-button ds-button--color-neutral
+              ds-button--variant-outlined close" data-survey="Give Feedback: No, thanks">
+                No, thanks</button>
+            <button id="support_submit" type="submit" class="ds-button ds-button--color-neutral
+              ds-button--variant-solid" data-survey="Give Feedback: Yes">
+              Submit Feedback</button>
+          </div>
+        </form>
+      </dialog>
     </div>
     <div class="sect2">
       <h4>Need More Help?</h4>
