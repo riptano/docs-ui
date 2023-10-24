@@ -3,51 +3,52 @@
 
   var SECT_CLASS_RX = /^sect(\d)$/
 
-  try {
-    var navContainer = document.querySelector('.nav-container')
-    var navToggle = document.querySelector('.nav-toggle')
-    var nav = navContainer.querySelector('.nav')
+  var navContainer = document.querySelector('.nav-container')
 
-    navToggle.addEventListener('click', showNav)
-    navContainer.addEventListener('click', trapEvent)
+  if (!navContainer) return
 
-    var menuPanel = navContainer.querySelector('[data-panel=menu]')
-    if (!menuPanel) return
-    var explorePanel = navContainer.querySelector('[data-panel=explore]')
+  var navToggle = document.querySelector('.nav-toggle')
+  var nav = navContainer.querySelector('.nav')
 
-    var currentPageItem = menuPanel.querySelector('.is-current-page')
-    var originalPageItem = currentPageItem
-    if (currentPageItem) {
-      activateCurrentPath(currentPageItem)
-      scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
-    } else {
-      menuPanel.scrollTop = 0
+  navToggle.addEventListener('click', showNav)
+  navContainer.addEventListener('click', trapEvent)
+
+  var menuPanel = navContainer.querySelector('[data-panel=menu]')
+  if (!menuPanel) return
+  var explorePanel = navContainer.querySelector('[data-panel=explore]')
+
+  var currentPageItem = menuPanel.querySelector('.is-current-page')
+  var originalPageItem = currentPageItem
+  if (currentPageItem) {
+    activateCurrentPath(currentPageItem)
+    scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
+  } else {
+    menuPanel.scrollTop = 0
+  }
+
+  find(menuPanel, '.nav-item-toggle').forEach(function (btn) {
+    var li = btn.parentElement
+    btn.addEventListener('click', toggleActive.bind(li))
+    var navItemSpan = findNextElement(btn, '.nav-text')
+    if (navItemSpan) {
+      navItemSpan.style.cursor = 'pointer'
+      navItemSpan.addEventListener('click', toggleActive.bind(li))
     }
+  })
 
-    find(menuPanel, '.nav-item-toggle').forEach(function (btn) {
-      var li = btn.parentElement
-      btn.addEventListener('click', toggleActive.bind(li))
-      var navItemSpan = findNextElement(btn, '.nav-text')
-      if (navItemSpan) {
-        navItemSpan.style.cursor = 'pointer'
-        navItemSpan.addEventListener('click', toggleActive.bind(li))
-      }
-    })
-
-    if (explorePanel) {
-      explorePanel.querySelector('.context').addEventListener('click', function () {
-        // NOTE logic assumes there are only two panels
-        find(nav, '[data-panel]').forEach(function (panel) {
-          panel.classList.toggle('is-active')
-        })
+  if (explorePanel) {
+    explorePanel.querySelector('.context').addEventListener('click', function () {
+      // NOTE logic assumes there are only two panels
+      find(nav, '[data-panel]').forEach(function (panel) {
+        panel.classList.toggle('is-active')
       })
-    }
-
-    // NOTE prevent text from being selected by double click
-    menuPanel.addEventListener('mousedown', function (e) {
-      if (e.detail > 1) e.preventDefault()
     })
-  } catch (e) {}
+  }
+
+  // NOTE prevent text from being selected by double click
+  menuPanel.addEventListener('mousedown', function (e) {
+    if (e.detail > 1) e.preventDefault()
+  })
 
   function onHashChange () {
     var navLink
@@ -87,12 +88,10 @@
     scrollItemToMidpoint(menuPanel, navLink)
   }
 
-  try {
-    if (menuPanel.querySelector('.nav-link[href^="#"]')) {
-      if (window.location.hash) onHashChange()
-      window.addEventListener('hashchange', onHashChange)
-    }
-  } catch (e) {}
+  if (menuPanel.querySelector('.nav-link[href^="#"]')) {
+    if (window.location.hash) onHashChange()
+    window.addEventListener('hashchange', onHashChange)
+  }
 
   function activateCurrentPath (navItem) {
     var ancestorClasses
