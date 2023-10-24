@@ -16,46 +16,70 @@
     })
   })
 
-  const surveyElements = document.querySelectorAll('.survey button[data-survey]')
+  const survey = document.querySelector('.dialog-action--container')
 
-  function hideButtons (s) {
-    const parent = s.parentElement
-    const parentContainer = parent.parentElement
-    const message = document.createElement('p')
-    message.innerText = 'Thank you for your Feedback!'
-    parent.style.display = 'none'
-    parentContainer.appendChild(message)
-  }
+  if (!survey) return
+
+  const surveyElements = survey.querySelectorAll('button')
+  const response = document.createElement('p')
+
+  response.className = 'dialog-action--response'
+  response.innerText = 'Thank you for your Feedback!'
+  survey.appendChild(response)
+
+  const dialog = document.getElementById('dialog-survey')
+  // if ESC pressed
+  dialog.addEventListener('cancel', (event) => {
+    hideButtons(surveyElements)
+  })
+  // close dialog
+  const close = dialog.querySelectorAll('button.close')
+  close.forEach((s) => {
+    s.onclick = function (e) {
+      dialog.close()
+      hideButtons(surveyElements)
+    }
+  })
 
   surveyElements.forEach((element) => {
     element.addEventListener('click', (e) => {
+      styleButton(element)
+      window.analytics.track(element.dataset.survey)
+
       if (element.id.includes('no')) {
-        window.analytics.track(element.dataset.survey)
         // open dialog
-        const dialog = document.getElementById('dialog-survey')
         dialog.showModal()
-        // close dialog
-        const close = dialog.querySelectorAll('button.close')
-        close.forEach((s) => {
-          s.onclick = function (e) {
-            dialog.close()
-          }
-        })
         // submit form
         const form = document.getElementById('survey-form')
+        form.elements.message.required = true
+        form.elements.message.value = ''
         form.onsubmit = (e) => {
           e.preventDefault()
-          const message = form.elements[0].value
+          const message = form.elements.message.value
           window.analytics.trackForm(form, 'Support Survey', {
             message: message,
           })
           dialog.close()
+          hideButtons()
         }
-        hideButtons(element)
       } else {
-        window.analytics.track(element.dataset.survey)
-        hideButtons(element)
+        hideButtons()
       }
     })
   })
+
+  function hideButtons () {
+    survey.classList.add('dialog-action--animate', 'first-time')
+    setTimeout(function () {
+      survey.classList.remove('first-time')
+      survey.classList.remove('dialog-action--animate')
+      surveyElements.forEach((s) => {
+        s.classList.remove('ds-button--variant-solid')
+      })
+    }, 3.5 * 1000)
+  }
+
+  function styleButton (el) {
+    el.classList.add('ds-button--variant-solid')
+  }
 })()
