@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Lang Chain :: Brand Docs</title>
+    <meta name="generator" content="Antora 1.0.0">
+<link rel="stylesheet" href="/docs-ui/_/css/site.css">
+<link rel="stylesheet" href="/docs-ui/_/css/vendor/tabs.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script type="module">
+    import tailwindconfig from '//docs-ui/_/js/tailwind.config.js'
+    tailwind.config = tailwindconfig
+</script>
+    <meta property="og:site_name" content="DataStax Docs">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:5252">
+    <meta property="og:title" content="Lang Chain :: Brand Docs">
+    <meta property="og:image" content="http://localhost:5252//docs-ui/_/img/datastax-docs-banner.png">
+    <meta property="twitter:title" content="Lang Chain :: Brand Docs">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://localhost:5252">
+    <meta property="twitter:image" content="http://localhost:5252//docs-ui/_/img/datastax-docs-banner.png">
+
+<script>var uiRootPath = '/docs-ui/_'</script>
+
+<link rel="preload" href="/docs-ui/_/font/material-icons-outlined-latin-400-normal.woff2" as="font"
+    type="font/woff2" crossorigin>
+<link rel="preload" href="/docs-ui/_/font/roboto-flex-latin-400-normal.woff2" as="font" type="font/woff2"
+    crossorigin>
+<link rel="preload" href="/docs-ui/_/font/roboto-mono-latin-500-normal.woff2" as="font" type="font/woff2"
+    crossorigin>
+
+<script>
+    var prefersTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    var storedTheme = localStorage.getItem('theme') || prefersTheme
+
+    if (storedTheme) {
+        document.documentElement.setAttribute('data-theme', storedTheme)
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light')
+    }
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="http://localhost:5252" id="datastax-docs-logo-main"></a>
+      <button data-target="topbar-nav"
+        class="navbar-burger ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-plain"></button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end hide-for-print">
+        <div class="search">
+          <div class="DocSearch" id="docsearch"></div>
+        </div>
+        <button class="ds-button ds-button--color-neutral ds-button--variant-outlined" id="get-support"><span
+            class="material-icons ds-button--leading-icon">support_agent</span>Get Live Help</button>
+
+        <button class="ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-outlined"
+          id="theme-toggle"></button>
+      </div>
+    </div>
+  </nav>
+</header><div class="body">
+  <div class="nav-container"  data-component="xyz"
+  data-version="5.2"  autofocus>
+  <aside class="nav">
+    <div class="panels">
+      <div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#">Quickstart</a>
+    <ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="index.html">Brand&#8217;s Hardware &amp; Software Requirements</a>
+      </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#cu-solet">Cu Solet</a>
+      </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#english+中文">English + 中文</a>
+      </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#liber-recusabo">Liber Recusabo</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text">Reference</span>
+    <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#">Keyboard Shortcuts</a>
+      </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#">Importing and Exporting</a>
+      </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#some-code">Some Code</a>
+      </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+    <ul class="secondary-nav-list">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.datastax.com/" target="_self">
+      <span class="material-icons">home</span>
+      DataStax Home
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/en/glossary/doc" target="_blank">
+      <span class="material-icons">menu_book</span>
+      Glossary
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://support.datastax.com/" target="_blank">
+      <span class="material-icons">support</span>
+      Support
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://downloads.datastax.com/" target="_blank">
+      <span class="material-icons">downloading</span>
+      Downloads
+    </a>
+  </li>
+</ul>  </nav>
+</div>
+    </div>
+  </aside>
+</div>  <div class="content-container">
+    <main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle ds-button ds-button--color-neutral ds-button--variant-plain ds-button--is-icon"></button><nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="#">Component XYZ</a></li>
+<li>
+    <a href="index.html">Brand&#8217;s Hardware &amp; Software Requirements</a>
+    </li>  </ul>
+</nav>
+<div class="edit-this-page"><a href="http://example.com/project-xyz/blob/main/index.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu-container">
+    <div class="toc-menu"></div>
+    <div class="toc-menu toc-tags"></div>
+    <div class="toc-menu toc-dev">
+    <h3>Developer Resources</h3>
+    <div class="page-versions">
+  <span class="material-icons">task</span>
+  <button class="version-menu-toggle" title="Show other versions of page">5.2</button>
+  <div class="version-menu">
+    <a class="version" href="#">6.0</a>
+    <a class="version is-current" href="#">5.2</a>
+    <a class="version" href="#">5.1</a>
+    <a class="version is-missing" href="#">5.0</a>
+  </div>
+</div>
+    </div>
+  </div>
+</aside>
+<article class="doc">
+  <h1 class="page">Lang Chain</h1>
+  <div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By integrating LangChain with Astra, you can seamlessly
+utilize advanced linguistic processing capabilities of
+LangChain within the Astra vector database environment.
+This combination enhances vector data analysis,
+allowing natural language data to be processed,
+stored, and queried with efficiency.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="ROOT:template-examples/langchain-overview.png" alt="Architecture diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>To get started, ensure you have an
+<a href="https://example.com" class="external">active LangChain account</a> with the requisite permissions.</p>
+</div>
+<div class="paragraph">
+<p>You will also need an <a href="https://example.com" class="external">active LangChain account</a>
+an access to its API keys.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_acquire_api_key_from_langchain"><a class="anchor" href="#_1_acquire_api_key_from_langchain"></a><span class="step">1</span> Acquire API Key from LangChain:</h3>
+<div class="paragraph">
+<p>Log into your LangChain dashboard and navigate to the 'API' section to obtain your API key.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_configure_astras_sdk_for_langchain"><a class="anchor" href="#_2_configure_astras_sdk_for_langchain"></a><span class="step">2</span> Configure Astra&#8217;s SDK for LangChain</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from astra import VectorDB
+db = VectorDB(config='astra_config.yaml')
+db.set_integration('LangChain', api_key='YOUR_LANGCHAIN_API_KEY')</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_initialize_data_transfer"><a class="anchor" href="#_3_initialize_data_transfer"></a><span class="step">3</span> Initialize Data Transfer</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">db.sync_from('LangChain')</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_verify_integration"><a class="anchor" href="#_verify_integration"></a>Verify Integration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ensure your integration was successful by checking for new linguistic vector entries in your Astra database:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the Astra dashboard.</p>
+</li>
+<li>
+<p>Open the 'Vector Data' tab.</p>
+</li>
+<li>
+<p>Confirm the appearance of recent vector entries from LangChain.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="ROOT:template-examples/langchain-screenshot.png" alt="Screenshot">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 header-noline">
+<h2 id="_advanced_configuration"><a class="anchor" href="#_advanced_configuration"></a>Advanced Configuration</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sync Frequency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The lower the value, the more frequent the sync, impacting server performance.</p>
+<p class="tableblock">Sample <code>30 min</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Volume Limit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The lower the value, the more frequent the sync, impacting server performance.</p>
+<p class="tableblock">Sample <code>500 MB</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1 header-noline">
+<h2 id="_troubleshotting"><a class="anchor" href="#_troubleshotting"></a>Troubleshotting</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Error</th>
+<th class="tableblock halign-left valign-top">Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>LangChain API key invalid</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure you copied the correct API key. Refresh or regenerate the key in the LangChain dashboard if necessary.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Data sync failed</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ensure both Astra and LangChain servers are running without issues. Check network connectivity and try syncing again after a few minutes.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1 header-noline">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="openblock ds-card">
+<div class="content">
+<div class="ulist unstyled">
+<ul class="unstyled">
+<li>
+<p><a href="https://example.com">Advanced Natural Language Processing with Astra and LangChain</a> <span class="material-icons">auto_stories</span> Tutorial</p>
+<div class="paragraph">
+<p>Dive into how the combination of Astra&#8217;s vector database and LangChain&#8217;s
+linguistic prowess can enhance your NLP projects.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock ds-card">
+<div class="content">
+<div class="ulist unstyled guide">
+<ul class="unstyled">
+<li>
+<p><a href="https://example.com">Optimizing Linguistic Vector Searches in Astra</a> <span class="material-icons">auto_stories</span> Tutorial</p>
+<div class="paragraph">
+<p>Discover best practices and techniques to improve the efficiency and accuracy
+of linguistic vector searches in Astra, leveraging LangChain integrations.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock ds-card">
+<div class="content">
+<div class="ulist unstyled">
+<ul class="unstyled">
+<li>
+<p><a href="https://example.com">Cohere</a> <span class="material-icons">integration_instructions</span> Integration</p>
+<div class="paragraph">
+<p>Cohere provides advanced NLP models designed for a variety of tasks, ranging from text generation to understanding.
+Their models offer a balance between performance and efficiency.
+With Astra&#8217;s integration, developers can effortlessly combine Cohere&#8217;s capabilities with a powerful vector database solution.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </article>  </div>
+</main>
+    <div class="footer--divider"></div>
+
+<footer class="footer">
+  <div class="footer-column">
+    <a href="https://www.datastax.com" target="_blank" id="datastax-docs-logo-text"
+      title="Go to the DataStax Website"></a>
+    <p>
+      <span>©</span>
+      <span id="copyrightdate">2023</span>
+      <span>DataStax |
+        <a href="https://www.datastax.com/legal/datastax-website-privacy-policy" target="_blank">Privacy policy</a> |
+        <a href="https://www.datastax.com/legal/datastax-website-terms-use" target="_blank">Terms of use</a>
+      </span>
+    </p>
+    <p class="footer--trademarks">Apache, Apache Cassandra, Cassandra, Apache Tomcat, Tomcat, Apache Lucene,
+      Apache Solr, Apache Hadoop, Hadoop, Apache Pulsar, Pulsar, Apache Spark, Spark, Apache
+      TinkerPop, TinkerPop, Apache Kafka and Kafka are either registered trademarks or
+      trademarks of the Apache Software Foundation or its subsidiaries in Canada,
+      the United States and/or other countries. Kubernetes is the registered trademark
+      of the Linux Foundation.</p>
+  </div>
+  <div class="footer-column contact">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/datastax" target="_blank" class="facebook-icon"
+        title="Go to DataStax Facebook"></a>
+      <a href="https://twitter.com/datastax" target="_blank" class="x-icon" title="Go to DataStax X (Twitter)"></a>
+      <a href="https://github.com/datastax/" target="_blank" class="git-icon" title="Go to DataStax GitHub"></a>
+      <a href="https://www.twitch.tv/datastaxdevs" target="_blank" class="twitch-icon"
+        title="Go to DataStax Twitch"></a>
+      <a href="https://www.linkedin.com/company/datastax/" target="_blank" class="linkedin-icon"
+        title="Go to DataStax Linkedin"></a>
+      <a href="https://datastax.medium.com/" target="_blank" class="medium-icon" title="Go to DataStax Medium"></a>
+    </div>
+    <p class="footer--contact-us">General Inquiries:
+      <a href="tel:+1-650-389-6000">+1 (650) 389-6000</a>
+      <a href="mailto:info@datastax.com">info@datastax.com</a>
+    </p>
+  </div>
+</footer>  </div>
+</div>
+<script id="site-script" src="/docs-ui/_/js/site.js" data-ui-root-path="/docs-ui/_"></script>
+<script async src="/docs-ui/_/js/vendor/tabs.js"></script>
+<script async src="/docs-ui/_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>
+  docsearch({
+    container: '#docsearch',
+    appId: '2ELPRZR9UC',
+    indexName: 'crawler_DocSearch Astra Serverless',
+    apiKey: '1f4acbf51d118e4137e9a63b38bd8456',
+  })
+</script>  </body>
+</html>
