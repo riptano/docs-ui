@@ -1,6 +1,15 @@
-const tailwindconfig = {
+module.exports = {
   content: ['./build/site/**/*.{html,js}'],
   theme: {
+    fontFamily: {
+      sans: ['Roboto Flex', 'sans-serif'],
+    },
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1440px',
+    },
     spacing: {
       0: '0',
       0.5: '0.5rem',
@@ -28,5 +37,3 @@ const tailwindconfig = {
   },
   plugins: [],
 }
-
-export default tailwindconfig

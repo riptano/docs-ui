@@ -20,7 +20,7 @@ In AsciiDoc, creating paragraphs is a straightforward process that does not requ
 A paragraph can be defined as one or more lines of consecutive text that are logically grouped together.
 To differentiate between paragraphs, you simply need to insert at least one blank line between them.
 
-xref:vector-home.adoc[Vector Home,role="ds-button ds-button\--color-primary ds-button\--variant-solid"]
+xref:vector-home.adoc[Vector Home,role="btn btn-primary btn-solid"]
 
 == Level 1 section title
 

@@ -158,7 +158,7 @@
   color: var(--link-font-color);
 }
 
-.doc a:hover {
+.doc a:not(.btn):not(.ds-button):hover {
   color: var(--link_hover-font-color);
 }
 
@@ -573,6 +573,7 @@
 .doc ul {
   margin: 0;
   padding: 0 0 0 var(--ds-space-4);
+  list-style: initial;
 }
 
 .doc ul.checklist,
@@ -836,11 +837,15 @@
   white-space: pre-wrap;
 }
 
+.doc code.hljs {
+  color: var(--ds-text-secondary);
+}
+
 .doc pre.highlight code,
 .doc .listingblock pre:not(.highlight),
 .doc .literalblock pre {
-  background: var(--pre-background);
-  box-shadow: inset 0 0 1.75px var(--pre-border-color);
+  background: var(--ds-background-body);
+  box-shadow: inset 0 0 1.75px var(--ds-divider);
   display: block;
   overflow-x: auto;
   padding: var(--ds-space-2);

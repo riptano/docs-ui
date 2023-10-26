@@ -62,10 +62,6 @@ html[data-layout="full"] .doc .ulist li + li {
   margin-top: var(--ds-space-2);
 }
 
-.text-h1 > h2 {
-  @include text-h1;
-}
-
 .row > *,
 .ds-row > * {
   display: flex;

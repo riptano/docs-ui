@@ -1,0 +1,81 @@
+= Tailwind CSS
+
+This project uses https://tailwindcss.com/[TailwindCSS] for styling. Tailwind classes can also be used on our docs site to style content within AsciiDoc files.
+
+== How it works
+
+In preview mode running `gulp preview`:
+
+1. The tailwind.config.js file at the root of the project is used to configure Tailwind.
+2. Tailwind CSS is compiled to browser-ready CSS using postcss within the preview-src build task.
+
+On datastax-docs-site using the UI bundle:
+
+1. The tailwind.config.js file is packaged into the UI bundle
+2. The tailwind css files are collected into site.css in the UI bundle but NOT compiled to CSS with postcss, that is handled on the docs site repo.
+3. The datastax-docs-site repo uses the tailwind CLI to scan built html pages for production.
+  * The tailwind.config.js file within the UI bundle is used to configure Tailwind.
+  * site.css within the UI bundle is targeted by the CLI command to build the included tailwind CSS into browser-ready CSS, discarding any unsued classes.
+
+== Why Tailwind?
+
+* It offers a framework of utility classes that provides a system for building pages that is well documented and easy to use.
+* Because it is primarily classes, we can use them to style our Asciidoc content without having to write custom CSS in the UI bundle.
+
+== How to use Tailwind
+
+Within Asciidoc tailwind classses can be used on anything that allows a `role` attribute passed to it. For example:
+
+[source,adoc]
+----
+[.mb-2.p-3]
+I am a parapgraph with a margin-bottom of 2rem and padding of 3rem. Because of how we configured tailwind 1rem = 8px.
+----
+
+[source,adoc]
+----
+image::images/hero.png[role="w-full h-auto mb-2"]
+----
+
+Often when you apply a role, it gets applied to a parent container and not the element you intended to style. Tailwind offers a child selector modifier to help with this. For example:
+
+[source,adoc]
+----
+[.[&>h2]:!border-0]
+== An h2 heading that you don't want a bottom border on
+----
+
+* The heading `==` macro applies roles to a parent container in the resulting HTML. If we want to style the h2 in a certain way, like having no bottom border, we can use the child selector modifier `&>` to target the h2 within the parent container.
+* Antora styles often have a higher specificity than Tailwind styles. To override Antora styles, you can use the `!` modifier to apply the Tailwind style with `!important`.
+
+== Custom components
+
+Sometimes it makes sense to create custom classes for UI elements that are used in many places.
+
+=== `btn`
+
+A link styled as various button colors and variants
+
+[source,adoc]
+----
+https://astra.datastax.com[Primary Color Solid Variant,role="btn btn-primary btn-solid"]
+
+https://astra.datastax.com[Neutral Color Outlined Varaint^,role="btn btn-primary btn-outlined"]
+----
+
+=== `text`
+
+We offer a set of classes to style text as defined in our design system
+
+[source,adoc]
+----
+text-display text-h1 text-h2 text-h3 text-h4 text-h5 text-body text-body-small text-caption text-label text-overline text-button text-tab text-mono text-mono-small
+----
+
+Style an h3 heading as an h2
+
+[source,adoc]
+----
+[.[&>h3]:!text-h2]
+=== I'm an h3 heading that looks like an h2
+----

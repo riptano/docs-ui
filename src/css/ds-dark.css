@@ -144,6 +144,10 @@ html[data-theme="dark"] {
   @include dark-theme;
 }
 
+html[data-theme="light"] .inverse-theme {
+  @include dark-theme;
+}
+
 html[data-theme="dark"] .for-light {
   display: none;
 }
