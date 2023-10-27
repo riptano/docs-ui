@@ -6,5 +6,8 @@
   {{> tutorial-info}}
   {{/if}}
   {{{page.contents}}}
+  {{#if (eq page.layout 'tutorial')}}
+  {{> survey }}
+  {{/if}}
   {{> pagination}}
 </article>
