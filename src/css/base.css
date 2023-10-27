@@ -110,6 +110,12 @@ object[type="image/svg+xml"]:not([width]) {
   opacity: 0.5;
 }
 
+.icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
+
 @media (pointer: fine) {
   @supports (scrollbar-width: thin) {
     html {
