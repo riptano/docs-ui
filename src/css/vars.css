@@ -95,7 +95,8 @@
   --table-footer-background: linear-gradient(to bottom, var(--ds-background-level1) 0%, var(--ds-background-body) 100%);
   /* toc */
   --toc-font-color: var(--ds-text-secondary);
-  --toc-heading-font-color: var(--doc-font-color);
+  --toc-menu-font-weight: var(--body-font-weight-bold);
+  --toc-heading-font-color: var(--ds-text-primary);
   --toc-border-color: var(--ds-divider);
   --toc-line-height: 1.5;
   /* footer */

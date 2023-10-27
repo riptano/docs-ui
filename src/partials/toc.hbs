@@ -1,7 +1,16 @@
 <aside class="toc sidebar" data-title="{{{or page.attributes.toctitle 'Contents'}}}" data-levels="{{{or page.attributes.toclevels 2}}}">
   <div class="toc-menu-container">
     <div class="toc-menu"></div>
-    <div class="toc-menu toc-tags"></div>
+    <div class="toc-menu toc-tags">
+      {{#if page.attributes.tags}}
+      <h3>Tags</h3>
+      <div>
+      {{#each (split page.attributes.tags) }}
+        <span>{{this}}</span>
+      {{/each}}
+      </div>
+      {{/if}}
+    </div>
     <div class="toc-menu toc-dev">
     {{#if page.versions}}
     <h3>Developer Resources</h3>
