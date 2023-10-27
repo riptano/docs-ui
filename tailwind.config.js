@@ -10,6 +10,12 @@ module.exports = {
       lg: '1024px',
       xl: '1440px',
     },
+    fontSize: {
+      sm: '1.8125rem',
+      base: '2rem',
+      xl: '2.5rem',
+      '2xl': '3rem',
+    },
     spacing: {
       0: '0',
       0.5: '0.5rem',
