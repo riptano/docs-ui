@@ -73,7 +73,7 @@ https://docs.datastax.com/en/streaming/astra-streaming/index.html[Dive into Astr
 </div>
 ++++
 
-[.[&>h2]:!border-0.[&>h2]:text-h1]
+[.text-h1.header-noline]
 == Explore More of Astra
 
 ++++
