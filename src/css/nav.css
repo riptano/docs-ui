@@ -88,6 +88,10 @@ html.is-clipped--nav {
 }
 
 .nav-list {
+  transition: max-height 0.25s ease, opacity 0.25s ease, visibility 0s ease 0.25s;
+  max-height: 200vh;
+  opacity: 1;
+  visibility: visible;
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -108,12 +112,12 @@ html.is-clipped--nav {
   padding: var(--ds-space-1) var(--site-padding);
 }
 
-@media screen and (max-width: 1023.5px) {
+/* @media screen and (max-width: 1023.5px) {
   .nav-link,
   .nav-text {
     padding: var(--ds-space-1) var(--site-padding--mobile);
   }
-}
+} */
 
 .nav-link {
   transition: var(--ds-transition);
@@ -183,28 +187,22 @@ html.is-clipped--nav {
   content: "\e89e";
 }
 
-/*** nav-item toggle styles, keeping for now as we might implement again when more content is added ***/
+.nav-item:not(.is-active) > .nav-list {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
 
-/* .nav-item:not(.is-active) > .nav-list {
-  display: none;
-} */
-
-/* .nav-item-toggle {
-  background: transparent url(../img/caret.svg) no-repeat center / 50%;
-  border: none;
-  outline: none;
-  line-height: inherit;
-  padding: 0;
+.nav-item-toggle {
   position: absolute;
-  height: calc(var(--nav-line-height) * 1em);
-  width: calc(var(--nav-line-height) * 1em);
-  margin-top: -0.05em;
-  margin-left: calc(var(--nav-line-height) * -1em);
-} */
+  margin-top: 0.75em;
+  margin-left: 0.5em;
+  color: var(--ds-text-tertiary);
+}
 
-/* .nav-item.is-active > .nav-item-toggle {
+.nav-item.is-active > .nav-item-toggle {
   transform: rotate(90deg);
-} */
+}
 
 /*** nav-panel-explore styles, keeping for now as we might implement it elsewhere ***/
 
