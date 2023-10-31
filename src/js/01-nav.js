@@ -106,6 +106,10 @@
   }
 
   function toggleActive () {
+    if (!this.classList.contains('is-active')) {
+      var siblings = Array.from(this.parentElement.children).filter((li) => li !== this)
+      if (siblings) siblings.forEach((li) => li.classList.remove('is-active'))
+    }
     if (this.classList.toggle('is-active')) {
       var padding = parseFloat(window.getComputedStyle(this).marginTop)
       var rect = this.getBoundingClientRect()

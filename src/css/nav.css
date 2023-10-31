@@ -88,15 +88,27 @@ html.is-clipped--nav {
 }
 
 .nav-list {
-  transition: max-height 0.25s ease, opacity 0.25s ease, visibility 0s ease 0.25s;
-  max-height: 200vh;
-  opacity: 1;
-  visibility: visible;
   display: flex;
   flex-direction: column;
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.nav-item > .nav-list {
+  transition-duration: 0.25s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease, linear;
+  transition-property: max-height, opacity, visibility;
+  max-height: 100vh;
+  opacity: 1;
+}
+
+.nav-item:not(.is-active) > .nav-list {
+  transition-delay: 0s, 0s, 0.25s;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .nav-item {
@@ -109,15 +121,8 @@ html.is-clipped--nav {
   position: relative;
   display: flex;
   align-items: center;
-  padding: var(--ds-space-1) var(--site-padding);
+  padding: 1rem 3rem 1rem var(--site-padding);
 }
-
-/* @media screen and (max-width: 1023.5px) {
-  .nav-link,
-  .nav-text {
-    padding: var(--ds-space-1) var(--site-padding--mobile);
-  }
-} */
 
 .nav-link {
   transition: var(--ds-transition);
@@ -185,12 +190,6 @@ html.is-clipped--nav {
 
 .secondary-nav-list .nav-link::after {
   content: "\e89e";
-}
-
-.nav-item:not(.is-active) > .nav-list {
-  max-height: 0;
-  opacity: 0;
-  visibility: hidden;
 }
 
 .nav-item-toggle {
