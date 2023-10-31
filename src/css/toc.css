@@ -131,7 +131,8 @@
   flex-wrap: wrap;
 }
 
-.toc .toc-tags span,
+.toc .toc-tags .tag,
+.tags-container .tag,
 .tags-container span {
   display: flex;
   padding: var(--ds-space-q) var(--ds-space-1h);

@@ -1,9 +1,9 @@
 'use strict'
 
-module.exports = (val) => {
+module.exports = (val, char) => {
   if (typeof val === 'string') {
-    const str = val.split(', ')
-    return str
+    const arr = val.split(char)
+    return arr
   } else {
     throw new Error('{{split}} helper expects a string argument')
   }
