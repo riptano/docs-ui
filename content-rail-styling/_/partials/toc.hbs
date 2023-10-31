@@ -5,8 +5,8 @@
       {{#if page.attributes.tags}}
       <h3>Tags</h3>
       <div>
-      {{#each (split page.attributes.tags) }}
-        <span>{{this}}</span>
+      {{#each (split page.attributes.tags ", ") }}
+        <span class="tag">{{this}}</span>
       {{/each}}
       </div>
       {{/if}}

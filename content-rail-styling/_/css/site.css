@@ -12,7 +12,7 @@
   font-family: 'Material Icons Outlined', sans-serif;
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
+  font-size: 2.5rem;
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -1272,6 +1272,12 @@ object[type="image/svg+xml"]:not([width]) {
   opacity: 0.5;
 }
 
+.icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
+
 @media (pointer: fine) {
   @supports (scrollbar-width: thin) {
     html {
@@ -2496,7 +2502,8 @@ a + .breadcrumbs {
       flex-wrap: wrap;
 }
 
-.toc .toc-tags span,
+.toc .toc-tags .tag,
+.tags-container .tag,
 .tags-container span {
   display: -webkit-box;
   display: -ms-flexbox;
