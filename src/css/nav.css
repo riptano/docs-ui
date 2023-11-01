@@ -111,6 +111,7 @@ html.is-clipped--nav {
   max-height: 0;
   opacity: 0;
   visibility: hidden;
+  overflow: hidden;
 }
 
 .nav-item {
