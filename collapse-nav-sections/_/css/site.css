@@ -1354,6 +1354,8 @@ object[type="image/svg+xml"]:not([width]) {
   z-index: 10;
   z-index: var(--z-index-nav);
   visibility: hidden;
+
+  --transition-duration: 300ms;
 }
 
 @media screen and (min-width: 769px) {
@@ -1469,12 +1471,12 @@ html.is-clipped--nav {
 }
 
 .nav-item > .nav-list {
-  -webkit-transition-duration: 0.25s;
-          transition-duration: 0.25s;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease, linear;
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease, linear;
+  -webkit-transition-timing-function: cubic-bezier(0, 1, 0, 1), ease, linear;
+          transition-timing-function: cubic-bezier(0, 1, 0, 1), ease, linear;
   -webkit-transition-property: max-height, opacity, visibility;
   transition-property: max-height, opacity, visibility;
   max-height: 100vh;
@@ -1482,8 +1484,8 @@ html.is-clipped--nav {
 }
 
 .nav-item:not(.is-active) > .nav-list {
-  -webkit-transition-delay: 0s, 0s, 0.25s;
-          transition-delay: 0s, 0s, 0.25s;
+  -webkit-transition-delay: 0s, 0s, var(--transition-duration);
+          transition-delay: 0s, 0s, var(--transition-duration);
   max-height: 0;
   opacity: 0;
   visibility: hidden;
