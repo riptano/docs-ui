@@ -2588,21 +2588,6 @@ a + .breadcrumbs {
 .doc h4,
 .doc h5,
 .doc h6 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 0.5rem;
-  gap: var(--ds-space-h);
   color: var(--ds-text-primary);
   color: var(--heading-font-color);
   -webkit-hyphens: none;
@@ -2703,6 +2688,28 @@ a + .breadcrumbs {
 .doc h4:not(.discrete) {
   font-weight: 600;
   font-weight: var(--alt-heading-font-weight);
+}
+
+.doc h2:not(.discrete),
+.doc h3:not(.discrete),
+.doc h4:not(.discrete),
+.doc h5:not(.discrete),
+.doc h6:not(.discrete) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  gap: var(--ds-space-h);
 }
 
 .doc h1 .anchor,
