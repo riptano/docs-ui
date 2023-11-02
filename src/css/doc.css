@@ -1008,17 +1008,11 @@
   counter-reset: step;
 }
 
-.doc .step h2::before,
-.doc .step h3::before,
-.doc .step h4::before {
+.doc .step h2::after,
+.doc .step h3::after,
+.doc .step h4::after {
   counter-increment: step;
   content: counter(step) ". ";
-}
-
-.doc .step h2 .anchor,
-.doc .step h3 .anchor,
-.doc .step h4 .anchor {
-  margin-left: -4.25ex;
 }
 
 .doc .conum[data-value] {
