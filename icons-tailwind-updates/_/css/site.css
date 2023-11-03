@@ -4423,6 +4423,7 @@ html[data-layout="full"] .doc .ulist li + li {
   border-radius: 0.75rem;
   border-radius: calc(6/var(--rem-base)*1rem);
   grid-row-start: 1;
+  line-height: 1;
 }
 
 .doc .landing-card-icon > * {
