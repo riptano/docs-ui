@@ -130,6 +130,7 @@ html[data-layout="full"] .doc .ulist li + li {
   border: 1px solid var(--ds-neutral-outlined-border);
   border-radius: calc(6 / var(--rem-base) * 1rem);
   grid-row-start: 1;
+  line-height: 1;
 }
 
 .doc .landing-card-icon > * {
