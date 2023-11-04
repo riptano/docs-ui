@@ -11,9 +11,10 @@ const ospath = require('path')
 const path = ospath.posix
 const postcss = require('gulp-postcss')
 const postcssCalc = require('postcss-calc')
-const postcssNested = require('postcss-nested')
 const postcssAdvancedVars = require('postcss-advanced-variables')
 const postcssImport = require('postcss-import')
+const tailwindcss = require('tailwindcss')
+const tailwindcssNesting = require('tailwindcss/nesting')
 const postcssUrl = require('postcss-url')
 const postcssVar = require('postcss-custom-properties')
 const { Transform } = require('stream')
@@ -21,6 +22,7 @@ const map = (transform) => new Transform({ objectMode: true, transform })
 const through = () => map((file, enc, next) => next(null, file))
 const uglify = require('gulp-uglify')
 const vfs = require('vinyl-fs')
+const tailwindconfig = require('../lib/preview.tailwind.config')
 
 module.exports = (src, dest, preview) => () => {
   const opts = { base: src, cwd: src }
@@ -49,7 +51,9 @@ module.exports = (src, dest, preview) => () => {
         },
       },
     ]),
-    postcssNested,
+    tailwindcssNesting,
+    // only run tailwindcss in preview, datastax-docs-site repo has it's own tailwind cli step
+    preview ? tailwindcss(tailwindconfig) : () => {},
     postcssAdvancedVars,
     postcssVar({ preserve: preview }),
     // NOTE to make vars.css available to all top-level stylesheets, use the next line in place of the previous one

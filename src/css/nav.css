@@ -116,13 +116,15 @@ html.is-clipped--nav {
 }
 
 .nav-link {
-  transition: var(--ds-transition);
+  @apply transition-colors;
 
   &:hover {
     background: var(--ds-neutral-soft-bg);
   }
 
   &::after {
+    @apply transition-opacity;
+
     font-family: "Material Icons Outlined", sans-serif;
     font-weight: 400;
     content: "\e5c8";
@@ -130,7 +132,6 @@ html.is-clipped--nav {
     right: var(--ds-space-2);
     color: var(--ds-text-tertiary);
     opacity: 0;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   }
 
   &:hover::after {

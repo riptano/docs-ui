@@ -49,7 +49,11 @@ html[data-layout="full"] .doc .ulist li + li {
   margin-top: var(--ds-space-2);
 }
 
-.text-h1 > h2 {
+.sect1.text-h1 {
+  @include text-body;
+}
+
+.sect1.text-h1 > h2 {
   @include text-h1;
 }
 
@@ -126,6 +130,7 @@ html[data-layout="full"] .doc .ulist li + li {
   border: 1px solid var(--ds-neutral-outlined-border);
   border-radius: calc(6 / var(--rem-base) * 1rem);
   grid-row-start: 1;
+  line-height: 1;
 }
 
 .doc .landing-card-icon > * {

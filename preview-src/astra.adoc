@@ -10,7 +10,7 @@ From AI-driven capabilities to robust data stream management, Astra simplifies c
 == {empty}
 
 ++++
-<div class="flex rounded-[6px] bg-[var(--ds-neutral-soft-bg)] p-3 -mx-3">
+<div class="flex rounded-[6px] bg-[var(--ds-neutral-soft-bg)] p-3">
 <div class="flex flex-col lg:basis-2/4">
 ++++
 
@@ -24,9 +24,9 @@ Astra Vector is tailored to offer unparalleled precision, speed, and scalability
 <div class="flex flex-nowrap gap-1">
 ++++
 
-https://astra.datastax.com[Explore Astra Vector^,role="ds-button ds-button\--color-primary ds-button\--variant-solid"]
+https://astra.datastax.com[Explore Astra Vector^,role="btn btn-primary btn-solid"]
 
-https://astra.datastax.com[Create Astra Account^,role="ds-button ds-button\--color-primary ds-button\--variant-outlined external"]
+https://astra.datastax.com[Create Astra Account^,role="btn btn-primary btn-outlined external"]
 
 ++++
 </div>
@@ -34,7 +34,7 @@ https://astra.datastax.com[Create Astra Account^,role="ds-button ds-button\--col
 <div class="hidden lg:block flex basis-2/4 relative">
 ++++
 
-[.absolute.-bottom-3.right-0]
+[.absolute.bottom-1/2.translate-y-1/2.right-0.!m-0]
 image::astra-browser.png[Browser,550,348,align=center,float=top]
 
 ++++
@@ -73,7 +73,7 @@ https://docs.datastax.com/en/streaming/astra-streaming/index.html[Dive into Astr
 </div>
 ++++
 
-[.text-h1.[&>h2]:!border-0]
+[.text-h1.header-noline]
 == Explore More of Astra
 
 ++++

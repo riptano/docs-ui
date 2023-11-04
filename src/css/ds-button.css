@@ -1,10 +1,11 @@
 .ds-button {
   @include text-button;
 
+  @apply transition-colors;
+
   border-radius: 6px;
   padding: 0 1.5rem;
   height: var(--ds-space-5);
-  transition: var(--ds-transition);
   border: 1px solid transparent;
   display: flex;
   align-items: center;

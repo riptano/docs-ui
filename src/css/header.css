@@ -77,7 +77,7 @@ html[data-theme="dark"] #theme-toggle::before {
     font-size: 0;
   }
 
-  #get-support .ds-button--leading-icon {
+  #get-support .material-icons {
     margin: 0;
   }
 

@@ -1,0 +1,41 @@
+@mixin btn {
+  .btn {
+    @apply px-1.5 py-1 h-5 transition ease-in-out rounded-xl whitespace-nowrap text-button border border-transparent flex items-center justify-center;
+  }
+
+  a.btn:hover {
+    @apply no-underline;
+  }
+
+  .btn-primary.btn-outlined {
+    @apply text-[var(--ds-primary-outlined-color)] border-[var(--ds-primary-outlined-border)] hover:bg-[var(--ds-primary-outlined-hover-bg)] hover:border-[var(--ds-primary-outlined-hover-border)] active:bg-[var(--ds-primary-outlined-active-bg)] active:border-[var(--ds-primary-outlined-active-border)] disabled:text-[var(--ds-primary-outlined-disabled-color)] disabled:border-[var(--ds-primary-outlined-disabled-border)];
+  }
+
+  .btn-primary.btn-solid {
+    @apply text-[var(--ds-primary-solid-color)] bg-[var(--ds-primary-solid-bg)] hover:bg-[var(--ds-primary-solid-hover-bg)] active:bg-[var(--ds-primary-solid-active-bg)] disabled:bg-[var(--ds-primary-solid-disabled-bg)] disabled:text-[var(--ds-primary-solid-disabled-color)];
+  }
+
+  .btn-neutral.btn-outlined {
+    @apply text-[var(--ds-neutral-outlined-color)] border-[var(--ds-neutral-outlined-border)] hover:bg-[var(--ds-neutral-outlined-hover-bg)] hover:border-[var(--ds-neutral-outlined-hover-border)] active:bg-[var(--ds-neutral-outlined-active-bg)] active:border-[var(--ds-neutral-outlined-active-border)] disabled:text-[var(--ds-neutral-outlined-disabled-color)] disabled:border-[var(--ds-neutral-outlined-disabled-border)];
+  }
+
+  .btn-neutral.btn-solid {
+    @apply text-[var(--ds-neutral-solid-color)] bg-[var(--ds-neutral-solid-bg)] hover:bg-[var(--ds-neutral-solid-hover-bg)] active:bg-[var(--ds-neutral-solid-active-bg)] disabled:bg-[var(--ds-neutral-solid-disabled-bg)] disabled:text-[var(--ds-neutral-solid-disabled-color)];
+  }
+
+  .btn-neutral.btn-plain {
+    @apply text-[var(--ds-neutral-plain-color)] hover:bg-[var(--ds-neutral-plain-hover-bg)] active:bg-[var(--ds-neutral-plain-active-bg)] disabled:text-[var(--ds-neutral-plain-disabled-color)];
+  }
+
+  .btn-icon {
+    @apply w-5 h-5 p-0;
+  }
+
+  .btn-leading-icon {
+    @apply mr-1 flex;
+  }
+
+  .btn-trailing-icon {
+    @apply ml-1 flex;
+  }
+}

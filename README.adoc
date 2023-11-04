@@ -27,6 +27,7 @@ endif::[]
 :url-datastax-docs-repo: https://github.com/riptano/docs-site
 :url-coppi: https://coppi.aws.dsinternal.org
 :url-docs-preview: http://docs-preview.datastax.com
+:url-tailwind-readme: src/css/tailwind/README.adoc
 // External URLs:
 :url-antora: https://antora.org
 :url-antora-docs: https://docs.antora.org
@@ -284,6 +285,10 @@ SOURCEMAPS=true gulp bundle
 ----
 
 In this case, the bundle will include the source maps, which can be used for debugging your production site.
+
+==== Using TailwindCSS
+
+This project uses TailwindCSS. To learn more see xref:{url-tailwind-readme}[TailwindCSS README].
 
 == Release the UI bundle
 

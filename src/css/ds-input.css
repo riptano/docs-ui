@@ -1,9 +1,10 @@
 .ds-input-container {
   @include text-body;
 
+  @apply transition-colors;
+
   height: var(--ds-space-5);
   color: var(--ds-text-primary);
-  transition: var(--ds-transition);
   border-radius: 6px;
   border: 1px solid var(--ds-neutral-outlined-border);
   display: inline-flex;
