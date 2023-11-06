@@ -305,9 +305,12 @@
   margin-top: 0;
 }
 
-.doc table.tableblock th,
+.doc table.tableblock th {
+  padding: var(--ds-space-1) var(--ds-space-2);
+}
+
 .doc table.tableblock td {
-  padding: calc(13 / var(--rem-base) * 1rem) var(--ds-space-2);
+  padding: var(--ds-space-1h) var(--ds-space-2);
 }
 
 .doc table.tableblock,
@@ -316,7 +319,7 @@
 }
 
 .doc table.grid-all > * > tr > * {
-  border-width: 1px;
+  border-bottom-width: 1px;
 }
 
 .doc table.grid-cols > * > tr > * {
@@ -335,7 +338,7 @@
 }
 
 .doc table.frame-all {
-  border-width: 1px;
+  border-bottom-width: 0;
 }
 
 .doc table.frame-ends {
@@ -378,6 +381,10 @@
 
 .doc table.tableblock > tfoot {
   background: var(--table-footer-background);
+}
+
+.doc table.tableblock > tfoot > tr > * {
+  border-bottom-width: 0;
 }
 
 .doc .halign-left {
