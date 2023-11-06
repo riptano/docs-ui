@@ -11,7 +11,7 @@
   var supportsCopy = window.navigator.clipboard
 
   ;[].slice.call(document.querySelectorAll('.doc pre.highlight, .doc .literalblock pre')).forEach(function (pre) {
-    var code, language, lang, copy, toast, toolbox, titlebar
+    var code, language, lang, copy, toast, toolbox, title, listingblock
     if (pre.classList.contains('highlight')) {
       code = pre.querySelector('code')
       if ((language = code.dataset.lang) && language !== 'console') {
@@ -30,8 +30,12 @@
     } else {
       return
     }
+    listingblock = pre.parentNode.parentNode
+    var nolang = listingblock.classList.contains('nolang')
     ;(toolbox = document.createElement('div')).className = 'source-toolbox'
-    ;(titlebar = document.createElement('div')).className = 'source-titlebar'
+    if (listingblock.firstElementChild.classList.contains('title')) {
+      title = listingblock.firstElementChild
+    }
     if (supportsCopy) {
       ;(copy = document.createElement('button')).className = 'copy-button'
       copy.setAttribute('title', 'Copy to clipboard')
@@ -57,9 +61,13 @@
       copy.addEventListener('click', writeToClipboard.bind(copy, code))
       pre.prepend(toolbox)
     }
-    if (lang) {
-      titlebar.appendChild(lang)
-      pre.parentNode.prepend(titlebar)
+    if (lang && !title && !nolang) {
+      ;(title = document.createElement('div')).className = 'title'
+      title.appendChild(lang)
+      listingblock.prepend(title)
+    }
+    if (lang && title && !nolang) {
+      title.appendChild(lang)
     }
   })
 

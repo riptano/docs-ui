@@ -18,20 +18,31 @@
   text-wrap: nowrap;
 }
 
-.doc .source-titlebar {
+/* .doc .source-titlebar {
   padding: var(--ds-space-h) var(--ds-space-1);
+  background: var(--ds-background-level2);
+  border-top-left-radius: calc(6 / var(--rem-base) * 1rem);
+  border-top-right-radius: calc(6 / var(--rem-base) * 1rem);
+  border: 1px solid transparent;
+} */
+
+.doc .listingblock .title {
+  @include text-label;
+
+  display: flex;
+  font-style: normal;
+  color: var(--ds-text-primary);
+  margin-bottom: 0;
+  padding: var(--ds-space-h) var(--ds-space-2);
   background: var(--ds-background-level2);
   border-top-left-radius: calc(6 / var(--rem-base) * 1rem);
   border-top-right-radius: calc(6 / var(--rem-base) * 1rem);
   border: 1px solid transparent;
 }
 
-.doc .source-titlebar .source-lang {
-  @include text-label;
-
-  color: var(--ds-text-primary);
-  text-transform: capitalize;
-  line-height: 1;
+.doc .listingblock .title .source-lang {
+  margin-left: auto;
+  text-transform: uppercase;
 }
 
 .doc .source-toolbox {
@@ -112,11 +123,12 @@ html[data-theme="dark"] .doc .source-toolbox {
   padding-right: var(--ds-space-7);
 }
 
-.doc .listingblock.hidelang .source-titlebar {
+.doc .listingblock.nolang .title .source-lang {
   display: none;
 }
 
-.doc .listingblock:not(.hidelang) .source-titlebar ~ .highlightjs .hljs {
+.doc .listingblock .title + .content .highlightjs .hljs,
+.doc .listingblock .title + .content pre:not(.highlightjs) {
   border-top: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
