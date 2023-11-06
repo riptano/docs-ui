@@ -415,9 +415,20 @@ Output literal monospace text, such as `my-python-function` or `initial-scale=1.
 .Console code block
 [source,console]
 ----
-.Optional title
-[example]
-This is an example paragraph.
+$ pip install astra-vector
+$ python3
+----
+
+.Wrap text code block
+[source,java,role="wrap"]
+----
+public class ApplicationConfigurationProvider extends HttpConfigurationProviderHttpConfigurationProviderHttpConfigurationProviderHttpConfigurationProviderHttpConfigurationProvider
+----
+
+.Hide language title code block
+[source,,role="hidelang"]
+----
+I don't have a language title bar!
 ----
 
 === Callouts

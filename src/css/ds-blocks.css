@@ -3,77 +3,123 @@
 /*
  *  Usage: [source,python]
  *
- *  Default style: [source.default,python]
+ *  Text wrap style: [source.wrap,python]
+ *  Hide language title style: [source.hidelang,python]
  */
-
-.listingblock:not(.default) .content {
-  display: grid;
+.doc code.hljs {
+  color: var(--ds-text-secondary);
 }
 
-.listingblock:not(.default) .content .source-toolbox {
+.doc .highlightjs {
   position: relative;
-  padding: var(--ds-space-1) var(--ds-space-2);
-  visibility: visible;
-  justify-content: flex-end;
-  background: var(--ds-neutral-100);
-  grid-row-start: 1;
+}
+
+.doc .listingblock:not(.wrap) .highlightjs {
+  text-wrap: nowrap;
+}
+
+.doc .source-titlebar {
+  padding: var(--ds-space-h) var(--ds-space-1);
+  background: var(--ds-background-level2);
   border-top-left-radius: calc(6 / var(--rem-base) * 1rem);
   border-top-right-radius: calc(6 / var(--rem-base) * 1rem);
-  top: 0;
-  left: 0;
+  border: 1px solid transparent;
 }
 
-.listingblock:not(.default) .content .source-toolbox .source-lang::after {
+.doc .source-titlebar .source-lang {
+  @include text-label;
+
+  color: var(--ds-text-primary);
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+.doc .source-toolbox {
+  position: absolute;
+  right: 0;
+  padding: 1.25rem;
+  height: calc(100% - 6px);
+  margin: 1px;
+  border-radius: 6px;
+}
+
+html[data-theme="light"] .doc .source-toolbox {
+  background: linear-gradient(to right, rgba(247, 247, 247, 0), rgb(247, 247, 247), rgb(247, 247, 247) 20%);
+}
+
+html[data-theme="dark"] .doc .source-toolbox {
+  background: linear-gradient(to right, rgba(35, 35, 36, 0), rgb(35, 35, 36), rgb(35, 35, 36) 20%);
+}
+
+.doc .source-toolbox .copy-toast {
+  font-size: calc(12 / var(--rem-base) * 1rem);
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 400;
+  display: inline-flex;
+  justify-content: center;
+  position: absolute;
+  background-color: var(--ds-background-tooltip);
+  border-radius: 0.25em;
+  padding: 0.5em;
+  color: var(--ds-text-inverse);
+  cursor: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease 0.5s, visibility 0s linear 1s;
+  text-wrap: nowrap;
+  white-space: nowrap;
+  transform: translateX(-2.35rem) translateY(-5rem);
+  z-index: 20;
+}
+
+.doc .source-toolbox .copy-toast::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 1em;
+  height: 1em;
+  border: 0.55em solid transparent;
+  border-left-color: var(--ds-background-tooltip);
+  transform: rotate(90deg) translateX(100%);
+}
+
+.doc .source-toolbox .copy-button.clicked .copy-toast {
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+}
+
+.doc .source-toolbox .copy-button {
+  padding: var(--ds-space-1);
+  background: var(--ds-background-level1);
+  border-radius: 6px;
+  line-height: 1;
+  display: flex;
+
+  @apply transition-colors;
+
+  &:hover {
+    background: var(--ds-background-level2);
+  }
+}
+
+.doc .source-toolbox .copy-button .material-icons {
+  font-size: calc(16 / var(--rem-base) * 1rem);
+  user-select: none;
+}
+
+.doc .source-toolbox + .hljs {
+  padding-right: var(--ds-space-7);
+}
+
+.doc .listingblock.hidelang .source-titlebar {
   display: none;
 }
 
-.listingblock:not(.default) .content .source-toolbox .copy-button {
-  justify-content: flex-end;
-  flex-direction: column-reverse;
-}
-
-.source-toolbox .copy-button > .material-icons {
-  font-size: calc(16 / var(--rem-base) * 1rem);
-}
-
-.listingblock:not(.default) .content .source-toolbox .source-lang {
-  color: var(--ds-text-primary);
-  text-transform: capitalize;
-  font-family: var(--body-font-family);
-  line-height: 1.5;
-  letter-spacing: 0.65px;
-  font-weight: var(--body-font-weight-bold);
-  flex: 1;
-}
-
-.listingblock:not(.default) .source-toolbox .copy-toast:not(:only-child)::after {
-  transform: rotate(90deg) translateX(135%) translateY(-45%);
-}
-
-.listingblock:not(.default) .source-toolbox .copy-button:not(:only-child) .copy-toast {
-  margin: 0 0 var(--ds-space-2h) 0;
-}
-
-.listingblock:not(.default) .source-toolbox .copy-button:only-child .copy-toast {
-  margin: 0 0 calc(14 / var(--rem-base) * 1rem) 0;
-}
-
-.listingblock:not(.default) .hljs {
+.doc .listingblock:not(.hidelang) .source-titlebar ~ .highlightjs .hljs {
+  border-top: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border-top-color: var(--ds-neutral-100);
-}
-
-.listingblock .source-toolbox {
-  right: var(--ds-space-2);
-}
-
-html[data-theme="dark"] .listingblock:not(.default) .content .source-toolbox {
-  background: var(--ds-neutral-700);
-}
-
-html[data-theme="dark"] .listingblock:not(.default) .hljs {
-  border-top-color: var(--ds-neutral-700);
 }
 
 /*
