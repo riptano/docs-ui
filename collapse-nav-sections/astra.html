@@ -7,12 +7,6 @@
     <meta name="generator" content="Antora 1.0.0">
 <link rel="stylesheet" href="/docs-ui/collapse-nav-sections/_/css/site.css">
 <link rel="stylesheet" href="/docs-ui/collapse-nav-sections/_/css/vendor/tabs.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script type="module">
-    import tailwindconfig from '//docs-ui/collapse-nav-sections/_/js/tailwind.config.js'
-    tailwind.config = tailwindconfig
-</script>
-
 
 <script>var uiRootPath = '/docs-ui/collapse-nav-sections/_'</script>
 
@@ -41,19 +35,17 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a href="http://localhost:5252" id="datastax-docs-logo-main"></a>
-      <button data-target="topbar-nav"
-        class="navbar-burger ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-plain"></button>
+      <button data-target="topbar-nav" class="navbar-burger btn btn-icon btn-neutral btn-plain lg:hidden"></button>
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end hide-for-print">
         <div class="search">
           <div class="DocSearch" id="docsearch"></div>
         </div>
-        <button class="ds-button ds-button--color-neutral ds-button--variant-outlined" id="get-support"><span
-            class="material-icons ds-button--leading-icon">support_agent</span>Get Live Help</button>
+        <button class="btn btn-neutral btn-outlined" id="get-support"><span
+            class="material-icons lg:mr-1">support_agent</span>Get Live Help</button>
 
-        <button class="ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-outlined"
-          id="theme-toggle"></button>
+        <button class="btn btn-icon btn-neutral btn-outlined" id="theme-toggle"></button>
       </div>
     </div>
   </nav>
@@ -61,7 +53,7 @@
   <div class="content-container">
     <main class="article">
   <div class="content">
-<article class="doc">
+    <article class="doc">
   <h1 class="page">DataStax Astra</h1>
   <div id="preamble">
 <div class="sectionbody">
@@ -75,7 +67,7 @@ From AI-driven capabilities to robust data stream management, Astra simplifies c
 <div class="sect1 [&>h2]:hidden">
 <h2 id=""><a class="anchor" href="#"></a></h2>
 <div class="sectionbody">
-<div class="flex rounded-[6px] bg-[var(--ds-neutral-soft-bg)] p-3 -mx-3">
+<div class="flex rounded-[6px] bg-[var(--ds-neutral-soft-bg)] p-3">
 <div class="flex flex-col lg:basis-2/4">
 <h2 id="_vector" class="discrete [&>h2]:border-0 !m-0"><span class="image for-light landing-card-icon block mb-1"><img src="astra-vector.svg" alt="vector" width="20"></span> <span class="image for-dark landing-card-icon block mb-1"><img src="astra-vector-dark.svg" alt="vector" width="20"></span> Vector</h2>
 <div class="paragraph">
@@ -84,15 +76,15 @@ Astra Vector is tailored to offer unparalleled precision, speed, and scalability
 </div>
 <div class="flex flex-nowrap gap-1">
 <div class="paragraph">
-<p><a href="https://astra.datastax.com" class="ds-button ds-button--color-primary ds-button--variant-solid" target="_blank" rel="noopener">Explore Astra Vector</a></p>
+<p><a href="https://astra.datastax.com" class="btn btn-primary btn-solid" target="_blank" rel="noopener">Explore Astra Vector</a></p>
 </div>
 <div class="paragraph">
-<p><a href="https://astra.datastax.com" class="ds-button ds-button--color-primary ds-button--variant-outlined external" target="_blank" rel="noopener">Create Astra Account</a></p>
+<p><a href="https://astra.datastax.com" class="btn btn-primary btn-outlined external" target="_blank" rel="noopener">Create Astra Account</a></p>
 </div>
 </div>
 </div>
 <div class="hidden lg:block flex basis-2/4 relative">
-<div class="imageblock top text-center absolute -bottom-3 right-0">
+<div class="imageblock top text-center absolute bottom-1/2 translate-y-1/2 right-0 !m-0">
 <div class="content">
 <img src="astra-browser.png" alt="Browser" width="550" height="348">
 </div>
@@ -125,7 +117,7 @@ Whether you&#8217;re analyzing user behavior or monitoring systems, Astra Stream
 </div>
 </div>
 </div>
-<div class="sect1 text-h1 [&>h2]:!border-0">
+<div class="sect1 text-h1 header-noline">
 <h2 id="_explore_more_of_astra"><a class="anchor" href="#_explore_more_of_astra"></a>Explore More of Astra</h2>
 <div class="sectionbody">
 <div class="flex flex-col lg:flex-row gap-3 mb-5">
@@ -190,8 +182,7 @@ Whether you&#8217;re analyzing user behavior or monitoring systems, Astra Stream
 </div>
 </div>
   </article>  </div>
-</main>
-    <div class="footer--divider"></div>
+</main>    <div class="footer--divider"></div>
 
 <footer class="footer">
   <div class="footer-column">
