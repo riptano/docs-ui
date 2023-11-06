@@ -10,8 +10,10 @@
 }
 
 @layer base {
-  .border-color {
-    border-color: var(--ds-divider);
+  *,
+  ::before,
+  ::after {
+    border: 0 solid var(--ds-divider);
   }
 
   .text-display {
