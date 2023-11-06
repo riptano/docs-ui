@@ -185,6 +185,9 @@ html.is-clipped--nav {
   margin: 0;
   padding: var(--ds-space-2) 0;
   margin-top: auto;
+  position: sticky;
+  background: var(--ds-background-body);
+  bottom: 0;
 }
 
 .secondary-nav-list .nav-item {
