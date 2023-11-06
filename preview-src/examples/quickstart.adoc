@@ -7,6 +7,7 @@
 :astra-link: https://astra.datastax.com
 :astra-nodejs-link: https://docs.datastax.com/en/astra-serverless/docs/develop/sdks/rest-nodejs-client.html
 :astra-json-link: https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-json.html
+:page-tags: Machine Learning Frameworks, Embeding Services, Astra, SDK
 :keywords: Machine Learning Frameworks, Embeding Services, Astra, SDK
 
 == Objective
