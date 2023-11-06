@@ -2,9 +2,10 @@
 :page-layout: full
 
 [.max-w-[650px]]
-DataStax Astra is a cutting-edge cloud-native database platform designed to empower developers.
-Harnessing the strengths of vector databases, serverless computing, and real-time streaming, Astra propels application development into the next generation.
-From AI-driven capabilities to robust data stream management, Astra simplifies complex tasks, offering unparalleled performance and scalability.
+DataStax Astra is a cloud-native database platform built for developers.
+Create scalable AI applications with Vector.
+Read and write unstructured data at scale with Serverless C*.
+Get data where it needs to go with Streaming.
 
 [.[&>h2]:hidden]
 == {empty}
@@ -15,7 +16,7 @@ From AI-driven capabilities to robust data stream management, Astra simplifies c
 ++++
 
 [discrete.[&>h2]:border-0.!m-0]
-== image:astra-vector.svg[vector,20,role="for-light landing-card-icon block mb-1"] image:astra-vector-dark.svg[vector,20,role="for-dark landing-card-icon block mb-1"] Vector
+== [.material-icons.landing-card-icon.block.mb-1]#table_chart# Vector
 
 Delve into a database optimized for AI-driven tasks.
 Astra Vector is tailored to offer unparalleled precision, speed, and scalability for AI applications, transforming how your applications perceive and interact with data.
@@ -24,9 +25,7 @@ Astra Vector is tailored to offer unparalleled precision, speed, and scalability
 <div class="flex flex-nowrap gap-1">
 ++++
 
-https://astra.datastax.com[Explore Astra Vector^,role="btn btn-primary btn-solid"]
-
-https://astra.datastax.com[Create Astra Account^,role="btn btn-primary btn-outlined external"]
+https://astra.datastax.com[Go to Vector Docs,role="btn btn-primary btn-solid"]
 
 ++++
 </div>
@@ -40,6 +39,11 @@ image::astra-browser.png[Browser,550,348,align=center,float=top]
 ++++
 </div>
 </div>
+++++
+
+== Other Astra Products
+
+++++
 <div class="flex flex-col md:flex-row gap-3">
 <div class="flex-col">
 ++++
@@ -51,7 +55,7 @@ Engineered for AI-intensive tasks, it offers unparalleled precision, speed, and 
 Bring complex AI models into production with confidence, leveraging Astra's robust architecture.
 
 [.landing-a]
-https://docs.datastax.com/en/astra-serverless/docs/index.html[Discover Astra Serverless C*]
+https://docs.datastax.com/en/astra-serverless/docs/index.html[Go to Serverless Docs]
 
 ++++
 </div>
@@ -66,47 +70,9 @@ Process, analyze, and act on data as it's generated.
 Whether you're analyzing user behavior or monitoring systems, Astra Streaming delivers the real-time insights you need.
 
 [.landing-a]
-https://docs.datastax.com/en/streaming/astra-streaming/index.html[Dive into Astra Streaming]
+https://docs.datastax.com/en/streaming/astra-streaming/index.html[Go to Streaming Docs]
 
 ++++
 </div>
-</div>
-++++
-
-[.text-h1.header-noline]
-== Explore More of Astra
-
-++++
-<div class="flex flex-col lg:flex-row gap-3 mb-5">
-++++
-
-=== Dive Deeper into Vector
-
-Get a broader understanding of vector databases and their capabilities within Astra.
-
-[unstyled.landing-a]
-* link:{#}[Vector Basics and Concepts]
-* link:{#}[Advanced Vector Techniques]
-* link:{#}[Vector Search Optimization]
-
-=== Serverless C* Unveiled
-
-Explore the intricacies and features of Astra's serverless database offering.
-
-[unstyled.landing-a]
-* link:{#}[Understanding CDC in Serverless C*]
-* link:{#}[Clients, CLI, and Tools for Serverless C*]
-* link:{#}[Serverless C* Best Practices]
-
-=== Streaming Insights
-
-Delve deeper into the real-time data processing capabilities of Astra.
-
-[unstyled.landing-a]
-* link:{#}[Streaming Fundamentals]
-* link:{#}[Advanced Streaming Configurations]
-* link:{#}[Starlight Integrations: JMS, Kafka, RabbitMQ]
-
-++++
 </div>
 ++++
