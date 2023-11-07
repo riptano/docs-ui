@@ -18,14 +18,6 @@
   text-wrap: nowrap;
 }
 
-/* .doc .source-titlebar {
-  padding: var(--ds-space-h) var(--ds-space-1);
-  background: var(--ds-background-level2);
-  border-top-left-radius: calc(6 / var(--rem-base) * 1rem);
-  border-top-right-radius: calc(6 / var(--rem-base) * 1rem);
-  border: 1px solid transparent;
-} */
-
 .doc .listingblock .title {
   @include text-label;
 
