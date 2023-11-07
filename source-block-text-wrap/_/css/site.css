@@ -3987,7 +3987,7 @@ a + .breadcrumbs {
 
 .doc .olist li + li,
 .doc .ulist li + li {
-  margin-top: 0;
+  margin-top: 1.5rem;
 }
 
 .doc .ulist .listingblock,
