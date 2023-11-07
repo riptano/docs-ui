@@ -1145,8 +1145,8 @@ html[data-theme="dark"] .for-light {
   --quote-attribution-font-color: var(--ds-text-tertiary);
   --sidebar-background: var(--ds-background-body);
   --table-border-color: var(--ds-divider);
-  --table-stripe-background: var(--ds-background-body);
-  --table-footer-background: linear-gradient(to bottom, var(--ds-background-level1) 0%, var(--ds-background-body) 100%);
+  --table-stripe-background: var(--ds-background-level1);
+  --table-footer-background: var(--ds-background-level1);
   /* toc */
   --toc-font-color: var(--ds-text-secondary);
   --toc-menu-font-weight: var(--body-font-weight-bold);
@@ -2994,16 +2994,38 @@ a + .breadcrumbs {
   font-weight: var(--alt-heading-font-weight);
 }
 
+.doc h2:not(.discrete),
+.doc h3:not(.discrete),
+.doc h4:not(.discrete),
+.doc h5:not(.discrete),
+.doc h6:not(.discrete) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  gap: var(--ds-space-h);
+}
+
 .doc h1 .anchor,
 .doc h2 .anchor,
 .doc h3 .anchor,
 .doc h4 .anchor,
 .doc h5 .anchor,
 .doc h6 .anchor {
-  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   text-decoration: none;
-  width: 2.75ex;
-  margin-left: -2ex;
   visibility: hidden;
   font-weight: normal;
   color: var(--ds-primary-soft-hover-bg);
@@ -3209,10 +3231,14 @@ a + .breadcrumbs {
   margin-top: 0;
 }
 
-.doc table.tableblock th,
+.doc table.tableblock th {
+  padding: 1rem 2rem;
+  padding: var(--ds-space-1) var(--ds-space-2);
+}
+
 .doc table.tableblock td {
-  padding: 1.625rem 2rem;
-  padding: calc(13/var(--rem-base)*1rem) var(--ds-space-2);
+  padding: 1.5rem 2rem;
+  padding: var(--ds-space-1h) var(--ds-space-2);
 }
 
 .doc table.tableblock,
@@ -3222,7 +3248,7 @@ a + .breadcrumbs {
 }
 
 .doc table.grid-all > * > tr > * {
-  border-width: 1px;
+  border-bottom-width: 1px;
 }
 
 .doc table.grid-cols > * > tr > * {
@@ -3242,7 +3268,7 @@ a + .breadcrumbs {
 }
 
 .doc table.frame-all {
-  border-width: 1px;
+  border-bottom-width: 0;
 }
 
 .doc table.frame-ends {
@@ -3282,14 +3308,17 @@ a + .breadcrumbs {
 .doc table.stripes-odd > tbody > tr:nth-of-type(odd),
 .doc table.stripes-even > tbody > tr:nth-of-type(even),
 .doc table.stripes-hover > tbody > tr:hover {
-  background: var(--ds-background-body);
+  background: var(--ds-background-level1);
   background: var(--table-stripe-background);
 }
 
 .doc table.tableblock > tfoot {
-  background: -webkit-gradient(linear, left top, left bottom, from(var(--ds-background-level1)), to(var(--ds-background-body)));
-  background: linear-gradient(to bottom, var(--ds-background-level1) 0%, var(--ds-background-body) 100%);
+  background: var(--ds-background-level1);
   background: var(--table-footer-background);
+}
+
+.doc table.tableblock > tfoot > tr > * {
+  border-bottom-width: 0;
 }
 
 .doc .halign-left {
@@ -3917,17 +3946,11 @@ a + .breadcrumbs {
   counter-reset: step;
 }
 
-.doc .step h2::before,
-.doc .step h3::before,
-.doc .step h4::before {
+.doc .step h2::after,
+.doc .step h3::after,
+.doc .step h4::after {
   counter-increment: step;
   content: counter(step) ". ";
-}
-
-.doc .step h2 .anchor,
-.doc .step h3 .anchor,
-.doc .step h4 .anchor {
-  margin-left: -4.25ex;
 }
 
 .doc .conum[data-value] {
@@ -4141,47 +4164,48 @@ a + .breadcrumbs {
 }
 
 html[data-layout="full"] main > .content {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 
 html[data-layout="full"] .content-container {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: center;
-      align-content: center;
-}
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
 
-html[data-layout="landing"] .toolbar,
-html[data-layout="full"] .toolbar {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
+html[data-layout="landing"] .toolbar, html[data-layout="full"] .toolbar {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
 
-html[data-layout="landing"] .doc > h1.page:first-child,
-html[data-layout="full"] .doc > h1.page:first-child {
-  font-size: 4.25rem;
-  font-size: calc(34/var(--rem-base)*1rem);
-  margin-top: 3rem;
-  margin-top: var(--ds-space-3);
-  margin-top: 2rem;
-  margin-top: var(--ds-space-2);
-}
+html[data-layout="landing"] .doc > h1.page:first-child, html[data-layout="full"] .doc > h1.page:first-child {
+    font-size: 4.25rem;
+    font-size: calc(34/var(--rem-base)*1rem);
+    margin-top: 3rem;
+    margin-top: var(--ds-space-3);
+    margin-top: 2rem;
+    margin-top: var(--ds-space-2);
+  }
 
-html[data-layout="landing"] #preamble,
-html[data-layout="full"] #preamble {
-  max-width: 650px;
-}
+html[data-layout="landing"] #preamble, html[data-layout="full"] #preamble {
+    max-width: 650px;
+  }
+
+html[data-layout="landing"] .anchor, html[data-layout="full"] .anchor {
+    display: none;
+  }
 
 html[data-layout="landing"] .doc .olist li + li,
-html[data-layout="landing"] .doc .ulist li + li,
-html[data-layout="full"] .doc .olist li + li,
-html[data-layout="full"] .doc .ulist li + li {
-  margin-top: 2rem;
-  margin-top: var(--ds-space-2);
-}
+  html[data-layout="landing"] .doc .ulist li + li,
+  html[data-layout="full"] .doc .olist li + li,
+  html[data-layout="full"] .doc .ulist li + li {
+    margin-top: 2rem;
+    margin-top: var(--ds-space-2);
+  }
 
 .sect1.text-h1 {
   font-size: 2rem;
