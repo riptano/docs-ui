@@ -9,12 +9,6 @@
     <meta name="generator" content="Antora 1.0.0">
 <link rel="stylesheet" href="/docs-ui/meta-tags/_/css/site.css">
 <link rel="stylesheet" href="/docs-ui/meta-tags/_/css/vendor/tabs.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script type="module">
-    import tailwindconfig from '//docs-ui/meta-tags/_/js/tailwind.config.js'
-    tailwind.config = tailwindconfig
-</script>
-
     <link rel="icon" href="https://www.datastax.com/favicon.ico">
     <meta property="article:published_time" content="">
     <meta property="article:modified_time" content="">
@@ -24,7 +18,7 @@
     <meta property="og:url" content="">
     <meta property="og:title" content="Document Title (Level 0) :: Brand Docs">
     <meta property="og:description" content="">
-    <meta property="og:image" content="https://docs.datastax.com/en/_/img/datastax-docs-banner.png">
+    <meta property="og:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="628">
@@ -35,7 +29,7 @@
     <meta name="twitter:url" content="">
     <meta name="twitter:title" content="Document Title (Level 0) :: Brand Docs">
     <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="https://docs.datastax.com/en/_/img/datastax-docs-banner.png">
+    <meta name="twitter:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <script type="application/ld+json">
     [
     {
@@ -69,7 +63,7 @@
             "headline": "Document Title (Level 0)",
             "description":"",
             "keywords":"",
-            "image": "https://docs.datastax.com/en/_/img/datastax-docs-banner.png",
+            "image": "https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png",
             "publisher":{
                 "@type": "Corporation",
                 "@id": "https://datastax.com#organization",
@@ -115,19 +109,17 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a href="http://localhost:5252" id="datastax-docs-logo-main"></a>
-      <button data-target="topbar-nav"
-        class="navbar-burger ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-plain"></button>
+      <button data-target="topbar-nav" class="navbar-burger btn btn-icon btn-neutral btn-plain lg:hidden"></button>
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end hide-for-print">
         <div class="search">
           <div class="DocSearch" id="docsearch"></div>
         </div>
-        <button class="ds-button ds-button--color-neutral ds-button--variant-outlined" id="get-support"><span
-            class="material-icons ds-button--leading-icon">support_agent</span>Get Live Help</button>
+        <button class="btn btn-neutral btn-outlined" id="get-support"><span
+            class="material-icons lg:mr-1">support_agent</span>Get Live Help</button>
 
-        <button class="ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-outlined"
-          id="theme-toggle"></button>
+        <button class="btn btn-icon btn-neutral btn-outlined" id="theme-toggle"></button>
       </div>
     </div>
   </nav>
@@ -142,6 +134,7 @@
   <li class="nav-item" data-depth="0">
     <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle material-icons">chevron_right</button>
     <a class="nav-link" href="#">Quickstart</a>
     <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
@@ -159,6 +152,7 @@
     <a class="nav-link" href="#liber-recusabo">Liber Recusabo</a>
       </li>
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle material-icons">chevron_right</button>
     <span class="nav-text">Reference</span>
     <ul class="nav-list">
   <li class="nav-item" data-depth="2">
@@ -206,8 +200,8 @@
   </aside>
 </div>  <div class="content-container">
     <main class="article">
-<div class="toolbar" role="navigation">
-<button class="nav-toggle ds-button ds-button--color-neutral ds-button--variant-plain ds-button--is-icon"></button><nav class="breadcrumbs" aria-label="breadcrumbs">
+  <div class="toolbar" role="navigation">
+<button class="nav-toggle lg:hidden mr-auto btn btn-neutral btn-plain btn-icon"></button><nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="#">Component XYZ</a></li>
 <li>
@@ -217,10 +211,11 @@
 <div class="edit-this-page"><a href="http://example.com/project-xyz/blob/main/index.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
-<aside class="toc sidebar" data-title="Contents" data-levels="2">
+    <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu-container">
     <div class="toc-menu"></div>
-    <div class="toc-menu toc-tags"></div>
+    <div class="toc-menu toc-tags">
+    </div>
     <div class="toc-menu toc-dev">
     <h3>Developer Resources</h3>
     <div class="page-versions">
@@ -236,7 +231,7 @@
     </div>
   </div>
 </aside>
-<article class="doc">
+    <article class="doc">
   <h1 class="page">Document Title (Level 0)</h1>
   <div id="preamble">
 <div class="sectionbody">
@@ -246,7 +241,7 @@ A paragraph can be defined as one or more lines of consecutive text that are log
 To differentiate between paragraphs, you simply need to insert at least one blank line between them.</p>
 </div>
 <div class="paragraph">
-<p><a href="vector-home.html" class="ds-button ds-button--color-primary ds-button--variant-solid">Vector Home</a></p>
+<p><a href="vector-home.html" class="btn btn-primary btn-solid">Vector Home</a></p>
 </div>
 </div>
 </div>
@@ -1080,9 +1075,39 @@ The header is optional.
 <div class="listingblock">
 <div class="title">Console code block</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">.Optional title
-[example]
-This is an example paragraph.</code></pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ pip install astra-vector
+$ python3</code></pre>
+</div>
+</div>
+<div class="listingblock wrap">
+<div class="title">Text does not wrap by default</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</code></pre>
+</div>
+</div>
+<div class="listingblock nolang">
+<div class="title">Hide language name</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// A title with hidden language name
+public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+
+        System.out.println("Current Date and Time is: " + current);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock nolang">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// No title with hidden language name
+public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+
+        System.out.println("Current Date and Time is: " + current);
+    }
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1708,6 +1733,109 @@ Varying the delimiter line length allows the parser to distinguish one block fro
 <div class="sect1">
 <h2 id="tables"><a class="anchor" href="#tables"></a>Tables</h2>
 <div class="sectionbody">
+<table class="tableblock frame-none grid-rows stretch">
+<caption class="title">Default</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-even fit-content stretch">
+<caption class="title">Striped</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Header</th>
+<th class="tableblock halign-left valign-top">Header</th>
+<th class="tableblock halign-left valign-top">Header</th>
+<th class="tableblock halign-left valign-top">Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<caption class="title">Footer</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Header</th>
+<th class="tableblock halign-left valign-top">Header</th>
+<th class="tableblock halign-left valign-top">Header</th>
+<th class="tableblock halign-left valign-top">Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Item</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Item</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Total</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+</tr>
+</tfoot>
+</table>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Basic table</caption>
 <colgroup>
@@ -2602,8 +2730,7 @@ Otherwise, the em dash is followed by a zero-width space (&amp;#8203;) to provid
   <span class="next"><a href="#">Liber Recusabo</a></span>
 </nav>
 </article>  </div>
-</main>
-    <div class="footer--divider"></div>
+</main>    <div class="footer--divider"></div>
 
 <footer class="footer">
   <div class="footer-column">

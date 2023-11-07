@@ -7,12 +7,6 @@
     <meta name="generator" content="Antora 1.0.0">
 <link rel="stylesheet" href="/docs-ui/_/css/site.css">
 <link rel="stylesheet" href="/docs-ui/_/css/vendor/tabs.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script type="module">
-    import tailwindconfig from '//docs-ui/_/js/tailwind.config.js'
-    tailwind.config = tailwindconfig
-</script>
-
     <link rel="icon" href="https://www.datastax.com/favicon.ico">
     <meta property="article:published_time" content="">
     <meta property="article:modified_time" content="">
@@ -22,7 +16,7 @@
     <meta property="og:url" content="">
     <meta property="og:title" content="Integrations :: Brand Docs">
     <meta property="og:description" content="">
-    <meta property="og:image" content="https://docs.datastax.com/en/_/img/datastax-docs-banner.png">
+    <meta property="og:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="628">
@@ -33,7 +27,7 @@
     <meta name="twitter:url" content="">
     <meta name="twitter:title" content="Integrations :: Brand Docs">
     <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="https://docs.datastax.com/en/_/img/datastax-docs-banner.png">
+    <meta name="twitter:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <script type="application/ld+json">
     [
     {
@@ -67,7 +61,7 @@
             "headline": "Integrations",
             "description":"",
             "keywords":"",
-            "image": "https://docs.datastax.com/en/_/img/datastax-docs-banner.png",
+            "image": "https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png",
             "publisher":{
                 "@type": "Corporation",
                 "@id": "https://datastax.com#organization",
@@ -113,19 +107,17 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a href="http://localhost:5252" id="datastax-docs-logo-main"></a>
-      <button data-target="topbar-nav"
-        class="navbar-burger ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-plain"></button>
+      <button data-target="topbar-nav" class="navbar-burger btn btn-icon btn-neutral btn-plain lg:hidden"></button>
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end hide-for-print">
         <div class="search">
           <div class="DocSearch" id="docsearch"></div>
         </div>
-        <button class="ds-button ds-button--color-neutral ds-button--variant-outlined" id="get-support"><span
-            class="material-icons ds-button--leading-icon">support_agent</span>Get Live Help</button>
+        <button class="btn btn-neutral btn-outlined" id="get-support"><span
+            class="material-icons lg:mr-1">support_agent</span>Get Live Help</button>
 
-        <button class="ds-button ds-button--is-icon ds-button--color-neutral ds-button--variant-outlined"
-          id="theme-toggle"></button>
+        <button class="btn btn-icon btn-neutral btn-outlined" id="theme-toggle"></button>
       </div>
     </div>
   </nav>
@@ -140,6 +132,7 @@
   <li class="nav-item" data-depth="0">
     <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle material-icons">chevron_right</button>
     <a class="nav-link" href="#">Quickstart</a>
     <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
@@ -157,6 +150,7 @@
     <a class="nav-link" href="#liber-recusabo">Liber Recusabo</a>
       </li>
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle material-icons">chevron_right</button>
     <span class="nav-text">Reference</span>
     <ul class="nav-list">
   <li class="nav-item" data-depth="2">
@@ -204,8 +198,8 @@
   </aside>
 </div>  <div class="content-container">
     <main class="article">
-<div class="toolbar" role="navigation">
-<button class="nav-toggle ds-button ds-button--color-neutral ds-button--variant-plain ds-button--is-icon"></button><nav class="breadcrumbs" aria-label="breadcrumbs">
+  <div class="toolbar" role="navigation">
+<button class="nav-toggle lg:hidden mr-auto btn btn-neutral btn-plain btn-icon"></button><nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="#">Component XYZ</a></li>
 <li>
@@ -215,10 +209,11 @@
 <div class="edit-this-page"><a href="http://example.com/project-xyz/blob/main/index.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
-<aside class="toc sidebar" data-title="Contents" data-levels="2">
+    <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu-container">
     <div class="toc-menu"></div>
-    <div class="toc-menu toc-tags"></div>
+    <div class="toc-menu toc-tags">
+    </div>
     <div class="toc-menu toc-dev">
     <h3>Developer Resources</h3>
     <div class="page-versions">
@@ -234,7 +229,7 @@
     </div>
   </div>
 </aside>
-<article class="doc">
+    <article class="doc">
   <h1 class="page">Integrations</h1>
   <div class="tutorial-info is-before-toc">
   <div class="tutorial-actions">
@@ -471,8 +466,7 @@ Integration with Astra enables an optimized storage solution that complements Ji
     </div>
   </div>
 </div>  </article>  </div>
-</main>
-    <div class="footer--divider"></div>
+</main>    <div class="footer--divider"></div>
 
 <footer class="footer">
   <div class="footer-column">
