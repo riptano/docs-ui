@@ -114,16 +114,26 @@
   font-weight: var(--alt-heading-font-weight);
 }
 
+.doc h2:not(.discrete),
+.doc h3:not(.discrete),
+.doc h4:not(.discrete),
+.doc h5:not(.discrete),
+.doc h6:not(.discrete) {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--ds-space-h);
+}
+
 .doc h1 .anchor,
 .doc h2 .anchor,
 .doc h3 .anchor,
 .doc h4 .anchor,
 .doc h5 .anchor,
 .doc h6 .anchor {
-  position: absolute;
+  display: flex;
   text-decoration: none;
-  width: 2.75ex;
-  margin-left: -2ex;
   visibility: hidden;
   font-weight: normal;
   color: var(--ds-primary-soft-hover-bg);
@@ -1003,17 +1013,11 @@
   counter-reset: step;
 }
 
-.doc .step h2::before,
-.doc .step h3::before,
-.doc .step h4::before {
+.doc .step h2::after,
+.doc .step h3::after,
+.doc .step h4::after {
   counter-increment: step;
   content: counter(step) ". ";
-}
-
-.doc .step h2 .anchor,
-.doc .step h3 .anchor,
-.doc .step h4 .anchor {
-  margin-left: -4.25ex;
 }
 
 .doc .conum[data-value] {
