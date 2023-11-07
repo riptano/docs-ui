@@ -117,13 +117,24 @@
 /* Feature Card - Code */
 .doc .ds-feature-code code,
 .doc .ds-feature-code pre.highlight code {
-  background: var(--ds-text-primary);
   font-size: calc(15.5 / var(--rem-base) * 1rem);
 }
 
 .doc .ds-feature-code pre.highlight code,
 .doc .ds-feature-code.literalblock pre code {
   padding: var(--ds-space-2) var(--ds-space-3);
+}
+
+.doc .ds-feature-code {
+  @apply inverse-theme;
+}
+
+.doc .ds-feature-code .source-toolbox {
+  display: none;
+}
+
+.doc .ds-feature-code code {
+  border-radius: calc(6 / var(--rem-base) * 1rem) !important;
 }
 
 @media screen and (min-width: 1200px) {
