@@ -415,9 +415,42 @@ Output literal monospace text, such as `my-python-function` or `initial-scale=1.
 .Console code block
 [source,console]
 ----
-.Optional title
-[example]
-This is an example paragraph.
+$ pip install astra-vector
+$ python3
+----
+
+[.wrap]
+.Text does not wrap by default
+[source]
+----
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+----
+
+[.nolang]
+.Hide language name
+[source,java]
+----
+// A title with hidden language name
+public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+
+        System.out.println("Current Date and Time is: " + current);
+    }
+}
+----
+
+[.nolang]
+[source,java]
+----
+// No title with hidden language name
+public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+
+        System.out.println("Current Date and Time is: " + current);
+    }
+}
 ----
 
 === Callouts

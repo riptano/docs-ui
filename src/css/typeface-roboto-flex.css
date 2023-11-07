@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Roboto Flex";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 1 1000;
   src:
     url(~@fontsource/roboto-flex/files/roboto-flex-latin-400-normal.woff2) format("woff2"),
     url(~@fontsource/roboto-flex/files/roboto-flex-latin-400-normal.woff) format("woff");

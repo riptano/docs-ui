@@ -11,7 +11,7 @@
   var supportsCopy = window.navigator.clipboard
 
   ;[].slice.call(document.querySelectorAll('.doc pre.highlight, .doc .literalblock pre')).forEach(function (pre) {
-    var code, language, lang, copy, toast, toolbox
+    var code, language, lang, copy, toast, toolbox, title, listingblock
     if (pre.classList.contains('highlight')) {
       code = pre.querySelector('code')
       if ((language = code.dataset.lang) && language !== 'console') {
@@ -30,8 +30,12 @@
     } else {
       return
     }
+    listingblock = pre.parentNode.parentNode
+    var nolang = listingblock.classList.contains('nolang')
     ;(toolbox = document.createElement('div')).className = 'source-toolbox'
-    if (lang) toolbox.appendChild(lang)
+    if (listingblock.firstElementChild.classList.contains('title')) {
+      title = listingblock.firstElementChild
+    }
     if (supportsCopy) {
       ;(copy = document.createElement('button')).className = 'copy-button'
       copy.setAttribute('title', 'Copy to clipboard')
@@ -43,11 +47,6 @@
         svg.appendChild(use)
         copy.appendChild(svg)
       } else {
-        //var img = document.createElement('img')
-        //img.src = uiRootPath + '/img/octicons-16.svg#view-clippy'
-        //img.alt = 'copy icon'
-        //img.className = 'copy-icon'
-        //copy.appendChild(img)
         var span = document.createElement('span')
         span.className = 'material-icons'
         span.innerText = 'content_paste'
@@ -58,8 +57,18 @@
       copy.appendChild(toast)
       toolbox.appendChild(copy)
     }
-    pre.parentNode.appendChild(toolbox)
-    if (copy) copy.addEventListener('click', writeToClipboard.bind(copy, code))
+    if (copy) {
+      copy.addEventListener('click', writeToClipboard.bind(copy, code))
+      pre.prepend(toolbox)
+    }
+    if (lang && !title && !nolang) {
+      ;(title = document.createElement('div')).className = 'title'
+      title.appendChild(lang)
+      listingblock.prepend(title)
+    }
+    if (lang && title && !nolang) {
+      title.appendChild(lang)
+    }
   })
 
   function extractCommands (text) {
@@ -74,9 +83,14 @@
     if (code.dataset.lang === 'console' && text.startsWith('$ ')) text = extractCommands(text)
     window.navigator.clipboard.writeText(text).then(
       function () {
+        const icon = this.querySelector('.material-icons')
         this.classList.add('clicked')
+        icon.innerText = 'assignment_turned_in'
         this.offsetHeight // eslint-disable-line no-unused-expressions
         this.classList.remove('clicked')
+        setTimeout(function () {
+          icon.innerText = 'content_paste'
+        }, 500)
       }.bind(this),
       function () {}
     )
