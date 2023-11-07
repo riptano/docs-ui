@@ -114,16 +114,26 @@
   font-weight: var(--alt-heading-font-weight);
 }
 
+.doc h2:not(.discrete),
+.doc h3:not(.discrete),
+.doc h4:not(.discrete),
+.doc h5:not(.discrete),
+.doc h6:not(.discrete) {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--ds-space-h);
+}
+
 .doc h1 .anchor,
 .doc h2 .anchor,
 .doc h3 .anchor,
 .doc h4 .anchor,
 .doc h5 .anchor,
 .doc h6 .anchor {
-  position: absolute;
+  display: flex;
   text-decoration: none;
-  width: 2.75ex;
-  margin-left: -2ex;
   visibility: hidden;
   font-weight: normal;
   color: var(--ds-primary-soft-hover-bg);
@@ -305,9 +315,12 @@
   margin-top: 0;
 }
 
-.doc table.tableblock th,
+.doc table.tableblock th {
+  padding: var(--ds-space-1) var(--ds-space-2);
+}
+
 .doc table.tableblock td {
-  padding: calc(13 / var(--rem-base) * 1rem) var(--ds-space-2);
+  padding: var(--ds-space-1h) var(--ds-space-2);
 }
 
 .doc table.tableblock,
@@ -316,7 +329,7 @@
 }
 
 .doc table.grid-all > * > tr > * {
-  border-width: 1px;
+  border-bottom-width: 1px;
 }
 
 .doc table.grid-cols > * > tr > * {
@@ -335,7 +348,7 @@
 }
 
 .doc table.frame-all {
-  border-width: 1px;
+  border-bottom-width: 0;
 }
 
 .doc table.frame-ends {
@@ -378,6 +391,10 @@
 
 .doc table.tableblock > tfoot {
   background: var(--table-footer-background);
+}
+
+.doc table.tableblock > tfoot > tr > * {
+  border-bottom-width: 0;
 }
 
 .doc .halign-left {
@@ -905,17 +922,11 @@
   counter-reset: step;
 }
 
-.doc .step h2::before,
-.doc .step h3::before,
-.doc .step h4::before {
+.doc .step h2::after,
+.doc .step h3::after,
+.doc .step h4::after {
   counter-increment: step;
   content: counter(step) ". ";
-}
-
-.doc .step h2 .anchor,
-.doc .step h3 .anchor,
-.doc .step h4 .anchor {
-  margin-left: -4.25ex;
 }
 
 .doc .conum[data-value] {

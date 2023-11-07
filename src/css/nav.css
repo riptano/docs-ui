@@ -7,6 +7,8 @@
   width: 100%;
   z-index: var(--z-index-nav);
   visibility: hidden;
+
+  --transition-duration: 300ms;
 }
 
 @media screen and (min-width: 769px) {
@@ -95,6 +97,23 @@ html.is-clipped--nav {
   margin: 0;
 }
 
+.nav-item > .nav-list {
+  transition-duration: var(--transition-duration);
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0, 1, 0, 1), ease, linear;
+  transition-property: max-height, opacity, visibility;
+  max-height: 100vh;
+  opacity: 1;
+}
+
+.nav-item:not(.is-active) > .nav-list {
+  transition-delay: 0s, 0s, var(--transition-duration);
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
 .nav-item {
   display: flex;
   flex-direction: column;
@@ -105,14 +124,7 @@ html.is-clipped--nav {
   position: relative;
   display: flex;
   align-items: center;
-  padding: var(--ds-space-1) var(--site-padding);
-}
-
-@media screen and (max-width: 1023.5px) {
-  .nav-link,
-  .nav-text {
-    padding: var(--ds-space-1) var(--site-padding--mobile);
-  }
+  padding: 1rem 3rem 1rem var(--site-padding);
 }
 
 .nav-link {
@@ -174,6 +186,9 @@ html.is-clipped--nav {
   margin: 0;
   padding: var(--ds-space-2) 0;
   margin-top: auto;
+  position: sticky;
+  background: var(--ds-background-body);
+  bottom: 0;
 }
 
 .secondary-nav-list .nav-item {
@@ -184,28 +199,16 @@ html.is-clipped--nav {
   content: "\e89e";
 }
 
-/*** nav-item toggle styles, keeping for now as we might implement again when more content is added ***/
-
-/* .nav-item:not(.is-active) > .nav-list {
-  display: none;
-} */
-
-/* .nav-item-toggle {
-  background: transparent url(../img/caret.svg) no-repeat center / 50%;
-  border: none;
-  outline: none;
-  line-height: inherit;
-  padding: 0;
+.nav-item-toggle {
   position: absolute;
-  height: calc(var(--nav-line-height) * 1em);
-  width: calc(var(--nav-line-height) * 1em);
-  margin-top: -0.05em;
-  margin-left: calc(var(--nav-line-height) * -1em);
-} */
+  margin-top: 0.75em;
+  margin-left: 0.5em;
+  color: var(--ds-text-tertiary);
+}
 
-/* .nav-item.is-active > .nav-item-toggle {
+.nav-item.is-active > .nav-item-toggle {
   transform: rotate(90deg);
-} */
+}
 
 /*** nav-panel-explore styles, keeping for now as we might implement it elsewhere ***/
 

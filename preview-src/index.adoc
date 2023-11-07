@@ -792,6 +792,63 @@ Varying the delimiter line length allows the parser to distinguish one block fro
 [#tables]
 == Tables
 
+[frame=none, grid=rows,%autowidth.stretch]
+.Default
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+[%autowidth.stretch,stripes=even]
+.Striped
+|===
+|Header |Header |Header |Header
+
+|Cell
+|Cell
+|Cell
+|Cell
+
+|Cell
+|Cell
+|Cell
+|Cell
+
+|Cell
+|Cell
+|Cell
+|Cell
+|===
+
+
+[%footer%autowidth.stretch]
+.Footer
+|===
+|Header |Header |Header |Header
+
+h|Item
+|2
+|1
+|5
+
+h|Item
+|2
+|1
+|5
+
+h|Total
+|4
+|2
+|10
+|===
+
 .Basic table
 [cols="3*"]
 |===
