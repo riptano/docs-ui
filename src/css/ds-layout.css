@@ -157,6 +157,12 @@ html[data-theme="dark"] .doc .landing-card-icon {
   position: absolute;
   margin-left: var(--ds-space-h);
   margin-top: calc(4 / var(--rem-base) * -1 * 1rem);
+
+  @apply transition-transform;
+}
+
+.landing-a a:hover::after {
+  transform: translateX(0.5rem);
 }
 
 .landing-support a.support::before,
