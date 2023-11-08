@@ -4648,6 +4648,19 @@ html[data-theme="dark"] .doc .landing-card-icon {
   margin-left: var(--ds-space-h);
   margin-top: -0.5rem;
   margin-top: calc(4/var(--rem-base)*-1*1rem);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+          transition-duration: 150ms;
+}
+
+.landing-a a:hover::after {
+  -webkit-transform: translateX(0.5rem);
+          transform: translateX(0.5rem);
 }
 
 .landing-support a.support::before,
