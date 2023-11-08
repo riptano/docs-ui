@@ -3129,9 +3129,7 @@ a + .breadcrumbs {
   color: var(--doc-font-color);
   font-size: inherit;
   font-size: var(--doc-font-size);
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  /* hyphens: auto; */
   line-height: 1.5;
   line-height: var(--doc-line-height);
   margin: 0 auto;
