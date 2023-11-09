@@ -100,16 +100,14 @@ html.is-clipped--nav {
 .nav-item > .nav-list {
   transition-duration: var(--transition-duration);
   transition-delay: 0s;
-  transition-timing-function: cubic-bezier(0, 1, 0, 1), ease, linear;
-  transition-property: max-height, opacity, visibility;
+  transition-timing-function: cubic-bezier(0, 1, 0, 1), linear;
+  transition-property: max-height, visibility;
   max-height: 100vh;
-  opacity: 1;
 }
 
 .nav-item:not(.is-active) > .nav-list {
-  transition-delay: 0s, 0s, var(--transition-duration);
+  transition-delay: 0s, var(--transition-duration);
   max-height: 0;
-  opacity: 0;
   visibility: hidden;
   overflow: hidden;
 }
