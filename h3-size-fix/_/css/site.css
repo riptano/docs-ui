@@ -1928,7 +1928,7 @@ object[type="image/svg+xml"]:not([width]) {
   width: 100%;
   z-index: 10;
   z-index: var(--z-index-nav);
-  visibility: hidden;
+  display: none;
 
   --transition-duration: 300ms;
 }
@@ -1947,12 +1947,12 @@ object[type="image/svg+xml"]:not([width]) {
             flex: none;
     position: static;
     top: 0;
-    visibility: visible;
+    display: block;
   }
 }
 
 .nav-container.is-active {
-  visibility: visible;
+  display: block;
 }
 
 .nav {
