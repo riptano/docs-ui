@@ -2,15 +2,25 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--ds-space-2h);
+  gap: var(--ds-space-1);
   margin-bottom: var(--ds-space-3);
 }
 
 .tutorial-info .info-item {
   display: flex;
-  gap: var(--ds-space-1);
+  gap: var(--ds-space-h);
+  font-size: calc(14.5 / var(--rem-base) * 1rem);
+  color: var(--ds-text-tertiary);
+}
+
+.tutorial-info .info-item .material-icons {
+  font-size: var(--ds-space-2);
 }
 
 .tutorial-info .tutorial-actions {
   margin-left: auto;
+}
+
+html[data-layout="tutorial"] h1.page:first-child {
+  margin-bottom: var(--ds-space-1);
 }

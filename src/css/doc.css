@@ -57,15 +57,18 @@
   @include text-h1;
 }
 
-.doc h2 {
+.doc h2,
+.doc .text-h2 {
   @include text-h2;
 }
 
-.doc h3 {
+.doc h3,
+.doc .text-h3 {
   @include text-h3;
 }
 
-.doc h4 {
+.doc h4,
+.doc .text-h4 {
   @include text-h4;
 }
 
@@ -660,7 +663,7 @@
 }
 
 .doc ul.checklist {
-  padding-left: var(--ds-space-2h);
+  padding-left: 0;
 }
 
 .doc ul.checklist p {
@@ -685,9 +688,11 @@
 }
 
 .doc ul.checklist i.fa-check-square-o::before {
-  content: "\e876";
-  color: var(--ds-primary-solid-color);
-  background-color: var(--ds-primary-solid-bg);
+  content: "\e86c";
+  color: var(--link-font-color);
+  font-size: var(--ds-space-2h);
+  width: calc(20 / var(--rem-base) * 1rem);
+  height: calc(20 / var(--rem-base) * 1rem);
 }
 
 .doc ul.checklist i.fa-square-o::before {
