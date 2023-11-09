@@ -2050,19 +2050,17 @@ html.is-clipped--nav {
           transition-duration: var(--transition-duration);
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
-  -webkit-transition-timing-function: cubic-bezier(0, 1, 0, 1), ease, linear;
-          transition-timing-function: cubic-bezier(0, 1, 0, 1), ease, linear;
-  -webkit-transition-property: max-height, opacity, visibility;
-  transition-property: max-height, opacity, visibility;
+  -webkit-transition-timing-function: cubic-bezier(0, 1, 0, 1), linear;
+          transition-timing-function: cubic-bezier(0, 1, 0, 1), linear;
+  -webkit-transition-property: max-height, visibility;
+  transition-property: max-height, visibility;
   max-height: 100vh;
-  opacity: 1;
 }
 
 .nav-item:not(.is-active) > .nav-list {
-  -webkit-transition-delay: 0s, 0s, var(--transition-duration);
-          transition-delay: 0s, 0s, var(--transition-duration);
+  -webkit-transition-delay: 0s, var(--transition-duration);
+          transition-delay: 0s, var(--transition-duration);
   max-height: 0;
-  opacity: 0;
   visibility: hidden;
   overflow: hidden;
 }
