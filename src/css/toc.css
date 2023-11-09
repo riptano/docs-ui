@@ -126,7 +126,7 @@
   padding: 0;
   align-items: flex-start;
   align-content: flex-start;
-  gap: var(--ds-space-1h) var(--ds-space-1h);
+  gap: var(--ds-space-1h) var(--ds-space-h);
   align-self: stretch;
   flex-wrap: wrap;
 }
@@ -136,8 +136,9 @@
 .tags-container span {
   display: flex;
   padding: var(--ds-space-q) var(--ds-space-1h);
-  font-size: calc(12 / var(--rem-base) * 1rem);
+  font-size: calc(13 / var(--rem-base) * 1rem);
   font-weight: 600;
+  line-height: 1.5;
   letter-spacing: calc(0.65 / var(--rem-base) * 1rem);
   border-radius: var(--ds-space-4);
   color: var(--ds-primary-soft-color);
