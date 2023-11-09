@@ -57,18 +57,15 @@
   @include text-h1;
 }
 
-.doc h2,
-.doc .text-h2 {
+.doc h2 {
   @include text-h2;
 }
 
-.doc h3,
-.doc .text-h3 {
+.doc h3 {
   @include text-h3;
 }
 
-.doc h4,
-.doc .text-h4 {
+.doc h4 {
   @include text-h4;
 }
 
