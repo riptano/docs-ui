@@ -35,7 +35,7 @@
 .doc .listingblock .title .source-lang {
   margin-left: auto;
   text-transform: uppercase;
-  color: var(----ds-text-tertiary);
+  color: var(--ds-text-secondary);
 }
 
 .doc .source-toolbox {
