@@ -1,0 +1,10 @@
+<div class="body">
+  {{#unless (eq page.layout 'full')}}
+  {{> nav}}
+  {{/unless}}
+  <div class="content-container">
+    {{> main}}
+    {{> footer-content}}
+  </div>
+</div>
+{{> footer-scripts}}
