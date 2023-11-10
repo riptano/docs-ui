@@ -75,7 +75,7 @@
 
 .doc a.link,
 .doc a.link:hover {
-  color: var(--heading-font-color);
+  color: var(--heading-font-color) !important;
   text-decoration: none;
 }
 

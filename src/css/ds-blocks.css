@@ -25,7 +25,7 @@
   font-style: normal;
   color: var(--ds-text-primary);
   margin-bottom: 0;
-  padding: var(--ds-space-h) var(--ds-space-2);
+  padding: var(--ds-space-1) var(--ds-space-2);
   background: var(--ds-background-level2);
   border-top-left-radius: calc(6 / var(--rem-base) * 1rem);
   border-top-right-radius: calc(6 / var(--rem-base) * 1rem);
@@ -35,6 +35,7 @@
 .doc .listingblock .title .source-lang {
   margin-left: auto;
   text-transform: uppercase;
+  color: var(--ds-text-secondary);
 }
 
 .doc .source-toolbox {
