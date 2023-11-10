@@ -3247,8 +3247,8 @@ a + .breadcrumbs {
 
 .doc a.link,
 .doc a.link:hover {
-  color: var(--ds-text-primary);
-  color: var(--heading-font-color);
+  color: var(--ds-text-primary) !important;
+  color: var(--heading-font-color) !important;
   text-decoration: none;
 }
 
