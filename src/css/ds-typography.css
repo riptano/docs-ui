@@ -14,12 +14,12 @@
 }
 
 @mixin text-h3 {
-  font-size: calc(20 / var(--rem-base) * 1rem);
+  font-size: calc(16 / var(--rem-base) * 1rem);
   font-weight: 600;
 }
 
 @mixin text-h4 {
-  font-size: calc(16 / var(--rem-base) * 1rem);
+  font-size: calc(15 / var(--rem-base) * 1rem);
   font-weight: 600;
 }
 

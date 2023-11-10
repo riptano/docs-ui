@@ -24,6 +24,7 @@
     scrollItemToMidpoint(menuPanel, currentPageItem.querySelector('.nav-link'))
   } else {
     menuPanel.scrollTop = 0
+    menuPanel.querySelector('.nav-item:first-child').classList.add('is-active')
   }
 
   find(menuPanel, '.nav-item-toggle').forEach(function (btn) {
