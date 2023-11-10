@@ -147,18 +147,3 @@ Prioritize the protection of your invaluable data. Explore advanced strategies a
 link:{#}[Learn about Database Security]
 ====
 --
-
-[.ds-row]
-== Community & Support
-
-=== Join the Conversation
-
-Engage with our vibrant community of developers. Ask questions, share knowledge, or just hang out and chat about all things DataStax Astra.
-
-link:{#}[Join on Discord] · link:{#}[Follow on X]
-
-=== Need More Help?
-
-[unstyled.landing-support]
-* link:{#}[Ask the Astra community,role="community"]
-* link:{#}[Get in touch with support,role="support"]
