@@ -3231,7 +3231,6 @@ a + .breadcrumbs {
   font-size: 2.5rem;
   font-size: calc(20/var(--rem-base)*1rem);
   font-weight: 550;
-  font-family: "Sora", sans-serif;
 }
 
 .doc h4 {
@@ -4222,6 +4221,11 @@ a + .breadcrumbs {
   vertical-align: top;
 }
 
+.doc dd + dt.hdlist1 {
+  margin-top: 3rem;
+  margin-top: calc(24/var(--rem-base)*1rem);
+}
+
 .doc tr:first-child > .hdlist1,
 .doc tr:first-child > .hdlist2 {
   padding-top: 0;
@@ -5143,7 +5147,6 @@ dialog .content .message {
   font-size: 2.5rem;
   font-size: calc(20/var(--rem-base)*1rem);
   font-weight: 550;
-  font-family: "Sora", sans-serif;
 
   color: var(--ds-text-primary);
 
