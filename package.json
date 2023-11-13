@@ -17,9 +17,9 @@
   "devDependencies": {
     "@asciidoctor/core": "~2.2",
     "@asciidoctor/tabs": "1.0.0-beta.6",
+    "@fontsource-variable/roboto-flex": "~5.0",
     "@fontsource-variable/sora": "^5.0.15",
     "@fontsource/material-icons-outlined": "~5.0",
-    "@fontsource/roboto-flex": "~5.0",
     "@fontsource/roboto-mono": "~5.0",
     "autoprefixer": "~10.4",
     "browser-pack-flat": "~3.4",

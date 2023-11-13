@@ -711,7 +711,7 @@
 
 .doc .olist li + li,
 .doc .ulist li + li {
-  margin-top: 1.5rem;
+  margin-top: calc(24 / var(--rem-base) * 1rem);
 }
 
 .doc .ulist .listingblock,
