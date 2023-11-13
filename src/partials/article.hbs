@@ -1,7 +1,12 @@
 <article class="doc">
-  {{#with page.title}}
-  <h1 class="page">{{{this}}}</h1>
-  {{/with}}
+  {{#if page.title}}
+  {{#if page.attributes.icon}}
+  <h1 class="page"><i class="border rounded-xl p-1{{#with page.attributes.icon-role}} {{{this}}}{{/with}}">{{{svg
+      page.attributes.icon}}}</i>{{{page.title}}}</h1>
+  {{else}}
+  <h1 class="page">{{{page.title}}}</h1>
+  {{/if}}
+  {{/if}}
   {{#if (eq page.layout 'tutorial')}}
   {{> tutorial-info}}
   {{/if}}

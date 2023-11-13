@@ -15,6 +15,7 @@
     "last 2 versions"
   ],
   "devDependencies": {
+    "@antora/logger": "^3.1.4",
     "@asciidoctor/core": "~2.2",
     "@asciidoctor/tabs": "1.0.0-beta.6",
     "@fontsource-variable/roboto-flex": "~5.0",
