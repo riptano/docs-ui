@@ -54,23 +54,23 @@
 }
 
 .doc h1 {
-  @include text-h1;
+  @include text-display;
 }
 
 .doc h2 {
-  @include text-h2;
+  @include text-h1;
 }
 
 .doc h3 {
-  @include text-h3;
+  @include text-h2;
 }
 
 .doc h4 {
-  @include text-h4;
+  @include text-h3;
 }
 
 .doc h5 {
-  @include text-h5;
+  @include text-h4;
 }
 
 .doc a.link,
@@ -263,6 +263,12 @@
 
 .doc .line-through {
   text-decoration: line-through;
+}
+
+.doc strong,
+.doc b {
+  font-weight: var(--body-font-weight-bold);
+  color: var(--ds-text-primary);
 }
 
 .doc .paragraph,
