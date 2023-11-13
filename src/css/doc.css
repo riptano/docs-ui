@@ -685,7 +685,7 @@
 }
 
 .doc ul.checklist i.fa-check-square-o::before {
-  content: "\e86c";
+  content: "\e2e6";
   color: var(--link-font-color);
   font-size: var(--ds-space-2h);
   width: calc(20 / var(--rem-base) * 1rem);

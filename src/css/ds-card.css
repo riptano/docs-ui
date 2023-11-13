@@ -158,16 +158,26 @@
 
 /* Card child list anchor with tutorial/guide icon */
 
-.ds-card .unstyled li:first-of-type p {
+.ds-card .unstyled li:first-of-type > p {
   display: flex;
+  align-items: center;
+  font-weight: var(--body-font-weight-bold);
+  font-size: calc(13 / var(--rem-base) * 1rem);
+}
+
+.ds-card .unstyled li:first-of-type > .paragraph p {
+  font-size: calc(14.5 / var(--rem-base) * 1rem);
 }
 
 .ds-card .unstyled li:first-of-type .material-icons {
+  font-size: calc(16 / var(--rem-base) * 1rem);
+  height: calc(16 / var(--rem-base) * 1rem);
   margin-right: var(--ds-space-h);
 }
 
-.ds-card .unstyled li:first-of-type p a {
+.ds-card .unstyled li:first-of-type > p a {
   flex: 1;
+  font-size: calc(16 / var(--rem-base) * 1rem);
 }
 
 /* text-overflow */
