@@ -21,6 +21,12 @@
   margin-left: auto;
 }
 
+.tutorial-info .colab-icon {
+  background: url('../img/colab.svg') no-repeat center center;
+  height: 1em;
+  width: 1.5em;
+}
+
 html[data-layout="tutorial"] h1.page:first-child {
   margin-bottom: var(--ds-space-1);
 }
