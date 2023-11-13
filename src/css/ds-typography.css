@@ -13,7 +13,6 @@
 @mixin text-h2 {
   font-size: calc(20 / var(--rem-base) * 1rem);
   font-weight: 550;
-  font-family: "Sora", sans-serif;
 }
 
 @mixin text-h3 {
