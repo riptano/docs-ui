@@ -3214,28 +3214,28 @@ a + .breadcrumbs {
 }
 
 .doc h1 {
-  font-size: 4.25rem;
-  font-size: calc(34/var(--rem-base)*1rem);
-  font-weight: 500;
-  font-family: "Sora", sans-serif;
-}
-
-.doc h2 {
   font-size: 3rem;
   font-size: calc(24/var(--rem-base)*1rem);
   font-weight: 550;
   font-family: "Sora", sans-serif;
 }
 
-.doc h3 {
+.doc h2 {
   font-size: 2.5rem;
   font-size: calc(20/var(--rem-base)*1rem);
   font-weight: 550;
+  font-family: "Sora", sans-serif;
+}
+
+.doc h3 {
+  font-size: 2rem;
+  font-size: calc(16/var(--rem-base)*1rem);
+  font-weight: 600;
 }
 
 .doc h4 {
-  font-size: 2rem;
-  font-size: calc(16/var(--rem-base)*1rem);
+  font-size: 1.875rem;
+  font-size: calc(15/var(--rem-base)*1rem);
   font-weight: 600;
 }
 
@@ -5147,6 +5147,7 @@ dialog .content .message {
   font-size: 2.5rem;
   font-size: calc(20/var(--rem-base)*1rem);
   font-weight: 550;
+  font-family: "Sora", sans-serif;
 
   color: var(--ds-text-primary);
 
