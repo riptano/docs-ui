@@ -265,6 +265,12 @@
   text-decoration: line-through;
 }
 
+.doc strong,
+.doc b {
+  font-weight: var(--body-font-weight-bold);
+  color: var(--ds-text-primary);
+}
+
 .doc .paragraph,
 .doc .dlist,
 .doc .hdlist,
@@ -887,6 +893,10 @@
 .doc td.hdlist2 {
   padding: 0.5rem 0 0;
   vertical-align: top;
+}
+
+.doc dd + dt.hdlist1 {
+  margin-top: calc(24 / var(--rem-base) * 1rem);
 }
 
 .doc tr:first-child > .hdlist1,
