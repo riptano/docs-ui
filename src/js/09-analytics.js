@@ -56,7 +56,7 @@
     e.preventDefault()
     const message = form.elements.message.value
     if (message && window.analytics) {
-      window.analytics.trackForm(form, 'Feedback Survey', {
+      window.analytics.track('Feedback Form', {
         message,
       })
     }
