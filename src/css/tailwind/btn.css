@@ -1,4 +1,4 @@
-@mixin btn {
+@layer components {
   .btn {
     @apply px-1.5 py-1 h-5 transition ease-in-out rounded-xl whitespace-nowrap text-button border border-transparent flex items-center justify-center;
   }

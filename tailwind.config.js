@@ -3,6 +3,9 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Roboto Flex', 'sans-serif'],
+      display: ['Sora', 'sans-serif'],
+      icons: ['Material Icons Outlined', 'sans-serif'],
+      mono: ['Roboto Mono', 'monospace'],
     },
     screens: {
       sm: '480px',
