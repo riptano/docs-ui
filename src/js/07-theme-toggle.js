@@ -1,25 +1,23 @@
 /* eslint-disable no-undef */
-var toggle = document.getElementById('theme-toggle')
+;(function () {
+  'use strict'
 
-var prefersTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-var storedTheme = localStorage.getItem('theme') || prefersTheme
+  var toggle = document.getElementById('theme-toggle')
 
-toggle.onclick = function () {
-  var currentTheme = document.documentElement.getAttribute('data-theme') || storedTheme || 'light'
-  var targetTheme = 'light'
+  var prefersTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  var storedTheme = localStorage.getItem('theme') || prefersTheme
 
-  if (currentTheme === 'light') {
-    targetTheme = 'dark'
+  if (!toggle) return
+
+  toggle.onclick = function () {
+    var currentTheme = document.documentElement.getAttribute('data-theme') || storedTheme || 'light'
+    var targetTheme = 'light'
+
+    if (currentTheme === 'light') {
+      targetTheme = 'dark'
+    }
+
+    document.documentElement.setAttribute('data-theme', targetTheme)
+    localStorage.setItem('theme', targetTheme)
   }
-
-  document.documentElement.setAttribute('data-theme', targetTheme)
-  localStorage.setItem('theme', targetTheme)
-}
-
-var help = document.getElementById('get-support')
-
-help.onclick = function () {
-  try {
-    window.Intercom('show')
-  } catch (e) {}
-}
+})()
