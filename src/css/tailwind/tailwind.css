@@ -1,13 +1,11 @@
 @import "../ds-typography.css";
 @import "btn.css";
+@import "dialog.css";
+@import "input.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  @include btn;
-}
 
 @layer base {
   *,

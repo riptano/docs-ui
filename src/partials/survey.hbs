@@ -1,55 +1,50 @@
-<div class="sect1 row">
-	<h2>Support</h2>
-	<div class="sectionbody">
-    <div class="sect2">
+<div class="sect1">
+  <h2>Support</h2>
+  <div class="sectionbody flex">
+    <div class="sect2 basis-1/2">
       <h3>Was This Helpful?</h3>
-      <div class="paragraph dialog-action--container">
-        <p class="dialog-action navbar-end">
-          <button id="support_yes" class="ds-button ds-button--color-neutral
-            ds-button--variant-outlined ds-button--not-disabled" data-survey="Was This Helpful?: Yes">
-            <span
-              class="material-icons ds-button--leading-icon">thumb_up</span>Yes</button>
-          <button id="support_no" class="ds-button ds-button--color-neutral
-            ds-button--variant-outlined ds-button--not-disabled" data-survey="Was This Helpful?: No">
-            <span
-              class="material-icons ds-button--leading-icon">thumb_down</span>No</button>
-        </p>
+      <div id="feedback_buttons" class="flex gap-1 mt-2 transition-opacity opacity-100">
+        <button id="feedback_button_yes" class="btn btn-neutral btn-outlined"
+          data-track="Was This Helpful?: Yes Button Clicked">
+          <i class="material-icons mr-1">thumb_up</i>Yes
+        </button>
+        <button id="feeback_button_no" class="btn btn-neutral btn-outlined"
+          data-track="Was This Helpful?: No Button Clicked" onclick="feedback_dialog.showModal()">
+          <i class="material-icons mr-1">thumb_down</i>No
+        </button>
       </div>
-      <dialog id="dialog-survey">
-        <form id="survey-form">
-          <div class="header">
-            <p class="title">Give Feedback</p>
-            <p class="close-button"><kbd>ESC</kbd>
-              <button class="close" aria-label="close" formnovalidate><span class="material-icons">close</span></button></p>
-          </div>
-          <div class="content">
-            <p class="message">Thanks for using Astra</p>
-            <p class="question">How can we improve the experience for you?</p>
-            <textarea name="message" placeholder="Provide your feedback"></textarea>
-          </div>
-          <div class="action">
-            <button class="ds-button ds-button--color-neutral
-              ds-button--variant-outlined close" data-survey="Give Feedback: No, thanks">
-                No, thanks</button>
-            <button id="support_submit" type="submit" class="ds-button ds-button--color-neutral
-              ds-button--variant-solid" data-survey="Give Feedback: Yes">
-              Submit Feedback</button>
-          </div>
-        </form>
-      </dialog>
+      <div id="feedback_thank_you" class="text-h2 mt-2 transition-opacity hidden opacity-0">Thank you for your feedback.
+      </div>
     </div>
-    <div class="sect2">
+    <div class="sect2 basis-1/2">
       <h3>Need More Help?</h3>
-      <div class="ulist unstyled landing-support">
-        <ul class="unstyled">
-          <li>
-            <p><a href="https://www.datastax.com/dev/community" target="_blank" class="community">
-              Ask the Astra community</a></p></li>
-          <li>
-            <p><a href="https://support.datastax.com/" target="_blank" class="support">
-              Get in touch with support</a></p></li>
-        </ul>
+      <div class="mt-2 flex flex-col gap-2">
+        <a href="https://www.datastax.com/dev/community" target="_blank">
+          <i class="material-icons mr-1">group</i>Ask the Astra community
+        </a>
+        <a href="https://support.datastax.com/" target="_blank">
+          <i class="material-icons mr-1">support</i>Get in touch with support
+        </a>
       </div>
     </div>
   </div>
 </div>
+<dialog id="feedback_dialog" class="dialog w-[80rem]">
+  <form method="dialog" id="feedback_form">
+    <div class="flex items-center border-b p-3">
+      <h1 class="!m-0">Give Feedback</h1>
+      <button id="feedback_form_esc_button" class="btn btn-plain btn-neutral ml-auto h-4 p-1" formnovalidate><span
+          class="text-overline px-1 rounded-xl bg-[var(--ds-background-level1)] text-[var(--ds-text-tertiary)]">ESC</span><i
+          class="material-icons text-[var(--ds-primary-main)]">close</i></button>
+    </div>
+    <div class="p-3">
+      <p class="!mt-0">How can we improve the documentation?</p>
+      <textarea rows="4" name="message" class="input mt-1" placeholder="Provide your feedback" required
+        autofocus></textarea>
+    </div>
+    <div class="flex gap-1 justify-end pt-2 pb-3 px-3 top border-t">
+      <button class="btn btn-neutral btn-outlined" id="feedback_form_cancel_button" formnovalidate>Cancel</button>
+      <button class="btn btn-neutral btn-solid" type="submit">Submit Feedback</button>
+    </div>
+  </form>
+</dialog>

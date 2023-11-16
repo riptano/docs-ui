@@ -152,6 +152,10 @@ html[data-theme="dark"] .for-light {
   display: none;
 }
 
+html[data-theme="dark"] ::backdrop {
+  --ds-background-backdrop: rgba(10, 10, 10, 0.6);
+}
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]):not([data-theme="dark"]) {
     @include dark-theme;

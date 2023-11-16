@@ -1,85 +1,88 @@
 ;(function () {
   'use strict'
 
-  if (!window.analytics) return
+  if (window.analytics) {
+    const trackedLinkElements = document.querySelectorAll('a[data-track]')
+    const trackedElements = document.querySelectorAll('[data-track]:not(a)')
 
-  const trackedLinkElements = document.querySelectorAll('a[data-track]')
-  const trackedElements = document.querySelectorAll('[data-track]:not(a)')
-
-  trackedLinkElements.forEach((element) => {
-    window.analytics.trackLink(element, element.dataset.track)
-  })
-
-  trackedElements.forEach((element) => {
-    element.addEventListener('click', (e) => {
-      window.analytics.track(element.dataset.track)
+    trackedLinkElements.forEach((element) => {
+      window.analytics.trackLink(element, element.dataset.track)
     })
-  })
 
-  const survey = document.querySelector('.dialog-action--container')
-
-  if (!survey) return
-
-  const surveyElements = survey.querySelectorAll('button')
-  const response = document.createElement('p')
-
-  response.className = 'dialog-action--response'
-  response.innerText = 'Thank you for your Feedback!'
-  survey.appendChild(response)
-
-  const dialog = document.getElementById('dialog-survey')
-  // if ESC pressed
-  dialog.addEventListener('cancel', (event) => {
-    hideButtons(surveyElements)
-  })
-  // close dialog
-  const close = dialog.querySelectorAll('button.close')
-  close.forEach((s) => {
-    s.onclick = function (e) {
-      dialog.close()
-      hideButtons(surveyElements)
-    }
-  })
-
-  surveyElements.forEach((element) => {
-    element.addEventListener('click', (e) => {
-      styleButton(element)
-      window.analytics.track(element.dataset.survey)
-
-      if (element.id.includes('no')) {
-        // open dialog
-        dialog.showModal()
-        // submit form
-        const form = document.getElementById('survey-form')
-        form.elements.message.required = true
-        form.elements.message.value = ''
-        form.onsubmit = (e) => {
-          e.preventDefault()
-          const message = form.elements.message.value
-          window.analytics.trackForm(form, 'Support Survey', {
-            message: message,
-          })
-          dialog.close()
-          hideButtons()
-        }
-      } else {
-        hideButtons()
-      }
-    })
-  })
-
-  function hideButtons () {
-    survey.classList.add('dialog-action--animate', 'first-time')
-    setTimeout(function () {
-      survey.classList.remove('first-time')
-      survey.classList.remove('dialog-action--animate')
-      surveyElements.forEach((s) => {
-        s.classList.remove('ds-button--variant-solid')
+    trackedElements.forEach((element) => {
+      element.addEventListener('click', (e) => {
+        window.analytics.track(element.dataset.track)
       })
-    }, 3.5 * 1000)
+    })
   }
 
-  function styleButton (el) {
-    el.classList.add('ds-button--variant-solid')
+  const dialog = document.getElementById('feedback_dialog')
+  const form = document.getElementById('feedback_form')
+
+  if (!dialog) return
+
+  const hide = (element) => {
+    element.classList.remove('opacity-100')
+    element.classList.add('opacity-0')
+    setTimeout(() => {
+      element.classList.add('hidden')
+    }, 150)
   }
+
+  const show = (element) => {
+    element.classList.remove('opacity-0')
+    element.classList.add('opacity-100')
+    setTimeout(() => {
+      element.classList.remove('hidden')
+    }, 150)
+  }
+
+  const showThankYou = () => {
+    const buttons = document.getElementById('feedback_buttons')
+    const thankYou = document.getElementById('feedback_thank_you')
+    hide(buttons)
+    setTimeout(() => {
+      show(thankYou)
+    }, 150)
+    setTimeout(() => {
+      hide(thankYou)
+      setTimeout(() => {
+        show(buttons)
+      }, 150)
+    }, 5 * 1000)
+  }
+
+  form.onsubmit = (e) => {
+    e.preventDefault()
+    const message = form.elements.message.value
+    if (message && window.analytics) {
+      window.analytics.trackForm(form, 'Feedback Survey', {
+        message,
+      })
+    }
+    form.elements.message.value = ''
+    dialog.close()
+    showThankYou()
+  }
+
+  const feedbackButtonYes = document.getElementById('feedback_button_yes')
+  feedbackButtonYes.addEventListener('click', (e) => {
+    showThankYou()
+  })
+
+  const cancelButton = document.getElementById('feedback_form_cancel_button')
+  cancelButton.addEventListener('click', (e) => {
+    form.elements.message.value = ''
+  })
+
+  const escButton = document.getElementById('feedback_form_esc_button')
+  escButton.addEventListener('click', (e) => {
+    form.elements.message.value = ''
+  })
+
+  // if ESC pressed
+  dialog.addEventListener('cancel', (e) => {
+    form.elements.message.value = ''
+    showThankYou()
+  })
 })()
