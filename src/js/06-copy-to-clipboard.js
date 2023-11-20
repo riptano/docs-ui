@@ -11,7 +11,7 @@
   var supportsCopy = window.navigator.clipboard
 
   ;[].slice.call(document.querySelectorAll('.doc pre.highlight, .doc .literalblock pre')).forEach(function (pre) {
-    var code, language, lang, copy, toast, toolbox, title, listingblock
+    var code, language, lang, copy, toast, toolbox, title, listingblock, content
     if (pre.classList.contains('highlight')) {
       code = pre.querySelector('code')
       if ((language = code.dataset.lang) && language !== 'console') {
@@ -31,6 +31,7 @@
       return
     }
     listingblock = pre.parentNode.parentNode
+    content = pre.parentNode
     var nolang = listingblock.classList.contains('nolang')
     ;(toolbox = document.createElement('div')).className = 'source-toolbox'
     if (listingblock.firstElementChild.classList.contains('title')) {
@@ -59,7 +60,7 @@
     }
     if (copy) {
       copy.addEventListener('click', writeToClipboard.bind(copy, code))
-      pre.prepend(toolbox)
+      content.prepend(toolbox)
     }
     if (lang && !title && !nolang) {
       ;(title = document.createElement('div')).className = 'title'

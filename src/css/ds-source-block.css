@@ -1,0 +1,145 @@
+/* Source block */
+
+/*
+ *  Usage: [source,python]
+ *
+ *  Text wrap style: [source.wrap,python]
+ *  Hide language title style: [source.hidelang,python]
+ */
+.doc .listingblock .content {
+  position: relative;
+}
+
+.doc pre.highlightjs {
+  display: block;
+  color: var(--ds-text-secondary);
+  background: var(--ds-background-level1);
+  border-radius: calc(6 / var(--rem-base) * 1rem);
+  border: 1px solid var(--ds-background-level1);
+  overflow-x: auto;
+  padding: var(--ds-space-2);
+}
+
+.doc .listingblock:not(.wrap) pre.highlightjs {
+  white-space: pre;
+}
+
+.doc .listingblock:not(.wrap) code.hljs {
+  width: max-content;
+}
+
+.doc .listingblock .title + .content pre.highlightjs {
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.doc .listingblock .title {
+  @include text-label;
+
+  display: flex;
+  font-style: normal;
+  color: var(--ds-text-primary);
+  margin-bottom: 0;
+  padding: var(--ds-space-1) var(--ds-space-2);
+  background: var(--ds-background-level2);
+  border-top-left-radius: calc(6 / var(--rem-base) * 1rem);
+  border-top-right-radius: calc(6 / var(--rem-base) * 1rem);
+  border: 1px solid transparent;
+}
+
+.doc .listingblock .title .source-lang {
+  margin-left: auto;
+  text-transform: uppercase;
+  color: var(--ds-text-secondary);
+}
+
+.doc code.hljs {
+  display: inline-block;
+}
+
+.doc .source-toolbox + pre.highlightjs {
+  padding-right: 0;
+}
+
+.doc .source-toolbox + pre.highlightjs code.hljs {
+  margin-right: 7rem;
+}
+
+.doc .source-toolbox {
+  position: absolute;
+  right: 0;
+  padding: 1.25rem;
+  height: calc(100% - 12px);
+  margin-top: 0.075em;
+  z-index: 10;
+}
+
+html[data-theme="light"] .doc .source-toolbox {
+  background: linear-gradient(to right, rgba(247, 247, 247, 0), rgb(247, 247, 247), rgb(247, 247, 247) 50%);
+}
+
+html[data-theme="dark"] .doc .source-toolbox {
+  background: linear-gradient(to right, rgba(35, 35, 36, 0), rgb(35, 35, 36), rgb(35, 35, 36) 50%);
+}
+
+.doc .source-toolbox .copy-toast {
+  font-size: calc(12 / var(--rem-base) * 1rem);
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 400;
+  display: inline-flex;
+  justify-content: center;
+  position: absolute;
+  background-color: var(--ds-background-tooltip);
+  border-radius: 0.25em;
+  padding: 0.5em;
+  color: var(--ds-text-inverse);
+  cursor: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease 0.5s, visibility 0s linear 1s;
+  text-wrap: nowrap;
+  white-space: nowrap;
+  transform: translateX(-2.35rem) translateY(-5rem);
+  z-index: 20;
+}
+
+.doc .source-toolbox .copy-toast::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 1em;
+  height: 1em;
+  border: 0.55em solid transparent;
+  border-left-color: var(--ds-background-tooltip);
+  transform: rotate(90deg) translateX(100%);
+}
+
+.doc .source-toolbox .copy-button.clicked .copy-toast {
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+}
+
+.doc .source-toolbox .copy-button {
+  padding: var(--ds-space-1);
+  background: var(--ds-background-level1);
+  border-radius: 6px;
+  line-height: 1;
+  display: flex;
+
+  @apply transition-colors;
+
+  &:hover {
+    background: var(--ds-background-level2);
+  }
+}
+
+.doc .source-toolbox .copy-button .material-icons {
+  font-size: calc(16 / var(--rem-base) * 1rem);
+  user-select: none;
+}
+
+.doc .listingblock.nolang .title .source-lang {
+  display: none;
+}

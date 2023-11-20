@@ -20,7 +20,8 @@
 @import "toc.css";
 @import "doc.css";
 @import "ds-layout.css";
-@import "ds-blocks.css";
+@import "ds-source-block.css";
+@import "ds-admonition-block.css";
 @import "pagination.css";
 @import "header.css";
 @import "footer.css";
