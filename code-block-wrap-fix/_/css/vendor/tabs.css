@@ -1,0 +1,148 @@
+/*! Asciidoctor Tabs | Copyright (c) 2018-present Dan Allen | MIT License */
+.tabs {
+  margin-bottom: 1.25em;
+}
+.tablist > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tablist > ul li {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+  line-height: 1.5;
+  padding: 0.25em 1em;
+  position: relative;
+}
+.tablist > ul li:focus-visible {
+  outline: none;
+}
+.tablist.ulist,
+.tablist.ulist > ul li {
+  margin: 0;
+}
+.tablist.ulist > ul li + li {
+  margin-left: 0.25em;
+}
+.tabs .tablist li::after {
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+}
+.tabs.is-loading .tablist li:not(:first-child),
+.tabs:not(.is-loading) .tablist li:not(.is-selected) {
+  background-color: #f5f5f5;
+}
+.tabs.is-loading .tablist li:first-child::after,
+.tabs:not(.is-loading) .tablist li.is-selected::after {
+  background-color: #fff;
+}
+/*
+.tabs:not(.is-loading) .tablist li,
+.tabs:not(.is-loading) .tablist li::after {
+  transition: background-color 200ms ease-in-out;
+}
+*/
+.tablist > ul p {
+  line-height: inherit;
+  margin: 0;
+}
+.tabpanel {
+  background-color: #fff;
+  padding: 1.25em;
+}
+.tablist > ul li,
+.tabpanel {
+  border: 1px solid #dcdcdc;
+}
+.tablist > ul li {
+  border-bottom: 0;
+}
+.tabs.is-loading .tabpanel + .tabpanel,
+.tabs:not(.is-loading) .tabpanel.is-hidden {
+  display: none;
+}
+.tabpanel > :first-child {
+  margin-top: 0;
+}
+/* #content is a signature of the Asciidoctor standalone HTML output */
+#content .tabpanel > :last-child,
+#content .tabpanel > :last-child > :last-child,
+#content .tabpanel > :last-child > :last-child > li:last-child > :last-child {
+  margin-bottom: 0;
+}
+.tablecontainer {
+  overflow-x: auto;
+}
+#content .tablecontainer {
+  margin-bottom: 1.25em;
+}
+#content .tablecontainer > table.tableblock {
+  margin-bottom: 0;
+}
+/* Datastax styles */
+.tabpanel {
+  padding: var(--ds-space-2) 0;
+  border: none;
+  border-top: 1px solid var(--ds-divider);
+  background-color: var(--ds-background-body);
+}
+.tablist > ul li {
+  background-color: transparent;
+  border: none;
+  font-weight: normal;
+  color: var(--ds-text-primary);
+  padding: var(--ds-space-1) var(--ds-space-1h);
+}
+.tablist.ulist > ul li + li {
+  margin: 0;
+}
+.tabs .tablist li::after {
+  height: calc(2/var(--rem-base)*1rem);
+}
+.tabs.is-loading .tablist li:not(:first-child),
+.tabs:not(.is-loading) .tablist li:not(.is-selected) {
+  color: var(--ds-text-tertiary);
+  background-color: transparent;
+}
+.tabs.is-loading .tablist li:first-child::after,
+.tabs:not(.is-loading) .tablist li.is-selected::after {
+  background-color: var(--ds-text-primary);
+}
+/* overflow tab title */
+.tabs.overflow .tablist > ul li p {
+  max-width: var(--ds-space-15);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+/* wrapping tab title */
+.tabs.wrapping .tablist > ul li p {
+  max-width: var(--ds-space-15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.tabs.overflow .tablist > ul,
+.tabs.wrapping .tablist > ul {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+/*# sourceMappingURL=tabs.css.map */
