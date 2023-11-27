@@ -1,0 +1,18 @@
+:root {
+  --ds-space-q: calc(2 / var(--rem-base) * 1rem); /* 2px */
+  --ds-space-h: calc(4 / var(--rem-base) * 1rem); /* 4px */
+  --ds-space-1: calc(8 / var(--rem-base) * 1rem); /* 8px */
+  --ds-space-1h: calc(12 / var(--rem-base) * 1rem); /* 12px */
+  --ds-space-2: calc(16 / var(--rem-base) * 1rem); /* 16px */
+  --ds-space-2h: calc(20 / var(--rem-base) * 1rem); /* 20px */
+  --ds-space-3: calc(24 / var(--rem-base) * 1rem); /* 24px */
+  --ds-space-4: calc(32 / var(--rem-base) * 1rem); /* 32px */
+  --ds-space-5: calc(40 / var(--rem-base) * 1rem); /* 40px */
+  --ds-space-6: calc(48 / var(--rem-base) * 1rem); /* 48px */
+  --ds-space-7: calc(56 / var(--rem-base) * 1rem); /* 56px */
+  --ds-space-8: calc(64 / var(--rem-base) * 1rem); /* 64px */
+  --ds-space-9: calc(72 / var(--rem-base) * 1rem); /* 72 */
+  --ds-space-10: calc(80 / var(--rem-base) * 1rem); /* 80px */
+  --ds-space-11: calc(88 / var(--rem-base) * 1rem); /* 88px */
+  --ds-space-15: calc(120 / var(--rem-base) * 1rem); /* 120px */
+}

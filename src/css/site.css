@@ -1,32 +1,35 @@
-@import "typeface-material-icons-outlined.css";
-@import "typeface-roboto-flex.css";
-@import "typeface-sora.css";
-@import "typeface-roboto-mono.css";
-@import "ds-vars.css";
-@import "ds-light.css";
-@import "ds-dark.css";
-@import "vars.css";
+@import "typeface/typeface-material-icons-outlined.css";
+@import "typeface/typeface-roboto-flex.css";
+@import "typeface/typeface-sora.css";
+@import "typeface/typeface-roboto-mono.css";
+@import "variables/color-base.css";
+@import "variables/color-light.css";
+@import "variables/color-dark.css";
+@import "variables/site-vars.css";
+@import "variables/spacing.css";
+@import "mixins/typography.css";
 @import "ds-card.css";
-@import "ds-typography.css";
-@import "base.css";
-@import "body.css";
-@import "nav.css";
+/* @import "base.css"; */
+/* @import "body.css"; */
+/* @import "base2.css"; */
+@import "navigation/nav.css";
 @import "main.css";
 @import "ds-button.css";
-@import "ds-logo.css";
+@import "navigation/logo.css";
 @import "toolbar.css";
 @import "breadcrumbs.css";
 @import "page-versions.css";
 @import "toc.css";
-@import "doc.css";
+/* @import "doc.css"; */
+/* @import "doc2.css"; */
 @import "ds-layout.css";
-@import "ds-source-block.css";
-@import "ds-admonition-block.css";
+@import "asciidoc/sourceblock.css";
+@import "asciidoc/admonitionblock.css";
 @import "pagination.css";
-@import "header.css";
+@import "navigation/header.css";
 @import "footer.css";
-@import "highlight.css";
+@import "vendor/highlight.css";
 @import "print.css";
 @import "tutorial-info.css";
-@import "docsearch.css";
-@import "tailwind/tailwind.css"
+@import "vendor/docsearch.css";
+@import "tailwind/tailwind.css";

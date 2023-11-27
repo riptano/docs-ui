@@ -1,3 +1,5 @@
+@import "../mixins/typography.css";
+
 .DocSearch .DocSearch-Hit[aria-selected=true] a {
   background-color: var(--ds-background-level1);
 }
@@ -12,14 +14,14 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 
 .DocSearch .DocSearch-Commands-Key,
 .DocSearch .DocSearch-Button-Key {
-  border-radius: 4px;
+  border-radius: calc(4 / var(--rem-base) * 1rem);
   color: var(--ds-text-tertiary);
 }
 
 .DocSearch .DocSearch-LoadingIndicator svg,
 .DocSearch .DocSearch-MagnifierLabel svg {
-  width: 20px;
-  height: 20px;
+  width: calc(20 / var(--rem-base) * 1rem);
+  height: calc(20 / var(--rem-base) * 1rem);
 }
 
 .DocSearch .DocSearch-Input {
@@ -27,7 +29,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 }
 
 .DocSearch .DocSearch-Form {
-  border-radius: 6px;
+  border-radius: calc(6 / var(--rem-base) * 1rem);
   border: 1px solid var(--ds-neutral-outlined-border);
 
   &:hover {
@@ -52,7 +54,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 
   min-width: var(--ds-space-5);
   height: var(--ds-space-5);
-  border-radius: 6px;
+  border-radius: calc(6 / var(--rem-base) * 1rem);
   border: 1px solid var(--ds-neutral-outlined-border);
   margin: 0;
   justify-content: center;
@@ -94,7 +96,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 .DocSearch {
   --docsearch-primary-color: var(--ds-text-primary);
   --docsearch-text-color: var(--ds-text-primary);
-  --docsearch-spacing: 2rem;
+  --docsearch-spacing: var(--ds-space-2);
   --docsearch-icon-stroke-width: 1.4;
   --docsearch-highlight-color: var(--ds-text-primary);
   --docsearch-muted-color: var(--ds-text-placeholder);

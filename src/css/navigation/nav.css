@@ -122,7 +122,7 @@ html.is-clipped--nav {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 1rem 4rem 1rem var(--site-padding);
+  padding: var(--ds-space-1) var(--ds-space-4) var(--ds-space-1) var(--site-padding);
 }
 
 .nav-link {

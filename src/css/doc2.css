@@ -1,0 +1,28 @@
+.doc {
+  margin: 0 auto;
+  max-width: calc(720 / var(--rem-base) * 1rem);
+  padding-right: calc(24 / var(--rem-base) * 1rem);
+  padding-left: calc(24 / var(--rem-base) * 1rem);
+  padding-bottom: var(--ds-space-10);
+  counter-reset: step;
+}
+
+@media screen and (min-width: 1024px) {
+  .doc {
+    flex: auto;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1023.5px) {
+  .doc {
+    padding-left: var(--site-padding--mobile);
+    padding-right: var(--site-padding--mobile);
+  }
+}
+/*
+@media screen and (min-width: 1024px) and (max-width: 1104px) {
+  .doc {
+    max-width: calc(var(--doc-max-width--desktop) - var(--ds-space-15));
+  }
+} */

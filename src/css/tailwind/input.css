@@ -3,7 +3,7 @@
   .input {
     @include text-body;
 
-    @apply transition-colors rounded-xl border p-1 w-full;
+    @apply transition-colors rounded border p-1 w-full;
 
     color: var(--ds-text-primary);
     background: none;

@@ -1,0 +1,142 @@
+/*
+ *
+ * Admonitions component
+ *
+ */
+.admonitionblock > table {
+  border: 1px solid var(--ds-success-outlined-border);
+  border-radius: calc(6 / var(--rem-base) * 1rem);
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow-x: auto;
+}
+
+.admonitionblock > table > tbody > tr {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.admonitionblock > table > tbody > tr > .icon {
+  display: flex;
+  gap: var(--ds-space-1);
+  align-items: center;
+  align-self: stretch;
+  position: unset;
+  width: 100%;
+  transform: none;
+  text-transform: none;
+  color: var(--ds-text-primary);
+  font-size: calc(16 / var(--rem-base) * 1rem);
+  line-height: 1.5;
+  height: var(--ds-space-6);
+  padding: var(--ds-space-1h) var(--ds-space-2);
+  border-radius: calc(6 / var(--rem-base) * 1rem) calc(6 / var(--rem-base) * 1rem) 0 0;
+}
+
+.admonitionblock > table > tbody > tr > .content {
+  padding: var(--ds-space-2);
+  width: 100%;
+}
+
+.admonitionblock > table > tbody > tr > .content > *:first-child,
+.admonitionblock > table > tbody > tr > .content p:first-child {
+  margin-top: 0;
+}
+
+.admonitionblock > table > tbody > tr > .content > *:last-child,
+.admonitionblock > table > tbody > tr > .content p:last-child {
+  margin-bottom: 0;
+}
+
+.admonitionblock .icon i::after {
+  content: attr(title);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* .admonitionblock td.content > *,
+.admonitionblock td.content p {
+  margin-top: var(--ds-space-2);
+}
+
+.admonitionblock td.content .ulist p {
+  margin-top: 0;
+}
+
+.admonitionblock td.content > .paragraph:first-child p:first-child,
+.admonitionblock td.content > .title {
+  margin: 0;
+}
+
+.admonitionblock .title {
+  font-style: normal;
+}
+
+.admonitionblock td.content {
+  background: none;
+} */
+
+.admonitionblock .icon::before {
+  font-family: "Material Icons Outlined", sans-serif;
+  font-size: calc(20 / var(--rem-base) * 1rem);
+  font-weight: normal;
+}
+
+/* TIP, NOTE */
+.admonitionblock.tip .icon,
+.admonitionblock.note .icon {
+  background: var(--ds-success-soft-bg);
+  color: var(--ds-text-primary);
+}
+
+.admonitionblock.note .icon::before {
+  color: var(--ds-success-500);
+  content: '\e88e';
+}
+
+.admonitionblock.tip .icon::before {
+  color: var(--ds-success-500);
+  content: '\e0f0';
+}
+
+/* CAUTION */
+.admonitionblock.caution .icon {
+  background: var(--ds-warning-soft-bg);
+  color: var(--ds-text-primary);
+}
+
+.admonitionblock.caution > table {
+  border: 1px solid var(--ds-warning-outlined-border);
+}
+
+.admonitionblock.caution .icon::before {
+  color: var(--ds-warning-500);
+  content: '\e88e';
+}
+
+/* WARNING, IMPORTANT */
+.admonitionblock.warning .icon,
+.admonitionblock.important .icon {
+  background: var(--ds-failure-soft-bg);
+  color: var(--ds-text-primary);
+}
+
+.admonitionblock.warning > table,
+.admonitionblock.important > table {
+  border: 1px solid var(--ds-failure-outlined-border);
+}
+
+.admonitionblock.warning .icon::before {
+  color: var(--ds-failure-500);
+  content: '\f083';
+}
+
+.admonitionblock.important .icon::before {
+  color: var(--ds-failure-500);
+  content: '\e160';
+}
+
+html[data-theme="dark"] .admonitionblock .icon::before {
+  color: var(--ds-text-primary);
+}

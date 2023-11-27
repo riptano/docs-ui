@@ -22,6 +22,7 @@
     "@fontsource-variable/sora": "^5.0.15",
     "@fontsource/material-icons-outlined": "~5.0",
     "@fontsource/roboto-mono": "~5.0",
+    "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "~10.4",
     "browser-pack-flat": "~3.4",
     "browserify": "~16.5",

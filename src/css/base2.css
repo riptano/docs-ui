@@ -1,0 +1,16 @@
+@import 'mixins/typography';
+
+html {
+  @include text-body;
+}
+
+body {
+  color: var(--ds-text-primary);
+  background: var(--ds-background-body);
+}
+
+.icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
