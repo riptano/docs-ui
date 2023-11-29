@@ -1,0 +1,95 @@
+= Images
+
+== Images for Light and Dark modes
+
+[source,adoc]
+----
+[.for-light]
+image::your-light-image.png[Description]
+[.for-dark]
+image::your-dark-image.png[Description]
+
+// You can also define the role within the macro itself
+
+image::light-mode-illustration.png[Description,role=for-light]
+image::dark-mode-illustration.png[Description,role=for-dark]
+----
+
+[.for-light]
+image::/img/light-mode-illustration.png[Description,400]
+[.for-dark]
+image::/img/dark-mode-illustration.png[Description,400]
+
+== SVG with CSS variables for Light and Dark modes
+
+[source,svg]
+----
+<svg viewBox="0 0 300 200" fill="none">
+  <path fill="var(--ds-text-primary)" d="..." />
+  <path stroke="var(--ds-primary-outlined-border)" d="..." />
+  <path fill="var(--ds-neutral-outlined-border)" d="..." />
+</svg>
+----
+
+[source,adoc]
+----
+svg::ROOT:your-diagram.svg[Description,300]
+----
+
+== Inline images
+
+Click image:/img/play_circle_FILL0_wght400_GRAD0_opsz24.svg[title=Play] to get the party started.
+
+Click image:/img/pause_circle_FILL0_wght400_GRAD0_opsz24.svg[title=Pause] when you need a break.
+
+== Block images
+
+.Bitmap image (unconstrained; default alignment)
+image::/img/screenshot.png[Screenshot of Astra Portal Home]
+
+.Bitmap image (300px width; default alignment)
+image::/img/screenshot.png[Screenshot of Astra Portal Home,300]
+
+.SVG image (300px width; default alignment). Image is rasterized (`opts=` _none_).
+image::/img/multirepo-ssg.svg[Multirepo SSG,300]
+
+.SVG image (300px width; default alignment). Image embedded as a live, interactive object (`opts=interactive`).
+image::/img/multirepo-ssg.svg[Multirepo SSG,300,opts=interactive]
+
+=== Aligning block images
+
+.Bitmap image (aligned left)
+image::/img/screenshot.png[Screenshot of Astra Portal Home,300,align="left"]
+
+.Bitmap image (aligned right)
+image::/img/screenshot.png[Screenshot of Astra Portal Home,300,align="right"]
+
+.Bitmap image (aligned center)
+image::/img/screenshot.png[Screenshot of Astra Portal Home,300,align="center"]
+
+=== Floating block images
+
+[.float-group]
+--
+image:/img/screenshot.png[Screenshot of Astra Portal Home,300,float=right,role=float-gap]
+In AsciiDoc, creating paragraphs is a straightforward process that does not require any special markup. A paragraph can be defined as one or more lines of consecutive text that are logically grouped together. To differentiate between paragraphs, you simply need to insert at least one blank line between them.
+--
+
+[.float-group]
+--
+image::/img/multirepo-ssg.svg[Multirepo SSG,300,float=left,role=float-gap]
+In AsciiDoc, creating paragraphs is a straightforward process that does not require any special markup. A paragraph can be defined as one or more lines of consecutive text that are logically grouped together. To differentiate between paragraphs, you simply need to insert at least one blank line between them.
+--
+
+== Video
+
+.YouTube (unconstrained; default alignment)
+video::n_LcVqqHSY8[youtube]
+
+.Vimeo (640x360; default alignment)
+video::300817511[vimeo,640,360]
+
+== Audio
+
+.Take a zen moment
+audio::ocean-waves.wav[]

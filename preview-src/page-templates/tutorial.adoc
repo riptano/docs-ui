@@ -1,5 +1,4 @@
-= Quickstart
-:navtitle: Quickstart
+= Tutorial
 :page-layout: tutorial
 :page-colab-link: https://colab.research.google.com/github/CassioML/cassio-website/blob/main/docs/frameworks/langchain/.colab/colab_qa-basic.ipynb
 :page-time-commitment: 15 min
@@ -10,11 +9,42 @@
 :page-tags: Machine Learning Frameworks, Embeding Services, Astra, SDK
 :keywords: Machine Learning Frameworks, Embeding Services, Astra, SDK
 
+== Special Page Attributes
+
+Adding the following attributes to your page will automatically add the corresponding heading detail.
+
+----
+:page-skill-level: Beginner
+:page-time-commitment: 15 min
+:page-colab-link: https://colab.research.google.com/
+----
+
+== Automatic Steps
+
+Adding the .step role to a title will automatically increment and prefix the title with the step number. This number will not appear in a title anchor link or the table of contents.
+
+----
+[.step]
+=== Install the Python SDK and open a Python REPL.
+...
+[.step]
+=== Connect to Astra and create a database.
+----
+
+=== Step reset
+
+The step number will be reset when the .step-reset role is added to a title.
+
+----
+[.step-reset]
+=== This title will now be prefixed with "1." regardless of order.
+----
+
 == Objective
 
 Learn how to create a new database, connect to your database, load a set of vector embeddings, and perform a similarity search to find vectors that are close to the one in your query.
 
-image::ROOT:template-examples/quickstart-overview.png["Tutorial overview"]
+image::/img/quickstart-overview.png["Tutorial overview"]
 
 == Prerequisites
 

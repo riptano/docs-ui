@@ -1073,7 +1073,7 @@
 #footnotes {
   font-size: 0.85em;
   line-height: 1.5;
-  margin: var(--ds-space-3) calc(var(--ds-space-1) * -1) 0;
+  margin: var(--ds-space-3) 0;
 }
 
 .doc td.tableblock > .content #footnotes {

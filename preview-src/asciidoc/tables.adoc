@@ -1,0 +1,228 @@
+= Tables
+
+== Basic Tables 
+
+[frame=none, grid=rows,%autowidth.stretch]
+.Default
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+[%autowidth.stretch,stripes=even]
+.Striped
+|===
+|Header |Header |Header |Header
+
+|Cell
+|Cell
+|Cell
+|Cell
+
+|Cell
+|Cell
+|Cell
+|Cell
+
+|Cell
+|Cell
+|Cell
+|Cell
+|===
+
+
+[%footer%autowidth.stretch]
+.Footer
+|===
+|Header |Header |Header |Header
+
+h|Item
+|2
+|1
+|5
+
+h|Item
+|2
+|1
+|5
+
+h|Total
+|4
+|2
+|10
+|===
+
+.Basic table
+[cols="3*"]
+|===
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ header row
+[%autowidth.stretch]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ header row, footer row, and autowidth
+[#dependencies%footer%autowidth]
+|===
+|Library |Version
+
+|eslint
+|^1.7.3
+
+|eslint-config-gulp
+|^2.0.0
+
+|expect
+|^1.20.2
+
+|istanbul
+|^0.4.3
+
+|istanbul-coveralls
+|^1.0.3
+
+|jscs
+|^2.3.5
+
+h|Total
+|6
+|===
+
+== Example: Complex tables
+
+.Table w/ header row, variable column widths, and AsciiDoc content
+[cols="1,1,2a"]
+|===
+|Name |Category |Description
+
+|Firefox
+|Browser
+|Mozilla Firefox is an open source web browser.
+
+image::firefox-window.png[Screenshot of Firefox window]
+
+It's designed for:
+
+* standards compliance
+* performance
+* portability
+
+image::https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg[Firefox logo,align=left,link=https://getfirefox.com]
+https://getfirefox.com[Get Firefox]!
+
+|Arquillian
+|Testing
+|An innovative and highly extensible testing platform.
+Empowers developers to easily create real, automated tests.
+
+Each Arquillian test is associated with at least one deployment.
+
+[NOTE]
+====
+The deployment is configured using a static method annotated with @Deployment that returns a ShrinkWrap archive. Here’s an example:
+
+[source,java]
+----
+@Deployment
+public static JavaArchive createDeployment() {
+    return ShrinkWrap.create(JavaArchive.class)
+        .addClass(Greeter.class)
+        .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+}
+----
+====
+|===
+
+.Table w/ formatted, aligned, and merged cells
+[cols="e,m,^,>s"]
+|===
+|1 >s|2 |3 |4
+^|5 2.2+^.^|6 .3+<.>m|7
+^|8
+|9 2+>|10
+|===
+
+.Table w/ `frame=none`, `grid=none`
+[frame=none, grid=none]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Nested table
+[cols="1,2a"]
+|===
+| Col 1 | Col 2
+
+| Cell 1.1
+| Cell 1.2
+
+| Cell 2.1
+| Cell 2.2
+
+[cols="2,1"]
+!===
+! Col1 ! Col2
+
+! C11
+! C12
+
+!===
+|===
+
+.Striped table (even striping)
+[cols=2*,stripes=even]
+|===
+|A1
+|B1
+|A2
+|B2
+|A3
+|B3
+|===
+
+.Striped table (hover striping)
+[cols=2*,stripes=hover]
+|===
+|A1
+|B1
+|A2
+|B2
+|A3
+|B3
+|===

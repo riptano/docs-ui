@@ -1,0 +1,146 @@
+= Blocks
+
+== Sidebar
+
+.Sidebar title
+****
+Sidebars are used to visually separate auxiliary bits of content that supplement the main text.
+****
+
+== Horizontal rule
+
+A line with three single quotation marks (i.e., `'''`) is a special macro that inserts a thematic break (aka horizontal rule):
+
+'''
+
+There are rare circumstances where a horizontal rule is required.
+
+== More blocks
+
+As you might have seen in the examples further up on this page -- any block can have a title.
+A block title is defined using a line of text above the block that starts with a dot.
+That dot cannot be followed by a space.
+For block images, the title is displayed below the block.
+For all other blocks, the title is typically displayed above it.
+
+=== Example block
+
+.Optional title
+====
+Here's a sample AsciiDoc document:
+
+[source,asciidoc]
+----
+= Title of Document
+Doc Writer
+:toc:
+
+This guide provides...
+----
+
+The document header is useful, but not required.
+====
+
+=== Listing block
+
+.Optional title
+----
+This is a _delimited listing block_.
+
+The content inside is displayed as <pre> text.
+----
+
+=== Literal block
+
+.Optional title
+....
+error: 1954 Forbidden search
+absolutely fatal: operation lost in the dodecahedron of doom
+Would you like to try again? y/n
+....
+
+=== Blockquote
+
+[,'Famous Person. Cum dicat putant ne.','Cum dicat putant ne. https://example.com[Famous Person Website]']
+____
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!
+____
+
+=== Verse
+
+[verse]
+____
+The fog comes
+on little cat feet.
+____
+
+== Equations and formulas (STEM)
+
+=== Inline stem macro
+
+stem:[sqrt(4) = 2]
+
+Water (stem:[H_2O]) is a critical component.
+
+A matrix can be written as stem:[[[a,b\],[c,d\]\]((n),(k))].
+
+=== Block STEM content
+
+[stem]
+++++
+sqrt(4) = 2
+++++
+
+=== Mixing STEM notations
+
+.An e-xciting limit with LaTeX!
+[stem]
+++++
+\lim_{n \to \infty}\frac{n}{\sqrt[n]{n!}} = {\large e}
+++++
+
+.A basic square root with AsciiMath
+[asciimath]
+++++
+sqrt(4) = 2
+++++
+
+== Collapsible Blocks
+
+.Basic collapsible block
+[%collapsible]
+====
+Details.
+
+Loads of details.
+====
+
+.Collapsible `code block`
+[%collapsible]
+====
+[source,asciidoc]
+----
+Some code.
+----
+====
+
+== Collapsible results
+
+[source,asciidoc]
+----
+Run this code.
+----
+
+.Result
+[%collapsible.result]
+====
+[source,console]
+----
+Voila!
+----
+====

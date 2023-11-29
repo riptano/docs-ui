@@ -1,5 +1,6 @@
 module.exports = {
   content: ['./build/site/**/*.{html,js}'],
+  darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     fontFamily: {
       sans: ['Roboto Flex', 'sans-serif'],
@@ -14,10 +15,12 @@ module.exports = {
       xl: '1440px',
     },
     fontSize: {
+      xs: '1.5rem',
       sm: '1.8125rem',
       base: '2rem',
       xl: '2.5rem',
       '2xl': '3rem',
+      '3xl': '4.25rem',
     },
     spacing: {
       0: '0',

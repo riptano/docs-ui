@@ -4,127 +4,69 @@ asciidoc:
   - '@asciidoctor/tabs'
 site:
   url: http://localhost:5252
-  title: Brand Docs
-  isPreviewSite: true
-  homeUrl: &home_url /xyz/5.2/index.html
+  title: Datastax Docs
+  homeUrl: &home_url /astra.html
   components:
-  - name: abc
-    title: Component ABC
-    url: '#'
+  - name: datastax
+    title: Datastax Docs
+    url: /home.html
     versions:
-    - &latest_version_abc
-      url: '#'
+    - &latest_version_astra
+      url: *home_url
       version: '1.1'
       displayVersion: '1.1'
-    - url: '#'
-      version: '1.0'
-      displayVersion: '1.0'
-    latestVersion: *latest_version_abc
-  - &component
-    name: xyz
-    title: &component_title Component XYZ
-    url: /xyz/6.0/index.html
-    versions:
-    - &latest_version_xyz
-      url: /xyz/6.0/index.html
-      version: '6.0'
-      displayVersion: '6.0'
-    - &component_version
-      title: *component_title
-      url: '#'
-      version: '5.2'
-      displayVersion: '5.2'
-    - url: '#'
-      version: '5.1'
-      displayVersion: '5.1'
-    - url: '#'
-      version: '5.0'
-      displayVersion: '5.0'
-    latestVersion: *latest_version_xyz
-  - name: '123'
-    title: Component 123
-    url: '#'
-    versions:
-    - &latest_version_123
-      url: '#'
-      version: '2.2'
-      displayVersion: '2.2'
-    - url: '#'
-      version: '2.1'
-      displayVersion: '2.1'
-    - url: '#'
-      version: '2.0'
-      displayVersion: '2.0'
-    latestVersion: *latest_version_123
+    latestVersion: *latest_version_astra
 page:
-  url: *home_url
-  home: true
-  title: Brand&#8217;s Hardware &amp; Software Requirements
-  component: *component
-  componentVersion: *component_version
-  version: '5.2'
-  displayVersion: '5.2'
-  module: ROOT
-  relativeSrcPath: index.adoc
-  editUrl: http://example.com/project-xyz/blob/main/index.adoc
-  origin:
-    private: false
-  previous:
-    content: Quickstart
-    url: '#'
-    urlType: 'internal'
-  next:
-    content: Liber Recusabo
-    url: '#'
-    urlType: 'internal'
-  breadcrumbs:
-  - content: Quickstart
-    url: '#'
-    urlType: fragment
-  - content: Brand&#8217;s Hardware &amp; Software Requirements
-    url: /xyz/5.2/index.html
-    urlType: internal
-  versions:
-  - version: '6.0'
-    displayVersion: '6.0'
-    url: '#'
-  - version: '5.2'
-    displayVersion: '5.2'
-    url: '#'
-  - version: '5.1'
-    displayVersion: '5.1'
-    url: '#'
-  - version: '5.0'
-    displayVersion: '5.0'
-    missing: true
-    url: '#'
+  src:
+    component: datastax
+    version: '1.1'
   navigation:
-  - root: true
-    items:
-    - content: Quickstart
-      url: '#'
+    - content: Page Templates
       urlType: fragment
       items:
-      - content: Brand&#8217;s Hardware &amp; Software Requirements
-        url: /xyz/5.2/index.html
+      - content: Full
+        url: /page-templates/full.html
         urlType: internal
-      - content: Cu Solet
-        url: '/xyz/5.2/index.html#cu-solet'
+      - content: Landing
+        url: /page-templates/landing.html
         urlType: internal
-      - content: English + 中文
-        url: '/xyz/5.2/index.html#english+中文'
+      - content: Tutorial
+        url: /page-templates/tutorial.html
         urlType: internal
-    - content: Liber Recusabo
-      url: '#liber-recusabo'
+      - content: Integrations Overview
+        url: /page-templates/integrations-overview.html
+        urlType: internal
+      - content: Integrations Detail
+        url: /page-templates/integrations-detail.html
+        urlType: internal
+    - content: Asciidoc Examples
       urlType: fragment
-    - content: Reference
       items:
-      - content: Keyboard Shortcuts
-        url: '#'
-        urlType: fragment
-      - content: Importing and Exporting
-        url: '#'
-        urlType: fragment
-      - content: Some Code
-        url: '/xyz/5.2/index.html#some-code'
+      - content: Text Formatting
+        url: /asciidoc/text-formatting.html
         urlType: internal
+      - content: Lists
+        url: /asciidoc/lists.html
+        urlType: internal
+      - content: Tabs
+        url: /asciidoc/tabs.html
+        urlType: internal
+      - content: Code
+        url: /asciidoc/code.html
+        urlType: internal
+      - content: Blocks
+        url: /asciidoc/blocks.html
+        urlType: internal
+      - content: Admonitions
+        url: /asciidoc/admonitions.html
+        urlType: internal
+      - content: Tables
+        url: /asciidoc/tables.html
+        urlType: internal
+      - content: Images and Media
+        url: /asciidoc/images.html
+        urlType: internal
+      - content: Symbol Replacements
+        url: /asciidoc/symbols.html
+        urlType: internal
+      

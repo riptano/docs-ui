@@ -1,0 +1,59 @@
+= Admonitions
+
+== Basic admonitions
+
+NOTE: An admonition draws the reader's attention to auxiliary information.
+
+IMPORTANT: Sign off before stepping away from your computer.
+
+TIP: Look for the warp zone under the bridge.
+
+CAUTION: Slippery when wet.
+
+WARNING: The software you're about to use is untested.
+
+== Complex admonition
+[NOTE]
+====
+An admonition block may contain complex content, like <<lists,lists>> and <<tables,tables>>.
+
+.A list
+* List item
+** Nested list item
+*** Deeper nested list item
+* List item
+ ** Another nested list item
+* List item
+
+.A table
+[cols="3*"]
+|===
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|===
+
+.A code block
+[source,js]
+----
+vfs
+  .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
+  .pipe(tap((file) => { // <.>
+    file.contents = browserify(file.relative, { basedir: 'src', detectGlobals: false }).bundle()
+  }))
+----
+<.> Maybe with a callout.
+
+.Another admonition
+[TIP]
+======
+Admonition styles are set on example blocks, which are delimited by four equal signs (`====`).
+When nesting a delimited block that uses the same structural container, it's necessary to vary the length of the delimiter lines (i.e., make the length of the delimiter lines for the child block different than the length of the delimiter lines for the parent block).
+Varying the delimiter line length allows the parser to distinguish one block from another.
+======
+====
