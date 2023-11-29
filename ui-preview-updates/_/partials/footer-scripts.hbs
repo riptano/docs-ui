@@ -1,0 +1,15 @@
+<script id="site-script" src="{{{uiRootPath}}}/js/site.js" data-ui-root-path="{{{uiRootPath}}}"></script>
+<script async src="{{{uiRootPath}}}/js/vendor/tabs.js"></script>
+<script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>
+  docsearch({
+    container: '#docsearch',
+    appId: '2ELPRZR9UC',
+    indexName: 'crawler_docsearch-astra',
+    {{!-- This is the public API key which can be safely used in frontend code. --}}
+    apiKey: '1f4acbf51d118e4137e9a63b38bd8456',
+  })
+</script>
+{{> intercom}}
