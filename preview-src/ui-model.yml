@@ -48,8 +48,8 @@ page:
       - content: Lists
         url: /asciidoc/lists.html
         urlType: internal
-      - content: Tabs
-        url: /asciidoc/tabs.html
+      - content: Tabsets
+        url: /asciidoc/tabsets.html
         urlType: internal
       - content: Code
         url: /asciidoc/code.html
@@ -69,4 +69,3 @@ page:
       - content: Symbol Replacements
         url: /asciidoc/symbols.html
         urlType: internal
-      
