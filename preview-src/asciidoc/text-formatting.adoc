@@ -1,0 +1,151 @@
+= Text Formatting
+
+== Section Titles
+
+[.rolename]
+=== Level 2 section title
+
+==== Level 3 section title
+
+===== Level 4 section title
+
+====== Level 5 section title
+
+[discrete]
+== Level 1 section title (Discrete)
+
+[.rolename]
+=== Example: Section title w/ custom role
+
+////
+When the document type is article (the default), the document can only have one level 0 section title (`=`), which is the document title (i.e., doctitle).
+
+When a page is converted to HTML, each section title becomes a heading element where the heading level matches the number of equals signs.
+For example, a level 1 section (`==`) maps to an `<h2>` HTML tag.
+
+Each section title has an auto-generated section ID that forms the fragment identifier for the section.
+The auto-generated section ID is a URL-safe version of the section title, converted to lowercase, with all non-alphanumeric characters replaced with hyphens (controlled by the `idprefix` and `idseparator` attributes).
+An anchor (empty link) is added before the section title, and an anchor icon floats to the left of the section title (controlled by the `sectanchors` attribute).
+
+Section titles appear in the page table of contents (TOC) in the order they appear in the document.
+The depth of the page TOC can be configured using the `page-toclevels` attribute.
+
+A `discrete` heading is declared and styled in a manner similar to that of a section title, but it’s not part of the section hierarchy and not included in the table of contents,etc.
+////
+
+[#text-formatting]
+== Text formatting
+
+Nominavi luptatum eos, an vim hinc philosophia intellegebat.
+Lorem pertinacia `expetenda` et nec, [.underline]#wisi# illud [.line-through]#sonet# qui ea.
+H~2~0.
+E = mc^2^.
+
+[cols="1,2a",frame=none,grid=none]
+|===
+|Constrained bold, italic, and monospace
+|It has *strong* significance to me.
+
+I _cannot_ stress this enough.
+
+Type `OK` to accept.
+
+That *_really_* has to go.
+
+Can't pick one? Let's use them `*_all_*`.
+
+|Unconstrained bold, italic, and monospace
+|**C**reate, **R**ead, **U**pdate, and **D**elete (CRUD)
+
+That's fan__freakin__tastic!
+
+Don't pass generic ``Object``s to methods that accept ``String``s!
+
+It was Beatle**__mania__**!
+
+|Highlight, underline, strikethrough, and custom role
+|Mark my words, #automation is essential#.
+
+##Mark##up refers to text that contains formatting ##mark##s.
+
+Where did all the [.underline]#cores# go?
+
+We need [.line-through]#ten# twenty VMs.
+
+A [.myrole]#custom role# must be fulfilled by the theme.
+
+|Superscript and subscript
+|^super^script
+
+~sub~script
+
+|Smart quotes and apostrophes
+|"`double curved quotes`"
+
+'`single curved quotes`'
+
+Olaf's desk was a mess.
+
+A ``std::vector```'s size is the number of items it contains.
+
+All of the werewolves`' desks were a mess.
+
+Olaf had been with the company since the `'00s.
+|===
+
+== Links
+
+=== Internal link
+
+Instead of having to enclose text within <<text-formatting,tags or special characters>>, you can focus on expressing your ideas and content in a clear and concise manner.
+
+=== External link
+
+By separating paragraphs with blank lines, you visually https://www.datastax.com[distinguish each paragraph,role=external,window=_blank]
+
+By separating paragraphs with blank lines, you visually https://www.datastax.com[distinguish each paragraph^]
+
+By separating paragraphs with blank lines, you visually https://www.datastax.com[distinguish each paragraph]
+
+////
+An _external link_ is any link that targets an address outside of the docs.datastax.com subdomain.
+External links should have the following behavior, regardless of any AsciiDoc attributes that a writer might apply to them:
+
+* Different visual styling than an internal link, e.g. an `open_in_new` icon after the link text.
+* Open in a new tab or window when clicked.
+
+The links in the example sentences above all target the same external URL -- `\https://www.datastax.com`.
+However, they each have different AsciiDoc attributes applied to them.
+
+[source,asciidoc]
+----
+https://www.datastax.com[distinguish each paragraph,role=external,window=_blank]
+https://www.datastax.com[distinguish each paragraph^]
+https://www.datastax.com[distinguish each paragraph]
+----
+
+The UI should disregard these attributes and apply the same styling and behavior to each link.
+////
+
+=== Unresolved link
+
+Vestibulum consectetur nec urna a luctus.
+Quisque pharetra tristique arcu fringilla dapibus.
+https://example.org[Curabitur,role=unresolved] ut massa aliquam, cursus enim et, accumsan lectus.
+Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
+
+== Keyboard, button, and menu macros
+
+To save the file, select menu:File[Save].
+Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
+
+Press the btn:[OK] button when you are finished.
+Select a file in the file navigator and click btn:[Open].
+
+Press kbd:[F11] to toggle fullscreen.
+Press kbd:[Ctrl+T] to open a new tab.
+
+== Footnote
+
+Eum an doctus maiestatis efficiantur.
+Eu mea inani iriure.footnote:[Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae! Lorem ipsum dolor sit amet, consectetur adipiscing elit.]

@@ -1,0 +1,266 @@
+= Tabs
+:cassandra-icon: image:/img/cassandra-original.svg[,28]
+:java-icon: image:/img/java-original.svg[,22]
+:python-icon: image:/img/python-original.svg[,22]
+:shell-icon: image:/img/shell-original.svg[,20]
+
+== Example: Basic
+
+[tabs]
+======
+Tab A:: Contents of Tab A.
+
+Tab B::
++
+Contents of Tab B.
+
+Tab C::
++
+--
+Contents of Tab C.
+
+Contains more than one block.
+--
+======
+
+== Example: Overflow tabset
+
+[tabs.overflow]
+======
+Tab Name:: Contents of Tab.
+
+Longer Tab Name::
++
+Contents of Longer Tab.
+
+An Even Longer Tab Name::
++
+Contents of Even Longer Tab.
+
+This Is The Longest Tab Name::
++
+Contents of The Longest Tab.
+======
+
+[tabs.wrapping]
+======
+Tab Name:: Contents of Tab.
+
+Longer Tab Name::
++
+Contents of Longer Tab.
+
+An Even Longer Tab Name::
++
+Contents of Even Longer Tab.
+
+This Is The Longest Tab Name::
++
+Contents of The Longest Tab.
+======
+
+== Example: Complex tabset
+
+[tabs]
+======
+Tarball::
++
+. If you haven't already, start by downloading the Cassandra binary tarball.
+For example, to download Cassandra 4.1.2:
++
+[tabs]
+====
+cURL::
++
+--
+[source,shell,subs="attributes+"]
+----
+curl -OL https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz
+----
+--
+
+Wget::
++
+--
+[source,shell,subs="attributes+"]
+----
+wget https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz
+----
+--
+====
++
+[NOTE]
+====
+To download a different version of Cassandra, visit the https://archive.apache.org/dist/cassandra/[Apache Archives].
+====
++
+. (Optional) Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here^].
++
+.. For example, to verify the SHA256 hash of the downloaded file using GPG:
++
+[source,shell,subs="attributes+"]
+----
+gpg --print-md SHA256 apache-cassandra-4.1.2-bin.tar.gz
+----
++
+.. Compare the output with the contents of the SHA256 file:
++
+[source,shell,subs="attributes+"]
+----
+curl -L https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz.sha256
+----
+
+Debian::
++
+. (Optional) Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here^].
++
+.. For example, to verify the SHA256 hash of the downloaded file using GPG:
++
+[tabs]
+====
+Command::
++
+--
+[source,shell,subs="attributes+"]
+----
+gpg --print-md SHA256 apache-cassandra-4.1.2-bin.tar.gz
+----
+--
+
+Result::
++
+--
+[source,console,subs="attributes+"]
+----
+apache-cassandra-4.1.2-bin.tar.gz: 7CE3103A 76B8AF76 FFD8488D 6BF484E1 F1751196
+                                   17F3205A E0526C71 D816C6F7
+----
+--
+====
++
+.. Compare the output with the contents of the SHA256 file:
++
+[tabs]
+====
+cURL::
++
+--
+[source,shell,subs="attributes+"]
+----
+curl -L https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz.sha256
+----
+--
+
+Wget::
++
+--
+[source,shell,subs="attributes+"]
+----
+wget --quiet -O - https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz.sha256
+----
+--
+
+Result::
++
+--
+[source,console]
+----
+7ce3103a76b8af76ffd8488d6bf484e1f175119617f3205ae0526c71d816c6f7
+----
+--
+====
+
+CentOS:: Just text.
+======
+
+=== Experimental: Tabset icons
+
+[tabs]
+======
+{cassandra-icon} CQL::
++
+[source,sql]
+----
+USE cycling;
+CREATE TABLE rank_by_year_and_name (
+  race_year int,
+  race_name text,
+  cyclist_name text,
+  rank int,
+  PRIMARY KEY ((race_year, race_name), rank)
+);
+----
+
+{python-icon} Python::
++
+[source,python]
+----
+    log.info("creating table...")
+    session.execute("""
+        CREATE TABLE IF NOT EXISTS cyclist_by_year_and_name (
+            race_year int,
+            race_name text,
+            rank int,
+            cyclist_name text,
+            PRIMARY KEY ((race_year,race_name),rank)
+        )
+        """)
+----
+
+{java-icon} Java::
++
+[source,java]
+----
+CreateTable create = createTable("cycling", "cyclist_by_year_and_name")
+    .withPartitionKey("race_year", DataTypes.INT)
+    .withPartitionKey("race_name", DataTypes.TEXT)
+    .withClusteringColumn("rank", DataTypes.INT)
+    .withColumn("cyclist_name", DataTypes.TEXT);
+// CREATE TABLE cycling.cyclist_by_year_and_name (race_year int,race_name text,rank int,cyclist_name text,PRIMARY KEY((race_year,race_name),rank))
+----
+
+{shell-icon} REST API::
++
+[source,json]
+----
+curl -s --location \
+--request POST http://localhost:8082/v2/schemas/keyspaces/cycling/tables \
+--header "X-Cassandra-Token: $AUTH_TOKEN" \
+--header "Content-Type: application/json" \
+--header "Accept: application/json" \
+--data '{
+	"name": "cyclist_by_year_and_name",
+	"columnDefinitions":
+	  [
+        {
+	      "name": "race_year",
+	      "typeDefinition": "int"
+	    },
+        {
+	      "name": "race_name",
+	      "typeDefinition": "text"
+	    },
+        {
+	      "name": "rank",
+	      "typeDefinition": "int"
+	    }
+        ,
+        {
+          "name": "cyclist_name",
+          "typeDefinition": "text"
+        }
+	  ],
+	"primaryKey":
+	  {
+	    "partitionKey": ["race_year", "race_name"],
+	    "clusteringKey": ["rank"]
+	  },
+	"tableOptions":
+	  {
+	    "defaultTimeToLive": 0,
+	    "clusteringExpression":
+	      [{ "column": "rank", "order": "ASC" }]
+	  }
+}'
+----
+======

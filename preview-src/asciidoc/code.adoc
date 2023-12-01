@@ -1,0 +1,79 @@
+= Code
+
+== Inline code
+
+Output literal monospace text, such as `my-python-function` or `initial-scale=1.0`.
+
+== Code blocks
+
+[source,json]
+----
+{
+  "name": "module-name",
+  "version": "10.0.1",
+  "description": "An example module to illustrate the usage of package.json",
+  "author": "Author Name <author@example.com>",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint"
+  }
+}
+----
+
+.Console code block
+[source,console]
+----
+$ pip install astra-vector
+$ python3
+----
+
+[.wrap]
+.Text does not wrap by default
+[source]
+----
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+----
+
+[.nolang]
+.Hide language name
+[source,java]
+----
+// A title with hidden language name
+public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+
+        System.out.println("Current Date and Time is: " + current);
+    }
+}
+----
+
+[.nolang]
+[source,java]
+----
+// No title with hidden language name
+public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+
+        System.out.println("Current Date and Time is: " + current);
+    }
+}
+----
+
+== Callouts
+
+[source,js]
+----
+vfs
+  .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
+  .pipe(tap((file) => { // <.>
+    file.contents = browserify(file.relative, { basedir: 'src', detectGlobals: false }).bundle()
+  }))
+  .pipe(buffer()) // <.>
+  .pipe(uglify())
+  .pipe(gulp.dest('build'))
+----
+<.> The `tap` function is used to wiretap the data in the pipe.
+<.> Wrap each streaming file in a buffer so the files can be processed by uglify.
+Uglify can only work with buffers, not streams.

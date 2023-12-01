@@ -1,5 +1,6 @@
 module.exports = {
   content: ['./build/site/**/*.{html,js}'],
+  darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     fontFamily: {
       sans: ['Roboto Flex', 'sans-serif'],
@@ -14,13 +15,16 @@ module.exports = {
       xl: '1440px',
     },
     fontSize: {
+      xs: '0.75rem',
       sm: '0.90625rem',
       base: '1rem',
       xl: '1.25rem',
       '2xl': '1.5rem',
+      '3xl': '2.125rem',
     },
     borderRadius: {
       DEFAULT: '0.375rem',
+      xl: '0.375rem',
     },
     spacing: {
       0: '0',
@@ -96,14 +100,6 @@ module.exports = {
             'a:hover': {
               textDecoration: 'underline',
             },
-            'a.external::after': {
-              fontFamily: '"Material Icons Outlined"',
-              content: "'\\e89e'",
-              fontSize: 'calc(16 / var(--rem-base) * 1rem)',
-              verticalAlign: 'bottom',
-              marginLeft: 'var(--ds-space-h)',
-              fontWeight: 'normal',
-            },
             pre: {
               whiteSpace: 'pre-wrap',
               fontSize: 'calc(14 / var(--rem-base) * 1rem)',
@@ -125,13 +121,6 @@ module.exports = {
             'tbody td, tfoot td, thead th': {
               padding: '0.75em',
             },
-            '.title': {
-              fontWeight: 600,
-              fontStyle: 'normal',
-              color: 'var(--tw-prose-captions)',
-              fontSize: '1rem',
-              marginBottom: '1em',
-            },
             'code::before': {
               content: 'none',
             },
@@ -147,22 +136,6 @@ module.exports = {
               paddingRight: '0.375em',
               paddingBottom: '0.1875em',
               paddingLeft: '0.375em',
-            },
-            'b.button::before': {
-              content: '"["',
-              paddingRight: '0.25em',
-            },
-            'b.button::after': {
-              content: '"]"',
-              paddingLeft: '0.25em',
-            },
-            '.menuseq i.caret::before': {
-              fontFamily: '"Material Icons Outlined"',
-              fontStyle: 'normal',
-              verticalAlign: 'sub',
-              content: '"\\e5cc"',
-              width: '0.75em',
-              fontSize: '1.1em',
             },
           },
         },

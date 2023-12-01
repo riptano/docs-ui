@@ -20,6 +20,7 @@
 @import "breadcrumbs.css";
 @import "page-versions.css";
 @import "toc.css";
+@import "asciidoc/doc.css";
 /* @import "doc.css"; */
 /* @import "doc2.css"; */
 @import "ds-layout.css";
@@ -27,9 +28,7 @@
 @import "asciidoc/admonitionblock.css";
 @import "pagination.css";
 @import "navigation/header.css";
-@import "footer.css";
 @import "vendor/highlight.css";
 @import "print.css";
-@import "tutorial-info.css";
 @import "vendor/docsearch.css";
 @import "tailwind/tailwind.css";

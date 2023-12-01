@@ -1,0 +1,215 @@
+= Lists
+
+== Unordered list
+
+* List item
+** Nested list item
+*** Deeper nested list item
+* List item
+ ** Another nested list item
+* List item
+
+.Unordered list max level nesting
+* Level 1 list item
+** Level 2 list item
+*** Level 3 list item
+**** Level 4 list item
+***** Level 5 list item
+****** etc.
+* Level 1 list item
+
+== Ordered list
+
+. Step 1
+. Step 2
+.. Step 2a
+.. Step 2b
+. Step 3
+
+.Ordered list max level nesting
+. Level 1 list item
+.. Level 2 list item
+... Level 3 list item
+.... Level 4 list item
+..... Level 5 list item
+. Level 1 list item
+
+=== Ordered list numeration styles
+
+[.scrolltable]
+--
+[cols="6*a"]
+|===
+|`decimal`
+|`loweralpha`
+|`upperalpha`
+|`lowerroman`
+|`upperroman`
+|`lowergreek`
+
+a|[decimal]
+. Protons
+. Electrons
+. Neutrons
+
+a|[loweralpha]
+. Protons
+. Electrons
+. Neutrons
+
+a|[upperalpha]
+. Protons
+. Electrons
+. Neutrons
+
+a|[lowerroman]
+. Protons
+. Electrons
+. Neutrons
+
+a|[upperroman]
+. Protons
+. Electrons
+. Neutrons
+
+a|[lowergreek]
+. Protons
+. Electrons
+. Neutrons
+|===
+--
+
+.Ordered list w/ customized numeration
+[upperalpha]
+. potenti donec cubilia tincidunt
+. etiam pulvinar inceptos velit quisque aptent himenaeos
+. lacus volutpat semper porttitor aliquet ornare primis nulla enim
+
+Natum facilisis theophrastus an duo.
+No sea, at invenire voluptaria mnesarchum has.
+
+.Unordered list w/ customized marker
+[square]
+* ultricies sociosqu tristique integer
+* lacus volutpat semper porttitor aliquet ornare primis nulla enim
+* etiam pulvinar inceptos velit quisque aptent himenaeos
+
+== Description list
+
+First term:: Description of the first term.
+Second term:: Description of the second term.
++
+With another paragraph.
+Third term::
+Description of the first term.
+
+=== Horizontal description list (unconstrained)
+
+[horizontal]
+CPU:: The brain of the computer.
+Hard drive:: Permanent storage for operating system and/or user files.
++
+Solid state drives (SSDs) are faster than hard drives, but are also more expensive.
+RAM::
+Temporarily stores information the CPU uses during operation.
+
+=== Horizontal description list (constrained)
+
+[horizontal,labelwidth=25,itemwidth=75]
+A short term:: The term for this item likely fits inside the column's width.
+A long term that wraps across multiple lines:: The term for this item wraps since the width of the term column is restricted using the `labelwidth` attribute.
+
+== Question and Answer List
+
+[qanda]
+What is the answer?::
+This is the answer.
+
+Are cameras allowed?::
+Are backpacks allowed?::
+No.
+
+== Checklist
+
+* [*] checked
+* [x] also checked
+* [ ] not checked
+
+.Interactive checklist
+[%interactive]
+* [*] checked
+* [x] also checked
+* [ ] not checked
+
+== Example: Mixed list
+
+Operating Systems::
+  Linux:::
+    . Fedora
+      * Desktop
+    . Ubuntu
+      * Desktop
+      * Server
+  BSD:::
+    . FreeBSD
+    . NetBSD
+
+Cloud Providers::
+  PaaS:::
+    . OpenShift
+    . CloudBees
+  IaaS:::
+    . Amazon EC2
+    . Rackspace
+
+== Example: Complex lists
+
+.Drop the principal text
+. {empty}
++
+----
+print("one")
+----
+. {empty}
++
+----
+print("one")
+----
+
+.List continuation
+* Every list item has at least one paragraph of content,
+  which may be wrapped, even using a hanging indent.
++
+Additional paragraphs or blocks are adjoined by putting
+a list continuation on a line adjacent to both blocks.
+
+* A literal paragraph does not require a list continuation.
+
+ $ cd projects/my-book
+
+* The header in AsciiDoc must start with a document title.
++
+----
+= Document Title
+----
++
+Keep in mind that the header is optional.
+
+** The header in AsciiDoc must start with a document title.
++
+--
+----
+= Document Title
+----
+
+NOTE: The header is optional.
+--
+
+* AsciiDoc lists may contain any complex content.
++
+|===
+|Column 1, Header Row |Column 2, Header Row
+
+|Column 1, Row 1
+|Column 2, Row 1
+|===

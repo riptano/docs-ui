@@ -9,7 +9,7 @@ This combination enhances vector data analysis,
 allowing natural language data to be processed, 
 stored, and queried with efficiency.
 
-image::ROOT:template-examples/langchain-overview.png["Architecture diagram"]
+image::/img/langchain-overview.png["Architecture diagram"]
 
 To get started, ensure you have an 
 https://example.com[active LangChain account,role=external] with the requisite permissions.

@@ -10,10 +10,6 @@
   position: relative;
 }
 
-.listingblock .title + .content > pre {
-  margin-top: 0;
-}
-
 pre.highlightjs {
   display: block;
   color: var(--ds-text-secondary);
@@ -67,15 +63,15 @@ code.hljs {
 }
 
 .source-toolbox + pre.highlightjs code.hljs {
-  margin-right: var(--ds-space-7);
+  margin-right: 7rem;
 }
 
 .source-toolbox {
   position: absolute;
   right: 0;
-  padding: calc(10 / var(--rem-base) * 1rem);
-  height: calc(100% - var(--ds-space-2));
-  margin-top: 0.1em;
+  padding: 1.25rem;
+  height: calc(100% - 2rem);
+  margin-top: 0.075em;
   z-index: 10;
 }
 
@@ -104,7 +100,7 @@ html[data-theme="dark"] .source-toolbox {
   transition: opacity 0.5s ease 0.5s, visibility 0s linear 1s;
   text-wrap: nowrap;
   white-space: nowrap;
-  transform: translateX(-1.5em) translateY(-3em);
+  transform: translateX(-2.35rem) translateY(-5rem);
   z-index: 20;
 }
 
