@@ -34,11 +34,23 @@
 ..... Level 5 list item
 . Level 1 list item
 
-=== Ordered list numeration styles
+== Customized markers and numeration
 
-[.scrolltable]
---
-[cols="6*a"]
+.Unordered list w/ customized marker (square)
+[square]
+* ultricies sociosqu tristique integer
+* lacus volutpat semper porttitor aliquet ornare primis nulla enim
+* etiam pulvinar inceptos velit quisque aptent himenaeos
+
+.Ordered list w/ customized numeration (upperalpha)
+[upperalpha]
+. potenti donec cubilia tincidunt
+. etiam pulvinar inceptos velit quisque aptent himenaeos
+. lacus volutpat semper porttitor aliquet ornare primis nulla enim
+
+.Ordered list numeration styles
+****
+[cols="6*a",role="scrolltable"]
 |===
 |`decimal`
 |`loweralpha`
@@ -77,22 +89,7 @@ a|[lowergreek]
 . Electrons
 . Neutrons
 |===
---
-
-.Ordered list w/ customized numeration
-[upperalpha]
-. potenti donec cubilia tincidunt
-. etiam pulvinar inceptos velit quisque aptent himenaeos
-. lacus volutpat semper porttitor aliquet ornare primis nulla enim
-
-Natum facilisis theophrastus an duo.
-No sea, at invenire voluptaria mnesarchum has.
-
-.Unordered list w/ customized marker
-[square]
-* ultricies sociosqu tristique integer
-* lacus volutpat semper porttitor aliquet ornare primis nulla enim
-* etiam pulvinar inceptos velit quisque aptent himenaeos
+****
 
 == Description list
 
@@ -102,6 +99,7 @@ Second term:: Description of the second term.
 With another paragraph.
 Third term::
 Description of the first term.
+
 
 === Horizontal description list (unconstrained)
 
@@ -119,7 +117,7 @@ Temporarily stores information the CPU uses during operation.
 A short term:: The term for this item likely fits inside the column's width.
 A long term that wraps across multiple lines:: The term for this item wraps since the width of the term column is restricted using the `labelwidth` attribute.
 
-== Question and Answer List
+== Question and answer list
 
 [qanda]
 What is the answer?::
@@ -141,7 +139,9 @@ No.
 * [x] also checked
 * [ ] not checked
 
-== Example: Mixed list
+== Examples
+
+=== Mixed list
 
 Operating Systems::
   Linux:::
@@ -162,9 +162,8 @@ Cloud Providers::
     . Amazon EC2
     . Rackspace
 
-== Example: Complex lists
+=== Drop the principal text
 
-.Drop the principal text
 . {empty}
 +
 ----
@@ -176,7 +175,8 @@ print("one")
 print("one")
 ----
 
-.List continuation
+=== List continuation (complex list)
+
 * Every list item has at least one paragraph of content,
   which may be wrapped, even using a hanging indent.
 +
