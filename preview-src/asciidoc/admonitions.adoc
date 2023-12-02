@@ -2,7 +2,11 @@
 
 == Basic admonitions
 
-NOTE: An admonition draws the reader's attention to auxiliary information.
+.Optional title
+[NOTE]
+====
+An admonition draws the reader's attention to auxiliary information.
+====
 
 IMPORTANT: Sign off before stepping away from your computer.
 
@@ -12,10 +16,14 @@ CAUTION: Slippery when wet.
 
 WARNING: The software you're about to use is untested.
 
-== Complex admonition
+== Examples
+
+=== Complex admonition
+
+.The title of a complex admonition
 [NOTE]
 ====
-An admonition block may contain complex content, like <<lists,lists>> and <<tables,tables>>.
+An admonition block may contain complex content, like lists and tables.
 
 .A list
 * List item
@@ -39,7 +47,7 @@ An admonition block may contain complex content, like <<lists,lists>> and <<tabl
 |===
 
 .A code block
-[source,js]
+[source,javascript]
 ----
 vfs
   .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
@@ -50,7 +58,7 @@ vfs
 <.> Maybe with a callout.
 
 .Another admonition
-[TIP]
+[CAUTION]
 ======
 Admonition styles are set on example blocks, which are delimited by four equal signs (`====`).
 When nesting a delimited block that uses the same structural container, it's necessary to vary the length of the delimiter lines (i.e., make the length of the delimiter lines for the child block different than the length of the delimiter lines for the parent block).
