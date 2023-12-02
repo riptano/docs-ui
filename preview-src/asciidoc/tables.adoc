@@ -1,9 +1,42 @@
 = Tables
+:table-caption!:
 
-== Basic Tables 
+== Basic table
 
-[frame=none, grid=rows,%autowidth.stretch]
-.Default
+[cols="3*"]
+|===
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Optional title
+[cols="3*"]
+|===
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+== Header and footer
+
+.Table w/ header row
 |===
 |Column 1, header row |Column 2, header row |Column 3, header row
 
@@ -16,30 +49,60 @@
 |Cell in column 3, row 3
 |===
 
-[%autowidth.stretch,stripes=even]
-.Striped
+.Table w/ header column
+[cols="1h,2*"]
 |===
-|Header |Header |Header |Header
+|Row 1, header column
+|Cell in column 2, row 1
+|Cell in column 3, row 1
 
-|Cell
-|Cell
-|Cell
-|Cell
+|Row 2, header column
+|Cell in column 2, row 2
+|Cell in column 3, row 2
 
-|Cell
-|Cell
-|Cell
-|Cell
-
-|Cell
-|Cell
-|Cell
-|Cell
+|Row 3, header column
+|Cell in column 2, row 3
+|Cell in column 3, row 3
 |===
 
+.Table w/ header row and header column
+[cols="1h,2*"]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
 
+|Row 2, header column
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Row 3, header column
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ footer row
+[cols="3*",options="footer"]
+|===
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+
+
+|Total = 3
+|Total = 3
+|Total = 3
+|===
+
+.Table w/ header row, header column, and footer row
 [%footer%autowidth.stretch]
-.Footer
 |===
 |Header |Header |Header |Header
 
@@ -59,12 +122,12 @@ h|Total
 |10
 |===
 
-.Basic table
-[cols="3*"]
+== Striping
+
+.Table w/ even striping
+[cols="3*",stripes=even]
 |===
-|Cell in column 1, row 1
-|Cell in column 2, row 1
-|Cell in column 3, row 1
+|Column 1, header row |Column 2, header row |Column 3, header row
 
 |Cell in column 1, row 2
 |Cell in column 2, row 2
@@ -73,10 +136,14 @@ h|Total
 |Cell in column 1, row 3
 |Cell in column 2, row 3
 |Cell in column 3, row 3
+
+|Cell in column 1, row 4
+|Cell in column 2, row 4
+|Cell in column 3, row 4
 |===
 
-.Table w/ header row
-[%autowidth.stretch]
+.Table w/ hover striping
+[cols="3*",stripes=hover]
 |===
 |Column 1, header row |Column 2, header row |Column 3, header row
 
@@ -89,36 +156,130 @@ h|Total
 |Cell in column 3, row 3
 |===
 
-.Table w/ header row, footer row, and autowidth
-[#dependencies%footer%autowidth]
+== Custom width
+
+.Table w/ width set to 75%
+[width=75%]
 |===
-|Library |Version
+|Column 1, header row |Column 2, header row |Column 3, header row
 
-|eslint
-|^1.7.3
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
 
-|eslint-config-gulp
-|^2.0.0
-
-|expect
-|^1.20.2
-
-|istanbul
-|^0.4.3
-
-|istanbul-coveralls
-|^1.0.3
-
-|jscs
-|^2.3.5
-
-h|Total
-|6
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
 |===
 
-== Example: Complex tables
+.Table w/ autowidth
+[%autowidth]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
 
-.Table w/ header row, variable column widths, and AsciiDoc content
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+== Custom borders
+
+=== Frame
+
+.Table w/ frame=ends
+[frame=ends]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ frame=sides
+[frame=sides]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ frame=none
+[frame=none]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+=== Grid
+
+.Table w/ grid=rows
+[grid=rows]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ grid=cols
+[grid=cols]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ grid=none
+[grid=none]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+== Examples
+
+=== Complex table w/ AsciiDoc content
+
 [cols="1,1,2a"]
 |===
 |Name |Category |Description
@@ -161,7 +322,8 @@ public static JavaArchive createDeployment() {
 ====
 |===
 
-.Table w/ formatted, aligned, and merged cells
+=== Table w/ formatted, aligned, and merged cells
+
 [cols="e,m,^,>s"]
 |===
 |1 >s|2 |3 |4
@@ -170,21 +332,8 @@ public static JavaArchive createDeployment() {
 |9 2+>|10
 |===
 
-.Table w/ `frame=none`, `grid=none`
-[frame=none, grid=none]
-|===
-|Column 1, header row |Column 2, header row |Column 3, header row
+=== Nested table
 
-|Cell in column 1, row 2
-|Cell in column 2, row 2
-|Cell in column 3, row 2
-
-|Cell in column 1, row 3
-|Cell in column 2, row 3
-|Cell in column 3, row 3
-|===
-
-.Nested table
 [cols="1,2a"]
 |===
 | Col 1 | Col 2
@@ -203,26 +352,4 @@ public static JavaArchive createDeployment() {
 ! C12
 
 !===
-|===
-
-.Striped table (even striping)
-[cols=2*,stripes=even]
-|===
-|A1
-|B1
-|A2
-|B2
-|A3
-|B3
-|===
-
-.Striped table (hover striping)
-[cols=2*,stripes=hover]
-|===
-|A1
-|B1
-|A2
-|B2
-|A3
-|B3
 |===
