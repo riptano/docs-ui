@@ -1,5 +1,9 @@
 = Tabsets
+:idprefix:
+:idseparator: -
 :tabs-sync-option:
+:tabs-sync-storage-key: tabs
+:tabs-sync-storage-scope: session
 :cassandra-icon: image:/img/cassandra-original.svg[,28]
 :java-icon: image:/img/java-original.svg[,22]
 :python-icon: image:/img/python-original.svg[,22]
@@ -164,6 +168,28 @@ curl -s --location \
 
 == Examples
 
+=== Tabset w/ only code blocks
+
+[tabs]
+======
+Command::
++
+[source,curl]
+----
+curl -s -L -X GET https://$ASTRA_CLUSTER_ID-$ASTRA_REGION.apps.astra.datastax.com/api/rest/v2/schemas/keyspaces/users_keyspace \
+-H "X-Cassandra-Token: $ASTRA_DB_APPLICATION_TOKEN" \
+-H "Content-Type: application/json" \
+-H "Accept: application/json"
+----
+
+Result::
++
+[source,console]
+----
+{"data":{"name":"users_keyspace"}}
+----
+======
+
 === Complex tabset w/ nested tabsets
 
 [tabs]
@@ -196,10 +222,10 @@ wget https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.
 +
 [NOTE]
 ====
-To download a different version of Cassandra, visit the https://archive.apache.org/dist/cassandra/[Apache Archives].
+To download a different version of Cassandra, visit the https://archive.apache.org/dist/cassandra/[Apache Archives^,role=external].
 ====
 +
-. (Optional) Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here^].
+. (Optional) Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here^,role=external].
 +
 .. For example, to verify the SHA256 hash of the downloaded file using GPG:
 +
@@ -217,7 +243,7 @@ curl -L https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-b
 
 Debian::
 +
-. (Optional) Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here^].
+. (Optional) Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here^,role=external].
 +
 .. For example, to verify the SHA256 hash of the downloaded file using GPG:
 +

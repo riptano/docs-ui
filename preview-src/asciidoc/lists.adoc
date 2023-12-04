@@ -1,4 +1,7 @@
 = Lists
+:idprefix:
+:idseparator: -
+:table-caption!:
 
 == Unordered list
 

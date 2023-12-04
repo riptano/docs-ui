@@ -1,4 +1,7 @@
 = Admonitions
+:idprefix:
+:idseparator: -
+:table-caption!:
 
 == Basic admonitions
 

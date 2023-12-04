@@ -1,22 +1,9 @@
 = Tables
+:idprefix:
+:idseparator: -
 :table-caption!:
 
 == Basic table
-
-[cols="3*"]
-|===
-|Cell in column 1, row 1
-|Cell in column 2, row 1
-|Cell in column 3, row 1
-
-|Cell in column 1, row 2
-|Cell in column 2, row 2
-|Cell in column 3, row 2
-
-|Cell in column 1, row 3
-|Cell in column 2, row 3
-|Cell in column 3, row 3
-|===
 
 .Optional title
 [cols="3*"]
@@ -297,7 +284,7 @@ It's designed for:
 * portability
 
 image::https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg[Firefox logo,align=left,link=https://getfirefox.com]
-https://getfirefox.com[Get Firefox]!
+https://getfirefox.com[Get Firefox^,role=external]!
 
 |Arquillian
 |Testing

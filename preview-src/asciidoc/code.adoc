@@ -1,4 +1,6 @@
 = Code
+:idprefix:
+:idseparator: -
 
 == Inline code
 

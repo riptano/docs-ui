@@ -1,4 +1,7 @@
 = Text Formatting
+:idprefix:
+:idseparator: -
+:experimental:
 
 A paragraph can be defined as one or more lines of consecutive text that are logically grouped together.
 To differentiate between paragraphs, you simply need to insert at least one blank line between them.
@@ -58,16 +61,21 @@ We need [.line-through]#ten# twenty VMs.
 of a shopping list, but I don't think the local bodega sells
 E=mc^2^,`" Lazarus replied.
 
-=== Links
+=== Custom inline styles
 
-==== Internal link
+A [.myrole]#custom role# must be fulfilled by the theme.
+
+== Links
+
+=== Internal link
 
 Instead of having to enclose text within <<text-formatting,tags or special characters>>, you can focus on expressing your ideas and content in a clear and concise manner.
 
-==== External link
+=== External link
 
-.NOTE: The three links below should all have the same styling and behavior (click for explanation)
-[%collapsible]
+External links have a special icon and open in a new tab https://www.datastax.com[when clicked^,role=external].
+
+[NOTE]
 ====
 An _external link_ is any link that targets an address outside of the `docs.datastax.com` subdomain.
 External links should always have the following behavior, regardless of any AsciiDoc attributes that a writer might apply to them:
@@ -75,8 +83,7 @@ External links should always have the following behavior, regardless of any Asci
 * Different visual styling than an internal link, e.g. an `open_in_new` icon after the link text.
 * Open in a new tab when clicked.
 
-The links in the example sentences below all target the same external URL -- `\https://www.datastax.com`.
-However, they each have different AsciiDoc attributes applied to them.
+The links in the example sentences below all target the same external URL -- `\https://www.datastax.com` -- however, they each have different AsciiDoc attributes applied to them.
 
 [source,asciidoc]
 ----
@@ -88,17 +95,11 @@ External links have a special icon and open in a new tab https://www.datastax.co
 The UI should disregard these attributes and apply the same styling and behavior to each link.
 ====
 
-External links have a special icon and open in a new tab https://www.datastax.com[when clicked,role=external,window=_blank].
-
-External links have a special icon and open in a new tab https://www.datastax.com[when clicked^].
-
-External links have a special icon and open in a new tab https://www.datastax.com[when clicked].
-
-==== Unresolved link
+=== Unresolved link
 
 If an xref fails to resolve, the https://example.org[link text,role=unresolved] is displayed as-is, but in red.
 
-=== Keyboard, button, and menu macros
+== Keyboard, button, and menu macros
 
 To save the file, select menu:File[Save].
 Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
@@ -109,6 +110,6 @@ Select a file in the file navigator and click btn:[Open].
 Press kbd:[F11] to toggle fullscreen.
 Press kbd:[Ctrl+T] to open a new tab.
 
-=== Footnote
+== Footnote
 
 AsciiDoc provides the `footnote` macro for adding footnotes to your document.footnote:[Look! A footnote!]

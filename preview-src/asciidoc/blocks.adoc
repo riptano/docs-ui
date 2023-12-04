@@ -1,4 +1,7 @@
 = Blocks and other elements
+:idprefix:
+:idseparator: -
+:example-caption!:
 :stem:
 
 == Collapsible blocks
@@ -114,7 +117,7 @@ These elements act as passthroughs to preserve the expressions as entered.
 The expressions are then passed on to the converter to be processed and rendered for display using a STEM provider (e.g., MathJax).
 
 Although AsciiDoc supports STEM at the https://docs.asciidoctor.org/asciidoc/latest/stem/[language level^,role=external], the STEM provider must be configured in the output converter to render the expressions.
-See the discussion in https://gitlab.com/antora/antora/-/issues/184[Antora Issue #184^,role=external] to learn about the requirements for configuring STEM in Antora.
+See the discussion in https://gitlab.com/antora/antora/-/issues/184[Antora Issue #184^,role=external] to learn more about the requirements for configuring STEM in Antora.
 ====
 
 === Inline stem macro

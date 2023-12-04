@@ -1,4 +1,6 @@
 = Symbols
+:idprefix:
+:idseparator: -
 
 == Symbol Replacements
 

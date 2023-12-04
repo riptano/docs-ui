@@ -1,4 +1,6 @@
 = Images
+:idprefix:
+:idseparator: -
 :figure-caption!:
 
 == Block images
