@@ -6590,6 +6590,10 @@ a.btn:hover {
   margin-top: 2rem;
 }
 
+.mt-6 {
+  margin-top: 6rem;
+}
+
 .block {
   display: block;
 }
