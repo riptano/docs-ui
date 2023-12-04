@@ -3,16 +3,23 @@
 /* Datastax styles */
 
 .tabpanel {
-  padding: var(--ds-space-2) var(--ds-space-2) 0 var(--ds-space-2);
+  padding: var(--ds-space-3) var(--ds-space-2) 0 var(--ds-space-2);
   border: none;
   border-top: 1px solid var(--ds-divider);
   background-color: var(--ds-background-body);
 }
 
-.tabpanel li:first-child,
-.tabpanel ol:first-child,
-.tabpanel ul:first-child {
+.tabpanel > *:first-child {
   margin-top: 0;
+}
+
+.tabpanel > .olist > ol:first-child,
+.tabpanel > .ulist > ul:first-child {
+  margin-top: 0;
+
+  & > li:first-child {
+    margin-top: 0;
+  }
 }
 
 .doc .ulist.tablist ul {
