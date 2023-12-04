@@ -2,7 +2,7 @@
 .ds-card .content,
 .doc .exampleblock.ds-card > .content {
   display: grid;
-  padding: var(--ds-space-3);
+  padding: 0 var(--ds-space-3);
   border-radius: calc(6 / var(--rem-base) * 1rem);
   border: 1px solid var(--ds-divider);
 }
