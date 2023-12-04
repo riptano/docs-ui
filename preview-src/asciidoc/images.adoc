@@ -1,4 +1,4 @@
-= Images
+= Images and media
 :idprefix:
 :idseparator: -
 :figure-caption!:

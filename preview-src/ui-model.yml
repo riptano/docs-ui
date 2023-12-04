@@ -42,30 +42,27 @@ page:
     - content: Asciidoc Examples
       urlType: fragment
       items:
-      - content: Text Formatting
+      - content: Text formatting
         url: /asciidoc/text-formatting.html
         urlType: internal
       - content: Lists
         url: /asciidoc/lists.html
         urlType: internal
-      - content: Tabsets
-        url: /asciidoc/tabsets.html
+      - content: Tables
+        url: /asciidoc/tables.html
+        urlType: internal
+      - content: Images and media
+        url: /asciidoc/images.html
         urlType: internal
       - content: Code
         url: /asciidoc/code.html
+        urlType: internal
+      - content: Tabsets
+        url: /asciidoc/tabsets.html
         urlType: internal
       - content: Blocks
         url: /asciidoc/blocks.html
         urlType: internal
       - content: Admonitions
         url: /asciidoc/admonitions.html
-        urlType: internal
-      - content: Tables
-        url: /asciidoc/tables.html
-        urlType: internal
-      - content: Images and Media
-        url: /asciidoc/images.html
-        urlType: internal
-      - content: Symbol Replacements
-        url: /asciidoc/symbols.html
         urlType: internal
