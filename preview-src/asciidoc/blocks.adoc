@@ -1,4 +1,50 @@
-= Blocks
+= Blocks and other elements
+:stem:
+
+== Collapsible blocks
+
+.Basic collapsible block
+[%collapsible]
+====
+Details.
+
+Loads of details.
+====
+
+.Collapsible block, defaulted to open
+[%collapsible%open]
+====
+Details.
+
+Loads of details.
+====
+
+=== Collapsible enclosure
+
+.Collapsible code block
+[%collapsible]
+====
+[source,asciidoc]
+----
+Some code.
+----
+====
+
+=== Collapsible results
+
+[source,asciidoc]
+----
+Run this code.
+----
+
+.Result
+[%collapsible.result]
+====
+[source,console]
+----
+Voila!
+----
+====
 
 == Sidebar
 
@@ -13,20 +59,17 @@ A line with three single quotation marks (i.e., `'''`) is a special macro that i
 
 '''
 
-There are rare circumstances where a horizontal rule is required.
+Horizontal rules shouldn't be required in the normal course of writing documentation.
+However, they are an optional tool available in AsciiDoc that can be used to visually separate content in a pinch.
 
-== More blocks
-
-As you might have seen in the examples further up on this page -- any block can have a title.
-A block title is defined using a line of text above the block that starts with a dot.
-That dot cannot be followed by a space.
-For block images, the title is displayed below the block.
-For all other blocks, the title is typically displayed above it.
-
-=== Example block
+== Example block
 
 .Optional title
 ====
+An example block is useful for visually delineating content that illustrates a concept or showing the result of an operation.
+
+An example can contain any type of content and AsciiDoc syntax.
+
 Here's a sample AsciiDoc document:
 
 [source,asciidoc]
@@ -41,27 +84,10 @@ This guide provides...
 The document header is useful, but not required.
 ====
 
-=== Listing block
+== Blockquote
 
-.Optional title
-----
-This is a _delimited listing block_.
 
-The content inside is displayed as <pre> text.
-----
-
-=== Literal block
-
-.Optional title
-....
-error: 1954 Forbidden search
-absolutely fatal: operation lost in the dodecahedron of doom
-Would you like to try again? y/n
-....
-
-=== Blockquote
-
-[,'Famous Person. Cum dicat putant ne.','Cum dicat putant ne. https://example.com[Famous Person Website]']
+[,'Famous Person. Cum dicat putant ne.','Cum dicat putant ne. https://example.com[Famous Person Website^,role=external]']
 ____
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
@@ -81,6 +107,16 @@ ____
 
 == Equations and formulas (STEM)
 
+[NOTE]
+====
+The AsciiDoc language supports embedding math-mode macros from https://docs.mathjax.org/en/latest/input/tex/index.html[LaTeX^,role=external] and/or https://docs.mathjax.org/en/latest/input/asciimath.html[AsciiMath^,role=external] notation as block or inline elements.
+These elements act as passthroughs to preserve the expressions as entered.
+The expressions are then passed on to the converter to be processed and rendered for display using a STEM provider (e.g., MathJax).
+
+Although AsciiDoc supports STEM at the https://docs.asciidoctor.org/asciidoc/latest/stem/[language level^,role=external], the STEM provider must be configured in the output converter to render the expressions.
+See the discussion in https://gitlab.com/antora/antora/-/issues/184[Antora Issue #184^,role=external] to learn about the requirements for configuring STEM in Antora.
+====
+
 === Inline stem macro
 
 stem:[sqrt(4) = 2]
@@ -95,52 +131,3 @@ A matrix can be written as stem:[[[a,b\],[c,d\]\]((n),(k))].
 ++++
 sqrt(4) = 2
 ++++
-
-=== Mixing STEM notations
-
-.An e-xciting limit with LaTeX!
-[stem]
-++++
-\lim_{n \to \infty}\frac{n}{\sqrt[n]{n!}} = {\large e}
-++++
-
-.A basic square root with AsciiMath
-[asciimath]
-++++
-sqrt(4) = 2
-++++
-
-== Collapsible Blocks
-
-.Basic collapsible block
-[%collapsible]
-====
-Details.
-
-Loads of details.
-====
-
-.Collapsible `code block`
-[%collapsible]
-====
-[source,asciidoc]
-----
-Some code.
-----
-====
-
-== Collapsible results
-
-[source,asciidoc]
-----
-Run this code.
-----
-
-.Result
-[%collapsible.result]
-====
-[source,console]
-----
-Voila!
-----
-====
