@@ -154,31 +154,28 @@
     <span class="nav-text">Asciidoc Examples</span>
     <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/text-formatting.html">Text Formatting</a>
+    <a class="nav-link" href="/asciidoc/text-formatting.html">Text formatting</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/lists.html">Lists</a>
       </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tabs.html">Tabs</a>
+    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/images.html">Images and media</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/code.html">Code</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/tabsets.html">Tabsets</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/blocks.html">Blocks</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/admonitions.html">Admonitions</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/images.html">Images and Media</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/symbols.html">Symbol Replacements</a>
       </li>
 </ul>
   </li>
@@ -233,10 +230,40 @@
     <article class="doc">
   <h1 class="page">Tables</h1>
   <div class="sect1">
-<h2 id="_basic_tables"><a class="anchor" href="#_basic_tables"></a>Basic Tables</h2>
+<h2 id="basic-table"><a class="anchor" href="#basic-table"></a>Basic table</h2>
 <div class="sectionbody">
-<table class="tableblock frame-none grid-rows stretch">
-<caption class="title">Table 1. Default</caption>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Optional title</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="header-and-footer"><a class="anchor" href="#header-and-footer"></a>Header and footer</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table w/ header row</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -262,45 +289,92 @@
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stripes-even fit-content stretch">
-<caption class="title">Table 2. Striped</caption>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table w/ header column</caption>
 <colgroup>
-<col>
-<col>
-<col>
-<col>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Row 1, header column</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Row 2, header column</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Row 3, header column</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table w/ header row and header column</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Header</th>
-<th class="tableblock halign-left valign-top">Header</th>
-<th class="tableblock halign-left valign-top">Header</th>
-<th class="tableblock halign-left valign-top">Header</th>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Row 2, header column</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell</p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Row 3, header column</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table w/ footer row</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total = 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total = 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total = 3</p></td>
+</tr>
+</tfoot>
+</table>
 <table class="tableblock frame-all grid-all fit-content stretch">
-<caption class="title">Table 3. Footer</caption>
+<caption class="title">Table w/ header row, header column, and footer row</caption>
 <colgroup>
 <col>
 <col>
@@ -338,19 +412,58 @@
 </tr>
 </tfoot>
 </table>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Basic table</caption>
+</div>
+</div>
+<div class="sect1">
+<h2 id="striping"><a class="anchor" href="#striping"></a>Striping</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<caption class="title">Table w/ even striping</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
 <col style="width: 33.3334%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 4</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">Table w/ hover striping</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
@@ -363,8 +476,40 @@
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all fit-content stretch">
-<caption class="title">Table 5. Table w/ header row</caption>
+</div>
+</div>
+<div class="sect1">
+<h2 id="custom-width"><a class="anchor" href="#custom-width"></a>Custom width</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all" style="width: 75%;">
+<caption class="title">Table w/ width set to 75%</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table w/ autowidth</caption>
 <colgroup>
 <col>
 <col>
@@ -390,58 +535,187 @@
 </tr>
 </tbody>
 </table>
-<table id="dependencies" class="tableblock frame-all grid-all fit-content">
-<caption class="title">Table 6. Table w/ header row, footer row, and autowidth</caption>
+</div>
+</div>
+<div class="sect1">
+<h2 id="custom-borders"><a class="anchor" href="#custom-borders"></a>Custom borders</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="frame"><a class="anchor" href="#frame"></a>Frame</h3>
+<table class="tableblock frame-ends grid-all stretch">
+<caption class="title">Table w/ frame=ends</caption>
 <colgroup>
-<col>
-<col>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Library</th>
-<th class="tableblock halign-left valign-top">Version</th>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">eslint</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">^1.7.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">eslint-config-gulp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">^2.0.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">expect</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">^1.20.2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">istanbul</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">^0.4.3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">istanbul-coveralls</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">^1.0.3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">jscs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">^2.3.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
 </tr>
 </tbody>
-<tfoot>
+</table>
+<table class="tableblock frame-sides grid-all stretch">
+<caption class="title">Table w/ frame=sides</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">Total</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
 </tr>
-</tfoot>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-all stretch">
+<caption class="title">Table w/ frame=none</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="grid"><a class="anchor" href="#grid"></a>Grid</h3>
+<table class="tableblock frame-all grid-rows stretch">
+<caption class="title">Table w/ grid=rows</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-cols stretch">
+<caption class="title">Table w/ grid=cols</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-none stretch">
+<caption class="title">Table w/ grid=none</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_example_complex_tables"><a class="anchor" href="#_example_complex_tables"></a>Example: Complex tables</h2>
+<h2 id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="complex-table-w-asciidoc-content"><a class="anchor" href="#complex-table-w-asciidoc-content"></a>Complex table w/ AsciiDoc content</h3>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 7. Table w/ header row, variable column widths, and AsciiDoc content</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -488,7 +762,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p><a href="https://getfirefox.com">Get Firefox</a>!</p>
+<p><a href="https://getfirefox.com" class="external" target="_blank" rel="noopener">Get Firefox</a>!</p>
 </div></div></td>
 </tr>
 <tr>
@@ -528,8 +802,10 @@ public static JavaArchive createDeployment() {
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="table-w-formatted-aligned-and-merged-cells"><a class="anchor" href="#table-w-formatted-aligned-and-merged-cells"></a>Table w/ formatted, aligned, and merged cells</h3>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. Table w/ formatted, aligned, and merged cells</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -557,35 +833,10 @@ public static JavaArchive createDeployment() {
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-none grid-none stretch">
-<caption class="title">Table 9. Table w/ <code>frame=none</code>, <code>grid=none</code></caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Column 1, header row</th>
-<th class="tableblock halign-left valign-top">Column 2, header row</th>
-<th class="tableblock halign-left valign-top">Column 3, header row</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
-</tr>
-</tbody>
-</table>
+</div>
+<div class="sect2">
+<h3 id="nested-table"><a class="anchor" href="#nested-table"></a>Nested table</h3>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. Nested table</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -629,48 +880,7 @@ public static JavaArchive createDeployment() {
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<caption class="title">Table 11. Striped table (even striping)</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B3</p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">Table 12. Striped table (hover striping)</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B3</p></td>
-</tr>
-</tbody>
-</table>
+</div>
 </div>
 </div>
   <div class="sect1">

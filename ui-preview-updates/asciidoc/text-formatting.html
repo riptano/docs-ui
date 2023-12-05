@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Text Formatting :: Datastax Docs</title>
+    <title>Text formatting :: Datastax Docs</title>
     <meta name="generator" content="Antora 1.0.0">
 <link rel="stylesheet" href="/docs-ui/_/css/site.css">
 <link rel="stylesheet" href="/docs-ui/_/css/vendor/tabs.css">
@@ -14,7 +14,7 @@
     <meta property="og:site_name" content="DataStax Documentation">
     <meta property="og:type" content="article">
     <meta property="og:url" content="">
-    <meta property="og:title" content="Text Formatting :: Datastax Docs">
+    <meta property="og:title" content="Text formatting :: Datastax Docs">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <meta property="og:image:type" content="image/png">
@@ -25,7 +25,7 @@
     <meta name="twitter:site" content="@datastax">
     <meta name="twitter:creator" content="@datastax">
     <meta name="twitter:url" content="">
-    <meta name="twitter:title" content="Text Formatting :: Datastax Docs">
+    <meta name="twitter:title" content="Text formatting :: Datastax Docs">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <script type="application/ld+json">
@@ -34,7 +34,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "",
-        "name":"Text Formatting",
+        "name":"Text formatting",
         "inLanguage":"en-US",
         "reviewedBy":{
             "@type": "Corporation",
@@ -58,7 +58,7 @@
             "mainEntityOfPage": "true",
             "datePublished":"",
             "dateModified":"",
-            "headline": "Text Formatting",
+            "headline": "Text formatting",
             "description":"",
             "keywords":"",
             "image": "https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png",
@@ -154,31 +154,28 @@
     <span class="nav-text">Asciidoc Examples</span>
     <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/text-formatting.html">Text Formatting</a>
+    <a class="nav-link" href="/asciidoc/text-formatting.html">Text formatting</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/lists.html">Lists</a>
       </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tabs.html">Tabs</a>
+    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/images.html">Images and media</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/code.html">Code</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/tabsets.html">Tabsets</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/blocks.html">Blocks</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/admonitions.html">Admonitions</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/images.html">Images and Media</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/symbols.html">Symbol Replacements</a>
       </li>
 </ul>
   </li>
@@ -231,26 +228,47 @@
   </div>
 </aside>
     <article class="doc">
-  <h1 class="page">Text Formatting</h1>
-  <div class="sect1">
-<h2 id="_section_titles"><a class="anchor" href="#_section_titles"></a>Section Titles</h2>
+  <h1 class="page">Text formatting</h1>
+  <div id="preamble">
 <div class="sectionbody">
-<div class="sect2 rolename">
-<h3 id="_level_2_section_title"><a class="anchor" href="#_level_2_section_title"></a>Level 2 section title</h3>
+<div class="paragraph">
+<p>A paragraph can be defined as one or more lines of consecutive text that are logically grouped together.
+To differentiate between paragraphs, you simply need to insert at least one blank line between them.</p>
+</div>
+<div class="paragraph">
+<p>When creating paragraphs in AsciiDoc, it&#8217;s inefficient to write entire paragraphs on a single line.
+Instead, put each sentence on its own line, a technique known as <em>ventilated prose</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="level-1-section-title"><a class="anchor" href="#level-1-section-title"></a>Level 1 section title</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="level-2-section-title"><a class="anchor" href="#level-2-section-title"></a>Level 2 section title</h3>
 <div class="sect3">
-<h4 id="_level_3_section_title"><a class="anchor" href="#_level_3_section_title"></a>Level 3 section title</h4>
+<h4 id="level-3-section-title"><a class="anchor" href="#level-3-section-title"></a>Level 3 section title</h4>
 <div class="sect4">
-<h5 id="_level_4_section_title"><a class="anchor" href="#_level_4_section_title"></a>Level 4 section title</h5>
+<h5 id="level-4-section-title"><a class="anchor" href="#level-4-section-title"></a>Level 4 section title</h5>
 <div class="sect5">
-<h6 id="_level_5_section_title"><a class="anchor" href="#_level_5_section_title"></a>Level 5 section title</h6>
-<h2 id="_level_1_section_title_discrete" class="discrete">Level 1 section title (Discrete)</h2>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2 rolename">
-<h3 id="_example_section_title_w_custom_role"><a class="anchor" href="#_example_section_title_w_custom_role"></a>Example: Section title w/ custom role</h3>
+<h6 id="level-5-section-title"><a class="anchor" href="#level-5-section-title"></a>Level 5 section title</h6>
 
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 header-noline">
+<h2 id="level-1-section-title-w-custom-role-no-line"><a class="anchor" href="#level-1-section-title-w-custom-role-no-line"></a>Level 1 section title w/ custom role (no line)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Apply <code>[.header-noline]</code> to level 1 section titles to remove the line that normally appears below the section title.</p>
+</div>
+<h2 id="level-1-section-title-discrete" class="discrete">Level 1 section title (discrete)</h2>
+<div class="paragraph">
+<p>Applying the <code>[discrete]</code> style effectively demotes the section title to a normal heading.
+Discrete headings are not part of the section hierarchy, and they are not included in the table of contents, page TOC, etc.</p>
 </div>
 </div>
 </div>
@@ -258,57 +276,25 @@
 <h2 id="text-formatting"><a class="anchor" href="#text-formatting"></a>Text formatting</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Nominavi luptatum eos, an vim hinc philosophia intellegebat.
-Lorem pertinacia <code>expetenda</code> et nec, <span class="underline">wisi</span> illud <span class="line-through">sonet</span> qui ea.
-H<sub>2</sub>0.
-E = mc<sup>2</sup>.</p>
-</div>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Constrained bold, italic, and monospace</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>It has <strong>strong</strong> significance to me.</p>
+<p>A bold <strong>word</strong>, and a bold <strong>phrase of text</strong>.
+Bold c<strong>hara</strong>cter<strong>s</strong> within a word.</p>
 </div>
 <div class="paragraph">
-<p>I <em>cannot</em> stress this enough.</p>
+<p>An italic <em>word</em>, and an italic <em>phrase of text</em>.
+Italic c<em>hara</em>cter<em>s</em> within a word.</p>
 </div>
 <div class="paragraph">
-<p>Type <code>OK</code> to accept.</p>
+<p>A monospace <code>word</code>, and a monospace <code>phrase of text</code>.
+Monospace c<code>hara</code>cter<code>s</code> within a word.</p>
 </div>
 <div class="paragraph">
-<p>That <strong><em>really</em></strong> has to go.</p>
+<p>That <strong><em>really</em></strong> has to go.
+Can&#8217;t pick one?
+Let&#8217;s use them <code><strong><em>all</em></strong></code>.</p>
 </div>
 <div class="paragraph">
-<p>Can&#8217;t pick one? Let&#8217;s use them <code><strong><em>all</em></strong></code>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unconstrained bold, italic, and monospace</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate, and <strong>D</strong>elete (CRUD)</p>
-</div>
-<div class="paragraph">
-<p>That&#8217;s fan<em>freakin</em>tastic!</p>
-</div>
-<div class="paragraph">
-<p>Don&#8217;t pass generic <code>Object</code>s to methods that accept <code>String</code>s!</p>
-</div>
-<div class="paragraph">
-<p>It was Beatle<strong><em>mania</em></strong>!</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Highlight, underline, strikethrough, and custom role</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Mark my words, <mark>automation is essential</mark>.</p>
-</div>
-<div class="paragraph">
-<p><mark>Mark</mark>up refers to text that contains formatting <mark>mark</mark>s.</p>
+<p>A highlighted <mark>word</mark>, and a highlighted <mark>phrase of text</mark>.
+Highlighted c<mark>hara</mark>cter<mark>s</mark> within a word.</p>
 </div>
 <div class="paragraph">
 <p>Where did all the <span class="underline">cores</span> go?</p>
@@ -317,77 +303,87 @@ E = mc<sup>2</sup>.</p>
 <p>We need <span class="line-through">ten</span> twenty VMs.</p>
 </div>
 <div class="paragraph">
-<p>A <span class="myrole">custom role</span> must be fulfilled by the theme.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Superscript and subscript</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><sup>super</sup>script</p>
 </div>
 <div class="paragraph">
 <p><sub>sub</sub>script</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Smart quotes and apostrophes</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>&#8220;double curved quotes&#8221;</p>
 </div>
 <div class="paragraph">
-<p>&#8216;single curved quotes&#8217;</p>
+<p>&#8220;Well the H<sub>2</sub>O formula written on their whiteboard could be part
+of a shopping list, but I don&#8217;t think the local bodega sells
+E=mc<sup>2</sup>,&#8221; Lazarus replied.</p>
 </div>
+<div class="sect2">
+<h3 id="custom-inline-styles"><a class="anchor" href="#custom-inline-styles"></a>Custom inline styles</h3>
 <div class="paragraph">
-<p>Olaf&#8217;s desk was a mess.</p>
+<p>A <span class="myrole">custom role</span> must be fulfilled by the theme.</p>
 </div>
-<div class="paragraph">
-<p>A <code>std::vector</code>&#8217;s size is the number of items it contains.</p>
 </div>
-<div class="paragraph">
-<p>All of the werewolves&#8217; desks were a mess.</p>
-</div>
-<div class="paragraph">
-<p>Olaf had been with the company since the &#8217;00s.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_links"><a class="anchor" href="#_links"></a>Links</h2>
+<h2 id="links"><a class="anchor" href="#links"></a>Links</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_internal_link"><a class="anchor" href="#_internal_link"></a>Internal link</h3>
+<h3 id="internal-link"><a class="anchor" href="#internal-link"></a>Internal link</h3>
 <div class="paragraph">
 <p>Instead of having to enclose text within <a href="#text-formatting">tags or special characters</a>, you can focus on expressing your ideas and content in a clear and concise manner.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_external_link"><a class="anchor" href="#_external_link"></a>External link</h3>
+<h3 id="external-link"><a class="anchor" href="#external-link"></a>External link</h3>
 <div class="paragraph">
-<p>By separating paragraphs with blank lines, you visually <a href="https://www.datastax.com" class="external" target="_blank" rel="noopener">distinguish each paragraph</a></p>
+<p>External links have a special icon and open in a new tab <a href="https://www.datastax.com" class="external" target="_blank" rel="noopener">when clicked</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>An <em>external link</em> is any link that targets an address outside of the <code>docs.datastax.com</code> subdomain.
+External links should always have the following behavior, regardless of any AsciiDoc attributes that a writer might apply to them:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Different visual styling than an internal link, e.g. an <code>open_in_new</code> icon after the link text.</p>
+</li>
+<li>
+<p>Open in a new tab when clicked.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>By separating paragraphs with blank lines, you visually <a href="https://www.datastax.com" target="_blank" rel="noopener">distinguish each paragraph</a></p>
+<p>The links in the example sentences below all target the same external URL&#8201;&#8212;&#8201;<code>https://www.datastax.com</code>&#8201;&#8212;&#8201;however, they each have different AsciiDoc attributes applied to them.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">External links have a special icon and open in a new tab https://www.datastax.com[when clicked,role=external,window=_blank].
+External links have a special icon and open in a new tab https://www.datastax.com[when clicked^].
+External links have a special icon and open in a new tab https://www.datastax.com[when clicked].</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>By separating paragraphs with blank lines, you visually <a href="https://www.datastax.com">distinguish each paragraph</a></p>
+<p>The UI should disregard these attributes and apply the same styling and behavior to each link.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_unresolved_link"><a class="anchor" href="#_unresolved_link"></a>Unresolved link</h3>
+<h3 id="unresolved-link"><a class="anchor" href="#unresolved-link"></a>Unresolved link</h3>
 <div class="paragraph">
-<p>Vestibulum consectetur nec urna a luctus.
-Quisque pharetra tristique arcu fringilla dapibus.
-<a href="https://example.org" class="unresolved">Curabitur</a> ut massa aliquam, cursus enim et, accumsan lectus.
-Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.</p>
+<p>If an xref fails to resolve, the <a href="https://example.org" class="unresolved">link text</a> is displayed as-is, but in red.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_keyboard_button_and_menu_macros"><a class="anchor" href="#_keyboard_button_and_menu_macros"></a>Keyboard, button, and menu macros</h2>
+<h2 id="keyboard-button-and-menu-macros"><a class="anchor" href="#keyboard-button-and-menu-macros"></a>Keyboard, button, and menu macros</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To save the file, select <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Save</b></span>.
@@ -404,18 +400,114 @@ Press <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>T</kbd></span> to open a new tab
 </div>
 </div>
 <div class="sect1">
-<h2 id="_footnote"><a class="anchor" href="#_footnote"></a>Footnote</h2>
+<h2 id="footnote"><a class="anchor" href="#footnote"></a>Footnote</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Eum an doctus maiestatis efficiantur.
-Eu mea inani iriure.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+<p>AsciiDoc provides the <code>footnote</code> macro for adding footnotes to your document.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="symbol-replacements"><a class="anchor" href="#symbol-replacements"></a>Symbol replacements</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-center valign-top">Syntax</th>
+<th class="tableblock halign-center valign-top">Unicode Replacement</th>
+<th class="tableblock halign-center valign-top">Rendered</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copyright</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(C)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&amp;#169;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#169;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registered</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(R)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&amp;#174;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#174;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trademark</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">(TM)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&amp;#8482;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8482;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Em dash</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">--</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&amp;#8212;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only replaced if between two word characters, between a word character and a line boundary, or flanked by spaces.</p>
+<p class="tableblock">When flanked by space characters (e.g., <code>a -- b</code>), the normal spaces are replaced by thin spaces (&amp;#8201;).
+Otherwise, the em dash is followed by a zero-width space (&amp;#8203;) to provide a break opportunity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ellipsis</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">...</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&amp;#8230;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The ellipsis is followed by a zero-width space (&amp;#8203;) to provide a break opportunity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single right arrow</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">-&gt;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&amp;#8594;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8594;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Double right arrow</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">=&gt;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&amp;#8658;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8658;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single left arrow</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;-</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&amp;#8592;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8592;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Double left arrow</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&lt;=</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&amp;#8656;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8656;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Typographic apostrophe</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Sam's</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Sam&amp;#8217;s</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Sam&#8217;s</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The typewriter apostrophe is replaced with the typographic (aka curly or smart) apostrophe.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae! Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<a href="#_footnoteref_1">1</a>. Look! A footnote!
 </div>
 </div>
   <div class="sect1">

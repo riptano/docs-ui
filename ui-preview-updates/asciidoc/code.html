@@ -154,31 +154,28 @@
     <span class="nav-text">Asciidoc Examples</span>
     <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/text-formatting.html">Text Formatting</a>
+    <a class="nav-link" href="/asciidoc/text-formatting.html">Text formatting</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/lists.html">Lists</a>
       </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tabs.html">Tabs</a>
+    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/images.html">Images and media</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/code.html">Code</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/tabsets.html">Tabsets</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/blocks.html">Blocks</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/admonitions.html">Admonitions</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/images.html">Images and Media</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/symbols.html">Symbol Replacements</a>
       </li>
 </ul>
   </li>
@@ -233,16 +230,35 @@
     <article class="doc">
   <h1 class="page">Code</h1>
   <div class="sect1">
-<h2 id="_inline_code"><a class="anchor" href="#_inline_code"></a>Inline code</h2>
+<h2 id="inline-code"><a class="anchor" href="#inline-code"></a>Inline code</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Output literal monospace text, such as <code>my-python-function</code> or <code>initial-scale=1.0</code>.</p>
+<p>Monospace text formatting is typically used to represent text shown in <code>computer terminals</code> or <code>code editors</code> (often referred to as a codespan).</p>
+</div>
+<div class="paragraph">
+<p>Like other inline text formatting, you can add multiple emphasis styles to <code>monospace</code> text as long as the <code><strong>syntax</strong></code> is <code><em>placed</em></code> in the correct <code><strong><em>order</em></strong></code>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_code_blocks"><a class="anchor" href="#_code_blocks"></a>Code blocks</h2>
+<h2 id="code-blocks"><a class="anchor" href="#code-blocks"></a>Code blocks</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="basic-code-block-console"><a class="anchor" href="#basic-code-block-console"></a>Basic code block (console)</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">A code block with [source,console].</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Optional title</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">A code block with a title.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="language-code-block"><a class="anchor" href="#language-code-block"></a>Language code block</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
@@ -258,51 +274,76 @@
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Console code block</div>
+<div class="title">Language code block w/ title</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ pip install astra-vector
-$ python3</code></pre>
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name": "module-name",
+  "version": "10.0.1",
+  "description": "An example module to illustrate the usage of package.json",
+  "author": "Author Name &lt;author@example.com&gt;",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock nolang">
+<div class="title">Language code block w/ hidden language</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+
+        System.out.println("Current Date and Time is: " + current);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock nolang">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Language code block with no title and hidden language name
+public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+
+        System.out.println("Current Date and Time is: " + current);
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="line-wrapping"><a class="anchor" href="#line-wrapping"></a>Line wrapping</h3>
+<div class="listingblock">
+<div class="title">Line wrapping is turned off by default</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</code></pre>
 </div>
 </div>
 <div class="listingblock wrap">
-<div class="title">Text does not wrap by default</div>
+<div class="title">Code block w/ forced wrapping</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</code></pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</code></pre>
 </div>
 </div>
-<div class="listingblock nolang">
-<div class="title">Hide language name</div>
+</div>
+<div class="sect2">
+<h3 id="text-formatting"><a class="anchor" href="#text-formatting"></a>Text formatting</h3>
+<div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// A title with hidden language name
-public class CurrentDateTime {
-    public static void main(String[] args) {
-        LocalDateTime current = LocalDateTime.now();
-
-        System.out.println("Current Date and Time is: " + current);
-    }
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd /Users/<strong><em>your-name</em></strong>/repos/astra-vector-docs/build/site</code></pre>
 </div>
-</div>
-<div class="listingblock nolang">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// No title with hidden language name
-public class CurrentDateTime {
-    public static void main(String[] args) {
-        LocalDateTime current = LocalDateTime.now();
-
-        System.out.println("Current Date and Time is: " + current);
-    }
-}</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_callouts"><a class="anchor" href="#_callouts"></a>Callouts</h2>
+<h2 id="callouts"><a class="anchor" href="#callouts"></a>Callouts</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">vfs
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">vfs
   .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
   .pipe(tap((file) =&gt; { <i class="conum" data-value="1"></i><b>(1)</b>
     file.contents = browserify(file.relative, { basedir: 'src', detectGlobals: false }).bundle()
@@ -324,6 +365,66 @@ public class CurrentDateTime {
 Uglify can only work with buffers, not streams.</td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="listing-and-literal-blocks"><a class="anchor" href="#listing-and-literal-blocks"></a>Listing and literal blocks</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Listing blocks and literal blocks display the text you write exactly as you see it in the source.
+Literal text is treated as preformatted text.
+The text is presented in a fixed-width font and endlines are preserved.
+Only special characters and callouts are replaced when the document is converted.</p>
+</div>
+<div class="paragraph">
+<p>The only meaningful difference between a listing block and a literal block is that you can turn a listing block into a <a href="#code-blocks">code block</a> and apply syntax highlighting.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="listing-block"><a class="anchor" href="#listing-block"></a>Listing block</h3>
+<div class="literalblock">
+<div class="content">
+<pre>When a line begins with one or more spaces it is displayed as a listing block.</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>This is a delimited _listing_ block.
+
+The content inside is displayed as &lt;pre&gt; text.</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Optional title</div>
+<div class="content">
+<pre>This is a delimited _listing_ block with a title.</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="literal-block"><a class="anchor" href="#literal-block"></a>Literal block</h3>
+<div class="literalblock">
+<div class="content">
+<pre>This is a delimited _literal_ block.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="title">Optional title</div>
+<div class="content">
+<pre>This is a delimited _literal_ block with a title.</pre>
+</div>
+</div>
 </div>
 </div>
 </div>

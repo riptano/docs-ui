@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Blocks :: Datastax Docs</title>
+    <title>Blocks and other elements :: Datastax Docs</title>
     <meta name="generator" content="Antora 1.0.0">
 <link rel="stylesheet" href="/docs-ui/_/css/site.css">
 <link rel="stylesheet" href="/docs-ui/_/css/vendor/tabs.css">
@@ -14,7 +14,7 @@
     <meta property="og:site_name" content="DataStax Documentation">
     <meta property="og:type" content="article">
     <meta property="og:url" content="">
-    <meta property="og:title" content="Blocks :: Datastax Docs">
+    <meta property="og:title" content="Blocks and other elements :: Datastax Docs">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <meta property="og:image:type" content="image/png">
@@ -25,7 +25,7 @@
     <meta name="twitter:site" content="@datastax">
     <meta name="twitter:creator" content="@datastax">
     <meta name="twitter:url" content="">
-    <meta name="twitter:title" content="Blocks :: Datastax Docs">
+    <meta name="twitter:title" content="Blocks and other elements :: Datastax Docs">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <script type="application/ld+json">
@@ -34,7 +34,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "",
-        "name":"Blocks",
+        "name":"Blocks and other elements",
         "inLanguage":"en-US",
         "reviewedBy":{
             "@type": "Corporation",
@@ -58,7 +58,7 @@
             "mainEntityOfPage": "true",
             "datePublished":"",
             "dateModified":"",
-            "headline": "Blocks",
+            "headline": "Blocks and other elements",
             "description":"",
             "keywords":"",
             "image": "https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png",
@@ -154,31 +154,28 @@
     <span class="nav-text">Asciidoc Examples</span>
     <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/text-formatting.html">Text Formatting</a>
+    <a class="nav-link" href="/asciidoc/text-formatting.html">Text formatting</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/lists.html">Lists</a>
       </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tabs.html">Tabs</a>
+    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/images.html">Images and media</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/code.html">Code</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/tabsets.html">Tabsets</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/blocks.html">Blocks</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/admonitions.html">Admonitions</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/images.html">Images and Media</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/symbols.html">Symbol Replacements</a>
       </li>
 </ul>
   </li>
@@ -231,9 +228,67 @@
   </div>
 </aside>
     <article class="doc">
-  <h1 class="page">Blocks</h1>
+  <h1 class="page">Blocks and other elements</h1>
   <div class="sect1">
-<h2 id="_sidebar"><a class="anchor" href="#_sidebar"></a>Sidebar</h2>
+<h2 id="collapsible-blocks"><a class="anchor" href="#collapsible-blocks"></a>Collapsible blocks</h2>
+<div class="sectionbody">
+<details>
+<summary class="title">Basic collapsible block</summary>
+<div class="content">
+<div class="paragraph">
+<p>Details.</p>
+</div>
+<div class="paragraph">
+<p>Loads of details.</p>
+</div>
+</div>
+</details>
+<details open>
+<summary class="title">Collapsible block, defaulted to open</summary>
+<div class="content">
+<div class="paragraph">
+<p>Details.</p>
+</div>
+<div class="paragraph">
+<p>Loads of details.</p>
+</div>
+</div>
+</details>
+<div class="sect2">
+<h3 id="collapsible-enclosure"><a class="anchor" href="#collapsible-enclosure"></a>Collapsible enclosure</h3>
+<details>
+<summary class="title">Collapsible code block</summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Some code.</code></pre>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="collapsible-results"><a class="anchor" href="#collapsible-results"></a>Collapsible results</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Run this code.</code></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">Result</summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Voila!</code></pre>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sidebar"><a class="anchor" href="#sidebar"></a>Sidebar</h2>
 <div class="sectionbody">
 <div class="sidebarblock">
 <div class="content">
@@ -246,32 +301,30 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_horizontal_rule"><a class="anchor" href="#_horizontal_rule"></a>Horizontal rule</h2>
+<h2 id="horizontal-rule"><a class="anchor" href="#horizontal-rule"></a>Horizontal rule</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A line with three single quotation marks (i.e., <code>'''</code>) is a special macro that inserts a thematic break (aka horizontal rule):</p>
 </div>
 <hr>
 <div class="paragraph">
-<p>There are rare circumstances where a horizontal rule is required.</p>
+<p>Horizontal rules shouldn&#8217;t be required in the normal course of writing documentation.
+However, they are an optional tool available in AsciiDoc that can be used to visually separate content in a pinch.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_more_blocks"><a class="anchor" href="#_more_blocks"></a>More blocks</h2>
+<h2 id="example-block"><a class="anchor" href="#example-block"></a>Example block</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>As you might have seen in the examples further up on this page&#8201;&#8212;&#8201;any block can have a title.
-A block title is defined using a line of text above the block that starts with a dot.
-That dot cannot be followed by a space.
-For block images, the title is displayed below the block.
-For all other blocks, the title is typically displayed above it.</p>
-</div>
-<div class="sect2">
-<h3 id="_example_block"><a class="anchor" href="#_example_block"></a>Example block</h3>
 <div class="exampleblock">
-<div class="title">Example 1. Optional title</div>
+<div class="title">Optional title</div>
 <div class="content">
+<div class="paragraph">
+<p>An example block is useful for visually delineating content that illustrates a concept or showing the result of an operation.</p>
+</div>
+<div class="paragraph">
+<p>An example can contain any type of content and AsciiDoc syntax.</p>
+</div>
 <div class="paragraph">
 <p>Here&#8217;s a sample AsciiDoc document:</p>
 </div>
@@ -290,30 +343,10 @@ This guide provides...</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_listing_block"><a class="anchor" href="#_listing_block"></a>Listing block</h3>
-<div class="listingblock">
-<div class="title">Optional title</div>
-<div class="content">
-<pre>This is a _delimited listing block_.
-
-The content inside is displayed as &lt;pre&gt; text.</pre>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_literal_block"><a class="anchor" href="#_literal_block"></a>Literal block</h3>
-<div class="literalblock">
-<div class="title">Optional title</div>
-<div class="content">
-<pre>error: 1954 Forbidden search
-absolutely fatal: operation lost in the dodecahedron of doom
-Would you like to try again? y/n</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_blockquote"><a class="anchor" href="#_blockquote"></a>Blockquote</h3>
+<div class="sect1">
+<h2 id="blockquote"><a class="anchor" href="#blockquote"></a>Blockquote</h2>
+<div class="sectionbody">
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
@@ -327,12 +360,11 @@ Quisque porta facilisis tortor, vitae bibendum velit fringilla vitae!</p>
 </blockquote>
 <div class="attribution">
 &#8212; Famous Person. Cum dicat putant ne.<br>
-<cite>Cum dicat putant ne. <a href="https://example.com">Famous Person Website</a></cite>
-</div>
+<cite>Cum dicat putant ne. <a href="https://example.com" class="external" target="_blank" rel="noopener">Famous Person Website</a></cite>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_verse"><a class="anchor" href="#_verse"></a>Verse</h3>
+<h3 id="verse"><a class="anchor" href="#verse"></a>Verse</h3>
 <div class="verseblock">
 <pre class="content">The fog comes
 on little cat feet.</pre>
@@ -341,10 +373,30 @@ on little cat feet.</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_equations_and_formulas_stem"><a class="anchor" href="#_equations_and_formulas_stem"></a>Equations and formulas (STEM)</h2>
+<h2 id="equations-and-formulas-stem"><a class="anchor" href="#equations-and-formulas-stem"></a>Equations and formulas (STEM)</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The AsciiDoc language supports embedding math-mode macros from <a href="https://docs.mathjax.org/en/latest/input/tex/index.html" class="external" target="_blank" rel="noopener">LaTeX</a> and/or <a href="https://docs.mathjax.org/en/latest/input/asciimath.html" class="external" target="_blank" rel="noopener">AsciiMath</a> notation as block or inline elements.
+These elements act as passthroughs to preserve the expressions as entered.
+The expressions are then passed on to the converter to be processed and rendered for display using a STEM provider (e.g., MathJax).</p>
+</div>
+<div class="paragraph">
+<p>Although AsciiDoc supports STEM at the <a href="https://docs.asciidoctor.org/asciidoc/latest/stem/" class="external" target="_blank" rel="noopener">language level</a>, the STEM provider must be configured in the output converter to render the expressions.
+See the discussion in <a href="https://gitlab.com/antora/antora/-/issues/184" class="external" target="_blank" rel="noopener">Antora Issue #184</a> to learn more about the requirements for configuring STEM in Antora.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
-<h3 id="_inline_stem_macro"><a class="anchor" href="#_inline_stem_macro"></a>Inline stem macro</h3>
+<h3 id="inline-stem-macro"><a class="anchor" href="#inline-stem-macro"></a>Inline stem macro</h3>
 <div class="paragraph">
 <p>\$sqrt(4) = 2\$</p>
 </div>
@@ -356,74 +408,13 @@ on little cat feet.</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_block_stem_content"><a class="anchor" href="#_block_stem_content"></a>Block STEM content</h3>
+<h3 id="block-stem-content"><a class="anchor" href="#block-stem-content"></a>Block STEM content</h3>
 <div class="stemblock">
 <div class="content">
 \$sqrt(4) = 2\$
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_mixing_stem_notations"><a class="anchor" href="#_mixing_stem_notations"></a>Mixing STEM notations</h3>
-<div class="stemblock">
-<div class="title">An e-xciting limit with LaTeX!</div>
-<div class="content">
-\$\lim_{n \to \infty}\frac{n}{\sqrt[n]{n!}} = {\large e}\$
-</div>
-</div>
-<div class="stemblock">
-<div class="title">A basic square root with AsciiMath</div>
-<div class="content">
-\$sqrt(4) = 2\$
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_collapsible_blocks"><a class="anchor" href="#_collapsible_blocks"></a>Collapsible Blocks</h2>
-<div class="sectionbody">
-<details>
-<summary class="title">Basic collapsible block</summary>
-<div class="content">
-<div class="paragraph">
-<p>Details.</p>
-</div>
-<div class="paragraph">
-<p>Loads of details.</p>
-</div>
-</div>
-</details>
-<details>
-<summary class="title">Collapsible <code>code block</code></summary>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Some code.</code></pre>
-</div>
-</div>
-</div>
-</details>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_collapsible_results"><a class="anchor" href="#_collapsible_results"></a>Collapsible results</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Run this code.</code></pre>
-</div>
-</div>
-<details class="result">
-<summary class="title">Result</summary>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Voila!</code></pre>
-</div>
-</div>
-</div>
-</details>
 </div>
 </div>
   <div class="sect1">

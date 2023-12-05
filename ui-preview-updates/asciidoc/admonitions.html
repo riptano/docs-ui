@@ -154,31 +154,28 @@
     <span class="nav-text">Asciidoc Examples</span>
     <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/text-formatting.html">Text Formatting</a>
+    <a class="nav-link" href="/asciidoc/text-formatting.html">Text formatting</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/lists.html">Lists</a>
       </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tabs.html">Tabs</a>
+    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/images.html">Images and media</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/code.html">Code</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/tabsets.html">Tabsets</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/blocks.html">Blocks</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/admonitions.html">Admonitions</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/images.html">Images and Media</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/symbols.html">Symbol Replacements</a>
       </li>
 </ul>
   </li>
@@ -233,7 +230,7 @@
     <article class="doc">
   <h1 class="page">Admonitions</h1>
   <div class="sect1">
-<h2 id="_basic_admonitions"><a class="anchor" href="#_basic_admonitions"></a>Basic admonitions</h2>
+<h2 id="basic-admonitions"><a class="anchor" href="#basic-admonitions"></a>Basic admonitions</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
@@ -242,7 +239,10 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-An admonition draws the reader&#8217;s attention to auxiliary information.
+<div class="title">Optional title</div>
+<div class="paragraph">
+<p>An admonition draws the reader&#8217;s attention to auxiliary information.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -298,8 +298,10 @@ The software you&#8217;re about to use is untested.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_complex_admonition"><a class="anchor" href="#_complex_admonition"></a>Complex admonition</h2>
+<h2 id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="complex-admonition"><a class="anchor" href="#complex-admonition"></a>Complex admonition</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -307,8 +309,9 @@ The software you&#8217;re about to use is untested.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
+<div class="title">The title of a complex admonition</div>
 <div class="paragraph">
-<p>An admonition block may contain complex content, like <a href="#lists">lists</a> and <a href="#tables">tables</a>.</p>
+<p>An admonition block may contain complex content, like lists and tables.</p>
 </div>
 <div class="ulist">
 <div class="title">A list</div>
@@ -346,7 +349,7 @@ The software you&#8217;re about to use is untested.
 </ul>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. A table</caption>
+<caption class="title">A table</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -368,7 +371,7 @@ The software you&#8217;re about to use is untested.
 <div class="listingblock">
 <div class="title">A code block</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">vfs
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">vfs
   .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
   .pipe(tap((file) =&gt; { <i class="conum" data-value="1"></i><b>(1)</b>
     file.contents = browserify(file.relative, { basedir: 'src', detectGlobals: false }).bundle()
@@ -383,11 +386,11 @@ The software you&#8217;re about to use is untested.
 </tr>
 </table>
 </div>
-<div class="admonitionblock tip">
+<div class="admonitionblock caution">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
 <div class="title">Another admonition</div>
@@ -403,6 +406,7 @@ Varying the delimiter line length allows the parser to distinguish one block fro
 </td>
 </tr>
 </table>
+</div>
 </div>
 </div>
 </div>

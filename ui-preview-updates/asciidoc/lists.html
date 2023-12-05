@@ -154,31 +154,28 @@
     <span class="nav-text">Asciidoc Examples</span>
     <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/text-formatting.html">Text Formatting</a>
+    <a class="nav-link" href="/asciidoc/text-formatting.html">Text formatting</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/lists.html">Lists</a>
       </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tabs.html">Tabs</a>
+    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/images.html">Images and media</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/code.html">Code</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/tabsets.html">Tabsets</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/blocks.html">Blocks</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/admonitions.html">Admonitions</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/images.html">Images and Media</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/symbols.html">Symbol Replacements</a>
       </li>
 </ul>
   </li>
@@ -233,7 +230,7 @@
     <article class="doc">
   <h1 class="page">Lists</h1>
   <div class="sect1">
-<h2 id="_unordered_list"><a class="anchor" href="#_unordered_list"></a>Unordered list</h2>
+<h2 id="unordered-list"><a class="anchor" href="#unordered-list"></a>Unordered list</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -318,7 +315,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ordered_list"><a class="anchor" href="#_ordered_list"></a>Ordered list</h2>
+<h2 id="ordered-list"><a class="anchor" href="#ordered-list"></a>Ordered list</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -382,11 +379,43 @@
 </li>
 </ol>
 </div>
-<div class="sect2">
-<h3 id="_ordered_list_numeration_styles"><a class="anchor" href="#_ordered_list_numeration_styles"></a>Ordered list numeration styles</h3>
-<div class="openblock scrolltable">
+</div>
+</div>
+<div class="sect1">
+<h2 id="customized-markers-and-numeration"><a class="anchor" href="#customized-markers-and-numeration"></a>Customized markers and numeration</h2>
+<div class="sectionbody">
+<div class="ulist square">
+<div class="title">Unordered list w/ customized marker (square)</div>
+<ul class="square">
+<li>
+<p>ultricies sociosqu tristique integer</p>
+</li>
+<li>
+<p>lacus volutpat semper porttitor aliquet ornare primis nulla enim</p>
+</li>
+<li>
+<p>etiam pulvinar inceptos velit quisque aptent himenaeos</p>
+</li>
+</ul>
+</div>
+<div class="olist upperalpha">
+<div class="title">Ordered list w/ customized numeration (upperalpha)</div>
+<ol class="upperalpha" type="A">
+<li>
+<p>potenti donec cubilia tincidunt</p>
+</li>
+<li>
+<p>etiam pulvinar inceptos velit quisque aptent himenaeos</p>
+</li>
+<li>
+<p>lacus volutpat semper porttitor aliquet ornare primis nulla enim</p>
+</li>
+</ol>
+</div>
+<div class="sidebarblock">
 <div class="content">
-<table class="tableblock frame-all grid-all stretch">
+<div class="title">Ordered list numeration styles</div>
+<table class="tableblock frame-all grid-all stretch scrolltable">
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 16.6666%;">
@@ -500,43 +529,10 @@
 </table>
 </div>
 </div>
-<div class="olist upperalpha">
-<div class="title">Ordered list w/ customized numeration</div>
-<ol class="upperalpha" type="A">
-<li>
-<p>potenti donec cubilia tincidunt</p>
-</li>
-<li>
-<p>etiam pulvinar inceptos velit quisque aptent himenaeos</p>
-</li>
-<li>
-<p>lacus volutpat semper porttitor aliquet ornare primis nulla enim</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Natum facilisis theophrastus an duo.
-No sea, at invenire voluptaria mnesarchum has.</p>
-</div>
-<div class="ulist square">
-<div class="title">Unordered list w/ customized marker</div>
-<ul class="square">
-<li>
-<p>ultricies sociosqu tristique integer</p>
-</li>
-<li>
-<p>lacus volutpat semper porttitor aliquet ornare primis nulla enim</p>
-</li>
-<li>
-<p>etiam pulvinar inceptos velit quisque aptent himenaeos</p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_description_list"><a class="anchor" href="#_description_list"></a>Description list</h2>
+<h2 id="description-list"><a class="anchor" href="#description-list"></a>Description list</h2>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
@@ -558,7 +554,7 @@ No sea, at invenire voluptaria mnesarchum has.</p>
 </dl>
 </div>
 <div class="sect2">
-<h3 id="_horizontal_description_list_unconstrained"><a class="anchor" href="#_horizontal_description_list_unconstrained"></a>Horizontal description list (unconstrained)</h3>
+<h3 id="horizontal-description-list-unconstrained"><a class="anchor" href="#horizontal-description-list-unconstrained"></a>Horizontal description list (unconstrained)</h3>
 <div class="hdlist">
 <table>
 <tr>
@@ -592,7 +588,7 @@ RAM
 </div>
 </div>
 <div class="sect2">
-<h3 id="_horizontal_description_list_constrained"><a class="anchor" href="#_horizontal_description_list_constrained"></a>Horizontal description list (constrained)</h3>
+<h3 id="horizontal-description-list-constrained"><a class="anchor" href="#horizontal-description-list-constrained"></a>Horizontal description list (constrained)</h3>
 <div class="hdlist">
 <table>
 <colgroup>
@@ -621,7 +617,7 @@ A long term that wraps across multiple lines
 </div>
 </div>
 <div class="sect1">
-<h2 id="_question_and_answer_list"><a class="anchor" href="#_question_and_answer_list"></a>Question and Answer List</h2>
+<h2 id="question-and-answer-list"><a class="anchor" href="#question-and-answer-list"></a>Question and answer list</h2>
 <div class="sectionbody">
 <div class="qlist qanda">
 <ol>
@@ -639,7 +635,7 @@ A long term that wraps across multiple lines
 </div>
 </div>
 <div class="sect1">
-<h2 id="_checklist"><a class="anchor" href="#_checklist"></a>Checklist</h2>
+<h2 id="checklist"><a class="anchor" href="#checklist"></a>Checklist</h2>
 <div class="sectionbody">
 <div class="ulist checklist">
 <ul class="checklist">
@@ -671,8 +667,10 @@ A long term that wraps across multiple lines
 </div>
 </div>
 <div class="sect1">
-<h2 id="_example_mixed_list"><a class="anchor" href="#_example_mixed_list"></a>Example: Mixed list</h2>
+<h2 id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="mixed-list"><a class="anchor" href="#mixed-list"></a>Mixed list</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Operating Systems</dt>
@@ -761,12 +759,9 @@ A long term that wraps across multiple lines
 </dl>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_example_complex_lists"><a class="anchor" href="#_example_complex_lists"></a>Example: Complex lists</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="drop-the-principal-text"><a class="anchor" href="#drop-the-principal-text"></a>Drop the principal text</h3>
 <div class="olist arabic">
-<div class="title">Drop the principal text</div>
 <ol class="arabic">
 <li>
 <p></p>
@@ -786,8 +781,10 @@ A long term that wraps across multiple lines
 </li>
 </ol>
 </div>
+</div>
+<div class="sect2">
+<h3 id="list-continuation-complex-list"><a class="anchor" href="#list-continuation-complex-list"></a>List continuation (complex list)</h3>
 <div class="ulist">
-<div class="title">List continuation</div>
 <ul>
 <li>
 <p>Every list item has at least one paragraph of content,
@@ -866,6 +863,7 @@ The header is optional.
 </table>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-layout="tutorial">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Lang Chain :: Datastax Docs</title>
+    <title>LangChain :: Datastax Docs</title>
     <meta name="generator" content="Antora 1.0.0">
 <link rel="stylesheet" href="/docs-ui/_/css/site.css">
 <link rel="stylesheet" href="/docs-ui/_/css/vendor/tabs.css">
@@ -14,7 +14,7 @@
     <meta property="og:site_name" content="DataStax Documentation">
     <meta property="og:type" content="article">
     <meta property="og:url" content="">
-    <meta property="og:title" content="Lang Chain :: Datastax Docs">
+    <meta property="og:title" content="LangChain :: Datastax Docs">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <meta property="og:image:type" content="image/png">
@@ -25,7 +25,7 @@
     <meta name="twitter:site" content="@datastax">
     <meta name="twitter:creator" content="@datastax">
     <meta name="twitter:url" content="">
-    <meta name="twitter:title" content="Lang Chain :: Datastax Docs">
+    <meta name="twitter:title" content="LangChain :: Datastax Docs">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <script type="application/ld+json">
@@ -34,7 +34,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "",
-        "name":"Lang Chain",
+        "name":"LangChain",
         "inLanguage":"en-US",
         "reviewedBy":{
             "@type": "Corporation",
@@ -58,7 +58,7 @@
             "mainEntityOfPage": "true",
             "datePublished":"",
             "dateModified":"",
-            "headline": "Lang Chain",
+            "headline": "LangChain",
             "description":"",
             "keywords":"",
             "image": "https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png",
@@ -154,31 +154,28 @@
     <span class="nav-text">Asciidoc Examples</span>
     <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/text-formatting.html">Text Formatting</a>
+    <a class="nav-link" href="/asciidoc/text-formatting.html">Text formatting</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/lists.html">Lists</a>
       </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tabs.html">Tabs</a>
+    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/images.html">Images and media</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/code.html">Code</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="/asciidoc/tabsets.html">Tabsets</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/blocks.html">Blocks</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="/asciidoc/admonitions.html">Admonitions</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/tables.html">Tables</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/images.html">Images and Media</a>
-      </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="/asciidoc/symbols.html">Symbol Replacements</a>
       </li>
 </ul>
   </li>
@@ -221,54 +218,112 @@
 </nav>
 </div>
   <div class="content">
-    <aside class="toc sidebar" data-title="Contents" data-levels="2">
+    <aside class="toc sidebar" data-title="Contents" data-levels="1">
   <div class="toc-menu-container">
     <div class="toc-menu"></div>
     <div class="toc-menu toc-tags">
+      <h3>Tags</h3>
+      <div>
+        <span class="tag">Machine Learning Frameworks</span>
+        <span class="tag">Embedding Services</span>
+        <span class="tag">Astra</span>
+        <span class="tag">SDK</span>
+      </div>
     </div>
     <div class="toc-menu toc-dev">
     </div>
   </div>
 </aside>
     <article class="doc">
-  <h1 class="page">Lang Chain</h1>
-  <div class="sect1">
+  <h1 class="page">LangChain</h1>
+  <div class="is-before-toc -mt-1 mb-3 flex flex-wrap items-center gap-1">
+    <div class="flex gap-0.5 text-sm text-[var(--ds-text-teritiary)]">
+      <span class="material-icons">playlist_add_check</span>
+      3
+      Steps
+    </div>
+    <div class="flex gap-0.5 text-sm text-[var(--ds-text-teritiary)]">
+      <span class="material-icons">query_builder</span>
+      15 min
+    </div>
+  <div class="ml-auto">
+      <a
+        href="https://colab.research.google.com/github/datastaxdevs/mini-demo-astradb-langchain/blob/main/AstraDB_langchain_quickstart_1.ipynb"
+        target="_blank"
+        class="btn btn-outlined btn-neutral"
+        data-track="Colab Link Clicked"
+      >
+        <i
+          class="mr-1 h-[1em] w-[1.5em] bg-[url('../img/colab.svg')] bg-center bg-no-repeat"
+        ></i>
+        Run this on Colab
+      </a>
+  </div>
+</div>  <div id="preamble">
+<div class="sectionbody">
+<details open>
+<summary class="title"><em>Integration-specific formatting</em></summary>
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Tutorial formatting</dt>
+<dd>
+<p>Integrations use the same general AsciiDoc formatting as <a href="tutorial.html">tutorials</a>, e.g. page attributes and step numbering.</p>
+</dd>
+<dt class="hdlist1">Special page attributes</dt>
+<dd>
+<p>Add the following attributes to the page header to automatically add the corresponding details to the page.</p>
+<div class="listingblock">
+<div class="title">Page icon</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:page-icon: ROOT:ui/icons/langchain.svg</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Page tags</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:page-tags: Machine Learning Frameworks, Embedding Services, Astra, SDK</code></pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>By integrating LangChain with Astra, you can seamlessly
-utilize advanced linguistic processing capabilities of
-LangChain within the Astra vector database environment.
-This combination enhances vector data analysis,
-allowing natural language data to be processed,
-stored, and queried with efficiency.</p>
+<p>By integrating LangChain with Astra, you can seamlessly utilize advanced linguistic processing capabilities of LangChain within the Astra vector database environment.
+This combination enhances vector data analysis, allowing natural language data to be processed, stored, and queried with efficiency.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/img/langchain-overview.png" alt="Architecture diagram">
+<img src="/img/placeholder-image.svg" alt="Diagram of LangChain integration architecture">
 </div>
-</div>
-<div class="paragraph">
-<p>To get started, ensure you have an
-<a href="https://example.com" class="external">active LangChain account</a> with the requisite permissions.</p>
+<div class="title">Architecture diagram</div>
 </div>
 <div class="paragraph">
-<p>You will also need an <a href="https://example.com" class="external">active LangChain account</a>
-an access to its API keys.</p>
+<p>To get started, ensure you have an <a href="https://example.com" class="external" target="_blank" rel="noopener">active LangChain account</a> with the requisite permissions.</p>
+</div>
+<div class="paragraph">
+<p>You will also need an <a href="https://example.com" class="external" target="_blank" rel="noopener">active LangChain account</a> an access to its API keys.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_1_acquire_api_key_from_langchain"><a class="anchor" href="#_1_acquire_api_key_from_langchain"></a><span class="step">1</span> Acquire API Key from LangChain:</h3>
+<div class="sect2 step">
+<h3 id="_acquire_api_key_from_langchain"><a class="anchor" href="#_acquire_api_key_from_langchain"></a>Acquire API key from LangChain</h3>
 <div class="paragraph">
 <p>Log into your LangChain dashboard and navigate to the 'API' section to obtain your API key.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_2_configure_astras_sdk_for_langchain"><a class="anchor" href="#_2_configure_astras_sdk_for_langchain"></a><span class="step">2</span> Configure Astra&#8217;s SDK for LangChain</h3>
+<div class="sect2 step">
+<h3 id="_configure_astras_sdk_for_langchain"><a class="anchor" href="#_configure_astras_sdk_for_langchain"></a>Configure Astra&#8217;s SDK for LangChain</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from astra import VectorDB
@@ -277,8 +332,8 @@ db.set_integration('LangChain', api_key='YOUR_LANGCHAIN_API_KEY')</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_3_initialize_data_transfer"><a class="anchor" href="#_3_initialize_data_transfer"></a><span class="step">3</span> Initialize Data Transfer</h3>
+<div class="sect2 step">
+<h3 id="_initialize_data_transfer"><a class="anchor" href="#_initialize_data_transfer"></a>Initialize data transfer</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">db.sync_from('LangChain')</code></pre>
@@ -288,7 +343,7 @@ db.set_integration('LangChain', api_key='YOUR_LANGCHAIN_API_KEY')</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_verify_integration"><a class="anchor" href="#_verify_integration"></a>Verify Integration</h2>
+<h2 id="_verify_integration"><a class="anchor" href="#_verify_integration"></a>Verify integration</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Ensure your integration was successful by checking for new linguistic vector entries in your Astra database:</p>
@@ -308,13 +363,13 @@ db.set_integration('LangChain', api_key='YOUR_LANGCHAIN_API_KEY')</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="ROOT:template-examples/langchain-screenshot.png" alt="Screenshot">
+<img src="/img/placeholder-image.svg" alt="Screenshot">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1 header-noline">
-<h2 id="_advanced_configuration"><a class="anchor" href="#_advanced_configuration"></a>Advanced Configuration</h2>
+<h2 id="_advanced_configuration"><a class="anchor" href="#_advanced_configuration"></a>Advanced configuration</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -329,12 +384,12 @@ db.set_integration('LangChain', api_key='YOUR_LANGCHAIN_API_KEY')</code></pre>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sync Frequency</p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Sync Frequency</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The lower the value, the more frequent the sync, impacting server performance.</p>
 <p class="tableblock">Sample <code>30 min</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data Volume Limit</p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Data Volume Limit</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The lower the value, the more frequent the sync, impacting server performance.</p>
 <p class="tableblock">Sample <code>500 MB</code></p></td>
 </tr>
@@ -343,7 +398,7 @@ db.set_integration('LangChain', api_key='YOUR_LANGCHAIN_API_KEY')</code></pre>
 </div>
 </div>
 <div class="sect1 header-noline">
-<h2 id="_troubleshotting"><a class="anchor" href="#_troubleshotting"></a>Troubleshotting</h2>
+<h2 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>Troubleshooting</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -370,7 +425,7 @@ db.set_integration('LangChain', api_key='YOUR_LANGCHAIN_API_KEY')</code></pre>
 </div>
 </div>
 <div class="sect1 header-noline">
-<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next steps</h2>
 <div class="sectionbody">
 <div class="openblock ds-card">
 <div class="content">
@@ -379,8 +434,7 @@ db.set_integration('LangChain', api_key='YOUR_LANGCHAIN_API_KEY')</code></pre>
 <li>
 <p><a href="https://example.com">Advanced Natural Language Processing with Astra and LangChain</a> <span class="material-icons">auto_stories</span> Tutorial</p>
 <div class="paragraph">
-<p>Dive into how the combination of Astra&#8217;s vector database and LangChain&#8217;s
-linguistic prowess can enhance your NLP projects.</p>
+<p>Dive into how the combination of Astra&#8217;s vector database and LangChain&#8217;s linguistic prowess can enhance your NLP projects.</p>
 </div>
 </li>
 </ul>
@@ -394,8 +448,7 @@ linguistic prowess can enhance your NLP projects.</p>
 <li>
 <p><a href="https://example.com">Optimizing Linguistic Vector Searches in Astra</a> <span class="material-icons">auto_stories</span> Tutorial</p>
 <div class="paragraph">
-<p>Discover best practices and techniques to improve the efficiency and accuracy
-of linguistic vector searches in Astra, leveraging LangChain integrations.</p>
+<p>Discover best practices and techniques to improve the efficiency and accuracy of linguistic vector searches in Astra, leveraging LangChain integrations.</p>
 </div>
 </li>
 </ul>
