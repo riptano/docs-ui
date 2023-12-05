@@ -32,7 +32,7 @@ sentiment analysis, and more. Integrating with Astra empowers developers
 to harness these models directly alongside their database operations.
 
 [.tags-container]
-[.tag]#Natural Language# [.tag]#Machine Learning# 
+[.tag]#Natural Language# [.tag]#Machine Learning#
 
 [.landing-card-icon]
 {hugging-icon}
@@ -50,7 +50,7 @@ human-like text, analyze data, or even create chatbots. Integration with Astra e
 that data can be fetched, analyzed, and stored seamlessly when working with OpenAI tools.
 
 [.tags-container]
-[.tag]#Natural Language# [.tag]#Machine Learning# 
+[.tag]#Natural Language# [.tag]#Machine Learning#
 
 [.landing-card-icon.bg-black]
 {openai-icon}
@@ -75,7 +75,7 @@ embeddings but also ensures real-time syncing of data, giving your applications
 an edge in language-based operations.
 
 [.tags-container]
-[.tag]#Natural Language# [.tag]#Machine Learning# 
+[.tag]#Natural Language# [.tag]#Machine Learning#
 
 [.landing-card-icon]
 {langchain-icon}
@@ -92,7 +92,7 @@ Whether it's text, images, or videos, Jina can index and retrieve data with high
 Integration with Astra enables an optimized storage solution that complements Jina's search capabilities.
 
 [.tags-container]
-[.tag]#Natural Language# [.tag]#Machine Learning# 
+[.tag]#Natural Language# [.tag]#Machine Learning#
 
 [.landing-card-icon]
 {jina-icon}
