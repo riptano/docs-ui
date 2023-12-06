@@ -1,16 +1,6 @@
 'use strict'
 
 const logger = require('@antora/logger')('hbs-helper:svg')
-const fs = require('fs-extra')
-
-const readFile = (target) => {
-  return fs.readFileSync(target, 'utf-8', (err, content) => {
-    if (err) {
-      return logger.error({ target, err }, `error reading file: ${target}`)
-    }
-    return content
-  })
-}
 
 /**
  * A Handlebars helper that returns the contents of an SVG file within the content catalog.
@@ -22,9 +12,7 @@ const readFile = (target) => {
 module.exports = (target, { data }) => {
   const { contentCatalog, page } = data.root
 
-  // If content catalog is not available, try reading the file directly.
-  // This is only useful for the UI preview.
-  if (!contentCatalog) return readFile(target)
+  if (!contentCatalog) return
 
   const pageContext = { component: page.component.name, version: page.component.latest.version, module: page.module }
   const resolvedPage = contentCatalog.resolvePage(page.relativeSrcPath, pageContext)
