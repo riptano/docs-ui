@@ -53,14 +53,14 @@ Assign the corresponding roles -- `for-light` and `for-dark` -- to each image.
 All non-SVG images, such as screenshot PNG files, must use this method.
 All SVG images that do not use CSS variables must also use this method.
 +
-.Method 1 -- block image
+.block image
 [source,asciidoc]
 ----
 image::light-mode-illustration.png[Alt text,400,role=for-light]
 image::dark-mode-illustration.png[Alt text,400,role=for-dark]
 ----
 +
-.Method 1 -- inline image
+.inline image
 [source,asciidoc]
 ----
 Click the Astra Vector icon image:/img/astra-vector-light.svg[title="Astra Vector",role=for-light] image:/img/astra-vector-dark.svg[title="Astra Vector",role=for-dark].
@@ -69,13 +69,13 @@ Click the Astra Vector icon image:/img/astra-vector-light.svg[title="Astra Vecto
 Method 2: SVG image with CSS variables::
 Use the custom `svg` macro to define an SVG image that uses CSS variables to support light and dark mode.
 +
-.Method 2 -- block image
+.block svg
 [source,asciidoc]
 ----
 svg::ROOT:illustration.svg[Alt text,400]
 ----
 +
-.Method 2 -- inline image
+.inline svg
 [source,asciidoc]
 ----
 Click the Astra Vector icon svg:ROOT:your-diagram.svg[title="Astra Vector"].
@@ -97,10 +97,64 @@ For example:
 ====
 ======
 
+.themed block image
 image::/img/light-mode-illustration.png[Alt text,400,role=for-light]
+
+.themed block image
 image::/img/dark-mode-illustration.png[Alt text,400,role=for-dark]
 
+.themed inline image
 Click the Astra Vector icon image:/img/astra-vector-light.svg[title="Astra Vector",role=for-light] image:/img/astra-vector-dark.svg[title="Astra Vector",role=for-dark].
+
+== Icons
+
+[NOTE]
+======
+You can define icons from https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Outlined[Material Icons,role=external,window=_blank] or an svg file using the customized `icon` macro or the `material-icons` role.
+
+Method 1: Inline icon macro with an svg file::
+The customized inline icon macro accepts a file path as it's target source. The file must be an svg file.
++
+This methods supports using CSS variables within the svg.
++
+[source]
+----
+icon:ROOT:ui/icons/vector.svg[]
+----
+
+Method 2: Inline icon macro with a material-icons target::
+The customized inline icon macro supports material icon names as it's target source prefixed with `material-icons:`. Ensure the name is lower case with underscores instead of spaces.
++
+This method supports light and dark mode automatically.
++
+[source]
+----
+icon:material-icons:thumb_up[]
+----
+
+Method 3: material-icons role::
+Use the custom role `material-icons` on block or inline content. The content must be a material icon name in lower case. If there are spaces in the name, use underscores instead.
++
+This method supports light and dark mode automatically.
++
+.block style
+[source]
+----
+[.material-icons]
+thumb_up
+----
++
+.Inline style using a text span
+[source]
+----
+Inline material icons [.material-icons]#thumb_up#
+----
+======
+
+[.material-icons]
+add_reaction
+
+Inline material icons [.material-icons]#thumb_up# [.material-icons]#support# [.material-icons]#code# [.material-icons]#rocket_launch# [.material-icons.text-2xl]#rocket_launch# [.material-icons.text-3xl]#rocket_launch#
 
 == Video
 

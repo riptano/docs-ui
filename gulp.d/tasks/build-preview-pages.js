@@ -43,7 +43,10 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
           map((file, enc, next) => {
             const siteRootPath = path.relative(ospath.dirname(file.path), ospath.resolve(previewSrc))
             const uiModel = { ...baseUiModel }
-            uiModel.page = { ...uiModel.page }
+            uiModel.page = {
+              ...uiModel.page,
+              url: path.join('/', path.relative(previewSrc, file.path.replace('.adoc', '.html'))),
+            }
             uiModel.siteRootPath = siteRootPath
 
             // The following has been customized to enable pull request preview builds on Github Pages.

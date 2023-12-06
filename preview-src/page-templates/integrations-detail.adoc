@@ -1,6 +1,6 @@
 = LangChain
 :page-layout: tutorial
-// :page-icon: /img/langchain.svg
+:page-icon: preview-src/img/langchain.svg
 :page-toclevels: 1
 :keywords: Machine Learning Frameworks, Embedding Services, Free, Data Warehouses, SDK
 :description: By integrating LangChain with {product}, you can seamlessly utilize the advanced linguistic processing capabilities of LangChain within your database environment.
