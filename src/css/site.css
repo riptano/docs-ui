@@ -29,4 +29,5 @@
 @import "print.css";
 @import "tutorial-info.css";
 @import "docsearch.css";
-@import "tailwind/tailwind.css"
+@import "tailwind/tailwind.css";
+@import "external-link-icon.css";
