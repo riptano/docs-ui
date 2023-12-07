@@ -1147,7 +1147,7 @@ html[data-theme="dark"] ::backdrop {
   --section-divider-color: var(--ds-divider);
   --link-font-color: var(--ds-primary-main);
   --link_hover-font-color: var(--ds-primary-main);
-  --link_unresolved-font-color: var(--important-color);
+  --link_unresolved-font-color: var(--ds-failure-main);
   --abstract-background: var(--ds-background-level1);
   --abstract-font-color: var(--ds-text-tertiary);
   --abstract-border-color: var(--ds-divider);
@@ -3319,8 +3319,8 @@ a + .breadcrumbs {
 }
 
 .doc a.unresolved {
-  color: var(--ds-failure-main);
-  color: var(--link_unresolved-font-color);
+  color: var(--ds-failure-main) !important;
+  color: var(--link_unresolved-font-color) !important;
 }
 
 .doc a.external::after {
@@ -3945,18 +3945,6 @@ a + .breadcrumbs {
 .doc ul.checklist i.fa-square-o::before {
   content: "";
   border: 0.25rem solid var(--ds-text-primary);
-}
-
-.doc .dlist .dlist,
-.doc .dlist .olist,
-.doc .dlist .ulist,
-.doc .olist .dlist,
-.doc .olist .olist,
-.doc .olist .ulist,
-.doc .ulist .dlist,
-.doc .ulist .olist,
-.doc .ulist .ulist {
-  margin-top: 0;
 }
 
 .doc .ulist .listingblock,
