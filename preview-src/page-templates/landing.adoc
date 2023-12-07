@@ -1,0 +1,93 @@
+= {product}
+:page-layout: landing
+
+Efficiently store and query vector embeddings for better similarity search. If you're new, read our xref:get-started:concepts.adoc[introduction to vector databases].
+
+[.[&>h2]:!hidden]
+== {empty}
+
+++++
+<div class="flex rounded-xl bg-[var(--ds-background-level1)] p-2 lg:p-3 gap-3 -mx-2 lg:-mx-3">
+<div class="flex flex-col lg:basis-1/2">
+++++
+
+[discrete.flex.lg:flex-col.gap-3.!m-0]
+== Get Started
+
+Dive straight into Astra Vector with this concise guide tailored for developers.
+Learn the essentials of how to connect to a database, ingest vectors, and perform a similarity search.
+
+[.[&>p]:flex.[&>p]:gap-1]
+xref:get-started:quickstart.adoc[Quickstart,role="btn btn-primary btn-solid"] https://astra.datastax.com[Create Astra Account^,role="btn btn-neutral btn-outlined external"]
+
+++++
+</div>
+<div class="hidden lg:block flex basis-1/2 relative">
+++++
+
+[source,python,role="nolang absolute bottom-1/2 translate-y-1/2 right-0 w-full inverse-theme [&_.source-toolbox]:hidden"]
+----
+from astrapy.db import AstraDB
+
+# Connect to a database
+db = AstraDB(token=TOKEN, api_endpoint=URL)
+
+# Ingest vectors into your collection
+col = db.collection(collection_name="test")
+col.insert_many(documents=DOCUMENTS)
+
+# Find the closest vectors
+col.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
+----
+
+++++
+</div>
+</div>
+++++
+
+[.[&>h2]:!text-h1]
+== Next steps
+
+++++
+<div class="flex flex-col lg:flex-row gap-3">
+<div class="flex flex-col lg:basis-1/3">
+++++
+
+[discrete.flex.items-center.lg:items-start.lg:flex-col.gap-1]
+== [.rounded-xl.border.p-1.w-max.material-icons]#fact_check# Load your data 
+
+Get your data and embeddings into a database.
+
+[.landing-a]
+xref:data:load-data.adoc[Load data]
+
+++++
+</div>
+<div class="flex flex-col lg:basis-1/3">
+++++
+
+[discrete.flex.items-center.lg:items-start.lg:flex-col.gap-1]
+== [.rounded-xl.border.p-1.w-max.material-icons]#auto_stories# Explore your data
+
+Perform similarity searches and browse the results.
+
+[.landing-a]
+link:{#}[Explore data]
+
+++++
+</div>
+<div class="flex flex-col lg:basis-1/3">
+++++
+
+[discrete.flex.items-center.lg:items-start.lg:flex-col.gap-1]
+== [.rounded-xl.border.p-1.w-max.material-icons]#power# Connect to your database
+
+Work with your data using our clients and APIs.
+
+[.landing-a]
+xref:data:connect-to-database.adoc[Connect database]
+
+++++
+</div>
+</div>
+++++

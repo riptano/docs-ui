@@ -1,0 +1,185 @@
+= Text formatting
+:idprefix:
+:idseparator: -
+:experimental:
+
+A paragraph can be defined as one or more lines of consecutive text that are logically grouped together.
+To differentiate between paragraphs, you simply need to insert at least one blank line between them.
+
+When creating paragraphs in AsciiDoc, it's inefficient to write entire paragraphs on a single line.
+Instead, put each sentence on its own line, a technique known as _ventilated prose_.
+
+== Level 1 section title
+
+=== Level 2 section title
+
+==== Level 3 section title
+
+===== Level 4 section title
+
+====== Level 5 section title
+
+[.header-noline]
+== Level 1 section title w/ custom role (no line)
+
+Apply `[.header-noline]` to level 1 section titles to remove the line that normally appears below the section title.
+
+[discrete]
+== Level 1 section title (discrete)
+
+Applying the `[discrete]` style effectively demotes the section title to a normal heading.
+Discrete headings are not part of the section hierarchy, and they are not included in the table of contents, page TOC, etc.
+
+[#text-formatting]
+== Text formatting
+
+A bold *word*, and a bold *phrase of text*.
+Bold c**hara**cter**s** within a word.
+
+An italic _word_, and an italic _phrase of text_.
+Italic c__hara__cter__s__ within a word.
+
+A monospace `word`, and a monospace `phrase of text`.
+Monospace c``hara``cter``s`` within a word.
+
+That *_really_* has to go.
+Can't pick one?
+Let's use them `*_all_*`.
+
+A highlighted #word#, and a highlighted #phrase of text#.
+Highlighted c##hara##cter##s## within a word.
+
+Where did all the [.underline]#cores# go?
+
+We need [.line-through]#ten# twenty VMs.
+
+^super^script
+
+~sub~script
+
+"`Well the H~2~O formula written on their whiteboard could be part
+of a shopping list, but I don't think the local bodega sells
+E=mc^2^,`" Lazarus replied.
+
+=== Custom inline styles
+
+A [.myrole]#custom role# must be fulfilled by the theme.
+
+== Links
+
+=== Internal link
+
+Instead of having to enclose text within <<text-formatting,tags or special characters>>, you can focus on expressing your ideas and content in a clear and concise manner.
+
+=== External link
+
+External links have a special icon and open in a new tab https://www.datastax.com[when clicked^,role=external].
+
+[NOTE]
+====
+An _external link_ is any link that targets an address outside of the `docs.datastax.com` subdomain.
+External links should always have the following behavior, regardless of any AsciiDoc attributes that a writer might apply to them:
+
+* Different visual styling than an internal link, e.g. an `open_in_new` icon after the link text.
+* Open in a new tab when clicked.
+
+The links in the example sentences below all target the same external URL -- `\https://www.datastax.com` -- however, they each have different AsciiDoc attributes applied to them.
+
+[source,asciidoc]
+----
+External links have a special icon and open in a new tab https://www.datastax.com[when clicked,role=external,window=_blank].
+External links have a special icon and open in a new tab https://www.datastax.com[when clicked^].
+External links have a special icon and open in a new tab https://www.datastax.com[when clicked].
+----
+
+The UI should disregard these attributes and apply the same styling and behavior to each link.
+====
+
+=== Unresolved link
+
+If an xref fails to resolve, the https://example.org[link text,role=unresolved] is displayed as-is, but in red.
+
+== Keyboard, button, and menu macros
+
+To save the file, select menu:File[Save].
+Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
+
+Press the btn:[OK] button when you are finished.
+Select a file in the file navigator and click btn:[Open].
+
+Press kbd:[F11] to toggle fullscreen.
+Press kbd:[Ctrl+T] to open a new tab.
+
+== Footnote
+
+AsciiDoc provides the `footnote` macro for adding footnotes to your document.footnote:[Look! A footnote!]
+
+== Symbol replacements
+
+[%autowidth,cols="~,^~,^~,^~,~"]
+|===
+|Name |Syntax |Unicode Replacement |Rendered |Notes
+
+|Copyright
+|+(C)+
+|+&#169;+
+|(C)
+|
+
+|Registered
+|+(R)+
+|+&#174;+
+|(R)
+|
+
+|Trademark
+|+(TM)+
+|+&#8482;+
+|(TM)
+|
+
+|Em dash
+|+--+
+|+&#8212;+
+|{empty}--{empty}
+|Only replaced if between two word characters, between a word character and a line boundary, or flanked by spaces.
+
+When flanked by space characters (e.g., `+a -- b+`), the normal spaces are replaced by thin spaces (\&#8201;).
+Otherwise, the em dash is followed by a zero-width space (\&#8203;) to provide a break opportunity.
+
+|Ellipsis
+|+...+
+|+&#8230;+
+|...
+|The ellipsis is followed by a zero-width space (\&#8203;) to provide a break opportunity.
+
+|Single right arrow
+|+->+
+|+&#8594;+
+|->
+|
+
+|Double right arrow
+|+=>+
+|+&#8658;+
+|=>
+|
+
+|Single left arrow
+|+<-+
+|+&#8592;+
+|<-
+|
+
+|Double left arrow
+|+<=+
+|+&#8656;+
+|<=
+|
+
+|Typographic apostrophe
+|Sam\'s
+|+Sam&#8217;s+
+|Sam's
+|The typewriter apostrophe is replaced with the typographic (aka curly or smart) apostrophe.
+|===

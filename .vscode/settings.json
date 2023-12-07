@@ -9,4 +9,5 @@
     "emmet.syntaxProfiles": {
         "postcss": "css"
     },
+    "asciidoc.antora.enableAntoraSupport": true,
 }
