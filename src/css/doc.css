@@ -177,7 +177,7 @@
 }
 
 .doc a.unresolved {
-  color: var(--link_unresolved-font-color);
+  color: var(--link_unresolved-font-color) !important;
 }
 
 .doc a.external::after {
@@ -706,18 +706,6 @@
 .doc ul.checklist i.fa-square-o::before {
   content: "";
   border: 0.25rem solid var(--ds-text-primary);
-}
-
-.doc .dlist .dlist,
-.doc .dlist .olist,
-.doc .dlist .ulist,
-.doc .olist .dlist,
-.doc .olist .olist,
-.doc .olist .ulist,
-.doc .ulist .dlist,
-.doc .ulist .olist,
-.doc .ulist .ulist {
-  margin-top: 0;
 }
 
 .doc .ulist .listingblock,
