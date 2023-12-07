@@ -6,38 +6,38 @@
 == Block images
 
 .Optional title
-image::/img/screenshot.png[Screenshot of Astra Portal Home]
+image::../img/screenshot.png[Screenshot of Astra Portal Home]
 
 === Sizing and alignment
 
 .400px width, align="left"
-image::/img/screenshot.png[Screenshot of Astra Portal Home,400,align="left"]
+image::../img/screenshot.png[Screenshot of Astra Portal Home,400,align="left"]
 
 .400px width, align="right"
-image::/img/screenshot.png[Screenshot of Astra Portal Home,400,align="right"]
+image::../img/screenshot.png[Screenshot of Astra Portal Home,400,align="right"]
 
 .400px width, align="center"
-image::/img/screenshot.png[Screenshot of Astra Portal Home,400,align="center"]
+image::../img/screenshot.png[Screenshot of Astra Portal Home,400,align="center"]
 
 === Float
 
 [.float-group]
 --
-image:/img/screenshot.png[Screenshot of Astra Portal Home,300,float=right,role=float-gap]
+image:../img/screenshot.png[Screenshot of Astra Portal Home,300,float=right,role=float-gap]
 In AsciiDoc, creating paragraphs is a straightforward process that does not require any special markup. A paragraph can be defined as one or more lines of consecutive text that are logically grouped together. To differentiate between paragraphs, you simply need to insert at least one blank line between them.
 --
 
 [.float-group]
 --
-image::/img/multirepo-ssg.svg[Multirepo SSG,300,float=left,role=float-gap]
+image::../img/multirepo-ssg.svg[Multirepo SSG,300,float=left,role=float-gap]
 In AsciiDoc, creating paragraphs is a straightforward process that does not require any special markup. A paragraph can be defined as one or more lines of consecutive text that are logically grouped together. To differentiate between paragraphs, you simply need to insert at least one blank line between them.
 --
 
 == Inline images
 
-Click image:/img/play_circle_FILL0_wght400_GRAD0_opsz24.svg[title=Play] to get the party started.
+Click image:../img/play_circle_FILL0_wght400_GRAD0_opsz24.svg[title=Play] to get the party started.
 
-Click image:/img/pause_circle_FILL0_wght400_GRAD0_opsz24.svg[title=Pause] when you need a break.
+Click image:../img/pause_circle_FILL0_wght400_GRAD0_opsz24.svg[title=Pause] when you need a break.
 
 == Image theming (light/dark mode)
 
@@ -63,7 +63,7 @@ image::dark-mode-illustration.png[Alt text,400,role=for-dark]
 .inline image
 [source,asciidoc]
 ----
-Click the Astra Vector icon image:/img/astra-vector-light.svg[title="Astra Vector",role=for-light] image:/img/astra-vector-dark.svg[title="Astra Vector",role=for-dark].
+Click the Astra Vector icon image:../img/astra-vector-light.svg[title="Astra Vector",role=for-light] image:../img/astra-vector-dark.svg[title="Astra Vector",role=for-dark].
 ----
 
 Method 2: SVG image with CSS variables::
@@ -98,13 +98,13 @@ For example:
 ======
 
 .themed block image
-image::/img/light-mode-illustration.png[Alt text,400,role=for-light]
+image::../img/light-mode-illustration.png[Alt text,400,role=for-light]
 
 .themed block image
-image::/img/dark-mode-illustration.png[Alt text,400,role=for-dark]
+image::../img/dark-mode-illustration.png[Alt text,400,role=for-dark]
 
 .themed inline image
-Click the Astra Vector icon image:/img/astra-vector-light.svg[title="Astra Vector",role=for-light] image:/img/astra-vector-dark.svg[title="Astra Vector",role=for-dark].
+Click the Astra Vector icon image:../img/astra-vector-light.svg[title="Astra Vector",role=for-light] image:../img/astra-vector-dark.svg[title="Astra Vector",role=for-dark].
 
 == Icons
 

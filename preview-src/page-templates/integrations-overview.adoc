@@ -1,13 +1,13 @@
 = Integrations
 :page-layout: tutorial
-:hugging-icon: image:/img/hugging-face.svg[,20]
-:langchain-icon: image:/img/langchain.svg[,20]
-:openai-icon: image:/img/openai.svg[,20]
-:jina-icon: image:/img/jina.svg[,20]
-:deepset-icon: image:/img/deepset.svg[,20]
-:cohere-icon: image:/img/cohere.svg[,20]
-:llamaindex-icon: image:/img/llamaindex.svg[,20]
-:cassio-icon: image:/img/cassio.svg[,20]
+:hugging-icon: image:../img/hugging-face.svg[,20]
+:langchain-icon: image:../img/langchain.svg[,20]
+:openai-icon: image:../img/openai.svg[,20]
+:jina-icon: image:../img/jina.svg[,20]
+:deepset-icon: image:../img/deepset.svg[,20]
+:cohere-icon: image:../img/cohere.svg[,20]
+:llamaindex-icon: image:../img/llamaindex.svg[,20]
+:cassio-icon: image:../img/cassio.svg[,20]
 
 Dive into our curated marketplace of integrations
 that elevate the capabilities of Astra's vector databases.

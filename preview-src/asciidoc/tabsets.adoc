@@ -4,10 +4,10 @@
 :tabs-sync-option:
 :tabs-sync-storage-key: tabs
 :tabs-sync-storage-scope: session
-:cassandra-icon: image:/img/cassandra-original.svg[,28]
-:java-icon: image:/img/java-original.svg[,22]
-:python-icon: image:/img/python-original.svg[,22]
-:shell-icon: image:/img/shell-original.svg[,20]
+:cassandra-icon: image:../img/cassandra-original.svg[,28]
+:java-icon: image:../img/java-original.svg[,22]
+:python-icon: image:../img/python-original.svg[,22]
+:shell-icon: image:../img/shell-original.svg[,20]
 
 [NOTE]
 ====
