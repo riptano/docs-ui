@@ -9,9 +9,11 @@ const logger = require('@antora/logger')('hbs-helper:svg')
  *  asciidoc:  :page-icon: ROOT:ui/icons/icon.svg
  *  handlebars: {{svg page.attributes.icon}}
  */
-
 module.exports = (target, { data }) => {
   const { contentCatalog, page } = data.root
+
+  if (!contentCatalog) return
+
   const pageContext = { component: page.component.name, version: page.component.latest.version, module: page.module }
   const resolvedPage = contentCatalog.resolvePage(page.relativeSrcPath, pageContext)
   if (!resolvedPage) {

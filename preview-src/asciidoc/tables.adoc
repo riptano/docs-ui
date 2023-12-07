@@ -1,0 +1,342 @@
+= Tables
+:idprefix:
+:idseparator: -
+:table-caption!:
+
+== Basic table
+
+.Optional title
+[cols="3*"]
+|===
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+== Header and footer
+
+.Table w/ header row
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ header column
+[cols="1h,2*"]
+|===
+|Row 1, header column
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Row 2, header column
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Row 3, header column
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ header row and header column
+[cols="1h,2*"]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Row 2, header column
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Row 3, header column
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ footer row
+[cols="3*",options="footer"]
+|===
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+
+
+|Total = 3
+|Total = 3
+|Total = 3
+|===
+
+.Table w/ header row, header column, and footer row
+[%footer%autowidth.stretch]
+|===
+|Header |Header |Header |Header
+
+h|Item
+|2
+|1
+|5
+
+h|Item
+|2
+|1
+|5
+
+h|Total
+|4
+|2
+|10
+|===
+
+== Striping
+
+.Table w/ even striping
+[cols="3*",stripes=even]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+
+|Cell in column 1, row 4
+|Cell in column 2, row 4
+|Cell in column 3, row 4
+|===
+
+.Table w/ hover striping
+[cols="3*",stripes=hover]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+== Custom width
+
+.Table w/ width set to 75%
+[width=75%]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ autowidth
+[%autowidth]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+== Custom borders
+
+=== Frame
+
+.Table w/ frame=ends
+[frame=ends]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ frame=sides
+[frame=sides]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ frame=none
+[frame=none]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+=== Grid
+
+.Table w/ grid=rows
+[grid=rows]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ grid=cols
+[grid=cols]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+.Table w/ grid=none
+[grid=none]
+|===
+|Column 1, header row |Column 2, header row |Column 3, header row
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3
+|Cell in column 3, row 3
+|===
+
+== Examples
+
+=== Complex table w/ AsciiDoc content
+
+[cols="1,1,2a"]
+|===
+|Name |Category |Description
+
+|Firefox
+|Browser
+|Mozilla Firefox is an open source web browser.
+
+image::firefox-window.png[Screenshot of Firefox window]
+
+It's designed for:
+
+* standards compliance
+* performance
+* portability
+
+image::https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg[Firefox logo,align=left,link=https://getfirefox.com]
+https://getfirefox.com[Get Firefox^,role=external]!
+
+|Arquillian
+|Testing
+|An innovative and highly extensible testing platform.
+Empowers developers to easily create real, automated tests.
+
+Each Arquillian test is associated with at least one deployment.
+
+[NOTE]
+====
+The deployment is configured using a static method annotated with @Deployment that returns a ShrinkWrap archive. Here’s an example:
+
+[source,java]
+----
+@Deployment
+public static JavaArchive createDeployment() {
+    return ShrinkWrap.create(JavaArchive.class)
+        .addClass(Greeter.class)
+        .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+}
+----
+====
+|===
+
+=== Table w/ formatted, aligned, and merged cells
+
+[cols="e,m,^,>s"]
+|===
+|1 >s|2 |3 |4
+^|5 2.2+^.^|6 .3+<.>m|7
+^|8
+|9 2+>|10
+|===
+
+=== Nested table
+
+[cols="1,2a"]
+|===
+| Col 1 | Col 2
+
+| Cell 1.1
+| Cell 1.2
+
+| Cell 2.1
+| Cell 2.2
+
+[cols="2,1"]
+!===
+! Col1 ! Col2
+
+! C11
+! C12
+
+!===
+|===
