@@ -53,11 +53,13 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
             // It differs from the Antora Default UI by allowing for an optional UI_ROOT_PATH_PREFIX.
             // This environment variable is set during build to add a prefix to the {{ uiRootPath }} variable.
             // This enables us to have preview builds that live in their own subdirectory on GitHub Pages.
-            let uiRootPath = path.join(siteRootPath, '_')
-            if (uiModel.env.UI_ROOT_PATH_PREFIX) {
-              uiRootPath = path.join('/', uiModel.env.UI_ROOT_PATH_PREFIX, uiRootPath)
-            }
-            uiModel.uiRootPath = uiRootPath
+            // let uiRootPath = path.join(siteRootPath, '_')
+            // if (uiModel.env.UI_ROOT_PATH_PREFIX) {
+            //   uiRootPath = path.join('/', uiModel.env.UI_ROOT_PATH_PREFIX, uiRootPath)
+            // }
+            // uiModel.uiRootPath = uiRootPath
+
+            uiModel.uiRootPath = path.join(siteRootPath, '_')
 
             if (file.stem === '404') {
               uiModel.page = { layout: '404', title: 'Page Not Found' }
