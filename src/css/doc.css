@@ -211,7 +211,7 @@
   padding: 0.125em 0.25em;
 }
 
-.doc code {
+.doc code:not(.hljs) {
   white-space: nowrap;
 }
 
