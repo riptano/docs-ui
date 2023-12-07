@@ -45,6 +45,7 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
             const uiModel = { ...baseUiModel }
             uiModel.page = {
               ...uiModel.page,
+              // Adding url to uiModel.page allows the nav to properly highlight the current page.
               url: path.join('/', path.relative(previewSrc, file.path.replace('.adoc', '.html'))),
             }
             uiModel.siteRootPath = siteRootPath
