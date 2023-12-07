@@ -4,25 +4,25 @@ asciidoc:
   - '@asciidoctor/tabs'
 site:
   url: http://localhost:5252
-  title: Datastax Docs
-  homeUrl: &home_url /astra.html
+  title: PREVIEW Datastax Docs
+  homeUrl: &home_url http://localhost:5252
   components:
-  - name: datastax
-    title: Datastax Docs
-    url: /home.html
+  - &component
+    name: datastax
+    title: PREVIEW Datastax Docs
+    url: '#'
     versions:
-    - &latest_version_astra
+    - &latest_version
       url: *home_url
-      version: '1.1'
-      displayVersion: '1.1'
-    latestVersion: *latest_version_astra
+      version: 'latest'
+      displayVersion: 'latest'
+    latestVersion: *latest_version
 page:
   src:
-    component: datastax
-    version: '1.1'
+    component: *component
+    version: *latest_version
   navigation:
     - content: Page Templates
-      urlType: fragment
       items:
       - content: Full
         url: /page-templates/full.html
@@ -40,10 +40,30 @@ page:
         url: /page-templates/integrations-detail.html
         urlType: internal
     - content: Asciidoc Examples
-      urlType: fragment
       items:
-      - content: Text Formatting
+      - content: Text formatting
         url: /asciidoc/text-formatting.html
+        urlType: internal
+      - content: Lists
+        url: /asciidoc/lists.html
+        urlType: internal
+      - content: Tables
+        url: /asciidoc/tables.html
+        urlType: internal
+      - content: Images and media
+        url: /asciidoc/images.html
+        urlType: internal
+      - content: Code
+        url: /asciidoc/code.html
+        urlType: internal
+      - content: Tabsets
+        url: /asciidoc/tabsets.html
+        urlType: internal
+      - content: Blocks
+        url: /asciidoc/blocks.html
+        urlType: internal
+      - content: Admonitions
+        url: /asciidoc/admonitions.html
         urlType: internal
       - content: Lists
         url: /asciidoc/lists.html

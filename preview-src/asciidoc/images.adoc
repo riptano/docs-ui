@@ -1,73 +1,25 @@
-= Images
-
-== Images for Light and Dark modes
-
-[source,adoc]
-----
-[.for-light]
-image::your-light-image.png[Description]
-[.for-dark]
-image::your-dark-image.png[Description]
-
-// You can also define the role within the macro itself
-
-image::light-mode-illustration.png[Description,role=for-light]
-image::dark-mode-illustration.png[Description,role=for-dark]
-----
-
-[.for-light]
-image::/img/light-mode-illustration.png[Description,400]
-[.for-dark]
-image::/img/dark-mode-illustration.png[Description,400]
-
-== SVG with CSS variables for Light and Dark modes
-
-[source,svg]
-----
-<svg viewBox="0 0 300 200" fill="none">
-  <path fill="var(--ds-text-primary)" d="..." />
-  <path stroke="var(--ds-primary-outlined-border)" d="..." />
-  <path fill="var(--ds-neutral-outlined-border)" d="..." />
-</svg>
-----
-
-[source,adoc]
-----
-svg::ROOT:your-diagram.svg[Description,300]
-----
-
-== Inline images
-
-Click image:/img/play_circle_FILL0_wght400_GRAD0_opsz24.svg[title=Play] to get the party started.
-
-Click image:/img/pause_circle_FILL0_wght400_GRAD0_opsz24.svg[title=Pause] when you need a break.
+= Images and media
+:idprefix:
+:idseparator: -
+:figure-caption!:
 
 == Block images
 
-.Bitmap image (unconstrained; default alignment)
+.Optional title
 image::/img/screenshot.png[Screenshot of Astra Portal Home]
 
-.Bitmap image (300px width; default alignment)
-image::/img/screenshot.png[Screenshot of Astra Portal Home,300]
+=== Sizing and alignment
 
-.SVG image (300px width; default alignment). Image is rasterized (`opts=` _none_).
-image::/img/multirepo-ssg.svg[Multirepo SSG,300]
+.400px width, align="left"
+image::/img/screenshot.png[Screenshot of Astra Portal Home,400,align="left"]
 
-.SVG image (300px width; default alignment). Image embedded as a live, interactive object (`opts=interactive`).
-image::/img/multirepo-ssg.svg[Multirepo SSG,300,opts=interactive]
+.400px width, align="right"
+image::/img/screenshot.png[Screenshot of Astra Portal Home,400,align="right"]
 
-=== Aligning block images
+.400px width, align="center"
+image::/img/screenshot.png[Screenshot of Astra Portal Home,400,align="center"]
 
-.Bitmap image (aligned left)
-image::/img/screenshot.png[Screenshot of Astra Portal Home,300,align="left"]
-
-.Bitmap image (aligned right)
-image::/img/screenshot.png[Screenshot of Astra Portal Home,300,align="right"]
-
-.Bitmap image (aligned center)
-image::/img/screenshot.png[Screenshot of Astra Portal Home,300,align="center"]
-
-=== Floating block images
+=== Float
 
 [.float-group]
 --
@@ -80,6 +32,129 @@ In AsciiDoc, creating paragraphs is a straightforward process that does not requ
 image::/img/multirepo-ssg.svg[Multirepo SSG,300,float=left,role=float-gap]
 In AsciiDoc, creating paragraphs is a straightforward process that does not require any special markup. A paragraph can be defined as one or more lines of consecutive text that are logically grouped together. To differentiate between paragraphs, you simply need to insert at least one blank line between them.
 --
+
+== Inline images
+
+Click image:/img/play_circle_FILL0_wght400_GRAD0_opsz24.svg[title=Play] to get the party started.
+
+Click image:/img/pause_circle_FILL0_wght400_GRAD0_opsz24.svg[title=Pause] when you need a break.
+
+== Image theming (light/dark mode)
+
+[NOTE]
+======
+You can define an image such that it appears differently in light mode vs. dark mode.
+There are methods for doing this.
+
+Method 1: Two separate images::
+Define two images, one that looks good in light mode and one that looks good in dark mode.
+Assign the corresponding roles -- `for-light` and `for-dark` -- to each image.
++
+All non-SVG images, such as screenshot PNG files, must use this method.
+All SVG images that do not use CSS variables must also use this method.
++
+.block image
+[source,asciidoc]
+----
+image::light-mode-illustration.png[Alt text,400,role=for-light]
+image::dark-mode-illustration.png[Alt text,400,role=for-dark]
+----
++
+.inline image
+[source,asciidoc]
+----
+Click the Astra Vector icon image:/img/astra-vector-light.svg[title="Astra Vector",role=for-light] image:/img/astra-vector-dark.svg[title="Astra Vector",role=for-dark].
+----
+
+Method 2: SVG image with CSS variables::
+Use the custom `svg` macro to define an SVG image that uses CSS variables to support light and dark mode.
++
+.block svg
+[source,asciidoc]
+----
+svg::ROOT:illustration.svg[Alt text,400]
+----
++
+.inline svg
+[source,asciidoc]
+----
+Click the Astra Vector icon svg:ROOT:your-diagram.svg[title="Astra Vector"].
+----
++
+[IMPORTANT]
+====
+CSS variables must use the tokens supported by the UI.
+For example:
+
+[source,svg]
+----
+<svg viewBox="0 0 300 200" fill="none">
+  <path fill="var(--ds-text-primary)" d="..." />
+  <path stroke="var(--ds-primary-outlined-border)" d="..." />
+  <path fill="var(--ds-neutral-outlined-border)" d="..." />
+</svg>
+----
+====
+======
+
+.themed block image
+image::/img/light-mode-illustration.png[Alt text,400,role=for-light]
+
+.themed block image
+image::/img/dark-mode-illustration.png[Alt text,400,role=for-dark]
+
+.themed inline image
+Click the Astra Vector icon image:/img/astra-vector-light.svg[title="Astra Vector",role=for-light] image:/img/astra-vector-dark.svg[title="Astra Vector",role=for-dark].
+
+== Icons
+
+[NOTE]
+======
+You can define icons from https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Outlined[Material Icons,role=external,window=_blank] or an svg file using the customized `icon` macro or the `material-icons` role.
+
+Method 1: Inline icon macro with an svg file::
+The customized inline icon macro accepts a file path as it's target source. The file must be an svg file.
++
+This methods supports using CSS variables within the svg.
++
+[source]
+----
+icon:ROOT:ui/icons/vector.svg[]
+----
+
+Method 2: Inline icon macro with a material-icons target::
+The customized inline icon macro supports material icon names as it's target source prefixed with `material-icons:`. Ensure the name is lower case with underscores instead of spaces.
++
+This method supports light and dark mode automatically.
++
+[source]
+----
+icon:material-icons:thumb_up[]
+----
+
+Method 3: material-icons role::
+Use the custom role `material-icons` on block or inline content. The content must be a material icon name in lower case. If there are spaces in the name, use underscores instead.
++
+This method supports light and dark mode automatically.
++
+.block style
+[source]
+----
+[.material-icons]
+thumb_up
+----
++
+.Inline style using a text span
+[source]
+----
+Inline material icons [.material-icons]#thumb_up#
+----
+======
+
+[.material-icons]
+add_reaction
+
+Inline material icons [.material-icons]#thumb_up# [.material-icons]#support# [.material-icons]#code# [.material-icons]#rocket_launch# [.material-icons.text-2xl]#rocket_launch# [.material-icons.text-3xl]#rocket_launch#
 
 == Video
 

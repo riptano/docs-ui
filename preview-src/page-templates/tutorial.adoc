@@ -6,23 +6,26 @@
 :astra-link: https://astra.datastax.com
 :astra-nodejs-link: https://docs.datastax.com/en/astra-serverless/docs/develop/sdks/rest-nodejs-client.html
 :astra-json-link: https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-json.html
-:page-tags: Machine Learning Frameworks, Embeding Services, Astra, SDK
 :keywords: Machine Learning Frameworks, Embeding Services, Astra, SDK
 
-== Special Page Attributes
-
-Adding the following attributes to your page will automatically add the corresponding heading detail.
-
+.Tutorial-specific formatting
+[%collapsible%open]
+====
+Special page attributes::
+Add the following attributes to the page header to automatically add the corresponding heading details to the top of the page.
++
+[source,asciidoc]
 ----
 :page-skill-level: Beginner
 :page-time-commitment: 15 min
 :page-colab-link: https://colab.research.google.com/
 ----
 
-== Automatic Steps
-
-Adding the .step role to a title will automatically increment and prefix the title with the step number. This number will not appear in a title anchor link or the table of contents.
-
+Automatic steps::
+Add the `.step` role to a section title to prefix it with an auto-incrementing step number.
+The number does not appear in the auto-generated anchor link or the table of contents.
++
+[source,asciidoc]
 ----
 [.step]
 === Install the Python SDK and open a Python REPL.
@@ -31,27 +34,28 @@ Adding the .step role to a title will automatically increment and prefix the tit
 === Connect to Astra and create a database.
 ----
 
-=== Step reset
-
-The step number will be reset when the .step-reset role is added to a title.
-
+Step reset:::
+Add the `.step-reset` role to a section title to reset the step number.
++
+[source,asciidoc]
 ----
 [.step-reset]
 === This title will now be prefixed with "1." regardless of order.
 ----
+====
 
 == Objective
 
 Learn how to create a new database, connect to your database, load a set of vector embeddings, and perform a similarity search to find vectors that are close to the one in your query.
 
-image::/img/quickstart-overview.png["Tutorial overview"]
+image::/img/placeholder-image.svg["Tutorial overview"]
 
 == Prerequisites
 
-To get started, ensure you have an {astra-link}[active Astra account] with the requisite permissions.
+To get started, ensure you have an {astra-link}[active Astra account^,role=external] with the requisite permissions.
 
 [.step]
-=== Install the Python SDK and open a Python REPL.
+=== Install the Python SDK and open a Python REPL
 
 [source,shell]
 ----
@@ -69,7 +73,7 @@ Additional clients, such as {astra-nodejs-link}[Node.js] and {astra-json-link}[J
 ====
 
 [.step]
-=== Connect to Astra and create a database.
+=== Connect to Astra and create a database
 
 [source,python]
 ----
@@ -94,7 +98,7 @@ db.create_table(table_name)
 == Core steps
 
 [.step]
-=== Prepare and ingest data.
+=== Prepare and ingest data
 
 [source,python]
 ----
@@ -109,7 +113,7 @@ for data in sample_vectors:
 ----
 
 [.step]
-=== Perform a similarity search.
+=== Perform a similarity search
 
 [source,python]
 ----
@@ -119,7 +123,7 @@ results = db.similarity_search(table_name, query_vector, k=5)
 ----
 
 [.step]
-=== Show the results.
+=== Show the results
 
 [source,python]
 ----
@@ -131,7 +135,7 @@ for result in results:
 == Cleanup
 
 [.step.step-reset]
-=== Delete all resources.
+=== Delete all resources
 
 [source,python]
 ----
@@ -156,12 +160,12 @@ In this tutorial, you learned how to:
 You're well on your way to becoming an Astra Vector expert!
 
 [.header-noline]
-== Next Steps
+== Next steps
 
 [.ds-card]
 --
 [unstyled]
-* https://example.com[Grasp the basics] [.material-icons]#auto_stories# Tutorial 
+* https://example.com[Grasp the basics] [.material-icons]#auto_stories# Tutorial
 +
 Before diving deep, ensure a solid understanding of foundational concepts surrounding vector databases.
 Delve into embeddings, the nature of high-dimensional data, and their profound impact on machine learning processes.
@@ -179,7 +183,7 @@ Delve into embeddings, the nature of high-dimensional data, and their profound i
 [.ds-card]
 --
 [unstyled]
-* https://example.com[Ingest and store vector data] [.material-icons]#auto_stories# Tutorial 
+* https://example.com[Ingest and store vector data] [.material-icons]#auto_stories# Tutorial
 +
 Before diving deep, ensure a solid understanding of foundational concepts surrounding vector databases.
 Delve into embeddings, the nature of high-dimensional data, and their profound impact on machine learning processes.

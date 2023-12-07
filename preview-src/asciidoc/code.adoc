@@ -1,10 +1,30 @@
 = Code
+:idprefix:
+:idseparator: -
 
 == Inline code
 
-Output literal monospace text, such as `my-python-function` or `initial-scale=1.0`.
+Monospace text formatting is typically used to represent text shown in `computer terminals` or `code editors` (often referred to as a codespan).
 
+Like other inline text formatting, you can add multiple emphasis styles to `monospace` text as long as the `*syntax*` is `_placed_` in the correct `*_order_*`.
+
+[#code-blocks]
 == Code blocks
+
+=== Basic code block (console)
+
+[source,console]
+----
+A code block with [source,console].
+----
+
+.Optional title
+[source,console]
+----
+A code block with a title.
+----
+
+=== Language code block
 
 [source,json]
 ----
@@ -20,50 +40,70 @@ Output literal monospace text, such as `my-python-function` or `initial-scale=1.
 }
 ----
 
-.Console code block
-[source,console]
+.Language code block w/ title
+[source,json]
 ----
-$ pip install astra-vector
-$ python3
+{
+  "name": "module-name",
+  "version": "10.0.1",
+  "description": "An example module to illustrate the usage of package.json",
+  "author": "Author Name <author@example.com>",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint"
+  }
+}
 ----
 
-[.wrap]
-.Text does not wrap by default
-[source]
+.Language code block w/ hidden language
+[source,java,role=nolang]
+----
+public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+
+        System.out.println("Current Date and Time is: " + current);
+    }
+}
+----
+
+[source,java,role=nolang]
+----
+// Language code block with no title and hidden language name
+public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+
+        System.out.println("Current Date and Time is: " + current);
+    }
+}
+----
+
+=== Line wrapping
+
+.Line wrapping is turned off by default
+[source,console]
 ----
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 ----
 
-[.nolang]
-.Hide language name
-[source,java]
+.Code block w/ forced wrapping
+[source,console,role=wrap]
 ----
-// A title with hidden language name
-public class CurrentDateTime {
-    public static void main(String[] args) {
-        LocalDateTime current = LocalDateTime.now();
-
-        System.out.println("Current Date and Time is: " + current);
-    }
-}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 ----
 
-[.nolang]
-[source,java]
-----
-// No title with hidden language name
-public class CurrentDateTime {
-    public static void main(String[] args) {
-        LocalDateTime current = LocalDateTime.now();
+=== Text formatting
 
-        System.out.println("Current Date and Time is: " + current);
-    }
-}
+[source,bash,subs="quotes"]
 ----
+cd /Users/*_your-name_*/repos/astra-vector-docs/build/site
+----
+
 
 == Callouts
 
-[source,js]
+[source,javascript]
 ----
 vfs
   .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
@@ -77,3 +117,41 @@ vfs
 <.> The `tap` function is used to wiretap the data in the pipe.
 <.> Wrap each streaming file in a buffer so the files can be processed by uglify.
 Uglify can only work with buffers, not streams.
+
+== Listing and literal blocks
+
+[NOTE]
+====
+Listing blocks and literal blocks display the text you write exactly as you see it in the source.
+Literal text is treated as preformatted text.
+The text is presented in a fixed-width font and endlines are preserved.
+Only special characters and callouts are replaced when the document is converted.
+
+The only meaningful difference between a listing block and a literal block is that you can turn a listing block into a <<code-blocks,code block>> and apply syntax highlighting.
+====
+
+=== Listing block
+
+ When a line begins with one or more spaces it is displayed as a listing block.
+
+----
+This is a delimited _listing_ block.
+
+The content inside is displayed as <pre> text.
+----
+
+.Optional title
+----
+This is a delimited _listing_ block with a title.
+----
+
+=== Literal block
+
+....
+This is a delimited _literal_ block.
+....
+
+.Optional title
+....
+This is a delimited _literal_ block with a title.
+....

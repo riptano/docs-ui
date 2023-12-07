@@ -240,11 +240,11 @@
 }
 
 .doc .float-gap.right {
-  margin: 0 var(--ds-space-2) var(--ds-space-2) 0;
+  margin: 0 0 var(--ds-space-2) var(--ds-space-2);
 }
 
 .doc .float-gap.left {
-  margin: 0 0 var(--ds-space-2) var(--ds-space-2);
+  margin: 0 var(--ds-space-2) var(--ds-space-2) 0;
 }
 
 .doc .float-group::after {
