@@ -40,11 +40,6 @@
   margin-top: 0;
 }
 
-.doc .admonitionblock .title {
-  font-style: normal;
-  margin-bottom: var(--ds-space-2);
-}
-
 .doc .admonitionblock td.content {
   background: none;
 }

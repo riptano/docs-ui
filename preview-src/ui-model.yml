@@ -65,28 +65,3 @@ page:
       - content: Admonitions
         url: /asciidoc/admonitions.html
         urlType: internal
-      - content: Lists
-        url: /asciidoc/lists.html
-        urlType: internal
-      - content: Tabs
-        url: /asciidoc/tabs.html
-        urlType: internal
-      - content: Code
-        url: /asciidoc/code.html
-        urlType: internal
-      - content: Blocks
-        url: /asciidoc/blocks.html
-        urlType: internal
-      - content: Admonitions
-        url: /asciidoc/admonitions.html
-        urlType: internal
-      - content: Tables
-        url: /asciidoc/tables.html
-        urlType: internal
-      - content: Images and Media
-        url: /asciidoc/images.html
-        urlType: internal
-      - content: Symbol Replacements
-        url: /asciidoc/symbols.html
-        urlType: internal
-      
