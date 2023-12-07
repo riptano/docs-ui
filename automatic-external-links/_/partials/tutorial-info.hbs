@@ -1,28 +1,36 @@
-<div class="tutorial-info is-before-toc">
+<div class="is-before-toc -mt-1 mb-3 flex flex-wrap items-center gap-1">
   {{#with page.attributes.skill-level}}
-  <div class="info-item">
-    <span class="material-icons">network_check</span>
-    {{{this}}}
-  </div>
+    <div class="flex gap-0.5 text-sm text-[var(--ds-text-teritiary)]">
+      <span class="material-icons">network_check</span>
+      {{{this}}}
+    </div>
   {{/with}}
   {{#with (stepcount page.contents)}}
-  <div class="info-item">
-    <span class="material-icons">playlist_add_check</span>
-    {{{this}}} Steps
-  </div>
+    <div class="flex gap-0.5 text-sm text-[var(--ds-text-teritiary)]">
+      <span class="material-icons">playlist_add_check</span>
+      {{{this}}}
+      Steps
+    </div>
   {{/with}}
   {{#with page.attributes.time-commitment}}
-  <div class="info-item">
-    <span class="material-icons">query_builder</span>
-    {{{this}}}
-  </div>
+    <div class="flex gap-0.5 text-sm text-[var(--ds-text-teritiary)]">
+      <span class="material-icons">query_builder</span>
+      {{{this}}}
+    </div>
   {{/with}}
-  <div class="tutorial-actions">
+  <div class="ml-auto">
     {{#with page.attributes.colab-link}}
-    <a href="{{{this}}}" target="_blank" class="btn btn-outlined btn-neutral" data-track="Colab Link Clicked">
-      <i class="mr-1 colab-icon"></i>
-      Run this on Colab
-    </a>
+      <a
+        href="{{{this}}}"
+        target="_blank"
+        class="btn btn-outlined btn-neutral"
+        data-track="Colab Link Clicked"
+      >
+        <i
+          class="mr-1 h-[1em] w-[1.5em] bg-[url('../img/colab.svg')] bg-center bg-no-repeat"
+        ></i>
+        Run this on Colab
+      </a>
     {{/with}}
   </div>
 </div>
