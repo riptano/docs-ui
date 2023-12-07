@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Admonitions :: PREVIEW Datastax Docs</title>
+    <title>Tabsets :: PREVIEW Datastax Docs</title>
     <meta name="generator" content="Antora 1.0.0">
 <link rel="stylesheet" href="/docs-ui/_/css/site.css">
 <link rel="stylesheet" href="/docs-ui/_/css/vendor/tabs.css">
@@ -14,7 +14,7 @@
     <meta property="og:site_name" content="DataStax Documentation">
     <meta property="og:type" content="article">
     <meta property="og:url" content="">
-    <meta property="og:title" content="Admonitions :: PREVIEW Datastax Docs">
+    <meta property="og:title" content="Tabsets :: PREVIEW Datastax Docs">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <meta property="og:image:type" content="image/png">
@@ -25,7 +25,7 @@
     <meta name="twitter:site" content="@datastax">
     <meta name="twitter:creator" content="@datastax">
     <meta name="twitter:url" content="">
-    <meta name="twitter:title" content="Admonitions :: PREVIEW Datastax Docs">
+    <meta name="twitter:title" content="Tabsets :: PREVIEW Datastax Docs">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <script type="application/ld+json">
@@ -34,7 +34,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "",
-        "name":"Admonitions",
+        "name":"Tabsets",
         "inLanguage":"en-US",
         "reviewedBy":{
             "@type": "Corporation",
@@ -58,7 +58,7 @@
             "mainEntityOfPage": "true",
             "datePublished":"",
             "dateModified":"",
-            "headline": "Admonitions",
+            "headline": "Tabsets",
             "description":"",
             "keywords":"",
             "image": "https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png",
@@ -168,13 +168,13 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="code.html">Code</a>
       </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="tabsets.html">Tabsets</a>
       </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="blocks.html">Blocks</a>
       </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="admonitions.html">Admonitions</a>
       </li>
   <li class="nav-item" data-depth="1">
@@ -189,7 +189,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="blocks.html">Blocks</a>
       </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="admonitions.html">Admonitions</a>
       </li>
   <li class="nav-item" data-depth="1">
@@ -252,9 +252,8 @@
   </div>
 </aside>
     <article class="doc">
-  <h1 class="page">Admonitions</h1>
-  <div class="sect1">
-<h2 id="basic-admonitions"><a class="anchor" href="#basic-admonitions"></a>Basic admonitions</h2>
+  <h1 class="page">Tabsets</h1>
+  <div id="preamble">
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
@@ -263,58 +262,13 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="title">Optional title</div>
 <div class="paragraph">
-<p>An admonition draws the reader&#8217;s attention to auxiliary information.</p>
+<p>Tabsets depend on the <a href="https://github.com/asciidoctor/asciidoctor-tabs" class="external" target="_blank" rel="noopener">Asciidoctor Tabs</a> extension.</p>
 </div>
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Tabs syncing is controlled by the <code>tabs-sync-option</code> attribute.
+For more information, see the Asciidoctor Tabs <a href="https://github.com/asciidoctor/asciidoctor-tabs#tabs-sync" class="external" target="_blank" rel="noopener">documentation</a>.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Sign off before stepping away from your computer.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Look for the warp zone under the bridge.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Slippery when wet.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-The software you&#8217;re about to use is untested.
 </td>
 </tr>
 </table>
@@ -322,10 +276,335 @@ The software you&#8217;re about to use is untested.
 </div>
 </div>
 <div class="sect1">
+<h2 id="basic-tabset"><a class="anchor" href="#basic-tabset"></a>Basic tabset</h2>
+<div class="sectionbody">
+<div id="tabs-1" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="tabs-1-tab-a" class="tab">
+<p>Tab A</p>
+</li>
+<li id="tabs-1-tab-b" class="tab">
+<p>Tab B</p>
+</li>
+<li id="tabs-1-tab-c" class="tab">
+<p>Tab C</p>
+</li>
+</ul>
+</div>
+<div id="tabs-1-tab-a--panel" class="tabpanel" aria-labelledby="tabs-1-tab-a">
+<div class="paragraph">
+<p>Contents of Tab A.</p>
+</div>
+</div>
+<div id="tabs-1-tab-b--panel" class="tabpanel" aria-labelledby="tabs-1-tab-b">
+<div class="paragraph">
+<p>Contents of Tab B.</p>
+</div>
+</div>
+<div id="tabs-1-tab-c--panel" class="tabpanel" aria-labelledby="tabs-1-tab-c">
+<div class="paragraph">
+<p>Contents of Tab C.</p>
+</div>
+<div class="paragraph">
+<p>Contains more than one block.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tabset-w-overflow-tab-titles"><a class="anchor" href="#tabset-w-overflow-tab-titles"></a>Tabset w/ overflow tab titles</h2>
+<div class="sectionbody">
+<div id="tabs-2" class="openblock tabs is-sync overflow is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="tabs-2-tab-name" class="tab">
+<p>Tab Name</p>
+</li>
+<li id="tabs-2-longer-tab-name" class="tab">
+<p>Longer Tab Name</p>
+</li>
+<li id="tabs-2-an-even-longer-tab-name" class="tab">
+<p>An Even Longer Tab Name</p>
+</li>
+<li id="tabs-2-this-is-the-longest-tab-name" class="tab">
+<p>This Is The Longest Tab Name</p>
+</li>
+</ul>
+</div>
+<div id="tabs-2-tab-name--panel" class="tabpanel" aria-labelledby="tabs-2-tab-name">
+<div class="paragraph">
+<p>Contents of Tab.</p>
+</div>
+</div>
+<div id="tabs-2-longer-tab-name--panel" class="tabpanel" aria-labelledby="tabs-2-longer-tab-name">
+<div class="paragraph">
+<p>Contents of Longer Tab.</p>
+</div>
+</div>
+<div id="tabs-2-an-even-longer-tab-name--panel" class="tabpanel" aria-labelledby="tabs-2-an-even-longer-tab-name">
+<div class="paragraph">
+<p>Contents of Even Longer Tab.</p>
+</div>
+</div>
+<div id="tabs-2-this-is-the-longest-tab-name--panel" class="tabpanel" aria-labelledby="tabs-2-this-is-the-longest-tab-name">
+<div class="paragraph">
+<p>Contents of The Longest Tab.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tabset-w-wrapping-tab-titles"><a class="anchor" href="#tabset-w-wrapping-tab-titles"></a>Tabset w/ wrapping tab titles</h2>
+<div class="sectionbody">
+<div id="tabs-3" class="openblock tabs is-sync wrapping is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="tabs-3-tab-name" class="tab">
+<p>Tab Name</p>
+</li>
+<li id="tabs-3-longer-tab-name" class="tab">
+<p>Longer Tab Name</p>
+</li>
+<li id="tabs-3-an-even-longer-tab-name" class="tab">
+<p>An Even Longer Tab Name</p>
+</li>
+<li id="tabs-3-this-is-the-longest-tab-name" class="tab">
+<p>This Is The Longest Tab Name</p>
+</li>
+</ul>
+</div>
+<div id="tabs-3-tab-name--panel" class="tabpanel" aria-labelledby="tabs-3-tab-name">
+<div class="paragraph">
+<p>Contents of Tab.</p>
+</div>
+</div>
+<div id="tabs-3-longer-tab-name--panel" class="tabpanel" aria-labelledby="tabs-3-longer-tab-name">
+<div class="paragraph">
+<p>Contents of Longer Tab.</p>
+</div>
+</div>
+<div id="tabs-3-an-even-longer-tab-name--panel" class="tabpanel" aria-labelledby="tabs-3-an-even-longer-tab-name">
+<div class="paragraph">
+<p>Contents of Even Longer Tab.</p>
+</div>
+</div>
+<div id="tabs-3-this-is-the-longest-tab-name--panel" class="tabpanel" aria-labelledby="tabs-3-this-is-the-longest-tab-name">
+<div class="paragraph">
+<p>Contents of The Longest Tab.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="experimental-tabset-icons"><a class="anchor" href="#experimental-tabset-icons"></a>Experimental: Tabset icons</h2>
+<div class="sectionbody">
+<div id="tabs-4" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="tabs-4-cql" class="tab">
+<p><span class="image"><img src="/img/cassandra-original.svg" alt="cassandra original" width="28"></span> CQL</p>
+</li>
+<li id="tabs-4-python" class="tab">
+<p><span class="image"><img src="/img/python-original.svg" alt="python original" width="22"></span> Python</p>
+</li>
+<li id="tabs-4-java" class="tab">
+<p><span class="image"><img src="/img/java-original.svg" alt="java original" width="22"></span> Java</p>
+</li>
+<li id="tabs-4-rest-api" class="tab">
+<p><span class="image"><img src="/img/shell-original.svg" alt="shell original" width="20"></span> REST API</p>
+</li>
+</ul>
+</div>
+<div id="tabs-4-cql--panel" class="tabpanel" aria-labelledby="tabs-4-cql">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">USE cycling;
+CREATE TABLE rank_by_year_and_name (
+  race_year int,
+  race_name text,
+  cyclist_name text,
+  rank int,
+  PRIMARY KEY ((race_year, race_name), rank)
+);</code></pre>
+</div>
+</div>
+</div>
+<div id="tabs-4-python--panel" class="tabpanel" aria-labelledby="tabs-4-python">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">    log.info("creating table...")
+    session.execute("""
+        CREATE TABLE IF NOT EXISTS cyclist_by_year_and_name (
+            race_year int,
+            race_name text,
+            rank int,
+            cyclist_name text,
+            PRIMARY KEY ((race_year,race_name),rank)
+        )
+        """)</code></pre>
+</div>
+</div>
+</div>
+<div id="tabs-4-java--panel" class="tabpanel" aria-labelledby="tabs-4-java">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">CreateTable create = createTable("cycling", "cyclist_by_year_and_name")
+    .withPartitionKey("race_year", DataTypes.INT)
+    .withPartitionKey("race_name", DataTypes.TEXT)
+    .withClusteringColumn("rank", DataTypes.INT)
+    .withColumn("cyclist_name", DataTypes.TEXT);
+// CREATE TABLE cycling.cyclist_by_year_and_name (race_year int,race_name text,rank int,cyclist_name text,PRIMARY KEY((race_year,race_name),rank))</code></pre>
+</div>
+</div>
+</div>
+<div id="tabs-4-rest-api--panel" class="tabpanel" aria-labelledby="tabs-4-rest-api">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">curl -s --location \
+--request POST http://localhost:8082/v2/schemas/keyspaces/cycling/tables \
+--header "X-Cassandra-Token: $AUTH_TOKEN" \
+--header "Content-Type: application/json" \
+--header "Accept: application/json" \
+--data '{
+	"name": "cyclist_by_year_and_name",
+	"columnDefinitions":
+	  [
+        {
+	      "name": "race_year",
+	      "typeDefinition": "int"
+	    },
+        {
+	      "name": "race_name",
+	      "typeDefinition": "text"
+	    },
+        {
+	      "name": "rank",
+	      "typeDefinition": "int"
+	    }
+        ,
+        {
+          "name": "cyclist_name",
+          "typeDefinition": "text"
+        }
+	  ],
+	"primaryKey":
+	  {
+	    "partitionKey": ["race_year", "race_name"],
+	    "clusteringKey": ["rank"]
+	  },
+	"tableOptions":
+	  {
+	    "defaultTimeToLive": 0,
+	    "clusteringExpression":
+	      [{ "column": "rank", "order": "ASC" }]
+	  }
+}'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="complex-admonition"><a class="anchor" href="#complex-admonition"></a>Complex admonition</h3>
+<h3 id="tabset-w-only-code-blocks"><a class="anchor" href="#tabset-w-only-code-blocks"></a>Tabset w/ only code blocks</h3>
+<div id="tabs-5" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="tabs-5-command" class="tab">
+<p>Command</p>
+</li>
+<li id="tabs-5-result" class="tab">
+<p>Result</p>
+</li>
+</ul>
+</div>
+<div id="tabs-5-command--panel" class="tabpanel" aria-labelledby="tabs-5-command">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-curl hljs" data-lang="curl">curl -s -L -X GET https://$ASTRA_CLUSTER_ID-$ASTRA_REGION.apps.astra.datastax.com/api/rest/v2/schemas/keyspaces/users_keyspace \
+-H "X-Cassandra-Token: $ASTRA_DB_APPLICATION_TOKEN" \
+-H "Content-Type: application/json" \
+-H "Accept: application/json"</code></pre>
+</div>
+</div>
+</div>
+<div id="tabs-5-result--panel" class="tabpanel" aria-labelledby="tabs-5-result">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">{"data":{"name":"users_keyspace"}}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="complex-tabset-w-nested-tabsets"><a class="anchor" href="#complex-tabset-w-nested-tabsets"></a>Complex tabset w/ nested tabsets</h3>
+<div id="tabs-6" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="tabs-6-tarball" class="tab">
+<p>Tarball</p>
+</li>
+<li id="tabs-6-debian" class="tab">
+<p>Debian</p>
+</li>
+<li id="tabs-6-centos" class="tab">
+<p>CentOS</p>
+</li>
+</ul>
+</div>
+<div id="tabs-6-tarball--panel" class="tabpanel" aria-labelledby="tabs-6-tarball">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If you haven&#8217;t already, start by downloading the Cassandra binary tarball.
+For example, to download Cassandra 4.1.2:</p>
+<div id="tabs-7" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="tabs-7-curl" class="tab">
+<p>cURL</p>
+</li>
+<li id="tabs-7-wget" class="tab">
+<p>Wget</p>
+</li>
+</ul>
+</div>
+<div id="tabs-7-curl--panel" class="tabpanel" aria-labelledby="tabs-7-curl">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">curl -OL https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz</code></pre>
+</div>
+</div>
+</div>
+<div id="tabs-7-wget--panel" class="tabpanel" aria-labelledby="tabs-7-wget">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">wget https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -333,103 +612,132 @@ The software you&#8217;re about to use is untested.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="title">The title of a complex admonition</div>
 <div class="paragraph">
-<p>An admonition block may contain complex content, like lists and tables.</p>
+<p>To download a different version of Cassandra, visit the <a href="https://archive.apache.org/dist/cassandra/" class="external" target="_blank" rel="noopener">Apache Archives</a>.</p>
 </div>
-<div class="ulist">
-<div class="title">A list</div>
-<ul>
-<li>
-<p>List item</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Nested list item</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Deeper nested list item</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>List item</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Another nested list item</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>List item</p>
-</li>
-</ul>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">A table</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+</td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
-</tr>
-</tbody>
 </table>
+</div>
+</li>
+<li>
+<p>(Optional) Verify the integrity of the downloaded tarball using one of the methods <a href="https://www.apache.org/dyn/closer.cgi#verify" class="external" target="_blank" rel="noopener">here</a>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>For example, to verify the SHA256 hash of the downloaded file using GPG:</p>
 <div class="listingblock">
-<div class="title">A code block</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">vfs
-  .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
-  .pipe(tap((file) =&gt; { <i class="conum" data-value="1"></i><b>(1)</b>
-    file.contents = browserify(file.relative, { basedir: 'src', detectGlobals: false }).bundle()
-  }))</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">gpg --print-md SHA256 apache-cassandra-4.1.2-bin.tar.gz</code></pre>
 </div>
 </div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Maybe with a callout.</td>
-</tr>
-</table>
+</li>
+<li>
+<p>Compare the output with the contents of the SHA256 file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">curl -L https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz.sha256</code></pre>
 </div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-<div class="title">Another admonition</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="tabs-6-debian--panel" class="tabpanel" aria-labelledby="tabs-6-debian">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>(Optional) Verify the integrity of the downloaded tarball using one of the methods <a href="https://www.apache.org/dyn/closer.cgi#verify" class="external" target="_blank" rel="noopener">here</a>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>For example, to verify the SHA256 hash of the downloaded file using GPG:</p>
+<div id="tabs-8" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="tabs-8-command" class="tab">
+<p>Command</p>
+</li>
+<li id="tabs-8-result" class="tab">
+<p>Result</p>
+</li>
+</ul>
+</div>
+<div id="tabs-8-command--panel" class="tabpanel" aria-labelledby="tabs-8-command">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">gpg --print-md SHA256 apache-cassandra-4.1.2-bin.tar.gz</code></pre>
+</div>
+</div>
+</div>
+<div id="tabs-8-result--panel" class="tabpanel" aria-labelledby="tabs-8-result">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">apache-cassandra-4.1.2-bin.tar.gz: 7CE3103A 76B8AF76 FFD8488D 6BF484E1 F1751196
+                                   17F3205A E0526C71 D816C6F7</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Compare the output with the contents of the SHA256 file:</p>
+<div id="tabs-9" class="openblock tabs is-sync is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="tabs-9-curl" class="tab">
+<p>cURL</p>
+</li>
+<li id="tabs-9-wget" class="tab">
+<p>Wget</p>
+</li>
+<li id="tabs-9-result" class="tab">
+<p>Result</p>
+</li>
+</ul>
+</div>
+<div id="tabs-9-curl--panel" class="tabpanel" aria-labelledby="tabs-9-curl">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">curl -L https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz.sha256</code></pre>
+</div>
+</div>
+</div>
+<div id="tabs-9-wget--panel" class="tabpanel" aria-labelledby="tabs-9-wget">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">wget --quiet -O - https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz.sha256</code></pre>
+</div>
+</div>
+</div>
+<div id="tabs-9-result--panel" class="tabpanel" aria-labelledby="tabs-9-result">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">7ce3103a76b8af76ffd8488d6bf484e1f175119617f3205ae0526c71d816c6f7</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="tabs-6-centos--panel" class="tabpanel" aria-labelledby="tabs-6-centos">
 <div class="paragraph">
-<p>Admonition styles are set on example blocks, which are delimited by four equal signs (<code>====</code>).
-When nesting a delimited block that uses the same structural container, it&#8217;s necessary to vary the length of the delimiter lines (i.e., make the length of the delimiter lines for the child block different than the length of the delimiter lines for the parent block).
-Varying the delimiter line length allows the parser to distinguish one block from another.</p>
+<p>Just text.</p>
 </div>
-</td>
-</tr>
-</table>
 </div>
-</td>
-</tr>
-</table>
+</div>
 </div>
 </div>
 </div>
