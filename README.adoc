@@ -18,7 +18,7 @@ ifdef::env-github[]
 endif::[]
 // Project URLs:
 :url-project: https://github.com/riptano/docs-ui
-:url-preview: https://riptano.github.io/datastax-docs-site/main
+:url-preview: https://riptano.github.io/docs-ui/main
 // :url-ci-pipelines: {url-project}/pipelines
 // :img-ci-status: {url-project}/badges/master/pipeline.svg
 :url-docs-home: https://github.com/riptano/docs-home

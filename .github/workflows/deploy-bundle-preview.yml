@@ -1,6 +1,9 @@
 name: Deploy Bundle Preview
 
 on:
+  push:
+    branches:
+      - 'main'
   pull_request:
     branches:
       - '*'
@@ -30,7 +33,7 @@ jobs:
         shell: bash
         run: |
           # transform branch names in form of `refs/heads/main` to `main`
-          draft_branch=$(basename ${{ github.event.pull_request.head.ref }})
+          draft_branch=$(basename ${{ github.event.pull_request.head.ref || github.event.ref }})
           echo "draft_branch=$draft_branch" >> $GITHUB_OUTPUT
         id: extract_branch
 
