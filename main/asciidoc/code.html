@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Code :: PREVIEW Datastax Docs</title>
+    <meta name="generator" content="Antora 1.0.0">
+<link rel="stylesheet" href="/docs-ui/_/css/site.css">
+<link rel="stylesheet" href="/docs-ui/_/css/vendor/tabs.css">
+    <link rel="icon" href="https://www.datastax.com/favicon.ico">
+    <meta property="article:published_time" content="">
+    <meta property="article:modified_time" content="">
+    <meta property="article:author" content="DataStax">
+    <meta property="og:site_name" content="DataStax Documentation">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Code :: PREVIEW Datastax Docs">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:image:alt" content="DataStax Documentation">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@datastax">
+    <meta name="twitter:creator" content="@datastax">
+    <meta name="twitter:url" content="">
+    <meta name="twitter:title" content="Code :: PREVIEW Datastax Docs">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
+    <script type="application/ld+json">
+    [
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "",
+        "name":"Code",
+        "inLanguage":"en-US",
+        "reviewedBy":{
+            "@type": "Corporation",
+            "@id": "https://datastax.com#organization",
+            "name": "DataStax"
+        },
+        "author":{
+            "@type": "Corporation",
+            "@id": "https://datastax.com#organization",
+            "name": "DataStax"
+        },
+        "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://docs.datastax.com",
+            "name": "DataStax Documentation"
+        },
+        "mainEntity":
+        {
+            "@type":"TechArticle",
+            "@id": "#main_content",
+            "mainEntityOfPage": "true",
+            "datePublished":"",
+            "dateModified":"",
+            "headline": "Code",
+            "description":"",
+            "keywords":"",
+            "image": "https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png",
+            "publisher":{
+                "@type": "Corporation",
+                "@id": "https://datastax.com#organization",
+                "name": "DataStax",
+                "url": "https://datastax.com"
+            },
+            "author":{
+                "@type": "Corporation",
+                "@id": "https://datastax.com#organization",
+                "name": "DataStax",
+                "url": "https://datastax.com"
+            }
+        }
+     }
+    ]
+    </script>
+
+
+<script>var uiRootPath = '/docs-ui/_'</script>
+
+<link rel="preload" href="/docs-ui/_/font/material-icons-outlined-latin-400-normal.woff2" as="font"
+    type="font/woff2" crossorigin>
+<link rel="preload" href="/docs-ui/_/font/roboto-flex-latin-400-normal.woff2" as="font" type="font/woff2"
+    crossorigin>
+<link rel="preload" href="/docs-ui/_/font/roboto-mono-latin-500-normal.woff2" as="font" type="font/woff2"
+    crossorigin>
+
+<script>
+    var prefersTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    var storedTheme = localStorage.getItem('theme') || prefersTheme
+
+    if (storedTheme) {
+        document.documentElement.setAttribute('data-theme', storedTheme)
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light')
+    }
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="http://localhost:5252" id="datastax-docs-logo-main"></a>
+      <button data-target="topbar-nav" class="navbar-burger btn btn-icon btn-neutral btn-plain lg:hidden"></button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end hide-for-print">
+        <div class="search">
+          <div class="DocSearch" id="docsearch"></div>
+        </div>
+        <button class="btn btn-neutral btn-outlined" id="get-support"><span
+            class="material-icons lg:mr-1">support_agent</span>Get Live Help</button>
+
+        <button class="btn btn-icon btn-neutral btn-outlined" id="theme-toggle"></button>
+      </div>
+    </div>
+  </nav>
+</header><div class="body">
+  <div class="nav-container"  autofocus>
+  <aside class="nav">
+    <div class="panels">
+      <div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle material-icons">chevron_right</button>
+    <span class="nav-text">Page Templates</span>
+    <ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../page-templates/full.html">Full</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../page-templates/landing.html">Landing</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../page-templates/tutorial.html">Tutorial</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../page-templates/integrations-overview.html">Integrations Overview</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../page-templates/integrations-detail.html">Integrations Detail</a>
+      </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle material-icons">chevron_right</button>
+    <span class="nav-text">Asciidoc Examples</span>
+    <ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="text-formatting.html">Text formatting</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="lists.html">Lists</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="tables.html">Tables</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="images.html">Images and media</a>
+      </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="code.html">Code</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="tabsets.html">Tabsets</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="blocks.html">Blocks</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admonitions.html">Admonitions</a>
+      </li>
+</ul>
+  </li>
+</ul>
+    <ul class="secondary-nav-list">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.datastax.com/" target="_self">
+      <span class="material-icons">home</span>
+      DataStax Home
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/en/glossary/doc" target="_blank">
+      <span class="material-icons">menu_book</span>
+      Glossary
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://support.datastax.com/" target="_blank">
+      <span class="material-icons">support</span>
+      Support
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://downloads.datastax.com/" target="_blank">
+      <span class="material-icons">downloading</span>
+      Downloads
+    </a>
+  </li>
+</ul>  </nav>
+</div>
+    </div>
+  </aside>
+</div>  <div class="content-container">
+    <main class="article">
+  <div class="toolbar" role="navigation">
+<button
+  class="nav-toggle btn btn-neutral btn-plain btn-icon mr-auto lg:hidden"
+></button><nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+</div>
+  <div class="content">
+    <aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu-container">
+    <div class="toc-menu"></div>
+    <div class="toc-menu toc-tags">
+    </div>
+    <div class="toc-menu toc-dev">
+    </div>
+  </div>
+</aside>
+    <article class="doc">
+  <h1 class="page">Code</h1>
+  <div class="sect1">
+<h2 id="inline-code"><a class="anchor" href="#inline-code"></a>Inline code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Monospace text formatting is typically used to represent text shown in <code>computer terminals</code> or <code>code editors</code> (often referred to as a codespan).</p>
+</div>
+<div class="paragraph">
+<p>Like other inline text formatting, you can add multiple emphasis styles to <code>monospace</code> text as long as the <code><strong>syntax</strong></code> is <code><em>placed</em></code> in the correct <code><strong><em>order</em></strong></code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="code-blocks"><a class="anchor" href="#code-blocks"></a>Code blocks</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="basic-code-block-console"><a class="anchor" href="#basic-code-block-console"></a>Basic code block (console)</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">A code block with [source,console].</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Optional title</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">A code block with a title.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="language-code-block"><a class="anchor" href="#language-code-block"></a>Language code block</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name": "module-name",
+  "version": "10.0.1",
+  "description": "An example module to illustrate the usage of package.json",
+  "author": "Author Name &lt;author@example.com&gt;",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Language code block w/ title</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name": "module-name",
+  "version": "10.0.1",
+  "description": "An example module to illustrate the usage of package.json",
+  "author": "Author Name &lt;author@example.com&gt;",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock nolang">
+<div class="title">Language code block w/ hidden language</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+
+        System.out.println("Current Date and Time is: " + current);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock nolang">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Language code block with no title and hidden language name
+public class CurrentDateTime {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+
+        System.out.println("Current Date and Time is: " + current);
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="line-wrapping"><a class="anchor" href="#line-wrapping"></a>Line wrapping</h3>
+<div class="listingblock">
+<div class="title">Line wrapping is turned off by default</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</code></pre>
+</div>
+</div>
+<div class="listingblock wrap">
+<div class="title">Code block w/ forced wrapping</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="text-formatting"><a class="anchor" href="#text-formatting"></a>Text formatting</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd /Users/<strong><em>your-name</em></strong>/repos/astra-vector-docs/build/site</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="callouts"><a class="anchor" href="#callouts"></a>Callouts</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">vfs
+  .src('js/vendor/*.js', { cwd: 'src', cwdbase: true, read: false })
+  .pipe(tap((file) =&gt; { <i class="conum" data-value="1"></i><b>(1)</b>
+    file.contents = browserify(file.relative, { basedir: 'src', detectGlobals: false }).bundle()
+  }))
+  .pipe(buffer()) <i class="conum" data-value="2"></i><b>(2)</b>
+  .pipe(uglify())
+  .pipe(gulp.dest('build'))</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>tap</code> function is used to wiretap the data in the pipe.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Wrap each streaming file in a buffer so the files can be processed by uglify.
+Uglify can only work with buffers, not streams.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="listing-and-literal-blocks"><a class="anchor" href="#listing-and-literal-blocks"></a>Listing and literal blocks</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Listing blocks and literal blocks display the text you write exactly as you see it in the source.
+Literal text is treated as preformatted text.
+The text is presented in a fixed-width font and endlines are preserved.
+Only special characters and callouts are replaced when the document is converted.</p>
+</div>
+<div class="paragraph">
+<p>The only meaningful difference between a listing block and a literal block is that you can turn a listing block into a <a href="#code-blocks">code block</a> and apply syntax highlighting.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="listing-block"><a class="anchor" href="#listing-block"></a>Listing block</h3>
+<div class="literalblock">
+<div class="content">
+<pre>When a line begins with one or more spaces it is displayed as a listing block.</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>This is a delimited _listing_ block.
+
+The content inside is displayed as &lt;pre&gt; text.</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Optional title</div>
+<div class="content">
+<pre>This is a delimited _listing_ block with a title.</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="literal-block"><a class="anchor" href="#literal-block"></a>Literal block</h3>
+<div class="literalblock">
+<div class="content">
+<pre>This is a delimited _literal_ block.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="title">Optional title</div>
+<div class="content">
+<pre>This is a delimited _literal_ block with a title.</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+  <div class="sect1">
+  <h2>Support</h2>
+  <div class="sectionbody flex flex-col sm:flex-row">
+    <div class="sect2 basis-1/2">
+      <h3>Was This Helpful?</h3>
+      <div
+        id="feedback_buttons"
+        class="mt-2 flex gap-1 opacity-100 transition-opacity"
+      >
+        <button
+          id="feedback_button_yes"
+          class="btn btn-neutral btn-outlined"
+          data-track="Was This Helpful?: Yes Button Clicked"
+        >
+          <i class="material-icons mr-1">thumb_up</i>Yes
+        </button>
+        <button
+          id="feeback_button_no"
+          class="btn btn-neutral btn-outlined"
+          data-track="Was This Helpful?: No Button Clicked"
+          onclick="feedback_dialog.showModal()"
+        >
+          <i class="material-icons mr-1">thumb_down</i>No
+        </button>
+      </div>
+      <div
+        id="feedback_thank_you"
+        class="marker:text-h2 mt-2 hidden opacity-0 transition-opacity"
+      >Thank you for your feedback.
+      </div>
+    </div>
+    <div class="sect2 basis-1/2">
+      <h3>Need More Help?</h3>
+      <div class="mt-2 flex flex-col gap-2">
+        <a href="https://www.datastax.com/dev/community" target="_blank">
+          <i class="material-icons mr-1">group</i>Ask the Astra community
+        </a>
+        <a href="https://support.datastax.com/" target="_blank">
+          <i class="material-icons mr-1">support</i>Get in touch with support
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<dialog id="feedback_dialog" class="dialog w-[80rem]">
+  <form method="dialog" id="feedback_form">
+    <div class="flex items-center border-b p-3">
+      <h1 class="!m-0">Give Feedback</h1>
+      <button
+        id="feedback_form_esc_button"
+        class="btn btn-plain btn-neutral ml-auto h-4 p-1"
+        formnovalidate
+      ><span
+          class="text-overline rounded-xl bg-[var(--ds-background-level1)] px-1 text-[var(--ds-text-tertiary)]"
+        >ESC</span><i
+          class="material-icons text-[var(--ds-primary-main)]"
+        >close</i></button>
+    </div>
+    <div class="p-3">
+      <p class="!mt-0">How can we improve the documentation?</p>
+      <textarea
+        rows="4"
+        name="message"
+        class="input mt-1"
+        placeholder="Provide your feedback"
+        required
+        autofocus
+      ></textarea>
+    </div>
+    <div class="top flex justify-end gap-1 border-t px-3 pb-3 pt-2">
+      <button
+        class="btn btn-neutral btn-outlined"
+        id="feedback_form_cancel_button"
+        formnovalidate
+      >Cancel</button>
+      <button class="btn btn-neutral btn-solid" type="submit">Submit Feedback</button>
+    </div>
+  </form>
+</dialog>  </article>  </div>
+</main>    <hr class="mx-2 md:mx-3" />
+
+<footer
+  class="footer flex flex-col gap-3 px-2 py-5 text-sm md:flex-row md:px-3 [&_a]:text-[var(--ds-primary-main)]"
+>
+  <div class="flex flex-col gap-3">
+    <a
+      href="https://www.datastax.com"
+      target="_blank"
+      id="datastax-docs-logo-text"
+      title="Go to the DataStax Website"
+      data-track="Footer datastax.com Link Clicked"
+    ></a>
+    <p class="!m-0">
+      <span>©</span>
+      <span id="copyrightdate">2023</span>
+      <span>DataStax |
+        <a
+          href="https://www.datastax.com/legal/datastax-website-privacy-policy"
+          target="_blank"
+          data-track="Footer Privacy Policy Link Clicked"
+        >Privacy policy</a>
+        |
+        <a
+          href="https://www.datastax.com/legal/datastax-website-terms-use"
+          target="_blank"
+          data-track="Footer Terms of Use Link Clicked"
+        >Terms of use</a>
+      </span>
+    </p>
+    <p class="text-xs !m-0 max-w-[640px] text-[var(--ds-text-tertiary)]">Apache,
+      Apache Cassandra, Cassandra, Apache Tomcat, Tomcat, Apache Lucene, Apache
+      Solr, Apache Hadoop, Hadoop, Apache Pulsar, Pulsar, Apache Spark, Spark,
+      Apache TinkerPop, TinkerPop, Apache Kafka and Kafka are either registered
+      trademarks or trademarks of the Apache Software Foundation or its
+      subsidiaries in Canada, the United States and/or other countries.
+      Kubernetes is the registered trademark of the Linux Foundation.</p>
+  </div>
+  <div class="flex flex-col gap-3 md:ml-auto md:items-end">
+    <div class="flex gap-2">
+      <a
+        href="https://www.facebook.com/datastax"
+        target="_blank"
+        data-track="Footer Facebook Link Clicked"
+        title="Go to DataStax Facebook"
+        class="h-2.5 w-2.5 bg-[url('../img/social-facebook.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://twitter.com/datastax"
+        target="_blank"
+        title="Go to DataStax X (Twitter)"
+        data-track="Footer Twitter Link Clicked"
+        class="h-2.5 w-2.5 bg-[url('../img/social-x.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://github.com/datastax/"
+        target="_blank"
+        title="Go to DataStax GitHub"
+        data-track="Footer Github Link Clicked"
+        class="h-2.5 w-2.5 bg-[url('../img/social-github.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://www.twitch.tv/datastaxdevs"
+        target="_blank"
+        title="Go to DataStax Twitch"
+        data-track="Footer Twitch Link Clicked"
+        class="h-2.5 w-2.5 bg-[url('../img/social-twitch.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://www.linkedin.com/company/datastax/"
+        target="_blank"
+        title="Go to DataStax Linkedin"
+        data-track="Linkedin Link Clicked"
+        class="h-2.5 w-2.5 bg-[url('../img/social-linkedin.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://datastax.medium.com/"
+        target="_blank"
+        title="Go to DataStax Medium"
+        data-track="Footer Medium Link Clicked"
+        class="h-2.5 w-2.5 bg-[url('../img/social-medium.svg')] bg-no-repeat dark:invert"
+      ></a>
+    </div>
+    <p class="!m-0 md:text-right">General Inquiries:
+      <a
+        href="tel:+1-650-389-6000"
+        data-track="Footer Telephone Link Clicked"
+      >+1 (650) 389-6000</a>,
+      <a
+        href="mailto:info@datastax.com"
+        data-track="Footer Email Link Clicked"
+      >info@datastax.com</a>
+    </p>
+  </div>
+</footer>  </div>
+</div>
+<script id="site-script" src="/docs-ui/_/js/site.js" data-ui-root-path="/docs-ui/_"></script>
+<script async src="/docs-ui/_/js/vendor/tabs.js"></script>
+<script async src="/docs-ui/_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>
+  docsearch({
+    container: '#docsearch',
+    appId: '2ELPRZR9UC',
+    indexName: 'crawler_docsearch-astra',
+    apiKey: '1f4acbf51d118e4137e9a63b38bd8456',
+  })
+</script>
+  </body>
+</html>
