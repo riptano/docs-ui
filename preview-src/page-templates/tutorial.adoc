@@ -48,7 +48,7 @@ Add the `.step-reset` role to a section title to reset the step number.
 
 Learn how to create a new database, connect to your database, load a set of vector embeddings, and perform a similarity search to find vectors that are close to the one in your query.
 
-image::/img/placeholder-image.svg["Tutorial overview"]
+image::../img/placeholder-image.svg["Tutorial overview"]
 
 == Prerequisites
 

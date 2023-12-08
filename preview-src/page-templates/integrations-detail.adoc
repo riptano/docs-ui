@@ -1,6 +1,6 @@
 = LangChain
 :page-layout: tutorial
-:page-icon: preview-src/img/langchain.svg
+:page-icon: preview-src../img/langchain.svg
 :page-toclevels: 1
 :keywords: Machine Learning Frameworks, Embedding Services, Free, Data Warehouses, SDK
 :description: By integrating LangChain with {product}, you can seamlessly utilize the advanced linguistic processing capabilities of LangChain within your database environment.
@@ -37,7 +37,7 @@ By integrating LangChain with Astra, you can seamlessly utilize advanced linguis
 This combination enhances vector data analysis, allowing natural language data to be processed, stored, and queried with efficiency.
 
 .Architecture diagram
-image::/img/placeholder-image.svg["Diagram of LangChain integration architecture"]
+image::../img/placeholder-image.svg["Diagram of LangChain integration architecture"]
 
 To get started, ensure you have an https://example.com[active LangChain account^,role=external] with the requisite permissions.
 
@@ -76,7 +76,7 @@ Ensure your integration was successful by checking for new linguistic vector ent
 . Open the 'Vector Data' tab.
 . Confirm the appearance of recent vector entries from LangChain.
 
-image::/img/placeholder-image.svg["Screenshot"]
+image::../img/placeholder-image.svg["Screenshot"]
 
 [.header-noline]
 == Advanced configuration

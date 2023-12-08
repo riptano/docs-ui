@@ -32,22 +32,12 @@
   border-radius: 0;
 }
 
-.doc .admonitionblock td.content > *,
-.doc .admonitionblock td.content p {
+.doc .admonitionblock td.content > *:not(:first-child) {
   margin-top: var(--ds-space-2);
 }
 
 .doc .admonitionblock td.content .ulist p {
   margin-top: 0;
-}
-
-.doc .admonitionblock td.content > .paragraph:first-child p:first-child,
-.doc .admonitionblock td.content > .title {
-  margin: 0;
-}
-
-.doc .admonitionblock .title {
-  font-style: normal;
 }
 
 .doc .admonitionblock td.content {
@@ -69,12 +59,12 @@
 
 .doc .admonitionblock.note .icon::before {
   color: var(--ds-success-500);
-  content: '\e88e';
+  content: "\e88e";
 }
 
 .doc .admonitionblock.tip .icon::before {
   color: var(--ds-success-500);
-  content: '\e0f0';
+  content: "\e0f0";
 }
 
 /* CAUTION */
@@ -89,7 +79,7 @@
 
 .doc .admonitionblock.caution .icon::before {
   color: var(--ds-warning-500);
-  content: '\e88e';
+  content: "\e88e";
 }
 
 /* WARNING, IMPORTANT */
@@ -106,12 +96,12 @@
 
 .doc .admonitionblock.warning .icon::before {
   color: var(--ds-failure-500);
-  content: '\f083';
+  content: "\f083";
 }
 
 .doc .admonitionblock.important .icon::before {
   color: var(--ds-failure-500);
-  content: '\e160';
+  content: "\e160";
 }
 
 html[data-theme="dark"] .doc .admonitionblock .icon::before {

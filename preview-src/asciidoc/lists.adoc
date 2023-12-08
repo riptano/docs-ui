@@ -103,7 +103,6 @@ With another paragraph.
 Third term::
 Description of the first term.
 
-
 === Horizontal description list (unconstrained)
 
 [horizontal]

@@ -41,8 +41,7 @@ jobs:
         run: |
           set -o pipefail
           gulp lint |& tee $GITHUB_WORKSPACE/build.log
-          UI_ROOT_PATH_PREFIX=${{ github.event.repository.name }}/${{ steps.extract_branch.outputs.draft_branch }} \
-            gulp preview:build |& tee $GITHUB_WORKSPACE/build.log
+          gulp preview:build |& tee $GITHUB_WORKSPACE/build.log
 
       - name: Check Build Result
         id: logFail

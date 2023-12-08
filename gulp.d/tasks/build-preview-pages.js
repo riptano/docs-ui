@@ -45,20 +45,11 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
             const uiModel = { ...baseUiModel }
             uiModel.page = {
               ...uiModel.page,
+              // Adding url to uiModel.page allows the nav to properly highlight the current page.
               url: path.join('/', path.relative(previewSrc, file.path.replace('.adoc', '.html'))),
             }
             uiModel.siteRootPath = siteRootPath
-
-            // The following has been customized to enable pull request preview builds on Github Pages.
-            // It differs from the Antora Default UI by allowing for an optional UI_ROOT_PATH_PREFIX.
-            // This environment variable is set during build to add a prefix to the {{ uiRootPath }} variable.
-            // This enables us to have preview builds that live in their own subdirectory on GitHub Pages.
-            let uiRootPath = path.join(siteRootPath, '_')
-            if (uiModel.env.UI_ROOT_PATH_PREFIX) {
-              uiRootPath = path.join('/', uiModel.env.UI_ROOT_PATH_PREFIX, uiRootPath)
-            }
-            uiModel.uiRootPath = uiRootPath
-
+            uiModel.uiRootPath = path.join(siteRootPath, '_')
             if (file.stem === '404') {
               uiModel.page = { layout: '404', title: 'Page Not Found' }
             } else {
@@ -66,7 +57,7 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
               uiModel.page.attributes = Object.entries(doc.getAttributes())
                 .filter(([name, val]) => name.startsWith('page-'))
                 .reduce((accum, [name, val]) => {
-                  accum[name.substr(5)] = val
+                  accum[name.slice(5)] = val
                   return accum
                 }, {})
               uiModel.page.layout = doc.getAttribute('page-layout', 'default')
@@ -147,7 +138,7 @@ function transformHandlebarsError ({ message, stack }, layout) {
   const m = stack.match(/^ *at Object\.ret \[as (.+?)\]/m)
   const templatePath = `src/${m ? 'partials/' + m[1] : 'layouts/' + layout}.hbs`
   const err = new Error(`${message}${~message.indexOf('\n') ? '\n^ ' : ' '}in UI template ${templatePath}`)
-  err.stack = [err.toString()].concat(stack.substr(message.length + 8)).join('\n')
+  err.stack = [err.toString()].concat(stack.slice(message.length + 8)).join('\n')
   return err
 }
 

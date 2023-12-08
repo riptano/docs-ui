@@ -86,11 +86,11 @@
 }
 
 .doc > h1.page:first-child + aside.toc.embedded {
-  margin-top: -0.5rem;
+  margin-top: calc(var(--ds-space-h)) * -1;
 }
 
 .doc > h2#name + .sectionbody {
-  margin-top: 1rem;
+  margin-top: var(--ds-space-2);
 }
 
 #preamble + .sect1,
@@ -177,7 +177,7 @@
 }
 
 .doc a.unresolved {
-  color: var(--link_unresolved-font-color);
+  color: var(--link_unresolved-font-color) !important;
 }
 
 .doc a.external::after {
@@ -205,10 +205,14 @@
 .doc .colist > table code {
   color: var(--code-font-color);
   background: var(--code-background);
-  border: 1px solid var(--ds-neutral-200);
-  border-radius: 0.25em;
+  border: 1px solid var(--ds-divider);
+  border-radius: calc(6 / var(--rem-base) * 1rem);
   font-size: 0.95em;
   padding: 0.125em 0.25em;
+}
+
+.doc code:not(.hljs) {
+  white-space: nowrap;
 }
 
 .doc code,
@@ -271,6 +275,10 @@
   color: var(--ds-text-primary);
 }
 
+.doc a strong {
+  color: var(--link-font-color);
+}
+
 .doc .paragraph,
 .doc .dlist,
 .doc .hdlist,
@@ -292,12 +300,6 @@
   margin: calc(24 / var(--rem-base) * 1rem) 0 0;
 }
 
-.doc .ulist .paragraph,
-.doc .dlist .paragraph,
-.doc .hdlist .paragraph {
-  margin: 0;
-}
-
 .doc table.tableblock {
   font-size: calc(14.5 / var(--rem-base) * 1rem);
 }
@@ -314,18 +316,24 @@
 }
 
 .doc p.tableblock + p.tableblock {
-  margin-top: 0.5rem;
+  margin-top: var(--ds-space-1);
 }
 
 .doc td.tableblock > .content > :first-child {
   margin-top: 0;
 }
 
-.doc table.tableblock th {
+.doc table.tableblock thead th {
+  @include text-label;
+
+  color: var(--ds-text-tertiary);
+  letter-spacing: 0.65px;
   padding: var(--ds-space-1) var(--ds-space-2);
+  border-top-width: 0;
 }
 
-.doc table.tableblock td {
+.doc table.tableblock td,
+.doc table.tableblock th {
   padding: var(--ds-space-1h) var(--ds-space-2);
 }
 
@@ -346,13 +354,6 @@
   border-width: 1px 0;
 }
 
-.doc table.grid-all > thead th,
-.doc table.grid-rows > thead th {
-  font-size: calc(13 / var(--rem-base) * 1rem);
-  color: var(--ds-text-tertiary);
-  letter-spacing: 0.65px;
-}
-
 .doc table.frame-all {
   border-bottom-width: 0;
 }
@@ -363,14 +364,6 @@
 
 .doc table.frame-sides {
   border-width: 0 1px;
-}
-
-.doc table.frame-none > colgroup + * > :first-child > *,
-.doc table.frame-sides > colgroup + * > :first-child > * {
-  border-top-width: 0;
-  font-size: calc(13 / var(--rem-base) * 1rem);
-  color: var(--ds-text-tertiary);
-  letter-spacing: 0.65px;
 }
 
 /* NOTE let the grid win in case of frame-none */
@@ -401,6 +394,18 @@
 
 .doc table.tableblock > tfoot > tr > * {
   border-bottom-width: 0;
+}
+
+.doc table.tableblock td ul:first-child,
+.doc table.tableblock td ol:first-child,
+.doc table.tableblock td li:first-child {
+  margin-top: 0;
+}
+
+.doc table.tableblock td ul:last-child,
+.doc table.tableblock td ol:last-child,
+.doc table.tableblock td li:last-child {
+  margin-bottom: 0;
 }
 
 .doc .halign-left {
@@ -571,7 +576,7 @@
 }
 
 .doc .quoteblock blockquote {
-  margin-top: 1rem;
+  margin-top: var(--ds-space-2);
 }
 
 .doc .quoteblock .paragraph {
@@ -703,23 +708,6 @@
   border: 0.25rem solid var(--ds-text-primary);
 }
 
-.doc .dlist .dlist,
-.doc .dlist .olist,
-.doc .dlist .ulist,
-.doc .olist .dlist,
-.doc .olist .olist,
-.doc .olist .ulist,
-.doc .ulist .dlist,
-.doc .ulist .olist,
-.doc .ulist .ulist {
-  margin-top: 0;
-}
-
-.doc .olist li + li,
-.doc .ulist li + li {
-  margin-top: calc(24 / var(--rem-base) * 1rem);
-}
-
 .doc .ulist .listingblock,
 .doc .olist .listingblock,
 .doc .admonitionblock .listingblock {
@@ -734,28 +722,16 @@
 .doc .openblock .title,
 .doc .videoblock .title,
 .doc .tableblock caption {
+  @include text-label;
+
   color: var(--caption-font-color);
-  font-size: calc(16 / var(--rem-base) * 1rem);
-  font-style: var(--caption-font-style);
-  font-weight: var(--caption-font-weight);
   hyphens: none;
-  letter-spacing: 0.01em;
-  padding-bottom: 0.075rem;
+  margin-bottom: var(--ds-space-2);
 }
 
-.doc .tableblock caption {
+.doc table.tableblock caption.title {
   text-align: left;
-  margin-bottom: var(--ds-space-3);
-  font-style: normal;
-  letter-spacing: 0;
   padding-bottom: 0;
-}
-
-.doc .ulist .title,
-.doc .olist .title {
-  font-weight: var(--caption-font-weight);
-  margin-bottom: var(--ds-space-3);
-  color: var(--heading-font-color);
 }
 
 .doc .imageblock .title {
@@ -801,7 +777,7 @@
   height: 1em;
   position: absolute;
   top: calc((var(--doc-line-height) * 0.5 - 0.5) * 1em);
-  left: -1rem;
+  left: calc(var(--ds-space-2) * -1);
 }
 
 .doc details.result {
@@ -815,14 +791,14 @@
 }
 
 .doc details.result > .content {
-  margin-left: -1rem;
+  margin-left: calc(var(--ds-space-2) * -1);
 }
 
 .doc .exampleblock > .content,
 .doc details.result > .content {
   background: var(--example-background);
   border: 0.25rem solid var(--example-border-color);
-  border-radius: 0.5rem;
+  border-radius: calc(6 / var(--rem-base) * 1rem);
   padding: var(--ds-space-1h);
 }
 
@@ -840,14 +816,13 @@
 
 .doc .sidebarblock {
   background: var(--sidebar-background);
-  border-radius: 0.75rem;
+  border-radius: calc(6 / var(--rem-base) * 1rem);
   padding: var(--ds-space-1h) var(--ds-space-3);
 }
 
 .doc .sidebarblock > .content > .title {
-  font-size: calc(22.5 / var(--rem-base) * 1rem);
-  font-weight: var(--alt-heading-font-weight);
-  line-height: 1.5;
+  @include text-label;
+
   margin-bottom: -0.3em;
   text-align: center;
 }
@@ -879,22 +854,10 @@
   color: var(--heading-font-color);
 }
 
-.doc .dlist dd {
-  margin: 0 0 0.25rem 1.5rem;
-}
-
-.doc .dlist dd:last-of-type {
-  margin-bottom: 0;
-}
-
 .doc td.hdlist1,
 .doc td.hdlist2 {
-  padding: 0.5rem 0 0;
+  padding: var(--ds-space-1) 0 0;
   vertical-align: top;
-}
-
-.doc dd + dt.hdlist1 {
-  margin-top: calc(24 / var(--rem-base) * 1rem);
 }
 
 .doc tr:first-child > .hdlist1,
@@ -904,28 +867,28 @@
 
 .doc td.hdlist1 {
   font-weight: var(--body-font-weight-bold);
-  padding-right: 0.25rem;
+  padding-right: var(--ds-space-h);
   color: var(--heading-font-color);
 }
 
 .doc td.hdlist2 {
-  padding-left: 0.25rem;
+  padding-right: var(--ds-space-h);
 }
 
 .doc .colist {
   font-size: calc(16 / var(--rem-base) * 1rem);
-  margin: 0.25rem 0 -0.25rem;
+  margin: var(--ds-space-h) 0 calc(var(--ds-space-h) * -1);
 }
 
 .doc .colist > table > tr > :first-child,
 .doc .colist > table > tbody > tr > :first-child {
-  padding: 0.25em 0.5rem 0;
+  padding: 0.25em var(--ds-space-h) 0;
   vertical-align: top;
 }
 
 .doc .colist > table > tr > :last-child,
 .doc .colist > table > tbody > tr > :last-child {
-  padding: 0.25rem 0;
+  padding: var(--ds-space-h) 0;
 }
 
 .step-reset {
@@ -947,12 +910,12 @@
   border-radius: 100%;
   display: inline-block;
   font-style: normal;
-  line-height: 2;
+  line-height: 1.75;
   text-align: center;
-  width: 2em;
-  height: 2em;
-  letter-spacing: -0.25ex;
-  text-indent: -0.25ex;
+  width: 1.75em;
+  height: 1.75em;
+  letter-spacing: -0.2ex;
+  text-indent: -0.2ex;
 }
 
 .doc .conum[data-value]::after {
@@ -988,7 +951,7 @@
   font-size: calc(12 / var(--rem-base) * 1rem);
   background: var(--kbd-background);
   border: 1px solid var(--kbd-border-color);
-  border-radius: 0.25em;
+  border-radius: calc(6 / var(--rem-base) * 1rem);
   box-shadow:
     0 1px 0 var(--kbd-border-color),
     0 0 0 0.1em var(--body-background) inset;
@@ -1101,4 +1064,65 @@
   margin-left: -2em;
   text-align: right;
   width: 1.5em;
+}
+
+/* LISTS - Cherry picked from Tailwind Typography plugin */
+.doc ol {
+  margin-top: calc(24 / var(--rem-base) * 1rem);
+  margin-bottom: calc(24 / var(--rem-base) * 1rem);
+  padding-left: calc(28 / var(--rem-base) * 1rem);
+}
+
+.doc ul {
+  margin-top: calc(24 / var(--rem-base) * 1rem);
+  margin-bottom: calc(24 / var(--rem-base) * 1rem);
+  padding-left: calc(28 / var(--rem-base) * 1rem);
+}
+
+.doc li {
+  margin-top: calc(24 / var(--rem-base) * 1rem);
+  margin-bottom: calc(24 / var(--rem-base) * 1rem);
+}
+
+.doc > ul > li p {
+  margin-top: calc(16 / var(--rem-base) * 1rem);
+  margin-bottom: calc(16 / var(--rem-base) * 1rem);
+}
+
+.doc > ul > li > *:first-child {
+  margin-top: calc(24 / var(--rem-base) * 1rem);
+}
+
+.doc > ul > li > *:last-child {
+  margin-bottom: calc(24 / var(--rem-base) * 1rem);
+}
+
+.doc > ol > li > *:first-child {
+  margin-top: calc(24 / var(--rem-base) * 1rem);
+}
+
+.doc > ol > li > *:last-child {
+  margin-bottom: calc(24 / var(--rem-base) * 1rem);
+}
+
+.doc ul ul,
+.doc ul ol,
+.doc ol ul,
+.doc ol ol {
+  margin-top: calc(16 / var(--rem-base) * 1rem);
+  margin-bottom: calc(16 / var(--rem-base) * 1rem);
+}
+
+.doc dl {
+  margin-top: calc(24 / var(--rem-base) * 1rem);
+  margin-bottom: calc(24 / var(--rem-base) * 1rem);
+}
+
+.doc dt {
+  margin-top: calc(24 / var(--rem-base) * 1rem);
+}
+
+.doc dd {
+  margin-top: calc(12 / var(--rem-base) * 1rem);
+  padding-left: calc(28 / var(--rem-base) * 1rem);
 }
