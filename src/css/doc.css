@@ -180,21 +180,6 @@
   color: var(--link_unresolved-font-color) !important;
 }
 
-.doc a.external::after {
-  font-family: "Material Icons Outlined", sans-serif;
-  content: "\e89e";
-  font-size: calc(16 / var(--rem-base) * 1rem);
-  vertical-align: bottom;
-  margin-left: var(--ds-space-h);
-  font-weight: normal;
-}
-
-.doc a.ds-button.external::after {
-  margin-left: calc(6 / var(--rem-base) * 1rem);
-  margin-bottom: var(--ds-space-q);
-  font-size: calc(20 / var(--rem-base) * 1rem);
-}
-
 .doc i.fa {
   hyphens: none;
   font-style: normal;

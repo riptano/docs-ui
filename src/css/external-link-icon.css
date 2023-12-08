@@ -1,0 +1,10 @@
+.doc a.external::after,
+.doc a[href^="https://"]:not([href*="docs.datastax.com"]):not([href*="localhost"]):not([href*="127.0.0.1"]):not(.remove-ext-icon)::after,
+.doc a[href^="http://"]:not([href*="docs.datastax.com"]):not([href*="localhost"]):not([href*="127.0.0.1"]):not(.remove-ext-icon)::after {
+  font-family: "Material Icons Outlined", sans-serif;
+  content: '\e89e';
+  font-size: calc(16 / var(--rem-base) * 1rem);
+  vertical-align: bottom;
+  margin-left: var(--ds-space-h);
+  font-weight: normal;
+}
