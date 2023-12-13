@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tables :: PREVIEW Datastax Docs</title>
+    <meta name="generator" content="Antora 1.0.0">
+<link rel="stylesheet" href="../_/css/site.css">
+<link rel="stylesheet" href="../_/css/vendor/tabs.css">
+    <link rel="icon" href="https://www.datastax.com/favicon.ico">
+    <meta property="article:published_time" content="">
+    <meta property="article:modified_time" content="">
+    <meta property="article:author" content="DataStax">
+    <meta property="og:site_name" content="DataStax Documentation">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Tables :: PREVIEW Datastax Docs">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:image:alt" content="DataStax Documentation">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@datastax">
+    <meta name="twitter:creator" content="@datastax">
+    <meta name="twitter:url" content="">
+    <meta name="twitter:title" content="Tables :: PREVIEW Datastax Docs">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
+    <script type="application/ld+json">
+    [
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "",
+        "name":"Tables",
+        "inLanguage":"en-US",
+        "reviewedBy":{
+            "@type": "Corporation",
+            "@id": "https://datastax.com#organization",
+            "name": "DataStax"
+        },
+        "author":{
+            "@type": "Corporation",
+            "@id": "https://datastax.com#organization",
+            "name": "DataStax"
+        },
+        "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://docs.datastax.com",
+            "name": "DataStax Documentation"
+        },
+        "mainEntity":
+        {
+            "@type":"TechArticle",
+            "@id": "#main_content",
+            "mainEntityOfPage": "true",
+            "datePublished":"",
+            "dateModified":"",
+            "headline": "Tables",
+            "description":"",
+            "keywords":"",
+            "image": "https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png",
+            "publisher":{
+                "@type": "Corporation",
+                "@id": "https://datastax.com#organization",
+                "name": "DataStax",
+                "url": "https://datastax.com"
+            },
+            "author":{
+                "@type": "Corporation",
+                "@id": "https://datastax.com#organization",
+                "name": "DataStax",
+                "url": "https://datastax.com"
+            }
+        }
+     }
+    ]
+    </script>
+
+
+<script>var uiRootPath = '../_'</script>
+
+<link rel="preload" href="../_/font/material-icons-outlined-latin-400-normal.woff2" as="font"
+    type="font/woff2" crossorigin>
+<link rel="preload" href="../_/font/roboto-flex-latin-400-normal.woff2" as="font" type="font/woff2"
+    crossorigin>
+<link rel="preload" href="../_/font/roboto-mono-latin-500-normal.woff2" as="font" type="font/woff2"
+    crossorigin>
+
+<script>
+    var prefersTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    var storedTheme = localStorage.getItem('theme') || prefersTheme
+
+    if (storedTheme) {
+        document.documentElement.setAttribute('data-theme', storedTheme)
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light')
+    }
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="http://localhost:5252" id="datastax-docs-logo-main"></a>
+      <button data-target="topbar-nav" class="navbar-burger btn btn-icon btn-neutral btn-plain lg:hidden"></button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end hide-for-print">
+        <div class="search">
+          <div class="DocSearch" id="docsearch"></div>
+        </div>
+        <button class="btn btn-neutral btn-outlined" id="get-support"><span
+            class="material-icons lg:mr-1">support_agent</span>Get Live Help</button>
+
+        <button class="btn btn-icon btn-neutral btn-outlined" id="theme-toggle"></button>
+      </div>
+    </div>
+  </nav>
+</header><div class="body">
+  <div class="nav-container"  autofocus>
+  <aside class="nav">
+    <div class="panels">
+      <div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle material-icons">chevron_right</button>
+    <span class="nav-text">Page Templates</span>
+    <ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../page-templates/full.html">Full</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../page-templates/landing.html">Landing</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../page-templates/tutorial.html">Tutorial</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../page-templates/integrations-overview.html">Integrations Overview</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../page-templates/integrations-detail.html">Integrations Detail</a>
+      </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle material-icons">chevron_right</button>
+    <span class="nav-text">Asciidoc Examples</span>
+    <ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="text-formatting.html">Text formatting</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="lists.html">Lists</a>
+      </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="tables.html">Tables</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="images.html">Images and media</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="code.html">Code</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="tabsets.html">Tabsets</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="blocks.html">Blocks</a>
+      </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="admonitions.html">Admonitions</a>
+      </li>
+</ul>
+  </li>
+</ul>
+    <ul class="secondary-nav-list">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.datastax.com/" target="_self">
+      <span class="material-icons">home</span>
+      DataStax Home
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/en/glossary/doc" target="_blank">
+      <span class="material-icons">menu_book</span>
+      Glossary
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://support.datastax.com/" target="_blank">
+      <span class="material-icons">support</span>
+      Support
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://downloads.datastax.com/" target="_blank">
+      <span class="material-icons">downloading</span>
+      Downloads
+    </a>
+  </li>
+</ul>  </nav>
+</div>
+    </div>
+  </aside>
+</div>  <div class="content-container">
+    <main class="article">
+  <div class="toolbar" role="navigation">
+<button
+  class="nav-toggle btn btn-neutral btn-plain btn-icon mr-auto lg:hidden"
+></button><nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+</div>
+  <div class="content">
+    <aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu-container">
+    <div class="toc-menu"></div>
+    <div class="toc-menu toc-tags">
+    </div>
+    <div class="toc-menu toc-dev">
+    </div>
+  </div>
+</aside>
+    <article class="doc">
+  <h1 class="page">Tables</h1>
+  <div class="sect1">
+<h2 id="basic-table"><a class="anchor" href="#basic-table"></a>Basic table</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Optional title</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="header-and-footer"><a class="anchor" href="#header-and-footer"></a>Header and footer</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table w/ header row</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table w/ header column</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Row 1, header column</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Row 2, header column</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Row 3, header column</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table w/ header row and header column</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Row 2, header column</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Row 3, header column</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table w/ footer row</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total = 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total = 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total = 3</p></td>
+</tr>
+</tfoot>
+</table>
+<table class="tableblock frame-all grid-all fit-content stretch">
+<caption class="title">Table w/ header row, header column, and footer row</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Header</th>
+<th class="tableblock halign-left valign-top">Header</th>
+<th class="tableblock halign-left valign-top">Header</th>
+<th class="tableblock halign-left valign-top">Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Item</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Item</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Total</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="striping"><a class="anchor" href="#striping"></a>Striping</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<caption class="title">Table w/ even striping</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 4</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">Table w/ hover striping</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="custom-width"><a class="anchor" href="#custom-width"></a>Custom width</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all" style="width: 75%;">
+<caption class="title">Table w/ width set to 75%</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all fit-content">
+<caption class="title">Table w/ autowidth</caption>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="custom-borders"><a class="anchor" href="#custom-borders"></a>Custom borders</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="frame"><a class="anchor" href="#frame"></a>Frame</h3>
+<table class="tableblock frame-ends grid-all stretch">
+<caption class="title">Table w/ frame=ends</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-sides grid-all stretch">
+<caption class="title">Table w/ frame=sides</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-all stretch">
+<caption class="title">Table w/ frame=none</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="grid"><a class="anchor" href="#grid"></a>Grid</h3>
+<table class="tableblock frame-all grid-rows stretch">
+<caption class="title">Table w/ grid=rows</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-cols stretch">
+<caption class="title">Table w/ grid=cols</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-none stretch">
+<caption class="title">Table w/ grid=none</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column 1, header row</th>
+<th class="tableblock halign-left valign-top">Column 2, header row</th>
+<th class="tableblock halign-left valign-top">Column 3, header row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="complex-table-w-asciidoc-content"><a class="anchor" href="#complex-table-w-asciidoc-content"></a>Complex table w/ AsciiDoc content</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Firefox</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Browser</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Mozilla Firefox is an open source web browser.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="firefox-window.png" alt="Screenshot of Firefox window">
+</div>
+</div>
+<div class="paragraph">
+<p>It&#8217;s designed for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>standards compliance</p>
+</li>
+<li>
+<p>performance</p>
+</li>
+<li>
+<p>portability</p>
+</li>
+</ul>
+</div>
+<div class="imageblock text-left">
+<div class="content">
+<a class="image" href="https://getfirefox.com"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" alt="Firefox logo"></a>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://getfirefox.com" class="external" target="_blank" rel="noopener">Get Firefox</a>!</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arquillian</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Testing</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An innovative and highly extensible testing platform.
+Empowers developers to easily create real, automated tests.</p>
+</div>
+<div class="paragraph">
+<p>Each Arquillian test is associated with at least one deployment.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The deployment is configured using a static method annotated with @Deployment that returns a ShrinkWrap archive. Here’s an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Deployment
+public static JavaArchive createDeployment() {
+    return ShrinkWrap.create(JavaArchive.class)
+        .addClass(Greeter.class)
+        .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+}</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="table-w-formatted-aligned-and-merged-cells"><a class="anchor" href="#table-w-formatted-aligned-and-merged-cells"></a>Table w/ formatted, aligned, and merged cells</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>1</em></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><strong>2</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><strong>4</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>5</em></p></td>
+<td class="tableblock halign-center valign-middle" colspan="2" rowspan="2"><p class="tableblock"><code>6</code></p></td>
+<td class="tableblock halign-left valign-bottom" rowspan="3"><p class="tableblock"><code>7</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>8</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>9</em></p></td>
+<td class="tableblock halign-right valign-top" colspan="2"><p class="tableblock"><code>10</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="nested-table"><a class="anchor" href="#nested-table"></a>Nested table</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Col 1</th>
+<th class="tableblock halign-left valign-top">Col 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell 1.1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Cell 1.2</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell 2.1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Cell 2.2</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 66.6666%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Col1</th>
+<th class="tableblock halign-left valign-top">Col2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C12</p></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  <div class="mt-6">
+  <h2>Support</h2>
+  <div class="sectionbody flex flex-col sm:flex-row">
+    <div class="sect2 basis-1/2">
+      <h3>Was This Helpful?</h3>
+      <div
+        id="feedback_buttons"
+        class="mt-2 flex gap-1 opacity-100 transition-opacity"
+      >
+        <button
+          id="feedback_button_yes"
+          class="btn btn-neutral btn-outlined"
+          data-track="Was This Helpful?: Yes Button Clicked"
+        >
+          <i class="material-icons mr-1">thumb_up</i>Yes
+        </button>
+        <button
+          id="feeback_button_no"
+          class="btn btn-neutral btn-outlined"
+          data-track="Was This Helpful?: No Button Clicked"
+          onclick="feedback_dialog.showModal()"
+        >
+          <i class="material-icons mr-1">thumb_down</i>No
+        </button>
+      </div>
+      <div
+        id="feedback_thank_you"
+        class="marker:text-h2 mt-2 hidden opacity-0 transition-opacity"
+      >Thank you for your feedback.
+      </div>
+    </div>
+    <div class="sect2 basis-1/2">
+      <h3>Need More Help?</h3>
+      <div class="mt-2 flex flex-col gap-2">
+        <a href="https://www.datastax.com/dev/community"
+          class="remove-ext-icon" target="_blank">
+          <i class="material-icons mr-1">group</i>Ask the Astra community
+        </a>
+        <a href="https://support.datastax.com/"
+          class="remove-ext-icon" target="_blank">
+          <i class="material-icons mr-1">support</i>Get in touch with support
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<dialog id="feedback_dialog" class="dialog w-[80rem]">
+  <form method="dialog" id="feedback_form">
+    <div class="flex items-center border-b p-3">
+      <h1 class="!m-0">Give Feedback</h1>
+      <button
+        id="feedback_form_esc_button"
+        class="btn btn-plain btn-neutral ml-auto h-4 p-1"
+        formnovalidate
+      ><span
+          class="text-overline rounded-xl bg-[var(--ds-background-level1)] px-1 text-[var(--ds-text-tertiary)]"
+        >ESC</span><i
+          class="material-icons text-[var(--ds-primary-main)]"
+        >close</i></button>
+    </div>
+    <div class="p-3">
+      <p class="!mt-0">How can we improve the documentation?</p>
+      <textarea
+        rows="4"
+        name="message"
+        class="input mt-1"
+        placeholder="Provide your feedback"
+        required
+        autofocus
+      ></textarea>
+    </div>
+    <div class="top flex justify-end gap-1 border-t px-3 pb-3 pt-2">
+      <button
+        class="btn btn-neutral btn-outlined"
+        id="feedback_form_cancel_button"
+        formnovalidate
+      >Cancel</button>
+      <button class="btn btn-neutral btn-solid" type="submit">Submit Feedback</button>
+    </div>
+  </form>
+</dialog>  </article>  </div>
+</main>    <hr class="mx-2 md:mx-3" />
+
+<footer
+  class="footer flex flex-col gap-3 px-2 py-5 text-sm md:flex-row md:px-3 [&_a]:text-[var(--ds-primary-main)]"
+>
+  <div class="flex flex-col gap-3">
+    <a
+      href="https://www.datastax.com"
+      target="_blank"
+      id="datastax-docs-logo-text"
+      title="Go to the DataStax Website"
+      data-track="Footer datastax.com Link Clicked"
+    ></a>
+    <p class="!m-0">
+      <span>©</span>
+      <span id="copyrightdate">2023</span>
+      <span>DataStax |
+        <a
+          href="https://www.datastax.com/legal/datastax-website-privacy-policy"
+          target="_blank"
+          data-track="Footer Privacy Policy Link Clicked"
+        >Privacy policy</a>
+        |
+        <a
+          href="https://www.datastax.com/legal/datastax-website-terms-use"
+          target="_blank"
+          data-track="Footer Terms of Use Link Clicked"
+        >Terms of use</a>
+      </span>
+    </p>
+    <p class="text-xs !m-0 max-w-[640px] text-[var(--ds-text-tertiary)]">Apache,
+      Apache Cassandra, Cassandra, Apache Tomcat, Tomcat, Apache Lucene, Apache
+      Solr, Apache Hadoop, Hadoop, Apache Pulsar, Pulsar, Apache Spark, Spark,
+      Apache TinkerPop, TinkerPop, Apache Kafka and Kafka are either registered
+      trademarks or trademarks of the Apache Software Foundation or its
+      subsidiaries in Canada, the United States and/or other countries.
+      Kubernetes is the registered trademark of the Linux Foundation.</p>
+  </div>
+  <div class="flex flex-col gap-3 md:ml-auto md:items-end">
+    <div class="flex gap-2">
+      <a
+        href="https://www.facebook.com/datastax"
+        target="_blank"
+        data-track="Footer Facebook Link Clicked"
+        title="Go to DataStax Facebook"
+        class="h-2.5 w-2.5 bg-[url('../img/social-facebook.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://twitter.com/datastax"
+        target="_blank"
+        title="Go to DataStax X (Twitter)"
+        data-track="Footer Twitter Link Clicked"
+        class="h-2.5 w-2.5 bg-[url('../img/social-x.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://github.com/datastax/"
+        target="_blank"
+        title="Go to DataStax GitHub"
+        data-track="Footer Github Link Clicked"
+        class="h-2.5 w-2.5 bg-[url('../img/social-github.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://www.twitch.tv/datastaxdevs"
+        target="_blank"
+        title="Go to DataStax Twitch"
+        data-track="Footer Twitch Link Clicked"
+        class="h-2.5 w-2.5 bg-[url('../img/social-twitch.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://www.linkedin.com/company/datastax/"
+        target="_blank"
+        title="Go to DataStax Linkedin"
+        data-track="Linkedin Link Clicked"
+        class="h-2.5 w-2.5 bg-[url('../img/social-linkedin.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://datastax.medium.com/"
+        target="_blank"
+        title="Go to DataStax Medium"
+        data-track="Footer Medium Link Clicked"
+        class="h-2.5 w-2.5 bg-[url('../img/social-medium.svg')] bg-no-repeat dark:invert"
+      ></a>
+    </div>
+    <p class="!m-0 md:text-right">General Inquiries:
+      <a
+        href="tel:+1-650-389-6000"
+        data-track="Footer Telephone Link Clicked"
+      >+1 (650) 389-6000</a>,
+      <a
+        href="mailto:info@datastax.com"
+        data-track="Footer Email Link Clicked"
+      >info@datastax.com</a>
+    </p>
+  </div>
+</footer>  </div>
+</div>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/tabs.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>
+  docsearch({
+    container: '#docsearch',
+    appId: '2ELPRZR9UC',
+    indexName: 'crawler_docsearch-astra',
+    apiKey: '1f4acbf51d118e4137e9a63b38bd8456',
+  })
+</script>
+  </body>
+</html>
