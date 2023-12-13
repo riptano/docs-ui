@@ -27,8 +27,8 @@
 }
 
 .ds-card .paragraph.landing-card-icon,
+.doc .ds-card .tags-container,
 .ds-card > .title {
-  margin-top: 0;
   margin-bottom: var(--ds-space-3);
 }
 

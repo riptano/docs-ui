@@ -6,7 +6,9 @@
     {{#if (eq page.layout '404')}}
     {{> article-404}}
     {{else}}
-    {{#unless (or (eq page.layout 'full') (eq page.layout 'landing'))}}
+    {{#unless (or (eq page.layout 'full')
+                  (eq page.layout 'landing')
+                  (eq page.layout 'overview'))}}
     {{> toc}}
     {{/unless}}
     {{> article}}

@@ -1,5 +1,5 @@
 = Integrations
-:page-layout: tutorial
+:page-layout: overview
 :hugging-icon: image:../img/hugging-face.svg[,20]
 :langchain-icon: image:../img/langchain.svg[,20]
 :openai-icon: image:../img/openai.svg[,20]
