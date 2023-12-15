@@ -1,0 +1,21 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="{{{or site.url siteRootPath}}}" id="datastax-docs-logo-main"></a>
+      <button data-target="topbar-nav" class="navbar-burger btn btn-icon btn-neutral btn-plain lg:hidden"></button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end hide-for-print">
+        {{!-- {{#if env.SITE_SEARCH_PROVIDER}} --}}
+        <div class="search">
+          <div class="DocSearch" id="docsearch"></div>
+        </div>
+        {{!-- {{/if}} --}}
+        <button class="btn btn-neutral btn-outlined" id="get-support"><span
+            class="material-icons lg:mr-1">support_agent</span>Get Live Help</button>
+
+        <button class="btn btn-icon btn-neutral btn-outlined" id="theme-toggle"></button>
+      </div>
+    </div>
+  </nav>
+</header>
