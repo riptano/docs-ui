@@ -2,19 +2,19 @@
 @import "typeface-roboto-flex.css";
 @import "typeface-sora.css";
 @import "typeface-roboto-mono.css";
-@import "ds-vars.css";
-@import "ds-light.css";
-@import "ds-dark.css";
-@import "vars.css";
+/* @import "ds-vars.css"; */
+/* @import "ds-light.css"; */
+/* @import "ds-dark.css"; */
+/* @import "vars.css"; */
 @import "ds-card.css";
 @import "ds-typography.css";
-@import "base.css";
-@import "body.css";
-@import "nav.css";
-@import "main.css";
+/* @import "base.css"; */
+/* @import "body.css"; */
+/* @import "nav.css"; */
+/* @import "main.css"; */
 @import "ds-button.css";
 @import "ds-logo.css";
-@import "toolbar.css";
+/* @import "toolbar.css"; */
 @import "breadcrumbs.css";
 @import "page-versions.css";
 @import "toc.css";
@@ -23,7 +23,7 @@
 @import "ds-source-block.css";
 @import "ds-admonition-block.css";
 @import "pagination.css";
-@import "header.css";
+/* @import "header.css"; */
 @import "highlight.css";
 @import "print.css";
 @import "docsearch.css";

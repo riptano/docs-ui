@@ -1,4 +1,19 @@
-.nav-container {
+/* #side-nav > * {
+  @apply col-start-1 row-start-1 transition-transform duration-300 ease-out will-change-transform;
+
+  transform: translateX(-100%);
+}
+
+#side-nav.active {
+  @apply pointer-events-auto visible sticky block w-auto;
+
+  & > * {
+    transform: translateX(0%);
+    width: var(--nav-width);
+  }
+} */
+
+/* .nav-container {
   @include text-caption;
 
   position: fixed;
@@ -206,7 +221,7 @@ html.is-clipped--nav {
 
 .nav-item.is-active > .nav-item-toggle {
   transform: rotate(90deg);
-}
+} */
 
 /*** nav-panel-explore styles, keeping for now as we might implement it elsewhere ***/
 

@@ -1,0 +1,112 @@
+@layer base {
+  html {
+    font-size: 1em;
+  }
+
+  body {
+    /* font-size: calc(16 / var(--rem-base) * 1rem); */
+    font-weight: 400;
+    background: var(--ds-background-body);
+    color: var(--ds-text-primary);
+    font-family: "Roboto Flex", sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    tab-size: 4;
+    word-wrap: anywhere; /* aka overflow-wrap; used when hyphens are disabled or aren't sufficient */
+  }
+
+  *,
+  ::before,
+  ::after {
+    border: 0 solid var(--ds-divider);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  a:active {
+    background-color: none;
+  }
+
+  code,
+  kbd,
+  pre {
+    font-family: "Roboto Mono", monospace;
+  }
+
+  b,
+  dt,
+  strong,
+  th {
+    font-weight: 600;
+  }
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  .icon {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+  }
+
+  @media (pointer: fine) {
+    @supports (scrollbar-width: thin) {
+      html {
+        scrollbar-color:
+          var(--ds-neutral-outlined-border)
+          var(--ds-background-body);
+      }
+
+      body * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--ds-neutral-outlined-border) transparent;
+      }
+    }
+
+    html::-webkit-scrollbar {
+      background-color: var(--ds-background-body);
+      height: 12px;
+      width: 12px;
+    }
+
+    body ::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-clip: padding-box;
+      background-color: var(--ds-neutral-outlined-border);
+      border: 3px solid transparent;
+      border-radius: 12px;
+    }
+
+    body ::-webkit-scrollbar-thumb {
+      border-width: 1.75px;
+      border-radius: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: var(--ds-neutral-outlined-hover-border);
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{{#with page.navigation}}
+<nav class="flex h-full flex-col bg-[var(--ds-background-body)] w-[18.75rem]" 
+  {{#if page.component}} data-component="{{page.component.name}}"
+    data-version="{{page.version}}" {{/if}}>
+      {{> nav-tree navigation=this}}
+      {{> nav-secondary}}
+</nav>
+{{/with}}

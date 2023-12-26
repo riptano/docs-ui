@@ -1,10 +1,44 @@
-<div class="body">
-  {{#unless (eq page.layout 'full')}}
-  {{> nav}}
-  {{/unless}}
-  <div class="content-container">
+{{> body-start-scripts}}
+{{> navbar}}
+<div class="drawer lg:drawer-open">
+  <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content">
     {{> main}}
-    {{> footer-content}}
+  </div>
+  <div class="drawer-side">
+    <label for="nav-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+    {{> side-nav}}
   </div>
 </div>
-{{> footer-scripts}}
+{{> body-end-scripts}}
+
+
+
+
+{{!-- {{> body-start-scripts}}
+<div class="drawer lg:drawer-open">
+  <input id="side-nav-drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content flex flex-col">
+    {{> navbar}}
+    <div class="flex mx-auto px-3 lg:px-6 pb-3 lg:pb-6 gap-6">
+      <div class="flex flex-col gap-10 max-w-[100ch] min-w-0">
+        {{#if (eq page.layout '404')}}
+        {{> article-404}}
+        {{else}}
+        {{> article}}
+        {{/if}}
+        {{> footer}}
+      </div>
+      {{#unless (or (eq page.layout 'full') (eq page.layout 'landing'))}}
+      {{> toc}}
+      {{/unless}}
+    </div>
+  </div>
+  {{#unless (eq page.layout 'full')}}
+  <div class="drawer-side z-30">
+    <label for="side-nav-drawer" aria-label="close side nav" class="drawer-overlay"></label>
+    {{> side-nav}}
+  </div>
+  {{/unless}}
+</div>
+{{> body-end-scripts}} --}}

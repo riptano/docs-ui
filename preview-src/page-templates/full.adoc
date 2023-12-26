@@ -10,12 +10,12 @@ From AI-driven capabilities to robust data stream management, Astra simplifies c
 == {empty}
 
 ++++
-<div class="flex rounded-xl bg-[var(--ds-background-level1)] p-2 lg:p-3 gap-3 -mx-2 lg:-mx-3">
+<div class="flex rounded bg-[var(--ds-background-level1)] p-2 lg:p-3 gap-3 -mx-2 lg:-mx-3">
 <div class="flex flex-col lg:basis-1/2">
 ++++
 
 [discrete.!m-0]
-== [.rounded-xl.border.p-1.flex.w-max.mb-1]#icon:../img/astra-database.svg[]# Vector
+== [.rounded.border.p-1.flex.w-max.mb-1]#icon:../img/astra-database.svg[]# Vector
 
 Delve into a database optimized for AI-driven tasks.
 Astra Vector is tailored to offer unparalleled precision, speed, and scalability for AI applications, transforming how your applications perceive and interact with data.
@@ -46,7 +46,7 @@ image::../img/cosine-similarity-distribution-dark.png[Graph of cosine similarity
 ++++
 
 [discrete]
-== [.rounded-xl.border.p-1.flex.w-max.mb-1]#icon:../img/astra-database.svg[]# Serverless
+== [.rounded.border.p-1.flex.w-max.mb-1]#icon:../img/astra-database.svg[]# Serverless
 
 Delve deep into high-dimensional spaces with Astra Vector.
 Engineered for AI-intensive tasks, it offers unparalleled precision, speed, and scalability. Bring complex AI models into production with confidence, leveraging Astra's robust architecture.
@@ -60,7 +60,7 @@ https://docs.datastax.com/en/astra-serverless/docs/index.html[Go to Serverless D
 ++++
 
 [discrete]
-== [.rounded-xl.border.p-1.flex.w-max.mb-1]#icon:../img/astra-streaming.svg[]# Streaming
+== [.rounded.border.p-1.flex.w-max.mb-1]#icon:../img/astra-streaming.svg[]# Streaming
 
 Harness real-time data with Astra Streaming.
 Process, analyze, and act on data as it's generated. Whether you're analyzing user behavior or monitoring systems, Astra Streaming delivers the real-time insights you need.

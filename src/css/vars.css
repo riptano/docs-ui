@@ -1,6 +1,6 @@
 :root {
   /* fonts */
-  --rem-base: 8; /* used to compute rem value from desired pixel value (e.g., calc(16 / var(--rem-base) * 1rem) = 16px) */
+  --rem-base: 16; /* used to compute rem value from desired pixel value (e.g., calc(16 / var(--rem-base) * 1rem) = 16px) */
   --body-font-size: 0.5em; /* 8px */
   --body-font-size--desktop: 0.5em; /* 8px */
   --body-font-size--print: 0.5em; /* 8px */

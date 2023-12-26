@@ -1,17 +1,17 @@
 .doc {
-  color: var(--doc-font-color);
-  font-size: var(--doc-font-size);
+  /* color: var(--doc-font-color); */
+  /* font-size: var(--doc-font-size); */
   /* hyphens: auto; */
-  line-height: var(--doc-line-height);
-  margin: var(--doc-margin);
-  max-width: var(--doc-max-width);
-  padding-right: calc(24 / var(--rem-base) * 1rem);
-  padding-left: calc(24 / var(--rem-base) * 1rem);
-  padding-bottom: var(--ds-space-10);
+  /* line-height: var(--doc-line-height); */
+  /* margin: var(--doc-margin); */
+  /* max-width: var(--doc-max-width); */
+  /* padding-right: calc(24 / var(--rem-base) * 1rem); */
+  /* padding-left: calc(24 / var(--rem-base) * 1rem); */
+  /* padding-bottom: var(--ds-space-10); */
   counter-reset: step;
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .doc {
     flex: auto;
     font-size: var(--doc-font-size--desktop);
@@ -32,7 +32,7 @@
   .doc {
     max-width: calc(var(--doc-max-width--desktop) - 15rem);
   }
-}
+} */
 
 .doc h1,
 .doc h2,
@@ -459,7 +459,7 @@
   font-weight: var(--admonition-label-font-weight);
   text-transform: uppercase;
   border-radius: var(--ds-space-1);
-  transform: translate(-0.5rem, -50%);
+  transform: translate(-0.25rem, -50%);
 }
 
 .doc .admonitionblock.caution .icon {
@@ -690,7 +690,7 @@
 
 .doc ul.checklist i.fa-square-o::before {
   content: "";
-  border: 0.25rem solid var(--ds-text-primary);
+  border: 2px solid var(--ds-text-primary);
 }
 
 .doc .ulist .listingblock,
@@ -752,7 +752,7 @@
 
 .doc details[open] > summary::before {
   border-color: currentColor transparent transparent;
-  border-width: 1rem 0.6rem 0;
+  border-width: 0.5rem 0.3rem 0;
   transform: translateY(15%);
 }
 
@@ -782,7 +782,7 @@
 .doc .exampleblock > .content,
 .doc details.result > .content {
   background: var(--example-background);
-  border: 0.25rem solid var(--example-border-color);
+  border: 2px solid var(--example-border-color);
   border-radius: calc(6 / var(--rem-base) * 1rem);
   padding: var(--ds-space-1h);
 }
@@ -992,7 +992,7 @@
   vertical-align: middle;
   position: relative;
   border-radius: calc(3 / var(--rem-base) * 1rem);
-  border: 0.25rem solid var(--ds-text-primary);
+  border: 2px solid var(--ds-text-primary);
   width: calc(16 / var(--rem-base) * 1rem);
   height: calc(16 / var(--rem-base) * 1rem);
 }
