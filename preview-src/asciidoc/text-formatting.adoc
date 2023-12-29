@@ -73,27 +73,10 @@ Instead of having to enclose text within <<text-formatting,tags or special chara
 
 === External link
 
-External links have a special icon and open in a new tab https://www.datastax.com[when clicked^,role=external].
+The UI automatically applies a https://materialui.co/icon/open-in-new[special icon] to external links.
+(An external link is any link that doesn't target a topic on `docs.datastax.com`.)
 
-[NOTE]
-====
-An _external link_ is any link that targets an address outside of the `docs.datastax.com` subdomain.
-External links should always have the following behavior, regardless of any AsciiDoc attributes that a writer might apply to them:
-
-* Different visual styling than an internal link, e.g. an `open_in_new` icon after the link text.
-* Open in a new tab when clicked.
-
-The links in the example sentences below all target the same external URL -- `\https://www.datastax.com` -- however, they each have different AsciiDoc attributes applied to them.
-
-[source,asciidoc]
-----
-External links have a special icon and open in a new tab https://www.datastax.com[when clicked,role=external,window=_blank].
-External links have a special icon and open in a new tab https://www.datastax.com[when clicked^].
-External links have a special icon and open in a new tab https://www.datastax.com[when clicked].
-----
-
-The UI should disregard these attributes and apply the same styling and behavior to each link.
-====
+In the rare case where you don't want the special icon to appear for a particular external link, just apply `role=remove-ext-icon` to https://materialui.co/icon/open-in-new[remove it,role=remove-ext-icon].
 
 === Unresolved link
 
