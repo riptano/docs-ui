@@ -46,6 +46,10 @@
   margin: calc(24 / var(--rem-base) * 1rem) 0 0;
 }
 
+.doc h1.page {
+  margin: 0;
+}
+
 .doc > h1.page:first-child {
   margin: calc(24 / var(--rem-base) * 1rem) 0;
   display: flex;
@@ -54,23 +58,30 @@
 }
 
 .doc h1 {
-  @include text-h1;
+  font-size: 1.5rem;
+  font-weight: 550;
+  font-family: "Sora", sans-serif;
 }
 
 .doc h2 {
-  @include text-h2;
+  font-size: 1.25rem;
+  font-weight: 550;
+  font-family: "Sora", sans-serif;
 }
 
 .doc h3 {
-  @include text-h3;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .doc h4 {
-  @include text-h4;
+  font-size: 0.9375rem;
+  font-weight: 600;
 }
 
 .doc h5 {
-  @include text-h5;
+  font-size: 0.9375rem;
+  font-weight: 600;
 }
 
 .doc a.link,
@@ -124,6 +135,7 @@
   justify-content: flex-end;
   align-items: center;
   gap: var(--ds-space-h);
+  scroll-margin-top: 5rem;
 }
 
 .doc h1 .anchor,
@@ -194,10 +206,6 @@
   border-radius: calc(6 / var(--rem-base) * 1rem);
   font-size: 0.95em;
   padding: 0.125em 0.25em;
-}
-
-.doc code:not(.hljs) {
-  white-space: nowrap;
 }
 
 .doc code,
@@ -309,8 +317,8 @@
 }
 
 .doc table.tableblock thead th {
-  @include text-label;
-
+  font-size: 0.8125rem;
+  font-weight: 600;
   color: var(--ds-text-tertiary);
   letter-spacing: 0.65px;
   padding: var(--ds-space-1) var(--ds-space-2);
@@ -707,8 +715,8 @@
 .doc .openblock .title,
 .doc .videoblock .title,
 .doc .tableblock caption {
-  @include text-label;
-
+  font-size: 0.8125rem;
+  font-weight: 600;
   color: var(--caption-font-color);
   hyphens: none;
   margin-bottom: var(--ds-space-2);
@@ -729,40 +737,8 @@
 }
 
 .doc details > summary {
-  display: block;
-  position: relative;
   line-height: var(--doc-line-height);
   margin-bottom: var(--ds-space-1);
-}
-
-.doc details > summary::-webkit-details-marker {
-  display: none;
-}
-
-.doc details > summary::before {
-  content: "";
-  border: solid transparent;
-  border-left-color: currentColor;
-  border-width: 0.3em 0 0.3em 0.5em;
-  position: absolute;
-  top: calc((var(--doc-line-height) * 0.5 - 0.3) * 1em);
-  left: calc(var(--ds-space-2) * -1);
-  transform: translateX(15%);
-}
-
-.doc details[open] > summary::before {
-  border-color: currentColor transparent transparent;
-  border-width: 0.5rem 0.3rem 0;
-  transform: translateY(15%);
-}
-
-.doc details > summary::after {
-  content: "";
-  width: var(--ds-space-2);
-  height: 1em;
-  position: absolute;
-  top: calc((var(--doc-line-height) * 0.5 - 0.5) * 1em);
-  left: calc(var(--ds-space-2) * -1);
 }
 
 .doc details.result {
@@ -806,8 +782,8 @@
 }
 
 .doc .sidebarblock > .content > .title {
-  @include text-label;
-
+  font-size: 0.8125rem;
+  font-weight: 600;
   margin-bottom: -0.3em;
   text-align: center;
 }
@@ -888,8 +864,8 @@
 }
 
 .doc .conum[data-value] {
-  @include text-overline;
-
+  font-size: 0.75rem;
+  font-weight: 650;
   color: var(--ds-text-inverse);
   background: var(--ds-text-primary);
   border-radius: 100%;
@@ -1110,4 +1086,16 @@
 .doc dd {
   margin-top: calc(12 / var(--rem-base) * 1rem);
   padding-left: calc(28 / var(--rem-base) * 1rem);
+}
+
+.doc a.external::after,
+.doc a[href^="https://"]:not([href*="docs.datastax.com"]):not([href*="localhost"]):not([href*="127.0.0.1"]):not(.remove-ext-icon)::after,
+.doc a[href^="http://"]:not([href*="docs.datastax.com"]):not([href*="localhost"]):not([href*="127.0.0.1"]):not(.remove-ext-icon)::after
+{
+  font-family: "Material Icons Outlined", sans-serif;
+  content: "\e89e";
+  font-size: calc(16 / var(--rem-base) * 1rem);
+  vertical-align: bottom;
+  margin-left: var(--ds-space-h);
+  font-weight: normal;
 }

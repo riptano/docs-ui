@@ -1,5 +1,5 @@
 {{#with page.navigation}}
-<nav class="flex h-full flex-col bg-[var(--ds-background-body)] w-[18.75rem]" 
+<nav class="h-full bg-level1 overflow-y-auto flex flex-col w-[16rem] pt-2" 
   {{#if page.component}} data-component="{{page.component.name}}"
     data-version="{{page.version}}" {{/if}}>
       {{> nav-tree navigation=this}}

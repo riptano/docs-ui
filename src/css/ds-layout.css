@@ -54,11 +54,14 @@ html[data-layout="full"] {
 }
 
 .sect1.text-h1 {
-  @include text-body;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .sect1.text-h1 > h2 {
-  @include text-h1;
+  font-size: 1.5rem;
+  font-weight: 550;
+  font-family: "Sora", sans-serif;
 }
 
 .row > *,

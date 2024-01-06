@@ -1,0 +1,33 @@
+@layer base {
+  .text-primary {
+    color: var(--ds-text-primary);
+  }
+
+  .text-secondary {
+    color: var(--ds-text-secondary);
+  }
+
+  .text-tertiary {
+    color: var(--ds-text-tertiary);
+  }
+
+  .text-link {
+    color: var(--ds-primary-main);
+  }
+
+  .bg-body {
+    background-color: var(--ds-background-body);
+  }
+
+  .bg-level1 {
+    background-color: var(--ds-background-level1);
+  }
+
+  .bg-level2 {
+    background-color: var(--ds-background-level2);
+  }
+
+  .bg-level3 {
+    background-color: var(--ds-background-level3);
+  }
+}

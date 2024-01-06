@@ -10,7 +10,7 @@ From AI-driven capabilities to robust data stream management, Astra simplifies c
 == {empty}
 
 ++++
-<div class="flex rounded bg-[var(--ds-background-level1)] p-2 lg:p-3 gap-3 -mx-2 lg:-mx-3">
+<div class="flex rounded bg-level1 p-2 lg:p-3 gap-3 -mx-2 lg:-mx-3">
 <div class="flex flex-col lg:basis-1/2">
 ++++
 

@@ -1,5 +1,5 @@
 <nav
-  class="h-20 sticky top-0 flex w-full flex-auto items-center gap-4 bg-white bg-opacity-90 px-4 backdrop-blur lg:px-6"
+  class="fixed top-0 z-40 flex h-20 w-[100vw] flex-auto items-center gap-4 border-b bg-body px-4 lg:px-6"
 >
   <label
     for="nav-drawer"
@@ -20,30 +20,3 @@
     id="theme-toggle"
   ></button>
 </nav>
-
-{{!-- <nav
-  class="h-20 sticky top-0 flex w-full flex-auto items-center gap-4 bg-white bg-opacity-90 px-4 backdrop-blur lg:px-6"
->
-  <label
-    for="side-nav-drawer"
-    class="btn btn-neutral btn-plain btn-icon drawer-button lg:hidden"
-  >
-    <i class="icon material-icons">menu_open</i>
-  </label>
-  <a
-    href="{{{or site.url siteRootPath}}}"
-    id="datastax-docs-logo-main"
-    class="lg:hidden"
-  ></a>
-  <div class="DocSearch" id="docsearch"></div>
-  <button
-    class="btn btn-neutral btn-outlined ml-auto w-10 lg:w-auto"
-    id="get-support"
-  ><span class="material-icons lg:mr-2">support_agent</span><span
-      class="hidden lg:inline-block"
-    >Get Live Help</span></button>
-  <button
-    class="btn btn-icon btn-neutral btn-outlined"
-    id="theme-toggle"
-  ></button>
-</nav> --}}

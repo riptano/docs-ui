@@ -1,9 +1,7 @@
 
 @layer components {
   .input {
-    @include text-body;
-
-    @apply transition-colors rounded border p-1 w-full;
+    @apply text-body transition-colors rounded border p-1 w-full;
 
     color: var(--ds-text-primary);
     background: none;
