@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="tutorial">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>LangChain :: PREVIEW Datastax Docs</title>
+    <meta name="generator" content="Antora 1.0.0">
+<link rel="stylesheet" href="../_/css/site.css">
+<link rel="stylesheet" href="../_/css/vendor/tabs.css">
+    <link rel="icon" href="https://www.datastax.com/favicon.ico">
+    <meta property="article:published_time" content="">
+    <meta property="article:modified_time" content="">
+    <meta property="article:author" content="DataStax">
+    <meta property="og:site_name" content="DataStax Documentation">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="LangChain :: PREVIEW Datastax Docs">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:image:alt" content="DataStax Documentation">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@datastax">
+    <meta name="twitter:creator" content="@datastax">
+    <meta name="twitter:url" content="">
+    <meta name="twitter:title" content="LangChain :: PREVIEW Datastax Docs">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
+    <script type="application/ld+json">
+    [
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "",
+        "name":"LangChain",
+        "inLanguage":"en-US",
+        "reviewedBy":{
+            "@type": "Corporation",
+            "@id": "https://datastax.com#organization",
+            "name": "DataStax"
+        },
+        "author":{
+            "@type": "Corporation",
+            "@id": "https://datastax.com#organization",
+            "name": "DataStax"
+        },
+        "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://docs.datastax.com",
+            "name": "DataStax Documentation"
+        },
+        "mainEntity":
+        {
+            "@type":"TechArticle",
+            "@id": "#main_content",
+            "mainEntityOfPage": "true",
+            "datePublished":"",
+            "dateModified":"",
+            "headline": "LangChain",
+            "description":"",
+            "keywords":"",
+            "image": "https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png",
+            "publisher":{
+                "@type": "Corporation",
+                "@id": "https://datastax.com#organization",
+                "name": "DataStax",
+                "url": "https://datastax.com"
+            },
+            "author":{
+                "@type": "Corporation",
+                "@id": "https://datastax.com#organization",
+                "name": "DataStax",
+                "url": "https://datastax.com"
+            }
+        }
+     }
+    ]
+    </script>
+
+
+<script>var uiRootPath = '../_'</script>
+
+<link rel="preload" href="../_/font/material-icons-outlined-latin-400-normal.woff2" as="font"
+    type="font/woff2" crossorigin>
+<link rel="preload" href="../_/font/roboto-flex-latin-400-normal.woff2" as="font" type="font/woff2"
+    crossorigin>
+<link rel="preload" href="../_/font/roboto-mono-latin-500-normal.woff2" as="font" type="font/woff2"
+    crossorigin>
+
+<script>
+    var prefersTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    var storedTheme = localStorage.getItem('theme') || prefersTheme
+
+    if (storedTheme) {
+        document.documentElement.setAttribute('data-theme', storedTheme)
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light')
+    }
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+  </head>
+  <body class="">
+<nav
+  class="fixed top-0 z-40 flex h-20 w-[100vw] flex-auto items-center gap-4 border-b bg-body px-4 lg:px-6"
+>
+  <label
+    for="nav-drawer"
+    class="btn btn-neutral btn-plain btn-icon drawer-button lg:hidden"
+  >
+    <i class="icon material-icons">menu_open</i>
+  </label>
+  <a href="http://localhost:5252" id="datastax-docs-logo-main"></a>
+  <div class="DocSearch" id="docsearch"></div>
+  <button
+    class="btn btn-neutral btn-outlined ml-auto w-10 lg:w-auto"
+    id="get-support"
+  ><span class="material-icons lg:mr-2">support_agent</span><span
+      class="hidden lg:inline-block"
+    >Get Live Help</span></button>
+  <button
+    class="btn btn-icon btn-neutral btn-outlined"
+    id="theme-toggle"
+  ></button>
+</nav><div class="drawer lg:drawer-open">
+  <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content pt-20 flex">
+    <main
+  class="m-0 mx-auto flex max-w-full gap-6 px-3 pb-3 pt-4 lg:px-6 lg:pb-6 xl:gap-10"
+>
+  <div class="flex w-full min-w-0 max-w-3xl flex-col gap-10 md:min-w-[32rem]">
+     <article class="doc">
+  <div class="flex" role="navigation">
+   <nav class="flex" aria-label="breadcrumbs">
+</nav>
+  
+</div>
+  <h1 class="page">
+    <i class="border rounded p-1">
+      
+    </i>LangChain
+  </h1>
+  <div class="is-before-toc -mt-1 mb-3 flex flex-wrap items-center gap-1">
+    <div class="text-teritiary flex gap-0.5 text-sm">
+      <span class="material-icons">playlist_add_check</span>
+      3
+      Steps
+    </div>
+    <div class="text-teritiary flex gap-0.5 text-sm">
+      <span class="material-icons">query_builder</span>
+      15 min
+    </div>
+  <div class="ml-auto">
+      <a
+        href="https://colab.research.google.com/github/datastaxdevs/mini-demo-astradb-langchain/blob/main/AstraDB_langchain_quickstart_1.ipynb"
+        target="_blank"
+        class="btn btn-outlined btn-neutral"
+        data-track="Colab Link Clicked"
+      >
+        <i
+          class="mr-1 h-[1em] w-[1.5em] bg-[url('../img/colab.svg')] bg-center bg-no-repeat"
+        ></i>
+        Run this on Colab
+      </a>
+  </div>
+</div>  <div id="preamble">
+<div class="sectionbody">
+<details open>
+<summary class="title"><em>Integration-specific formatting</em></summary>
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Tutorial formatting</dt>
+<dd>
+<p>Integrations use the same general AsciiDoc formatting as <a href="tutorial.html">tutorials</a>, e.g. page attributes and step numbering.</p>
+</dd>
+<dt class="hdlist1">Special page attributes</dt>
+<dd>
+<p>Add the following attributes to the page header to automatically add the corresponding details to the page.</p>
+<div class="listingblock">
+<div class="title">Page icon</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:page-icon: ROOT:ui/icons/langchain.svg</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Page tags</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:page-tags: Machine Learning Frameworks, Embedding Services, Astra, SDK</code></pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By integrating LangChain with Astra, you can seamlessly utilize advanced linguistic processing capabilities of LangChain within the Astra vector database environment.
+This combination enhances vector data analysis, allowing natural language data to be processed, stored, and queried with efficiency.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../img/placeholder-image.svg" alt="Diagram of LangChain integration architecture">
+</div>
+<div class="title">Architecture diagram</div>
+</div>
+<div class="paragraph">
+<p>To get started, ensure you have an <a href="https://example.com" class="external" target="_blank" rel="noopener">active LangChain account</a> with the requisite permissions.</p>
+</div>
+<div class="paragraph">
+<p>You will also need an <a href="https://example.com" class="external" target="_blank" rel="noopener">active LangChain account</a> an access to its API keys.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h2>
+<div class="sectionbody">
+<div class="sect2 step">
+<h3 id="_acquire_api_key_from_langchain"><a class="anchor" href="#_acquire_api_key_from_langchain"></a>Acquire API key from LangChain</h3>
+<div class="paragraph">
+<p>Log into your LangChain dashboard and navigate to the 'API' section to obtain your API key.</p>
+</div>
+</div>
+<div class="sect2 step">
+<h3 id="_configure_astras_sdk_for_langchain"><a class="anchor" href="#_configure_astras_sdk_for_langchain"></a>Configure Astra&#8217;s SDK for LangChain</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from astra import VectorDB
+db = VectorDB(config='astra_config.yaml')
+db.set_integration('LangChain', api_key='YOUR_LANGCHAIN_API_KEY')</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2 step">
+<h3 id="_initialize_data_transfer"><a class="anchor" href="#_initialize_data_transfer"></a>Initialize data transfer</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">db.sync_from('LangChain')</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_verify_integration"><a class="anchor" href="#_verify_integration"></a>Verify integration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ensure your integration was successful by checking for new linguistic vector entries in your Astra database:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the Astra dashboard.</p>
+</li>
+<li>
+<p>Open the 'Vector Data' tab.</p>
+</li>
+<li>
+<p>Confirm the appearance of recent vector entries from LangChain.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../img/placeholder-image.svg" alt="Screenshot">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 header-noline">
+<h2 id="_advanced_configuration"><a class="anchor" href="#_advanced_configuration"></a>Advanced configuration</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Sync Frequency</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The lower the value, the more frequent the sync, impacting server performance.</p>
+<p class="tableblock">Sample <code>30 min</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Data Volume Limit</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The lower the value, the more frequent the sync, impacting server performance.</p>
+<p class="tableblock">Sample <code>500 MB</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1 header-noline">
+<h2 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>Troubleshooting</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Error</th>
+<th class="tableblock halign-left valign-top">Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>LangChain API key invalid</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure you copied the correct API key. Refresh or regenerate the key in the LangChain dashboard if necessary.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Data sync failed</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ensure both Astra and LangChain servers are running without issues. Check network connectivity and try syncing again after a few minutes.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1 header-noline">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next steps</h2>
+<div class="sectionbody">
+<div class="openblock ds-card">
+<div class="content">
+<div class="ulist unstyled">
+<ul class="unstyled">
+<li>
+<p><a href="https://example.com">Advanced Natural Language Processing with Astra and LangChain</a> <span class="material-icons">auto_stories</span> Tutorial</p>
+<div class="paragraph">
+<p>Dive into how the combination of Astra&#8217;s vector database and LangChain&#8217;s linguistic prowess can enhance your NLP projects.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock ds-card">
+<div class="content">
+<div class="ulist unstyled guide">
+<ul class="unstyled">
+<li>
+<p><a href="https://example.com">Optimizing Linguistic Vector Searches in Astra</a> <span class="material-icons">auto_stories</span> Tutorial</p>
+<div class="paragraph">
+<p>Discover best practices and techniques to improve the efficiency and accuracy of linguistic vector searches in Astra, leveraging LangChain integrations.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock ds-card">
+<div class="content">
+<div class="ulist unstyled">
+<ul class="unstyled">
+<li>
+<p><a href="https://example.com">Cohere</a> <span class="material-icons">integration_instructions</span> Integration</p>
+<div class="paragraph">
+<p>Cohere provides advanced NLP models designed for a variety of tasks, ranging from text generation to understanding.
+Their models offer a balance between performance and efficiency.
+With Astra&#8217;s integration, developers can effortlessly combine Cohere&#8217;s capabilities with a powerful vector database solution.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+  <div class="mt-12">
+  <h2>Support</h2>
+  <div class="sectionbody flex flex-col sm:flex-row">
+    <div class="sect2 basis-1/2">
+      <h3>Was This Helpful?</h3>
+      <div
+        id="feedback_buttons"
+        class="mt-4 flex gap-2 opacity-100 transition-opacity"
+      >
+        <button
+          id="feedback_button_yes"
+          class="btn btn-neutral btn-outlined"
+          data-track="Was This Helpful?: Yes Button Clicked"
+        >
+          <i class="material-icons mr-2">thumb_up</i>Yes
+        </button>
+        <button
+          id="feeback_button_no"
+          class="btn btn-neutral btn-outlined"
+          data-track="Was This Helpful?: No Button Clicked"
+          onclick="feedback_dialog.showModal()"
+        >
+          <i class="material-icons mr-2">thumb_down</i>No
+        </button>
+      </div>
+      <div
+        id="feedback_thank_you"
+        class="marker:text-h2 mt-4 hidden opacity-0 transition-opacity"
+      >Thank you for your feedback.
+      </div>
+    </div>
+    <div class="sect2 basis-1/2">
+      <h3>Need More Help?</h3>
+      <div class="mt-4 flex flex-col gap-4">
+        <a href="https://www.datastax.com/dev/community" target="_blank">
+          <i class="material-icons mr-4">group</i>Ask the Astra community
+        </a>
+        <a href="https://support.datastax.com/" target="_blank">
+          <i class="material-icons mr-4">support</i>Get in touch with support
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<dialog id="feedback_dialog" class="dialog w-[40rem]">
+  <form method="dialog" id="feedback_form">
+    <div class="flex items-center border-b p-6">
+      <h1 class="!m-0">Give Feedback</h1>
+      <button
+        id="feedback_form_esc_button"
+        class="btn btn-plain btn-neutral ml-auto h-8 p-2"
+        formnovalidate
+      ><span
+          class="text-overline bg-level1 text-tertiary rounded px-2"
+        >ESC</span><i class="material-icons text-link">close</i></button>
+    </div>
+    <div class="p-6">
+      <p class="!mt-0">How can we improve the documentation?</p>
+      <textarea
+        rows="4"
+        name="message"
+        class="input mt-2"
+        placeholder="Provide your feedback"
+        required
+        autofocus
+      ></textarea>
+    </div>
+    <div class="top flex justify-end gap-2 border-t px-6 pb-6 pt-4">
+      <button
+        class="btn btn-neutral btn-outlined"
+        id="feedback_form_cancel_button"
+        formnovalidate
+      >Cancel</button>
+      <button class="btn btn-neutral btn-solid" type="submit">Submit Feedback</button>
+    </div>
+  </form>
+</dialog>  </article>
+     <footer
+  class="footer [&_a]:text-link flex flex-col gap-6 border-t pt-10 text-sm md:flex-row"
+>
+  <div class="flex flex-col gap-6">
+    <a
+      href="https://www.datastax.com"
+      target="_blank"
+      id="datastax-docs-logo-text"
+      title="Go to the DataStax Website"
+      data-track="Footer datastax.com Link Clicked"
+    ></a>
+    <p class="!m-0">
+      <span>©</span>
+      <span id="copyrightdate">2023</span>
+      <span>DataStax |
+        <a
+          href="https://www.datastax.com/legal/datastax-website-privacy-policy"
+          target="_blank"
+          data-track="Footer Privacy Policy Link Clicked"
+        >Privacy policy</a>
+        |
+        <a
+          href="https://www.datastax.com/legal/datastax-website-terms-use"
+          target="_blank"
+          data-track="Footer Terms of Use Link Clicked"
+        >Terms of use</a>
+      </span>
+    </p>
+    <p class="text-tertiary !m-0 max-w-[640px] text-xs">Apache, Apache
+      Cassandra, Cassandra, Apache Tomcat, Tomcat, Apache Lucene, Apache Solr,
+      Apache Hadoop, Hadoop, Apache Pulsar, Pulsar, Apache Spark, Spark, Apache
+      TinkerPop, TinkerPop, Apache Kafka and Kafka are either registered
+      trademarks or trademarks of the Apache Software Foundation or its
+      subsidiaries in Canada, the United States and/or other countries.
+      Kubernetes is the registered trademark of the Linux Foundation.</p>
+  </div>
+  <div class="flex flex-col gap-6 md:ml-auto md:items-end">
+    <div class="flex gap-4">
+      <a
+        href="https://www.facebook.com/datastax"
+        target="_blank"
+        data-track="Footer Facebook Link Clicked"
+        title="Go to DataStax Facebook"
+        class="h-5 w-5 bg-[url('../img/social-facebook.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://twitter.com/datastax"
+        target="_blank"
+        title="Go to DataStax X (Twitter)"
+        data-track="Footer Twitter Link Clicked"
+        class="h-5 w-5 bg-[url('../img/social-x.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://github.com/datastax/"
+        target="_blank"
+        title="Go to DataStax GitHub"
+        data-track="Footer Github Link Clicked"
+        class="h-5 w-5 bg-[url('../img/social-github.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://www.twitch.tv/datastaxdevs"
+        target="_blank"
+        title="Go to DataStax Twitch"
+        data-track="Footer Twitch Link Clicked"
+        class="h-5 w-5 bg-[url('../img/social-twitch.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://www.linkedin.com/company/datastax/"
+        target="_blank"
+        title="Go to DataStax Linkedin"
+        data-track="Linkedin Link Clicked"
+        class="h-5 w-5 bg-[url('../img/social-linkedin.svg')] bg-no-repeat dark:invert"
+      ></a>
+      <a
+        href="https://datastax.medium.com/"
+        target="_blank"
+        title="Go to DataStax Medium"
+        data-track="Footer Medium Link Clicked"
+        class="h-5 w-5 bg-[url('../img/social-medium.svg')] bg-no-repeat dark:invert"
+      ></a>
+    </div>
+    <p class="!m-0 md:text-right">General Inquiries:
+      <a
+        href="tel:+1-650-389-6000"
+        data-track="Footer Telephone Link Clicked"
+      >+1 (650) 389-6000</a>,
+      <a
+        href="mailto:info@datastax.com"
+        data-track="Footer Email Link Clicked"
+      >info@datastax.com</a>
+    </p>
+  </div>
+</footer>
+  </div>
+  <aside
+  class="toc sidebar sticky top-[6rem] hidden h-max max-w-[24rem] text-sm lg:flex lg:flex-col"
+  data-title="Contents"
+  data-levels="1"
+>
+  <div class="toc-menu-container">
+    <div class="toc-menu"></div>
+    <div class="toc-menu toc-tags">
+      <h3>Tags</h3>
+      <div>
+        <span class="tag">Machine Learning Frameworks</span>
+        <span class="tag">Embedding Services</span>
+        <span class="tag">Astra</span>
+        <span class="tag">SDK</span>
+      </div>
+    </div>
+    <div class="toc-menu toc-dev">
+
+    </div>
+  </div>
+</aside>
+</main>
+  </div>
+  <div class="drawer-side z-30 pt-20">
+    <label for="nav-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+    <nav class="h-full bg-level1 overflow-y-auto flex flex-col w-[16rem] pt-2" 
+  >
+      <div data-depth="0">
+  <div tabindex="0" class="collapse">
+    <input type="checkbox"  checked /> 
+    <div class="collapse-title text-body-small py-1 pr-1 pl-[NaNrem] text-tertiary text-overline pt-2">
+      <i class="w-4 mx-1 collapse-arrow material-icons">expand_more</i>
+      Page Templates
+    </div>
+    <div class="collapse-content"> 
+      <div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem]" 
+    href="full.html">
+      Full
+  </a>
+  </div>
+<div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem]" 
+    href="landing.html">
+      Landing
+  </a>
+  </div>
+<div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem]" 
+    href="tutorial.html">
+      Tutorial
+  </a>
+  </div>
+<div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem]" 
+    href="integrations-overview.html">
+      Integrations Overview
+  </a>
+  </div>
+<div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem] text-link" 
+    href="integrations-detail.html">
+      Integrations Detail
+  </a>
+  </div>
+    </div>
+  </div>
+</div>
+<div data-depth="0">
+  <div tabindex="0" class="collapse">
+    <input type="checkbox"  /> 
+    <div class="collapse-title text-body-small py-1 pr-1 pl-[NaNrem] text-tertiary text-overline pt-2">
+      <i class="w-4 mx-1 collapse-arrow material-icons">expand_more</i>
+      Asciidoc Examples
+    </div>
+    <div class="collapse-content"> 
+      <div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem]" 
+    href="../asciidoc/text-formatting.html">
+      Text formatting
+  </a>
+  </div>
+<div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem]" 
+    href="../asciidoc/lists.html">
+      Lists
+  </a>
+  </div>
+<div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem]" 
+    href="../asciidoc/tables.html">
+      Tables
+  </a>
+  </div>
+<div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem]" 
+    href="../asciidoc/images.html">
+      Images and media
+  </a>
+  </div>
+<div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem]" 
+    href="../asciidoc/code.html">
+      Code
+  </a>
+  </div>
+<div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem]" 
+    href="../asciidoc/tabsets.html">
+      Tabsets
+  </a>
+  </div>
+<div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem]" 
+    href="../asciidoc/blocks.html">
+      Blocks
+  </a>
+  </div>
+<div data-depth="1">
+  <a
+    class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[1.25rem]" 
+    href="../asciidoc/admonitions.html">
+      Admonitions
+  </a>
+  </div>
+    </div>
+  </div>
+</div>
+      <ul class="bg-level1 sticky bottom-0 mt-auto flex flex-col py-3">
+  <li>
+    <a
+      class="text-body-small hover:bg-level2 flex py-1 pl-3 !no-underline"
+      href="https://www.datastax.com/"
+      target="_self"
+    >
+      <span class="material-icons text-tertiary mr-2">home</span>
+      DataStax Home
+    </a>
+  </li>
+  <li>
+    <a
+      class="text-body-small hover:bg-level2 flex py-1 pl-3 !no-underline"
+      href="/en/glossary/doc"
+      target="_blank"
+    >
+      <span class="material-icons text-tertiary mr-2">menu_book</span>
+      Glossary
+    </a>
+  </li>
+  <li>
+    <a
+      class="text-body-small hover:bg-level2 flex py-1 pl-3 !no-underline"
+      href="https://support.datastax.com/"
+      target="_blank"
+    >
+      <span class="material-icons text-tertiary mr-2">support</span>
+      Support
+    </a>
+  </li>
+  <li>
+    <a
+      class="text-body-small hover:bg-level2 flex py-1 pl-3 !no-underline"
+      href="https://downloads.datastax.com/"
+      target="_blank"
+    >
+      <span class="material-icons text-tertiary mr-2">downloading</span>
+      Downloads
+    </a>
+  </li>
+</ul></nav>
+  </div>
+</div>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/tabs.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>
+  docsearch({
+    container: '#docsearch',
+    appId: '2ELPRZR9UC',
+    indexName: 'crawler_docsearch-astra',
+    apiKey: '1f4acbf51d118e4137e9a63b38bd8456',
+  })
+</script>
+  </body>
+</html>

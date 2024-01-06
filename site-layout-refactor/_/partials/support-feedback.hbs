@@ -1,0 +1,77 @@
+<div class="mt-12">
+  <h2>Support</h2>
+  <div class="sectionbody flex flex-col sm:flex-row">
+    <div class="sect2 basis-1/2">
+      <h3>Was This Helpful?</h3>
+      <div
+        id="feedback_buttons"
+        class="mt-4 flex gap-2 opacity-100 transition-opacity"
+      >
+        <button
+          id="feedback_button_yes"
+          class="btn btn-neutral btn-outlined"
+          data-track="Was This Helpful?: Yes Button Clicked"
+        >
+          <i class="material-icons mr-2">thumb_up</i>Yes
+        </button>
+        <button
+          id="feeback_button_no"
+          class="btn btn-neutral btn-outlined"
+          data-track="Was This Helpful?: No Button Clicked"
+          onclick="feedback_dialog.showModal()"
+        >
+          <i class="material-icons mr-2">thumb_down</i>No
+        </button>
+      </div>
+      <div
+        id="feedback_thank_you"
+        class="marker:text-h2 mt-4 hidden opacity-0 transition-opacity"
+      >Thank you for your feedback.
+      </div>
+    </div>
+    <div class="sect2 basis-1/2">
+      <h3>Need More Help?</h3>
+      <div class="mt-4 flex flex-col gap-4">
+        <a href="https://www.datastax.com/dev/community" target="_blank">
+          <i class="material-icons mr-4">group</i>Ask the Astra community
+        </a>
+        <a href="https://support.datastax.com/" target="_blank">
+          <i class="material-icons mr-4">support</i>Get in touch with support
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<dialog id="feedback_dialog" class="dialog w-[40rem]">
+  <form method="dialog" id="feedback_form">
+    <div class="flex items-center border-b p-6">
+      <h1 class="!m-0">Give Feedback</h1>
+      <button
+        id="feedback_form_esc_button"
+        class="btn btn-plain btn-neutral ml-auto h-8 p-2"
+        formnovalidate
+      ><span
+          class="text-overline bg-level1 text-tertiary rounded px-2"
+        >ESC</span><i class="material-icons text-link">close</i></button>
+    </div>
+    <div class="p-6">
+      <p class="!mt-0">How can we improve the documentation?</p>
+      <textarea
+        rows="4"
+        name="message"
+        class="input mt-2"
+        placeholder="Provide your feedback"
+        required
+        autofocus
+      ></textarea>
+    </div>
+    <div class="top flex justify-end gap-2 border-t px-6 pb-6 pt-4">
+      <button
+        class="btn btn-neutral btn-outlined"
+        id="feedback_form_cancel_button"
+        formnovalidate
+      >Cancel</button>
+      <button class="btn btn-neutral btn-solid" type="submit">Submit Feedback</button>
+    </div>
+  </form>
+</dialog>

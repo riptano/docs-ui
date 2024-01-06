@@ -1,0 +1,26 @@
+{{#unless (or (eq page.layout 'full') (eq page.layout 'landing'))}}
+<aside
+  class="toc sidebar sticky top-[6rem] hidden h-max max-w-[24rem] text-sm lg:flex lg:flex-col"
+  data-title="{{{or page.attributes.toctitle 'Contents'}}}"
+  data-levels="{{{or page.attributes.toclevels 2}}}"
+>
+  <div class="toc-menu-container">
+    <div class="toc-menu"></div>
+    <div class="toc-menu toc-tags">
+      {{#if page.attributes.tags}}
+      <h3>Tags</h3>
+      <div>
+        {{#each (split page.attributes.tags ", ") }}
+        <span class="tag">{{this}}</span>
+        {{/each}}
+      </div>
+      {{/if}}
+    </div>
+    <div class="toc-menu toc-dev">
+      {{#if page.versions}}
+      <h3>Developer Resources</h3>
+      {{> page-versions}} {{/if}}
+    </div>
+  </div>
+</aside>
+{{/unless}}
