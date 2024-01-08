@@ -10,7 +10,7 @@
     <h3 class="!my-2 text-h3">Tags</h3>
     <div class="flex flex-wrap items-start content-start gap-2 p-0">
       {{#each (split page.attributes.tags ", ") }}
-      <span class="flex text-label px-2 py-1 rounded-full bg-[var(--ds-primary-soft-bg)] text-[var(--ds-primary-soft-color)]">{{this}}</span>
+      <span class="flex flex-grow-0 text-label px-2 py-1 rounded-full bg-[var(--ds-primary-soft-bg)] text-[var(--ds-primary-soft-color)]">{{this}}</span>
       {{/each}}
     </div>
     {{/if}}
