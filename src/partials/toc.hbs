@@ -1,26 +1,26 @@
 {{#unless (or (eq page.layout 'full') (eq page.layout 'landing'))}}
 <aside
-  class="toc sidebar sticky top-[6rem] hidden h-max max-w-[24rem] text-sm lg:flex lg:flex-col"
+  class="toc sidebar sticky top-[10rem] hidden h-max max-w-[24rem] lg:w-[24rem] lg:flex lg:flex-col"
   data-title="{{{or page.attributes.toctitle 'Contents'}}}"
   data-levels="{{{or page.attributes.toclevels 2}}}"
 >
   <div class="toc-menu-container">
     <div class="toc-menu"></div>
-    <div class="toc-menu toc-tags">
-      {{#if page.attributes.tags}}
-      <h3>Tags</h3>
-      <div>
-        {{#each (split page.attributes.tags ", ") }}
-        <span class="tag">{{this}}</span>
-        {{/each}}
-      </div>
-      {{/if}}
+    {{#if page.attributes.tags}}
+    <h3 class="!my-2 text-h3">Tags</h3>
+    <div class="flex flex-wrap items-start content-start gap-2 p-0">
+      {{#each (split page.attributes.tags ", ") }}
+      <span class="flex text-label px-2 py-1 rounded-full bg-[var(--ds-primary-soft-bg)] text-[var(--ds-primary-soft-color)]">{{this}}</span>
+      {{/each}}
     </div>
-    <div class="toc-menu toc-dev">
-      {{#if page.versions}}
-      <h3>Developer Resources</h3>
-      {{> page-versions}} {{/if}}
+    {{/if}}
+    {{#if page.versions}}
+    <h3 class="!my-2 text-h3">Developer Resources</h3>
+    <div class="flex flex-col">
+    {{> page-versions}} 
     </div>
+    {{/if}}
   </div>
 </aside>
 {{/unless}}
+ 

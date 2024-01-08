@@ -30,16 +30,24 @@
     link.textContent = heading.textContent
     links[(link.href = '#' + heading.id)] = link
     var listItem = document.createElement('li')
-    listItem.dataset.level = parseInt(heading.nodeName.slice(1), 10) - 1
+    var level = parseInt(heading.nodeName.slice(1), 10) - 1
+    listItem.dataset.level = level
+    listItem.className = '!m-0'
+    link.className = 'block py-1 pr-1 !no-underline !text-secondary hover:!text-link [&.is-active]:!text-link [&.is-active]:border-[var(--ds-primary-main)] border-l-2'
+    if (level === 1) link.classList.add('pl-2', 'text-button')
+    if (level === 2) link.classList.add('pl-4', '!text-tertiary')
+    if (level === 3) link.classList.add('pl-6', '!text-tertiary')
     listItem.appendChild(link)
     accum.appendChild(listItem)
     return accum
   }, document.createElement('ul'))
+  list.className = '!p-0 !m-0 !list-none'
 
   var menu = sidebar.querySelector('.toc-menu')
   if (!menu) (menu = document.createElement('div')).className = 'toc-menu'
 
   var title = document.createElement('h3')
+  title.className = '!my-2 text-h3 text-primary'
   title.textContent = sidebar.dataset.title || 'Contents'
   menu.appendChild(title)
   menu.appendChild(list)
@@ -47,7 +55,7 @@
   var startOfContent = !document.getElementById('toc') && article.querySelector('h1.page ~ :not(.is-before-toc)')
   if (startOfContent) {
     var embeddedToc = document.createElement('aside')
-    embeddedToc.className = 'toc embedded lg:hidden'
+    embeddedToc.className = 'mb-6 toc embedded lg:hidden'
     embeddedToc.appendChild(menu.cloneNode(true))
     startOfContent.parentNode.insertBefore(embeddedToc, startOfContent)
   }
