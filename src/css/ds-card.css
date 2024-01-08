@@ -126,7 +126,7 @@
 }
 
 .doc .ds-feature-code {
-  @apply inverse-theme;
+  /* @apply inverse-theme; */
 }
 
 .doc .ds-feature-code .source-toolbox {

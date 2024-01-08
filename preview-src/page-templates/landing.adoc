@@ -7,7 +7,7 @@ Efficiently store and query vector embeddings for better similarity search. If y
 == {empty}
 
 ++++
-<div class="flex rounded-xl bg-[var(--ds-background-level1)] p-2 lg:p-3 gap-3 -mx-2 lg:-mx-3">
+<div class="flex rounded bg-level1 p-2 lg:p-3 gap-3 -mx-2 lg:-mx-3">
 <div class="flex flex-col lg:basis-1/2">
 ++++
 
@@ -54,7 +54,7 @@ col.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
 ++++
 
 [discrete.flex.items-center.lg:items-start.lg:flex-col.gap-1]
-== [.rounded-xl.border.p-1.w-max.material-icons]#fact_check# Load your data 
+== [.rounded.border.p-1.w-max.material-icons]#fact_check# Load your data 
 
 Get your data and embeddings into a database.
 
@@ -67,7 +67,7 @@ xref:data:load-data.adoc[Load data]
 ++++
 
 [discrete.flex.items-center.lg:items-start.lg:flex-col.gap-1]
-== [.rounded-xl.border.p-1.w-max.material-icons]#auto_stories# Explore your data
+== [.rounded.border.p-1.w-max.material-icons]#auto_stories# Explore your data
 
 Perform similarity searches and browse the results.
 
@@ -80,7 +80,7 @@ link:{#}[Explore data]
 ++++
 
 [discrete.flex.items-center.lg:items-start.lg:flex-col.gap-1]
-== [.rounded-xl.border.p-1.w-max.material-icons]#power# Connect to your database
+== [.rounded.border.p-1.w-max.material-icons]#power# Connect to your database
 
 Work with your data using our clients and APIs.
 

@@ -1,19 +1,19 @@
 <div class="is-before-toc -mt-1 mb-3 flex flex-wrap items-center gap-1">
   {{#with page.attributes.skill-level}}
-    <div class="flex gap-0.5 text-sm text-[var(--ds-text-teritiary)]">
+    <div class="text-teritiary flex gap-0.5 text-sm">
       <span class="material-icons">network_check</span>
       {{{this}}}
     </div>
   {{/with}}
   {{#with (stepcount page.contents)}}
-    <div class="flex gap-0.5 text-sm text-[var(--ds-text-teritiary)]">
+    <div class="text-teritiary flex gap-0.5 text-sm">
       <span class="material-icons">playlist_add_check</span>
       {{{this}}}
       Steps
     </div>
   {{/with}}
   {{#with page.attributes.time-commitment}}
-    <div class="flex gap-0.5 text-sm text-[var(--ds-text-teritiary)]">
+    <div class="text-teritiary flex gap-0.5 text-sm">
       <span class="material-icons">query_builder</span>
       {{{this}}}
     </div>

@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-colon-newline-after */
 /* Source block */
 
 /*
@@ -35,8 +36,8 @@
 }
 
 .doc .listingblock .title {
-  @include text-label;
-
+  font-size: 0.8125rem;
+  font-weight: 600;
   display: flex;
   font-style: normal;
   color: var(--ds-text-primary);
@@ -76,11 +77,21 @@
 }
 
 html[data-theme="light"] .doc .source-toolbox {
-  background: linear-gradient(to right, rgba(247, 247, 247, 0), rgb(247, 247, 247), rgb(247, 247, 247) 50%);
+  background: linear-gradient(
+    to right,
+    rgba(247, 247, 247, 0),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247) 50%
+  );
 }
 
 html[data-theme="dark"] .doc .source-toolbox {
-  background: linear-gradient(to right, rgba(35, 35, 36, 0), rgb(35, 35, 36), rgb(35, 35, 36) 50%);
+  background: linear-gradient(
+    to right,
+    rgba(35, 35, 36, 0),
+    rgb(35, 35, 36),
+    rgb(35, 35, 36) 50%
+  );
 }
 
 .doc .source-toolbox .copy-toast {
@@ -97,7 +108,9 @@ html[data-theme="dark"] .doc .source-toolbox {
   cursor: auto;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease 0.5s, visibility 0s linear 1s;
+  transition:
+    opacity 0.5s ease 0.5s,
+    visibility 0s linear 1s;
   text-wrap: nowrap;
   white-space: nowrap;
   transform: translateX(-2.35rem) translateY(-5rem);

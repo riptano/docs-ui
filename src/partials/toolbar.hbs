@@ -1,7 +1,4 @@
-<div class="toolbar" role="navigation">
-{{> nav-toggle}}
-{{#unless (eq page.layout 'landing')}}
-{{> breadcrumbs}}
-{{/unless}}
-{{> edit-this-page}}
+<div class="flex" role="navigation">
+  {{#unless (eq page.layout 'landing')}} {{> breadcrumbs}} {{/unless}} {{>
+  edit-this-page}}
 </div>

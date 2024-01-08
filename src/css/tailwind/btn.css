@@ -1,6 +1,6 @@
 @layer components {
   .btn {
-    @apply px-1.5 py-1 h-5 transition ease-in-out rounded-xl whitespace-nowrap text-button border border-transparent flex items-center justify-center;
+    @apply px-3 py-2 h-10 transition ease-in-out rounded whitespace-nowrap text-button border border-transparent flex items-center justify-center;
   }
 
   a.btn:hover {
@@ -28,14 +28,14 @@
   }
 
   .btn-icon {
-    @apply w-5 h-5 p-0;
+    @apply w-10 h-10 p-0;
   }
 
   .btn-leading-icon {
-    @apply mr-1 flex;
+    @apply mr-2 flex;
   }
 
   .btn-trailing-icon {
-    @apply ml-1 flex;
+    @apply ml-2 flex;
   }
 }

@@ -54,11 +54,14 @@ html[data-layout="full"] {
 }
 
 .sect1.text-h1 {
-  @include text-body;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .sect1.text-h1 > h2 {
-  @include text-h1;
+  font-size: 1.5rem;
+  font-weight: 550;
+  font-family: "Sora", sans-serif;
 }
 
 .row > *,
@@ -92,9 +95,7 @@ html[data-layout="full"] {
 }
 
 .ds-grid .sectionbody > *,
-.ds-grid > .content,
-.grid .sectionbody > *,
-.grid > .content {
+.ds-grid > .content {
   display: grid;
 }
 
@@ -152,7 +153,7 @@ html[data-theme="dark"] .doc .landing-card-icon {
 
 .landing-a a::after {
   font-family: "Material Icons Outlined", sans-serif;
-  content: '\e5c8';
+  content: "\e5c8";
   font-size: calc(20 / var(--rem-base) * 1rem);
   position: absolute;
   margin-left: var(--ds-space-h);
@@ -168,7 +169,7 @@ html[data-theme="dark"] .doc .landing-card-icon {
 .landing-support a.support::before,
 .landing-support a.community::before {
   font-family: "Material Icons Outlined", sans-serif;
-  content: '\ef73';
+  content: "\ef73";
   font-size: calc(16 / var(--rem-base) * 1rem);
   margin-right: var(--ds-space-1);
   position: absolute;
@@ -176,7 +177,7 @@ html[data-theme="dark"] .doc .landing-card-icon {
 }
 
 .landing-support a.community::before {
-  content: '\e7ef';
+  content: "\e7ef";
 }
 
 .landing-support p {
