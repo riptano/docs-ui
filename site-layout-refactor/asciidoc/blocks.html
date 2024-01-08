@@ -327,48 +327,32 @@ See the discussion in <a href="https://gitlab.com/antora/antora/-/issues/184" cl
 </div>
 </div>
 </div>
-  <div class="mt-12">
-  <h2>Support</h2>
-  <div class="sectionbody flex flex-col sm:flex-row">
-    <div class="sect2 basis-1/2">
-      <h3>Was This Helpful?</h3>
-      <div
-        id="feedback_buttons"
-        class="mt-4 flex gap-2 opacity-100 transition-opacity"
-      >
-        <button
-          id="feedback_button_yes"
-          class="btn btn-neutral btn-outlined"
-          data-track="Was This Helpful?: Yes Button Clicked"
-        >
-          <i class="material-icons mr-2">thumb_up</i>Yes
-        </button>
-        <button
-          id="feeback_button_no"
-          class="btn btn-neutral btn-outlined"
-          data-track="Was This Helpful?: No Button Clicked"
-          onclick="feedback_dialog.showModal()"
-        >
-          <i class="material-icons mr-2">thumb_down</i>No
-        </button>
-      </div>
-      <div
-        id="feedback_thank_you"
-        class="marker:text-h2 mt-4 hidden opacity-0 transition-opacity"
-      >Thank you for your feedback.
-      </div>
-    </div>
-    <div class="sect2 basis-1/2">
-      <h3>Need More Help?</h3>
-      <div class="mt-4 flex flex-col gap-4">
-        <a href="https://www.datastax.com/dev/community" target="_blank">
-          <i class="material-icons mr-4">group</i>Ask the Astra community
-        </a>
-        <a href="https://support.datastax.com/" target="_blank">
-          <i class="material-icons mr-4">support</i>Get in touch with support
-        </a>
-      </div>
-    </div>
+  <div class="mt-12 border-t">
+  <h3>Was This Helpful?</h3>
+  <div
+    id="feedback_buttons"
+    class="mt-4 flex gap-2 opacity-100 transition-opacity"
+  >
+    <button
+      id="feedback_button_yes"
+      class="btn btn-neutral btn-outlined"
+      data-track="Was This Helpful?: Yes Button Clicked"
+    >
+      <i class="material-icons mr-2">thumb_up</i>Yes
+    </button>
+    <button
+      id="feeback_button_no"
+      class="btn btn-neutral btn-outlined"
+      data-track="Was This Helpful?: No Button Clicked"
+      onclick="feedback_dialog.showModal()"
+    >
+      <i class="material-icons mr-2">thumb_down</i>No
+    </button>
+  </div>
+  <div
+    id="feedback_thank_you"
+    class="marker:text-h2 mt-4 hidden opacity-0 transition-opacity"
+  >Thank you for your feedback.
   </div>
 </div>
 <dialog id="feedback_dialog" class="dialog w-[40rem]">
@@ -499,20 +483,15 @@ See the discussion in <a href="https://gitlab.com/antora/antora/-/issues/184" cl
 </footer>
   </div>
   <aside
-  class="toc sidebar sticky top-[6rem] hidden h-max max-w-[24rem] text-sm lg:flex lg:flex-col"
+  class="toc sidebar sticky top-[10rem] hidden h-max max-w-[24rem] lg:w-[24rem] lg:flex lg:flex-col"
   data-title="Contents"
   data-levels="2"
 >
   <div class="toc-menu-container">
     <div class="toc-menu"></div>
-    <div class="toc-menu toc-tags">
-    </div>
-    <div class="toc-menu toc-dev">
-
-    </div>
   </div>
 </aside>
-</main>
+ </main>
   </div>
   <div class="drawer-side z-30 pt-20">
     <label for="nav-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
@@ -634,7 +613,7 @@ See the discussion in <a href="https://gitlab.com/antora/antora/-/issues/184" cl
       <ul class="bg-level1 sticky bottom-0 mt-auto flex flex-col py-3">
   <li>
     <a
-      class="text-body-small hover:bg-level2 flex py-1 pl-3 !no-underline"
+      class="text-body-small text-primary hover:bg-level2 mx-2 flex rounded p-1 !no-underline"
       href="https://www.datastax.com/"
       target="_self"
     >
@@ -644,7 +623,7 @@ See the discussion in <a href="https://gitlab.com/antora/antora/-/issues/184" cl
   </li>
   <li>
     <a
-      class="text-body-small hover:bg-level2 flex py-1 pl-3 !no-underline"
+      class="text-body-small text-primary hover:bg-level2 mx-2 flex rounded p-1 !no-underline"
       href="/en/glossary/doc"
       target="_blank"
     >
@@ -654,7 +633,7 @@ See the discussion in <a href="https://gitlab.com/antora/antora/-/issues/184" cl
   </li>
   <li>
     <a
-      class="text-body-small hover:bg-level2 flex py-1 pl-3 !no-underline"
+      class="text-body-small text-primary hover:bg-level2 mx-2 flex rounded p-1 !no-underline"
       href="https://support.datastax.com/"
       target="_blank"
     >
@@ -664,7 +643,7 @@ See the discussion in <a href="https://gitlab.com/antora/antora/-/issues/184" cl
   </li>
   <li>
     <a
-      class="text-body-small hover:bg-level2 flex py-1 pl-3 !no-underline"
+      class="text-body-small text-primary hover:bg-level2 mx-2 flex rounded p-1 !no-underline"
       href="https://downloads.datastax.com/"
       target="_blank"
     >
