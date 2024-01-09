@@ -223,11 +223,10 @@
 </nav><div class="drawer lg:drawer-open">
   <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content pt-20 flex">
-    <main
-  class="m-0 mx-auto flex max-w-full gap-6 px-3 pb-3 pt-4 lg:px-6 lg:pb-6 xl:gap-10"
->
-  <div class="flex w-full min-w-0 max-w-3xl flex-col gap-10 md:min-w-[32rem]">
-     <article class="doc">
+    <div class="flex flex-col max-w-full gap-10 px-3 pt-4 pb-3 mx-auto lg:px-6 lg:pb-6">
+  <div class="flex max-w-full gap-10 mx-auto xl:mx-0">  
+    <main class="max-w-3xl min-w-0">
+      <article class="doc">
   <h1 class="page">Page Not Found</h1>
   <div class="paragraph">
     <p>The page you&#8217;re looking for does not exist. It may have been moved.
@@ -241,7 +240,18 @@
       owner of the site that the link is broken. If you typed the URL of this
       page manually, please double check that you entered the address correctly.</p>
   </div>
-</article>  <footer
+</article>    </main>
+    <aside
+  class="toc sidebar sticky top-[10rem] hidden h-max max-w-[24rem] xl:w-[24rem] xl:flex xl:flex-col"
+  data-title="Contents"
+  data-levels="2"
+>
+  <div class="toc-menu-container">
+    <div class="toc-menu"></div>
+  </div>
+</aside>
+   </div>
+  <footer
   class="footer [&_a]:text-link flex flex-col gap-6 border-t pt-10 text-sm md:flex-row"
 >
   <div class="flex flex-col gap-6">
@@ -377,18 +387,7 @@
       >info@datastax.com</a>
     </p>
   </div>
-</footer>
-  </div>
-  <aside
-  class="toc sidebar sticky top-[10rem] hidden h-max max-w-[24rem] lg:w-[24rem] lg:flex lg:flex-col"
-  data-title="Contents"
-  data-levels="2"
->
-  <div class="toc-menu-container">
-    <div class="toc-menu"></div>
-  </div>
-</aside>
- </main>
+</footer></div>
   </div>
   <div class="drawer-side z-30 pt-20">
     <label for="nav-drawer" aria-label="close sidebar" class="drawer-overlay"></label>

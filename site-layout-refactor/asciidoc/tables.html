@@ -223,16 +223,12 @@
 </nav><div class="drawer lg:drawer-open">
   <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content pt-20 flex">
-    <main
-  class="m-0 mx-auto flex max-w-full gap-6 px-3 pb-3 pt-4 lg:px-6 lg:pb-6 xl:gap-10"
->
-  <div class="flex w-full min-w-0 max-w-3xl flex-col gap-10 md:min-w-[32rem]">
-     <article class="doc">
-  <div class="flex" role="navigation">
-   <nav class="flex" aria-label="breadcrumbs">
+    <div class="flex flex-col max-w-full gap-10 px-3 pt-4 pb-3 mx-auto lg:px-6 lg:pb-6">
+  <div class="flex max-w-full gap-10 mx-auto xl:mx-0">  
+    <main class="max-w-3xl min-w-0">
+      <article class="doc">
+  <nav class="flex mb-2" aria-label="breadcrumbs">
 </nav>
-  
-</div>
   <h1 class="page">Tables</h1>
   <div class="sect1">
 <h2 id="basic-table"><a class="anchor" href="#basic-table"></a>Basic table</h2>
@@ -888,44 +884,37 @@ public static JavaArchive createDeployment() {
 </div>
 </div>
 </div>
-  <div class="mt-12 border-t">
-  <h3>Was This Helpful?</h3>
-  <div
-    id="feedback_buttons"
-    class="mt-4 flex gap-2 opacity-100 transition-opacity"
-  >
-    <button
-      id="feedback_button_yes"
-      class="btn btn-neutral btn-outlined"
-      data-track="Was This Helpful?: Yes Button Clicked"
-    >
-      <i class="material-icons mr-2">thumb_up</i>Yes
-    </button>
-    <button
-      id="feeback_button_no"
-      class="btn btn-neutral btn-outlined"
-      data-track="Was This Helpful?: No Button Clicked"
-      onclick="feedback_dialog.showModal()"
-    >
-      <i class="material-icons mr-2">thumb_down</i>No
-    </button>
+  <div class="flex gap-10 mt-12">
+  <div class="flex flex-col">
+    <h3 class="!m-0">Was this helpful?</h3>
+    <div id="feedback_buttons" class="flex gap-2 mt-4 transition-opacity opacity-100">
+      <button
+        id="feedback_button_yes"
+        class="btn btn-neutral btn-outlined"
+        data-track="Was This Helpful?: Yes Button Clicked"
+      >
+        <i class="mr-2 material-icons">thumb_up</i>Yes
+      </button>
+      <button
+        id="feeback_button_no"
+        class="btn btn-neutral btn-outlined"
+        data-track="Was This Helpful?: No Button Clicked"
+        onclick="feedback_dialog.showModal()"
+      >
+        <i class="mr-2 material-icons">thumb_down</i>No
+      </button>
+    </div>
+    <div id="feedback_thank_you" class="hidden mt-4 transition-opacity opacity-0 marker:text-h2">Thank you for your
+      feedback.
+    </div>
   </div>
-  <div
-    id="feedback_thank_you"
-    class="marker:text-h2 mt-4 hidden opacity-0 transition-opacity"
-  >Thank you for your feedback.
   </div>
-</div>
 <dialog id="feedback_dialog" class="dialog w-[40rem]">
   <form method="dialog" id="feedback_form">
-    <div class="flex items-center border-b p-6">
+    <div class="flex items-center p-6 border-b">
       <h1 class="!m-0">Give Feedback</h1>
-      <button
-        id="feedback_form_esc_button"
-        class="btn btn-plain btn-neutral ml-auto h-8 p-2"
-        formnovalidate
-      ><span
-          class="text-overline bg-level1 text-tertiary rounded px-2"
+      <button id="feedback_form_esc_button" class="h-8 p-2 ml-auto btn btn-plain btn-neutral" formnovalidate><span
+          class="px-2 rounded text-overline bg-level1 text-tertiary"
         >ESC</span><i class="material-icons text-link">close</i></button>
     </div>
     <div class="p-6">
@@ -933,23 +922,29 @@ public static JavaArchive createDeployment() {
       <textarea
         rows="4"
         name="message"
-        class="input mt-2"
+        class="mt-2 input"
         placeholder="Provide your feedback"
         required
         autofocus
       ></textarea>
     </div>
-    <div class="top flex justify-end gap-2 border-t px-6 pb-6 pt-4">
-      <button
-        class="btn btn-neutral btn-outlined"
-        id="feedback_form_cancel_button"
-        formnovalidate
-      >Cancel</button>
+    <div class="flex justify-end gap-2 px-6 pt-4 pb-6 border-t top">
+      <button class="btn btn-neutral btn-outlined" id="feedback_form_cancel_button" formnovalidate>Cancel</button>
       <button class="btn btn-neutral btn-solid" type="submit">Submit Feedback</button>
     </div>
   </form>
-</dialog>  </article>
-     <footer
+</dialog>  </article>    </main>
+    <aside
+  class="toc sidebar sticky top-[10rem] hidden h-max max-w-[24rem] xl:w-[24rem] xl:flex xl:flex-col"
+  data-title="Contents"
+  data-levels="2"
+>
+  <div class="toc-menu-container">
+    <div class="toc-menu"></div>
+  </div>
+</aside>
+   </div>
+  <footer
   class="footer [&_a]:text-link flex flex-col gap-6 border-t pt-10 text-sm md:flex-row"
 >
   <div class="flex flex-col gap-6">
@@ -1085,18 +1080,7 @@ public static JavaArchive createDeployment() {
       >info@datastax.com</a>
     </p>
   </div>
-</footer>
-  </div>
-  <aside
-  class="toc sidebar sticky top-[10rem] hidden h-max max-w-[24rem] lg:w-[24rem] lg:flex lg:flex-col"
-  data-title="Contents"
-  data-levels="2"
->
-  <div class="toc-menu-container">
-    <div class="toc-menu"></div>
-  </div>
-</aside>
- </main>
+</footer></div>
   </div>
   <div class="drawer-side z-30 pt-20">
     <label for="nav-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
