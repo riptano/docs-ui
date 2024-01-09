@@ -84,6 +84,93 @@
  * Admonitions component
  *
  */
+.hljs-comment {
+  color: var(--ds-text-tertiary);
+}
+.hljs-quote {
+  color: var(--ds-text-tertiary);
+}
+.hljs-variable {
+  color: var(--ds-error-main);
+}
+.hljs-template-variable {
+  color: var(--ds-error-main);
+}
+.hljs-tag {
+  color: var(--ds-error-main);
+}
+.hljs-name {
+  color: var(--ds-error-main);
+}
+.hljs-selector-id {
+  color: var(--ds-error-main);
+}
+.hljs-selector-class {
+  color: var(--ds-cyan-main);
+}
+.hljs-regexp {
+  color: var(--ds-cyan-main);
+}
+.hljs-deletion {
+  color: var(--ds-error-main);
+}
+.hljs-number {
+  color: var(--ds-orange-main);
+}
+.hljs-built_in {
+  color: var(--ds-teal-main);
+}
+.hljs-builtin-name {
+  color: var(--ds-orange-main);
+}
+.hljs-literal {
+  color: var(--ds-orange-main);
+}
+.hljs-type {
+  color: var(--ds-orange-main);
+}
+.hljs-params {
+  color: var(--ds-orange-main);
+}
+.hljs-meta {
+  color: var(--ds-orange-main);
+}
+.hljs-link {
+  color: var(--ds-orange-main);
+}
+.hljs-attribute {
+  color: var(--ds-orange-main);
+}
+.hljs-string {
+  color: var(--ds-orange-main);
+}
+.hljs-symbol {
+  color: var(--ds-success-main);
+}
+.hljs-bullet {
+  color: var(--ds-success-main);
+}
+.hljs-addition {
+  color: var(--ds-success-main);
+}
+.hljs-title {
+  color: var(--ds-cyan-main);
+}
+.hljs-section {
+  color: var(--ds-cyan-main);
+}
+.hljs-keyword {
+  color: var(--ds-primary-main);
+}
+.hljs-selector-tag {
+  color: var(--ds-primary-main);
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: 500;
+}
 @page {
   margin: 0.5in;
 }
@@ -1694,7 +1781,6 @@ body {
     -moz-tab-size: 4;
       -o-tab-size: 4;
          tab-size: 4;
-    word-wrap: anywhere; /* aka overflow-wrap; used when hyphens are disabled or aren't sufficient */
 }
 *,
   ::before,
@@ -2032,9 +2118,10 @@ details[open] > summary::before {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    line-height: 1.2;
     margin: 0;
     margin-bottom: 0.5rem;
     margin-bottom: var(--ds-space-1);
