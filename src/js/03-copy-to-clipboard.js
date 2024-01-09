@@ -5,9 +5,6 @@
   var LINE_CONTINUATION_RX = /( ) *\\\n *|\\\n( ?) */g
   var TRAILING_SPACE_RX = / +$/gm
 
-  var config = (document.getElementById('site-script') || { dataset: {} }).dataset
-  var uiRootPath = config.uiRootPath == null ? '.' : config.uiRootPath
-  var svgAs = config.svgAs
   var supportsCopy = window.navigator.clipboard
 
   ;[].slice.call(document.querySelectorAll('.doc pre.highlight, .doc .literalblock pre')).forEach(function (pre) {
@@ -40,19 +37,12 @@
     if (supportsCopy) {
       ;(copy = document.createElement('button')).className = 'copy-button'
       copy.setAttribute('title', 'Copy to clipboard')
-      if (svgAs === 'svg') {
-        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-        svg.setAttribute('class', 'copy-icon')
-        var use = document.createElementNS('http://www.w3.org/2000/svg', 'use')
-        use.setAttribute('href', uiRootPath + '/img/octicons-16.svg#icon-clippy')
-        svg.appendChild(use)
-        copy.appendChild(svg)
-      } else {
-        var span = document.createElement('span')
-        span.className = 'material-icons'
-        span.innerText = 'content_paste'
-        copy.appendChild(span)
-      }
+
+      var span = document.createElement('span')
+      span.className = 'material-icons'
+      span.innerText = 'content_paste'
+      copy.appendChild(span)
+
       ;(toast = document.createElement('span')).className = 'copy-toast'
       toast.appendChild(document.createTextNode('Copied!'))
       copy.appendChild(toast)
@@ -87,7 +77,8 @@
         const icon = this.querySelector('.material-icons')
         this.classList.add('clicked')
         icon.innerText = 'assignment_turned_in'
-        this.offsetHeight // eslint-disable-line no-unused-expressions
+        // eslint-disable-next-line no-unused-expressions
+        this.offsetHeight
         this.classList.remove('clicked')
         setTimeout(function () {
           icon.innerText = 'content_paste'

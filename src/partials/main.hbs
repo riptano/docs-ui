@@ -1,9 +1,13 @@
-<main
-  class="m-0 mx-auto flex max-w-full gap-6 px-3 pb-3 pt-4 lg:px-6 lg:pb-6 xl:gap-10"
->
-  <div class="flex w-full min-w-0 max-w-3xl flex-col gap-10 md:min-w-[32rem]">
-    {{#if (eq page.layout '404')}} {{> article-404}} {{else}} {{> article}}
-    {{/if}} {{> footer}}
+<div class="flex flex-col max-w-full gap-10 px-3 pt-4 pb-3 mx-auto lg:px-6 lg:pb-6">
+  <div class="flex max-w-full gap-10 mx-auto xl:mx-0">  
+    <main class="max-w-3xl min-w-0">
+      {{#if (eq page.layout '404')}}
+      {{> article-404}}
+      {{else}}
+      {{> article}}
+      {{/if}}
+    </main>
+    {{> toc}}
   </div>
-  {{> toc}}
-</main>
+  {{> footer}}
+</div>

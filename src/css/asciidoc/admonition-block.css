@@ -1,0 +1,111 @@
+/*
+ *
+ * Admonitions component
+ *
+ */
+@layer base {
+  .doc .admonitionblock {
+    border: 1px solid var(--ds-success-outlined-border);
+    border-radius: calc(6 / var(--rem-base) * 1rem);
+    overflow-x: hidden;
+  }
+
+  .doc .admonitionblock > table > tbody > tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .doc .admonitionblock .icon {
+    display: flex;
+    gap: var(--ds-space-1);
+    align-items: center;
+    align-self: stretch;
+    position: unset;
+    width: 100%;
+    transform: none;
+    text-transform: none;
+    color: var(--ds-text-primary);
+    font-size: calc(16 / var(--rem-base) * 1rem);
+    line-height: 1.5;
+    height: var(--ds-space-6);
+    padding: var(--ds-space-1h) var(--ds-space-2);
+    border-radius: 0;
+  }
+
+  .doc .admonitionblock td.content > *:not(:first-child) {
+    margin-top: var(--ds-space-2);
+  }
+
+  .doc .admonitionblock td.content .ulist p {
+    margin-top: 0;
+  }
+
+  .doc .admonitionblock td.content {
+    background: none;
+  }
+
+  .doc .admonitionblock .icon::before {
+    font-family: "Material Icons Outlined", sans-serif;
+    font-size: calc(20 / var(--rem-base) * 1rem);
+    font-weight: normal;
+  }
+
+  /* TIP, NOTE */
+  .doc .admonitionblock.tip .icon,
+  .doc .admonitionblock.note .icon {
+    background: var(--ds-success-soft-bg);
+    color: var(--ds-text-primary);
+  }
+
+  .doc .admonitionblock.note .icon::before {
+    color: var(--ds-success-500);
+    content: "\e88e";
+  }
+
+  .doc .admonitionblock.tip .icon::before {
+    color: var(--ds-success-500);
+    content: "\e0f0";
+  }
+
+  /* CAUTION */
+  .doc .admonitionblock.caution .icon {
+    background: var(--ds-warning-soft-bg);
+    color: var(--ds-text-primary);
+  }
+
+  .doc .admonitionblock.caution {
+    border: 1px solid var(--ds-warning-outlined-border);
+  }
+
+  .doc .admonitionblock.caution .icon::before {
+    color: var(--ds-warning-500);
+    content: "\e88e";
+  }
+
+  /* WARNING, IMPORTANT */
+  .doc .admonitionblock.warning .icon,
+  .doc .admonitionblock.important .icon {
+    background: var(--ds-failure-soft-bg);
+    color: var(--ds-text-primary);
+  }
+
+  .doc .admonitionblock.warning,
+  .doc .admonitionblock.important {
+    border: 1px solid var(--ds-failure-outlined-border);
+  }
+
+  .doc .admonitionblock.warning .icon::before {
+    color: var(--ds-failure-500);
+    content: "\f083";
+  }
+
+  .doc .admonitionblock.important .icon::before {
+    color: var(--ds-failure-500);
+    content: "\e160";
+  }
+
+  html[data-theme="dark"] .doc .admonitionblock .icon::before {
+    color: var(--ds-primary-text);
+  }
+}

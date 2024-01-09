@@ -33,7 +33,9 @@
     var level = parseInt(heading.nodeName.slice(1), 10) - 1
     listItem.dataset.level = level
     listItem.className = '!m-0'
-    link.className = 'block py-1 pr-1 !no-underline !text-secondary hover:!text-link [&.is-active]:!text-link [&.is-active]:border-[var(--ds-primary-main)] border-l-2'
+    link.className =
+      `block py-1 pr-1 !no-underline !text-secondary 
+      hover:!text-link [&.is-active]:!text-link[&.is-active]:border-[var(--ds-primary-main)] border-l-2`
     if (level === 1) link.classList.add('pl-2', 'text-button')
     if (level === 2) link.classList.add('pl-4', '!text-tertiary')
     if (level === 3) link.classList.add('pl-6', '!text-tertiary')
@@ -55,7 +57,7 @@
   var startOfContent = !document.getElementById('toc') && article.querySelector('h1.page ~ :not(.is-before-toc)')
   if (startOfContent) {
     var embeddedToc = document.createElement('aside')
-    embeddedToc.className = 'mb-6 toc embedded lg:hidden'
+    embeddedToc.className = 'mb-6 toc embedded xl:hidden'
     embeddedToc.appendChild(menu.cloneNode(true))
     startOfContent.parentNode.insertBefore(embeddedToc, startOfContent)
   }
