@@ -7,7 +7,9 @@
 {{else if (and page.editUrl (or env.FORCE_SHOW_EDIT_PAGE_LINK (not page.origin.private)))}}
   <div class="ml-auto">
     <a href="{{page.editUrl}}" class="flex items-center after:hidden">
-      <i class="inline-block mr-1 h-4 w-4 bg-[url('../img/social-github.svg')] bg-no-repeat bg-contain dark:invert"></i>Edit this page on Github
+      <i
+        class="mr-2 inline-block h-4 w-4 bg-[url('../img/social-github.svg')] bg-contain bg-no-repeat dark:invert"
+      ></i>Edit this page on Github
     </a>
   </div>
 {{/if}}
