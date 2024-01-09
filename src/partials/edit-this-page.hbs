@@ -1,13 +1,13 @@
 {{#if (and page.fileUri (not env.CI))}}
-<div class="ml-auto">
-  <a href="{{page.fileUri}}">
-    Edit this page
-  </a>
-</div>
+  <div class="ml-auto">
+    <a href="{{page.fileUri}}" class="flex items-center after:hidden">
+      Edit this page
+    </a>
+  </div>
 {{else if (and page.editUrl (or env.FORCE_SHOW_EDIT_PAGE_LINK (not page.origin.private)))}}
-<div class="ml-auto">
-  <a href="{{page.editUrl}}">
-    <i class="bg-[url('../img/social-github.svg')] bg-no-repeat dark:invert mr-1"></i>Edit this page on Github
-  </a>
-</div>
+  <div class="ml-auto">
+    <a href="{{page.editUrl}}" class="flex items-center after:hidden">
+      <i class="inline-block mr-1 h-4 w-4 bg-[url('../img/social-github.svg')] bg-no-repeat bg-contain dark:invert"></i>Edit this page on Github
+    </a>
+  </div>
 {{/if}}

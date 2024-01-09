@@ -1,4 +1,4 @@
-<div class="is-before-toc -mt-1 mb-3 flex flex-wrap items-center gap-1">
+<div class="flex flex-wrap items-center gap-1 mb-3 -mt-1 is-before-toc">
   {{#with page.attributes.skill-level}}
     <div class="text-teritiary flex gap-0.5 text-sm">
       <span class="material-icons">network_check</span>
@@ -23,12 +23,10 @@
       <a
         href="{{{this}}}"
         target="_blank"
-        class="btn btn-outlined btn-neutral"
+        class="btn btn-outlined btn-neutral after:hidden"
         data-track="Colab Link Clicked"
       >
-        <i
-          class="mr-1 h-[1em] w-[1.5em] bg-[url('../img/colab.svg')] bg-center bg-no-repeat"
-        ></i>
+        <i class="mr-1 h-[1em] w-[1.5em] bg-[url('../img/colab.svg')] bg-center bg-no-repeat"></i>
         Run this on Colab
       </a>
     {{/with}}

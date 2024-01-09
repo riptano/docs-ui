@@ -17,14 +17,10 @@
   }
 
   .doc h1.page {
-    margin: 0;
-    margin-bottom: var(--ds-space-1);
-  }
-
-  .doc > h1.page:first-child {
-    margin: calc(24 / var(--rem-base) * 1rem) 0;
     display: flex;
     align-items: center;
+    margin: 0;
+    margin-bottom: var(--ds-space-1);
     gap: var(--ds-space-1);
   }
 
