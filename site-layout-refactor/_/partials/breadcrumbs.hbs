@@ -1,3 +1,4 @@
+{{#unless (or (eq page.layout 'landing') (eq page.layout 'full'))}}
 <nav class="flex mb-2" aria-label="breadcrumbs">
   {{#if page.breadcrumbs}}
   <ul class="flex flex-wrap !list-none !m-0 !p-0">
@@ -20,3 +21,4 @@
   </ul>
   {{/if}}
 </nav>
+{{/unless}}

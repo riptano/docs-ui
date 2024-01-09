@@ -1682,6 +1682,9 @@ html {
     }
   }
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
     font-weight: 400;
     background: var(--ds-background-body);
     color: var(--ds-text-primary);
@@ -1692,7 +1695,7 @@ body {
       -o-tab-size: 4;
          tab-size: 4;
     word-wrap: anywhere; /* aka overflow-wrap; used when hyphens are disabled or aren't sufficient */
-  }
+}
 *,
   ::before,
   ::after {
@@ -1757,8 +1760,7 @@ details[open] > summary::before {
 @media (pointer: fine) {
     @supports (scrollbar-width: thin) {
       html {
-        scrollbar-color: var(--ds-neutral-outlined-border)
-          var(--ds-background-body);
+        scrollbar-color: var(--ds-neutral-outlined-border) var(--ds-background-body);
       }
 
       body * {
@@ -4521,10 +4523,6 @@ a.btn:hover {
 }
 .\!no-underline {
   text-decoration-line: none !important;
-}
-.antialiased {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 .opacity-0 {
   opacity: 0;
