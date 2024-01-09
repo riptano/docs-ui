@@ -10,6 +10,8 @@
   }
 
   body {
+    @apply antialiased;
+
     font-weight: 400;
     background: var(--ds-background-body);
     color: var(--ds-text-primary);
@@ -92,8 +94,7 @@
   @media (pointer: fine) {
     @supports (scrollbar-width: thin) {
       html {
-        scrollbar-color: var(--ds-neutral-outlined-border)
-          var(--ds-background-body);
+        scrollbar-color: var(--ds-neutral-outlined-border) var(--ds-background-body);
       }
 
       body * {
