@@ -4117,7 +4117,6 @@ a.btn:hover {
   min-height: fit-content;
 }
 .collapse-title::before {
-  margin-left: 0.5rem;
   display: inline-block;
   --tw-translate-y: 0.25rem;
   -webkit-transform: translate(var(--tw-translate-x), 0.25rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -4602,6 +4601,9 @@ a.btn:hover {
 }
 .text-xs {
   font-size: 0.75rem;
+}
+.font-semibold {
+  font-weight: 600;
 }
 .italic {
   font-style: italic;
