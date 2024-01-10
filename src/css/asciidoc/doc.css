@@ -683,13 +683,27 @@
     padding-bottom: 0;
   }
 
-  .doc details {
-    margin-left: var(--ds-space-2);
-  }
-
   .doc details > summary {
     line-height: 1.5;
     margin-bottom: var(--ds-space-1);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &::before {
+      font-family: "Material Icons Outlined", sans-serif;
+      font-size: 1rem;
+      content: "\e5cc";
+      margin-right: 0.25em;
+    }
+  }
+
+  .doc details[open] > summary::before {
+    transform: rotate(90deg);
+  }
+
+  .doc details > .content {
+    margin-left: var(--ds-space-2);
   }
 
   .doc details.result {

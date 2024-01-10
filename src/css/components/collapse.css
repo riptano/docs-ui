@@ -19,7 +19,7 @@
 
   .collapse > input[type="checkbox"],
   .collapse > input[type="radio"] {
-    @apply appearance-none opacity-0;
+    @apply cursor-pointer appearance-none opacity-0;
   }
 
   .collapse-content {
@@ -47,15 +47,18 @@
     @apply visible min-h-fit;
   }
 
-  .collapse-arrow {
-    @apply transition-transform;
+  .collapse-title::before {
+    @apply ml-2 inline-block translate-y-1 transition-transform;
+    font-family: "Material Icons Outlined", sans-serif;
+    font-size: 1rem;
+    content: "\e5cc";
   }
 
-  .collapse[open] > .collapse-title > .collapse-arrow,
-  .collapse-open > .collapse-title > .collapse-arrow,
-  .collapse:focus:not(.collapse-close) > .collapse-title > .collapse-arrow,
-  .collapse:not(.collapse-close) > input[type="checkbox"]:checked ~ .collapse-title > .collapse-arrow,
-  .collapse:not(.collapse-close) > input[type="radio"]:checked ~ .collapse-title > .collapse-arrow {
-    @apply -rotate-90;
+  .collapse[open] > .collapse-title::before,
+  .collapse-open > .collapse-title::before,
+  .collapse:focus:not(.collapse-close) > .collapse-title::before,
+  .collapse:not(.collapse-close) > .collapse-title:has(~ input[type="checkbox"]:checked)::before,
+  .collapse:not(.collapse-close) > .collapse-title:has(~ input[type="radio"]:checked)::before {
+    @apply rotate-90;
   }
 }

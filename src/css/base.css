@@ -68,22 +68,6 @@
     top: -0.5em;
   }
 
-  details > summary {
-    display: flex;
-    align-items: center;
-
-    &::before {
-      font-family: "Material Icons Outlined", sans-serif;
-      font-size: 1rem;
-      content: "\e5cf";
-      margin-right: 0.25em;
-    }
-  }
-
-  details[open] > summary::before {
-    transform: rotate(-90deg);
-  }
-
   .icon {
     display: inline-block;
     height: 1em;
