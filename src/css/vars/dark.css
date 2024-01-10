@@ -59,7 +59,7 @@
   --ds-neutral-solid-disabled-color: var(--ds-neutral-800);
   --ds-neutral-solid-hover-bg: var(--ds-neutral-0);
   --ds-orange-main: var(--ds-orange-400);
-  --ds-primary-main: var(--ds-primary-400);
+  --ds-primary-main: var(--ds-primary-300);
   --ds-primary-outlined-active-bg: var(--ds-primary-500);
   --ds-primary-outlined-border: var(--ds-primary-600);
   --ds-primary-outlined-color: var(--ds-common-white);
@@ -76,8 +76,8 @@
   --ds-primary-soft-color: var(--ds-primary-200);
   --ds-primary-soft-disabled-bg: var(--ds-primary-600);
   --ds-primary-soft-disabled-color: var(--ds-primary-800);
-  --ds-primary-soft-hover-bg: var(--ds-primary-700);
-  --ds-primary-solid-active-bg: var(--ds-primary-800);
+  --ds-primary-soft-hover-bg: var(--ds-primary-500);
+  --ds-primary-solid-active-bg: var(--ds-primary-600);
   --ds-primary-solid-bg: var(--ds-primary-600);
   --ds-primary-solid-color: var(--ds-common-white);
   --ds-primary-solid-disabled-bg: var(--ds-neutral-600);
@@ -113,7 +113,7 @@
   --ds-text-placeholder: var(--ds-neutral-700);
   --ds-text-primary: var(--ds-common-white);
   --ds-text-secondary: var(--ds-neutral-300);
-  --ds-text-tertiary: var(--ds-neutral-500);
+  --ds-text-tertiary: var(--ds-neutral-400);
   --ds-warning-main: var(--ds-warning-400);
   --ds-warning-outlined-active-bg: var(--ds-warning-500);
   --ds-warning-outlined-border: var(--ds-warning-600);
