@@ -4,7 +4,7 @@
   {{#if ./content}}
   {{#if ./items.length}}
   <li class="collapse">
-    <div class="collapse-title text-body-small pb-1 pr-1 pl-[{{{multiply (or ../level 0) 1.25}}}rem]{{#if (eq (or ../level 0) 0)}} text-tertiary dark:text-secondary text-overline py-1{{/if}}">
+    <div class="collapse-title text-body-small pb-1 pr-1 pl-[{{{multiply (or ../level 0) 1.25}}}rem]{{#if (eq (or ../level 0) 0)}} text-tertiary text-overline py-1{{/if}}">
       {{{./content}}}
     </div>
     <input type="checkbox" {{#if (navTreeContainsUrl ./items @root.page.url)}} checked{{/if}} /> 
@@ -23,7 +23,7 @@
   {{> nav-tree navigation=./items level=(increment ../level)}}
   {{else}}
   <li>
-    <span class="flex rounded !no-underline text-body-small text-tertiary dark:text-secondary hover:bg-level2 mx-2 py-1 pr-1 pl-[{{{multiply ../level 1.25}}}rem]">
+    <span class="flex rounded !no-underline text-body-small text-tertiary hover:bg-level2 mx-2 py-1 pr-1 pl-[{{{multiply ../level 1.25}}}rem]">
       {{{./content}}}
     </span>
   </li>
