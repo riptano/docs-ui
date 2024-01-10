@@ -1,5 +1,7 @@
 'use strict'
 
+// Walk the nav tree on a given page and return true if it contains the given URL.
+// Used in the side nav to determine which nav items should be expanded when a page is loaded.
 function navTreeContainsUrl (items, pageUrl) {
   return items.reduce((isFound, item) => {
     if (isFound) return true
