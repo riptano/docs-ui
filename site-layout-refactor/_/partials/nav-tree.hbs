@@ -1,32 +1,35 @@
 {{#if navigation.length}}
 {{#each navigation}}
-<div data-depth="{{or ../level 0}}">
+<ul data-depth="{{or ../level 0}}">
   {{#if ./content}}
   {{#if ./items.length}}
-  <div tabindex="0" class="collapse">
-    <input type="checkbox" {{#if (navTreeContainsUrl ./items @root.page.url)}} checked{{/if}} /> 
-    <div class="collapse-title text-body-small py-1 pr-1 pl-[{{{multiply ../level 1.25}}}rem]{{#if (eq (or ../level 0) 0)}} text-tertiary text-overline pt-2{{/if}}">
-      <i class="w-4 mx-1 collapse-arrow material-icons">expand_more</i>
+  <li class="collapse">
+    <div class="collapse-title text-body-small pb-1 pr-1 pl-[{{{multiply (or ../level 0) 1.25}}}rem]{{#if (eq (or ../level 0) 0)}} text-tertiary dark:text-secondary text-overline py-1{{/if}}">
       {{{./content}}}
     </div>
+    <input type="checkbox" {{#if (navTreeContainsUrl ./items @root.page.url)}} checked{{/if}} /> 
     <div class="collapse-content"> 
       {{> nav-tree navigation=./items level=(increment ../level)}}
     </div>
-  </div>
+  </li>
   {{else if ./url}}
-  <a
+  <li>
+    <a
     class="flex rounded !no-underline text-body-small text-primary hover:bg-level2 mx-2 py-1 pr-1 pl-[{{{multiply ../level 1.25}}}rem]{{#if (eq ./url @root.page.url)}} text-link{{/if}}" 
     href="{{~#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{~else}}{{{./url}}}{{~/if}}">
       {{{./content}}}
-  </a>
+    </a>
+  </li>
   {{> nav-tree navigation=./items level=(increment ../level)}}
   {{else}}
-  <span class="flex rounded !no-underline text-body-small text-tertiary hover:bg-level2 mx-2 py-1 pr-1 pl-[{{{multiply ../level 1.25}}}rem]">
-    {{{./content}}}
-  </span>
+  <li>
+    <span class="flex rounded !no-underline text-body-small text-tertiary dark:text-secondary hover:bg-level2 mx-2 py-1 pr-1 pl-[{{{multiply ../level 1.25}}}rem]">
+      {{{./content}}}
+    </span>
+  </li>
   {{> nav-tree navigation=./items level=(increment ../level)}}
   {{/if}}
   {{/if}}
-</div>
+</ul>
 {{/each}}
 {{/if}}
