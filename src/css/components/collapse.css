@@ -48,7 +48,7 @@
   }
 
   .collapse-title::before {
-    @apply ml-2 inline-block translate-y-1 transition-transform;
+    @apply inline-block translate-y-1 transition-transform;
     font-family: "Material Icons Outlined", sans-serif;
     font-size: 1rem;
     content: "\e5cc";
