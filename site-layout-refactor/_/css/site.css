@@ -2104,9 +2104,10 @@ sup {
         -ms-flex-align: start;
             align-items: start;
     line-height: 1.2;
-    margin: 0;
-    margin-bottom: 0.5rem;
-    margin-bottom: var(--ds-space-1);
+    margin-top: 1rem;
+    margin-top: var(--ds-space-2);
+    margin-bottom: 1rem;
+    margin-bottom: var(--ds-space-2);
     gap: 0.5rem;
     gap: var(--ds-space-1);
   }
@@ -2767,6 +2768,9 @@ sup {
             align-items: center;
     cursor: pointer;
   }
+.doc details > summary::-webkit-details-marker {
+      display: none;
+    }
 .doc details > summary::before {
       font-family: "Material Icons Outlined", sans-serif;
       font-size: 1rem;
@@ -4194,6 +4198,9 @@ a.btn:hover {
 .z-40 {
   z-index: 40;
 }
+.row-start-2 {
+  grid-row-start: 2;
+}
 .\!m-0 {
   margin: 0px !important;
 }
@@ -4222,14 +4229,14 @@ a.btn:hover {
 .mb-1 {
   margin-bottom: 0.25rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
 .mb-3 {
   margin-bottom: 0.75rem;
 }
 .mb-6 {
   margin-bottom: 1.5rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
 }
 .ml-auto {
   margin-left: auto;
@@ -4298,13 +4305,11 @@ a.btn:hover {
 .h-\[1em\] {
   height: 1em;
 }
+.h-\[calc\(100vh-24rem\)\] {
+  height: calc(100vh - 24rem);
+}
 .h-full {
   height: 100%;
-}
-.h-max {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
 }
 .w-10 {
   width: 2.5rem;
@@ -4324,8 +4329,14 @@ a.btn:hover {
 .w-\[17rem\] {
   width: 17rem;
 }
+.w-\[20rem\] {
+  width: 20rem;
+}
 .w-\[40rem\] {
   width: 40rem;
+}
+.w-\[min\(48rem\2c 100\%\)\] {
+  width: min(48rem,100%);
 }
 .w-full {
   width: 100%;
@@ -4343,11 +4354,8 @@ a.btn:hover {
 .min-w-0 {
   min-width: 0px;
 }
-.max-w-3xl {
+.max-w-\[48rem\] {
   max-width: 48rem;
-}
-.max-w-\[24rem\] {
-  max-width: 24rem;
 }
 .max-w-\[640px\] {
   max-width: 640px;
@@ -4441,6 +4449,9 @@ a.btn:hover {
 }
 .gap-6 {
   gap: 1.5rem;
+}
+.gap-y-3 {
+  row-gap: 0.75rem;
 }
 .overflow-y-auto {
   overflow-y: auto;
@@ -4541,15 +4552,12 @@ a.btn:hover {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .pb-1 {
   padding-bottom: 0.25rem;
-}
-.pb-12 {
-  padding-bottom: 3rem;
 }
 .pb-6 {
   padding-bottom: 1.5rem;
@@ -4580,6 +4588,9 @@ a.btn:hover {
 }
 .pt-4 {
   padding-top: 1rem;
+}
+.pt-6 {
+  padding-top: 1.5rem;
 }
 .text-left {
   text-align: left;
@@ -4678,6 +4689,9 @@ a.btn:hover {
             align-items: flex-end;
   }
 }
+.\[\&\.is-active\]\:\!text-link.is-active {
+    color: var(--ds-primary-main) !important;
+  }
 .\[\&\>h2\]\:\!text-h1>h2 {
     font-size: 1.5rem !important;
     font-weight: 550 !important;
@@ -4829,6 +4843,9 @@ a.btn:hover {
   }
 }
 @media (min-width: 1440px) {
+  .xl\:col-start-2 {
+    grid-column-start: 2;
+  }
   .xl\:flex {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4837,18 +4854,26 @@ a.btn:hover {
   .xl\:hidden {
     display: none;
   }
-  .xl\:w-\[24rem\] {
-    width: 24rem;
-  }
   .xl\:flex-col {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .xl\:gap-x-10 {
+    -webkit-column-gap: 2.5rem;
+       -moz-column-gap: 2.5rem;
+            column-gap: 2.5rem;
+  }
+  .peer.toc ~ .xl\:peer-\[\.toc\]\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
 }
 .\[\&\+hr\]\:\!mt-2+hr {
   margin-top: 0.5rem !important;
+}
+.\[\&\.is-active\]\:border-\[var\(--ds-primary-main\)\].is-active {
+  border-color: var(--ds-primary-main);
 }
 .\[\&\>h2\]\:\!hidden>h2 {
   display: none !important;

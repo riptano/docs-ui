@@ -222,10 +222,10 @@
   </button>
 </nav><div class="drawer lg:drawer-open">
   <input id="nav-drawer-input" type="checkbox" class="drawer-toggle" />
-  <div class="flex flex-col pt-20 drawer-content">
-    <div class="flex max-w-full gap-10 px-3 pt-4 pb-12 mx-auto lg:px-6">
-  <main class="max-w-3xl min-w-0">
-    <article class="doc">
+  <div class="grid pt-20 drawer-content">
+    <div class="grid max-w-full h-full xl:gap-x-10 gap-y-3 px-3 py-4 mx-auto lg:px-6">
+  <main class="w-[min(48rem,100%)] max-w-[48rem] mx-auto min-w-0 mb-8">
+        <article class="doc">
   <h1 class="page">{company} Astra</h1>
   <div id="preamble">
 <div class="sectionbody">
@@ -291,8 +291,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
 </div>
   </article>
   </main>
-   </div>
-    <footer class="footer [&_a]:text-link bg-level1 flex flex-col gap-6 border-t py-6 px-3 mt-auto lg:px-6 text-sm md:flex-row">
+     <footer class="footer [&_a]:text-link flex flex-col gap-6 border-t mt-auto pt-6 text-sm md:flex-row row-start-2 xl:peer-[.toc]:col-span-2">
   <div class="flex flex-col gap-6">
     <a
       href="https://www.datastax.com"
@@ -426,7 +425,8 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       >info@datastax.com</a>
     </p>
   </div>
-</footer>  </div>
+</footer></div>
+  </div>
   <div class="z-30 pt-20 drawer-side">
     <label for="nav-drawer-input" aria-label="close sidebar" class="drawer-overlay"></label>
     <nav id="side-nav" class="h-full bg-level1 overflow-y-auto flex flex-col w-[17rem] pt-2" 

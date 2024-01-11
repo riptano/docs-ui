@@ -1,10 +1,10 @@
 {{#unless (or (eq page.layout 'full') (eq page.layout 'landing'))}}
 <aside
-  class="toc sidebar sticky top-[10rem] hidden h-max max-w-[24rem] xl:w-[24rem] xl:flex xl:flex-col"
+  class="toc sidebar peer overflow-y-auto sticky top-[10rem] hidden h-[calc(100vh-24rem)] w-[20rem] xl:flex xl:flex-col xl:col-start-2"
   data-title="{{{or page.attributes.toctitle 'Contents'}}}"
   data-levels="{{{or page.attributes.toclevels 2}}}"
 >
-  <div class="overflow-y-auto toc-menu-container">
+  <div class="toc-menu-container">
     <div class="toc-menu"></div>
     {{#if page.attributes.tags}}
     <h3 class="!my-2 text-h3">Tags</h3>
