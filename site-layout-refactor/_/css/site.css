@@ -3144,13 +3144,11 @@ sup {
     margin-left: var(--ds-space-h);
     font-weight: normal;
   }
-@media screen and (min-width: 1024px) {
-    html[data-layout="landing"] main,
-    html[data-layout="full"] main {
+html[data-layout="landing"] main, html[data-layout="full"] main {
       max-width: 80rem;
       max-width: calc(1280/var(--rem-base)*1rem);
+      width: auto;
     }
-  }
 html[data-layout="landing"] .doc > h1.page:first-child, html[data-layout="full"] .doc > h1.page:first-child {
       font-size: 2.125rem;
       font-size: calc(34/var(--rem-base)*1rem);
