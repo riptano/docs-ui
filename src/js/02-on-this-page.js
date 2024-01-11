@@ -3,7 +3,7 @@
 
   var sidebar = document.querySelector('aside.toc.sidebar')
   if (!sidebar) return
-  if (document.querySelector('body.-toc')) return sidebar.parentNode.removeChild(sidebar)
+  // if (document.querySelector('body.-toc')) return sidebar.parentNode.removeChild(sidebar)
   var levels = parseInt(sidebar.dataset.levels || 2, 10)
   if (levels < 0) return
 
@@ -21,7 +21,7 @@
     headingsSelector.push(headingSelector.join('>'))
   }
   var headings = find(headingsSelector.join(','), article.parentNode)
-  if (!headings.length) return sidebar.parentNode.removeChild(sidebar)
+  if (!headings.length) return sidebar.querySelector('.toc-menu').classList.add('hidden')
 
   var lastActiveFragment
   var links = {}
@@ -35,7 +35,7 @@
     listItem.className = '!m-0'
     link.className =
       `block py-1 pr-1 !no-underline !text-secondary 
-      hover:!text-link [&.is-active]:!text-link[&.is-active]:border-[var(--ds-primary-main)] border-l-2`
+      hover:!text-link [&.is-active]:!text-link [&.is-active]:border-[var(--ds-primary-main)] border-l-2`
     if (level === 1) link.classList.add('pl-2', 'text-button')
     if (level === 2) link.classList.add('pl-4', '!text-tertiary')
     if (level === 3) link.classList.add('pl-6', '!text-tertiary')
