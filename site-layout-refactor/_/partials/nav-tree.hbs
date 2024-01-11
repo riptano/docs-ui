@@ -1,35 +1,31 @@
 {{#if navigation.length}}
-<ul>
+<ul{{#if (greater (or ./level 0) 1)}} class="ml-3 pl-2 border-l"{{/if}}>
   {{#each navigation}}
   {{#if ./content}}
-  {{#if ./items.length}}
+  {{#if (and (eq (or ../level 0) 0) ./items.length)}}
   <li class="collapse" data-depth="{{or ../level 0}}">
-    <div class="collapse-title text-body-small pb-1 pr-2
-      {{!-- {{~#if (greater (or ../level 0) 0)}} pl-[{{{multiply ../level 1.25}}}rem]{{~/if}} --}}
-      {{~#if (eq (or ../level 0) 0)}} text-overline pb-2 pt-1{{~/if}}">
+    <input type="checkbox" class="peer z-10" {{#if (navTreeContainsUrl ./items @root.page.url)}} checked{{/if}} /> 
+    <div class="collapse-title inline-block text-overline py-2 peer-checked:[&_i]:rotate-90">
+      <i class="block float-left mr-1 material-icons transition-transform leading-[.9]">chevron_right</i>
       {{{./content}}}
     </div>
-    <input type="checkbox" {{#if (navTreeContainsUrl ./items @root.page.url)}} checked{{/if}} /> 
-    <div class="collapse-content ml-2 pl-4 border-l"> 
+    <div class="collapse-content ml-2 pl-2 border-l"> 
       {{> nav-tree navigation=./items level=(increment ../level)}}
     </div>
   </li>
-  {{else if ./url}}
+  {{else}}
   <li data-depth="{{or ../level 0}}">
-    <a class="flex rounded !no-underline text-body-small text-primary py-1 px-2 hover:bg-level2
-      {{!-- {{~#if (greater (or ../level 0) 0)}} pl-[{{{multiply ../level 1.25}}}rem]{{~/if}} --}}
+    {{#if ./url}}
+     <a class="flex rounded !no-underline text-body-small text-primary py-1 px-2 hover:bg-level2
       {{~#if (eq ./url @root.page.url)}} text-link font-semibold{{~/if}}" 
       href="{{~#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{~else}}{{{./url}}}{{~/if}}">
       {{{./content}}}
     </a>
-  </li>
-  {{> nav-tree navigation=./items level=(increment ../level)}}
-  {{else}}
-  <li data-depth="{{or ../level 0}}">
-    <span class="flex rounded !no-underline text-body-small text-tertiary hover:bg-level2 py-1 pr-1
-      {{~#if (greater ../level 1)}} pl-[{{{multiply (or ../level 0) 1.25}}}rem]{{~else}} pl-[{{{multiply (or ../level 0) 1.25}}}rem]{{~/if}}">
+    {{else}}
+    <span class="flex rounded text-overline text-tertiary py-1 px-2">
       {{{./content}}}
     </span>
+    {{/if}}
   </li>
   {{> nav-tree navigation=./items level=(increment ../level)}}
   {{/if}}
