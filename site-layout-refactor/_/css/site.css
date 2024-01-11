@@ -4210,10 +4210,6 @@ a.btn:hover {
   margin-left: -0.5rem;
   margin-right: -0.5rem;
 }
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -4235,6 +4231,9 @@ a.btn:hover {
 }
 .mb-8 {
   margin-bottom: 2rem;
+}
+.ml-2 {
+  margin-left: 0.5rem;
 }
 .ml-auto {
   margin-left: auto;
@@ -4471,6 +4470,9 @@ a.btn:hover {
 .border-b {
   border-bottom-width: 1px;
 }
+.border-l {
+  border-left-width: 1px;
+}
 .border-l-2 {
   border-left-width: 2px;
 }
@@ -4557,6 +4559,9 @@ a.btn:hover {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
 .pb-6 {
   padding-bottom: 1.5rem;
 }
@@ -4569,17 +4574,14 @@ a.btn:hover {
 .pl-6 {
   padding-left: 1.5rem;
 }
-.pl-\[0rem\] {
-  padding-left: 0rem;
-}
-.pl-\[1\.25rem\] {
-  padding-left: 1.25rem;
-}
 .pr-1 {
   padding-right: 0.25rem;
 }
-.pt-2 {
-  padding-top: 0.5rem;
+.pr-2 {
+  padding-right: 0.5rem;
+}
+.pt-1 {
+  padding-top: 0.25rem;
 }
 .pt-20 {
   padding-top: 5rem;
