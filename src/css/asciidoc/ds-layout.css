@@ -6,15 +6,13 @@
 
 /* Extend .doc max-width */
 @layer base {
-  @media screen and (min-width: 1024px) {
-    html[data-layout="landing"] main,
-    html[data-layout="full"] main {
-      max-width: calc(1280 / var(--rem-base) * 1rem);
-    }
-  }
-
   html[data-layout="landing"],
   html[data-layout="full"] {
+    main {
+      max-width: calc(1280 / var(--rem-base) * 1rem);
+      width: auto;
+    }
+
     .doc > h1.page:first-child {
       font-size: calc(34 / var(--rem-base) * 1rem);
       margin-top: var(--ds-space-3);
