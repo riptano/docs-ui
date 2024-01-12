@@ -1,0 +1,41 @@
+@layer components {
+  .btn {
+    @apply text-button flex h-10 items-center justify-center whitespace-nowrap rounded border border-transparent px-3 py-2 transition ease-in-out;
+  }
+
+  a.btn:hover {
+    @apply no-underline;
+  }
+
+  .btn-primary.btn-outlined {
+    @apply border-[var(--ds-primary-outlined-border)] text-[var(--ds-primary-outlined-color)] hover:border-[var(--ds-primary-outlined-hover-border)] hover:bg-[var(--ds-primary-outlined-hover-bg)] hover:text-[var(--ds-primary-outlined-color)] active:border-[var(--ds-primary-outlined-active-border)] active:bg-[var(--ds-primary-outlined-active-bg)] disabled:border-[var(--ds-primary-outlined-disabled-border)] disabled:text-[var(--ds-primary-outlined-disabled-color)];
+  }
+
+  .btn-primary.btn-solid {
+    @apply bg-[var(--ds-primary-solid-bg)] text-[var(--ds-primary-solid-color)] hover:bg-[var(--ds-primary-solid-hover-bg)] hover:text-[var(--ds-primary-solid-color)] active:bg-[var(--ds-primary-solid-active-bg)] disabled:bg-[var(--ds-primary-solid-disabled-bg)] disabled:text-[var(--ds-primary-solid-disabled-color)];
+  }
+
+  .btn-neutral.btn-outlined {
+    @apply border-[var(--ds-neutral-outlined-border)] text-[var(--ds-neutral-outlined-color)] hover:border-[var(--ds-neutral-outlined-hover-border)] hover:bg-[var(--ds-neutral-outlined-hover-bg)] hover:text-[var(--ds-neutral-outlined-color)] active:border-[var(--ds-neutral-outlined-active-border)] active:bg-[var(--ds-neutral-outlined-active-bg)] disabled:border-[var(--ds-neutral-outlined-disabled-border)] disabled:text-[var(--ds-neutral-outlined-disabled-color)];
+  }
+
+  .btn-neutral.btn-solid {
+    @apply bg-[var(--ds-neutral-solid-bg)] text-[var(--ds-neutral-solid-color)] hover:bg-[var(--ds-neutral-solid-hover-bg)] hover:text-[var(--ds-neutral-solid-color)] active:bg-[var(--ds-neutral-solid-active-bg)] disabled:bg-[var(--ds-neutral-solid-disabled-bg)] disabled:text-[var(--ds-neutral-solid-disabled-color)];
+  }
+
+  .btn-neutral.btn-plain {
+    @apply text-[var(--ds-neutral-plain-color)] hover:bg-[var(--ds-neutral-plain-hover-bg)] hover:text-[var(--ds-neutral-plain-color)] active:bg-[var(--ds-neutral-plain-active-bg)] disabled:text-[var(--ds-neutral-plain-disabled-color)];
+  }
+
+  .btn-icon {
+    @apply h-10 w-10 p-0;
+  }
+
+  .btn-leading-icon {
+    @apply mr-2 flex;
+  }
+
+  .btn-trailing-icon {
+    @apply ml-2 flex;
+  }
+}

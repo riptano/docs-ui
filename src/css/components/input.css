@@ -1,0 +1,22 @@
+
+@layer components {
+  .input {
+    @apply text-body transition-colors rounded border p-1 w-full;
+
+    color: var(--ds-text-primary);
+    background: none;
+
+    &:hover {
+      border-color: var(--ds-neutral-outlined-hover-border);
+    }
+
+    &:focus {
+      outline: 2px solid var(--ds-focus-visible);
+      outline-offset: -2px;
+    }
+
+    &::placeholder {
+      color: var(--ds-text-placeholder);
+    }
+  }
+}

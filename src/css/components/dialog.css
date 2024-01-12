@@ -1,0 +1,14 @@
+@layer components {
+  .dialog {
+    @apply rounded border;
+
+    overscroll-behavior: contain;
+    box-shadow: 0 6px 16px 0 #0a0a0a1f;
+    background: var(--ds-background-body);
+    color: var(--ds-text-primary);
+
+    &::backdrop {
+      background-color: var(--ds-background-backdrop);
+    }
+  }
+}

@@ -1,18 +1,24 @@
-<nav class="breadcrumbs" aria-label="breadcrumbs">
+{{#unless (or (eq page.layout 'landing') (eq page.layout 'full'))}}
+<nav class="flex" aria-label="breadcrumbs">
   {{#if page.breadcrumbs}}
-  <ul>
+  <ul class="flex flex-wrap !list-none !m-0 !p-0">
     {{#with page.componentVersion}}
     {{#if (and ./title (ne ./title @root.page.breadcrumbs.0.content))}}
-    <li><a href="{{{relativize ./url}}}">{{{./title}}}</a></li>
+    <li class="text-link !m-0 !p-0 after:content-['/'] last-of-type:after:content-none after:text-tertiary after:px-2"><a href="{{{relativize ./url}}}">{{{./title}}}</a></li>
     {{/if}}
     {{/with}}
     {{#each page.breadcrumbs}}
-    {{~#if (and ./url (eq ./urlType 'internal'))~}}
-    <li>
-    <a href="{{{relativize ./url}}}">{{{./content}}}</a>
+    {{#if (and ./url (eq ./urlType 'internal'))}}
+    {{#if (isLast this ../page.breadcrumbs)}}
+    <li class="text-tertiary !m-0 !p-0">{{{./content}}}</li>
+    {{else}}
+    <li class="text-link !m-0 !p-0 after:content-['/'] last-of-type:after:content-none after:text-tertiary after:px-2">
+      <a href="{{{relativize ./url}}}">{{{./content}}}</a>
     </li>
-    {{~/if~}}
+    {{/if}}
+    {{/if}}
     {{/each}}
   </ul>
   {{/if}}
 </nav>
+{{/unless}}

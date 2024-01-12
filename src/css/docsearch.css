@@ -1,4 +1,4 @@
-.DocSearch .DocSearch-Hit[aria-selected=true] a {
+.DocSearch .DocSearch-Hit[aria-selected="true"] a {
   background-color: var(--ds-background-level1);
 }
 
@@ -23,7 +23,8 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 }
 
 .DocSearch .DocSearch-Input {
-  @include text-body;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .DocSearch .DocSearch-Form {
@@ -41,8 +42,8 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 }
 
 .DocSearch .DocSearch-Button-Placeholder {
-  @include text-body;
-
+  font-size: 1rem;
+  font-weight: 400;
   color: var(--ds-text-placeholder);
   margin-right: var(--ds-space-5);
 }
@@ -67,7 +68,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
   }
 }
 
-.DocSearch .DocSearch-Hit[aria-selected=false] mark {
+.DocSearch .DocSearch-Hit[aria-selected="false"] mark {
   text-decoration: underline;
 }
 
@@ -94,7 +95,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 .DocSearch {
   --docsearch-primary-color: var(--ds-text-primary);
   --docsearch-text-color: var(--ds-text-primary);
-  --docsearch-spacing: 2rem;
+  --docsearch-spacing: var(--ds-space-2);
   --docsearch-icon-stroke-width: 1.4;
   --docsearch-highlight-color: var(--ds-text-primary);
   --docsearch-muted-color: var(--ds-text-placeholder);
@@ -105,7 +106,9 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
   --docsearch-modal-width: 720px;
   --docsearch-modal-height: 600px;
   --docsearch-modal-background: var(--ds-background-body);
-  --docsearch-modal-shadow: inset 1px 1px 0 0 rgba(255, 255, 255, 0.5), 0 3px 8px 0 rgba(85, 90, 100, 1);
+  --docsearch-modal-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.5),
+    0 3px 8px 0 rgba(85, 90, 100, 1);
 
   /* searchbox */
   --docsearch-searchbox-height: var(--ds-space-7);
@@ -132,7 +135,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 
 /* Darkmode */
 
-html[data-theme='dark'] .DocSearch {
+html[data-theme="dark"] .DocSearch {
   --docsearch-text-color: var(--ds-text-primary);
   --docsearch-container-background: var(--ds-background-backdrop);
   --docsearch-modal-background: var(--ds-background-body);

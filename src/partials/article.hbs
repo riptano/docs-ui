@@ -2,7 +2,7 @@
   {{#if page.title}}
   {{#if page.attributes.icon}}
   <h1 class="page">
-    <i class="border rounded-xl p-1{{#with page.attributes.icon-role}} {{{this}}}{{/with}}">
+    <i class="p-1 border rounded{{#with page.attributes.icon-role}} {{{this}}}{{/with}}">
       {{{svg page.attributes.icon}}}
     </i>{{{page.title}}}
   </h1>

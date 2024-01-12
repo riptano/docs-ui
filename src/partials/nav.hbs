@@ -1,9 +1,8 @@
-<div class="nav-container" {{#if page.component}} data-component="{{page.component.name}}"
-  data-version="{{page.version}}" {{/if}} autofocus>
-  <aside class="nav">
-    <div class="panels">
-      {{> nav-menu}}
-      {{!-- {{> nav-explore}} --}}
-    </div>
-  </aside>
-</div>
+{{#with page.navigation}}
+<nav id="side-nav" class="h-full bg-level1 overflow-y-auto flex flex-col w-[17rem] p-2" 
+  {{#if page.component}} data-component="{{page.component.name}}"
+    data-version="{{page.version}}" {{/if}}>
+      {{> nav-tree navigation=this}}
+      {{> nav-secondary}}
+</nav>
+{{/with}}
