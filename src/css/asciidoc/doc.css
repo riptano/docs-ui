@@ -18,7 +18,7 @@
 
   .doc h1.page {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     line-height: 1.2;
     margin-top: var(--ds-space-2);
     margin-bottom: var(--ds-space-2);
