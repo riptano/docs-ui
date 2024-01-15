@@ -49,7 +49,8 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
 <div class="grid gap-6 lg:grid-cols-3">
   <div class="flex flex-col gap-4">
     
-    image:../img/light-mode-illustration.png[Alt text,400]
+    <!-- image:../img/light-mode-illustration.png[Alt text,400] -->
+    <div class="rounded bg-level1 w-full h-[225px]"></div>
 
     <h3 class="discrete !text-h2 !m-0">Create database</h3>
 
@@ -62,7 +63,8 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
   </div>
   <div class="flex flex-col gap-4">
     
-    image:../img/light-mode-illustration.png[Alt text,400]
+    <!-- image:../img/light-mode-illustration.png[Alt text,400] -->
+    <div class="rounded bg-level1 w-full h-[225px]"></div>
 
     <h3 class="discrete !text-h2 !m-0">Load data</h3>
 
@@ -75,7 +77,8 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
   </div>
   <div class="flex flex-col gap-4">
   
-    image:../img/light-mode-illustration.png[Alt text,400]
+    <!-- image:../img/light-mode-illustration.png[Alt text,400] -->
+    <div class="rounded bg-level1 w-full h-[225px]"></div>
 
     <h3 class="discrete !text-h2 !m-0">Explore</h3>
 
@@ -94,7 +97,8 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
   
   <div class="lg:row-span-2 flex flex-col items-start gap-4 rounded border p-4">
       
-    image:../img/light-mode-illustration.png[Alt text]
+    <!-- image:../img/light-mode-illustration.png[Alt text,400] -->
+    <div class="rounded bg-level1 w-full h-[325px]"></div>
 
     <h3 class="discrete !text-h2 !m-0">Integrations</h3>
 
@@ -116,7 +120,7 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
 
   <div class="flex flex-col items-start gap-4 rounded border p-4">
       
-    <div class="rounded bg-level1 p-2"><i class="icon material-icons">auto_stories</i></div>
+    <div class="rounded bg-level1 flex p-2"><i class="icon material-icons">auto_stories</i></div>
 
     <h3 class="discrete !text-h2 !m-0">Tutorials</h3>
 
@@ -134,7 +138,7 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
 
   <div class="flex flex-col items-start gap-4 rounded border p-4">
       
-    <div class="rounded bg-level1 p-2"><i class="icon material-icons">handyman</i></div>
+    <div class="rounded bg-level1 flex p-2"><i class="icon material-icons">handyman</i></div>
 
     <h3 class="discrete !text-h2 !m-0">API references</h3>
 
