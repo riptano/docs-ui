@@ -1,19 +1,20 @@
-= Astra DB Serverless
+= {product}
 :page-layout: landing
+:product: Astra DB
 
-Astra DB Serverless empowers developers to build cutting-edge AI applications with robust APIs, real-time data handling, and seamless ecosystem integrations. Read our xref:get-started:concepts.adoc[introduction to vector databases] if you're new to Astra DB Serverless.
+{product} empowers developers to build cutting-edge AI applications with robust APIs, real-time data handling, and seamless ecosystem integrations. Read our xref:get-started:concepts.adoc[introduction to vector databases] if you're new to {product}.
 
 [.[&>h2]:!hidden]
 == {empty}
 
-[subs=macros,attributes]
+[subs="macros,attributes"]
 ++++
 <div class="flex rounded bg-level1 p-8 gap-6">
   <div class="flex flex-col lg:basis-1/2 gap-4">
     
     <h2 class="discrete !text-h1 !m-0">Get started</h2>
     
-    <p>Ready to work with Astra DB Serverless? Dive into the quickstart guide and learn how to create a database, connect, and load data in a matter of minutes.</p>
+    <p>Ready to work with {product}? Dive into the quickstart guide and learn how to create a database, connect, and load data in a matter of minutes.</p>
     
     <div class="flex gap-4">
       xref:get-started:quickstart.adoc[Quickstart,role="btn btn-primary btn-solid"]
@@ -39,7 +40,7 @@ c.insert_many(documents=DOCUMENTS)
 c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
 ----
 
-[subs=macros,attributes]
+[subs="macros,attributes"]
 ++++
   </div>
 </div>
@@ -49,12 +50,11 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
 <div class="grid gap-6 lg:grid-cols-3">
   <div class="flex flex-col gap-4">
     
-    <!-- image:../img/light-mode-illustration.png[Alt text,400] -->
     <div class="rounded bg-level1 w-full h-[225px]"></div>
 
     <h3 class="discrete !text-h2 !m-0">Create database</h3>
 
-    <p>Learn the fundamental steps of setting up your Astra DB database.</p>
+    <p>Learn the fundamental steps of setting up your {product} database.</p>
 
     <div class="landing-a mt-auto">
       xref:createdatabase.adoc[Create a database]
@@ -63,12 +63,11 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
   </div>
   <div class="flex flex-col gap-4">
     
-    <!-- image:../img/light-mode-illustration.png[Alt text,400] -->
     <div class="rounded bg-level1 w-full h-[225px]"></div>
 
     <h3 class="discrete !text-h2 !m-0">Load data</h3>
 
-    <p>Discover methods for loading data into Astra DB, ensuring it's structured and ready to use.</p>
+    <p>Discover methods for loading data into {product}, ensuring it's structured and ready to use.</p>
 
     <div class="landing-a">
       xref:createdatabase.adoc[Load data]
@@ -77,12 +76,11 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
   </div>
   <div class="flex flex-col gap-4">
   
-    <!-- image:../img/light-mode-illustration.png[Alt text,400] -->
     <div class="rounded bg-level1 w-full h-[225px]"></div>
 
-    <h3 class="discrete !text-h2 !m-0">Explore</h3>
+    <h3 class="discrete !text-h2 !m-0">Explore your data</h3>
 
-    <p>Explore your database, utilizing Astra DB's features for querying and analyzing your data.</p>
+    <p>Explore your database, utilizing {product}'s features for querying and analyzing your data.</p>
 
     <div class="landing-a">
       xref:createdatabase.adoc[Explore your data]
@@ -91,18 +89,17 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
   </div>
 </div>
 
-<h2 class="discrete !text-h1 !mt-12 !mb-6">Expand your Astra DB knowledge</h2>
+<h2 class="discrete !text-h1 !mt-12 !mb-6">Expand your {product} knowledge</h2>
 
 <div class="grid lg:grid-rows-2 lg:grid-cols-2 gap-6">
   
   <div class="lg:row-span-2 flex flex-col items-start gap-4 rounded border p-4">
       
-    <!-- image:../img/light-mode-illustration.png[Alt text,400] -->
     <div class="rounded bg-level1 w-full h-[325px]"></div>
 
     <h3 class="discrete !text-h2 !m-0">Integrations</h3>
 
-    <p>Discover how Astra DB Serverless integrates with popular tools and platforms to enhance your workflow and data management.</p>
+    <p>Discover how {product} integrates with popular tools and platforms to enhance your workflow and data management.</p>
 
     <div class="landing-a">
       xref:createdatabase.adoc[Integrate LangChain with Astra DB]
@@ -124,7 +121,7 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
 
     <h3 class="discrete !text-h2 !m-0">Tutorials</h3>
 
-    <p>Discover how Astra DB Serverless integrates with popular tools and platforms to enhance your workflow and data management.</p>
+    <p>Discover how {product} integrates with popular tools and platforms to enhance your workflow and data management.</p>
 
     <div class="landing-a">
       xref:createdatabase.adoc[Build a chatbot]
@@ -142,7 +139,7 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
 
     <h3 class="discrete !text-h2 !m-0">API references</h3>
 
-    <p>Utilize our detailed API references for a deep understanding of Astra DB's capabilities and how to effectively use them.</p>
+    <p>Utilize our detailed API references for a deep understanding of {product}'s capabilities and how to effectively use them.</p>
 
     <div class="landing-a">
       xref:createdatabase.adoc[APIs for vector databases]
