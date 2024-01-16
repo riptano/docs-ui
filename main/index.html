@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{product} :: PREVIEW Datastax Docs</title>
+    <title>Astra DB :: PREVIEW Datastax Docs</title>
     <meta name="generator" content="Antora 1.0.0">
 <link rel="stylesheet" href="_/css/site.css">
 <link rel="stylesheet" href="_/css/vendor/tabs.css">
@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="DataStax Documentation">
     <meta property="og:type" content="article">
     <meta property="og:url" content="">
-    <meta property="og:title" content="{product} :: PREVIEW Datastax Docs">
+    <meta property="og:title" content="Astra DB :: PREVIEW Datastax Docs">
     <meta property="og:description" content="">
     <meta property="og:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <meta property="og:image:type" content="image/png">
@@ -26,7 +26,7 @@
     <meta name="twitter:site" content="@datastax">
     <meta name="twitter:creator" content="@datastax">
     <meta name="twitter:url" content="">
-    <meta name="twitter:title" content="{product} :: PREVIEW Datastax Docs">
+    <meta name="twitter:title" content="Astra DB :: PREVIEW Datastax Docs">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png">
     <script type="application/ld+json">
@@ -35,7 +35,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "",
-        "name":"{product}",
+        "name":"Astra DB",
         "inLanguage":"en-US",
         "reviewedBy":{
             "@type": "Corporation",
@@ -59,7 +59,7 @@
             "mainEntityOfPage": "true",
             "datePublished":"",
             "dateModified":"",
-            "headline": "{product}",
+            "headline": "Astra DB",
             "description":"",
             "keywords":"",
             "image": "https://docs.datastax.com/en/astra/_/img/datastax-docs-banner.png",
@@ -226,29 +226,31 @@
     <div class="grid max-w-full h-full xl:gap-x-10 gap-y-3 px-3 py-4 mx-auto lg:px-6">
   <main class="w-[min(48rem,100%)] max-w-[48rem] mx-auto min-w-0 mb-8">
         <article class="doc">
-  <h1 class="page">{product}</h1>
+  <h1 class="page">Astra DB</h1>
   <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Efficiently store and query vector embeddings for better similarity search. If you&#8217;re new, read our <a href="get-started:concepts.html">introduction to vector databases</a>.</p>
+<p>Astra DB empowers developers to build cutting-edge AI applications with robust APIs, real-time data handling, and seamless ecosystem integrations. Read our <a href="get-started:concepts.html">introduction to vector databases</a> if you&#8217;re new to Astra DB.</p>
 </div>
 </div>
 </div>
 <div class="sect1 [&>h2]:!hidden">
 <h2 id=""><a class="anchor" href="#"></a></h2>
 <div class="sectionbody">
-<div class="flex rounded bg-level1 p-2 lg:p-3 gap-3 -mx-2 lg:-mx-3">
-<div class="flex flex-col lg:basis-1/2">
-<h2 id="_get_started" class="discrete flex lg:flex-col gap-3 !m-0">Get Started</h2>
-<div class="paragraph">
-<p>Dive straight into Astra Vector with this concise guide tailored for developers.
-Learn the essentials of how to connect to a database, ingest vectors, and perform a similarity search.</p>
-</div>
-<div class="paragraph [&>p]:flex [&>p]:gap-1">
-<p><a href="get-started:quickstart.html" class="btn btn-primary btn-solid">Quickstart</a> <a href="https://astra.datastax.com" class="btn btn-neutral btn-outlined external" target="_blank" rel="noopener">Create Astra Account</a></p>
-</div>
-</div>
-<div class="hidden lg:block flex basis-1/2 relative">
+<div class="flex rounded bg-level1 p-8 gap-6">
+  <div class="flex flex-col lg:basis-1/2 gap-4">
+
+    <h2 class="discrete !text-h1 !m-0">Get started</h2>
+
+    <p>Ready to work with Astra DB? Dive into the quickstart guide and learn how to create a database, connect, and load data in a matter of minutes.</p>
+
+    <div class="flex gap-4">
+      <a href="get-started:quickstart.html" class="btn btn-primary btn-solid">Quickstart</a>
+      <a href="https://astra.datastax.com" class="btn btn-neutral btn-outlined external" target="_blank" rel="noopener">Create Astra Account</a>
+    </div>
+
+  </div>
+  <div class="hidden lg:block flex basis-1/2 relative">
 <div class="listingblock nolang absolute bottom-1/2 translate-y-1/2 right-0 w-full inverse-theme [&_.source-toolbox]:hidden">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from astrapy.db import AstraDB
@@ -257,48 +259,121 @@ Learn the essentials of how to connect to a database, ingest vectors, and perfor
 db = AstraDB(token=TOKEN, api_endpoint=URL)
 
 # Ingest vectors into your collection
-col = db.collection(collection_name="test")
-col.insert_many(documents=DOCUMENTS)
+c = db.collection(collection_name="test")
+c.insert_many(documents=DOCUMENTS)
 
 # Find the closest vectors
-col.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])</code></pre>
+c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])</code></pre>
 </div>
 </div>
+  </div>
 </div>
+
+<h2 class="discrete !text-h1 !mt-12 !mb-6">Database basics</h2>
+
+<div class="grid gap-6 lg:grid-cols-3">
+  <div class="flex flex-col gap-4">
+
+    <div class="rounded bg-level1 w-full h-[225px]"></div>
+
+    <h3 class="discrete !text-h2 !m-0">Create database</h3>
+
+    <p>Learn the fundamental steps of setting up your Astra DB database.</p>
+
+    <div class="landing-a mt-auto">
+      <a href="createdatabase.html">Create a database</a>
+    </div>
+
+  </div>
+  <div class="flex flex-col gap-4">
+
+    <div class="rounded bg-level1 w-full h-[225px]"></div>
+
+    <h3 class="discrete !text-h2 !m-0">Load data</h3>
+
+    <p>Discover methods for loading data into Astra DB, ensuring it's structured and ready to use.</p>
+
+    <div class="landing-a">
+      <a href="createdatabase.html">Load data</a>
+    </div>
+
+  </div>
+  <div class="flex flex-col gap-4">
+
+    <div class="rounded bg-level1 w-full h-[225px]"></div>
+
+    <h3 class="discrete !text-h2 !m-0">Explore your data</h3>
+
+    <p>Explore your database, utilizing Astra DB's features for querying and analyzing your data.</p>
+
+    <div class="landing-a">
+      <a href="createdatabase.html">Explore your data</a>
+    </div>
+
+  </div>
 </div>
-</div>
-</div>
-<div class="sect1 [&>h2]:!text-h1">
-<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next steps</h2>
-<div class="sectionbody">
-<div class="flex flex-col lg:flex-row gap-3">
-<div class="flex flex-col lg:basis-1/3">
-<h2 id="_fact_check_load_your_data" class="discrete flex items-center lg:items-start lg:flex-col gap-1"><span class="rounded border p-1 w-max material-icons">fact_check</span> Load your data</h2>
-<div class="paragraph">
-<p>Get your data and embeddings into a database.</p>
-</div>
-<div class="paragraph landing-a">
-<p><a href="data:load-data.html">Load data</a></p>
-</div>
-</div>
-<div class="flex flex-col lg:basis-1/3">
-<h2 id="_auto_stories_explore_your_data" class="discrete flex items-center lg:items-start lg:flex-col gap-1"><span class="rounded border p-1 w-max material-icons">auto_stories</span> Explore your data</h2>
-<div class="paragraph">
-<p>Perform similarity searches and browse the results.</p>
-</div>
-<div class="paragraph landing-a">
-<p><a href="{#}">Explore data</a></p>
-</div>
-</div>
-<div class="flex flex-col lg:basis-1/3">
-<h2 id="_power_connect_to_your_database" class="discrete flex items-center lg:items-start lg:flex-col gap-1"><span class="rounded border p-1 w-max material-icons">power</span> Connect to your database</h2>
-<div class="paragraph">
-<p>Work with your data using our clients and APIs.</p>
-</div>
-<div class="paragraph landing-a">
-<p><a href="data:connect-to-database.html">Connect database</a></p>
-</div>
-</div>
+
+<h2 class="discrete !text-h1 !mt-12 !mb-6">Expand your Astra DB knowledge</h2>
+
+<div class="grid lg:grid-rows-2 lg:grid-cols-2 gap-6">
+
+  <div class="lg:row-span-2 flex flex-col items-start gap-4 rounded border p-4">
+
+    <div class="rounded bg-level1 w-full h-[325px]"></div>
+
+    <h3 class="discrete !text-h2 !m-0">Integrations</h3>
+
+    <p>Discover how Astra DB integrates with popular tools and platforms to enhance your workflow and data management.</p>
+
+    <div class="landing-a">
+      <a href="createdatabase.html">Integrate LangChain with Astra DB</a>
+    </div>
+
+    <div class="landing-a">
+      <a href="createdatabase.html">Integrate LlamaIndex with Astra DB</a>
+    </div>
+
+    <div class="landing-a">
+      <a href="createdatabase.html">Integrate Vercel with Astra DB</a>
+    </div>
+
+  </div>
+
+  <div class="flex flex-col items-start gap-4 rounded border p-4">
+
+    <div class="rounded bg-level1 flex p-2"><i class="icon material-icons">auto_stories</i></div>
+
+    <h3 class="discrete !text-h2 !m-0">Tutorials</h3>
+
+    <p>Discover how Astra DB integrates with popular tools and platforms to enhance your workflow and data management.</p>
+
+    <div class="landing-a">
+      <a href="createdatabase.html">Build a chatbot</a>
+    </div>
+
+    <div class="landing-a">
+      <a href="createdatabase.html">Build a recommendation system with vector search</a>
+    </div>
+
+  </div>
+
+  <div class="flex flex-col items-start gap-4 rounded border p-4">
+
+    <div class="rounded bg-level1 flex p-2"><i class="icon material-icons">handyman</i></div>
+
+    <h3 class="discrete !text-h2 !m-0">API references</h3>
+
+    <p>Utilize our detailed API references for a deep understanding of Astra DB's capabilities and how to effectively use them.</p>
+
+    <div class="landing-a">
+      <a href="createdatabase.html">APIs for vector databases</a>
+    </div>
+
+    <div class="landing-a">
+      <a href="createdatabase.html">APIs for non-vector databases</a>
+    </div>
+
+  </div>
 </div>
 </div>
 </div>
@@ -359,7 +434,7 @@ col.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])</code></pre>
 </svg>    </a>
     <p class="!m-0">
       <span>©</span>
-      <span id="copyrightdate">2023</span>
+      <span id="copyrightdate">2024</span>
       <span>DataStax |
         <a
           href="https://www.datastax.com/legal/datastax-website-privacy-policy"
