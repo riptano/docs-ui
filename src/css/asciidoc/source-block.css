@@ -14,7 +14,7 @@
 
   .doc pre.highlightjs {
     display: block;
-    color: var(--ds-text-secondary);
+    color: var(--ds-text-primary);
     background: var(--ds-background-level1);
     border-radius: calc(6 / var(--rem-base) * 1rem);
     border: 1px solid var(--ds-background-level1);

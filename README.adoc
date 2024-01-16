@@ -27,7 +27,7 @@ endif::[]
 :url-datastax-docs-repo: https://github.com/riptano/docs-site
 :url-coppi: https://coppi.aws.dsinternal.org
 :url-docs-preview: http://docs-preview.datastax.com
-:url-tailwind-readme: src/css/tailwind/README.adoc
+:url-tailwind-readme: src/css/README.adoc
 // External URLs:
 :url-antora: https://antora.org
 :url-antora-docs: https://docs.antora.org
