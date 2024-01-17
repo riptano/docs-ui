@@ -1,0 +1,35 @@
+{{#if navigation.length}}
+<ul>
+  {{#each navigation}}
+  {{#if ./content}}
+  {{#if ./items.length}}
+  <li class="collapse" data-depth="{{or ../level 0}}">
+    <input type="checkbox" class="peer z-10" {{#if (navTreeContainsUrl ./items @root.page.url)}} checked{{/if}} /> 
+    <div class="collapse-title inline-block text-overline pt-2 pb-1 peer-checked:[&_i]:rotate-90{{#if (greater (or ../level 0) 0)}} text-tertiary{{/if}}">
+      <i class="block float-left mr-1 material-icons transition-transform">chevron_right</i>
+      {{{./content}}}
+    </div>
+    <div class="collapse-content ml-2 pl-2 border-l"> 
+      {{> nav-tree navigation=./items level=(increment ../level)}}
+    </div>
+  </li>
+  {{else}}
+  <li data-depth="{{or ../level 0}}">
+    {{#if ./url}}
+     <a class="flex rounded !no-underline text-body-small text-primary py-1 px-2 hover:bg-level2
+      {{~#if (eq ./url @root.page.url)}} text-link font-semibold{{~/if}}" 
+      href="{{~#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{~else}}{{{./url}}}{{~/if}}">
+      {{{./content}}}
+    </a>
+    {{else}}
+    <span class="flex rounded text-overline text-tertiary py-1 px-2">
+      {{{./content}}}
+    </span>
+    {{/if}}
+  </li>
+  {{> nav-tree navigation=./items level=(increment ../level)}}
+  {{/if}}
+  {{/if}}
+  {{/each}}
+</ul>
+{{/if}}
