@@ -1,19 +1,22 @@
 @layer components {
-  .collapse:not(td):not(tr):not(colgroup) {
-    @apply visible;
+  .collapse {
+    @apply !visible grid;
   }
 
-  .collapse {
-    @apply relative grid overflow-hidden;
+  .collapse > .collapse-content {
+    @apply relative col-start-1 row-start-2 grid min-h-0;
 
-    grid-template-rows: auto 0fr;
+    grid-template-rows: 0fr;
     transition: grid-template-rows 0.2s;
+  }
+
+  .collapse > .collapse-content > * {
+    @apply overflow-hidden;
   }
 
   .collapse-title,
   .collapse > input[type="checkbox"],
-  .collapse > input[type="radio"],
-  .collapse-content {
+  .collapse > input[type="radio"] {
     @apply col-start-1 row-start-1;
   }
 
@@ -22,28 +25,8 @@
     @apply cursor-pointer appearance-none opacity-0;
   }
 
-  .collapse-content {
-    @apply invisible col-start-1 row-start-2 min-h-0;
-
-    transition: visibility 0.2s;
-  }
-
-  .collapse[open],
-  .collapse-open,
-  .collapse:focus:not(.collapse-close) {
-    grid-template-rows: auto 1fr;
-  }
-
-  .collapse:not(.collapse-close):has(> input[type="checkbox"]:checked),
-  .collapse:not(.collapse-close):has(> input[type="radio"]:checked) {
-    grid-template-rows: auto 1fr;
-  }
-
-  .collapse[open] > .collapse-content,
-  .collapse-open > .collapse-content,
-  .collapse:focus:not(.collapse-close) > .collapse-content,
-  .collapse:not(.collapse-close) > input[type="checkbox"]:checked ~ .collapse-content,
-  .collapse:not(.collapse-close) > input[type="radio"]:checked ~ .collapse-content {
-    @apply visible min-h-fit;
+  .collapse > input[type="checkbox"]:checked ~ .collapse-content,
+  .collapse > input[type="radio"]:checked ~ .collapse-content {
+    grid-template-rows: 1fr;
   }
 }
