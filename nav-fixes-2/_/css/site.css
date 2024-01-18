@@ -4080,23 +4080,28 @@ a.btn:hover {
   pointer-events: auto;
   visibility: visible;
 }
-.collapse:not(td):not(tr):not(colgroup) {
-  visibility: visible;
-}
 .collapse {
-  position: relative;
+  visibility: visible !important;
   display: grid;
-  overflow: hidden;
+}
+.collapse > .collapse-content {
+  position: relative;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  display: grid;
+  min-height: 0px;
 
-    grid-template-rows: auto 0fr;
+    grid-template-rows: 0fr;
     -webkit-transition: grid-template-rows 0.2s;
     transition: grid-template-rows 0.2s;
     transition: grid-template-rows 0.2s, -ms-grid-rows 0.2s;
 }
+.collapse > .collapse-content > * {
+  overflow: hidden;
+}
 .collapse-title,
   .collapse > input[type="checkbox"],
-  .collapse > input[type="radio"],
-  .collapse-content {
+  .collapse > input[type="radio"] {
   grid-column-start: 1;
   grid-row-start: 1;
 }
@@ -4108,35 +4113,10 @@ a.btn:hover {
           appearance: none;
   opacity: 0;
 }
-.collapse-content {
-  visibility: hidden;
-  grid-column-start: 1;
-  grid-row-start: 2;
-  min-height: 0px;
-
-    -webkit-transition: visibility 0.2s;
-
-    transition: visibility 0.2s;
-}
-.collapse[open],
-  .collapse-open,
-  .collapse:focus:not(.collapse-close) {
-    grid-template-rows: auto 1fr;
+.collapse > input[type="checkbox"]:checked ~ .collapse-content,
+  .collapse > input[type="radio"]:checked ~ .collapse-content {
+    grid-template-rows: 1fr;
   }
-.collapse:not(.collapse-close):has(> input[type="checkbox"]:checked),
-  .collapse:not(.collapse-close):has(> input[type="radio"]:checked) {
-    grid-template-rows: auto 1fr;
-  }
-.collapse[open] > .collapse-content,
-  .collapse-open > .collapse-content,
-  .collapse:focus:not(.collapse-close) > .collapse-content,
-  .collapse:not(.collapse-close) > input[type="checkbox"]:checked ~ .collapse-content,
-  .collapse:not(.collapse-close) > input[type="radio"]:checked ~ .collapse-content {
-  visibility: visible;
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
-}
 .visible {
   visibility: visible;
 }
@@ -4460,6 +4440,9 @@ a.btn:hover {
 .overflow-y-auto {
   overflow-y: auto;
 }
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -4586,6 +4569,9 @@ a.btn:hover {
 }
 .pr-1 {
   padding-right: 0.25rem;
+}
+.pr-2 {
+  padding-right: 0.5rem;
 }
 .pt-2 {
   padding-top: 0.5rem;

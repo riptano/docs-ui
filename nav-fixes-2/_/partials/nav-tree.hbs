@@ -16,13 +16,13 @@
   {{else}}
   <li data-depth="{{or ../level 0}}">
     {{#if ./url}}
-     <a class="flex rounded !no-underline text-body-small text-primary py-1 px-2 hover:bg-level2
+     <a class="flex rounded !no-underline text-body-small text-primary py-1 pr-2 pl-6 hover:bg-level2
       {{~#if (eq ./url @root.page.url)}} text-link font-semibold{{~/if}}" 
       href="{{~#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{~else}}{{{./url}}}{{~/if}}">
       {{{./content}}}
     </a>
     {{else}}
-    <span class="flex rounded text-overline text-tertiary py-1 px-2">
+    <span class="flex rounded text-overline text-tertiary py-1 pr-2 pl-6">
       {{{./content}}}
     </span>
     {{/if}}
