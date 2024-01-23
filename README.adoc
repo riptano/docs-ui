@@ -51,7 +51,7 @@ endif::[]
 This project is used to develop and distribute the UI template for {url-datastax-docs}.
 It is a fork of the {url-antora-default-ui}[Antora Default UI] that has been customized for our needs.
 
-The repository itself produces a UI bundle that can be applied when generating a static documentation site using {url-antora}[Antora] -- in our case, we apply it when generating {url-datastax-docs-repo}[docs-site].
+The repository itself produces a UI bundle that can be applied when generating a static documentation site using {url-antora}[Antora] -- in our case, we apply it when generating {url-datastax-docs-repo}[datastax-docs-site].
 The UI bundle contains the HTML templates (layouts, partials, and helpers), CSS, JavaScript, fonts, and (site-wide) images.
 As such, it provides both the visual theme and user interactions for the documentation site.
 
