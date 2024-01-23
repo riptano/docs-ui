@@ -24,7 +24,7 @@ endif::[]
 :url-docs-home: https://github.com/riptano/docs-home
 :url-datastax: https://datastax.com
 :url-datastax-docs: https://docs.datastax.com
-:url-datastax-docs-repo: https://github.com/riptano/docs-site
+:url-datastax-docs-repo: https://github.com/riptano/datastax-docs-site
 :url-coppi: https://coppi.aws.dsinternal.org
 :url-docs-preview: http://docs-preview.datastax.com
 :url-tailwind-readme: src/css/README.adoc
