@@ -7,7 +7,7 @@
   >
     <i class="icon material-icons">menu_open</i>
   </label>
-  <a href="{{{or site.url siteRootPath}}}">
+  <a href="{{#> logo-url}}{{{or site.url siteRootPath}}}{{/logo-url}}">
     {{> logo}}
   </a>
   <div class="DocSearch" id="docsearch"></div>
