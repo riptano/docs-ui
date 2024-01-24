@@ -105,7 +105,7 @@
   </head>
   <body class="">
 <nav
-  class="bg-body fixed top-0 z-40 flex h-20 w-[100vw] flex-auto items-center gap-2 lg:gap-4 border-b px-3 lg:px-6"
+  class="bg-body fixed top-0 z-40 flex h-20 w-[100vw] flex-auto items-center gap-2 lg:gap-4 border-b px-4"
 >
   <label
     for="nav-drawer-input"
@@ -481,11 +481,11 @@ The content inside is displayed as &lt;pre&gt; text.</pre>
   </article>
   </main>
   <aside
-  class="toc sidebar peer overflow-y-auto sticky top-[10rem] hidden h-[calc(100vh-24rem)] w-[20rem] xl:flex xl:flex-col xl:col-start-2"
+  class="toc sidebar peer sticky top-[6rem] hidden h-[calc(100vh-10rem)] mb-[14rem] w-[20rem] xl:flex xl:flex-col xl:col-start-2"
   data-title="Contents"
   data-levels="2"
 >
-  <div class="toc-menu-container">
+  <div class="toc-menu-container overflow-y-auto">
     <div class="toc-menu"></div>
   </div>
 </aside>
@@ -627,16 +627,16 @@ The content inside is displayed as &lt;pre&gt; text.</pre>
   </div>
   <div class="z-30 pt-20 drawer-side">
     <label for="nav-drawer-input" aria-label="close sidebar" class="drawer-overlay"></label>
-    <nav id="side-nav" class="h-full bg-level1 overflow-y-auto flex flex-col w-[17rem] p-2" 
+    <nav id="side-nav" class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] py-4 px-2" 
   >
       <ul>
   <li class="collapse" data-depth="0">
     <input type="checkbox" class="peer z-10"  /> 
-    <div class="collapse-title inline-block text-overline py-2 peer-checked:[&_i]:rotate-90">
-      <i class="block float-left mr-1 material-icons transition-transform">chevron_right</i>
+    <div class="collapse-title rounded flex items-start py-1 px-2 peer-checked:[&_i]:rotate-180 peer-hover:bg-level2 text-overline py-2">
       Page Templates
+      <i class="material-icons text-lg text-tertiary transition-transform ml-[0.15em]">expand_more</i>
     </div>
-    <div class="collapse-content ml-2 pl-2 border-l"> 
+    <div class="collapse-content ml-3 pl-2 border-l"> 
       <ul>
   <li data-depth="1">
      <a class="flex rounded !no-underline text-body-small text-primary py-1 px-2 hover:bg-level2" 
@@ -673,11 +673,11 @@ The content inside is displayed as &lt;pre&gt; text.</pre>
   </li>
   <li class="collapse" data-depth="0">
     <input type="checkbox" class="peer z-10"  checked /> 
-    <div class="collapse-title inline-block text-overline py-2 peer-checked:[&_i]:rotate-90">
-      <i class="block float-left mr-1 material-icons transition-transform">chevron_right</i>
+    <div class="collapse-title rounded flex items-start py-1 px-2 peer-checked:[&_i]:rotate-180 peer-hover:bg-level2 text-overline py-2">
       Asciidoc Examples
+      <i class="material-icons text-lg text-tertiary transition-transform ml-[0.15em]">expand_more</i>
     </div>
-    <div class="collapse-content ml-2 pl-2 border-l"> 
+    <div class="collapse-content ml-3 pl-2 border-l"> 
       <ul>
   <li data-depth="1">
      <a class="flex rounded !no-underline text-body-small text-primary py-1 px-2 hover:bg-level2" 

@@ -1882,6 +1882,10 @@ sup {
     font-size: 0.90625rem;
     font-weight: 400;
   }
+.text-caption {
+    font-size: 0.90625rem;
+    font-weight: 500;
+  }
 .text-label {
     font-size: 0.8125rem;
     font-weight: 600;
@@ -4080,23 +4084,28 @@ a.btn:hover {
   pointer-events: auto;
   visibility: visible;
 }
-.collapse:not(td):not(tr):not(colgroup) {
-  visibility: visible;
-}
 .collapse {
-  position: relative;
+  visibility: visible !important;
   display: grid;
-  overflow: hidden;
+}
+.collapse > .collapse-content {
+  position: relative;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  display: grid;
+  min-height: 0px;
 
-    grid-template-rows: auto 0fr;
+    grid-template-rows: 0fr;
     -webkit-transition: grid-template-rows 0.2s;
     transition: grid-template-rows 0.2s;
     transition: grid-template-rows 0.2s, -ms-grid-rows 0.2s;
 }
+.collapse > .collapse-content > * {
+  overflow: hidden;
+}
 .collapse-title,
   .collapse > input[type="checkbox"],
-  .collapse > input[type="radio"],
-  .collapse-content {
+  .collapse > input[type="radio"] {
   grid-column-start: 1;
   grid-row-start: 1;
 }
@@ -4108,35 +4117,10 @@ a.btn:hover {
           appearance: none;
   opacity: 0;
 }
-.collapse-content {
-  visibility: hidden;
-  grid-column-start: 1;
-  grid-row-start: 2;
-  min-height: 0px;
-
-    -webkit-transition: visibility 0.2s;
-
-    transition: visibility 0.2s;
-}
-.collapse[open],
-  .collapse-open,
-  .collapse:focus:not(.collapse-close) {
-    grid-template-rows: auto 1fr;
+.collapse > input[type="checkbox"]:checked ~ .collapse-content,
+  .collapse > input[type="radio"]:checked ~ .collapse-content {
+    grid-template-rows: 1fr;
   }
-.collapse:not(.collapse-close):has(> input[type="checkbox"]:checked),
-  .collapse:not(.collapse-close):has(> input[type="radio"]:checked) {
-    grid-template-rows: auto 1fr;
-  }
-.collapse[open] > .collapse-content,
-  .collapse-open > .collapse-content,
-  .collapse:focus:not(.collapse-close) > .collapse-content,
-  .collapse:not(.collapse-close) > input[type="checkbox"]:checked ~ .collapse-content,
-  .collapse:not(.collapse-close) > input[type="radio"]:checked ~ .collapse-content {
-  visibility: visible;
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
-}
 .visible {
   visibility: visible;
 }
@@ -4176,8 +4160,8 @@ a.btn:hover {
 .top-0 {
   top: 0px;
 }
-.top-\[10rem\] {
-  top: 10rem;
+.top-\[6rem\] {
+  top: 6rem;
 }
 .z-10 {
   z-index: 10;
@@ -4190,9 +4174,6 @@ a.btn:hover {
 }
 .row-start-2 {
   grid-row-start: 2;
-}
-.float-left {
-  float: left;
 }
 .\!m-0 {
   margin: 0px !important;
@@ -4233,11 +4214,14 @@ a.btn:hover {
 .mb-8 {
   margin-bottom: 2rem;
 }
-.ml-2 {
-  margin-left: 0.5rem;
+.mb-\[14rem\] {
+  margin-bottom: 14rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
+}
+.ml-\[0\.15em\] {
+  margin-left: 0.15em;
 }
 .ml-auto {
   margin-left: auto;
@@ -4312,8 +4296,8 @@ a.btn:hover {
 .h-\[325px\] {
   height: 325px;
 }
-.h-\[calc\(100vh-24rem\)\] {
-  height: calc(100vh - 24rem);
+.h-\[calc\(100vh-10rem\)\] {
+  height: calc(100vh - 10rem);
 }
 .h-full {
   height: 100%;
@@ -4333,8 +4317,8 @@ a.btn:hover {
 .w-\[100vw\] {
   width: 100vw;
 }
-.w-\[17rem\] {
-  width: 17rem;
+.w-\[18\.5rem\] {
+  width: 18.5rem;
 }
 .w-\[20rem\] {
   width: 20rem;
@@ -4460,6 +4444,9 @@ a.btn:hover {
 .overflow-y-auto {
   overflow-y: auto;
 }
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -4552,6 +4539,10 @@ a.btn:hover {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .px-6 {
   padding-left: 1.5rem;
@@ -4693,6 +4684,9 @@ a.btn:hover {
     color: var(--ds-primary-main) !important;
   }
 .hover\:bg-level2:hover {
+    background-color: var(--ds-background-level2);
+  }
+.peer:hover ~ .peer-hover\:bg-level2 {
     background-color: var(--ds-background-level2);
   }
 @media (min-width: 768px) {
@@ -4879,10 +4873,10 @@ a.btn:hover {
 .\[\&_\.source-toolbox\]\:hidden .source-toolbox {
   display: none;
 }
-.peer:checked ~ .peer-checked\:\[\&_i\]\:rotate-90 i {
-  --tw-rotate: 90deg;
-  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(90deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(90deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+.peer:checked ~ .peer-checked\:\[\&_i\]\:rotate-180 i {
+  --tw-rotate: 180deg;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(180deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(180deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
