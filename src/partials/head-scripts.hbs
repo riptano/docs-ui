@@ -45,9 +45,8 @@
 />
 
 <script>
-  var prefersTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' var storedTheme =
-  localStorage.getItem('theme') || prefersTheme if (storedTheme) { document.documentElement.setAttribute('data-theme',
-  storedTheme) } else { document.documentElement.setAttribute('data-theme', 'light') }
+  document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') ||
+  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' || 'light')
 </script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
