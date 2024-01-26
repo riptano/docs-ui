@@ -4299,6 +4299,9 @@ a.btn:hover {
 .h-\[calc\(100vh-10rem\)\] {
   height: calc(100vh - 10rem);
 }
+.h-auto {
+  height: auto;
+}
 .h-full {
   height: 100%;
 }
@@ -4328,6 +4331,9 @@ a.btn:hover {
 }
 .w-\[min\(48rem\2c 100\%\)\] {
   width: min(48rem,100%);
+}
+.w-auto {
+  width: auto;
 }
 .w-full {
   width: 100%;

@@ -83,26 +83,34 @@
 
 <script>var uiRootPath = '../_'</script>
 
-<link rel="preload" href="../_/font/material-icons-outlined-latin-400-normal.woff2" as="font"
-    type="font/woff2" crossorigin>
-<link rel="preload" href="../_/font/roboto-flex-latin-400-normal.woff2" as="font" type="font/woff2"
-    crossorigin>
-<link rel="preload" href="../_/font/roboto-mono-latin-500-normal.woff2" as="font" type="font/woff2"
-    crossorigin>
+<link
+  rel="preload"
+  href="../_/font/material-icons-outlined-latin-400-normal.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="../_/font/roboto-flex-latin-wght-normal.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="../_/font/roboto-mono-latin-500-normal.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
 
 <script>
-    var prefersTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-    var storedTheme = localStorage.getItem('theme') || prefersTheme
-
-    if (storedTheme) {
-        document.documentElement.setAttribute('data-theme', storedTheme)
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light')
-    }
+  document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') ||
+  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' || 'light')
 </script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
-  </head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />  </head>
   <body class="">
 <nav
   class="bg-body fixed top-0 z-40 flex h-20 w-[100vw] flex-auto items-center gap-2 lg:gap-4 border-b px-4"
@@ -613,7 +621,7 @@ Varying the delimiter line length allows the parser to distinguish one block fro
   >
       <ul>
   <li class="collapse" data-depth="0">
-    <input type="checkbox" class="peer z-10"  /> 
+    <input type="checkbox" class="peer z-10 w-auto h-auto"  /> 
     <div class="collapse-title rounded flex items-start py-1 px-2 peer-checked:[&_i]:rotate-180 peer-hover:bg-level2 text-overline py-2">
       Page Templates
       <i class="material-icons text-lg text-tertiary transition-transform ml-[0.15em]">expand_more</i>
@@ -654,7 +662,7 @@ Varying the delimiter line length allows the parser to distinguish one block fro
     </div>
   </li>
   <li class="collapse" data-depth="0">
-    <input type="checkbox" class="peer z-10"  checked /> 
+    <input type="checkbox" class="peer z-10 w-auto h-auto"  checked /> 
     <div class="collapse-title rounded flex items-start py-1 px-2 peer-checked:[&_i]:rotate-180 peer-hover:bg-level2 text-overline py-2">
       Asciidoc Examples
       <i class="material-icons text-lg text-tertiary transition-transform ml-[0.15em]">expand_more</i>
