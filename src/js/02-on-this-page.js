@@ -34,7 +34,7 @@
     listItem.dataset.level = level
     listItem.className = '!m-0'
     link.className =
-      `block py-1 pr-1 !no-underline !text-secondary 
+      `block py-1 pr-1 !no-underline text-body-small
       hover:!text-link [&.is-active]:!text-link [&.is-active]:border-[var(--ds-primary-main)] border-l-2`
     if (level === 1) link.classList.add('pl-2', 'text-button')
     if (level === 2) link.classList.add('pl-4', '!text-tertiary')
