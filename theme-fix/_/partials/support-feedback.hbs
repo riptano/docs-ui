@@ -1,0 +1,53 @@
+{{#unless (or (eq page.layout 'landing') (eq page.layout 'full'))}}
+<div class="flex gap-10 mt-12">
+  <div class="flex flex-col">
+    <h3 class="!m-0">Was this helpful?</h3>
+    <div id="feedback_buttons" class="flex gap-2 mt-4 transition-opacity opacity-100">
+      <button
+        id="feedback_button_yes"
+        class="btn btn-neutral btn-outlined"
+        data-track="Was This Helpful?: Yes Button Clicked"
+      >
+        <i class="mr-2 material-icons">thumb_up</i>Yes
+      </button>
+      <button
+        id="feeback_button_no"
+        class="btn btn-neutral btn-outlined"
+        data-track="Was This Helpful?: No Button Clicked"
+        onclick="feedback_dialog.showModal()"
+      >
+        <i class="mr-2 material-icons">thumb_down</i>No
+      </button>
+    </div>
+    <div id="feedback_thank_you" class="hidden mt-4 transition-opacity opacity-0 marker:text-h2">Thank you for your
+      feedback.
+    </div>
+  </div>
+  {{> edit-this-page}}
+</div>
+<dialog id="feedback_dialog" class="dialog w-[40rem]">
+  <form method="dialog" id="feedback_form">
+    <div class="flex items-center p-6 border-b">
+      <h1 class="!m-0">Give Feedback</h1>
+      <button id="feedback_form_esc_button" class="h-8 p-2 ml-auto btn btn-plain btn-neutral" formnovalidate><span
+          class="px-2 rounded text-overline bg-level1 text-tertiary"
+        >ESC</span><i class="material-icons text-link">close</i></button>
+    </div>
+    <div class="p-6">
+      <p class="!mt-0">How can we improve the documentation?</p>
+      <textarea
+        rows="4"
+        name="message"
+        class="mt-2 input"
+        placeholder="Provide your feedback"
+        required
+        autofocus
+      ></textarea>
+    </div>
+    <div class="flex justify-end gap-2 px-6 pt-4 pb-6 border-t top">
+      <button class="btn btn-neutral btn-outlined" id="feedback_form_cancel_button" formnovalidate>Cancel</button>
+      <button class="btn btn-neutral btn-solid" type="submit">Submit Feedback</button>
+    </div>
+  </form>
+</dialog>
+{{/unless}}
