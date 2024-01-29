@@ -1742,9 +1742,6 @@ html[data-theme="dark"] ::backdrop {
 .text-primary {
     color: var(--ds-text-primary);
   }
-.\!text-secondary {
-    color: var(--ds-text-secondary) !important;
-  }
 .\!text-tertiary {
     color: var(--ds-text-tertiary) !important;
   }
@@ -3416,8 +3413,8 @@ html[data-theme="dark"] .doc .landing-card-icon {
     right: 0;
     padding: 0.5rem;
     padding: var(--ds-space-1);
-    height: calc(100% - 0.5rem);
-    height: calc(100% - var(--ds-space-1));
+    height: calc(100% - 1rem);
+    height: calc(100% - var(--ds-space-2));
     margin-top: 0.15em;
     z-index: 10;
   }
