@@ -45,8 +45,14 @@
 />
 
 <script>
-  document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') ||
-  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' || 'light')
+  function getTheme() {
+    var localStorage = window.localStorage.getItem("theme");
+    var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (localStorage) return localStorage;
+    if (prefersDark) return "dark";
+    return "light";
+  }
+  document.documentElement.setAttribute("data-theme", getTheme());
 </script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
