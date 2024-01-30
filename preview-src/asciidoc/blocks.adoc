@@ -90,7 +90,7 @@ The document header is useful, but not required.
 == Blockquote
 
 
-[,'Famous Person. Cum dicat putant ne.','Cum dicat putant ne. https://example.com[Famous Person Website^,role=external]']
+[,'Famous Person. Cum dicat putant ne.','Cum dicat putant ne. https://example.com[Famous Person Website]']
 ____
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna.
@@ -112,12 +112,12 @@ ____
 
 [NOTE]
 ====
-The AsciiDoc language supports embedding math-mode macros from https://docs.mathjax.org/en/latest/input/tex/index.html[LaTeX^,role=external] and/or https://docs.mathjax.org/en/latest/input/asciimath.html[AsciiMath^,role=external] notation as block or inline elements.
+The AsciiDoc language supports embedding math-mode macros from https://docs.mathjax.org/en/latest/input/tex/index.html[LaTeX] and/or https://docs.mathjax.org/en/latest/input/asciimath.html[AsciiMath] notation as block or inline elements.
 These elements act as passthroughs to preserve the expressions as entered.
 The expressions are then passed on to the converter to be processed and rendered for display using a STEM provider (e.g., MathJax).
 
-Although AsciiDoc supports STEM at the https://docs.asciidoctor.org/asciidoc/latest/stem/[language level^,role=external], the STEM provider must be configured in the output converter to render the expressions.
-See the discussion in https://gitlab.com/antora/antora/-/issues/184[Antora Issue #184^,role=external] to learn more about the requirements for configuring STEM in Antora.
+Although AsciiDoc supports STEM at the https://docs.asciidoctor.org/asciidoc/latest/stem/[language level], the STEM provider must be configured in the output converter to render the expressions.
+See the discussion in https://gitlab.com/antora/antora/-/issues/184[Antora Issue #184] to learn more about the requirements for configuring STEM in Antora.
 ====
 
 === Inline stem macro

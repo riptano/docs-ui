@@ -52,7 +52,7 @@ image::../img/placeholder-image.svg["Tutorial overview"]
 
 == Prerequisites
 
-To get started, ensure you have an {astra-link}[active Astra account^,role=external] with the requisite permissions.
+To get started, ensure you have an {astra-link}[active Astra account] with the requisite permissions.
 
 [.step]
 === Install the Python SDK and open a Python REPL
