@@ -106,8 +106,14 @@
 />
 
 <script>
-  document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') ||
-  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' || 'light')
+  function getTheme() {
+    var localStorage = window.localStorage.getItem("theme");
+    var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (localStorage) return localStorage;
+    if (prefersDark) return "dark";
+    return "light";
+  }
+  document.documentElement.setAttribute("data-theme", getTheme());
 </script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />  </head>
@@ -707,7 +713,7 @@ Your browser does not support the audio tag.
   </div>
   <div class="z-30 pt-20 drawer-side">
     <label for="nav-drawer-input" aria-label="close sidebar" class="drawer-overlay"></label>
-    <nav id="side-nav" class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] py-4 px-2" 
+    <nav id="side-nav" class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] pt-4 px-2" 
   >
       <ul>
   <li class="collapse" data-depth="0">
