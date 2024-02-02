@@ -14,34 +14,36 @@
 }
 
 .tablist.ulist > ul {
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+  border-width: 1px;
+
   display: -webkit-box;
+
   display: -ms-flexbox;
+
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-right: 1rem;
+  overflow-x: auto;
+  padding-bottom: 2px;
 }
 
 .tablist.ulist > ul li {
-  border-right-width: 1px;
-  border-top-width: 1px;
+  -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+          transition-duration: 150ms;
 }
 
-.tablist.ulist > ul li:not(.is-selected) {
+.tablist.ulist > ul li:hover {
     background-color: var(--ds-background-level1);
   }
-
-.tablist.ulist > ul li:first-of-type {
-  border-top-left-radius: 0.375rem;
-  border-left-width: 1px;
-}
-
-.tablist.ulist > ul li:last-of-type {
-  border-top-right-radius: 0.375rem;
-}
 
 .tablist.ulist > ul li {
 
@@ -54,8 +56,20 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0.25em 1em;
+  padding: 0.5rem 1rem;
   position: relative;
+}
+
+.tablist.ulist > ul li > * {
+    white-space: nowrap;
+  }
+
+.tablist.ulist > ul li:first-of-type {
+  border-top-left-radius: 0.375rem;
+}
+
+.tabs.wrapping .tablist.ulist > ul li > * {
+  white-space: normal;
 }
 
 .tablist > ul li:focus-visible {
@@ -66,8 +80,9 @@
     background-color: var(--ds-background-body);
     border-bottom-right-radius: 0.375rem;
     border-bottom-left-radius: 0.375rem;
-    border-top-right-radius: 0.375rem;
-    border-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
     padding: 0.75rem;
   }
 
@@ -119,72 +134,6 @@
 
 .tabs.is-loading .tablist li:first-child::after,
 .tabs:not(.is-loading) .tablist li.is-selected::after {
-  background-color: var(--ds-background-body);
-}
-
-/* .tabpanel > *:first-child {
-  margin-top: 0;
-}
-
-.tabpanel > .olist > ol:first-child,
-.tabpanel > .ulist > ul:first-child {
-  margin-top: 0;
-
-  & > li:first-child {
-    margin-top: 0;
-  }
-}
-
-.doc .ulist.tablist ul {
-  margin: 0;
-} */
-
-/* .tablist > ul li {
-  background-color: transparent;
-  border: none;
-  font-weight: normal;
-  color: var(--ds-text-primary);
-  padding: var(--ds-space-1) var(--ds-space-1h);
-} */
-
-/* .tablist.ulist > ul li + li {
-  margin: 0;
-} */
-
-/* .tabs .tablist li::after {
-  height: calc(2 / var(--rem-base) * 1rem);
-} */
-
-/* .tabs.is-loading .tablist li:not(:first-child),
-.tabs:not(.is-loading) .tablist li:not(.is-selected) {
-  color: var(--ds-text-tertiary);
-  background-color: transparent;
-} */
-
-/* .tabs.is-loading .tablist li:first-child::after,
-.tabs:not(.is-loading) .tablist li.is-selected::after {
   background-color: var(--ds-text-primary);
-} */
-
-/* overflow tab title */
-
-/* .tabs.overflow .tablist > ul li p {
-  max-width: var(--ds-space-15);
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-} */
-
-/* wrapping tab title */
-
-/* .tabs.wrapping .tablist > ul li p {
-  max-width: var(--ds-space-15);
-  display: flex;
 }
-
-.tabs.overflow .tablist > ul,
-.tabs.wrapping .tablist > ul {
-  flex-wrap: nowrap;
-} */
 /*# sourceMappingURL=tabs.css.map */
