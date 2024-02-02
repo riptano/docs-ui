@@ -36,9 +36,9 @@ Contains more than one block.
 --
 ======
 
-== Tabset w/ overflow tab titles
+== Tabset w/ overflow tab titles (default)
 
-[tabs.overflow]
+[tabs]
 ======
 Tab Name:: Contents of Tab.
 

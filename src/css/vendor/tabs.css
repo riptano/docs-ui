@@ -14,22 +14,37 @@
 }
 
 .tablist.ulist > ul {
+  @apply rounded-t border;
+
   display: flex;
   flex-wrap: nowrap;
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-right: 1rem;
+  overflow-x: auto;
+  padding-bottom: 2px;
 }
 
 .tablist.ulist > ul li {
-  @apply [&:not(.is-selected)]:bg-level1 border-r border-t first-of-type:rounded-tl first-of-type:border-l last-of-type:rounded-tr;
+  @apply hover:bg-level1 transition-colors;
 
   align-items: center;
   cursor: pointer;
   display: flex;
-  padding: 0.25em 1em;
+  padding: 0.5rem 1rem;
   position: relative;
+
+  & > * {
+    white-space: nowrap;
+  }
+
+  &:first-of-type {
+    @apply rounded-tl;
+  }
+}
+
+.tabs.wrapping .tablist.ulist > ul li > * {
+  white-space: normal;
 }
 
 .tablist > ul li:focus-visible {
@@ -37,7 +52,7 @@
 }
 
 .tabpanel {
-  @apply bg-body rounded-b rounded-tr border p-3 lg:p-6;
+  @apply bg-body rounded-b border-x border-b p-3 lg:p-6;
 }
 
 .tabs.is-loading .tabpanel + .tabpanel,
@@ -80,69 +95,5 @@
 
 .tabs.is-loading .tablist li:first-child::after,
 .tabs:not(.is-loading) .tablist li.is-selected::after {
-  background-color: var(--ds-background-body);
-}
-
-/* .tabpanel > *:first-child {
-  margin-top: 0;
-}
-
-.tabpanel > .olist > ol:first-child,
-.tabpanel > .ulist > ul:first-child {
-  margin-top: 0;
-
-  & > li:first-child {
-    margin-top: 0;
-  }
-}
-
-.doc .ulist.tablist ul {
-  margin: 0;
-} */
-
-/* .tablist > ul li {
-  background-color: transparent;
-  border: none;
-  font-weight: normal;
-  color: var(--ds-text-primary);
-  padding: var(--ds-space-1) var(--ds-space-1h);
-} */
-
-/* .tablist.ulist > ul li + li {
-  margin: 0;
-} */
-
-/* .tabs .tablist li::after {
-  height: calc(2 / var(--rem-base) * 1rem);
-} */
-
-/* .tabs.is-loading .tablist li:not(:first-child),
-.tabs:not(.is-loading) .tablist li:not(.is-selected) {
-  color: var(--ds-text-tertiary);
-  background-color: transparent;
-} */
-
-/* .tabs.is-loading .tablist li:first-child::after,
-.tabs:not(.is-loading) .tablist li.is-selected::after {
   background-color: var(--ds-text-primary);
-} */
-
-/* overflow tab title */
-/* .tabs.overflow .tablist > ul li p {
-  max-width: var(--ds-space-15);
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-} */
-
-/* wrapping tab title */
-/* .tabs.wrapping .tablist > ul li p {
-  max-width: var(--ds-space-15);
-  display: flex;
 }
-
-.tabs.overflow .tablist > ul,
-.tabs.wrapping .tablist > ul {
-  flex-wrap: nowrap;
-} */
