@@ -19,6 +19,7 @@
 
 .tablist.ulist > ul {
   @apply no-scrollbar overflow-x-auto scroll-smooth motion-reduce:scroll-auto;
+
   display: flex;
   flex-wrap: nowrap;
   list-style: none;
@@ -28,6 +29,7 @@
 
 .tablist.ulist > ul li {
   @apply hover:bg-level1 transition-colors;
+
   align-items: center;
   cursor: pointer;
   display: flex;

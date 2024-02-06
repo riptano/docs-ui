@@ -7,12 +7,12 @@
 
     // Create scroll buttons
     const scrollRightButton = document.createElement('button')
-    scrollRightButton.className = 'material-icons btn btn-neutral btn-plain w-2 invisible opacity-0'
+    scrollRightButton.className = 'material-icons btn btn-neutral btn-plain w-2 invisible opacity-0 transition-opacity'
     scrollRightButton.textContent = 'chevron_right'
     container.append(scrollRightButton)
 
     const scrollLeftButton = document.createElement('button')
-    scrollLeftButton.className = 'material-icons btn btn-neutral btn-plain w-2 invisible opacity-0'
+    scrollLeftButton.className = 'material-icons btn btn-neutral btn-plain w-2 invisible opacity-0 transition-opacity'
     scrollLeftButton.textContent = 'chevron_left'
     container.prepend(scrollLeftButton)
 
@@ -26,6 +26,11 @@
 
     // Check scroll initially
     checkScroll()
+
+    // Check scroll whenever the ulist is resized
+    // eslint-disable-next-line no-undef
+    const resizeObserver = new ResizeObserver(checkScroll)
+    resizeObserver.observe(ulist)
 
     // Check scroll whenever the block is scrolled
     ulist.addEventListener('scroll', checkScroll)

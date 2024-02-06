@@ -19,6 +19,7 @@
 @import "asciidoc/ds-layout.css";
 @import "asciidoc/source-block.css";
 @import "asciidoc/admonition-block.css";
+@import "asciidoc/tabs.css";
 @import "highlight.css";
 @import "print.css";
 @import "docsearch.css";
