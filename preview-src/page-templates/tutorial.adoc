@@ -59,7 +59,7 @@ To get started, ensure you have an {astra-link}[active Astra account^,role=exter
 
 [source,shell]
 ----
-pip install astra-vector
+pip install astrapy
 ----
 
 [source,shell]
