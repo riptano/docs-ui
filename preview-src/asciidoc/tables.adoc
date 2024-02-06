@@ -284,7 +284,7 @@ It's designed for:
 * portability
 
 image::https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg[Firefox logo,align=left,link=https://getfirefox.com]
-https://getfirefox.com[Get Firefox^,role=external]!
+https://getfirefox.com[Get Firefox]!
 
 |Arquillian
 |Testing

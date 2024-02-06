@@ -39,9 +39,9 @@ This combination enhances vector data analysis, allowing natural language data t
 .Architecture diagram
 image::../img/placeholder-image.svg["Diagram of LangChain integration architecture"]
 
-To get started, ensure you have an https://example.com[active LangChain account^,role=external] with the requisite permissions.
+To get started, ensure you have an https://example.com[active LangChain account] with the requisite permissions.
 
-You will also need an https://example.com[active LangChain account^,role=external] an access to its API keys.
+You will also need an https://example.com[active LangChain account] an access to its API keys.
 
 == Setup
 

@@ -11,10 +11,10 @@
 
 [NOTE]
 ====
-Tabsets depend on the https://github.com/asciidoctor/asciidoctor-tabs[Asciidoctor Tabs^,role=external] extension.
+Tabsets depend on the https://github.com/asciidoctor/asciidoctor-tabs[Asciidoctor Tabs] extension.
 
 Tabs syncing is controlled by the `tabs-sync-option` attribute.
-For more information, see the Asciidoctor Tabs https://github.com/asciidoctor/asciidoctor-tabs#tabs-sync[documentation^,role=external].
+For more information, see the Asciidoctor Tabs https://github.com/asciidoctor/asciidoctor-tabs#tabs-sync[documentation].
 ====
 
 == Basic tabset
@@ -222,10 +222,10 @@ wget https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.
 +
 [NOTE]
 ====
-To download a different version of Cassandra, visit the https://archive.apache.org/dist/cassandra/[Apache Archives^,role=external].
+To download a different version of Cassandra, visit the https://archive.apache.org/dist/cassandra/[Apache Archives].
 ====
 +
-. (Optional) Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here^,role=external].
+. (Optional) Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here].
 +
 .. For example, to verify the SHA256 hash of the downloaded file using GPG:
 +
@@ -243,7 +243,7 @@ curl -L https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-b
 
 Debian::
 +
-. (Optional) Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here^,role=external].
+. (Optional) Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here].
 +
 .. For example, to verify the SHA256 hash of the downloaded file using GPG:
 +

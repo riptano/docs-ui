@@ -73,10 +73,10 @@ Instead of having to enclose text within <<text-formatting,tags or special chara
 
 === External link
 
-The UI automatically applies a https://materialui.co/icon/open-in-new[special icon] to external links.
-(An external link is any link that doesn't target a topic on `docs.datastax.com`.)
+The UI automatically applies the https://fonts.google.com/icons?selected=Material+Symbols+Outlined:open_in_new:[open_in_new] icon to external links.
+(An external link is any link that doesn't target a page on `docs.datastax.com`.)
 
-In the rare case where you don't want the special icon to appear for a particular external link, just apply `role=remove-ext-icon` to https://materialui.co/icon/open-in-new[remove it,role=remove-ext-icon].
+In the rare case where you don't want the special icon to appear for a particular external link, just apply `role=remove-ext-icon` to https://fonts.google.com/icons?selected=Material+Symbols+Outlined:open_in_new:[remove it,role=remove-ext-icon].
 
 === Unresolved link
 

@@ -110,7 +110,7 @@ Click the Astra Vector icon image:../img/astra-vector-light.svg[title="Astra Vec
 
 [NOTE]
 ======
-You can define icons from https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Outlined[Material Icons,role=external,window=_blank] or an svg file using the customized `icon` macro or the `material-icons` role.
+You can define icons from https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Outlined[Material Icons,window=_blank] or an svg file using the customized `icon` macro or the `material-icons` role.
 
 Method 1: Inline icon macro with an svg file::
 The customized inline icon macro accepts a file path as it's target source. The file must be an svg file.
