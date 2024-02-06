@@ -13,21 +13,21 @@
   margin: 0;
 }
 
-.tablist.ulist > ul {
-  @apply rounded-t border;
+.tablist.ulist {
+  @apply flex rounded-t border;
+}
 
+.tablist.ulist > ul {
+  @apply no-scrollbar overflow-x-auto scroll-smooth motion-reduce:scroll-auto;
   display: flex;
   flex-wrap: nowrap;
   list-style: none;
   margin: 0;
   padding: 0;
-  overflow-x: auto;
-  padding-bottom: 2px;
 }
 
 .tablist.ulist > ul li {
   @apply hover:bg-level1 transition-colors;
-
   align-items: center;
   cursor: pointer;
   display: flex;
@@ -88,7 +88,7 @@
   display: block;
   height: 2px;
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   left: 0;
   right: 0;
 }

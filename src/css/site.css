@@ -3,6 +3,7 @@
 @import "vars/dark.css";
 @import "color.css";
 @import "base.css";
+@import "utilities.css";
 @import "typography.css";
 @import "components/btn.css";
 @import "components/dialog.css";
