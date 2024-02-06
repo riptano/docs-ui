@@ -4305,6 +4305,9 @@ a.btn:hover {
 .w-10 {
   width: 2.5rem;
 }
+.w-2 {
+  width: 0.5rem;
+}
 .w-4 {
   width: 1rem;
 }
