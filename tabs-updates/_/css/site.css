@@ -84,19 +84,20 @@
  * Admonitions component
  *
  */
-.tabs {
+.doc .tabs {
   margin-bottom: 1.25em;
 }
-.tablist.ulist,
-.tablist.ulist > ul,
-.tablist.ulist > ul li {
+.doc .tablist.ulist,
+.doc .tablist.ulist > ul,
+.doc .tablist.ulist > ul li {
   margin: 0;
 }
-.tablist > ul p {
+.doc .tablist > ul p {
   line-height: inherit;
   margin: 0;
 }
 .tablist.ulist {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,8 +106,10 @@
   border-width: 1px;
 }
 .tablist.ulist > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   overflow-x: auto;
-  scroll-behavior: smooth;
 }
 .tablist.ulist > ul::-webkit-scrollbar {
     display: none;
@@ -115,9 +118,9 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: no-preference) {
   .tablist.ulist > ul {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
   }
 }
 .tablist.ulist > ul {
@@ -144,6 +147,12 @@
 .tablist.ulist > ul li:hover {
     background-color: var(--ds-background-level1);
   }
+.tablist.ulist > ul li:first-of-type {
+  border-top-left-radius: 0.375rem;
+}
+.tablist.ulist > ul li:last-of-type {
+  border-top-right-radius: 0.375rem;
+}
 .tablist.ulist > ul li {
 
   -webkit-box-align: center;
@@ -155,7 +164,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   position: relative;
 }
 .tablist.ulist > ul li > * {
@@ -164,47 +173,58 @@
 .tablist.ulist > ul li:first-of-type {
   border-top-left-radius: 0.375rem;
 }
-.tabs.wrapping .tablist.ulist > ul li > * {
-  white-space: normal;
+.tablist > .scroll-btn-left,
+.tablist > .scroll-btn-right {
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
 }
-.tablist > ul li:focus-visible {
-  outline: none;
-}
-.tabpanel {
-    background-color: var(--ds-background-body);
-    border-bottom-right-radius: 0.375rem;
-    border-bottom-left-radius: 0.375rem;
-    border-left-width: 1px;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    padding: 0.75rem;
-  }
-@media (min-width: 1024px) {
-  .tabpanel {
-    padding: 1.5rem;
+@media (prefers-reduced-motion: no-preference) {
+  .tablist > .scroll-btn-left,
+.tablist > .scroll-btn-right {
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition-duration: 150ms;
+            transition-duration: 150ms;
   }
 }
-.tabs.is-loading .tabpanel + .tabpanel,
-.tabs:not(.is-loading) .tabpanel.is-hidden {
-  display: none;
+.tablist > .scroll-btn-left.active, .tablist > .scroll-btn-right.active {
+  visibility: visible;
+  opacity: 1;
 }
-.tabpanel > :first-child {
-  margin-top: 0;
+.tablist > .scroll-btn-left {
+  left: 0px;
+  border-top-left-radius: 0.375rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
 }
-/* #content is a signature of the Asciidoctor standalone HTML output */
-#content .tabpanel > :last-child,
-#content .tabpanel > :last-child > :last-child,
-#content .tabpanel > :last-child > :last-child > li:last-child > :last-child {
-  margin-bottom: 0;
+.tablist > .scroll-btn-right {
+  right: 0px;
+  border-top-right-radius: 0.375rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
 }
-.tablecontainer {
-  overflow-x: auto;
+html[data-theme="light"] .tablist > .scroll-btn-left {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), color-stop(rgb(255, 255, 255)), color-stop(50%, rgb(255, 255, 255)));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgb(255, 255, 255) 50%);
 }
-#content .tablecontainer {
-  margin-bottom: 1.25em;
+html[data-theme="dark"] .tablist > .scroll-btn-left {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(9, 9, 9, 0)), color-stop(rgb(9, 9, 9)), color-stop(50%, rgb(9, 9, 9)));
+  background: linear-gradient(to left, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
 }
-#content .tablecontainer > table.tableblock {
-  margin-bottom: 0;
+html[data-theme="light"] .tablist > .scroll-btn-right {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(rgb(255, 255, 255)), color-stop(50%, rgb(255, 255, 255)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgb(255, 255, 255) 50%);
+}
+html[data-theme="dark"] .tablist > .scroll-btn-right {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(9, 9, 9, 0)), color-stop(rgb(9, 9, 9)), color-stop(50%, rgb(9, 9, 9)));
+  background: linear-gradient(to right, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
 }
 .tabs .tablist li::after {
   content: "";
@@ -219,6 +239,45 @@
 .tabs:not(.is-loading) .tablist li.is-selected::after {
   background-color: var(--ds-text-primary);
 }
+.tabs.wrapping .tablist.ulist > ul li > * {
+  white-space: normal;
+}
+.tablist > ul li:focus-visible {
+  outline: none;
+}
+.tabpanel {
+    background-color: var(--ds-background-body);
+    border-bottom-right-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    padding: 1.5rem;
+  }
+.tabs.is-loading .tabpanel + .tabpanel,
+.tabs:not(.is-loading) .tabpanel.is-hidden {
+  display: none;
+}
+.doc .tabpanel > :first-child {
+  margin-top: 0;
+}
+.doc .tabpanel > :first-child.olist ol,
+  .doc .tabpanel > :first-child.ulist ul {
+    margin-top: 0;
+  }
+.doc .tabpanel > :first-child.olist ol li:first-of-type, .doc .tabpanel > :first-child.ulist ul li:first-of-type {
+      margin-top: 0;
+    }
+.doc .tabpanel > :last-child {
+  margin-bottom: 0;
+}
+.doc .tabpanel > :last-child.olist ol,
+  .doc .tabpanel > :last-child.ulist ul {
+    margin-bottom: 0;
+  }
+.doc .tabpanel > :last-child.olist ol li:last-of-type, .doc .tabpanel > :last-child.ulist ul li:last-of-type {
+      margin-bottom: 0;
+    }
 .hljs-comment {
   color: var(--ds-text-tertiary);
 }
@@ -4232,6 +4291,13 @@ a.btn:hover {
     transition: grid-template-rows 0.2s;
     transition: grid-template-rows 0.2s, -ms-grid-rows 0.2s;
 }
+@media (prefers-reduced-motion: reduce) {
+
+  .collapse > .collapse-content {
+      -webkit-transition-property: none;
+      transition-property: none
+  }
+    }
 .collapse > .collapse-content > * {
   overflow: hidden;
 }
@@ -4439,9 +4505,6 @@ a.btn:hover {
 }
 .w-10 {
   width: 2.5rem;
-}
-.w-2 {
-  width: 0.5rem;
 }
 .w-4 {
   width: 1rem;
@@ -4805,16 +4868,6 @@ a.btn:hover {
   -webkit-transition-duration: 150ms;
           transition-duration: 150ms;
 }
-.transition-transform {
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
-}
 .marker\:text-h2 *::marker {
     font-size: 1.25rem;
     font-weight: 550;
@@ -4897,6 +4950,18 @@ a.btn:hover {
   --tw-content: none;
   content: none;
   content: var(--tw-content);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .motion-safe\:transition-transform {
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition-duration: 150ms;
+            transition-duration: 150ms;
+  }
 }
 :is([data-theme="dark"] .dark\:block) {
   display: block;
