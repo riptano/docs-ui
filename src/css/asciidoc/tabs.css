@@ -1,24 +1,24 @@
-.tabs {
+.doc .tabs {
   margin-bottom: 1.25em;
 }
 
-.tablist.ulist,
-.tablist.ulist > ul,
-.tablist.ulist > ul li {
+.doc .tablist.ulist,
+.doc .tablist.ulist > ul,
+.doc .tablist.ulist > ul li {
   margin: 0;
 }
 
-.tablist > ul p {
+.doc .tablist > ul p {
   line-height: inherit;
   margin: 0;
 }
 
 .tablist.ulist {
-  @apply flex rounded-t border;
+  @apply relative flex rounded-t border;
 }
 
 .tablist.ulist > ul {
-  @apply no-scrollbar overflow-x-auto scroll-smooth motion-reduce:scroll-auto;
+  @apply no-scrollbar flex overflow-x-auto motion-safe:scroll-smooth;
 
   display: flex;
   flex-wrap: nowrap;
@@ -28,12 +28,12 @@
 }
 
 .tablist.ulist > ul li {
-  @apply hover:bg-level1 transition-colors;
+  @apply hover:bg-level1 transition-colors first-of-type:rounded-tl last-of-type:rounded-tr;
 
   align-items: center;
   cursor: pointer;
   display: flex;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   position: relative;
 
   & > * {
@@ -45,44 +45,37 @@
   }
 }
 
-.tabs.wrapping .tablist.ulist > ul li > * {
-  white-space: normal;
+.tablist > .scroll-btn-left,
+.tablist > .scroll-btn-right {
+  @apply invisible absolute opacity-0 motion-safe:transition-all;
+
+  &.active {
+    @apply visible opacity-100;
+  }
 }
 
-.tablist > ul li:focus-visible {
-  outline: none;
+.tablist > .scroll-btn-left {
+  @apply left-0 rounded-tl py-3 pl-2 pr-4;
 }
 
-.tabpanel {
-  @apply bg-body rounded-b border-x border-b p-3 lg:p-6;
+.tablist > .scroll-btn-right {
+  @apply right-0 rounded-tr py-3 pl-4 pr-2;
 }
 
-.tabs.is-loading .tabpanel + .tabpanel,
-.tabs:not(.is-loading) .tabpanel.is-hidden {
-  display: none;
+html[data-theme="light"] .tablist > .scroll-btn-left {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgb(255, 255, 255) 50%);
 }
 
-.tabpanel > :first-child {
-  margin-top: 0;
+html[data-theme="dark"] .tablist > .scroll-btn-left {
+  background: linear-gradient(to left, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
 }
 
-/* #content is a signature of the Asciidoctor standalone HTML output */
-#content .tabpanel > :last-child,
-#content .tabpanel > :last-child > :last-child,
-#content .tabpanel > :last-child > :last-child > li:last-child > :last-child {
-  margin-bottom: 0;
+html[data-theme="light"] .tablist > .scroll-btn-right {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgb(255, 255, 255) 50%);
 }
 
-.tablecontainer {
-  overflow-x: auto;
-}
-
-#content .tablecontainer {
-  margin-bottom: 1.25em;
-}
-
-#content .tablecontainer > table.tableblock {
-  margin-bottom: 0;
+html[data-theme="dark"] .tablist > .scroll-btn-right {
+  background: linear-gradient(to right, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
 }
 
 .tabs .tablist li::after {
@@ -98,4 +91,47 @@
 .tabs.is-loading .tablist li:first-child::after,
 .tabs:not(.is-loading) .tablist li.is-selected::after {
   background-color: var(--ds-text-primary);
+}
+
+.tabs.wrapping .tablist.ulist > ul li > * {
+  white-space: normal;
+}
+
+.tablist > ul li:focus-visible {
+  outline: none;
+}
+
+.tabpanel {
+  @apply bg-body rounded-b border-x border-b p-6;
+}
+
+.tabs.is-loading .tabpanel + .tabpanel,
+.tabs:not(.is-loading) .tabpanel.is-hidden {
+  display: none;
+}
+
+.doc .tabpanel > :first-child {
+  margin-top: 0;
+
+  &.olist ol,
+  &.ulist ul {
+    margin-top: 0;
+
+    & li:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
+.doc .tabpanel > :last-child {
+  margin-bottom: 0;
+
+  &.olist ol,
+  &.ulist ul {
+    margin-bottom: 0;
+
+    & li:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }

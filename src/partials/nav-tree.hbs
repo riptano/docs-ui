@@ -7,7 +7,7 @@
     <input type="checkbox" class="peer z-10 w-auto h-auto" {{#if (navTreeContainsUrl ./items @root.page.url)}} checked{{/if}} /> 
     <div class="collapse-title rounded flex items-start py-1 px-2 peer-checked:[&_i]:rotate-180 peer-hover:bg-level2 transition-colors{{#if (greater (or ../level 0) 0)}} text-caption{{else}} text-overline py-2{{/if}}">
       {{{./content}}}
-      <i class="material-icons text-lg text-tertiary transition-transform ml-[0.15em]">expand_more</i>
+      <i class="material-icons text-lg text-tertiary motion-safe:transition-transform ml-[0.15em]">expand_more</i>
     </div>
     <div class="collapse-content ml-3 pl-2 border-l"> 
       {{> nav-tree navigation=./items level=(increment ../level)}}

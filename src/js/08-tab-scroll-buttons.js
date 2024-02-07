@@ -2,32 +2,36 @@
   'use strict'
 
   document.querySelectorAll('.tabs').forEach((block) => {
-    var container = block.querySelector('.tablist')
-    var ulist = block.querySelector('.tablist > ul')
+    const tablist = block.querySelector('.tablist')
+    const ulist = tablist.querySelector('.tablist > ul')
 
     // Create scroll buttons
-    const scrollRightButton = document.createElement('button')
-    scrollRightButton.className = 'material-icons btn btn-neutral btn-plain w-2 invisible opacity-0 transition-opacity'
-    scrollRightButton.textContent = 'chevron_right'
-    container.append(scrollRightButton)
-
     const scrollLeftButton = document.createElement('button')
-    scrollLeftButton.className = 'material-icons btn btn-neutral btn-plain w-2 invisible opacity-0 transition-opacity'
-    scrollLeftButton.textContent = 'chevron_left'
-    container.prepend(scrollLeftButton)
+    scrollLeftButton.className = 'scroll-btn-left'
+    const leftIcon = document.createElement('i')
+    leftIcon.className = 'material-icons'
+    leftIcon.textContent = 'chevron_left'
+    scrollLeftButton.appendChild(leftIcon)
+    tablist.appendChild(scrollLeftButton)
+
+    const scrollRightButton = document.createElement('button')
+    scrollRightButton.className = 'scroll-btn-right'
+    const rightIcon = document.createElement('i')
+    rightIcon.className = 'material-icons'
+    rightIcon.textContent = 'chevron_right'
+    scrollRightButton.appendChild(rightIcon)
+    tablist.appendChild(scrollRightButton)
 
     // Function to check scroll and show/hide buttons
     const checkScroll = () => {
-      scrollLeftButton.classList.toggle('invisible', ulist.scrollLeft === 0)
-      scrollLeftButton.classList.toggle('opacity-0', ulist.scrollLeft === 0)
-      scrollRightButton.classList.toggle('invisible', ulist.scrollWidth <= (ulist.clientWidth + ulist.scrollLeft + 1))
-      scrollRightButton.classList.toggle('opacity-0', ulist.scrollWidth <= (ulist.clientWidth + ulist.scrollLeft + 1))
+      scrollLeftButton.classList.toggle('active', ulist.scrollLeft > 0)
+      scrollRightButton.classList.toggle('active', ulist.scrollWidth > (ulist.clientWidth + ulist.scrollLeft + 1))
     }
 
     // Check scroll initially
     checkScroll()
 
-    // Check scroll whenever the ulist is resized
+    // Check scroll whenever the tablist is resized
     // eslint-disable-next-line no-undef
     const resizeObserver = new ResizeObserver(checkScroll)
     resizeObserver.observe(ulist)
@@ -37,11 +41,11 @@
 
     // Scroll when buttons are clicked
     scrollLeftButton.addEventListener('click', () => {
-      ulist.scrollLeft -= 100
+      ulist.scrollLeft -= 200
     })
 
     scrollRightButton.addEventListener('click', () => {
-      ulist.scrollLeft += 100
+      ulist.scrollLeft += 200
     })
   })
 })()
