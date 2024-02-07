@@ -1,5 +1,8 @@
 name: Release UI Bundle
 
+concurrency:
+  group: docs-ui-release-bundle
+
 on:
   push:
     branches:
