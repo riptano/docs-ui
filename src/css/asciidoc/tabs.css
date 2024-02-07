@@ -18,7 +18,7 @@
 }
 
 .tablist.ulist > ul {
-  @apply no-scrollbar flex overflow-x-auto motion-safe:scroll-smooth;
+  @apply no-scrollbar flex overflow-x-auto rounded-t motion-safe:scroll-smooth;
 
   display: flex;
   flex-wrap: nowrap;
@@ -28,7 +28,7 @@
 }
 
 .tablist.ulist > ul li {
-  @apply hover:bg-level1 transition-colors first-of-type:rounded-tl last-of-type:rounded-tr;
+  @apply hover:bg-level1 transition-colors;
 
   align-items: center;
   cursor: pointer;
@@ -79,6 +79,8 @@ html[data-theme="dark"] .tablist > .scroll-btn-right {
 }
 
 .tabs .tablist li::after {
+  @apply transition-colors;
+
   content: "";
   display: block;
   height: 2px;
