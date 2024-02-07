@@ -50,27 +50,20 @@ jobs:
            set -o pipefail
            gulp bundle |& tee $GITHUB_WORKSPACE/build.log
 
-       - name: Get Latest Release Tag
-         id: get_latest_tag
+       - name: Get Last Release Number
+         id: get_last_release_number
          if: ${{ steps.skip_release.outputs.skip_release == '' }}
          run: |
-           latest_tag=$(git describe --tags --abbrev=0)
-           echo "tag=$latest_tag" >> $GITHUB_OUTPUT
+           # Get the latest tag by release integer (tag with the highest prod-[number]; not most recently created tag)
+           last_release_number=$(git tag --sort=-creatordate | grep prod | awk -F '-' '{ print $2 }' | sort -nr | head -n 1)
+           echo "number=$last_release_number" >> $GITHUB_OUTPUT
 
-       - name: Extract Tag Integer
-         id: extract_tag_integer
-         if: ${{ steps.skip_release.outputs.skip_release == '' }}
-         run: |
-           parsed_tag=${{ steps.get_latest_tag.outputs.tag }}
-           tag_integer=$(echo $parsed_tag | grep -oE '[0-9]+')
-           echo "tag_integer=$tag_integer" >> $GITHUB_OUTPUT
-
-       - name: Increment Tag
+       - name: Increment Release Number
          id: increment_tag
          if: ${{ steps.skip_release.outputs.skip_release == '' }}
          run: |
-           current_tag_integer=${{ steps.extract_tag_integer.outputs.tag_integer }}
-           next_tag_integer=$((current_tag_integer + 1))
+           last_tag_integer=${{ steps.get_last_release_number.outputs.number }}
+           next_tag_integer=$((last_tag_integer + 1))
            next_tag="prod-$next_tag_integer"
            echo "next_tag=$next_tag" >> $GITHUB_OUTPUT
 
@@ -79,8 +72,11 @@ jobs:
          env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
            tag: ${{ steps.increment_tag.outputs.next_tag }}
+           last_tag_number: ${{ steps.get_last_release_number.outputs.number }}
          run: |
            gh release create "$tag" build/ui-bundle.zip \
                --repo="$GITHUB_REPOSITORY" \
                --title=$tag \
-               --generate-notes
+               --target=${{ github.sha }} \
+               --generate-notes \
+               --notes-start-tag "prod-$last_tag_number"
