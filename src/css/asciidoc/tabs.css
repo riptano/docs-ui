@@ -1,0 +1,139 @@
+.doc .tabs {
+  margin-bottom: 1.25em;
+}
+
+.doc .tablist.ulist,
+.doc .tablist.ulist > ul,
+.doc .tablist.ulist > ul li {
+  margin: 0;
+}
+
+.doc .tablist > ul p {
+  line-height: inherit;
+  margin: 0;
+}
+
+.tablist.ulist {
+  @apply relative flex rounded-t border;
+}
+
+.tablist.ulist > ul {
+  @apply no-scrollbar flex overflow-x-auto rounded-t motion-safe:scroll-smooth;
+
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tablist.ulist > ul li {
+  @apply hover:bg-level1 transition-colors;
+
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  padding: 0.75rem 1rem;
+  position: relative;
+
+  & > * {
+    white-space: nowrap;
+  }
+
+  &:first-of-type {
+    @apply rounded-tl;
+  }
+}
+
+.tablist > .scroll-btn-left,
+.tablist > .scroll-btn-right {
+  @apply invisible absolute opacity-0 motion-safe:transition-all;
+
+  &.active {
+    @apply visible opacity-100;
+  }
+}
+
+.tablist > .scroll-btn-left {
+  @apply left-0 rounded-tl py-3 pl-2 pr-4;
+}
+
+.tablist > .scroll-btn-right {
+  @apply right-0 rounded-tr py-3 pl-4 pr-2;
+}
+
+html[data-theme="light"] .tablist > .scroll-btn-left {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgb(255, 255, 255) 50%);
+}
+
+html[data-theme="dark"] .tablist > .scroll-btn-left {
+  background: linear-gradient(to left, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
+}
+
+html[data-theme="light"] .tablist > .scroll-btn-right {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgb(255, 255, 255) 50%);
+}
+
+html[data-theme="dark"] .tablist > .scroll-btn-right {
+  background: linear-gradient(to right, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
+}
+
+.tabs .tablist li::after {
+  @apply transition-colors;
+
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.tabs.is-loading .tablist li:first-child::after,
+.tabs:not(.is-loading) .tablist li.is-selected::after {
+  background-color: var(--ds-text-primary);
+}
+
+.tabs.wrapping .tablist.ulist > ul li > * {
+  white-space: normal;
+}
+
+.tablist > ul li:focus-visible {
+  outline: none;
+}
+
+.tabpanel {
+  @apply bg-body rounded-b border-x border-b p-6;
+}
+
+.tabs.is-loading .tabpanel + .tabpanel,
+.tabs:not(.is-loading) .tabpanel.is-hidden {
+  display: none;
+}
+
+.doc .tabpanel > :first-child {
+  margin-top: 0;
+
+  &.olist ol,
+  &.ulist ul {
+    margin-top: 0;
+
+    & li:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
+.doc .tabpanel > :last-child {
+  margin-bottom: 0;
+
+  &.olist ol,
+  &.ulist ul {
+    margin-bottom: 0;
+
+    & li:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

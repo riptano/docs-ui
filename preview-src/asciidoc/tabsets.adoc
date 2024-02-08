@@ -36,42 +36,49 @@ Contains more than one block.
 --
 ======
 
-== Tabset w/ overflow tab titles
-
-[tabs.overflow]
+.Tabset w/ overflow tab titles (default)
+[tabs]
 ======
 Tab Name:: Contents of Tab.
 
-Longer Tab Name::
+A Long Tab Name::
 +
-Contents of Longer Tab.
+Contents of Long Tab.
 
-An Even Longer Tab Name::
+A Really Long Tab Name::
 +
-Contents of Even Longer Tab.
+Contents of Really Long Tab.
 
-This Is The Longest Tab Name::
+A Really Really Long Tab Name::
 +
-Contents of The Longest Tab.
+Contents of Really Really Long Tab.
+
+Another Tab Name::
++
+Contents of Another Tab.
 ======
 
-== Tabset w/ wrapping tab titles
+== Experimental: Tabset w/ wrapping tab titles
 
 [tabs.wrapping]
 ======
 Tab Name:: Contents of Tab.
 
-Longer Tab Name::
+A Long Tab Name::
 +
-Contents of Longer Tab.
+Contents of Long Tab.
 
-An Even Longer Tab Name::
+A Really Long Tab Name::
 +
-Contents of Even Longer Tab.
+Contents of Really Long Tab.
 
-This Is The Longest Tab Name::
+A Really Really Long Tab Name::
 +
-Contents of The Longest Tab.
+Contents of Really Really Long Tab.
+
+Another Tab Name::
++
+Contents of Another Tab.
 ======
 
 == Experimental: Tabset icons

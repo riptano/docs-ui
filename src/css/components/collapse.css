@@ -8,6 +8,10 @@
 
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.2s;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition-property: none;
+    }
   }
 
   .collapse > .collapse-content > * {

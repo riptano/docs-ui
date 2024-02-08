@@ -3,6 +3,7 @@
 @import "vars/dark.css";
 @import "color.css";
 @import "base.css";
+@import "utilities.css";
 @import "typography.css";
 @import "components/btn.css";
 @import "components/dialog.css";
@@ -18,6 +19,7 @@
 @import "asciidoc/ds-layout.css";
 @import "asciidoc/source-block.css";
 @import "asciidoc/admonition-block.css";
+@import "asciidoc/tabs.css";
 @import "highlight.css";
 @import "print.css";
 @import "docsearch.css";
