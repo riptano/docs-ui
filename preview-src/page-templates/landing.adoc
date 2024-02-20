@@ -2,6 +2,8 @@
 :page-layout: landing
 :product: Astra DB
 
+*Page source*: https://github.com/riptano/docs-ui/blob/main/preview-src/page-templates/landing.adoc
+
 {product} empowers developers to build cutting-edge AI applications with robust APIs, real-time data handling, and seamless ecosystem integrations. Read our xref:get-started:concepts.adoc[introduction to vector databases] if you're new to {product}.
 
 [.[&>h2]:!hidden]
@@ -11,11 +13,11 @@
 ++++
 <div class="flex rounded bg-level1 p-8 gap-6">
   <div class="flex flex-col lg:basis-1/2 gap-4">
-    
+
     <h2 class="discrete !text-h1 !m-0">Get started</h2>
-    
+
     <p>Ready to work with {product}? Dive into the quickstart guide and learn how to create a database, connect, and load data in a matter of minutes.</p>
-    
+
     <div class="flex gap-4">
       xref:get-started:quickstart.adoc[Quickstart,role="btn btn-primary btn-solid"]
       https://astra.datastax.com[Create Astra Account^,role="btn btn-neutral btn-outlined external"]
@@ -49,7 +51,7 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
 
 <div class="grid gap-6 lg:grid-cols-3">
   <div class="flex flex-col gap-4">
-    
+
     <div class="rounded bg-level1 w-full h-[225px]"></div>
 
     <h3 class="discrete !text-h2 !m-0">Create database</h3>
@@ -62,7 +64,7 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
 
   </div>
   <div class="flex flex-col gap-4">
-    
+
     <div class="rounded bg-level1 w-full h-[225px]"></div>
 
     <h3 class="discrete !text-h2 !m-0">Load data</h3>
@@ -75,7 +77,7 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
 
   </div>
   <div class="flex flex-col gap-4">
-  
+
     <div class="rounded bg-level1 w-full h-[225px]"></div>
 
     <h3 class="discrete !text-h2 !m-0">Explore your data</h3>
@@ -85,16 +87,16 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
     <div class="landing-a">
       xref:createdatabase.adoc[Explore your data]
     </div>
-    
+
   </div>
 </div>
 
 <h2 class="discrete !text-h1 !mt-12 !mb-6">Expand your {product} knowledge</h2>
 
 <div class="grid lg:grid-rows-2 lg:grid-cols-2 gap-6">
-  
+
   <div class="lg:row-span-2 flex flex-col items-start gap-4 rounded border p-4">
-      
+
     <div class="rounded bg-level1 w-full h-[325px]"></div>
 
     <h3 class="discrete !text-h2 !m-0">Integrations</h3>
@@ -116,7 +118,7 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
   </div>
 
   <div class="flex flex-col items-start gap-4 rounded border p-4">
-      
+
     <div class="rounded bg-level1 flex p-2"><i class="icon material-icons">auto_stories</i></div>
 
     <h3 class="discrete !text-h2 !m-0">Tutorials</h3>
@@ -130,11 +132,11 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
     <div class="landing-a">
       xref:createdatabase.adoc[Build a recommendation system with vector search]
     </div>
-      
+
   </div>
 
   <div class="flex flex-col items-start gap-4 rounded border p-4">
-      
+
     <div class="rounded bg-level1 flex p-2"><i class="icon material-icons">handyman</i></div>
 
     <h3 class="discrete !text-h2 !m-0">API references</h3>
@@ -148,7 +150,7 @@ c.vector_find([0.15, 0.1, 0.1, 0.35, 0.55])
     <div class="landing-a">
       xref:createdatabase.adoc[APIs for non-vector databases]
     </div>
-      
+
   </div>
 </div>
 ++++

@@ -1,6 +1,8 @@
 = {company} Astra
 :page-layout: full
 
+*Page source*: https://github.com/riptano/docs-ui/blob/main/preview-src/page-templates/full.adoc
+
 [.max-w-[650px]]
 DataStax Astra is a cutting-edge cloud-native database platform designed to empower developers.
 Harnessing the strengths of vector databases, serverless computing, and real-time streaming, Astra propels application development into the next generation.

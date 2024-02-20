@@ -3,6 +3,8 @@
 :idseparator: -
 :table-caption!:
 
+*Page source*: https://github.com/riptano/docs-ui/blob/main/preview-src/asciidoc/admonitions.adoc
+
 == Basic admonitions
 
 .Optional title

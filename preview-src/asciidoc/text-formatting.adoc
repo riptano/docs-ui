@@ -3,6 +3,8 @@
 :idseparator: -
 :experimental:
 
+*Page source*: https://github.com/riptano/docs-ui/blob/main/preview-src/asciidoc/text-formatting.adoc
+
 A paragraph can be defined as one or more lines of consecutive text that are logically grouped together.
 To differentiate between paragraphs, you simply need to insert at least one blank line between them.
 
