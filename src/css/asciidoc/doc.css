@@ -150,6 +150,7 @@
 
   .doc p code,
   .doc thead code,
+  .doc summary.title code,
   .doc .colist > table code {
     color: var(--ds-text-secondary);
     background: var(--ds-neutral-soft-bg);
@@ -173,6 +174,10 @@
 
   .doc blockquote {
     margin: 0;
+  }
+
+  .doc summary.title code {
+    margin: 0px 3px;
   }
 
   .doc .paragraph.lead > p {
