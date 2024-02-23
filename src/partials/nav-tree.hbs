@@ -30,6 +30,8 @@
   </li>
   {{> nav-tree navigation=./items level=(increment ../level)}}
   {{/if}}
+  {{else}}
+  {{> nav-tree navigation=./items level=0}}
   {{/if}}
   {{/each}}
 </ul>
