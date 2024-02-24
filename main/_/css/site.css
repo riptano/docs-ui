@@ -2460,6 +2460,7 @@ sup {
   }
 .doc p code,
   .doc thead code,
+  .doc summary.title code,
   .doc .colist > table code {
     color: var(--ds-text-secondary);
     background: var(--ds-neutral-soft-bg);
@@ -2484,6 +2485,9 @@ sup {
   }
 .doc blockquote {
     margin: 0;
+  }
+.doc summary.title code {
+    margin: 0px 3px;
   }
 .doc .paragraph.lead > p {
     font-size: 0.875rem;
@@ -4906,6 +4910,16 @@ a.btn:hover {
 .\[\&\.is-active\]\:\!text-link.is-active {
     color: var(--ds-primary-main) !important;
   }
+.\[\&\>a\:hover\]\:bg-level2>a:hover {
+    background-color: var(--ds-background-level2);
+  }
+.\[\&\>a\]\:text-primary>a {
+    color: var(--ds-text-primary);
+  }
+.\[\&\>a\]\:text-body-small>a {
+    font-size: 0.90625rem;
+    font-weight: 400;
+  }
 .\[\&_a\]\:text-link a {
     color: var(--ds-primary-main);
   }
@@ -5083,6 +5097,25 @@ a.btn:hover {
 }
 .\[\&\.is-active\]\:border-\[var\(--ds-primary-main\)\].is-active {
   border-color: var(--ds-primary-main);
+}
+.\[\&\>a\]\:flex>a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.\[\&\>a\]\:rounded>a {
+  border-radius: 0.375rem;
+}
+.\[\&\>a\]\:px-2>a {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.\[\&\>a\]\:py-1>a {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.\[\&\>a\]\:\!no-underline>a {
+  text-decoration-line: none !important;
 }
 .\[\&\>h2\]\:\!hidden>h2 {
   display: none !important;

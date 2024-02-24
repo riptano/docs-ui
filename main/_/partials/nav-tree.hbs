@@ -23,13 +23,15 @@
       {{{./content}}}
     </a>
     {{else}}
-    <span class="flex rounded text-body-small text-tertiary py-1 px-2">
+    <span class="[&>a]:flex [&>a]:rounded [&>a]:!no-underline [&>a]:text-body-small [&>a]:text-primary [&>a]:py-1 [&>a]:px-2 [&>a:hover]:bg-level2">
       {{{./content}}}
     </span>
     {{/if}}
   </li>
   {{> nav-tree navigation=./items level=(increment ../level)}}
   {{/if}}
+  {{else}}
+  {{> nav-tree navigation=./items level=0}}
   {{/if}}
   {{/each}}
 </ul>
