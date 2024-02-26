@@ -8,6 +8,8 @@
 :astra-json-link: https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-json.html
 :keywords: Machine Learning Frameworks, Embeding Services, Astra, SDK
 
+*Page source*: https://github.com/riptano/docs-ui/blob/main/preview-src/page-templates/tutorial.adoc
+
 .Tutorial-specific formatting
 [%collapsible%open]
 ====

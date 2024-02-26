@@ -3,6 +3,8 @@
 :idseparator: -
 :table-caption!:
 
+*Page source*: https://github.com/riptano/docs-ui/blob/main/preview-src/asciidoc/lists.adoc
+
 == Unordered list
 
 * List item

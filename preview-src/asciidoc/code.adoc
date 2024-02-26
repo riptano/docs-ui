@@ -2,6 +2,8 @@
 :idprefix:
 :idseparator: -
 
+*Page source*: https://github.com/riptano/docs-ui/blob/main/preview-src/asciidoc/code.adoc
+
 == Inline code
 
 Monospace text formatting is typically used to represent text shown in `computer terminals` or `code editors` (often referred to as a codespan).
@@ -93,13 +95,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 ----
 
-=== Text formatting
+=== Text formatting (variables)
 
-[source,bash,subs="quotes"]
+[source,sql,subs="verbatim,quotes"]
 ----
-cd /Users/*_your-name_*/repos/astra-vector-docs/build/site
+DESCRIBE **KEYSPACE_NAME**.**TABLE_NAME**
 ----
 
+Replace the following:
+
+* *`KEYSPACE_NAME`*: The name of the keyspace that contains the table you want to migrate.
+* *`TABLE_NAME`*: The name of the table that contains the data you want to migrate.
 
 == Callouts
 

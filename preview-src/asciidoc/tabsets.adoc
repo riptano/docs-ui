@@ -9,6 +9,8 @@
 :python-icon: image:../img/python-original.svg[,22]
 :shell-icon: image:../img/shell-original.svg[,20]
 
+*Page source*: https://github.com/riptano/docs-ui/blob/main/preview-src/asciidoc/tabsets.adoc
+
 [NOTE]
 ====
 Tabsets depend on the https://github.com/asciidoctor/asciidoctor-tabs[Asciidoctor Tabs] extension.
