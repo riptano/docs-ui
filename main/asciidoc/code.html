@@ -243,7 +243,14 @@
 </nav>
     <article class="doc">
   <h1 class="page">Code</h1>
-  <div class="sect1">
+  <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Page source</strong>: <a href="https://github.com/riptano/docs-ui/blob/main/preview-src/asciidoc/code.adoc" class="bare">https://github.com/riptano/docs-ui/blob/main/preview-src/asciidoc/code.adoc</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="inline-code"><a class="anchor" href="#inline-code"></a>Inline code</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -343,11 +350,24 @@ public class CurrentDateTime {
 </div>
 </div>
 <div class="sect2">
-<h3 id="text-formatting"><a class="anchor" href="#text-formatting"></a>Text formatting</h3>
+<h3 id="text-formatting-variables"><a class="anchor" href="#text-formatting-variables"></a>Text formatting (variables)</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd /Users/<strong><em>your-name</em></strong>/repos/astra-vector-docs/build/site</code></pre>
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">DESCRIBE <strong>KEYSPACE_NAME</strong>.<strong>TABLE_NAME</strong></code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Replace the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>KEYSPACE_NAME</code></strong>: The name of the keyspace that contains the table you want to migrate.</p>
+</li>
+<li>
+<p><strong><code>TABLE_NAME</code></strong>: The name of the table that contains the data you want to migrate.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
