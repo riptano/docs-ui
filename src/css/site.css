@@ -23,6 +23,7 @@
 @import "highlight.css";
 @import "print.css";
 @import "docsearch.css";
+@import "lightbox.css";
 
 @tailwind base;
 @tailwind components;
