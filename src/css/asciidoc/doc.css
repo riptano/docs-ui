@@ -148,7 +148,7 @@
     font-style: normal;
   }
 
-  .doc code {
+  .doc code:not(.hljs) {
     color: var(--ds-text-secondary);
     background: var(--ds-neutral-soft-bg);
     border: 1px solid var(--ds-divider);
