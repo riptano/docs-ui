@@ -606,69 +606,6 @@ html[data-theme="dark"] .DocSearch {
   --docsearch-logo-color: var(--ds-text-primary);
   --docsearch-muted-color: var(--ds-text-placeholder);
 }
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 50;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  -webkit-backdrop-filter: blur(1px);
-          backdrop-filter: blur(1px);
-  background-color: var(--ds-background-backdrop);
-}
-.imageblock .lightbox {
-  cursor: pointer;
-}
-.imageblock .lightbox object {
-  pointer-events: none;
-}
-/* Modal Content */
-.modal .content {
-  position: relative;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-  max-height: 90vh;
-  cursor: pointer;
-}
-.modal .content img {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-.modal .content object {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  /* will prevent clicking on links on objects, therefore avoid! */
-  /* pointer-events: none; */
-}
-.modal .content svg {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-.modal .close {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  z-index: 2;
-  border-radius: 50%;
-  /*background: rgba(0,0,0,0.1);*/
-  padding: 10px;
-  width: 48px;
-  height: 48px;
-  text-align: center;
-}
-.modal .close img {
-  height: 24px;
-  width: 24px;
-  -webkit-filter: invert(100%) drop-shadow(1px 2px 4px rgb(0 0 0 / 0.6));
-          filter: invert(100%) drop-shadow(1px 2px 4px rgb(0 0 0 / 0.6));
-}
 /* ! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com */
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -4656,6 +4593,10 @@ a.btn:hover {
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.transform {
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .resize {
   resize: both;
 }
@@ -4921,6 +4862,16 @@ a.btn:hover {
 .filter {
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.transition {
+  -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+          transition-duration: 150ms;
 }
 .transition-colors {
   -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
