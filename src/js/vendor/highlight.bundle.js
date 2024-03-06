@@ -3,6 +3,7 @@
 
   var hljs = require('highlight.js/lib/highlight')
   var hljsCurl = require('highlightjs-curl')
+  var sql = require('highlight.js/lib/languages/sql')
 
   hljs.registerLanguage('asciidoc', require('highlight.js/lib/languages/asciidoc'))
   hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
@@ -35,11 +36,14 @@
   hljs.registerLanguage('rust', require('highlight.js/lib/languages/rust'))
   hljs.registerLanguage('scala', require('highlight.js/lib/languages/scala'))
   hljs.registerLanguage('shell', require('highlight.js/lib/languages/shell'))
-  hljs.registerLanguage('sql', require('highlight.js/lib/languages/sql'))
+  hljs.registerLanguage('sql', sql)
+  // Use SQL highlighter for CQL
+  hljs.registerLanguage('cql', sql)
   hljs.registerLanguage('swift', require('highlight.js/lib/languages/swift'))
   hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'))
   hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
   hljs.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'))
+
   ;[].slice.call(document.querySelectorAll('pre code.hljs[data-lang]')).forEach(function (node) {
     hljs.highlightBlock(node)
   })

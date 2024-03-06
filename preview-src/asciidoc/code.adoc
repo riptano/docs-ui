@@ -97,7 +97,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 === Text formatting (variables)
 
-[source,sql,subs="verbatim,quotes"]
+[source,cql,subs="verbatim,quotes"]
 ----
 DESCRIBE **KEYSPACE_NAME**.**TABLE_NAME**
 ----
