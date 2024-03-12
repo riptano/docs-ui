@@ -148,16 +148,14 @@
     font-style: normal;
   }
 
-  .doc p code,
-  .doc thead code,
-  .doc summary.title code,
-  .doc .colist > table code {
+  .doc code:not(.hljs) {
     color: var(--ds-text-secondary);
     background: var(--ds-neutral-soft-bg);
     border: 1px solid var(--ds-divider);
     border-radius: calc(6 / var(--rem-base) * 1rem);
     font-size: 0.95em;
     padding: 0.125em 0.25em;
+    word-break: break-word;
   }
 
   .doc code,
@@ -802,7 +800,7 @@
 
   .doc td.hdlist1 {
     font-weight: 600;
-    padding-right: var(--ds-space-h);
+    padding-right: var(--ds-space-2);
     color: var(--ds-text-primary);
   }
 
