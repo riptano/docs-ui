@@ -1,0 +1,1026 @@
+= TypeScript client reference
+:navtitle: TypeScript reference
+:page-toclevels: 2
+
+astra-db-ts is the official TypeScript client for {product}.
+See common usages below, or check out the https://github.com/datastax/astra-db-ts[GitHub repo].
+
+xref:astra-api-docs:ROOT:attachment$typescript-client/index.html[API reference,role="btn btn-primary btn-solid inline-flex"]
+
+== Prerequisites
+
+The code samples on this page assume the following:
+
+* You have an active {url-astra}[Astra account^].
+* You have created a xref:databases:create-database.adoc#create-vector-database[{db-serverless-vector} database].
+* You have created an xref:administration:manage-application-tokens.adoc[application token] with the Database Administrator role.
+* You have installed Node.js v16.20.2 or higher. https://nodejs.org[Download and install Node.js].
+
+== Databases
+
+Use the `AstraDB` class to work with databases.
+
+=== Connect to a database
+
+Connect to a database using the default namespace.
+
+[source,typescript]
+----
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+----
+
+Connect to a database using a specific namespace.
+
+[source,typescript]
+----
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*", "*NAMESPACE*");
+----
+
+==== Returns
+
+`AstraDB` - An instance of the AstraDB class.
+
+.Example response
+[%collapsible]
+====
+----
+AstraDB {
+    _namespace: 'default_keyspace',
+    _httpClient: HTTPClient {
+        baseUrl: 'https://********-****-****-****-************.apps.astra.datastax.com/api/json/v1',
+        applicationToken: 'AstraCS:************:************',
+        logSkippedOptions: false,
+        collection: undefined,
+        keyspace: 'default_keyspace',
+        usingHttp2: true,
+        requestStrategy: HTTP2Strategy {
+            closed: false,
+            origin: 'https://********-****-****-****-************.apps.astra.datastax.com',
+            session: [ClientHttp2Session]
+        },
+        userAgent: 'astra-db-ts/0.1.4'
+    },
+    _db: Db {
+        _httpClient: HTTPClient {
+            baseUrl: 'https://********-****-****-****-************.apps.astra.datastax.com/api/json/v1',
+            applicationToken: 'AstraCS:************:************',
+            logSkippedOptions: false,
+            collection: undefined,
+            keyspace: 'default_keyspace',
+            usingHttp2: true,
+            requestStrategy: [HTTP2Strategy],
+            userAgent: 'astra-db-ts/0.1.4'
+        },
+        _namespace: 'default_keyspace'
+    }
+}
+----
+====
+
+==== Parameters
+
+[cols="1,1,3", options="header"]
+|===
+| Name | Type | Description
+
+| token
+| `string`
+| The authentication token for Astra DB.
+
+| endpoint
+| `string`
+| The endpoint URL for the database.
+
+| namespace
+| `string`
+| The namespace to use. If not provided, the default is `default_keyspace`.
+
+|===
+
+==== Example
+
+[source,typescript,subs="verbatim,quotes"]
+----
+import { AstraDB } from '@datastax/astra-db-ts'
+
+// Create a new AstraDB instance with the default namespace
+const defaultDb = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+// Create a new AstraDB instance with a specified namespace
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*", "*NAMESPACE*");
+----
+
+== Collections
+
+Use the `AstraDB` and `Collection` classes to work with collections.
+
+=== Create a single collection
+
+Create a new collection in Astra DB.
+
+[source,typescript]
+----
+const collection = await db.createCollection('collection');
+----
+
+Create a new collection to store vector data.
+
+[source,typescript]
+----
+const collection = await db.createCollection('vector_collection', {
+    "vector": {
+        "dimension": 3,
+        "metric": "cosine"
+    }
+});
+----
+
+==== Returns
+
+`Promise<Collection<Schema>>` - A promise that resolves to the result of the operation.
+
+.Example response
+[%collapsible]
+====
+----
+Collection {
+    _httpClient: HTTPClient {
+        baseUrl: 'https://********-****-****-****-************.apps.astra.datastax.com/api/json/v1',
+        applicationToken: 'AstraCS:************:************',
+        logSkippedOptions: false,
+        collection: 'vector_collection',
+        keyspace: 'default_keyspace',
+        usingHttp2: true,
+        requestStrategy: HTTP2Strategy {
+            closed: false,
+            origin: 'https://********-****-****-****-************.apps.astra.datastax.com',
+            session: [ClientHttp2Session]
+        },
+        userAgent: 'astra-db-ts/0.1.4'
+    },
+    _collectionName: 'vector_collection',
+    _db: Db {
+        _httpClient: HTTPClient {
+            baseUrl: 'https://********-****-****-****-************.apps.astra.datastax.com/api/json/v1',
+            applicationToken: 'AstraCS:************:************',
+            logSkippedOptions: false,
+            collection: undefined,
+            keyspace: 'default_keyspace',
+            usingHttp2: true,
+            requestStrategy: [HTTP2Strategy],
+            userAgent: 'astra-db-ts/0.1.4'
+        },
+        _namespace: 'default_keyspace'
+    }
+}
+----
+====
+
+==== Parameters
+
+[cols="1,1,3",options="header"]
+|===
+| Name | Type | Description
+
+| collectionName
+| `string`
+| The name of the collection to create.
+
+| options
+| `CreateCollectionOptions<Schema>`
+a| An optional dictionary of key/value pairs that define additional parameters.
+
+* `dimension` - The dimension of vectors in the collection.
+* `metric` - The xref:get-started:concepts.adoc#metrics[similarity metric] to use for vector search: `cosine` (default), `dot_product`, or `euclidean`.
+|===
+
+==== Example
+
+[source,typescript,subs="verbatim,quotes"]
+----
+import { AstraDB, Collection } from '@datastax/astra-db-ts'
+
+// Create a new AstraDB instance
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+async function createCollections() {
+
+    // Create a non-vector collection
+    const collectionSimple = await db.createCollection('collection');
+
+    // Create a vector collection
+    const collectionVector = await db.createCollection('vector_collection', {
+        "vector": {
+            "dimension": 3,
+            "metric": "cosine"
+        }
+    });
+}
+
+createCollections();
+----
+
+=== Find a single collection
+
+Get a reference to a named collection.
+
+[source,typescript]
+----
+const collection = await db.collection('vector_collection');
+----
+
+==== Returns
+
+`Collection<Schema>` - An instance of the Collection class corresponding to the specified collection name.
+
+.Example response
+[%collapsible]
+====
+----
+Collection {
+    _httpClient: HTTPClient {
+        baseUrl: 'https://********-****-****-****-************.apps.astra.datastax.com/api/json/v1',
+        applicationToken: 'AstraCS:************:************',
+        logSkippedOptions: false,
+        collection: 'vector_collection',
+        keyspace: 'default_keyspace',
+        usingHttp2: true,
+        requestStrategy: HTTP2Strategy {
+            closed: false,
+            origin: 'https://********-****-****-****-************.apps.astra.datastax.com',
+            session: [ClientHttp2Session]
+        },
+        userAgent: 'astra-db-ts/0.1.4'
+    },
+    _collectionName: 'vector_collection',
+    _db: Db {
+        _httpClient: HTTPClient {
+            baseUrl: 'https://********-****-****-****-************.apps.astra.datastax.com/api/json/v1',
+            applicationToken: 'AstraCS:************:************',
+            logSkippedOptions: false,
+            collection: undefined,
+            keyspace: 'default_keyspace',
+            usingHttp2: true,
+            requestStrategy: [HTTP2Strategy],
+            userAgent: 'astra-db-ts/0.1.4'
+        },
+        _namespace: 'default_keyspace'
+    }
+}
+----
+====
+
+==== Parameters
+
+[cols="1,1,3",options="header"]
+|===
+| Name | Type | Description
+
+| name
+| `string`
+| The name of the collection to retrieve.
+|===
+
+==== Example
+
+[source,typescript,subs="verbatim,quotes"]
+----
+import { AstraDB, Collection } from '@datastax/astra-db-ts'
+
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+async function getCollectionReference() {
+    // Get a reference to a collection
+    const collection = await db.collection('vector_collection');
+}
+
+getCollectionReference();
+----
+
+NOTE: The `collection` method will return a `Collection` object even for collections that don't exist, so make sure the collection exists first.
+
+=== Delete a single collection
+
+Delete a collection from a database.
+
+[source,typescript]
+----
+const response = await db.dropCollection("vector_collection");
+----
+
+==== Returns
+
+`Promise<boolean>` - A promise that resolves to the result of the delete operation.
+
+.Example response
+[%collapsible]
+====
+----
+true
+----
+====
+
+==== Parameters
+
+[cols="1,1,3",options="header"]
+|===
+| Name | Type | Description
+
+| name
+| `string`
+| The name of the collection to delete.
+|===
+
+==== Example
+
+[source,typescript,subs="verbatim,quotes"]
+----
+import { AstraDB } from '@datastax/astra-db-ts'
+
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+async function deleteCollection() {
+    // Delete an existing collection
+    const response = await db.dropCollection("vector_collection");
+}
+
+deleteCollection();
+----
+
+== Documents
+
+Use the `Collection` class to work with documents.
+
+=== Insert a single document
+
+Insert a single document into a collection.
+
+[source,typescript]
+----
+const response = await collection.insertOne({
+    name: 'Jane Doe',
+    $vector: [.08, .68, .30]
+});
+----
+
+==== Returns
+
+`Promise<InsertOneResult<Schema>>` - A promise that resolves to a dictionary representing the response from the database after the insert operation.
+
+.Example response
+[%collapsible]
+====
+----
+{
+    insertedId: '1'
+}
+----
+====
+
+==== Parameters
+
+[cols="1,1,3",options="header"]
+|===
+| Name | Type | Description
+
+| document
+| `Schema`
+a| The document to insert into the collection.
+This should be an object representing the data structure of the document.
+If the object does not contain an `_id` field, an ObjectId string will be generated and assigned to the document.
+|===
+
+==== Example
+
+[source,typescript,subs="verbatim,quotes"]
+----
+import { AstraDB, Collection } from '@datastax/astra-db-ts'
+
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+async function insertDocuments() {
+    const collection = await db.collection("vector_collection");
+
+    // Insert a document with a specific ID
+    const response1 = await collection.insertOne({
+        _id: '1',
+        name: 'John Doe',
+        $vector: [.12, .52, .32]
+    });
+
+    // Insert a document without specifying an ID (ID is generated automatically)
+    const response2 = await collection.insertOne({
+        name: 'Jane Doe',
+        $vector: [.08, .68, .30]
+    });
+}
+
+insertDocuments();
+----
+
+=== Insert many documents
+
+Insert multiple documents into a collection.
+
+[source,typescript]
+----
+const response = await collection.insertMany(
+    [
+        {
+            _id: '1',
+            name: 'John Doe',
+            $vector: [.12, .52, .32]
+        },
+        {
+            // _id is generated automatically
+            name: 'Jane Doe',
+            $vector: [.08, .68, .30]
+        }
+    ],
+    { ordered: true }
+);
+----
+
+==== Returns
+
+`Promise<InsertManyResult<Schema>>` - A promise that resolves to a dictionary representing the response from the database after the insert operation.
+
+.Example response
+[%collapsible]
+====
+----
+{
+    insertedCount: 2,
+    insertedIds: [ '1', '65f39c161410e942a5b9ff45' ]
+}
+----
+====
+
+==== Parameters
+
+[cols="1,1,3",options="header"]
+|===
+| Name | Type | Description
+
+| documents
+| `Schema[]`
+a| A list of documents to insert into the collection.
+Each item in the array should be an object representing the data structure of the document.
+If an object does not contain an `_id` field, an ObjectId string will be generated and assigned to the document.
+
+| options
+| `InsertManyOptions`
+| Additional options for the insert operation.
+|===
+
+==== Example
+
+[source,typescript]
+----
+import { AstraDB, Collection } from '@datastax/astra-db-ts'
+
+// Create a new AstraDB instance
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+async function insertMultipleDocuments() {
+    const collection = await db.collection("vector_collection");
+
+    // Insert multiple documents into the collection
+    const response = await collection.insertMany(
+        [
+            {
+                _id: '1',
+                name: 'John Doe',
+                $vector: [.12, .52, .32]
+            },
+            {
+                // _id is generated automatically
+                name: 'Jane Doe',
+                $vector: [.08, .68, .30]
+            }
+        ],
+        { ordered: true }
+    );
+}
+
+insertMultipleDocuments();
+----
+
+=== Find a single document
+
+Retrieve a single document from a collection.
+
+[source,typescript]
+----
+const document = await collection.findOne({
+    _id: '1'
+});
+----
+
+Retrieve the most similar document to a given vector.
+
+[source,typescript]
+----
+const document = await collection.findOne({}, {
+    sort: {
+        $vector: [.12, .52, .32]
+    }
+});
+----
+
+Retrieve only specific fields from a document.
+
+[source,typescript]
+----
+const document = await collection.findOne(
+    { _id: '1' },
+    { projection: { "name": 1 } }
+);
+----
+
+==== Returns
+
+`Promise<FoundDoc<Schema, GetSim> | null>` - A promise that resolves to a dictionary representing the query response or null if no document is found.
+
+.Example response
+[%collapsible]
+====
+----
+{
+  _id: '1',
+  name: 'John Doe',
+  '$vector': [ 0.12, 0.52, 0.32 ],
+  '$similarity': 1
+}
+----
+====
+
+==== Parameters
+
+[cols="1,1,3",options="header"]
+|===
+| Name | Type | Description
+
+| filter
+| `Filter<Schema>`
+a| Criteria to filter documents.
+It's an object where keys are field names and values are conditions for those fields.
+See xref:api-reference:data-api.adoc#data-api-operators[{astra-api} operators] for the full list of operators.
+
+| options
+| `FindOneOptions<Schema, GetSim>`
+a| Additional options for the query.
+
+* sort?: Record<string, 1 | -1> - The order of results, which determines which document is returned.
+* projection?: ProjectionOption - The fields to return in the response.
+* includeSimilarity?: boolean - When true, return the similarity score in the results.
+|===
+
+==== Example
+
+[source,typescript,subs="verbatim,quotes"]
+----
+import { AstraDB, Collection } from '@datastax/astra-db-ts'
+
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+async function findDocuments() {
+    const collection = await db.collection("vector_collection");
+
+    // Retrieve a single document
+    const document1 = await collection.findOne({
+        _id: '1'
+    });
+
+    // Retrieve the most similar document
+    const document2 = await collection.findOne({}, {
+        sort: {
+            $vector: [.12, .52, .32]
+        }
+    });
+
+    // Only retrieve the name field
+    const document3 = await collection.findOne(
+        { _id: '1' },
+        { projection: { "name": 1 } }
+    );
+}
+
+findDocuments();
+----
+
+=== Find many documents
+
+Retrieve documents from a collection that match a given filter.
+
+[source,typescript]
+----
+const documents = await collection.find(
+    {
+        name: "Jane Doe"
+    },
+    {
+        sort: {
+            "$vector": [.12, .52, .32]
+        },
+        limit: 5
+    }
+);
+----
+
+==== Returns
+
+`FindCursor<FoundDoc<Schema, GetSim>>` - An object that lets you page through the results in the response.
+
+.Example response
+[%collapsible]
+====
+----
+[
+  {
+    _id: '65f3a28328ac16fec882c173',
+    name: 'Jane Doe',
+    '$vector': [ 0.08, 0.68, 0.3 ]
+  }
+]
+----
+====
+
+==== Parameters
+
+[cols="1,1,3",options="header"]
+|===
+| Name | Type | Description
+
+| filter
+| `Filter<Schema>`
+a| A dictionary of the fields and field values to use to filter the results.
+See xref:api-reference:data-api.adoc#data-api-operators[{astra-api} operators] for the full list of operators.
+
+| options
+| `FindOptions<Schema, GetSim>`
+a| Additional options for the query.
+
+* limit?: number - The maximum number of results to return in the response.
+* skip?: number - The number of results to skip in the response.
+* sort?: SortOption - The fields to use for sorting, and the ordering scheme to use for each field.
+* projection?: ProjectionOption - The fields to return in the response.
+* includeSimilarity?: boolean - If set to true, show the similarity score for each result in the response.
+|===
+
+==== Example
+
+[source,typescript,subs="verbatim,quotes"]
+----
+import { AstraDB, Collection } from '@datastax/astra-db-ts'
+
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+async function performSimilaritySearch() {
+    const collection = await db.collection("vector_collection");
+
+    // Define the metadata filter
+    const metadataFilter = { name: "Jane Doe" };
+
+    // Define the search vector and number of documents to return
+    const options = {
+        sort: {
+            "$vector": [.12, .52, .32],
+        },
+        limit: 5
+    };
+
+    // Perform a similarity search
+    const docs = await collection.find(metadataFilter, options).toArray();
+}
+
+performSimilaritySearch();
+----
+
+=== Update a single document
+
+Insert or update a single document in a collection.
+
+[source,typescript]
+----
+const results = await collection.updateOne(
+    { _id: '1' },
+    { $set: { name: "John Smith" } }
+);
+----
+
+==== Returns
+
+`UpdateOneResult` - A promise that resolves to the results of the update operation.
+
+.Example response
+[%collapsible]
+====
+----
+{
+    modifiedCount: 1,
+    matchedCount: 1
+}
+----
+====
+
+==== Parameters
+
+[cols="1,1,3",options="header"]
+|===
+| Name | Type | Description
+
+| filter
+| `Filter<Schema>`
+a| Criteria to identify the document to update.
+It's an object where keys are field names and values are conditions for those fields.
+See xref:api-reference:data-api.adoc#data-api-operators[{astra-api} operators] for the full list of operators.
+
+| update
+| `UpdateFilter<Schema>`
+| The updates to make to the first matched document.
+
+| options
+| UpdateOneOptions
+a| A dictionary of optional settings to use.
+
+* upsert: boolean - Insert a document if it doesn't exist.
+* sort: SortOption - The order to use when determining which document to update.
+|===
+
+==== Example
+
+[source,typescript,subs="verbatim,quotes"]
+----
+import { AstraDB, Collection } from '@datastax/astra-db-ts'
+
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+async function updateDocumentName() {
+    const collection = await db.collection("vector_collection");
+
+    // Insert a document
+    const insertResults = await collection.insertOne({
+        _id: '1',
+        name: 'John Doe'
+    });
+
+    // Update the name of the document
+    const updateResults = await collection.updateOne(
+        { _id: '1' },
+        { $set: { name: "John Smith" } },
+    );
+}
+
+updateDocumentName();
+----
+
+=== Update many documents
+
+Insert or update multiple document in a collection.
+
+[source,typescript]
+----
+const updateResults = await collection.updateMany(
+    { name: { $exists: false } },
+    { $set: { name: 'unknown' } }
+);
+----
+
+==== Returns
+
+`Promise<UpdateOneResult>` - A promise that resolves to the results of the update operation.
+
+.Example response
+[%collapsible]
+====
+----
+{
+    modifiedCount: 2,
+    matchedCount: 2
+}
+----
+====
+
+==== Parameters
+
+[cols="1,1,3",options="header"]
+|===
+| Name | Type | Description
+
+| filter
+| `Filter<Schema>`
+a| Criteria to identify the documents to update.
+It's an object where keys are field names and values are conditions for those fields.
+See xref:api-reference:data-api.adoc#data-api-operators[{astra-api} operators] for the full list of operators.
+
+| update
+| `UpdateFilter<Schema>`
+a| The updates to make to all matched documents.
+It's an object where keys are field names and values are the new values for those fields.
+See xref:api-reference:data-api.adoc#data-api-operators[{astra-api} operators] for the full list of property update operators.
+
+| options
+| UpdateManyOptions
+a| A dictionary of optional settings to use.
+
+* upsert: boolean - Insert a document if it doesn't exist.
+|===
+
+==== Example
+
+[source,typescript,subs="verbatim,quotes"]
+----
+import { AstraDB, Collection } from '@datastax/astra-db-ts'
+
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+async function updateMultipleDocumentsName() {
+    const collection = await db.collection("vector_collection");
+
+    // Insert some documents
+    const insertResults = await collection.insertMany([
+        { _id: '1', name: 'John Doe', car: 'Renault Twizy' },
+        { car: 'BMW 330i' },
+        { car: 'McLaren 4x4 SUV' },
+    ]);
+
+    // Update the names of some documents
+    const updateResults = await collection.updateMany(
+        { name: { $exists: false } },
+        { $set: { name: 'unknown' } }
+    );
+}
+
+updateMultipleDocumentsName();
+----
+
+=== Delete a single document
+
+Delete a single document from a collection.
+
+[source,typescript]
+----
+const response = await collection.deleteOne({ _id: '1' });
+----
+
+==== Returns
+
+`Promise<DeleteOneResult>` - A promise that resolves to the results of the delete operation.
+
+.Example response
+[%collapsible]
+====
+----
+{
+    deletedCount: 1
+}
+----
+====
+
+==== Parameters
+
+[cols="1,1,3",options="header"]
+|===
+| Name | Type | Description
+
+| filter
+| `Filter<Schema>`
+| Criteria to identify the document to delete.
+It's an object where keys are field names and values are conditions for those fields.
+See xref:api-reference:data-api.adoc#data-api-operators[{astra-api} operators] for the full list of operators.
+
+| options
+| DeleteOneOptions
+a| A dictionary of optional settings to use.
+
+* sort: SortOption - The order to use when determining which document to delete.
+|===
+
+==== Example
+
+[source,typescript,subs="verbatim,quotes"]
+----
+import { AstraDB, Collection } from '@datastax/astra-db-ts'
+
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+async function deleteSingleDocumentByName() {
+    const collection = await db.collection("vector_collection");
+
+    // Insert a document into the collection
+    const insertResponse = await collection.insertOne({
+        _id: '1',
+        name: 'John Doe'
+    });
+
+    // Delete the document from the collection
+    const deleteResponse = await collection.deleteOne({ _id: '1' });
+}
+
+deleteSingleDocumentByName();
+----
+
+=== Delete many documents
+
+Delete many documents from a collection.
+
+[source,typescript]
+----
+const result = await collection.deleteMany({ name: "John Doe" });
+----
+
+==== Returns
+
+`Promise<DeleteManyResult>` - A promise that resolves to the results of the delete operation.
+
+.Example response
+[%collapsible]
+====
+----
+{
+    deletedCount: 2
+}
+----
+====
+
+==== Parameters
+
+[cols="1,1,3",options="header"]
+|===
+| Name | Type | Description
+
+| filter
+| `Filter<Schema>`
+a| Criteria to identify the documents to delete.
+It's a record where keys are field names and values are conditions for those fields.
+See xref:api-reference:data-api.adoc#data-api-operators[{astra-api} operators] for the full list of operators.
++
+NOTE: If you want to delete all documents, use `deleteAll` instead.
+|===
+
+==== Example
+
+[source,typescript,subs="verbatim,quotes"]
+----
+import { AstraDB, Collection } from '@datastax/astra-db-ts'
+
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+async function deleteDocuments() {
+    const collection = await db.collection("vector_collection");
+
+    // Insert some documents into the collection
+    const insertResult = await collection.insertMany([
+        { _id: '1', name: 'John Doe', car: 'Renault Twizy' },
+        { name: 'John Doe', car: 'BMW 330i' },
+        { name: 'Jane Doe', car: 'McLaren 4x4 SUV' }
+    ]);
+
+    // Delete some documents from the collection
+    const deleteResult = await collection.deleteMany({ name: "John Doe" });
+}
+
+deleteDocuments();
+----
+
+=== Delete all documents
+
+Delete all documents in a collection.
+
+[source,typescript]
+----
+await collection.deleteAll();
+----
+
+==== Parameters
+
+This method has no parameters.
+
+==== Returns
+
+`Promise<void>` - A promise that resolves when the delete operation is complete.
+
+Example:
+
+[source,typescript,subs="verbatim,quotes"]
+----
+import { AstraDB, Collection } from '@datastax/astra-db-ts'
+
+const db = new AstraDB("*TOKEN*", "*API_ENDPOINT*");
+
+async function deleteDocuments() {
+    const collection = await db.collection("vector_collection");
+
+    // Insert some documents
+    const insertResult = await collection.insertMany([
+        { _id: '1', name: 'John Doe' },
+        { name: 'Jane Doe' }
+    ]);
+
+    // Delete all documents in the collection
+    await collection.deleteAll();
+}
+
+deleteDocuments();
+----
