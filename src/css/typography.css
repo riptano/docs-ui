@@ -18,13 +18,14 @@
   }
 
   .text-h3 {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.125rem;
+    font-weight: 550;
+    font-family: "Sora", sans-serif;
   }
 
   .text-h4 {
-    font-size: 0.9375rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 650;
   }
 
   .text-h5 {

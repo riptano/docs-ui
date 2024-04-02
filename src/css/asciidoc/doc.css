@@ -13,7 +13,7 @@
     color: var(--ds-text-primary);
     hyphens: none;
     line-height: 1.5;
-    margin: calc(24 / var(--rem-base) * 1rem) 0 0;
+    margin: calc(32 / var(--rem-base) * 1rem) 0 0;
   }
 
   .doc h1.page {
@@ -119,6 +119,7 @@
   .doc p,
   .doc dl {
     margin: 0;
+    color: var(--ds-text-secondary)
   }
 
   .doc a {
@@ -244,7 +245,7 @@
   .doc .partintro,
   .doc details,
   .doc hr {
-    margin: calc(24 / var(--rem-base) * 1rem) 0 0;
+    margin: calc(12 / var(--rem-base) * 1rem) 0 0;
   }
 
   .doc table.tableblock {
