@@ -13,7 +13,7 @@
     color: var(--ds-text-primary);
     hyphens: none;
     line-height: 1.5;
-    margin: calc(32 / var(--rem-base) * 1rem) 0 0;
+    margin: calc(16 / var(--rem-base) * 1rem) 0 0;
   }
 
   .doc h1.page {
@@ -61,12 +61,16 @@
 
   .doc h2:not(.discrete) {
     border-bottom: 1px solid var(--ds-divider);
-    margin: 0;
+    margin: calc(80/var(--rem-base)*1rem) 0 0;
     padding: 0 0 calc(16 / var(--rem-base) * 1rem);
   }
 
-  .doc h3:not(.discrete),
+  .doc h3:not(.discrete) {
+    margin: calc(48/var(--rem-base)*1rem) 0 0;
+  }
+
   .doc h4:not(.discrete) {
+    color: var(--ds-tertiary)
     font-weight: 600;
   }
 
@@ -245,7 +249,7 @@
   .doc .partintro,
   .doc details,
   .doc hr {
-    margin: calc(12 / var(--rem-base) * 1rem) 0 0;
+    margin: calc(16 / var(--rem-base) * 1rem) 0 0;
   }
 
   .doc table.tableblock {
