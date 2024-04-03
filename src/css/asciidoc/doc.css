@@ -39,6 +39,7 @@
 
   .doc h4 {
     @apply text-h4;
+    color: var(--ds-text-tertiary);
   }
 
   .doc h5 {
@@ -70,7 +71,6 @@
   }
 
   .doc h4:not(.discrete) {
-    color: var(--ds-text-tertiary)
     font-weight: 600;
   }
 
