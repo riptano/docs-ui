@@ -40,6 +40,7 @@
   .doc h4 {
     @apply text-h4;
     color: var(--ds-text-tertiary);
+    margin: calc(32/var(--rem-base)*1rem) 0 0;
   }
 
   .doc h5 {
@@ -67,7 +68,7 @@
   }
 
   .doc h3:not(.discrete) {
-    margin: calc(48/var(--rem-base)*1rem) 0 0;
+    margin: calc(64/var(--rem-base)*1rem) 0 0;
   }
 
   .doc h4:not(.discrete) {
