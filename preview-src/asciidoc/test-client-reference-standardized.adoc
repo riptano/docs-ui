@@ -1,6 +1,26 @@
 = TypeScript client reference
 :navtitle: TypeScript reference
 :page-toclevels: 2
+:company: DataStax
+:product: Astra DB Serverless
+:db-serverless: Serverless (Non-Vector)
+:db-serverless-vector: Serverless (Vector)
+:db-classic: Classic
+:evalproduct: DB Serverles
+:astra-api: Data API
+:astra-cli: Astra CLI
+:url-astra: https://astra.datastax.com
+:link-astra-portal: {url-astra}[{astra_ui}^]
+:sstable-sideloader: Sideloader
+:ts-client-api-ref-url: http://127.0.0.1:8080
+:company: DataStax
+:astra_db: Astra DB
+:astra_stream: Astra Streaming
+:astra_ui: Astra Portal
+:support_url: https://support.datastax.com
+:glossary-url: https://docs.datastax.com/en/glossary/docs/index.html#
+
+📝 *_NOTE: This content was pulled from https://github.com/riptano/astra-vector-docs/pull/311[PR 311]_*
 
 astra-db-ts is the official TypeScript client for {product}.
 See common usages below, or check out the https://github.com/datastax/astra-db-ts[GitHub repo].
