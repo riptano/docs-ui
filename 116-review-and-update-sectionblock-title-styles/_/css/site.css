@@ -2059,17 +2059,17 @@ sup {
     }
   }
 .\!text-h1 {
-    font-size: 1.5rem !important;
+    font-size: 1.625rem !important;
     font-weight: 550 !important;
     font-family: "Sora", sans-serif !important;
   }
 .\!text-h2 {
-    font-size: 1.25rem !important;
+    font-size: 1.5rem !important;
     font-weight: 550 !important;
     font-family: "Sora", sans-serif !important;
   }
 .text-h3 {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 550;
     font-family: "Sora", sans-serif;
   }
@@ -2302,8 +2302,8 @@ sup {
         -ms-hyphens: none;
             hyphens: none;
     line-height: 1.5;
-    margin: 2rem 0 0;
-    margin: calc(32/var(--rem-base)*1rem) 0 0;
+    margin: 1rem 0 0;
+    margin: calc(16/var(--rem-base)*1rem) 0 0;
   }
 .doc h1.page {
     display: -webkit-box;
@@ -2321,7 +2321,7 @@ sup {
     gap: var(--ds-space-1);
   }
 .doc h1 {
-    font-size: 1.5rem;
+    font-size: 1.625rem;
     font-weight: 550;
     font-family: "Sora", sans-serif;
   }
@@ -2335,18 +2335,19 @@ sup {
     font-family: "Sora", sans-serif;
   }
 .doc h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 550;
     font-family: "Sora", sans-serif;
   }
 .doc h3 {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 550;
     font-family: "Sora", sans-serif;
   }
 .doc h4 {
     font-size: 1rem;
     font-weight: 650;
+    color: var(--ds-text-tertiary);
   }
 .doc h5 {
     font-size: 0.9375rem;
@@ -2369,12 +2370,16 @@ sup {
   }
 .doc h2:not(.discrete) {
     border-bottom: 1px solid var(--ds-divider);
-    margin: 0;
+    margin: 5rem 0 0;
+    margin: calc(80/var(--rem-base)*1rem) 0 0;
     padding: 0 0 1rem;
     padding: 0 0 calc(16/var(--rem-base)*1rem);
   }
-.doc h3:not(.discrete),
-  .doc h4:not(.discrete) {
+.doc h3:not(.discrete) {
+    margin: 3rem 0 0;
+    margin: calc(48/var(--rem-base)*1rem) 0 0;
+  }
+.doc h4:not(.discrete) {
     font-weight: 600;
   }
 .doc h2:not(.discrete),
@@ -2548,8 +2553,8 @@ sup {
   .doc .partintro,
   .doc details,
   .doc hr {
-    margin: 0.75rem 0 0;
-    margin: calc(12/var(--rem-base)*1rem) 0 0;
+    margin: 1rem 0 0;
+    margin: calc(16/var(--rem-base)*1rem) 0 0;
   }
 .doc table.tableblock {
     font-size: 0.90625rem;
@@ -4891,12 +4896,12 @@ a.btn:hover {
           transition-duration: 150ms;
 }
 .marker\:text-h2 *::marker {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 550;
     font-family: "Sora", sans-serif;
   }
 .marker\:text-h2::marker {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 550;
     font-family: "Sora", sans-serif;
   }
