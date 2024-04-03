@@ -65,9 +65,9 @@ page:
       - content: Admonitions
         url: /asciidoc/admonitions.html
         urlType: internal
-      - content: TEST client reference (standardized)
-        url: /asciidoc/test-client-reference-standardized.html
+      - content: TEST Standardized client reference
+        url: /asciidoc/test-standardized-client-reference.html
         urlType: internal
-      - content: TEST client reference (unified)
-        url: /asciidoc/test-client-reference-unified.html
+      - content: TEST Unified API reference
+        url: /asciidoc/test-unified-api-reference.html
         urlType: internal
