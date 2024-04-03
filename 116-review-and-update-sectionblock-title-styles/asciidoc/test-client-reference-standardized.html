@@ -246,7 +246,10 @@
   <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>astra-db-ts is the official TypeScript client for {product}.
+<p>📝 <strong><em>NOTE: This content was pulled from <a href="https://github.com/riptano/astra-vector-docs/pull/311">PR 311</a></em></strong></p>
+</div>
+<div class="paragraph">
+<p>astra-db-ts is the official TypeScript client for Astra DB Serverless.
 See common usages below, or check out the <a href="https://github.com/datastax/astra-db-ts">GitHub repo</a>.</p>
 </div>
 <div class="paragraph">
@@ -263,10 +266,10 @@ See common usages below, or check out the <a href="https://github.com/datastax/a
 <div class="ulist">
 <ul>
 <li>
-<p>You have an active {url-astra}[Astra account^].</p>
+<p>You have an active <a href="https://astra.datastax.com" target="_blank" rel="noopener">Astra account</a>.</p>
 </li>
 <li>
-<p>You have created a <a href="databases:create-database.html#create-vector-database">{db-serverless-vector} database</a>.</p>
+<p>You have created a <a href="databases:create-database.html#create-vector-database">Serverless (Vector) database</a>.</p>
 </li>
 <li>
 <p>You have created an <a href="administration:manage-application-tokens.html">application token</a> with the Database Administrator role.</p>
@@ -1004,7 +1007,7 @@ insertMultipleDocuments();</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Criteria to filter documents.
 It&#8217;s an object where keys are field names and values are conditions for those fields.
-See <a href="api-reference:data-api.html#data-api-operators">{astra-api} operators</a> for the full list of operators.</p>
+See <a href="api-reference:data-api.html#data-api-operators">Data API operators</a> for the full list of operators.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1122,7 +1125,7 @@ findDocuments();</code></pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Filter&lt;Schema&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>A dictionary of the fields and field values to use to filter the results.
-See <a href="api-reference:data-api.html#data-api-operators">{astra-api} operators</a> for the full list of operators.</p>
+See <a href="api-reference:data-api.html#data-api-operators">Data API operators</a> for the full list of operators.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1239,7 +1242,7 @@ performSimilaritySearch();</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Criteria to identify the document to update.
 It&#8217;s an object where keys are field names and values are conditions for those fields.
-See <a href="api-reference:data-api.html#data-api-operators">{astra-api} operators</a> for the full list of operators.</p>
+See <a href="api-reference:data-api.html#data-api-operators">Data API operators</a> for the full list of operators.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1350,7 +1353,7 @@ updateDocumentName();</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Criteria to identify the documents to update.
 It&#8217;s an object where keys are field names and values are conditions for those fields.
-See <a href="api-reference:data-api.html#data-api-operators">{astra-api} operators</a> for the full list of operators.</p>
+See <a href="api-reference:data-api.html#data-api-operators">Data API operators</a> for the full list of operators.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1359,7 +1362,7 @@ See <a href="api-reference:data-api.html#data-api-operators">{astra-api} operato
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The updates to make to all matched documents.
 It&#8217;s an object where keys are field names and values are the new values for those fields.
-See <a href="api-reference:data-api.html#data-api-operators">{astra-api} operators</a> for the full list of property update operators.</p>
+See <a href="api-reference:data-api.html#data-api-operators">Data API operators</a> for the full list of property update operators.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1458,7 +1461,7 @@ updateMultipleDocumentsName();</code></pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Filter&lt;Schema&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Criteria to identify the document to delete.
 It&#8217;s an object where keys are field names and values are conditions for those fields.
-See <a href="api-reference:data-api.html#data-api-operators">{astra-api} operators</a> for the full list of operators.</p></td>
+See <a href="api-reference:data-api.html#data-api-operators">Data API operators</a> for the full list of operators.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">options</p></td>
@@ -1553,7 +1556,7 @@ deleteSingleDocumentByName();</code></pre>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Criteria to identify the documents to delete.
 It&#8217;s a record where keys are field names and values are conditions for those fields.
-See <a href="api-reference:data-api.html#data-api-operators">{astra-api} operators</a> for the full list of operators.</p>
+See <a href="api-reference:data-api.html#data-api-operators">Data API operators</a> for the full list of operators.</p>
 </div>
 <div class="paragraph">
 <p>+
@@ -1941,8 +1944,14 @@ deleteDocuments();</code></pre>
   </li>
     <li data-depth="1">
      <a class="flex rounded !no-underline text-body-small text-primary py-1 px-2 hover:bg-level2 transition-colors text-link font-semibold" 
-      href="client-reference-test.html">
-      Client reference test
+      href="test-client-reference-standardized.html">
+      TEST client reference (standardized)
+    </a>
+  </li>
+    <li data-depth="1">
+     <a class="flex rounded !no-underline text-body-small text-primary py-1 px-2 hover:bg-level2 transition-colors" 
+      href="test-client-reference-unified.html">
+      TEST client reference (unified)
     </a>
   </li>
   </ul>
