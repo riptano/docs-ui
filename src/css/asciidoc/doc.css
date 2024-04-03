@@ -124,7 +124,8 @@
   .doc p,
   .doc dl {
     margin: 0;
-    color: var(--ds-text-secondary)
+    color: var(--ds-text-secondary);
+    line-height: 1.6;
   }
 
   .doc a {
@@ -159,7 +160,7 @@
     background: var(--ds-neutral-soft-bg);
     border: 1px solid var(--ds-divider);
     border-radius: calc(6 / var(--rem-base) * 1rem);
-    font-size: 0.95em;
+    font-size: 0.825em;
     padding: 0.125em 0.25em;
     word-break: break-word;
   }
@@ -1019,8 +1020,8 @@
   }
 
   .doc li {
-    margin-top: calc(24 / var(--rem-base) * 1rem);
-    margin-bottom: calc(24 / var(--rem-base) * 1rem);
+    margin-top: calc(16 / var(--rem-base) * 1rem);
+    margin-bottom: calc(16 / var(--rem-base) * 1rem);
   }
 
   .doc > ul > li p {
