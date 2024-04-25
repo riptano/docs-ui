@@ -1,0 +1,20 @@
+<script id="site-script" src="{{{uiRootPath}}}/js/site.js" data-ui-root-path="{{{uiRootPath}}}"></script>
+<script data-sync-storage-key="preferred-tab" async src="{{{uiRootPath}}}/js/vendor/tabs.js"></script>
+<script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
+<script async src="{{{uiRootPath}}}/js/vendor/zooming.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+{{#with site.keys}}
+  {{#if (and algoliaAppId algoliaIndexName algoliaApiKey)}}
+<script>
+  docsearch({
+    container: '#docsearch',
+    appId: '{{algoliaAppId}}',
+    indexName: '{{algoliaIndexName}}',
+    {{!-- This is the public API key which can be safely used in frontend code. --}}
+    apiKey: '{{algoliaApiKey}}',
+  })
+</script>
+  {{/if}}
+{{/with}}
+{{> intercom}}
