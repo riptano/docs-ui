@@ -1,0 +1,15 @@
+@layer components {
+  .dropdown .dropdown-content {
+    @apply fixed top-0 left-0 invisible opacity-0 origin-top scale-95 transform transition duration-200 ease-out;
+
+    /* shadow-300 */
+    box-shadow:
+      0px 8px 10px 0px rgba(10, 10, 10, 0.08),
+      0px 4px 14px 0px rgba(10, 10, 10, 0.08),
+      0px 6px 16px 0px rgba(10, 10, 10, 0.12);
+  }
+
+  .dropdown .dropdown-content.active {
+    @apply visible opacity-100 scale-100;
+  }
+}

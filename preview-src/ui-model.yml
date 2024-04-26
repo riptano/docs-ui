@@ -17,6 +17,74 @@ site:
       version: 'latest'
       displayVersion: 'latest'
     latestVersion: *latest_version
+  keys:
+    # globalNav: |
+    #   [
+    #     { 
+    #       "title": "Docs Home",
+    #       "url": "#" 
+    #     },
+    #     { 
+    #       "title": "Neat",
+    #       "url": "https://google.com"
+    #     },
+    #     { 
+    #       "title": "Astra DB", 
+    #       "items": [ 
+    #         { "title": "Serverless", "url": "#" },
+    #         { "title": "Dedicated", "url": "#" },
+    #         { "title": "CLI", "url": "#" },
+    #         { "title": "Cool", "url": "https://google.com" }
+    #       ]
+    #     }
+    #   ]
+    globalNav: |
+      [
+        { 
+          "title": "Docs Home",
+          "url": "#" 
+        },
+        { 
+          "title": "Astra DB", 
+          "items": [ 
+            { "title": "Serverless", "url": "#" },
+            { "title": "Dedicated", "url": "#" },
+            { "title": "CLI", "url": "#" }
+          ]
+        },
+        { 
+          "title": "RAGStack",
+          "url": "#" 
+        },
+        { 
+          "title": "DSE", 
+          "items": [ 
+            { "title": "Mission Control", "url": "#" },
+            { "title": "DSE 6.8", "url": "#" },
+            { "title": "DSE 5.1", "url": "#" },
+            { "title": "CLI", "url": "#" }
+          ]
+        },
+        { 
+          "title": "Streaming", 
+          "items": [ 
+            { "title": "Astra Streaming", "url": "#" },
+            { "title": "Luna Streaming", "url": "#" }
+          ]
+        },
+        { 
+          "title": "Open Source", 
+          "items": [ 
+            { "title": "Apache Pulsar Connector", "url": "#" },
+            { "title": "CDC for Cassandra", "url": "#" },
+            { "title": "K8ssandra", "url": "#" },
+            { "title": "Stargate", "url": "#" },
+            { "title": "Starlight for JMS", "url": "#" },
+            { "title": "Starlight for Kafka", "url": "#" },
+            { "title": "Starlight for Rabbit MQ", "url": "#" }
+          ]
+        }
+      ]
 page:
   src:
     component: *component

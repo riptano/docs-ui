@@ -1,0 +1,34 @@
+{{#with (global-nav)}}
+<nav class="flex gap-3 border-b py-2 px-4 overflow-x-auto overflow-y-hidden no-scrollbar">
+{{#each this}}
+{{#if ./url}}
+  <a 
+    class="btn btn-neutral {{#if (global-nav-active this)}}btn-solid active{{else}}btn-plain{{/if}}" 
+    href="{{#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{else}}{{{./url}}}{{/if}}"
+    {{#if (eq ./urlType 'external')}}target="_blank"{{/if}}>
+      {{{./title}}}
+  </a>
+{{/if}}
+{{#if ./items}}
+  <div class="dropdown" data-trigger-type="hover">
+    <button id="nav-dropdown-{{@index}}" class="dropdown-trigger btn btn-neutral [&.active_i]:rotate-180 {{#if (global-nav-active this)}}btn-solid active{{else}}btn-plain{{/if}}" aria-haspopup="true" aria-expanded="false">
+      {{{./title}}}
+      <i class="material-icons text-lg text-tertiary motion-safe:transition-transform ml-[0.15em]">expand_more</i>
+    </button>
+    <ul class="dropdown-content py-2 bg-body border rounded w-52" role="menu" aria-orientation="vertical" aria-labelledby="nav-dropdown-{{@index}}">
+      {{#each ./items}}
+      <li>
+        <a 
+          class="!no-underline w-full py-1 px-3 block hover:bg-level1 transition-colors" 
+          href="{{#if (eq urlType 'internal')}}{{{relativize url}}}{{else}}{{{url}}}{{/if}}"
+          {{#if (eq ./urlType 'external')}}target="_blank"{{/if}}>
+            {{{title}}}
+        </a>
+      </li> 
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}
+{{/each}}
+</nav>
+{{/with}}
