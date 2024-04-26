@@ -13,8 +13,8 @@
     @apply antialiased;
 
     font-weight: 400;
-    background: var(--ds-background-body);
-    color: var(--ds-text-primary);
+    background: #00f000; /* var(--ds-background-body); */
+    color: #ffffff; /* var(--ds-text-primary); */
     font-family: "Roboto Flex", sans-serif;
     line-height: 1.5;
     margin: 0;
