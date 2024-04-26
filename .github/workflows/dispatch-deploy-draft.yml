@@ -3,7 +3,7 @@ name: Dispatch Deploy Draft
 on:
   push:
     branches:
-      # - 'main'
+      - 'main'
       # Add additional content source branches here
   pull_request:
     branches:
