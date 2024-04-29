@@ -1,7 +1,7 @@
 ;(function () {
   'use strict'
 
-  const { computePosition, autoPlacement } = window.FloatingUIDOM
+  const { computePosition, autoPlacement, shift } = window.FloatingUIDOM
   const isTouchDevice = window.matchMedia('(pointer: coarse)').matches
 
   const dropdownFn = (trigger, dropdown, triggerType = 'click') => {
@@ -10,6 +10,7 @@
         strategy: 'fixed',
         middleware: [
           autoPlacement({ alignment: 'start', allowedPlacements: ['bottom', 'bottom-start', 'bottom-end'] }),
+          shift(),
         ],
       }).then(({ x, y }) => {
         dropdown.style.left = `${x}px`
