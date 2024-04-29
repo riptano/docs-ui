@@ -27,7 +27,7 @@ module.exports = ({
     },
   },
 }) => {
-  let globalNav = site.keys.globalNav
+  let globalNav = site.keys.globalNav || site.keys.global_nav
 
   if (!globalNav) return []
   if (globalNav._compiled) return globalNav

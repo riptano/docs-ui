@@ -40,7 +40,7 @@
   .doc h4 {
     @apply text-h4;
     color: var(--ds-text-tertiary);
-    margin: calc(32/var(--rem-base)*1rem) 0 0;
+    margin: calc(32 / var(--rem-base) * 1rem) 0 0;
   }
 
   .doc h5 {
@@ -63,12 +63,12 @@
 
   .doc h2:not(.discrete) {
     border-bottom: 1px solid var(--ds-divider);
-    margin: calc(80/var(--rem-base)*1rem) 0 0;
+    margin: calc(80 / var(--rem-base) * 1rem) 0 0;
     padding: 0 0 calc(16 / var(--rem-base) * 1rem);
   }
 
   .doc h3:not(.discrete) {
-    margin: calc(64/var(--rem-base)*1rem) 0 0;
+    margin: calc(64 / var(--rem-base) * 1rem) 0 0;
   }
 
   .doc h4:not(.discrete) {
@@ -85,7 +85,7 @@
     justify-content: flex-end;
     align-items: center;
     gap: var(--ds-space-h);
-    scroll-margin-top: 6rem;
+    scroll-margin-top: 9rem;
   }
 
   .doc h1 .anchor,

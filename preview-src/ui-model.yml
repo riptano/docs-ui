@@ -18,27 +18,7 @@ site:
       displayVersion: 'latest'
     latestVersion: *latest_version
   keys:
-    # globalNav: |
-    #   [
-    #     { 
-    #       "title": "Docs Home",
-    #       "url": "#" 
-    #     },
-    #     { 
-    #       "title": "Neat",
-    #       "url": "https://google.com"
-    #     },
-    #     { 
-    #       "title": "Astra DB", 
-    #       "items": [ 
-    #         { "title": "Serverless", "url": "#" },
-    #         { "title": "Dedicated", "url": "#" },
-    #         { "title": "CLI", "url": "#" },
-    #         { "title": "Cool", "url": "https://google.com" }
-    #       ]
-    #     }
-    #   ]
-    globalNav: |
+    global_nav: |
       [
         { 
           "title": "Docs Home",
