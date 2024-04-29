@@ -1,0 +1,25 @@
+name: Dispatch Deploy Draft
+
+on:
+  push:
+    branches:
+      - 'main'
+      # Add additional content source branches here
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  dispatch-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dispatch Deploy Draft
+        uses: convictional/trigger-workflow-and-wait@v1.6.1
+        with:
+          owner: riptano
+          repo: datastax-docs-site
+          github_token: ${{ secrets.DISPATCH_GITHUB_TOKEN }}
+          github_user: mlr
+          workflow_file_name: deploy-draft.yml
+          client_payload: '{ "build_repository": "${{ github.event.repository.full_name }}", "build_branch": "main", "draft_branch": "${{ github.event.pull_request.head.ref }}", "pull_request_number": "${{ github.event.pull_request.number }}", "ui_bundle_repository": "${{ github.event.repository.full_name }}", "ui_bundle_branch": "${{ github.event.pull_request.head.ref }}" }'
