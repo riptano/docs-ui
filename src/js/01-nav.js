@@ -27,4 +27,50 @@
       }
     }
   }
+
+  // Top Global Nav horizontal scrolling
+  const globalNav = document.querySelector('.global-nav')
+  if (globalNav) {
+    const scrollLeftButton = document.createElement('button')
+    scrollLeftButton.className = 'scroll-btn-left'
+    const leftIcon = document.createElement('i')
+    leftIcon.className = 'material-icons'
+    leftIcon.textContent = 'chevron_left'
+    scrollLeftButton.appendChild(leftIcon)
+    globalNav.appendChild(scrollLeftButton)
+
+    const scrollRightButton = document.createElement('button')
+    scrollRightButton.className = 'scroll-btn-right'
+    const rightIcon = document.createElement('i')
+    rightIcon.className = 'material-icons'
+    rightIcon.textContent = 'chevron_right'
+    scrollRightButton.appendChild(rightIcon)
+    globalNav.appendChild(scrollRightButton)
+
+    // Function to check scroll and show/hide buttons
+    const checkScroll = () => {
+      scrollLeftButton.classList.toggle('active', globalNav.scrollLeft > 0)
+      scrollRightButton.classList.toggle('active', globalNav.scrollWidth > (globalNav.clientWidth + globalNav.scrollLeft + 1))
+    }
+
+    // Check scroll initially
+    checkScroll()
+
+    // Check scroll whenever the tablist is resized
+    // eslint-disable-next-line no-undef
+    const resizeObserver = new ResizeObserver(checkScroll)
+    resizeObserver.observe(globalNav)
+
+    // Check scroll whenever the block is scrolled
+    globalNav.addEventListener('scroll', checkScroll)
+
+    // Scroll when buttons are clicked
+    scrollLeftButton.addEventListener('click', () => {
+      globalNav.scrollLeft -= 200
+    })
+
+    scrollRightButton.addEventListener('click', () => {
+      globalNav.scrollLeft += 200
+    })
+  }
 })()

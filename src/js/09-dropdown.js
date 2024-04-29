@@ -2,6 +2,7 @@
   'use strict'
 
   const { computePosition, autoPlacement } = window.FloatingUIDOM
+  const isTouchDevice = window.matchMedia('(pointer: coarse)').matches
 
   const dropdownFn = (trigger, dropdown, triggerType = 'click') => {
     const update = () => {
@@ -48,7 +49,7 @@
       }
     }
 
-    if (triggerType === 'hover') {
+    if (triggerType === 'hover' && !isTouchDevice) {
       [
         ['mouseenter', show],
         ['mouseleave', hide],

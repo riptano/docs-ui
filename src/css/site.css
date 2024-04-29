@@ -24,6 +24,7 @@
 @import "highlight.css";
 @import "print.css";
 @import "docsearch.css";
+@import "global-nav.css";
 
 @tailwind base;
 @tailwind components;
