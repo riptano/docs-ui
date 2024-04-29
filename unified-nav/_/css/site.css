@@ -606,6 +606,59 @@ html[data-theme="dark"] .DocSearch {
   --docsearch-logo-color: var(--ds-text-primary);
   --docsearch-muted-color: var(--ds-text-placeholder);
 }
+.global-nav > .scroll-btn-left,
+.global-nav > .scroll-btn-right {
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .global-nav > .scroll-btn-left,
+.global-nav > .scroll-btn-right {
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition-duration: 150ms;
+            transition-duration: 150ms;
+  }
+}
+.global-nav > .scroll-btn-left.active, .global-nav > .scroll-btn-right.active {
+  visibility: visible;
+  opacity: 1;
+}
+.global-nav > .scroll-btn-left {
+  left: 0px;
+  border-top-left-radius: 0.375rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+}
+.global-nav > .scroll-btn-right {
+  right: 0px;
+  border-top-right-radius: 0.375rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+html[data-theme="light"] .global-nav > .scroll-btn-left {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), color-stop(rgb(255, 255, 255)), color-stop(50%, rgb(255, 255, 255)));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgb(255, 255, 255) 50%);
+}
+html[data-theme="dark"] .global-nav > .scroll-btn-left {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(9, 9, 9, 0)), color-stop(rgb(9, 9, 9)), color-stop(50%, rgb(9, 9, 9)));
+  background: linear-gradient(to left, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
+}
+html[data-theme="light"] .global-nav > .scroll-btn-right {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(rgb(255, 255, 255)), color-stop(50%, rgb(255, 255, 255)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgb(255, 255, 255) 50%);
+}
+html[data-theme="dark"] .global-nav > .scroll-btn-right {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(9, 9, 9, 0)), color-stop(rgb(9, 9, 9)), color-stop(50%, rgb(9, 9, 9)));
+  background: linear-gradient(to right, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
+}
 /* ! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com */
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -5059,6 +5112,9 @@ a.btn:hover {
   content: var(--tw-content);
 }
 @media (prefers-reduced-motion: no-preference) {
+  .motion-safe\:scroll-smooth {
+    scroll-behavior: smooth;
+  }
   .motion-safe\:transition-transform {
     -webkit-transition-property: -webkit-transform;
     transition-property: -webkit-transform;
