@@ -4483,6 +4483,9 @@ a.btn:hover {
 .z-40 {
   z-index: 40;
 }
+.z-\[1\] {
+  z-index: 1;
+}
 .row-start-2 {
   grid-row-start: 2;
 }
