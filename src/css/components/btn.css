@@ -15,6 +15,10 @@
     @apply bg-[var(--ds-primary-solid-bg)] text-[var(--ds-primary-solid-color)] hover:bg-[var(--ds-primary-solid-hover-bg)] hover:text-[var(--ds-primary-solid-color)] active:bg-[var(--ds-primary-solid-active-bg)] disabled:bg-[var(--ds-primary-solid-disabled-bg)] disabled:text-[var(--ds-primary-solid-disabled-color)];
   }
 
+  .btn-primary.btn-soft {
+    @apply bg-[var(--ds-primary-soft-bg)] text-[var(--ds-primary-soft-color)] hover:bg-[var(--ds-primary-soft-hover-bg)] hover:text-[var(--ds-primary-soft-color)] active:bg-[var(--ds-primary-soft-active-bg)] disabled:bg-[var(--ds-primary-soft-disabled-bg)] disabled:text-[var(--ds-primary-soft-disabled-color)];
+  }
+
   .btn-neutral.btn-outlined {
     @apply border-[var(--ds-neutral-outlined-border)] text-[var(--ds-neutral-outlined-color)] hover:border-[var(--ds-neutral-outlined-hover-border)] hover:bg-[var(--ds-neutral-outlined-hover-bg)] hover:text-[var(--ds-neutral-outlined-color)] active:border-[var(--ds-neutral-outlined-active-border)] active:bg-[var(--ds-neutral-outlined-active-bg)] disabled:border-[var(--ds-neutral-outlined-disabled-border)] disabled:text-[var(--ds-neutral-outlined-disabled-color)];
   }
@@ -29,6 +33,10 @@
 
   .btn-icon {
     @apply h-10 w-10 p-0;
+  }
+
+  .btn.btn-small {
+    @apply h-8 px-1.5 py-1;
   }
 
   .btn-leading-icon {

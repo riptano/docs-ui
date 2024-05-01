@@ -19,7 +19,7 @@
       {{#each ./items}}
       <li>
         <a 
-          class="!no-underline w-full py-1 px-3 block hover:bg-level1 transition-colors {{#if (global-nav-active this)}}bg-level1 font-semibold{{/if}}"
+          class="!no-underline w-full py-1 px-3 block hover:bg-level1 transition-colors {{#if (global-nav-active this)}}color-primary font-bold{{/if}}"
           href="{{#if (eq urlType 'internal')}}{{{relativize url}}}{{else}}{{{url}}}{{/if}}"
           {{#if (eq ./urlType 'external')}}target="_blank"{{/if}}>
             {{{title}}}

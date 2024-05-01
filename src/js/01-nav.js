@@ -50,7 +50,8 @@
     // Function to check scroll and show/hide buttons
     const checkScroll = () => {
       scrollLeftButton.classList.toggle('active', globalNav.scrollLeft > 0)
-      scrollRightButton.classList.toggle('active', globalNav.scrollWidth > (globalNav.clientWidth + globalNav.scrollLeft + 1))
+      scrollRightButton.classList.toggle('active',
+        globalNav.scrollWidth > (globalNav.clientWidth + globalNav.scrollLeft + 1))
     }
 
     // Check scroll initially

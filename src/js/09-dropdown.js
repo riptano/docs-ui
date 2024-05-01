@@ -4,6 +4,13 @@
   const { computePosition, autoPlacement, shift } = window.FloatingUIDOM
   const isTouchDevice = window.matchMedia('(pointer: coarse)').matches
 
+  const hideAllDropdowns = () => {
+    document.querySelectorAll('.dropdown').forEach((dropdown) => {
+      dropdown.querySelector('.dropdown-trigger').classList.remove('active')
+      dropdown.querySelector('.dropdown-content').classList.remove('active')
+    })
+  }
+
   const dropdownFn = (trigger, dropdown, triggerType = 'click') => {
     const update = () => {
       computePosition(trigger, dropdown, {
@@ -19,6 +26,7 @@
     }
 
     const show = () => {
+      hideAllDropdowns()
       dropdown.classList.add('active')
       trigger.classList.add('active')
       trigger.ariaExpanded = true
@@ -29,6 +37,16 @@
       dropdown.classList.remove('active')
       trigger.classList.remove('active')
       trigger.ariaExpanded = false
+    }
+
+    let hideTimeoutId = null
+
+    const hideTimeout = () => {
+      hideTimeoutId = setTimeout(hide, 400)
+    }
+
+    const clearHideTimeout = () => {
+      clearTimeout(hideTimeoutId)
     }
 
     const toggle = () => {
@@ -51,13 +69,11 @@
     }
 
     if (triggerType === 'hover' && !isTouchDevice) {
-      [
-        ['mouseenter', show],
-        ['mouseleave', hide],
-      ].forEach(([event, listener]) => {
-        trigger.addEventListener(event, listener)
-        dropdown.addEventListener(event, listener)
-      })
+      trigger.addEventListener('mouseenter', show)
+      trigger.addEventListener('mouseenter', clearHideTimeout)
+      trigger.addEventListener('mouseleave', hideTimeout)
+      dropdown.addEventListener('mouseenter', clearHideTimeout)
+      dropdown.addEventListener('mouseleave', hideTimeout)
     }
 
     trigger.addEventListener('click', toggle)
@@ -65,6 +81,7 @@
     dropdown.addEventListener('blur', blur)
   }
 
+  // Init all dropdowns
   document.querySelectorAll('.dropdown').forEach((dropdown) => {
     const triggerType = dropdown.dataset.triggerType
     const trigger = dropdown.querySelector('.dropdown-trigger')

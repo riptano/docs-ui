@@ -1,13 +1,20 @@
 {{#with page.versions}}
-<div class="page-versions">
-  <span class="material-icons">task</span>
-  <button class="version-menu-toggle" title="Show other versions of page">{{@root.page.componentVersion.displayVersion}}</button>
-  <div class="version-menu">
+<div class="dropdown" data-trigger-type="hover">
+  <button id="page-version-dropdown" title="Show other versions of page" class="dropdown-trigger btn btn-soft btn-primary btn-small [&.active_i]:rotate-180" aria-haspopup="true" aria-expanded="false">
+    {{@root.page.componentVersion.displayVersion}}
+    <i class="material-icons text-lg color-primary motion-safe:transition-transform ml-[0.15em]">expand_more</i>
+  </button>
+  <ul class="dropdown-content py-2 bg-body border rounded w-32 z-50" role="menu" aria-orientation="vertical" aria-labelledby="page-version-dropdown">
     {{#each this}}
-    <a class="version
-      {{~#if (eq ./version @root.page.version)}} is-current{{/if~}}
-      {{~#if ./missing}} is-missing{{/if}}" href="{{{relativize ./url}}}">{{./displayVersion}}</a>
+    <li>
+      <a 
+        class="!no-underline w-full py-1 px-3 block hover:bg-level1 transition-colors
+          {{~#if (eq ./version @root.page.version)}} font-bold color-primary{{/if~}}"
+        href="{{{relativize ./url}}}">
+          {{./displayVersion}}
+      </a>
+    </li> 
     {{/each}}
-  </div>
+  </ul>
 </div>
 {{/with}}
