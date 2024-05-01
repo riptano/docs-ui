@@ -4579,6 +4579,9 @@ a.btn:hover {
 .mr-2 {
   margin-right: 0.5rem;
 }
+.mt-1 {
+  margin-top: 0.25rem;
+}
 .mt-12 {
   margin-top: 3rem;
 }
@@ -5091,6 +5094,9 @@ a.btn:hover {
 .hover\:bg-level2:hover {
     background-color: var(--ds-background-level2);
   }
+.group.btn-plain .group-\[\.btn-plain\]\:text-tertiary {
+    color: var(--ds-text-tertiary);
+  }
 .peer:hover ~ .peer-hover\:bg-level2 {
     background-color: var(--ds-background-level2);
   }
@@ -5163,6 +5169,13 @@ a.btn:hover {
   --tw-content: none;
   content: none;
   content: var(--tw-content);
+}
+.group.active .group-\[\.active\]\:rotate-180 {
+  --tw-rotate: 180deg;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(180deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(180deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 @media (prefers-reduced-motion: no-preference) {
   .motion-safe\:scroll-smooth {

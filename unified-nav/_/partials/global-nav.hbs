@@ -3,7 +3,7 @@
 {{#each this}}
 {{#if ./url}}
   <a 
-    class="btn btn-neutral {{#if (global-nav-active this)}}btn-solid active{{else}}btn-plain{{/if}}" 
+    class="btn btn-neutral {{#if (global-nav-active this)}}btn-solid nav-group-active{{else}}btn-plain{{/if}}" 
     href="{{#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{else}}{{{./url}}}{{/if}}"
     {{#if (eq ./urlType 'external')}}target="_blank"{{/if}}>
       {{{./title}}}
@@ -11,9 +11,9 @@
 {{/if}}
 {{#if ./items}}
   <div class="dropdown" data-trigger-type="hover">
-    <button id="nav-dropdown-{{@index}}" class="dropdown-trigger btn btn-neutral [&.active_i]:rotate-180 {{#if (global-nav-active this)}}btn-solid active{{else}}btn-plain{{/if}}" aria-haspopup="true" aria-expanded="false">
+    <button id="nav-dropdown-{{@index}}" class="group dropdown-trigger btn btn-neutral [&.active_i]:rotate-180 {{#if (global-nav-active this)}}btn-solid nav-group-active{{else}}btn-plain{{/if}}" aria-haspopup="true" aria-expanded="false">
       {{{./title}}}
-      <i class="material-icons text-lg text-tertiary motion-safe:transition-transform ml-[0.15em]">expand_more</i>
+      <i class="material-icons text-lg motion-safe:transition-transform ml-[0.15em] group-[.active]:rotate-180 group-[.btn-plain]:text-tertiary">expand_more</i>
     </button>
     <ul class="dropdown-content py-2 bg-body border rounded w-52 z-[1]" role="menu" aria-orientation="vertical" aria-labelledby="nav-dropdown-{{@index}}">
       {{#each ./items}}
