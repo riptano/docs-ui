@@ -11,6 +11,10 @@
     color: var(--ds-text-tertiary);
   }
 
+  .text-inverse {
+    color: var(--ds-text-inverse);
+  }
+
   .text-link,
   .color-primary {
     color: var(--ds-primary-main);
