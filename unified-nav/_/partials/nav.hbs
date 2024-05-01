@@ -1,8 +1,18 @@
 {{#with page.navigation}}
-<nav id="side-nav" class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] pt-4 px-2" 
-  {{#if page.component}} data-component="{{page.component.name}}"
-    data-version="{{page.version}}" {{/if}}>
-      {{> nav-tree navigation=this}}
-      {{> nav-secondary}}
+<nav 
+  {{~#if page.component}} 
+    data-component="{{page.component.name}}" 
+    data-version="{{page.version}}"
+  {{~/if}}
+  id="side-nav" 
+  class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] pt-4 px-2">
+    <div class="flex justify-between items-center pl-2 mb-2">
+      {{#with @root.page.componentVersion}}
+        <h3 class="text-h4"><a href="{{{relativize ./url}}}">{{./title}}</a></h3>
+      {{/with}}
+      {{> page-versions page=../page}}
+    </div>
+    {{> nav-tree navigation=this}}
+    {{> nav-secondary}}
 </nav>
 {{/with}}

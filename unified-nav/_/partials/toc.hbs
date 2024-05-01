@@ -1,6 +1,6 @@
 {{#unless (or (eq page.layout 'full') (eq page.layout 'landing'))}}
 <aside
-  class="toc sidebar peer sticky hidden h-[calc(100vh-10rem)] mb-[14rem] w-[20rem] xl:flex xl:flex-col xl:col-start-2 {{#if site.keys.global_nav}}top-[9rem]{{else}}top-[6rem]{{/if}}"
+  class="toc sidebar peer sticky hidden h-[calc(100vh-10rem)] mb-[14rem] w-[20rem] xl:flex xl:flex-col xl:col-start-2 {{#if site.keys.globalNav}}top-[9rem]{{else}}top-[6rem]{{/if}}"
   data-title="{{{or page.attributes.toctitle 'Contents'}}}"
   data-levels="{{{or page.attributes.toclevels 2}}}"
 >
@@ -12,12 +12,6 @@
       {{#each (split page.attributes.tags ", ") }}
       <span class="flex flex-grow-0 text-label px-2 py-1 rounded-full bg-[var(--ds-primary-soft-bg)] text-[var(--ds-primary-soft-color)]">{{this}}</span>
       {{/each}}
-    </div>
-    {{/if}}
-    {{#if page.versions}}
-    <h3 class="!my-2 text-h3">Developer Resources</h3>
-    <div class="flex flex-col">
-    {{> page-versions}} 
     </div>
     {{/if}}
   </div>
