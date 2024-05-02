@@ -35,8 +35,8 @@
     @apply h-10 w-10 p-0;
   }
 
-  .btn.btn-small {
-    @apply h-8 px-1.5 py-1;
+  .btn-small {
+    @apply h-8 px-2 py-1;
   }
 
   .btn-leading-icon {

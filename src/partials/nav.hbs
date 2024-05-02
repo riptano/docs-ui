@@ -6,12 +6,7 @@
   {{~/if}}
   id="side-nav" 
   class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] pt-4 px-2">
-    <div class="flex justify-between items-start gap-2 pl-2 mb-2">
-      {{#with @root.page.componentVersion}}
-        <h3 class="text-h4 mt-1"><a href="{{{relativize ./url}}}">{{./title}}</a></h3>
-      {{/with}}
-      {{> page-versions page=../page}}
-    </div>
+    {{> page-versions page=../page}}
     {{> nav-tree navigation=this}}
     {{> nav-secondary}}
 </nav>
