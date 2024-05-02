@@ -8,6 +8,9 @@ const mapNavList = (list, contentCatalog) => {
       if (page?.src?.component) {
         item.component = page.src.component
       }
+      if (page?.src?.version) {
+        item.version = page.src.version
+      }
       item.urlType = 'internal'
       delete item.xref
     }

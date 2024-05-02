@@ -1,8 +1,8 @@
 {{#with page.versions}}
-<div class="dropdown" data-trigger-type="hover">
-  <button id="page-version-dropdown" title="Show other versions of page" class="dropdown-trigger btn btn-soft btn-primary btn-small [&.active_i]:rotate-180" aria-haspopup="true" aria-expanded="false">
-    {{@root.page.componentVersion.displayVersion}}
-    <i class="material-icons text-lg color-primary motion-safe:transition-transform ml-[0.15em]">expand_more</i>
+<div class="dropdown mb-2" data-trigger-type="hover">
+  <button id="page-version-dropdown" title="Show other versions of page" class="group dropdown-trigger btn btn-soft btn-primary btn-small" aria-haspopup="true" aria-expanded="false">
+    Version: <span class="font-bold ml-1">{{@root.page.componentVersion.displayVersion}}{{#if (eq @root.page.component.latest.version @root.page.componentVersion.version)}} (Latest){{/if}}</span>
+    <i class="material-icons text-lg color-primary motion-safe:transition-transform ml-[0.15em] group-[.active]:rotate-180">expand_more</i>
   </button>
   <ul class="dropdown-content py-2 bg-body border rounded w-32 z-50" role="menu" aria-orientation="vertical" aria-labelledby="page-version-dropdown">
     {{#each this}}
@@ -11,7 +11,7 @@
         class="!no-underline w-full py-1 px-3 block hover:bg-level1 transition-colors
           {{~#if (eq ./version @root.page.version)}} font-bold color-primary{{/if~}}"
         href="{{{relativize ./url}}}">
-          {{./displayVersion}}
+          {{./displayVersion}}{{#if (eq @root.page.component.latest.version ./version)}} (Latest){{/if}}
       </a>
     </li> 
     {{/each}}

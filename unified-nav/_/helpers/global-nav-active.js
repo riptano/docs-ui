@@ -5,7 +5,24 @@ module.exports = module.exports = (navItem, {
     root: { page },
   },
 }) => {
-  if (navItem.component) return navItem.component === page.component?.name
-  if (navItem.items) return navItem.items.some((item) => item.component && item.component === page.component?.name)
+  const pageVersion = page.componentVersion?.version
+  const pageComponent = page.component?.name
+
+  const matchesComponentAndVersion = (item) => {
+    if (pageVersion) {
+      return item.component === pageComponent && item.version === pageVersion
+    } else {
+      return item.component === pageComponent
+    }
+  }
+
+  if (navItem.component) {
+    return matchesComponentAndVersion(navItem)
+  }
+
+  if (navItem.items) {
+    return navItem.items.some(matchesComponentAndVersion)
+  }
+
   return false
 }

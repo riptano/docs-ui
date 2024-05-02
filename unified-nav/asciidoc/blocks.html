@@ -825,12 +825,10 @@ See the discussion in <a href="https://gitlab.com/antora/antora/-/issues/184">An
     <label for="nav-drawer-input" aria-label="close sidebar" class="drawer-overlay"></label>
     <nav  id="side-nav" 
   class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] pt-4 px-2">
-    <div class="flex justify-between items-start gap-2 pl-2 mb-2">
-        <h3 class="text-h4 mt-1"><a href="#">Preview Docs</a></h3>
-      <div class="dropdown" data-trigger-type="hover">
-  <button id="page-version-dropdown" title="Show other versions of page" class="dropdown-trigger btn btn-soft btn-primary btn-small [&.active_i]:rotate-180" aria-haspopup="true" aria-expanded="false">
-    5.2
-    <i class="material-icons text-lg color-primary motion-safe:transition-transform ml-[0.15em]">expand_more</i>
+    <div class="dropdown mb-2" data-trigger-type="hover">
+  <button id="page-version-dropdown" title="Show other versions of page" class="group dropdown-trigger btn btn-soft btn-primary btn-small" aria-haspopup="true" aria-expanded="false">
+    Version: <span class="font-bold ml-1">5.2</span>
+    <i class="material-icons text-lg color-primary motion-safe:transition-transform ml-[0.15em] group-[.active]:rotate-180">expand_more</i>
   </button>
   <ul class="dropdown-content py-2 bg-body border rounded w-32 z-50" role="menu" aria-orientation="vertical" aria-labelledby="page-version-dropdown">
     <li>
@@ -863,7 +861,6 @@ See the discussion in <a href="https://gitlab.com/antora/antora/-/issues/184">An
     </li> 
   </ul>
 </div>
-    </div>
     <ul>
   <li class="collapse" data-depth="0">
     <input type="checkbox" class="peer z-10 w-auto h-auto"  /> 
