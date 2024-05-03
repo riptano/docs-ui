@@ -1,8 +1,13 @@
 {{#with page.navigation}}
-<nav id="side-nav" class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] pt-4 px-2" 
-  {{#if page.component}} data-component="{{page.component.name}}"
-    data-version="{{page.version}}" {{/if}}>
-      {{> nav-tree navigation=this}}
-      {{> nav-secondary}}
+<nav 
+  {{~#if page.component}} 
+    data-component="{{page.component.name}}" 
+    data-version="{{page.version}}"
+  {{~/if}}
+  id="side-nav" 
+  class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] pt-4 px-2">
+    {{> page-versions page=../page}}
+    {{> nav-tree navigation=this}}
+    {{> nav-secondary}}
 </nav>
 {{/with}}

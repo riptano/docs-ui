@@ -8,19 +8,102 @@ site:
   homeUrl: &home_url http://localhost:5252
   components:
   - &component
-    name: datastax
-    title: PREVIEW Datastax Docs
-    url: '#'
+    name: xyz
+    title: &component_title Preview Docs
+    url: /xyz/6.0/index.html
     versions:
-    - &latest_version
-      url: *home_url
-      version: 'latest'
-      displayVersion: 'latest'
-    latestVersion: *latest_version
+    - &latest_version_xyz
+      url: /xyz/6.0/index.html
+      version: '6.0'
+      displayVersion: '6.0'
+    - &component_version
+      title: *component_title
+      url: '#'
+      version: '5.2'
+      displayVersion: '5.2'
+    - url: '#'
+      version: '5.1'
+      displayVersion: '5.1'
+    - url: '#'
+      version: '5.0'
+      displayVersion: '5.0'
+    latestVersion: *latest_version_xyz
+  keys:
+    globalNav: |
+      [
+        { 
+          "title": "Docs Home",
+          "url": "#",
+          "home": true
+        },
+        { 
+          "title": "Astra DB", 
+          "items": [ 
+            { "title": "Serverless", "url": "#" },
+            { "title": "Dedicated", "url": "#" },
+            { "title": "CLI", "url": "#" }
+          ]
+        },
+        { 
+          "title": "RAGStack",
+          "url": "#" 
+        },
+        { 
+          "title": "DSE", 
+          "items": [ 
+            { "title": "Mission Control", "url": "#" },
+            { "title": "DSE 6.8", "url": "#" },
+            { "title": "DSE 5.1", "url": "#" },
+            { "title": "CLI", "url": "#" }
+          ]
+        },
+        { 
+          "title": "Streaming", 
+          "items": [ 
+            { "title": "Astra Streaming", "url": "#" },
+            { "title": "Luna Streaming", "url": "#" }
+          ]
+        },
+        { 
+          "title": "Open Source", 
+          "items": [ 
+            { "title": "Apache Pulsar Connector", "url": "#" },
+            { "title": "CDC for Cassandra", "url": "#" },
+            { "title": "K8ssandra", "url": "#" },
+            { "title": "Stargate", "url": "#" },
+            { "title": "Starlight for JMS", "url": "#" },
+            { "title": "Starlight for Kafka", "url": "#" },
+            { "title": "Starlight for Rabbit MQ", "url": "#" }
+          ]
+        }
+      ]
 page:
-  src:
-    component: *component
-    version: *latest_version
+  url: *home_url
+  home: true
+  title: Brand&#8217;s Hardware &amp; Software Requirements
+  component: *component
+  componentVersion: *component_version
+  version: '5.2'
+  displayVersion: '5.2'
+  module: ROOT
+  relativeSrcPath: index.adoc
+  editUrl: http://example.com/project-xyz/blob/main/index.adoc
+  origin:
+    private: false
+  versions:
+  - version: '6.0'
+    displayVersion: '6.0'
+    url: '#'
+  - version: '5.2'
+    displayVersion: '5.2'
+    url: '#'
+  - version: '5.1'
+    displayVersion: '5.1'
+    url: '#'
+  - version: '5.0'
+    displayVersion: '5.0'
+    missing: true
+    url: '#'
   navigation:
     - content: Page Templates
       items:

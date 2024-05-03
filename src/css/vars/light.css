@@ -3,8 +3,8 @@
   --ds-focus-visible: var(--ds-neutral-900);
   --ds-background-body: var(--ds-common-white);
   --ds-background-level1: var(--ds-neutral-0);
-  --ds-background-level2: var(--ds-neutral-50);
-  --ds-background-level3: var(--ds-neutral-100);
+  --ds-background-level2: var(--ds-neutral-100);
+  --ds-background-level3: var(--ds-neutral-300);
   --ds-background-surface: var(--ds-common-white);
   --ds-background-tooltip: var(--ds-neutral-900);
   --ds-background-backdrop: rgba(0, 0, 0, 0.6);
@@ -42,10 +42,10 @@
   --ds-neutral-outlined-disabled-color: var(--ds-neutral-300);
   --ds-neutral-outlined-hover-bg: var(--ds-neutral-0);
   --ds-neutral-outlined-hover-border: var(--ds-neutral-900);
-  --ds-neutral-plain-active-bg: var(--ds-neutral-200);
+  --ds-neutral-plain-active-bg: var(--ds-neutral-100);
   --ds-neutral-plain-color: var(--ds-neutral-900);
   --ds-neutral-plain-disabled-color: var(--ds-neutral-200);
-  --ds-neutral-plain-hover-bg: var(--ds-neutral-100);
+  --ds-neutral-plain-hover-bg: var(--ds-neutral-0);
   --ds-neutral-soft-active-bg: var(--ds-neutral-300);
   --ds-neutral-soft-bg: var(--ds-neutral-0);
   --ds-neutral-soft-color: var(--ds-neutral-900);

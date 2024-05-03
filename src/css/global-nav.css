@@ -1,0 +1,32 @@
+.global-nav > .scroll-btn-left,
+.global-nav > .scroll-btn-right {
+  @apply invisible absolute opacity-0 motion-safe:transition-all;
+
+  &.active {
+    @apply visible opacity-100;
+  }
+}
+
+.global-nav > .scroll-btn-left {
+  @apply left-0 rounded-tl py-3 pl-2 pr-4;
+}
+
+.global-nav > .scroll-btn-right {
+  @apply right-0 rounded-tr py-3 pl-4 pr-2;
+}
+
+html[data-theme="light"] .global-nav > .scroll-btn-left {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgb(255, 255, 255) 50%);
+}
+
+html[data-theme="dark"] .global-nav > .scroll-btn-left {
+  background: linear-gradient(to left, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
+}
+
+html[data-theme="light"] .global-nav > .scroll-btn-right {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgb(255, 255, 255) 50%);
+}
+
+html[data-theme="dark"] .global-nav > .scroll-btn-right {
+  background: linear-gradient(to right, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
+}

@@ -10,6 +10,7 @@
 @import "components/input.css";
 @import "components/drawer.css";
 @import "components/collapse.css";
+@import "components/dropdown.css";
 @import "typeface/typeface-material-icons-outlined.css";
 @import "typeface/typeface-roboto-flex.css";
 @import "typeface/typeface-sora.css";
@@ -23,6 +24,7 @@
 @import "highlight.css";
 @import "print.css";
 @import "docsearch.css";
+@import "global-nav.css";
 
 @tailwind base;
 @tailwind components;

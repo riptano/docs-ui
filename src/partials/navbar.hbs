@@ -1,29 +1,30 @@
-<nav
-  class="bg-body fixed top-0 z-40 flex h-20 w-[100vw] flex-auto items-center gap-2 lg:gap-4 border-b px-4"
->
-  <label
-    for="nav-drawer-input"
-    class="btn btn-neutral btn-plain btn-icon drawer-button lg:hidden"
-  >
-    <i class="icon material-icons">menu_open</i>
-  </label>
-  <a href="{{#> logo-url}}{{{or site.url siteRootPath}}}{{/logo-url}}">
-    {{> logo}}
-  </a>
-  <div class="DocSearch" id="docsearch"></div>
-  <button
-    class="w-10 ml-auto btn btn-neutral btn-outlined lg:w-auto"
-    id="get-support"
-  ><span class="material-icons lg:mr-2">support_agent</span><span
-      class="hidden lg:inline-block"
-    >Get Live Help</span>
-  </button>
-  <button class="btn btn-icon btn-neutral btn-outlined" id="theme-toggle">
-    <i
-      class="material-icons icon hidden text-[var(--ds-warning-300)] dark:block"
-    >light_mode</i>
-    <i
-      class="material-icons icon block text-[var(--ds-primary-400)] dark:hidden"
-    >dark_mode</i>
-  </button>
-</nav>
+<div class="navbar bg-body border-b z-40 fixed top-0 flex flex-col w-full {{#if site.keys.globalNav}}h-32{{else}}h-20{{/if}}">
+  <nav class="flex flex-auto items-center gap-2 lg:gap-4 p-4">
+    <label
+      for="nav-drawer-input"
+      class="btn btn-neutral btn-plain btn-icon drawer-button lg:hidden"
+    >
+      <i class="icon material-icons">menu_open</i>
+    </label>
+    <a href="{{#> logo-url}}{{{or site.url siteRootPath}}}{{/logo-url}}">
+      {{> logo}}
+    </a>
+    <div class="DocSearch" id="docsearch"></div>
+    <button
+      class="w-10 ml-auto btn btn-neutral btn-outlined lg:w-auto"
+      id="get-support"
+    ><span class="material-icons lg:mr-2">support_agent</span><span
+        class="hidden lg:inline-block"
+      >Get Live Help</span>
+    </button>
+    <button class="btn btn-icon btn-neutral btn-outlined" id="theme-toggle">
+      <i
+        class="material-icons icon hidden text-[var(--ds-warning-300)] dark:block"
+      >light_mode</i>
+      <i
+        class="material-icons icon block text-[var(--ds-primary-400)] dark:hidden"
+      >dark_mode</i>
+    </button>
+  </nav>
+ {{> global-nav}}
+</div>
