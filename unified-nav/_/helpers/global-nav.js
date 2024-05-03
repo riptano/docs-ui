@@ -30,7 +30,7 @@ module.exports = ({
     },
   },
 }) => {
-  let globalNav = site.keys.globalNav
+  let globalNav = site?.keys?.globalNav
 
   if (!globalNav) return []
   if (globalNav._compiled) return globalNav
