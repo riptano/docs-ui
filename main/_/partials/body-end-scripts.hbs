@@ -2,7 +2,6 @@
 <script data-sync-storage-key="preferred-tab" async src="{{{uiRootPath}}}/js/vendor/tabs.js"></script>
 <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
 <script async src="{{{uiRootPath}}}/js/vendor/zooming.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 {{#with site.keys}}
   {{#if (and algoliaAppId algoliaIndexName algoliaApiKey)}}
@@ -18,3 +17,4 @@
   {{/if}}
 {{/with}}
 {{> intercom}}
+{{> scarf}}
