@@ -606,6 +606,59 @@ html[data-theme="dark"] .DocSearch {
   --docsearch-logo-color: var(--ds-text-primary);
   --docsearch-muted-color: var(--ds-text-placeholder);
 }
+.global-nav > .scroll-btn-left,
+.global-nav > .scroll-btn-right {
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .global-nav > .scroll-btn-left,
+.global-nav > .scroll-btn-right {
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition-duration: 150ms;
+            transition-duration: 150ms;
+  }
+}
+.global-nav > .scroll-btn-left.active, .global-nav > .scroll-btn-right.active {
+  visibility: visible;
+  opacity: 1;
+}
+.global-nav > .scroll-btn-left {
+  left: 0px;
+  border-top-left-radius: 0.375rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+}
+.global-nav > .scroll-btn-right {
+  right: 0px;
+  border-top-right-radius: 0.375rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+html[data-theme="light"] .global-nav > .scroll-btn-left {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), color-stop(rgb(255, 255, 255)), color-stop(50%, rgb(255, 255, 255)));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgb(255, 255, 255) 50%);
+}
+html[data-theme="dark"] .global-nav > .scroll-btn-left {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(9, 9, 9, 0)), color-stop(rgb(9, 9, 9)), color-stop(50%, rgb(9, 9, 9)));
+  background: linear-gradient(to left, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
+}
+html[data-theme="light"] .global-nav > .scroll-btn-right {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(rgb(255, 255, 255)), color-stop(50%, rgb(255, 255, 255)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgb(255, 255, 255) 50%);
+}
+html[data-theme="dark"] .global-nav > .scroll-btn-right {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(9, 9, 9, 0)), color-stop(rgb(9, 9, 9)), color-stop(50%, rgb(9, 9, 9)));
+  background: linear-gradient(to right, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
+}
 /* ! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com */
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -982,7 +1035,6 @@ video {
     --ds-neutral-200: #ced0d2;
     --ds-neutral-300: #a6aaae;
     --ds-neutral-400: #898d91;
-    --ds-neutral-50: #edeeee;
     --ds-neutral-500: #6b6f73;
     --ds-neutral-600: #5a5d60;
     --ds-neutral-700: #494a4d;
@@ -1065,8 +1117,8 @@ html[data-theme="light"] {
   --ds-focus-visible: var(--ds-neutral-900);
   --ds-background-body: var(--ds-common-white);
   --ds-background-level1: var(--ds-neutral-0);
-  --ds-background-level2: var(--ds-neutral-50);
-  --ds-background-level3: var(--ds-neutral-100);
+  --ds-background-level2: var(--ds-neutral-100);
+  --ds-background-level3: var(--ds-neutral-300);
   --ds-background-surface: var(--ds-common-white);
   --ds-background-tooltip: var(--ds-neutral-900);
   --ds-background-backdrop: rgba(0, 0, 0, 0.6);
@@ -1104,10 +1156,10 @@ html[data-theme="light"] {
   --ds-neutral-outlined-disabled-color: var(--ds-neutral-300);
   --ds-neutral-outlined-hover-bg: var(--ds-neutral-0);
   --ds-neutral-outlined-hover-border: var(--ds-neutral-900);
-  --ds-neutral-plain-active-bg: var(--ds-neutral-200);
+  --ds-neutral-plain-active-bg: var(--ds-neutral-100);
   --ds-neutral-plain-color: var(--ds-neutral-900);
   --ds-neutral-plain-disabled-color: var(--ds-neutral-200);
-  --ds-neutral-plain-hover-bg: var(--ds-neutral-100);
+  --ds-neutral-plain-hover-bg: var(--ds-neutral-0);
   --ds-neutral-soft-active-bg: var(--ds-neutral-300);
   --ds-neutral-soft-bg: var(--ds-neutral-0);
   --ds-neutral-soft-color: var(--ds-neutral-900);
@@ -1206,8 +1258,8 @@ html[data-theme="dark"] .inverse-theme {
   --ds-focus-visible: var(--ds-neutral-900);
   --ds-background-body: var(--ds-common-white);
   --ds-background-level1: var(--ds-neutral-0);
-  --ds-background-level2: var(--ds-neutral-50);
-  --ds-background-level3: var(--ds-neutral-100);
+  --ds-background-level2: var(--ds-neutral-100);
+  --ds-background-level3: var(--ds-neutral-300);
   --ds-background-surface: var(--ds-common-white);
   --ds-background-tooltip: var(--ds-neutral-900);
   --ds-background-backdrop: rgba(0, 0, 0, 0.6);
@@ -1245,10 +1297,10 @@ html[data-theme="dark"] .inverse-theme {
   --ds-neutral-outlined-disabled-color: var(--ds-neutral-300);
   --ds-neutral-outlined-hover-bg: var(--ds-neutral-0);
   --ds-neutral-outlined-hover-border: var(--ds-neutral-900);
-  --ds-neutral-plain-active-bg: var(--ds-neutral-200);
+  --ds-neutral-plain-active-bg: var(--ds-neutral-100);
   --ds-neutral-plain-color: var(--ds-neutral-900);
   --ds-neutral-plain-disabled-color: var(--ds-neutral-200);
-  --ds-neutral-plain-hover-bg: var(--ds-neutral-100);
+  --ds-neutral-plain-hover-bg: var(--ds-neutral-0);
   --ds-neutral-soft-active-bg: var(--ds-neutral-300);
   --ds-neutral-soft-bg: var(--ds-neutral-0);
   --ds-neutral-soft-color: var(--ds-neutral-900);
@@ -1357,8 +1409,8 @@ html[data-theme="light"] ::backdrop {
   --ds-focus-visible: var(--ds-neutral-900);
   --ds-background-body: var(--ds-common-white);
   --ds-background-level1: var(--ds-neutral-0);
-  --ds-background-level2: var(--ds-neutral-50);
-  --ds-background-level3: var(--ds-neutral-100);
+  --ds-background-level2: var(--ds-neutral-100);
+  --ds-background-level3: var(--ds-neutral-300);
   --ds-background-surface: var(--ds-common-white);
   --ds-background-tooltip: var(--ds-neutral-900);
   --ds-background-backdrop: rgba(0, 0, 0, 0.6);
@@ -1396,10 +1448,10 @@ html[data-theme="light"] ::backdrop {
   --ds-neutral-outlined-disabled-color: var(--ds-neutral-300);
   --ds-neutral-outlined-hover-bg: var(--ds-neutral-0);
   --ds-neutral-outlined-hover-border: var(--ds-neutral-900);
-  --ds-neutral-plain-active-bg: var(--ds-neutral-200);
+  --ds-neutral-plain-active-bg: var(--ds-neutral-100);
   --ds-neutral-plain-color: var(--ds-neutral-900);
   --ds-neutral-plain-disabled-color: var(--ds-neutral-200);
-  --ds-neutral-plain-hover-bg: var(--ds-neutral-100);
+  --ds-neutral-plain-hover-bg: var(--ds-neutral-0);
   --ds-neutral-soft-active-bg: var(--ds-neutral-300);
   --ds-neutral-soft-bg: var(--ds-neutral-0);
   --ds-neutral-soft-color: var(--ds-neutral-900);
@@ -1945,8 +1997,13 @@ html[data-theme="dark"] ::backdrop {
 .text-tertiary {
     color: var(--ds-text-tertiary);
   }
-.text-link {
+.text-link,
+  .color-primary {
     color: var(--ds-primary-main);
+  }
+
+  .\!color-primary {
+    color: var(--ds-primary-main) !important;
   }
 .bg-body {
     background-color: var(--ds-background-body);
@@ -2404,7 +2461,7 @@ sup {
             align-items: center;
     gap: 0.25rem;
     gap: var(--ds-space-h);
-    scroll-margin-top: 6rem;
+    scroll-margin-top: 9rem;
   }
 .doc h1 .anchor,
   .doc h2 .anchor,
@@ -4074,6 +4131,21 @@ a.btn:hover {
   background-color: var(--ds-primary-solid-disabled-bg);
   color: var(--ds-primary-solid-disabled-color);
 }
+.btn-primary.btn-soft {
+  background-color: var(--ds-primary-soft-bg);
+  color: var(--ds-primary-soft-color);
+}
+.btn-primary.btn-soft:hover {
+  background-color: var(--ds-primary-soft-hover-bg);
+  color: var(--ds-primary-soft-color);
+}
+.btn-primary.btn-soft:active {
+  background-color: var(--ds-primary-soft-active-bg);
+}
+.btn-primary.btn-soft:disabled {
+  background-color: var(--ds-primary-soft-disabled-bg);
+  color: var(--ds-primary-soft-disabled-color);
+}
 .btn-neutral.btn-outlined {
   border-color: var(--ds-neutral-outlined-border);
   color: var(--ds-neutral-outlined-color);
@@ -4123,6 +4195,13 @@ a.btn:hover {
   height: 2.5rem;
   width: 2.5rem;
   padding: 0px;
+}
+.btn-small {
+  height: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 .dialog {
   border-radius: 0.375rem;
@@ -4335,6 +4414,55 @@ a.btn:hover {
   .collapse > input[type="radio"]:checked ~ .collapse-content {
     grid-template-rows: 1fr;
   }
+.dropdown .dropdown-content {
+  visibility: hidden;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(.95) scaleY(.95);
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(.95) scaleY(.95);
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .dropdown .dropdown-content {
+    -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+    -webkit-transition-duration: 300ms;
+            transition-duration: 300ms;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+.dropdown .dropdown-content {
+
+    /* Shadow-100 */
+    -webkit-box-shadow:
+      0px 4px 5px 0px rgba(10, 10, 10, 0.08),
+      0px 1px 10px 0px rgba(10, 10, 10, 0.08),
+      0px 2px 4px 0px rgba(32, 41, 58, 0.14);
+            box-shadow:
+      0px 4px 5px 0px rgba(10, 10, 10, 0.08),
+      0px 1px 10px 0px rgba(10, 10, 10, 0.08),
+      0px 2px 4px 0px rgba(32, 41, 58, 0.14);
+  }
+.dropdown .dropdown-content.active {
+  visibility: visible;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(1) scaleY(1);
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(1) scaleY(1);
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  opacity: 1;
+}
 .visible {
   visibility: visible;
 }
@@ -4374,8 +4502,8 @@ a.btn:hover {
 .top-0 {
   top: 0px;
 }
-.top-\[6rem\] {
-  top: 6rem;
+.top-\[9rem\] {
+  top: 9rem;
 }
 .z-10 {
   z-index: 10;
@@ -4386,11 +4514,23 @@ a.btn:hover {
 .z-40 {
   z-index: 40;
 }
+.z-50 {
+  z-index: 50;
+}
+.z-\[1\] {
+  z-index: 1;
+}
 .row-start-2 {
   grid-row-start: 2;
 }
 .\!m-0 {
   margin: 0px !important;
+}
+.m-0 {
+  margin: 0px;
+}
+.m-0\.5 {
+  margin: 0.125rem;
 }
 .\!my-2 {
   margin-top: 0.5rem !important;
@@ -4419,6 +4559,9 @@ a.btn:hover {
 .mb-1 {
   margin-bottom: 0.25rem;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .mb-3 {
   margin-bottom: 0.75rem;
 }
@@ -4431,6 +4574,9 @@ a.btn:hover {
 .mb-\[14rem\] {
   margin-bottom: 14rem;
 }
+.ml-1 {
+  margin-left: 0.25rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -4442,6 +4588,9 @@ a.btn:hover {
 }
 .mr-1 {
   margin-right: 0.25rem;
+}
+.mr-1\.5 {
+  margin-right: 0.375rem;
 }
 .mr-2 {
   margin-right: 0.5rem;
@@ -4492,11 +4641,17 @@ a.btn:hover {
 .h-20 {
   height: 5rem;
 }
+.h-32 {
+  height: 8rem;
+}
 .h-4 {
   height: 1rem;
 }
 .h-5 {
   height: 1.25rem;
+}
+.h-6 {
+  height: 1.5rem;
 }
 .h-8 {
   height: 2rem;
@@ -4522,20 +4677,26 @@ a.btn:hover {
 .w-10 {
   width: 2.5rem;
 }
+.w-32 {
+  width: 8rem;
+}
 .w-4 {
   width: 1rem;
 }
 .w-5 {
   width: 1.25rem;
 }
+.w-52 {
+  width: 13rem;
+}
 .w-\[1\.5em\] {
   width: 1.5em;
 }
-.w-\[100vw\] {
-  width: 100vw;
-}
 .w-\[18\.5rem\] {
   width: 18.5rem;
+}
+.w-\[1px\] {
+  width: 1px;
 }
 .w-\[20rem\] {
   width: 20rem;
@@ -4665,8 +4826,14 @@ a.btn:hover {
 .gap-y-3 {
   row-gap: 0.75rem;
 }
+.overflow-x-auto {
+  overflow-x: auto;
+}
 .overflow-y-auto {
   overflow-y: auto;
+}
+.overflow-y-hidden {
+  overflow-y: hidden;
 }
 .overflow-y-scroll {
   overflow-y: scroll;
@@ -4806,6 +4973,9 @@ a.btn:hover {
 .pt-20 {
   padding-top: 5rem;
 }
+.pt-32 {
+  padding-top: 8rem;
+}
 .pt-4 {
   padding-top: 1rem;
 }
@@ -4830,8 +5000,14 @@ a.btn:hover {
 .text-sm {
   font-size: 0.90625rem;
 }
+.text-xl {
+  font-size: 1.25rem;
+}
 .text-xs {
   font-size: 0.75rem;
+}
+.font-bold {
+  font-weight: 700;
 }
 .font-semibold {
   font-weight: 600;
@@ -4868,6 +5044,13 @@ a.btn:hover {
 .outline {
   outline-style: solid;
 }
+.blur {
+  --tw-blur: blur(8px);
+  -webkit-filter: blur(8px) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: blur(8px) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .filter {
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -4898,6 +5081,13 @@ a.btn:hover {
   -webkit-transition-duration: 150ms;
           transition-duration: 150ms;
 }
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 .marker\:text-h2 *::marker {
     font-size: 1.625rem;
     font-weight: 550;
@@ -4991,7 +5181,17 @@ a.btn:hover {
   content: none;
   content: var(--tw-content);
 }
+.group.active .group-\[\.active\]\:rotate-180 {
+  --tw-rotate: 180deg;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(180deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(180deg) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 @media (prefers-reduced-motion: no-preference) {
+  .motion-safe\:scroll-smooth {
+    scroll-behavior: smooth;
+  }
   .motion-safe\:transition-transform {
     -webkit-transition-property: -webkit-transform;
     transition-property: -webkit-transform;
@@ -5001,6 +5201,14 @@ a.btn:hover {
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-transition-duration: 150ms;
             transition-duration: 150ms;
+  }
+  .motion-safe\:duration-300 {
+    -webkit-transition-duration: 300ms;
+            transition-duration: 300ms;
+  }
+  .motion-safe\:ease-in-out {
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 :is([data-theme="dark"] .dark\:block) {

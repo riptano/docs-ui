@@ -9,7 +9,7 @@
     {{/with}}
     {{#each page.breadcrumbs}}
     {{#if (and ./url (eq ./urlType 'internal'))}}
-    {{#if (isLast this ../page.breadcrumbs)}}
+    {{#if (is-last this ../page.breadcrumbs)}}
     <li class="text-tertiary !m-0 !p-0">{{{./content}}}</li>
     {{else}}
     <li class="text-link !m-0 !p-0 after:content-['/'] last-of-type:after:content-none after:text-tertiary after:px-2">
