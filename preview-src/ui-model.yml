@@ -33,7 +33,8 @@ site:
       [
         { 
           "title": "Docs Home",
-          "url": "#" 
+          "url": "#",
+          "home": true
         },
         { 
           "title": "Astra DB", 

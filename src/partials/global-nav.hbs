@@ -1,25 +1,27 @@
 {{#with (global-nav)}}
-<nav class="global-nav motion-safe:scroll-smooth items-center flex gap-3 border-b py-2 px-4 overflow-x-auto overflow-y-hidden no-scrollbar">
+<nav class="global-nav motion-safe:scroll-smooth items-center flex gap-3 py-2 px-4 overflow-x-auto overflow-y-hidden no-scrollbar">
 {{#each this}}
 {{#if ./url}}
   <a 
-    class="btn btn-neutral {{#if (global-nav-active this)}}btn-solid nav-group-active{{else}}btn-plain{{/if}}" 
+    class="btn btn-plain btn-neutral {{#if (global-nav-active this)}}!color-primary nav-group-active{{/if}}" 
     href="{{#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{else}}{{{./url}}}{{/if}}"
     {{#if (eq ./urlType 'external')}}target="_blank"{{/if}}>
+      {{#if ./home}}<i class="material-icons text-xl mr-1.5">home</i>{{/if}}
       {{{./title}}}
   </a>
+  {{#if ./home}}<div class="m-0.5 border-l h-6 w-[1px]"></div>{{/if}}
 {{/if}}
 {{#if ./items}}
   <div class="dropdown" data-trigger-type="hover">
-    <button id="nav-dropdown-{{@index}}" class="group dropdown-trigger btn btn-neutral [&.active_i]:rotate-180 {{#if (global-nav-active this)}}btn-solid nav-group-active{{else}}btn-plain{{/if}}" aria-haspopup="true" aria-expanded="false">
+    <button id="nav-dropdown-{{@index}}" class="group dropdown-trigger btn btn-plain btn-neutral {{#if (global-nav-active this)}}!color-primary nav-group-active{{/if}}" aria-haspopup="true" aria-expanded="false">
       {{{./title}}}
-      <i class="material-icons text-lg motion-safe:transition-transform ml-[0.15em] group-[.active]:rotate-180 group-[.btn-plain]:text-tertiary">expand_more</i>
+      <i class="material-icons text-lg motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out ml-[0.15em] group-[.active]:rotate-180">expand_more</i>
     </button>
     <ul class="dropdown-content py-2 bg-body border rounded w-52 z-[1]" role="menu" aria-orientation="vertical" aria-labelledby="nav-dropdown-{{@index}}">
       {{#each ./items}}
       <li>
         <a 
-          class="!no-underline w-full py-1 px-3 block hover:bg-level1 transition-colors {{#if (global-nav-active this)}}color-primary font-bold{{/if}}"
+          class="!no-underline w-full py-1 px-3 block transition-colors {{#if (global-nav-active this)}}color-primary font-bold{{/if}}"
           href="{{#if (eq urlType 'internal')}}{{{relativize url}}}{{else}}{{{url}}}{{/if}}"
           {{#if (eq ./urlType 'external')}}target="_blank"{{/if}}>
             {{{title}}}
