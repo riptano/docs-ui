@@ -3,7 +3,7 @@
 {{#each this}}
 {{#if ./url}}
   <a 
-    class="btn btn-plain btn-neutral {{#if (global-nav-active this)}}!color-primary nav-group-active{{/if}}" 
+    class="btn btn-plain btn-neutral flex gap-1{{#if (global-nav-active this)}} !color-primary nav-group-active{{/if}}" 
     href="{{#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{else}}{{{./url}}}{{/if}}"
     {{#if (eq ./urlType 'external')}}target="_blank"{{/if}}>
       {{#if ./home}}<i class="material-icons text-xl mr-1.5">home</i>{{/if}}
@@ -13,18 +13,19 @@
 {{/if}}
 {{#if ./items}}
   <div class="dropdown" data-trigger-type="hover">
-    <button id="nav-dropdown-{{@index}}" class="group dropdown-trigger btn btn-plain btn-neutral {{#if (global-nav-active this)}}!color-primary nav-group-active{{/if}}" aria-haspopup="true" aria-expanded="false">
+    <button id="nav-dropdown-{{@index}}" class="group dropdown-trigger btn btn-plain btn-neutral flex gap-1{{#if (global-nav-active this)}} !color-primary nav-group-active{{/if}}" aria-haspopup="true" aria-expanded="false">
       {{{./title}}}
-      <i class="material-icons text-lg text-tertiary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out ml-[0.15em] group-[.active]:rotate-180">expand_more</i>
+      <i class="material-icons text-lg text-tertiary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180">expand_more</i>
     </button>
     <ul class="dropdown-content py-2 bg-body border rounded w-52 z-[1]" role="menu" aria-orientation="vertical" aria-labelledby="nav-dropdown-{{@index}}">
       {{#each ./items}}
       <li>
         <a 
-          class="!no-underline w-full py-1 px-3 block transition-colors {{#if (global-nav-active this)}}color-primary font-bold{{/if}}"
+          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1{{#if (global-nav-active this)}} color-primary font-bold{{/if}}"
           href="{{#if (eq urlType 'internal')}}{{{relativize url}}}{{else}}{{{url}}}{{/if}}"
-          {{#if (eq ./urlType 'external')}}target="_blank"{{/if}}>
+          {{#if (eq urlType 'external')}}target="_blank"{{/if}}>
             {{{title}}}
+            {{#if (eq urlType 'external')}}<i class="material-icons text-sm text-tertiary">open_in_new</i>{{/if}}
         </a>
       </li> 
       {{/each}}

@@ -1,10 +1,10 @@
-{{#if navigation.length}}
+{{!-- {{#if navigation.length}}
 <ul>
   {{#each navigation}}
   {{#if ./content}}
   {{#if ./items.length}}
   <li class="collapse" data-depth="{{or ../level 0}}">
-    <input type="checkbox" class="peer z-10 w-auto h-auto" {{#if (nav-tree-contains-url ./items @root.page.url)}} checked{{/if}} /> 
+    {{#if ./url}}<a href="{{~#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{~else}}{{{./url}}}{{~/if}}"></a>{{/if}}
     <div class="collapse-title rounded flex items-start py-1 px-2 peer-checked:[&_i]:rotate-180 peer-hover:bg-level2 transition-colors{{#if (greater (or ../level 0) 0)}} text-caption{{else}} text-overline py-2{{/if}}">
       {{{./content}}}
       <i class="material-icons text-lg text-tertiary motion-safe:transition-transform ml-[0.15em]">expand_more</i>
@@ -12,6 +12,7 @@
     <div class="collapse-content ml-3 pl-2 border-l"> 
       {{> nav-tree navigation=./items level=(increment ../level)}}
     </div>
+    <input type="checkbox" class="peer" {{#if (nav-tree-contains-url ./items @root.page.url)}} checked{{/if}} /> 
   </li>
   {{else}}
   <li data-depth="{{or ../level 0}}">
@@ -35,4 +36,60 @@
   {{/if}}
   {{/each}}
 </ul>
+{{/if}} --}}
+
+{{#if navigation.length}}
+<ul class="nav-list">
+  {{#each navigation}}
+  <li class="nav-item{{#if ./items.length}} collapse{{/if}}" data-depth="{{or ../level 0}}">
+    {{#if ./content}}
+    {{#if ./url}}
+    <a 
+      class="nav-link !no-underline" 
+      href="{{~#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{~else}}{{{./url}}}{{~/if}}"
+      {{#if (eq ./url @root.page.url)}} aria-current="page"{{/if}}
+      {{#if (eq ./urlType 'external')}} target="_blank"{{/if}}>
+    {{/if}}
+    {{#if (and ./items.length (not ./url))}}
+    <button 
+      class="nav-item-toggle collapse-trigger w-full group{{#if (nav-tree-contains-url ./items @root.page.url)}} active{{/if}}" 
+      aria-label="{{{./content}}}" aria-expanded="false" aria-controls="{{nav-id  (increment (or ../level 0)) ./content}}">
+    {{/if}}
+    <span 
+      class="nav-text flex items-center gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors
+      {{~#if ./items.length}} text-caption{{~/if}}
+      {{~#if (eq (or ../level 0) 0)}} text-overline py-2{{~/if}}
+      {{~#if (eq ./url @root.page.url)}} color-primary font-semibold{{~/if}}
+      {{~#if (greater (or ../level 0) 1)}} text-tertiary{{~/if}}">
+        {{{./content}}}
+        {{#if ./items.length}}
+        {{#if ./url}}
+        <button 
+          class="nav-item-toggle collapse-trigger group{{#if (nav-tree-contains-url ./items @root.page.url)}} active{{/if}}"
+          aria-label="{{{./content}}}" aria-expanded="false" aria-controls="{{nav-id  (increment (or ../level 0)) ./content}}">
+        {{/if}}
+        <i class="material-icons text-lg text-tertiary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180 group-hover:text-primary">expand_more</i>
+        {{#if ./url}}
+        </button>
+        {{/if}}
+        {{/if}}
+        {{#if (eq ./urlType 'external')}}<i class="material-icons text-sm text-tertiary">open_in_new</i>{{/if}}
+    </span>
+    {{#if ./url}}
+    </a>
+    {{/if}}
+    {{#if (and ./items.length (not ./url))}}
+    </button>
+    {{/if}}
+    {{/if}}
+    {{#if ./items.length}}
+    <div id="{{nav-id  (increment (or ../level 0)) ./content}}" class="collapse-content ml-3 pl-2 border-l {{#if (nav-tree-contains-url ./items @root.page.url)}} active{{/if}}">
+      {{> nav-tree navigation=./items level=(increment ../level)}}
+    </div>
+    {{/if}}
+  </li>
+  {{/each}}
+</ul>
 {{/if}}
+
+

@@ -30,7 +30,8 @@
   }
 
   .collapse > input[type="checkbox"]:checked ~ .collapse-content,
-  .collapse > input[type="radio"]:checked ~ .collapse-content {
+  .collapse > input[type="radio"]:checked ~ .collapse-content,
+  .collapse > .collapse-content.active {
     grid-template-rows: 1fr;
   }
 }
