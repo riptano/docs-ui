@@ -1,13 +1,15 @@
 @layer components {
   .collapse {
-    @apply !visible grid;
+    @apply !visible;
   }
 
   .collapse > .collapse-content {
-    @apply relative col-start-1 row-start-2 grid min-h-0;
+    @apply grid min-h-0 invisible;
 
     grid-template-rows: 0fr;
-    transition: grid-template-rows 0.2s;
+    transition-property: grid-template-rows, visibility;
+    transition-duration: 0.2s;
+    transition-behavior: allow-discrete;
 
     @media (prefers-reduced-motion: reduce) {
       transition-property: none;
@@ -18,20 +20,9 @@
     @apply overflow-hidden;
   }
 
-  .collapse-title,
-  .collapse > input[type="checkbox"],
-  .collapse > input[type="radio"] {
-    @apply col-start-1 row-start-1;
-  }
-
-  .collapse > input[type="checkbox"],
-  .collapse > input[type="radio"] {
-    @apply cursor-pointer appearance-none opacity-0;
-  }
-
-  .collapse > input[type="checkbox"]:checked ~ .collapse-content,
-  .collapse > input[type="radio"]:checked ~ .collapse-content,
   .collapse > .collapse-content.active {
+    @apply visible;
+
     grid-template-rows: 1fr;
   }
 }

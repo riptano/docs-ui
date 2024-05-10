@@ -1,3 +1,19 @@
+/**
+ * Dropdown Example
+ *
+ * Optional: data-trigger-type="hover" (default is "click")
+ *
+ * <div class="dropdown" data-trigger-type="hover">
+ *  <button id="dropdown-1" class="dropdown-trigger" aria-haspopup="true">
+ *    Show or Hide Content
+ *  </button>
+ *  <ul class="dropdown-content" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-1">
+ *    <li role="menuitem"><a href="#">Dropdown Item 1</a></li>
+ *    <li role="menuitem"><a href="#">Dropdown Item 2</a></li>
+ *  </ul>
+ * </div>
+ */
+
 ;(function () {
   'use strict'
 
@@ -67,6 +83,8 @@
         hide()
       }
     }
+
+    trigger.ariaExpanded = false
 
     if (triggerType === 'hover' && !isTouchDevice) {
       trigger.addEventListener('mouseenter', show)
