@@ -1,0 +1,13 @@
+{{> body-start-scripts}}
+{{> navbar}}
+<div class="drawer lg:drawer-open">
+  <input id="nav-drawer-input" type="checkbox" class="drawer-toggle" />
+  <div class="grid drawer-content {{#if site.keys.globalNav}}pt-32{{else}}pt-20{{/if}}">
+    {{> main}}
+  </div>
+  <div class="z-30 drawer-side {{#if site.keys.globalNav}}pt-32{{else}}pt-20{{/if}}">
+    <label for="nav-drawer-input" aria-label="close sidebar" class="drawer-overlay"></label>
+    {{> nav}}
+  </div>
+</div>
+{{> body-end-scripts}}
