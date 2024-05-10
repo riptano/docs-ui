@@ -6,7 +6,7 @@
     class="btn btn-plain btn-neutral flex gap-1{{#if (global-nav-active this)}} !color-primary nav-group-active{{/if}}" 
     href="{{#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{else}}{{{./url}}}{{/if}}"
     {{#if (eq ./urlType 'external')}}target="_blank"{{/if}}>
-      {{#if ./home}}<i class="material-icons text-xl mr-1.5">home</i>{{/if}}
+      {{#if ./home}}<i class="material-icons text-xl">home</i>{{/if}}
       {{{./title}}}
   </a>
   {{#if ./home}}<div class="m-0.5 border-l h-6 w-[1px]"></div>{{/if}}
