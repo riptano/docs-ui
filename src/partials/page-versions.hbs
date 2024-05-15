@@ -1,5 +1,5 @@
 {{#with page.versions}}
-<div class="dropdown">
+<div class="dropdown mb-2">
   <button id="page-version-dropdown" title="Show other versions of page" class="group dropdown-trigger btn btn-soft btn-primary btn-small" aria-haspopup="true" aria-expanded="false">
     Version: <span class="font-bold ml-1">{{@root.page.componentVersion.displayVersion}}{{#if (eq @root.page.component.latest.version @root.page.componentVersion.version)}} (Latest){{/if}}</span>
     <i class="material-icons text-lg color-primary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out ml-[0.15em] group-[.active]:rotate-180">expand_more</i>

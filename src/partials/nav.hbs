@@ -8,7 +8,7 @@
   class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] pt-4 px-2">
     {{> page-versions page=../page}}
     {{#with @root.page.componentVersion}}
-    <a class="p-2 mt-2 text-h4 hover:bg-level2 rounded transition-colors !no-underline" href="{{{relativize ./url}}}">{{./title}}</a>
+    <a class="p-2 mb-1 text-h4 hover:bg-level2 rounded transition-colors !no-underline" href="{{{relativize ./url}}}">{{./title}}</a>
     {{/with}}
     {{> nav-tree navigation=this}}
     {{> nav-secondary}}
