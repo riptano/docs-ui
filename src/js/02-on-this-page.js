@@ -21,7 +21,7 @@
     headingsSelector.push(headingSelector.join('>'))
   }
   var headings = find(headingsSelector.join(','), article.parentNode)
-  if (!headings.length) return sidebar.querySelector('.toc-menu').classList.add('hidden')
+  if (!headings.length) return sidebar.classList.add('!hidden')
 
   var lastActiveFragment
   var links = {}
