@@ -4620,6 +4620,9 @@ a.btn:hover {
 .top-0 {
   top: 0px;
 }
+.top-\[6rem\] {
+  top: 6rem;
+}
 .top-\[9rem\] {
   top: 9rem;
 }
@@ -4746,6 +4749,9 @@ a.btn:hover {
 }
 .contents {
   display: contents;
+}
+.\!hidden {
+  display: none !important;
 }
 .hidden {
   display: none;
