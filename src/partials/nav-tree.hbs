@@ -3,7 +3,7 @@
   {{#each navigation}}
   <li class="nav-item{{#if ./items.length}} collapse{{/if}}" data-depth="{{or ../level 0}}">
     {{#if ./content}}
-    {{#if ./url}}
+    {{#if (and ./url (not ./items.length))}}
     <a 
       class="nav-link !no-underline" 
       href="{{~#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{~else}}{{{./url}}}{{~/if}}"
@@ -23,19 +23,11 @@
       {{~#if (greater (or ../level 0) 1)}} text-tertiary{{~/if}}">
         {{{./content}}}
         {{#if ./items.length}}
-        {{#if ./url}}
-        <button 
-          class="nav-item-toggle collapse-trigger group self-start{{#if (nav-tree-contains-url ./items @root.page.url)}} active{{/if}}"
-          aria-label="{{{./content}}}" aria-expanded="false" aria-controls="{{nav-id  (increment (or ../level 0)) ./content}}">
-        {{/if}}
         <i class="material-icons text-lg text-tertiary self-start motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180 group-hover:text-primary">expand_more</i>
-        {{#if ./url}}
-        </button>
-        {{/if}}
         {{/if}}
         {{#if (eq ./urlType 'external')}}<i class="material-icons text-sm text-tertiary">open_in_new</i>{{/if}}
     </span>
-    {{#if ./url}}
+    {{#if (and ./url (not ./items.length))}}
     </a>
     {{/if}}
     {{#if (and ./items.length (not ./url))}}

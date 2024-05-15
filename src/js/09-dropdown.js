@@ -2,8 +2,14 @@
  * Dropdown Example
  *
  * Optional: data-trigger-type="hover" (default is "click")
+ * Optional: data-placement="right-start" (default is "bottom-start")
+ * Valid Placement Options:
+ * top, top-start, top-end,
+ * right, right-start, right-end,
+ * bottom, bottom-start, bottom-end,
+ * left, left-start, left-end
  *
- * <div class="dropdown" data-trigger-type="hover">
+ * <div class="dropdown" data-trigger-type="hover" data-placement="bottom-start">
  *  <button id="dropdown-1" class="dropdown-trigger" aria-haspopup="true">
  *    Show or Hide Content
  *  </button>
@@ -27,12 +33,12 @@
     })
   }
 
-  const dropdownFn = (trigger, dropdown, triggerType = 'click') => {
+  const dropdownFn = (trigger, dropdown, triggerType = 'click', placement) => {
     const update = () => {
       computePosition(trigger, dropdown, {
         strategy: 'fixed',
         middleware: [
-          autoPlacement({ alignment: 'start', allowedPlacements: ['bottom', 'bottom-start', 'bottom-end'] }),
+          autoPlacement({ alignment: 'start', allowedPlacements: placement ? [placement] : ['bottom', 'bottom-start', 'bottom-end'] }),
           shift(),
         ],
       }).then(({ x, y }) => {
@@ -102,8 +108,9 @@
   // Init all dropdowns
   document.querySelectorAll('.dropdown').forEach((dropdown) => {
     const triggerType = dropdown.dataset.triggerType
+    const placement = dropdown.dataset.placement
     const trigger = dropdown.querySelector('.dropdown-trigger')
     const content = dropdown.querySelector('.dropdown-content')
-    dropdownFn(trigger, content, triggerType)
+    dropdownFn(trigger, content, triggerType, placement)
   })
 })()
