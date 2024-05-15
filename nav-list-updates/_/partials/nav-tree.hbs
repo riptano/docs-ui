@@ -1,8 +1,8 @@
 {{#if navigation.length}}
 <ul class="nav-list">
   {{#each navigation}}
+  {{#if ./content}}
   <li class="nav-item{{#if ./items.length}} collapse{{/if}}" data-depth="{{or ../level 0}}">
-    {{#if ./content}}
     {{#if (and ./url (not ./items.length))}}
     <a 
       class="nav-link !no-underline" 
@@ -10,7 +10,7 @@
       {{#if (eq ./url @root.page.url)}} aria-current="page"{{/if}}
       {{#if (eq ./urlType 'external')}} target="_blank"{{/if}}>
     {{/if}}
-    {{#if (and ./items.length (not ./url))}}
+    {{#if ./items.length}}
     <button 
       class="nav-item-toggle collapse-trigger w-full group{{#if (nav-tree-contains-url ./items @root.page.url)}} active{{/if}}" 
       aria-label="{{{./content}}}" aria-expanded="false" aria-controls="{{nav-id  (increment (or ../level 0)) ./content}}">
@@ -23,23 +23,23 @@
       {{~#if (greater (or ../level 0) 1)}} text-tertiary{{~/if}}">
         {{{./content}}}
         {{#if ./items.length}}
-        <i class="material-icons text-lg text-tertiary self-start motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180 group-hover:text-primary">expand_more</i>
+        <i class="material-icons text-lg text-tertiary mr-auto self-start motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180 group-hover:text-primary">expand_more</i>
         {{/if}}
         {{#if (eq ./urlType 'external')}}<i class="material-icons text-sm text-tertiary">open_in_new</i>{{/if}}
     </span>
     {{#if (and ./url (not ./items.length))}}
     </a>
     {{/if}}
-    {{#if (and ./items.length (not ./url))}}
-    </button>
-    {{/if}}
-    {{/if}}
     {{#if ./items.length}}
-    <div id="{{nav-id  (increment (or ../level 0)) ./content}}" class="collapse-content ml-3 pl-2 border-l {{#if (nav-tree-contains-url ./items @root.page.url)}} active{{/if}}">
+    </button>
+    <div id="{{nav-id  (increment (or ../level 0)) ./content}}" class="collapse-content ml-3 pl-2 border-l{{#if (nav-tree-contains-url ./items @root.page.url)}} active{{/if}}">
       {{> nav-tree navigation=./items level=(increment ../level)}}
     </div>
     {{/if}}
   </li>
+  {{else}}
+  {{> nav-tree navigation=./items level=0}}
+  {{/if}}
   {{/each}}
 </ul>
 {{/if}}
