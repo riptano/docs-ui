@@ -38,7 +38,12 @@
       computePosition(trigger, dropdown, {
         strategy: 'fixed',
         middleware: [
-          autoPlacement({ alignment: 'start', allowedPlacements: placement ? [placement] : ['bottom', 'bottom-start', 'bottom-end'] }),
+          autoPlacement(
+            {
+              alignment: 'start',
+              allowedPlacements: placement ? [placement] : ['bottom', 'bottom-start', 'bottom-end'],
+            }
+          ),
           shift(),
         ],
       }).then(({ x, y }) => {
