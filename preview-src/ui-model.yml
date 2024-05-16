@@ -69,7 +69,7 @@ site:
           "items": [ 
             { "title": "Apache Pulsar Connector", "url": "#" },
             { "title": "CDC for Cassandra", "url": "#" },
-            { "title": "K8ssandra", "url": "#" },
+            { "title": "K8ssandra", "url": "https://docs.k8ssandra.io" },
             { "title": "Stargate", "url": "#" },
             { "title": "Starlight for JMS", "url": "#" },
             { "title": "Starlight for Kafka", "url": "#" },

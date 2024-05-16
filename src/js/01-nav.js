@@ -19,11 +19,11 @@
   // Useful for pages with no nav links i.e. landing pages.
   const sideNav = document.querySelector('#side-nav')
   if (sideNav) {
-    const checkedInputs = sideNav.querySelectorAll('input[type="checkbox"]:checked, input[type="radio"]:checked')
-    if (!checkedInputs.length) {
-      const firstInput = sideNav.querySelector('input[type="checkbox"], input[type="radio"]')
-      if (firstInput) {
-        firstInput.checked = true
+    const activeCollapses = sideNav.querySelectorAll('.collapse > .collapse-content.active')
+    if (!activeCollapses.length) {
+      const firstCollapse = sideNav.querySelector('.collapse > .collapse-content')
+      if (firstCollapse) {
+        firstCollapse.classList.add('active')
       }
     }
   }
