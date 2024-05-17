@@ -1,0 +1,118 @@
+= {empty}
+:page-layout: landing
+
+[.[&>h2]:!hidden]
+== {empty}
+
+[subs="macros,attributes"]
+++++
+<div class="flex rounded bg-level1 p-8 gap-6">
+  <div class="flex flex-col lg:basis-1/2 gap-4">
+    
+    <h2 class="discrete !m-0">Astra DB Serverless</h2>
+    
+    <p>Astra DB Serverless by DataStax provides the tools developers need to create robust AI applications, featuring strong APIs, real-time data processing, and easy integration with other systems.</p>
+    
+    <div class="flex gap-3">
+      xref:astra-db-serverless:get-started:quickstart.adoc[Quickstart,role="btn btn-primary btn-solid"]
+      https://astra.datastax.com[Try Astra^,role="btn btn-neutral btn-outlined"]
+    </div>
+
+  </div>
+  <div class="hidden lg:block flex basis-1/2 relative">
+++++
+
+[source,python,subs="verbatim,quotes",role="nolang absolute bottom-1/2 translate-y-1/2 right-0 w-full inverse-theme [&_.source-toolbox]:hidden"]
+----
+from astrapy import DataAPIClient
+
+# connect to a database
+database = DataAPIClient(*TOKEN*).get_database_by_api_endpoint(*URL*)
+
+# Ingest vectors into your collection
+collection = database.test_collection
+collection.insert_many(documents=*DOCUMENTS*)
+
+# Find the closest vectors
+collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
+----
+
+[subs="macros,attributes"]
+++++
+  </div>
+</div>
+
+<h3 class="discrete !mt-12 !mb-6">Popular Products</h3>
+
+<div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  
+  xref:astra-db-serverless::index.adoc[
+    <div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96\] via-[#D90036\] to-[#FFCA0B\] blur opacity-0 group-hover:opacity-40 transition-opacity"></div>
+    <div class="relative p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)\]">
+      <div class="w-10 h-10 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">handyman</i></div>
+      <div>
+        <h4 class="discrete !m-0 !text-primary">Astra DB Serverless</h4>
+        <p class="text-tertiary">Scale with cloud-native databases</p>
+      </div>
+    </div>
+  ,role="!no-underline relative group"]
+
+  xref:astra-db-serverless::index.adoc[
+    <div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96\] via-[#D90036\] to-[#FFCA0B\] blur opacity-0 group-hover:opacity-40 transition-opacity"></div>
+    <div class="relative p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)\]">
+      <div class="w-10 h-10 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">handyman</i></div>
+      <div>
+        <h4 class="discrete !m-0 !text-primary">Astra DB Serverless</h4>
+        <p class="text-tertiary">Scale with cloud-native databases</p>
+      </div>
+    </div>
+  ,role="!no-underline relative group"]
+
+  xref:astra-db-serverless::index.adoc[
+    <div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96\] via-[#D90036\] to-[#FFCA0B\] blur opacity-0 group-hover:opacity-40 transition-opacity"></div>
+    <div class="relative p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)\]">
+      <div class="w-10 h-10 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">handyman</i></div>
+      <div>
+        <h4 class="discrete !m-0 !text-primary">Astra DB Serverless</h4>
+        <p class="text-tertiary">Scale with cloud-native databases</p>
+      </div>
+    </div>
+  ,role="!no-underline relative group"]
+
+    xref:astra-db-serverless::index.adoc[
+    <div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96\] via-[#D90036\] to-[#FFCA0B\] blur opacity-0 group-hover:opacity-40 transition-opacity"></div>
+    <div class="relative p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)\]">
+      <div class="w-10 h-10 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">handyman</i></div>
+      <div>
+        <h4 class="discrete !m-0 !text-primary">Astra DB Serverless</h4>
+        <p class="text-tertiary">Scale with cloud-native databases</p>
+      </div>
+    </div>
+  ,role="!no-underline relative group"]
+
+  xref:astra-db-serverless::index.adoc[
+    <div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96\] via-[#D90036\] to-[#FFCA0B\] blur opacity-0 group-hover:opacity-40 transition-opacity"></div>
+    <div class="relative p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)\]">
+      <div class="w-10 h-10 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">handyman</i></div>
+      <div>
+        <h4 class="discrete !m-0 !text-primary">Astra DB Serverless</h4>
+        <p class="text-tertiary">Scale with cloud-native databases</p>
+      </div>
+    </div>
+  ,role="!no-underline relative group"]
+
+  xref:astra-db-serverless::index.adoc[
+    <div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96\] via-[#D90036\] to-[#FFCA0B\] blur opacity-0 group-hover:opacity-40 transition-opacity"></div>
+    <div class="relative p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)\]">
+      <div class="w-10 h-10 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">handyman</i></div>
+      <div>
+        <h4 class="discrete !m-0 !text-primary">Astra DB Serverless</h4>
+        <p class="text-tertiary">Scale with cloud-native databases</p>
+      </div>
+    </div>
+  ,role="!no-underline relative group"]
+
+</div>
+++++
+
+
