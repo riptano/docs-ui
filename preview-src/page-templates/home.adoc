@@ -1,4 +1,4 @@
-= {empty}
+= DataStax Docs
 :page-layout: home
 
 [.[&>h2]:!hidden]
@@ -6,7 +6,7 @@
 
 [subs="macros,attributes"]
 ++++
-<div class="flex rounded bg-level1 py-8 px-4 gap-6 mt-6 -mx-4">
+<div class="flex rounded bg-level1 gap-6 mt-6 py-6 px-2 -mx-2 lg:px-4 lg:-mx-4">
   <div class="flex flex-col gap-6">
     
     <h2 class="discrete !m-0">Astra DB Serverless</h2>
@@ -14,9 +14,9 @@
     <p>Astra DB Serverless by DataStax provides the tools developers need to create robust AI applications, featuring strong APIs, real-time data processing, and easy integration with other systems.</p>
 
     <div class="flex gap-6">
-      <span class="text-secondary text-caption font-display flex gap-2 items-center"><i class="material-icons icon">handyman</i>Vector Search</span>
-      <span class="text-secondary text-caption font-display flex gap-2 items-center"><i class="material-icons icon">handyman</i>Modern APIs</span>
-      <span class="text-secondary text-caption font-display flex gap-2 items-center"><i class="material-icons icon">handyman</i>Enterprise Ready</span>
+      <span class="text-secondary text-caption font-display flex gap-2 items-center"><i class="icon material-icons text-2xl">handyman</i> Vector Search</span>
+      <span class="text-secondary text-caption font-display flex gap-2 items-center"><i class="icon material-icons text-2xl">handyman</i> Modern APIs</span>
+      <span class="text-secondary text-caption font-display flex gap-2 items-center"><i class="icon material-icons text-2xl">handyman</i> Enterprise Ready</span>
     </div>
     
     <div class="flex gap-4">
@@ -66,7 +66,7 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
     </div>
   ,role="!no-underline relative group"]
 
-  xref:astra-db-serverless::index.adoc[
+  xref:ragstack::index.adoc[
     <div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96\] via-[#D90036\] to-[#FFCA0B\] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>
     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)\] duration-300">
       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">timer</i></div>
@@ -77,7 +77,7 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
     </div>
   ,role="!no-underline relative group"]
 
-  xref:astra-db-serverless::index.adoc[
+  xref:dse:getting-started:get-started-dse.adoc[
     <div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96\] via-[#D90036\] to-[#FFCA0B\] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>
     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)\] duration-300">
       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">business</i></div>
@@ -88,7 +88,7 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
     </div>
   ,role="!no-underline relative group"]
 
-  xref:astra-db-serverless::index.adoc[
+  xref:mission-control::index.adoc[
     <div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96\] via-[#D90036\] to-[#FFCA0B\] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>
     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)\] duration-300">
       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">space_dashboard</i></div>
@@ -99,10 +99,10 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
     </div>
   ,role="!no-underline relative group"]
 
-  xref:astra-db-serverless::index.adoc[
+  xref:astra-streaming:getting-started:index.adoc[
     <div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96\] via-[#D90036\] to-[#FFCA0B\] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>
     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)\] duration-300">
-      <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">handyman</i></div>
+      <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">air</i></div>
       <div>
         <h4 class="discrete !m-0 !text-primary">Streaming</h4>
         <p class="text-tertiary">Efficient data streaming</p>
@@ -110,10 +110,10 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
     </div>
   ,role="!no-underline relative group"]
 
-  xref:astra-db-serverless::index.adoc[
+  xref:luna-cassandra::index.adoc[
     <div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96\] via-[#D90036\] to-[#FFCA0B\] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>
     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)\] duration-300">
-      <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">handyman</i></div>
+      <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">nights_stay</i></div>
       <div>
         <h4 class="discrete !m-0 !text-primary">Luna</h4>
         <p class="text-tertiary">Expertise and support for DataStax products</p>
@@ -125,13 +125,13 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
 
 <div class="mt-12 grid gap-12 md:grid-cols-2 md:grid-rows-[min-content_repeat(3,1fr)] md:grid-flow-col">
 
-  <h3 class="pb-4 border-b !m-0">Latest Additions<i class="material-icons icon text-2xl">new_label</i></h3>
+  <h3 class="pb-4 border-b !m-0">Latest Additions<i class="material-icons icon text-2xl mr-2">new_label</i></h3>
 
-  xref:astra-db-serverless::index.adoc[
-    <div class="p-4 -m-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">
-      <h4 class="discrete !m-0 !text-primary text-display">
+  xref:astra-db-serverless:databases:load-data.adoc[
+    <div class="py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">
+      <h4 class="discrete !m-0 !text-primary text-display pb-2">
         Loading data into Astra DB databases
-        <span class="ml-1 py-1 px-2 bg-level1 rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)\] transition-colors">
+        <span class="ml-1 py-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)\] transition-colors">
           Astra DB
         </span>
       </h4>
@@ -140,11 +140,11 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
     </div>
   ,role="!no-underline group flex flex-col"]
 
-  xref:astra-db-serverless::index.adoc[
-    <div class="p-4 -m-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">
-      <h4 class="discrete !m-0 !text-primary text-display">
+  xref:ragstack:intro-to-rag:evaluation.adoc[
+    <div class="py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">
+      <h4 class="discrete !m-0 !text-primary text-display pb-2">
         Optimizing Query Performance
-        <span class="ml-1 py-1 px-2 bg-level1 rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)\] transition-colors">
+        <span class="ml-1 py-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)\] transition-colors">
           RAGStack
         </span>
       </h4>
@@ -154,10 +154,10 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
   ,role="!no-underline group flex flex-col"]
 
   xref:astra-db-serverless::index.adoc[
-    <div class="p-4 -m-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">
-      <h4 class="discrete !m-0 !text-primary text-display">
+    <div class="py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">
+      <h4 class="discrete !m-0 !text-primary text-display pb-2">
         Securing Database Connections
-        <span class="ml-1 py-1 px-2 bg-level1 rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)\] transition-colors">
+        <span class="ml-1 py-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)\] transition-colors">
           Astra DB
         </span>
       </h4>
@@ -166,13 +166,13 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
     </div>
   ,role="!no-underline group flex flex-col"]
 
-  <h3 class="pb-4 border-b !m-0">Working with AI/ML <i class="material-icons icon text-2xl">smart_toy</i></h3>
+  <h3 class="pb-4 border-b !m-0">Working with AI/ML <i class="material-icons icon text-2xl mr-2">smart_toy</i></h3>
 
   xref:astra-db-serverless::index.adoc[
-    <div class="p-4 -m-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">
-      <h4 class="discrete !m-0 !text-primary text-display">
+    <div class="py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">
+      <h4 class="discrete !m-0 !text-primary text-display pb-2">
         Automating Backups and Recovery
-        <span class="ml-1 py-1 px-2 bg-level1 rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)\] transition-colors">
+        <span class="ml-1 py-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)\] transition-colors">
           Astra DB
         </span>
       </h4>
@@ -182,10 +182,10 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
   ,role="!no-underline group flex flex-col"]
 
   xref:astra-db-serverless::index.adoc[
-    <div class="p-4 -m-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">
-      <h4 class="discrete !m-0 !text-primary text-display">
+    <div class="py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">
+      <h4 class="discrete !m-0 !text-primary text-display pb-2">
         Monitoring and Alerts
-        <span class="ml-1 py-1 px-2 bg-level1 rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)\] transition-colors">
+        <span class="ml-1 py-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)\] transition-colors">
           Mission Control
         </span>
       </h4>
@@ -195,10 +195,10 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
   ,role="!no-underline group flex flex-col"]
 
   xref:astra-db-serverless::index.adoc[
-    <div class="p-4 -m-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">
-      <h4 class="discrete !m-0 !text-primary text-display">
+    <div class="py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">
+      <h4 class="discrete !m-0 !text-primary text-display pb-2">
         Scaling Your Database
-        <span class="ml-1 py-1 px-2 bg-level1 rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)\] transition-colors">
+        <span class="ml-1 py-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)\] transition-colors">
           Astra DB
         </span>
       </h4>
@@ -208,45 +208,43 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
   ,role="!no-underline group flex flex-col"]
 </div>
 
-<div class="px-4 py-8 rounded grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-level1 mt-12">
+<div class="p-8 rounded grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-level1 mt-12">
   
-  xref:astra-db-serverless::index.adoc[
-    <h4 class="discrete !m-0 !text-primary text-display">
-      <i class="material-icons icon text-2xl">home</i>
+  https://www.datastax.com/[
+    <h4 class="discrete !m-0 !text-primary text-display pb-2">
+      <i class="material-icons icon text-2xl mr-2">home</i>
       DataStax Home
     </h4>
     <span class="!text-link mr-1 break-words">Go to the DataStax website</span>
     <i class="material-icons icon absolute group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i>
-  ,role="!no-underline group"]
+  ,role="!no-underline group after:hidden"]
 
-  xref:astra-db-serverless::index.adoc[
-    <h4 class="discrete !m-0 !text-primary text-display">
-      <i class="material-icons icon text-2xl">menu_book</i>
+  xref:glossary::index.adoc[
+    <h4 class="discrete !m-0 !text-primary text-display pb-2">
+      <i class="material-icons icon text-2xl mr-2">menu_book</i>
       Glossary
     </h4>
     <span class="!text-link mr-1 break-words">Learn terminology used in DataStax products</span>
     <i class="material-icons icon absolute group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i>
-  ,role="!no-underline group"]
+  ,role="!no-underline group after:hidden"]
 
-  xref:astra-db-serverless::index.adoc[
-    <h4 class="discrete !m-0 !text-primary text-display">
-      <i class="material-icons icon text-2xl">support</i>
+  https://support.datastax.com/s/[
+    <h4 class="discrete !m-0 !text-primary text-display pb-2">
+      <i class="material-icons icon text-2xl mr-2">support</i>
       Support
     </h4>
     <span class="!text-link mr-1 break-words">Access support resources</span>
     <i class="material-icons icon absolute group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i>
-  ,role="!no-underline group"]
+  ,role="!no-underline group after:hidden"]
 
-  xref:astra-db-serverless::index.adoc[
-    <h4 class="discrete !m-0 !text-primary text-display">
-      <i class="material-icons icon text-2xl">downloading</i>
+  https://downloads.datastax.com/#enterprise[
+    <h4 class="discrete !m-0 !text-primary text-display pb-2">
+      <i class="material-icons icon text-2xl mr-2">downloading</i>
       Downloads
     </h4>
     <span class="!text-link mr-1 break-words">Download installation files and drivers</span>
     <i class="material-icons icon absolute group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i>
-  ,role="!no-underline group"]
+  ,role="!no-underline group after:hidden"]
 
 </div>
 ++++
-
-
