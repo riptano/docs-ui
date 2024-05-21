@@ -28,8 +28,8 @@
   <div class="hidden lg:flex relative pl-10">
 ++++
 
-image::../img/vector-ui-dark.png["Vector Database UI", role="absolute -bottom-12 !m-0 rounded w-[31rem] h-[17.5rem] [&_img]:rounded drop-shadow-md for-dark"]
-image::../img/vector-ui-light.png["Vector Database UI", role="absolute -bottom-12 !m-0 rounded w-[31rem] h-[17.5rem] [&_img]:rounded drop-shadow-md for-light"]
+image::../img/vector-ui-dark.png["Vector Database UI", role="absolute -bottom-12 !m-0 rounded w-[31rem] h-[17.5rem] [&_img]:rounded drop-shadow-md for-dark no-zoom"]
+image::../img/vector-ui-light.png["Vector Database UI", role="absolute -bottom-12 !m-0 rounded w-[31rem] h-[17.5rem] [&_img]:rounded drop-shadow-md for-light no-zoom"]
 
 [source,python,subs="verbatim,quotes",role="nolang inverse-theme [&_.source-toolbox]:hidden rounded w-[31rem] h-[17.5rem] relative !-mt-0 !-mb-12 -top-12 right-10"]
 ----

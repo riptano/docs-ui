@@ -12,5 +12,5 @@
     transitionDuration: prefersReducedMotion ? 0.01 : 0.3,
   })
 
-  zooming.listen('.doc .imageblock img, .doc .image img')
+  zooming.listen('.doc .imageblock:not(.no-zoom) img, .doc .image:not(.no-zoom) img')
 })()
