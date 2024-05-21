@@ -7,7 +7,8 @@
 /* Extend .doc max-width */
 @layer base {
   html[data-layout="landing"],
-  html[data-layout="full"] {
+  html[data-layout="full"],
+  html[data-layout="home"] {
     main {
       max-width: calc(1280 / var(--rem-base) * 1rem);
       width: auto;
@@ -30,6 +31,12 @@
     .doc .olist li + li,
     .doc .ulist li + li {
       margin-top: var(--ds-space-2);
+    }
+  }
+
+  html[data-layout="home"] {
+    .doc > h1.page {
+      display: none;
     }
   }
 

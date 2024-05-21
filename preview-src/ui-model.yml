@@ -113,6 +113,9 @@ page:
       - content: Landing
         url: /page-templates/landing.html
         urlType: internal
+      - content: Home
+        url: /page-templates/home.html
+        urlType: internal
       - content: Tutorial
         url: /page-templates/tutorial.html
         urlType: internal
