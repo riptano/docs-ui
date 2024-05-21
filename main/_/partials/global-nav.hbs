@@ -12,7 +12,7 @@
   {{#if ./home}}<div class="m-0.5 border-l h-6 w-[1px]"></div>{{/if}}
 {{/if}}
 {{#if ./items}}
-  <div class="dropdown" data-trigger-type="hover">
+  <div class="dropdown">
     <button id="nav-dropdown-{{@index}}" class="group dropdown-trigger btn btn-plain btn-neutral flex gap-1{{#if (global-nav-active this)}} !color-primary nav-group-active{{/if}}" aria-haspopup="true" aria-expanded="false">
       {{{./title}}}
       <i class="material-icons text-lg text-tertiary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180">expand_more</i>

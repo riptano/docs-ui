@@ -237,7 +237,7 @@
       Docs Home
   </a>
   <div class="m-0.5 border-l h-6 w-[1px]"></div>
-  <div class="dropdown" data-trigger-type="hover">
+  <div class="dropdown">
     <button id="nav-dropdown-1" class="group dropdown-trigger btn btn-plain btn-neutral flex gap-1" aria-haspopup="true" aria-expanded="false">
       Astra DB
       <i class="material-icons text-lg text-tertiary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180">expand_more</i>
@@ -283,7 +283,7 @@
       RAGStack
   </a>
   
-  <div class="dropdown" data-trigger-type="hover">
+  <div class="dropdown">
     <button id="nav-dropdown-3" class="group dropdown-trigger btn btn-plain btn-neutral flex gap-1" aria-haspopup="true" aria-expanded="false">
       DSE
       <i class="material-icons text-lg text-tertiary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180">expand_more</i>
@@ -331,7 +331,7 @@
       </li> 
     </ul>
   </div>
-  <div class="dropdown" data-trigger-type="hover">
+  <div class="dropdown">
     <button id="nav-dropdown-4" class="group dropdown-trigger btn btn-plain btn-neutral flex gap-1" aria-haspopup="true" aria-expanded="false">
       Streaming
       <i class="material-icons text-lg text-tertiary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180">expand_more</i>
@@ -359,7 +359,7 @@
       </li> 
     </ul>
   </div>
-  <div class="dropdown" data-trigger-type="hover">
+  <div class="dropdown">
     <button id="nav-dropdown-5" class="group dropdown-trigger btn btn-plain btn-neutral flex gap-1" aria-haspopup="true" aria-expanded="false">
       Open Source
       <i class="material-icons text-lg text-tertiary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180">expand_more</i>
@@ -448,8 +448,8 @@
   <div class="sect1 [&>h2]:!hidden">
 <h2 id=""><a class="anchor" href="#"></a></h2>
 <div class="sectionbody">
-<div class="flex rounded bg-level1 gap-6 mt-6 py-6 px-2 -mx-2 lg:px-4 lg:-mx-4">
-  <div class="flex flex-col gap-6">
+<div class="flex rounded bg-level1 gap-6 mt-12 py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 items-center">
+  <div class="flex flex-col gap-6 max-w-2xl">
 
     <h2 class="discrete !m-0">Astra DB Serverless</h2>
 
@@ -458,32 +458,23 @@
     <div class="flex gap-6">
       <span class="text-secondary text-caption font-display flex gap-2 items-center"><i class="icon material-icons text-2xl">handyman</i> Vector Search</span>
       <span class="text-secondary text-caption font-display flex gap-2 items-center"><i class="icon material-icons text-2xl">handyman</i> Modern APIs</span>
-      <span class="text-secondary text-caption font-display flex gap-2 items-center"><i class="icon material-icons text-2xl">handyman</i> Enterprise Ready</span>
+      <span class="text-secondary text-caption font-display flex gap-2 items-center"><i class="icon material-icons text-2xl">handyman</i> Native Integrations</span>
     </div>
 
     <div class="flex gap-4">
-      <a href="astra-db-serverless:get-started:quickstart.html" class="btn btn-primary btn-solid">Quickstart <i class="material-icons icon ml-1">arrow_forward</i></a>
+      <a href="astra-db-serverless:get-started:quickstart.html" class="btn btn-primary btn-solid group">Quickstart <i class="material-icons icon ml-1 group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></a>
       <a href="https://astra.datastax.com" class="btn btn-neutral btn-outlined" target="_blank" rel="noopener">Try Astra</a>
     </div>
 
   </div>
-  <div class="hidden lg:flex relative pl-10">
-<div class="imageblock absolute -bottom-12 !m-0 rounded w-[31rem] h-[17.5rem] [&_img]:rounded drop-shadow-md for-dark no-zoom">
-<div class="content">
-<img src="../img/vector-ui-dark.png" alt="Vector Database UI">
-</div>
-</div>
-<div class="imageblock absolute -bottom-12 !m-0 rounded w-[31rem] h-[17.5rem] [&_img]:rounded drop-shadow-md for-light no-zoom">
-<div class="content">
-<img src="../img/vector-ui-light.png" alt="Vector Database UI">
-</div>
-</div>
-<div class="listingblock nolang inverse-theme [&_.source-toolbox]:hidden rounded w-[31rem] h-[17.5rem] relative !-mt-0 !-mb-12 -top-12 right-10">
+  <div class="hidden lg:flex relative -my-12 ml-6">
+<div class="listingblock nolang inverse-theme [&_.source-toolbox]:hidden rounded !m-0 [&_pre]:!py-6">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from astrapy import DataAPIClient
 
 # connect to a database
-database = DataAPIClient(<strong>TOKEN</strong>).get_database_by_api_endpoint(<strong>URL</strong>)
+database =
+  DataAPIClient(<strong>TOKEN</strong>).get_database_by_api_endpoint(<strong>URL</strong>)
 
 # Ingest vectors into your collection
 collection = database.test_collection
@@ -496,52 +487,52 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])</code></pre>
   </div>
 </div>
 
-<h3 class="discrete !my-12">Popular Products</h3>
+<h3 class="discrete !mt-12 !mb-10">Popular Products</h3>
 
 <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
   <a href="astra-db-serverless::index.html" class="!no-underline relative group"><div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96] via-[#D90036] to-[#FFCA0B] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)] duration-300">       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">handyman</i></div>       <div>         <h4 class="discrete !m-0 !text-primary">Astra DB Serverless</h4>         <p class="text-tertiary">Scale with cloud-native databases</p>       </div>     </div></a>
 
-  <a href="ragstack::index.html" class="!no-underline relative group"><div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96] via-[#D90036] to-[#FFCA0B] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)] duration-300">       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">timer</i></div>       <div>         <h4 class="discrete !m-0 !text-primary">RAGStack</h4>         <p class="text-tertiary">Build AI apps faster</p>       </div>     </div></a>
+  <a href="ragstack::index.html" class="!no-underline relative group"><div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96] via-[#D90036] to-[#FFCA0B] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)] duration-300">       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">timer</i></div>       <div>         <h4 class="discrete !m-0 !text-primary">RAGStack</h4>         <p class="text-tertiary">Enterprise RAG</p>       </div>     </div></a>
 
   <a href="dse:getting-started:get-started-dse.html" class="!no-underline relative group"><div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96] via-[#D90036] to-[#FFCA0B] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)] duration-300">       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">business</i></div>       <div>         <h4 class="discrete !m-0 !text-primary">DSE</h4>         <p class="text-tertiary">Enterprise scalability and performance</p>       </div>     </div></a>
 
   <a href="mission-control::index.html" class="!no-underline relative group"><div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96] via-[#D90036] to-[#FFCA0B] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)] duration-300">       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">space_dashboard</i></div>       <div>         <h4 class="discrete !m-0 !text-primary">Mission Control</h4>         <p class="text-tertiary">Manage your data ecosystem</p>       </div>     </div></a>
 
-  <a href="astra-streaming:getting-started:index.html" class="!no-underline relative group"><div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96] via-[#D90036] to-[#FFCA0B] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)] duration-300">       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">air</i></div>       <div>         <h4 class="discrete !m-0 !text-primary">Streaming</h4>         <p class="text-tertiary">Efficient data streaming</p>       </div>     </div></a>
+  <a href="astra-streaming:getting-started:index.html" class="!no-underline relative group"><div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96] via-[#D90036] to-[#FFCA0B] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)] duration-300">       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">air</i></div>       <div>         <h4 class="discrete !m-0 !text-primary">Astra Streaming</h4>         <p class="text-tertiary">Efficient data streaming</p>       </div>     </div></a>
 
-  <a href="luna-cassandra::index.html" class="!no-underline relative group"><div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96] via-[#D90036] to-[#FFCA0B] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)] duration-300">       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">nights_stay</i></div>       <div>         <h4 class="discrete !m-0 !text-primary">Luna</h4>         <p class="text-tertiary">Expertise and support for DataStax products</p>       </div>     </div></a>
+  <a href="luna-cassandra::index.html" class="!no-underline relative group"><div class="w-full h-full absolute rounded bg-gradient-to-r from-[#6B1C96] via-[#D90036] to-[#FFCA0B] blur opacity-0 group-hover:opacity-30 dark:group-hover:opacity-50 transition-opacity duration-300"></div>     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)] duration-300">       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">nights_stay</i></div>       <div>         <h4 class="discrete !m-0 !text-primary">Luna Support</h4>         <p class="text-tertiary">Expertise and support for DataStax products</p>       </div>     </div></a>
 
 </div>
 
-<div class="mt-12 grid gap-12 md:grid-cols-2 md:grid-rows-[min-content_repeat(3,1fr)] md:grid-flow-col">
+<div class="mt-12 grid gap-10 md:grid-cols-2 md:grid-rows-[min-content_repeat(3,1fr)] md:grid-flow-col">
 
   <h3 class="pb-4 border-b !m-0">Latest Additions<i class="material-icons icon text-2xl mr-2">new_label</i></h3>
 
-  <a href="astra-db-serverless:databases:load-data.html" class="!no-underline group flex flex-col"><div class="py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">       <h4 class="discrete !m-0 !text-primary text-display pb-2">         Loading data into Astra DB databases         <span class="ml-1 py-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)] transition-colors">           Astra DB         </span>       </h4>       <p class="text-tertiary">Use the Astra DB Data Loader to load data in your database from a variety of sources, including CSV files, sample datasets, and Amazon DynamoDB.</p>       <p class="!text-link !mt-auto">Read Loading data into Astra DB databases <i class="material-icons icon group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></p>     </div></a>
+  <a href="astra-db-serverless:databases:load-data.html" class="!no-underline group flex flex-col"><div class="py-4 -my-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">       <h4 class="discrete !m-0 !text-primary text-display pb-2">         Loading data into Astra DB databases         <span class="ml-1 py-1 -my-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)] transition-colors">           Astra DB         </span>       </h4>       <p class="text-tertiary">Use the Astra DB Data Loader to load data in your database from a variety of sources, including CSV files, sample datasets, and Amazon DynamoDB.</p>       <p class="!text-link">Read Loading data into Astra DB databases <i class="material-icons icon group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></p>     </div></a>
 
-  <a href="ragstack:intro-to-rag:evaluation.html" class="!no-underline group flex flex-col"><div class="py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">       <h4 class="discrete !m-0 !text-primary text-display pb-2">         Optimizing Query Performance         <span class="ml-1 py-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)] transition-colors">           RAGStack         </span>       </h4>       <p class="text-tertiary">Improve the efficiency of your queries on AI-ready cloud databases with best practices for indexing and query tuning.</p>       <p class="!text-link !mt-auto">Read Optimizing Query Performance <i class="material-icons icon group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></p>     </div></a>
+  <a href="ragstack:intro-to-rag:evaluation.html" class="!no-underline group flex flex-col"><div class="py-4 -my-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">       <h4 class="discrete !m-0 !text-primary text-display pb-2">         Optimizing Query Performance         <span class="ml-1 py-1 -my-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)] transition-colors">           RAGStack         </span>       </h4>       <p class="text-tertiary">Improve the efficiency of your queries on AI-ready cloud databases with best practices for indexing and query tuning.</p>       <p class="!text-link">Read Optimizing Query Performance <i class="material-icons icon group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></p>     </div></a>
 
-  <a href="astra-db-serverless::index.html" class="!no-underline group flex flex-col"><div class="py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">       <h4 class="discrete !m-0 !text-primary text-display pb-2">         Securing Database Connections         <span class="ml-1 py-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)] transition-colors">           Astra DB         </span>       </h4>       <p class="text-tertiary">Learn how to secure connections to your AI-ready cloud database using SSL encryption and access control methods.</p>       <p class="!text-link !mt-auto">Read Securing Database Connections <i class="material-icons icon group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></p>     </div></a>
+  <a href="astra-db-serverless::index.html" class="!no-underline group flex flex-col"><div class="py-4 -my-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">       <h4 class="discrete !m-0 !text-primary text-display pb-2">         Securing Database Connections         <span class="ml-1 py-1 -my-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)] transition-colors">           Astra DB         </span>       </h4>       <p class="text-tertiary">Learn how to secure connections to your AI-ready cloud database using SSL encryption and access control methods.</p>       <p class="!text-link">Read Securing Database Connections <i class="material-icons icon group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></p>     </div></a>
 
   <h3 class="pb-4 border-b !m-0">Working with AI/ML <i class="material-icons icon text-2xl mr-2">smart_toy</i></h3>
 
-  <a href="astra-db-serverless::index.html" class="!no-underline group flex flex-col"><div class="py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">       <h4 class="discrete !m-0 !text-primary text-display pb-2">         Automating Backups and Recovery         <span class="ml-1 py-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)] transition-colors">           Astra DB         </span>       </h4>       <p class="text-tertiary">Set up automated backups for your cloud database and learn how to quickly recover your data in case of loss or corruption.</p>       <p class="!text-link !mt-auto">Read Automating Backups and Recovery <i class="material-icons icon group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></p>     </div></a>
+  <a href="astra-db-serverless::index.html" class="!no-underline group flex flex-col"><div class="py-4 -my-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">       <h4 class="discrete !m-0 !text-primary text-display pb-2">         Automating Backups and Recovery         <span class="ml-1 py-1 -my-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)] transition-colors">           Astra DB         </span>       </h4>       <p class="text-tertiary">Set up automated backups for your cloud database and learn how to quickly recover your data in case of loss or corruption.</p>       <p class="!text-link">Read Automating Backups and Recovery <i class="material-icons icon group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></p>     </div></a>
 
-  <a href="astra-db-serverless::index.html" class="!no-underline group flex flex-col"><div class="py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">       <h4 class="discrete !m-0 !text-primary text-display pb-2">         Monitoring and Alerts         <span class="ml-1 py-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)] transition-colors">           Mission Control         </span>       </h4>       <p class="text-tertiary">Monitor the health and performance of your cloud database with real-time analytics and set up alerts for potential issues.</p>       <p class="!text-link !mt-auto">Read Monitoring and Alerts <i class="material-icons icon group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></p>     </div></a>
+  <a href="astra-db-serverless::index.html" class="!no-underline group flex flex-col"><div class="py-4 -my-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">       <h4 class="discrete !m-0 !text-primary text-display pb-2">         Monitoring and Alerts         <span class="ml-1 py-1 -my-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)] transition-colors">           Mission Control         </span>       </h4>       <p class="text-tertiary">Monitor the health and performance of your cloud database with real-time analytics and set up alerts for potential issues.</p>       <p class="!text-link">Read Monitoring and Alerts <i class="material-icons icon group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></p>     </div></a>
 
-  <a href="astra-db-serverless::index.html" class="!no-underline group flex flex-col"><div class="py-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">       <h4 class="discrete !m-0 !text-primary text-display pb-2">         Scaling Your Database         <span class="ml-1 py-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)] transition-colors">           Astra DB         </span>       </h4>       <p class="text-tertiary">Scale your AI-ready cloud database vertically or horizontally to meet changing workload demands and optimize performance.</p>       <p class="!text-link !mt-auto">Read Scaling Your Database <i class="material-icons icon group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></p>     </div></a>
+  <a href="astra-db-serverless::index.html" class="!no-underline group flex flex-col"><div class="py-4 -my-4 px-2 -mx-2 lg:px-4 lg:-mx-4 rounded flex flex-col grow gap-3 transition-colors group-hover:bg-level1">       <h4 class="discrete !m-0 !text-primary text-display pb-2">         Scaling Your Database         <span class="ml-1 py-1 -my-1 px-2 bg-level1 text-nowrap rounded color-primary text-caption font-sans border border-transparent group-hover:border-[var(--ds-divider)] transition-colors">           Astra DB         </span>       </h4>       <p class="text-tertiary">Scale your AI-ready cloud database vertically or horizontally to meet changing workload demands and optimize performance.</p>       <p class="!text-link">Read Scaling Your Database <i class="material-icons icon group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></p>     </div></a>
 </div>
 
-<div class="p-8 rounded grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-level1 mt-12">
+<div class="mt-12 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 
-  <a href="https://www.datastax.com/" class="!no-underline group after:hidden"><h4 class="discrete !m-0 !text-primary text-display pb-2">       <i class="material-icons icon text-2xl mr-2">home</i>       DataStax Home     </h4>     <span class="!text-link mr-1 break-words">Go to the DataStax website</span>     <i class="material-icons icon absolute group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></a>
+  <a href="https://www.datastax.com/" class="!no-underline group after:hidden rounded bg-level1 p-4 flex flex-col gap-1 hover:bg-[var(--ds-primary-soft-bg)] transition-colors duration-300" target="_blank" rel="noopener"><i class="material-icons icon text-2xl text-[var(--ds-text-placeholder)] group-hover:color-primary transition-colors duration-300">home</i>     <h4 class="discrete !m-0 !text-primary text-display">DataStax Home</h4>     <p class="!text-link">Go to the DataStax website</p>   </a>
 
-  <a href="glossary::index.html" class="!no-underline group after:hidden"><h4 class="discrete !m-0 !text-primary text-display pb-2">       <i class="material-icons icon text-2xl mr-2">menu_book</i>       Glossary     </h4>     <span class="!text-link mr-1 break-words">Learn terminology used in DataStax products</span>     <i class="material-icons icon absolute group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></a>
+  <a href="glossary::index.html" class="!no-underline group after:hidden rounded bg-level1 p-4 flex flex-col gap-1 hover:bg-[var(--ds-primary-soft-bg)] transition-colors duration-300"><i class="material-icons icon text-2xl text-[var(--ds-text-placeholder)] group-hover:color-primary transition-colors duration-300">menu_book</i>     <h4 class="discrete !m-0 !text-primary text-display">Glossary</h4>     <p class="!text-link">Review common terms</p></a>
 
-  <a href="https://support.datastax.com/s/" class="!no-underline group after:hidden"><h4 class="discrete !m-0 !text-primary text-display pb-2">       <i class="material-icons icon text-2xl mr-2">support</i>       Support     </h4>     <span class="!text-link mr-1 break-words">Access support resources</span>     <i class="material-icons icon absolute group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></a>
+  <a href="https://support.datastax.com/s/" class="!no-underline group after:hidden rounded bg-level1 p-4 flex flex-col gap-1 hover:bg-[var(--ds-primary-soft-bg)] transition-colors duration-300" target="_blank" rel="noopener"><i class="material-icons icon text-2xl text-[var(--ds-text-placeholder)] group-hover:color-primary transition-colors duration-300">support</i>     <h4 class="discrete !m-0 !text-primary text-display">Support</h4>     <p class="!text-link">Access support resources</p>   </a>
 
-  <a href="https://downloads.datastax.com/#enterprise" class="!no-underline group after:hidden"><h4 class="discrete !m-0 !text-primary text-display pb-2">       <i class="material-icons icon text-2xl mr-2">downloading</i>       Downloads     </h4>     <span class="!text-link mr-1 break-words">Download installation files and drivers</span>     <i class="material-icons icon absolute group-hover:translate-x-1 transition-transform duration-300">arrow_forward</i></a>
+  <a href="https://downloads.datastax.com/#enterprise" class="!no-underline group after:hidden rounded bg-level1 p-4 flex flex-col gap-1 hover:bg-[var(--ds-primary-soft-bg)] transition-colors duration-300" target="_blank" rel="noopener"><i class="material-icons icon text-2xl text-[var(--ds-text-placeholder)] group-hover:color-primary transition-colors duration-300">downloading</i>     <h4 class="discrete !m-0 !text-primary text-display">Downloads</h4>     <p class="!text-link">Install files and drivers</p>   </a>
 
 </div>
 </div>
