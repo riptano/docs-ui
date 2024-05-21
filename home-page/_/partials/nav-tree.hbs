@@ -1,0 +1,45 @@
+{{#if navigation.length}}
+<ul class="nav-list">
+  {{#each navigation}}
+  {{#if ./content}}
+  <li class="nav-item{{#if ./items.length}} collapse{{/if}}" data-depth="{{or ../level 0}}">
+    {{#if (and ./url (not ./items.length))}}
+    <a 
+      class="nav-link !no-underline" 
+      href="{{~#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{~else}}{{{./url}}}{{~/if}}"
+      {{#if (eq ./url @root.page.url)}} aria-current="page"{{/if}}
+      {{#if (eq ./urlType 'external')}} target="_blank"{{/if}}>
+    {{/if}}
+    {{#if ./items.length}}
+    <button 
+      class="nav-item-toggle collapse-trigger w-full group{{#if (nav-tree-contains-url ./items @root.page.url)}} active{{/if}}" 
+      aria-label="{{{./content}}}" aria-expanded="false" aria-controls="{{nav-id  (increment (or ../level 0)) ./content}}">
+    {{/if}}
+    <span 
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors
+      {{~#if ./items.length}} text-caption{{~/if}}
+      {{~#if (eq (or ../level 0) 0)}}{{~#if ./items.length}} text-overline py-2{{~/if}}{{~/if}}
+      {{~#if (eq ./url @root.page.url)}} color-primary font-semibold{{~/if}}
+      {{~#if (greater (or ../level 0) 1)}} text-tertiary{{~/if}}">
+        {{{./content}}}
+        {{#if ./items.length}}
+        <i class="material-icons text-lg text-tertiary mr-auto self-start motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180 group-hover:text-primary">expand_more</i>
+        {{/if}}
+        {{#if (eq ./urlType 'external')}}<i class="material-icons text-sm text-tertiary">open_in_new</i>{{/if}}
+    </span>
+    {{#if (and ./url (not ./items.length))}}
+    </a>
+    {{/if}}
+    {{#if ./items.length}}
+    </button>
+    <div id="{{nav-id  (increment (or ../level 0)) ./content}}" class="collapse-content ml-3 pl-2 border-l{{#if (nav-tree-contains-url ./items @root.page.url)}} active{{/if}}">
+      {{> nav-tree navigation=./items level=(increment ../level)}}
+    </div>
+    {{/if}}
+  </li>
+  {{else}}
+  {{> nav-tree navigation=./items level=0}}
+  {{/if}}
+  {{/each}}
+</ul>
+{{/if}}
