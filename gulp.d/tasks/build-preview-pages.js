@@ -11,6 +11,7 @@ const { Transform } = require('stream')
 const map = (transform = () => {}, flush = undefined) => new Transform({ objectMode: true, transform, flush })
 const vfs = require('vinyl-fs')
 const yaml = require('js-yaml')
+const { execSync } = require('child_process')
 
 const ASCIIDOC_ATTRIBUTES = { experimental: '', icons: 'font', sectanchors: '', 'source-highlighter': 'highlight.js' }
 
@@ -18,7 +19,7 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
   Promise.all([
     loadSampleUiModel(previewSrc),
     toPromise(
-      merge(compileLayouts(src), registerPartials(src), registerHelpers(src), copyImages(previewSrc, previewDest))
+      merge(compileLayouts(src), registerPartials(src), registerHelpers(src, previewDest), copyImages(previewSrc, previewDest))
     ),
   ])
     .then(([baseUiModel, { layouts }]) => {
@@ -91,12 +92,15 @@ function registerPartials (src) {
   )
 }
 
-function registerHelpers (src) {
+function registerHelpers (src, previewDest) {
   handlebars.registerHelper('resolvePage', resolvePage)
   handlebars.registerHelper('resolvePageURL', resolvePageURL)
+  handlebars.registerHelper('assets-manifest', (assetPath) => assetsManifest(assetPath, previewDest))
   return vfs.src('helpers/*.js', { base: src, cwd: src }).pipe(
     map((file, enc, next) => {
-      handlebars.registerHelper(file.stem, requireFromString(file.contents.toString()))
+      if (!(file.stem === 'assets-manifest')) {
+        handlebars.registerHelper(file.stem, requireFromString(file.contents.toString()))
+      }
       next()
     })
   )
@@ -117,6 +121,12 @@ function compileLayouts (src) {
       }
     )
   )
+}
+
+function assetsManifest (assetPath, previewDest) {
+  const manifestPath = execSync(`find ${previewDest} -name assets-manifest.json`).toString().trim()
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'))
+  return manifest[assetPath]
 }
 
 function copyImages (src, dest) {
