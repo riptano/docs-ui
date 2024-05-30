@@ -1,6 +1,6 @@
 'use strict'
 
-const { parallel, series, watch } = require('gulp')
+const { series, watch } = require('gulp')
 const createTask = require('./gulp.d/lib/create-task')
 const exportTasks = require('./gulp.d/lib/export-tasks')
 const log = require('fancy-log')
@@ -91,7 +91,7 @@ const buildPreviewPagesTask = createTask({
 const previewBuildTask = createTask({
   name: 'preview:build',
   desc: 'Process and stage the UI assets and generate pages for the preview',
-  call: parallel(buildTask, buildPreviewPagesTask),
+  call: series(buildTask, buildPreviewPagesTask),
 })
 
 const previewServeTask = createTask({
