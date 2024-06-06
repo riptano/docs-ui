@@ -19,12 +19,7 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
   Promise.all([
     loadSampleUiModel(previewSrc),
     toPromise(
-      merge(
-        compileLayouts(src),
-        registerPartials(src),
-        registerHelpers(src, previewDest),
-        copyImages(previewSrc, previewDest)
-      )
+      merge(compileLayouts(src), registerPartials(src), registerHelpers(src, previewDest), copyImages(previewSrc, previewDest))
     ),
   ])
     .then(([baseUiModel, { layouts }]) => {
