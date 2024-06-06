@@ -22,7 +22,6 @@ const map = (transform) => new Transform({ objectMode: true, transform })
 const through = () => map((file, enc, next) => next(null, file))
 const uglify = require('gulp-uglify')
 const vfs = require('vinyl-fs')
-const hash = require('gulp-hash')
 const tailwindconfig = require('../lib/preview.tailwind.config')
 
 module.exports = (src, dest, preview) => () => {
@@ -73,36 +72,20 @@ module.exports = (src, dest, preview) => () => {
       .pipe(bundle(opts))
       .pipe(uglify({ output: { comments: /^! / } }))
       // NOTE concat already uses stat from newest combined file
-      .pipe(concat('js/site.js'))
-      .pipe(hash({ template: '<%= name %>-<%= hash %><%= ext %>' }))
-      .pipe(vfs.dest(dest))
-      .pipe(hash.manifest('assets-manifest.json', { append: true }))
-      .pipe(vfs.dest(dest)),
+      .pipe(concat('js/site.js')),
     vfs
       .src('js/vendor/*([^.])?(.bundle).js', { ...opts, read: false })
       .pipe(bundle(opts))
-      .pipe(uglify({ output: { comments: /^! / } }))
-      .pipe(hash({ template: '<%= name %>-<%= hash %><%= ext %>' }))
-      .pipe(vfs.dest(dest))
-      .pipe(hash.manifest('assets-manifest.json', { append: true }))
-      .pipe(vfs.dest(dest)),
+      .pipe(uglify({ output: { comments: /^! / } })),
     vfs
       .src('js/vendor/*.min.js', opts)
-      .pipe(map((file, enc, next) => next(null, Object.assign(file, { extname: '' }, { extname: '.js' }))))
-      .pipe(hash({ template: '<%= name %>-<%= hash %><%= ext %>' }))
-      .pipe(vfs.dest(dest))
-      .pipe(hash.manifest('assets-manifest.json', { append: true }))
-      .pipe(vfs.dest(dest)),
+      .pipe(map((file, enc, next) => next(null, Object.assign(file, { extname: '' }, { extname: '.js' })))),
     // NOTE use the next line to bundle a JavaScript library that cannot be browserified, like jQuery
     //vfs.src(require.resolve('<package-name-or-require-path>'), opts).pipe(concat('js/vendor/<library-name>.js')),
     vfs.src('./tailwind.config.js').pipe(concat('js/tailwind.config.js')),
     vfs
       .src(['css/site.css', 'css/vendor/*.css'], { ...opts, sourcemaps })
-      .pipe(postcss((file) => ({ plugins: postcssPlugins, options: { file } })))
-      .pipe(hash({ template: '<%= name %>-<%= hash %><%= ext %>' }))
-      .pipe(vfs.dest(dest))
-      .pipe(hash.manifest('assets-manifest.json', { append: true }))
-      .pipe(vfs.dest(dest)),
+      .pipe(postcss((file) => ({ plugins: postcssPlugins, options: { file } }))),
     vfs.src('font/*.{ttf,woff*(2)}', opts),
     vfs.src('img/**/*.{gif,ico,jpg,png,svg}', opts).pipe(
       preview
