@@ -1,0 +1,16 @@
+{{#with page.navigation}}
+<nav 
+  {{~#if page.component}} 
+    data-component="{{page.component.name}}" 
+    data-version="{{page.version}}"
+  {{~/if}}
+  id="side-nav" 
+  class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] px-2 pt-2">
+    {{> page-versions page=../page}}
+    {{#with @root.page.componentVersion}}
+    <a class="p-2 mb-1 text-h4 hover:bg-level2 rounded transition-colors !no-underline" href="{{{relativize ./url}}}">{{./title}}</a>
+    {{/with}}
+    {{> nav-tree navigation=this}}
+    {{> nav-secondary}}
+</nav>
+{{/with}}
