@@ -1,0 +1,20 @@
+{{#with page.versions}}
+<div class="dropdown ml-auto">
+  <button id="page-version-dropdown" title="Show other versions of page" class="group dropdown-trigger btn btn-soft btn-primary btn-small" aria-haspopup="true" aria-expanded="false">
+    <span class="font-bold ml-1">{{@root.page.componentVersion.displayVersion}}{{#if (eq @root.page.component.latest.version @root.page.componentVersion.version)}} (Latest){{/if}}</span>
+    <i class="material-icons text-lg color-primary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out ml-[0.15em] group-[.active]:rotate-180">expand_more</i>
+  </button>
+  <ul class="dropdown-content py-2 bg-body border rounded w-48 z-40" role="menu" aria-orientation="vertical" aria-labelledby="page-version-dropdown">
+    {{#each this}}
+    <li>
+      <a 
+        class="!no-underline w-full py-1 px-3 block hover:bg-level1 transition-colors
+          {{~#if (eq ./version @root.page.version)}} font-bold color-primary{{/if~}}"
+        href="{{{relativize ./url}}}">
+          {{./displayVersion}}{{#if (eq @root.page.component.latest.version ./version)}} (Latest){{/if}}
+      </a>
+    </li> 
+    {{/each}}
+  </ul>
+</div>
+{{/with}}
