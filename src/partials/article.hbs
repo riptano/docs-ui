@@ -14,8 +14,8 @@
   {{> tutorial-info}}
   {{/if}}
   {{{page.contents}}}
-  {{#unless (eq page.layout 'full')}}
-  {{> support-feedback }}
-  {{/unless}}
-  {{> pagination}}
 </article>
+{{#unless (eq page.layout 'full')}}
+{{> support-feedback }}
+{{/unless}}
+{{> pagination}}
