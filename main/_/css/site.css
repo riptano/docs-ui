@@ -4268,10 +4268,6 @@ a.btn:hover {
   margin-left: auto;
   margin-right: auto;
 }
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
 .\!mt-0 {
   margin-top: 0px !important;
 }
@@ -4385,11 +4381,11 @@ a.btn:hover {
 .w-10 {
   width: 2.5rem;
 }
-.w-32 {
-  width: 8rem;
-}
 .w-4 {
   width: 1rem;
+}
+.w-48 {
+  width: 12rem;
 }
 .w-5 {
   width: 1.25rem;
@@ -4443,6 +4439,11 @@ a.btn:hover {
 .shrink {
   -ms-flex-negative: 1;
       flex-shrink: 1;
+}
+.flex-grow {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 .flex-grow-0 {
   -webkit-box-flex: 0;
@@ -4959,3 +4960,4 @@ a.btn:hover {
 .\[\&\.is-active\]\:border-\[var\(--ds-primary-main\)\].is-active {
   border-color: var(--ds-primary-main);
 }
+/*# sourceMappingURL=site.css.map */
