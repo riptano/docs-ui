@@ -8,7 +8,7 @@
   class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] px-2 pt-2">
     <div class="flex items-start gap-1 mb-1">
       {{#with @root.page.componentVersion}}
-      <a id="component-home" class="flex flex-grow py-1 px-2 text-h4 hover:bg-level2 rounded transition-colors !no-underline" href="{{{relativize ./url}}}">{{./title}}</a>
+      <a class="component-home flex flex-grow py-1 px-2 text-h4 hover:bg-level2 rounded transition-colors !no-underline" href="{{{relativize ./url}}}">{{./title}}</a>
       {{/with}}
       {{> page-versions page=../page}}
     </div>
