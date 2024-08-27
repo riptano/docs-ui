@@ -15,16 +15,21 @@
     })
   }
 
-  // Open first nav collapse if none are open.
-  // Useful for pages with no nav links i.e. landing pages.
   const sideNav = document.querySelector('#side-nav')
   if (sideNav) {
+    // Open first nav collapse if none are open.
+    // Useful for pages with no nav links i.e. landing pages.
     const activeCollapses = sideNav.querySelectorAll('.collapse > .collapse-content.active')
     if (!activeCollapses.length) {
       const firstCollapse = sideNav.querySelector('.collapse > .collapse-content')
       if (firstCollapse) {
         firstCollapse.classList.add('active')
       }
+    }
+    // Auto scroll the side nav to the current page's side nav link
+    const currentPageLink = sideNav.querySelector('.nav-link.current-page')
+    if (currentPageLink) {
+      currentPageLink.scrollIntoView({ block: 'center' })
     }
   }
 
