@@ -5,7 +5,7 @@
     {{#with page.componentVersion}}
     {{#if (and ./title (ne ./title @root.page.breadcrumbs.0.content))}}
     <li class="text-link !m-0 !p-0 after:content-['/'] last-of-type:after:content-none after:text-tertiary after:px-2">
-      <a href="{{{relativize ./url}}}">{{{./title}}}</a>
+      <a class="component-home" href="{{{relativize ./url}}}">{{{./title}}}</a>
     </li>
     {{/if}}
     {{/with}}
