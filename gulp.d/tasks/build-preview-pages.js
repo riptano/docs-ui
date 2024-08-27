@@ -11,7 +11,6 @@ const { Transform } = require('stream')
 const map = (transform = () => {}, flush = undefined) => new Transform({ objectMode: true, transform, flush })
 const vfs = require('vinyl-fs')
 const yaml = require('js-yaml')
-const { execSync } = require('child_process')
 
 const ASCIIDOC_ATTRIBUTES = { experimental: '', icons: 'font', sectanchors: '', 'source-highlighter': 'highlight.js' }
 
@@ -100,7 +99,8 @@ function registerPartials (src) {
 function registerHelpers (src, previewDest) {
   handlebars.registerHelper('resolvePage', resolvePage)
   handlebars.registerHelper('resolvePageURL', resolvePageURL)
-  handlebars.registerHelper('assets-manifest', (assetPath) => assetsManifest(assetPath, previewDest))
+  // Since we are not creating an assets-manifest.json file in the preview build, we need to mock the helper.
+  handlebars.registerHelper('assets-manifest', (assetPath) => assetPath)
   return vfs.src('helpers/*.js', { base: src, cwd: src }).pipe(
     map((file, enc, next) => {
       if (!(file.stem === 'assets-manifest')) {
@@ -126,12 +126,6 @@ function compileLayouts (src) {
       }
     )
   )
-}
-
-function assetsManifest (assetPath, previewDest) {
-  const manifestPath = execSync(`find ${previewDest} -name assets-manifest.json`).toString().trim()
-  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'))
-  return manifest[assetPath]
 }
 
 function copyImages (src, dest) {

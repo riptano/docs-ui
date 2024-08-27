@@ -11,6 +11,7 @@ const ospath = require('path')
 const path = ospath.posix
 const postcss = require('gulp-postcss')
 const postcssCalc = require('postcss-calc')
+const gulpif = require('gulp-if')
 const postcssAdvancedVars = require('postcss-advanced-variables')
 const postcssImport = require('postcss-import')
 const tailwindcss = require('tailwindcss')
@@ -74,24 +75,24 @@ module.exports = (src, dest, preview) => () => {
       .pipe(uglify({ output: { comments: /^! / } }))
       // NOTE concat already uses stat from newest combined file
       .pipe(concat('js/site.js'))
-      .pipe(hash({ template: '<%= name %>-<%= hash %><%= ext %>' }))
+      .pipe(gulpif(!preview, hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
       .pipe(vfs.dest(dest))
-      .pipe(hash.manifest('assets-manifest.json', { append: true }))
+      .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
       .pipe(vfs.dest(dest)),
     vfs
       .src('js/vendor/*([^.])?(.bundle).js', { ...opts, read: false })
       .pipe(bundle(opts))
       .pipe(uglify({ output: { comments: /^! / } }))
-      .pipe(hash({ template: '<%= name %>-<%= hash %><%= ext %>' }))
+      .pipe(gulpif(!preview, hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
       .pipe(vfs.dest(dest))
-      .pipe(hash.manifest('assets-manifest.json', { append: true }))
+      .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
       .pipe(vfs.dest(dest)),
     vfs
       .src('js/vendor/*.min.js', opts)
       .pipe(map((file, enc, next) => next(null, Object.assign(file, { extname: '' }, { extname: '.js' }))))
-      .pipe(hash({ template: '<%= name %>-<%= hash %><%= ext %>' }))
+      .pipe(gulpif(!preview, hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
       .pipe(vfs.dest(dest))
-      .pipe(hash.manifest('assets-manifest.json', { append: true }))
+      .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
       .pipe(vfs.dest(dest)),
     // NOTE use the next line to bundle a JavaScript library that cannot be browserified, like jQuery
     //vfs.src(require.resolve('<package-name-or-require-path>'), opts).pipe(concat('js/vendor/<library-name>.js')),
@@ -99,9 +100,9 @@ module.exports = (src, dest, preview) => () => {
     vfs
       .src(['css/site.css', 'css/vendor/*.css'], { ...opts, sourcemaps })
       .pipe(postcss((file) => ({ plugins: postcssPlugins, options: { file } })))
-      .pipe(hash({ template: '<%= name %>-<%= hash %><%= ext %>' }))
+      .pipe(gulpif(!preview, hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
       .pipe(vfs.dest(dest))
-      .pipe(hash.manifest('assets-manifest.json', { append: true }))
+      .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
       .pipe(vfs.dest(dest)),
     vfs.src('font/*.{ttf,woff*(2)}', opts),
     vfs.src('img/**/*.{gif,ico,jpg,png,svg}', opts).pipe(
