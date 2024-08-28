@@ -5,7 +5,7 @@
   <li class="nav-item{{#if ./items.length}} collapse{{/if}}" data-depth="{{or ../level 0}}">
     {{#if (and ./url (not ./items.length))}}
     <a 
-      class="nav-link !no-underline" 
+      class="nav-link !no-underline{{#if (eq ./url @root.page.url)}} current-page{{/if}}" 
       href="{{~#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{~else}}{{{./url}}}{{~/if}}"
       {{#if (eq ./url @root.page.url)}} aria-current="page"{{/if}}
       {{#if (eq ./urlType 'external')}} target="_blank"{{/if}}>
