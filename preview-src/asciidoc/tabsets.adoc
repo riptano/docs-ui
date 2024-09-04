@@ -11,32 +11,226 @@
 
 *Page source*: https://github.com/riptano/docs-ui/blob/main/preview-src/asciidoc/tabsets.adoc
 
-[NOTE]
+[IMPORTANT]
 ====
 Tabsets depend on the https://github.com/asciidoctor/asciidoctor-tabs[Asciidoctor Tabs] extension.
 
 Tabs syncing is controlled by the `tabs-sync-option` attribute.
-For more information, see the Asciidoctor Tabs https://github.com/asciidoctor/asciidoctor-tabs#tabs-sync[documentation].
+For more information, see the https://github.com/asciidoctor/asciidoctor-tabs#tabs-sync[Asciidoctor Tabs documentation].
 ====
 
 == Basic tabset
 
 [tabs]
 ======
-Tab A:: Contents of Tab A.
+Tab A::
++
+--
+Contents of Tab A.
+--
 
 Tab B::
 +
+--
 Contents of Tab B.
+--
 
 Tab C::
 +
 --
 Contents of Tab C.
 
-Contains more than one block.
+Second line in Tab C.
 --
 ======
+
+
+== Tabset w/ code blocks
+
+.Tabset w/ codeblock and collapsible response
+[tabs]
+======
+Command::
++
+--
+[source,curl]
+----
+curl -s -L -X GET https://$ASTRA_CLUSTER_ID-$ASTRA_REGION.apps.astra.datastax.com/api/rest/v2/schemas/keyspaces/users_keyspace \
+-H "X-Cassandra-Token: $ASTRA_DB_APPLICATION_TOKEN" \
+-H "Content-Type: application/json" \
+-H "Accept: application/json"
+----
+
+.Result
+[%collapsible]
+====
+[source,console]
+----
+{"data":{"name":"users_keyspace"}}
+----
+====
+--
+
+Other Command::
++
+--
+[source,curl]
+----
+curl -s -L -X GET https://$ASTRA_CLUSTER_ID-$ASTRA_REGION.apps.astra.datastax.com/api/rest/v2/schemas/keyspaces/users_keyspace \
+-H "X-Cassandra-Token: $ASTRA_DB_APPLICATION_TOKEN" \
+-H "Content-Type: application/json" \
+-H "Accept: application/json"
+----
+
+.Result
+[%collapsible]
+====
+[source,console]
+----
+{"data":{"name":"users_keyspace"}}
+----
+====
+--
+======
+
+.Tabset w/ only codeblocks
+[tabs]
+======
+Command::
++
+--
+[source,curl]
+----
+curl -s -L -X GET https://$ASTRA_CLUSTER_ID-$ASTRA_REGION.apps.astra.datastax.com/api/rest/v2/schemas/keyspaces/users_keyspace \
+-H "X-Cassandra-Token: $ASTRA_DB_APPLICATION_TOKEN" \
+-H "Content-Type: application/json" \
+-H "Accept: application/json"
+----
+--
+
+Other Command::
++
+--
+[source,curl]
+----
+curl -s -L -X GET https://$ASTRA_CLUSTER_ID-$ASTRA_REGION.apps.astra.datastax.com/api/rest/v2/schemas/keyspaces/users_keyspace \
+-H "X-Cassandra-Token: $ASTRA_DB_APPLICATION_TOKEN" \
+-H "Content-Type: application/json" \
+-H "Accept: application/json"
+----
+--
+======
+
+=== Complex tabset w/ nested tabsets
+
+[tabs]
+======
+Tarball::
++
+--
+. If you haven't already, start by downloading the Cassandra binary tarball.
+For example, to download Cassandra 4.1.2:
++
+[tabs]
+=====
+cURL::
++
+[source,shell]
+----
+curl -OL https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz
+----
+
+Wget::
++
+[source,shell]
+----
+wget https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz
+----
+=====
++
+[TIP]
+====
+To download a different version of Cassandra, visit the https://archive.apache.org/dist/cassandra/[Apache Archives].
+====
+
+. Optional: Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here].
++
+.. For example, to verify the SHA256 hash of the downloaded file using GPG:
++
+[source,shell]
+----
+gpg --print-md SHA256 apache-cassandra-4.1.2-bin.tar.gz
+----
+
+.. Compare the output with the contents of the SHA256 file:
++
+[source,shell]
+----
+curl -L https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz.sha256
+----
+--
+
+Debian::
++
+--
+. Instructions for Debian-based systems.
++
+.. For example, to verify the SHA256 hash of the downloaded file using GPG:
++
+[tabs]
+=====
+cURL::
++
+[source,shell]
+----
+curl -OL https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz
+----
+
+Wget::
++
+[source,shell]
+----
+wget https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz
+----
+=====
+
+.. Compare the output with the contents of the SHA256 file:
++
+[tabs]
+=====
+cURL::
++
+[source,shell]
+----
+curl -L https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz.sha256
+----
+
+Wget::
++
+[source,shell]
+----
+wget --quiet -O - https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz.sha256
+----
+
+Third subtab::
++
+[source,console]
+----
+7ce3103a76b8af76ffd8488d6bf484e1f175119617f3205ae0526c71d816c6f7
+----
+=====
+--
+
+CentOS::
++
+--
+Just text.
+--
+======
+
+== Tab title rendering
+
+These tabsets demonstrate the rendering for horizontal scrolling on tabs, as well as an experimental (unused) icon feature.
 
 .Tabset w/ overflow tab titles (default)
 [tabs]
@@ -60,8 +254,7 @@ Another Tab Name::
 Contents of Another Tab.
 ======
 
-== Experimental: Tabset w/ wrapping tab titles
-
+.Tabset w/ wrapping tab titles (experimental)
 [tabs.wrapping]
 ======
 Tab Name:: Contents of Tab.
@@ -83,7 +276,7 @@ Another Tab Name::
 Contents of Another Tab.
 ======
 
-== Experimental: Tabset icons
+.Tabset icons (experimental)
 
 [tabs]
 ======
@@ -174,143 +367,3 @@ curl -s --location \
 }'
 ----
 ======
-
-== Examples
-
-=== Tabset w/ only code blocks
-
-[tabs]
-======
-Command::
-+
-[source,curl]
-----
-curl -s -L -X GET https://$ASTRA_CLUSTER_ID-$ASTRA_REGION.apps.astra.datastax.com/api/rest/v2/schemas/keyspaces/users_keyspace \
--H "X-Cassandra-Token: $ASTRA_DB_APPLICATION_TOKEN" \
--H "Content-Type: application/json" \
--H "Accept: application/json"
-----
-
-Result::
-+
-[source,console]
-----
-{"data":{"name":"users_keyspace"}}
-----
-======
-
-=== Complex tabset w/ nested tabsets
-
-[tabs]
-======
-Tarball::
-+
-. If you haven't already, start by downloading the Cassandra binary tarball.
-For example, to download Cassandra 4.1.2:
-+
-[tabs]
-====
-cURL::
-+
---
-[source,shell]
-----
-curl -OL https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz
-----
---
-
-Wget::
-+
---
-[source,shell]
-----
-wget https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz
-----
---
-====
-+
-[NOTE]
-====
-To download a different version of Cassandra, visit the https://archive.apache.org/dist/cassandra/[Apache Archives].
-====
-+
-. (Optional) Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here].
-+
-.. For example, to verify the SHA256 hash of the downloaded file using GPG:
-+
-[source,shell]
-----
-gpg --print-md SHA256 apache-cassandra-4.1.2-bin.tar.gz
-----
-+
-.. Compare the output with the contents of the SHA256 file:
-+
-[source,shell]
-----
-curl -L https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz.sha256
-----
-
-Debian::
-+
-. (Optional) Verify the integrity of the downloaded tarball using one of the methods https://www.apache.org/dyn/closer.cgi#verify[here].
-+
-.. For example, to verify the SHA256 hash of the downloaded file using GPG:
-+
-[tabs]
-====
-Command::
-+
---
-[source,shell]
-----
-gpg --print-md SHA256 apache-cassandra-4.1.2-bin.tar.gz
-----
---
-
-Result::
-+
---
-[source,console]
-----
-apache-cassandra-4.1.2-bin.tar.gz: 7CE3103A 76B8AF76 FFD8488D 6BF484E1 F1751196
-                                   17F3205A E0526C71 D816C6F7
-----
---
-====
-+
-.. Compare the output with the contents of the SHA256 file:
-+
-[tabs]
-====
-cURL::
-+
---
-[source,shell]
-----
-curl -L https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz.sha256
-----
---
-
-Wget::
-+
---
-[source,shell]
-----
-wget --quiet -O - https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz.sha256
-----
---
-
-Result::
-+
---
-[source,console]
-----
-7ce3103a76b8af76ffd8488d6bf484e1f175119617f3205ae0526c71d816c6f7
-----
---
-====
-
-CentOS:: Just text.
-======
-
-
