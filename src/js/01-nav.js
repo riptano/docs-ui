@@ -29,7 +29,15 @@
     // Auto scroll the side nav to the current page's side nav link
     const currentPageLink = sideNav.querySelector('.nav-link.current-page')
     if (currentPageLink) {
-      currentPageLink.scrollIntoView({ block: 'center' })
+      const sideNavRect = sideNav.getBoundingClientRect()
+      const currentPageLinkRect = currentPageLink.getBoundingClientRect()
+      const offsetTop = currentPageLinkRect.top - sideNavRect.top + sideNav.scrollTop
+      if (
+        currentPageLinkRect.top < sideNavRect.top ||
+        currentPageLinkRect.bottom > (sideNavRect.bottom - 160)
+      ) {
+        sideNav.scrollTop = offsetTop - (sideNav.clientHeight - 160) / 2 + currentPageLink.clientHeight / 2
+      }
     }
   }
 
