@@ -15,6 +15,7 @@ jobs:
         with:
           owner: riptano
           repo: datastax-docs-site
+          ref: draft-start-page
           github_token: ${{ secrets.DISPATCH_GITHUB_TOKEN }}
           github_user: mlr
           workflow_file_name: deploy-draft.yml
