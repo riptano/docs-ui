@@ -4393,9 +4393,6 @@ a.btn:hover {
 .w-52 {
   width: 13rem;
 }
-.w-6 {
-  width: 1.5rem;
-}
 .w-\[1\.5em\] {
   width: 1.5em;
 }
@@ -4578,6 +4575,9 @@ a.btn:hover {
 }
 .bg-\[url\(\'\.\.\/img\/social-x\.svg\'\)\] {
   background-image: url('../img/social-x.svg');
+}
+.bg-\[url\(\'\.\.\/img\/social-youtube\.svg\'\)\] {
+  background-image: url('../img/social-youtube.svg');
 }
 .bg-contain {
   background-size: contain;
