@@ -533,7 +533,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 .DocSearch .DocSearch-Search-Icon {
   display: none;
 }
-.DocSearch .DocSearch-Container {
+.DocSearch.DocSearch-Container {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
 }
