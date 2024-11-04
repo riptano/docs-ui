@@ -76,7 +76,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
   display: none;
 }
 
-.DocSearch .DocSearch-Container {
+.DocSearch.DocSearch-Container {
   backdrop-filter: blur(4px);
 }
 
