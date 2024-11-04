@@ -39,11 +39,16 @@
 
 <script>
   function getTheme() {
-    var localStorage = window.localStorage.getItem("theme");
-    var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (localStorage) return localStorage;
-    if (prefersDark) return "dark";
-    return "light";
+    var localStorage = window.localStorage.getItem("themePreference");
+    var systemPreference = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    if (localStorage) {
+      if (localStorage === "dark") return "dark";
+      if (localStorage === "light") return "light";
+      if (localStorage === "system") return systemPreference;
+    } else {
+      window.localStorage.setItem("themePreference", "system");
+      return systemPreference;
+    }
   }
   document.documentElement.setAttribute("data-theme", getTheme());
 </script>

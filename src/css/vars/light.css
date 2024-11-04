@@ -1,5 +1,5 @@
 @mixin light-theme {
-   /* Background */
+  /* Background */
   --ds-background-body: theme(colors.white);
   --ds-background-level1: theme(colors.zinc.50);
   --ds-background-level2: theme(colors.zinc.100);
@@ -7,6 +7,7 @@
   --ds-background-surface: theme(colors.white);
   --ds-background-tooltip: theme(colors.black);
   --ds-background-modal: theme(colors.white);
+  --ds-background-backdrop: rgba(0, 0, 0, 0.5);
 
   /* Text */
   --ds-text-disabled: theme(colors.zinc.200);
@@ -110,10 +111,6 @@
 
   html[data-theme="light"] .for-dark {
     display: none;
-  }
-
-  html[data-theme="light"] ::backdrop {
-    --ds-background-backdrop: rgba(0, 0, 0, 0.6);
   }
 
   @media (prefers-color-scheme: light) {
