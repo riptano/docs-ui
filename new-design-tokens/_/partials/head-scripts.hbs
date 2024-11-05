@@ -15,28 +15,6 @@
 
 <script>var uiRootPath = '{{{uiRootPath}}}'</script>
 
-<link
-  rel="preload"
-  href="{{uiRootPath}}/font/material-icons-outlined-latin-400-normal.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="{{uiRootPath}}/font/roboto-flex-latin-wght-normal.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="{{uiRootPath}}/font/roboto-mono-latin-500-normal.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-
 <script>
   function getTheme() {
     var localStorage = window.localStorage.getItem("themePreference");
@@ -52,5 +30,3 @@
   }
   document.documentElement.setAttribute("data-theme", getTheme());
 </script>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />

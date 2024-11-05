@@ -8,6 +8,35 @@
     <meta name="generator" content="Antora 1.0.0">
 <link rel="stylesheet" href="../_/css/site.css">
 
+<link
+  rel="preload"
+  href="../_/font/material-icons-outlined-latin-400-normal.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="../_/font/roboto-flex-latin-wght-normal.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="../_/font/roboto-mono-latin-500-normal.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="../_/font/lucide.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+
     <link rel="icon" href="https://www.datastax.com/favicon.ico">
     <meta property="article:published_time" content="">
     <meta property="article:modified_time" content="">
@@ -83,28 +112,6 @@
 
 <script>var uiRootPath = '../_'</script>
 
-<link
-  rel="preload"
-  href="../_/font/material-icons-outlined-latin-400-normal.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="../_/font/roboto-flex-latin-wght-normal.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="../_/font/roboto-mono-latin-500-normal.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-
 <script>
   function getTheme() {
     var localStorage = window.localStorage.getItem("themePreference");
@@ -120,8 +127,7 @@
   }
   document.documentElement.setAttribute("data-theme", getTheme());
 </script>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />  </head>
+  </head>
   <body class="">
 <div class="navbar bg-body border-b z-40 fixed top-0 flex flex-col w-full h-32">
   <nav class="flex flex-auto items-center gap-2 lg:gap-4 p-4">
@@ -224,13 +230,41 @@
 </svg>    </a>
     <div class="DocSearch" id="docsearch"></div>
     <button
-      class="w-10 ml-auto btn btn-neutral btn-outlined lg:w-auto"
-      id="get-support"
-    ><span class="material-icons lg:mr-2">support_agent</span><span
-        class="hidden lg:inline-block"
-      >Get Live Help</span>
+      class="w-10 ml-auto btn btn-neutral btn-outlined btn-small lg:w-auto flex items-center gap-1.5"
+      id="get-support">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.775 2.25H3.75C3.35218 2.25 2.97064 2.40804 2.68934 2.68934C2.40804 2.97064 2.25 3.35218 2.25 3.75V15.75L5.25 12.75H14.25C14.6478 12.75 15.0294 12.592 15.3107 12.3107C15.592 12.0294 15.75 11.6478 15.75 11.25V9.225" stroke="var(--ds-text-primary, black)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.5 6.75C14.7426 6.75 15.75 5.74264 15.75 4.5C15.75 3.25736 14.7426 2.25 13.5 2.25C12.2574 2.25 11.25 3.25736 11.25 4.5C11.25 5.74264 12.2574 6.75 13.5 6.75Z" stroke="var(--ds-failure-main, #DC2626)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="hidden lg:inline-block">Live Chat</span>
     </button>
-  </nav>
+    <div role="group" id="theme-toggle" class="border flex items-center rounded-[3rem] h-8 px-1 gap-0.5" aria-label="Theme Selection Toggle">
+  <span class="thumb w-6 h-6 absolute rounded-full transition-all [&.light]:bg-amber-300 [&.light]:translate-x-0 [&.dark]:bg-purple-500 [&.dark]:translate-x-[1.6125rem] [&.system]:bg-[var(--ds-neutral-solid-bg)] [&.system]:translate-x-[3.25rem]"></span>
+  <button 
+    class="toggle-button w-6 h-6 flex items-center justify-center rounded-full hover:bg-[var(--ds-neutral-plain-hover-bg)] z-0 transition-all [&.active]:hover:bg-transparent" 
+    aria-pressed="false" 
+    tabindex="0" 
+    value="light" 
+    aria-label="Light">
+      <i class="icon-sun"></i>
+  </button>
+  <button 
+    class="toggle-button w-6 h-6 flex items-center justify-center rounded-full hover:bg-[var(--ds-neutral-plain-hover-bg)] z-0 transition-all [&.active]:hover:bg-transparent" 
+    aria-pressed="false" 
+    tabindex="0" 
+    value="dark" 
+    aria-label="Dark">
+      <i class="icon-moon"></i>
+  </button>
+  <button 
+    class="toggle-button w-6 h-6 flex items-center justify-center rounded-full hover:bg-[var(--ds-neutral-plain-hover-bg)] z-0 transition-all [&.active]:hover:bg-transparent [&.active]:text-[var(--ds-neutral-solid-color)]" 
+    aria-pressed="false" 
+    tabindex="0" 
+    value="system" 
+    aria-label="System">
+      <i class="icon-monitor"></i>
+  </button>
+</div>  </nav>
  <nav class="global-nav motion-safe:scroll-smooth items-center flex gap-3 py-2 px-4 overflow-x-auto overflow-y-hidden no-scrollbar">
   <a 
     class="btn btn-plain btn-neutral flex gap-1" 
@@ -1281,33 +1315,7 @@ The header is optional.
         data-track="YouTube Link Clicked"
         class="h-6 w-6 bg-[url('../img/social-youtube.svg')] bg-no-repeat dark:invert"
       ></a>
-      <div role="group" id="theme-toggle" class="border flex items-center ml-8 rounded-[36px] p-0.5 gap-0.5" aria-label="Theme Selection Toggle">
-  <span class="thumb w-5 h-5 absolute rounded-full transition-all [&.light]:bg-amber-300 [&.light]:translate-x-0 [&.dark]:bg-purple-500 [&.dark]:translate-x-[1.375rem] [&.system]:bg-[var(--ds-neutral-solid-bg)] [&.system]:translate-x-[2.75rem]"></span>
-  <button 
-    class="toggle-button w-5 h-5 flex items-center justify-center rounded-full hover:bg-level2 z-0 transition-all [&.active]:hover:bg-transparent" 
-    aria-pressed="false" 
-    tabindex="0" 
-    value="light" 
-    aria-label="Light">
-      <i data-lucide="sun" class="w-[0.8125rem] h-[0.8125rem]"></i>
-  </button>
-  <button 
-    class="toggle-button w-5 h-5 flex items-center justify-center rounded-full hover:bg-level2 z-0 transition-all [&.active]:hover:bg-transparent" 
-    aria-pressed="false" 
-    tabindex="0" 
-    value="dark" 
-    aria-label="Dark">
-      <i data-lucide="moon" class="w-[0.8125rem] h-[0.8125rem]"></i>
-  </button>
-  <button 
-    class="toggle-button w-5 h-5 flex items-center justify-center rounded-full hover:bg-level2 z-0 transition-all [&.active]:hover:bg-transparent [&.active]:text-[var(--ds-neutral-solid-color)]" 
-    aria-pressed="false" 
-    tabindex="0" 
-    value="system" 
-    aria-label="System">
-      <i data-lucide="monitor" class="w-[0.8125rem] h-[0.8125rem]"></i>
-  </button>
-</div>    </div>
+    </div>
     <p class="!m-0 md:text-right">General Inquiries:
       <a
         href="tel:+1-650-389-6000"
@@ -1651,16 +1659,10 @@ The header is optional.
 </nav>
   </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.3"></script>
 <script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
 <script data-sync-storage-key="preferred-tab" async src="../_/js/vendor/tabs.js"></script>
 <script async src="../_/js/vendor/highlight.js"></script>
 <script async src="../_/js/vendor/zooming.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
+<script async src="../_/js/vendor/floatingui.js"></script>
   </body>
 </html>
