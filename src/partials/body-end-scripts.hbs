@@ -1,26 +1,12 @@
-<script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.3"></script>
 <script id="site-script" src="{{{uiRootPath}}}/{{{assets-manifest 'js/site.js' }}}" data-ui-root-path="{{{uiRootPath}}}"></script>
 <script data-sync-storage-key="preferred-tab" async src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/tabs.js' }}}"></script>
 <script async src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/highlight.js' }}}"></script>
 <script async src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/zooming.js' }}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script async src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/floatingui.js' }}}"></script>
 {{#with site.keys}}
   {{#if (and algoliaAppId algoliaIndexName algoliaApiKey)}}
-<script>
-  docsearch({
-    container: '#docsearch',
-    appId: '{{algoliaAppId}}',
-    indexName: '{{algoliaIndexName}}',
-    {{!-- This is the public API key which can be safely used in frontend code. --}}
-    apiKey: '{{algoliaApiKey}}',
-  })
-</script>
+<script async src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/docsearch.js' }}}" data-algolia-app-id="{{algoliaAppId}}" data-algolia-index-name="{{algoliaIndexName}}" data-algolia-api-key="{{algoliaApiKey}}"></script>
   {{/if}}
 {{/with}}
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
 {{> intercom}}
 {{> scarf}}

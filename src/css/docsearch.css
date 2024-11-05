@@ -1,3 +1,5 @@
+@import "@docsearch/css";
+
 .DocSearch .DocSearch-Hit[aria-selected="true"] a {
   background-color: var(--ds-background-level1);
 }
