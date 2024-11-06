@@ -16,17 +16,16 @@
 <script>var uiRootPath = '{{{uiRootPath}}}'</script>
 
 <script>
-  function getTheme() {
+  const setTheme = () => {
     var localStorage = window.localStorage.getItem("themePreference");
     var systemPreference = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    if (localStorage) {
-      if (localStorage === "dark") return "dark";
-      if (localStorage === "light") return "light";
-      if (localStorage === "system") return systemPreference;
+
+    if (!localStorage) {
+      document.documentElement.setAttribute("data-theme", systemPreference);
+      document.documentElement.setAttribute("data-theme-system", true);
     } else {
-      window.localStorage.setItem("themePreference", "system");
-      return systemPreference;
+      document.documentElement.setAttribute("data-theme", localStorage);
     }
   }
-  document.documentElement.setAttribute("data-theme", getTheme());
+  setTheme()
 </script>

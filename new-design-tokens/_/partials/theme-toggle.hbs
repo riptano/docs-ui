@@ -1,7 +1,7 @@
 <div role="group" id="theme-toggle" class="border flex items-center rounded-[3rem] h-8 px-1 gap-0.5" aria-label="Theme Selection Toggle">
-  <span class="thumb w-6 h-6 absolute rounded-full transition-all [&.light]:bg-amber-300 [&.light]:translate-x-0 [&.dark]:bg-purple-500 [&.dark]:translate-x-[1.6125rem] [&.system]:bg-[var(--ds-neutral-solid-bg)] [&.system]:translate-x-[3.25rem]"></span>
+  <span class="thumb w-6 h-6 absolute rounded-full transition-all"></span>
   <button 
-    class="toggle-button w-6 h-6 flex items-center justify-center rounded-full hover:bg-[var(--ds-neutral-plain-hover-bg)] z-0 transition-all [&.active]:hover:bg-transparent" 
+    class="toggle-button light w-6 h-6 flex items-center justify-center rounded-full hover:bg-[var(--ds-neutral-plain-hover-bg)] z-0 transition-all" 
     aria-pressed="false" 
     tabindex="0" 
     value="light" 
@@ -9,7 +9,7 @@
       <i class="icon-sun"></i>
   </button>
   <button 
-    class="toggle-button w-6 h-6 flex items-center justify-center rounded-full hover:bg-[var(--ds-neutral-plain-hover-bg)] z-0 transition-all [&.active]:hover:bg-transparent" 
+    class="toggle-button dark w-6 h-6 flex items-center justify-center rounded-full hover:bg-[var(--ds-neutral-plain-hover-bg)] z-0 transition-all" 
     aria-pressed="false" 
     tabindex="0" 
     value="dark" 
@@ -17,7 +17,7 @@
       <i class="icon-moon"></i>
   </button>
   <button 
-    class="toggle-button w-6 h-6 flex items-center justify-center rounded-full hover:bg-[var(--ds-neutral-plain-hover-bg)] z-0 transition-all [&.active]:hover:bg-transparent [&.active]:text-[var(--ds-neutral-solid-color)]" 
+    class="toggle-button system w-6 h-6 flex items-center justify-center rounded-full hover:bg-[var(--ds-neutral-plain-hover-bg)] z-0 transition-all" 
     aria-pressed="false" 
     tabindex="0" 
     value="system" 
