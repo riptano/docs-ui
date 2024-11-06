@@ -113,18 +113,19 @@
 <script>var uiRootPath = '../_'</script>
 
 <script>
-  const setTheme = () => {
+  function setTheme() {
     var localStorage = window.localStorage.getItem("themePreference");
     var systemPreference = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
-    if (!localStorage) {
+    if (localStorage !== "dark" && localStorage !== "light") {
       document.documentElement.setAttribute("data-theme", systemPreference);
       document.documentElement.setAttribute("data-theme-system", true);
+      window.localStorage.removeItem("themePreference");
     } else {
       document.documentElement.setAttribute("data-theme", localStorage);
     }
-  }
-  setTheme()
+  };
+  setTheme();
 </script>
   </head>
   <body class="">
