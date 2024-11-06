@@ -44,9 +44,13 @@ module.exports = (src, dest, preview) => () => {
       {
         filter: (asset) => new RegExp('.+[.](?:ttf|woff2?)(?:\\?[^\\s]*)?$').test(asset.url),
         url: (asset) => {
-          const basename = ospath.basename(asset.absolutePath)
+          let relpath = asset.pathname
+          if (relpath.includes('lucide')) relpath = `lucide-static/font/${relpath}`
+          if (relpath.includes('~@fontsource')) relpath = relpath.replace('~', '')
+          const abspath = require.resolve(relpath)
+          const basename = ospath.basename(abspath)
           const destpath = ospath.join(dest, 'font', basename)
-          if (!fs.pathExistsSync(destpath)) fs.copySync(asset.absolutePath, destpath)
+          if (!fs.pathExistsSync(destpath)) fs.copySync(abspath, destpath)
           return path.join('..', 'font', basename)
         },
       },
