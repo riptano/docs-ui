@@ -100,26 +100,11 @@
   --ds-warning-solid-hover-bg: theme(colors.amber.700);
 }
 
-@layer base {
-  html[data-theme="light"] {
-    @include light-theme;
+@mixin light-inverse {
+  .inverse-theme {
+    @include dark-theme;
   }
-
-  html[data-theme="dark"] .inverse-theme {
-    @include light-theme;
-  }
-
-  html[data-theme="light"] .for-dark {
+  .for-dark {
     display: none;
-  }
-
-  @media (prefers-color-scheme: light) {
-    :root:not([data-theme="light"]):not([data-theme="dark"]) {
-      @include light-theme;
-    }
-
-    :root:not([data-theme="light"]):not([data-theme="dark"]) .for-dark {
-      display: none;
-    }
   }
 }

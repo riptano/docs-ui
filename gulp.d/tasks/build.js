@@ -42,13 +42,11 @@ module.exports = (src, dest, preview) => () => {
       }),
     postcssUrl([
       {
-        filter: (asset) => new RegExp('.+[.](?:ttf|woff2?)$').test(asset.url),
+        filter: (asset) => new RegExp('.+[.](?:ttf|woff2?)(?:\\?[^\\s]*)?$').test(asset.url),
         url: (asset) => {
-          const relpath = asset.pathname.substr(1)
-          const abspath = require.resolve(relpath)
-          const basename = ospath.basename(abspath)
+          const basename = ospath.basename(asset.absolutePath)
           const destpath = ospath.join(dest, 'font', basename)
-          if (!fs.pathExistsSync(destpath)) fs.copySync(abspath, destpath)
+          if (!fs.pathExistsSync(destpath)) fs.copySync(asset.absolutePath, destpath)
           return path.join('..', 'font', basename)
         },
       },

@@ -15,7 +15,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 .DocSearch .DocSearch-Commands-Key,
 .DocSearch .DocSearch-Button-Key {
   border-radius: 4px;
-  color: var(--ds-text-tertiary);
+  color: var(--ds-text-secondary);
 }
 
 .DocSearch .DocSearch-LoadingIndicator svg,
@@ -128,7 +128,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
   --docsearch-hit-shadow: none;
 
   /* key */
-  --docsearch-key-gradient: var(--ds-background-level1);
+  --docsearch-key-gradient: var(--ds-background-level2);
   --docsearch-key-shadow: none;
 
   /* footer */
@@ -149,7 +149,7 @@ html[data-theme="dark"] .DocSearch {
   --docsearch-hit-color: var(--ds-text-primary);
   --docsearch-hit-shadow: none;
   --docsearch-hit-background: var(--ds-background-body);
-  --docsearch-key-gradient: var(--ds-background-level1);
+  --docsearch-key-gradient: var(--ds-background-level2);
   --docsearch-key-shadow: none;
   --docsearch-footer-background: var(--ds-background-body);
   --docsearch-footer-shadow: none;

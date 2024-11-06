@@ -59,12 +59,12 @@
   }
 
   .doc .admonitionblock.note .icon::before {
-    color: var(--ds-success-500);
+    color: var(--ds-success-soft-color);
     content: "\e88e";
   }
 
   .doc .admonitionblock.tip .icon::before {
-    color: var(--ds-success-500);
+    color: var(--ds-success-soft-color);
     content: "\e0f0";
   }
 
@@ -79,7 +79,7 @@
   }
 
   .doc .admonitionblock.caution .icon::before {
-    color: var(--ds-warning-500);
+    color: var(--ds-warning-soft-color);
     content: "\e88e";
   }
 
@@ -96,16 +96,12 @@
   }
 
   .doc .admonitionblock.warning .icon::before {
-    color: var(--ds-failure-500);
+    color: var(--ds-failure-soft-color);
     content: "\f083";
   }
 
   .doc .admonitionblock.important .icon::before {
-    color: var(--ds-failure-500);
+    color: var(--ds-failure-soft-color);
     content: "\e160";
-  }
-
-  html[data-theme="dark"] .doc .admonitionblock .icon::before {
-    color: var(--ds-primary-text);
   }
 }

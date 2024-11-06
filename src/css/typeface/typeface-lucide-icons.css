@@ -1,8 +1,1 @@
 @import "lucide-static/font/lucide.css";
-
-@font-face {
-  font-family: "lucide";
-  font-style: normal;
-  font-weight: 400;
-  src: url(~lucide-static/font/lucide.woff2) format("woff2");
-}

@@ -18,4 +18,14 @@
     --ds-space-11: calc(88 / var(--rem-base) * 1rem); /* 88px */
     --ds-space-15: calc(120 / var(--rem-base) * 1rem); /* 120px */
   }
+
+  html[data-theme="light"] {
+    @include light-theme;
+    @include light-inverse;
+  }
+
+  html[data-theme="dark"] {
+    @include dark-theme;
+    @include dark-inverse;
+  }
 }

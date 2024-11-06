@@ -430,32 +430,7 @@
     border-radius: var(--ds-space-1);
     transform: translate(-0.25rem, -50%);
   }
-
-  .doc .admonitionblock.caution .icon {
-    background-color: var(--ds-primary-main);
-    color: var(--ds-text-inverse);
-  }
-
-  .doc .admonitionblock.important .icon {
-    background-color: var(--ds-failure-man);
-    color: var(--ds-text-inverse);
-  }
-
-  .doc .admonitionblock.note .icon {
-    background-color: var(--ds-cyan-main);
-    color: var(--ds-text-inverse);
-  }
-
-  .doc .admonitionblock.tip .icon {
-    background-color: var(--ds-success-main);
-    color: var(--ds-text-inverse);
-  }
-
-  .doc .admonitionblock.warning .icon {
-    background-color: var(--ds-warning-main);
-    color: var(--ds-text-inverse);
-  }
-
+  
   .doc .admonitionblock .icon i {
     display: inline-flex;
     align-items: center;
@@ -463,6 +438,9 @@
   }
 
   .doc .admonitionblock .icon i::after {
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "Roboto Flex", sans-serif;
     content: attr(title);
   }
 
