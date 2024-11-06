@@ -59,9 +59,7 @@ module.exports = (src, dest, preview) => () => {
     // only run tailwindcss in preview, datastax-docs-site repo has it's own tailwind cli step
     preview ? tailwindcss(tailwindconfig) : () => {},
     postcssAdvancedVars,
-    postcssVar({ preserve: preview }),
-    // NOTE to make vars.css available to all top-level stylesheets, use the next line in place of the previous one
-    //postcssVar({ importFrom: path.join(src, 'css', 'vars.css'), preserve: preview }),
+    postcssVar({ preserve: true }),
     preview ? postcssCalc : () => {}, // cssnano already applies postcssCalc
     autoprefixer,
     preview
