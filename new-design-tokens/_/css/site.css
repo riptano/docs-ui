@@ -3801,8 +3801,9 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
   --docsearch-hit-shadow: none;
 
   /* key */
-  --docsearch-key-gradient: var(--ds-background-level2);
+  --docsearch-key-gradient: var(--ds-neutral-soft-bg);
   --docsearch-key-shadow: none;
+  --docsearch-key-pressed-shadow: none;
 
   /* footer */
   --docsearch-footer-height: var(--ds-space-6);
@@ -3813,21 +3814,7 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 /* Darkmode */
 
 html[data-theme="dark"] .DocSearch {
-  --docsearch-text-color: var(--ds-text-primary);
-  --docsearch-container-background: var(--ds-background-backdrop);
-  --docsearch-modal-background: var(--ds-background-body);
   --docsearch-modal-shadow: none;
-  --docsearch-searchbox-background: none;
-  --docsearch-searchbox-focus-background: none;
-  --docsearch-hit-color: var(--ds-text-primary);
-  --docsearch-hit-shadow: none;
-  --docsearch-hit-background: var(--ds-background-body);
-  --docsearch-key-gradient: var(--ds-background-level2);
-  --docsearch-key-shadow: none;
-  --docsearch-footer-background: var(--ds-background-body);
-  --docsearch-footer-shadow: none;
-  --docsearch-logo-color: var(--ds-text-primary);
-  --docsearch-muted-color: var(--ds-text-placeholder);
 }
 
 .global-nav > .scroll-btn-left,
