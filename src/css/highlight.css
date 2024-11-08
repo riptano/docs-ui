@@ -7,23 +7,23 @@
 }
 
 .hljs-variable {
-  color: var(--ds-error-main);
+  color: var(--ds-failure-main);
 }
 
 .hljs-template-variable {
-  color: var(--ds-error-main);
+  color: var(--ds-failure-main);
 }
 
 .hljs-tag {
-  color: var(--ds-error-main);
+  color: var(--ds-failure-main);
 }
 
 .hljs-name {
-  color: var(--ds-error-main);
+  color: var(--ds-failure-main);
 }
 
 .hljs-selector-id {
-  color: var(--ds-error-main);
+  color: var(--ds-failure-main);
 }
 
 .hljs-selector-class {
@@ -35,7 +35,7 @@
 }
 
 .hljs-deletion {
-  color: var(--ds-error-main);
+  color: var(--ds-failure-main);
 }
 
 .hljs-number {

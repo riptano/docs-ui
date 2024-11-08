@@ -67,7 +67,7 @@ html[data-theme="light"] .tablist > .scroll-btn-left {
 }
 
 html[data-theme="dark"] .tablist > .scroll-btn-left {
-  background: linear-gradient(to left, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
+  background: linear-gradient(to left, rgba(24, 24, 27, 0), rgb(24, 24, 27), rgb(24, 24, 27) 50%);
 }
 
 html[data-theme="light"] .tablist > .scroll-btn-right {
@@ -75,7 +75,7 @@ html[data-theme="light"] .tablist > .scroll-btn-right {
 }
 
 html[data-theme="dark"] .tablist > .scroll-btn-right {
-  background: linear-gradient(to right, rgba(9, 9, 9, 0), rgb(9, 9, 9), rgb(9, 9, 9) 50%);
+  background: linear-gradient(to right, rgba(24, 24, 27, 0), rgb(24, 24, 27), rgb(24, 24, 27) 50%);
 }
 
 .tabs .tablist li::after {

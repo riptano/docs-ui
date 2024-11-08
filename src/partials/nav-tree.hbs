@@ -16,7 +16,7 @@
       aria-label="{{{./content}}}" aria-expanded="false" aria-controls="{{nav-id  (increment (or ../level 0)) ./content}}">
     {{/if}}
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors
       {{~#if ./items.length}} text-caption{{~/if}}
       {{~#if (eq (or ../level 0) 0)}}{{~#if ./items.length}} text-overline py-2{{~/if}}{{~/if}}
       {{~#if (eq ./url @root.page.url)}} color-primary font-semibold{{~/if}}

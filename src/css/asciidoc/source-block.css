@@ -78,11 +78,11 @@
   }
 
   html[data-theme="light"] .doc .source-toolbox {
-    background: linear-gradient(to right, rgba(247, 247, 247, 0), rgb(247, 247, 247), rgb(247, 247, 247) 50%);
+    background: linear-gradient(to right, rgba(250, 250, 250, 0), rgb(250, 250, 250), rgb(250, 250, 250) 50%);
   }
 
   html[data-theme="dark"] .doc .source-toolbox {
-    background: linear-gradient(to right, rgba(35, 35, 36, 0), rgb(35, 35, 36), rgb(35, 35, 36) 50%);
+    background: linear-gradient(to right, rgba(39, 39, 42, 0), rgb(39, 39, 42), rgb(39, 39, 42) 50%);
   }
 
   .doc .source-toolbox .copy-toast {

@@ -23,7 +23,7 @@
 ;(function () {
   'use strict'
 
-  const { computePosition, autoPlacement, shift } = window.FloatingUIDOM
+  const { computePosition, autoPlacement, shift } = require('@floating-ui/dom')
   const isTouchDevice = window.matchMedia('(pointer: coarse)').matches
 
   const hideAllDropdowns = () => {

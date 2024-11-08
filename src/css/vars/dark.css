@@ -1,169 +1,110 @@
 @mixin dark-theme {
-  --ds-divider: var(--ds-neutral-700);
-  --ds-focus-visible: var(--ds-common-white);
-  --ds-background-body: var(--ds-neutral-900);
-  --ds-background-level1: var(--ds-neutral-800);
-  --ds-background-level2: var(--ds-neutral-700);
-  --ds-background-level3: var(--ds-neutral-600);
-  --ds-background-surface: var(--ds-neutral-900);
-  --ds-background-tooltip: var(--ds-neutral-0);
-  --ds-background-backdrop: rgba(10, 10, 10, 0.6);
-  --ds-cyan-main: var(--ds-cyan-400);
-  --ds-failure-main: var(--ds-failure-400);
-  --ds-failure-outlined-active-bg: var(--ds-failure-500);
-  --ds-failure-outlined-border: var(--ds-failure-600);
-  --ds-failure-outlined-color: var(--ds-common-white);
-  --ds-failure-outlined-disabled-border: var(--ds-neutral-800);
-  --ds-failure-outlined-disabled-color: var(--ds-neutral-600);
-  --ds-failure-outlined-hover-bg: var(--ds-failure-900);
-  --ds-failure-outlined-hover-border: var(--ds-failure-500);
-  --ds-failure-plain-active-bg: var(--ds-failure-700);
-  --ds-failure-plain-color: var(--ds-failure-300);
-  --ds-failure-plain-disabled-color: var(--ds-failure-800);
-  --ds-failure-plain-hover-bg: var(--ds-failure-800);
-  --ds-failure-soft-active-bg: var(--ds-failure-600);
-  --ds-failure-soft-bg: var(--ds-failure-900);
-  --ds-failure-soft-color: var(--ds-failure-200);
-  --ds-failure-soft-disabled-bg: var(--ds-failure-600);
-  --ds-failure-soft-disabled-color: var(--ds-failure-800);
-  --ds-failure-soft-hover-bg: var(--ds-failure-700);
-  --ds-failure-solid-active-bg: var(--ds-failure-800);
-  --ds-failure-solid-bg: var(--ds-failure-600);
-  --ds-failure-solid-color: var(--ds-common-white);
-  --ds-failure-solid-disabled-bg: var(--ds-neutral-600);
-  --ds-failure-solid-disabled-color: var(--ds-neutral-800);
-  --ds-failure-solid-hover-bg: var(--ds-failure-700);
-  --ds-magenta-main: var(--ds-magenta-400);
-  --ds-neutral-main: var(--ds-common-white);
-  --ds-neutral-outlined-active-bg: var(--ds-neutral-500);
-  --ds-neutral-outlined-border: var(--ds-neutral-600);
-  --ds-neutral-outlined-color: var(--ds-common-white);
-  --ds-neutral-outlined-disabled-border: var(--ds-neutral-800);
-  --ds-neutral-outlined-disabled-color: var(--ds-neutral-600);
-  --ds-neutral-outlined-hover-bg: var(--ds-neutral-800);
-  --ds-neutral-outlined-hover-border: var(--ds-neutral-500);
-  --ds-neutral-plain-active-bg: var(--ds-neutral-700);
-  --ds-neutral-plain-color: var(--ds-common-white);
-  --ds-neutral-plain-disabled-color: var(--ds-neutral-800);
-  --ds-neutral-plain-hover-bg: var(--ds-neutral-800);
-  --ds-neutral-soft-active-bg: var(--ds-neutral-600);
-  --ds-neutral-soft-bg: var(--ds-neutral-800);
-  --ds-neutral-soft-color: var(--ds-common-white);
-  --ds-neutral-soft-disabled-bg: var(--ds-neutral-600);
-  --ds-neutral-soft-disabled-color: var(--ds-neutral-800);
-  --ds-neutral-soft-hover-bg: var(--ds-neutral-700);
-  --ds-neutral-solid-active-bg: var(--ds-neutral-100);
-  --ds-neutral-solid-bg: var(--ds-common-white);
-  --ds-neutral-solid-color: var(--ds-neutral-900);
-  --ds-neutral-solid-disabled-bg: var(--ds-neutral-600);
-  --ds-neutral-solid-disabled-color: var(--ds-neutral-800);
-  --ds-neutral-solid-hover-bg: var(--ds-neutral-0);
-  --ds-orange-main: var(--ds-orange-400);
-  --ds-primary-main: var(--ds-primary-300);
-  --ds-primary-outlined-active-bg: var(--ds-primary-500);
-  --ds-primary-outlined-border: var(--ds-primary-600);
-  --ds-primary-outlined-color: var(--ds-common-white);
-  --ds-primary-outlined-disabled-border: var(--ds-neutral-800);
-  --ds-primary-outlined-disabled-color: var(--ds-neutral-600);
-  --ds-primary-outlined-hover-bg: var(--ds-primary-900);
-  --ds-primary-outlined-hover-border: var(--ds-primary-500);
-  --ds-primary-plain-active-bg: var(--ds-primary-700);
-  --ds-primary-plain-color: var(--ds-primary-300);
-  --ds-primary-plain-disabled-color: var(--ds-primary-800);
-  --ds-primary-plain-hover-bg: var(--ds-primary-800);
-  --ds-primary-soft-active-bg: var(--ds-primary-600);
-  --ds-primary-soft-bg: var(--ds-primary-900);
-  --ds-primary-soft-color: var(--ds-primary-200);
-  --ds-primary-soft-disabled-bg: var(--ds-primary-600);
-  --ds-primary-soft-disabled-color: var(--ds-primary-800);
-  --ds-primary-soft-hover-bg: var(--ds-primary-700);
-  --ds-primary-solid-active-bg: var(--ds-primary-600);
-  --ds-primary-solid-bg: var(--ds-primary-600);
-  --ds-primary-solid-color: var(--ds-common-white);
-  --ds-primary-solid-disabled-bg: var(--ds-neutral-600);
-  --ds-primary-solid-disabled-color: var(--ds-neutral-800);
-  --ds-primary-solid-hover-bg: var(--ds-primary-700);
-  --ds-success-main: var(--ds-success-400);
-  --ds-success-outlined-active-bg: var(--ds-success-500);
-  --ds-success-outlined-border: var(--ds-success-600);
-  --ds-success-outlined-color: var(--ds-common-white);
-  --ds-success-outlined-disabled-border: var(--ds-neutral-800);
-  --ds-success-outlined-disabled-color: var(--ds-neutral-600);
-  --ds-success-outlined-hover-bg: var(--ds-success-900);
-  --ds-success-outlined-hover-border: var(--ds-success-500);
-  --ds-success-plain-active-bg: var(--ds-success-700);
-  --ds-success-plain-color: var(--ds-success-300);
-  --ds-success-plain-disabled-color: var(--ds-success-800);
-  --ds-success-plain-hover-bg: var(--ds-success-800);
-  --ds-success-soft-active-bg: var(--ds-success-600);
-  --ds-success-soft-bg: var(--ds-success-900);
-  --ds-success-soft-color: var(--ds-success-200);
-  --ds-success-soft-disabled-bg: var(--ds-success-600);
-  --ds-success-soft-disabled-color: var(--ds-success-800);
-  --ds-success-soft-hover-bg: var(--ds-success-700);
-  --ds-success-solid-active-bg: var(--ds-success-800);
-  --ds-success-solid-bg: var(--ds-success-600);
-  --ds-success-solid-color: var(--ds-common-white);
-  --ds-success-solid-disabled-bg: var(--ds-neutral-600);
-  --ds-success-solid-disabled-color: var(--ds-neutral-800);
-  --ds-success-solid-hover-bg: var(--ds-success-700);
-  --ds-teal-main: var(--ds-teal-400);
-  --ds-text-disabled: var(--ds-neutral-800);
-  --ds-text-inverse: var(--ds-neutral-900);
-  --ds-text-placeholder: var(--ds-neutral-700);
-  --ds-text-primary: var(--ds-common-white);
-  --ds-text-secondary: var(--ds-neutral-300);
-  --ds-text-tertiary: var(--ds-neutral-400);
-  --ds-warning-main: var(--ds-warning-400);
-  --ds-warning-outlined-active-bg: var(--ds-warning-500);
-  --ds-warning-outlined-border: var(--ds-warning-600);
-  --ds-warning-outlined-color: var(--ds-common-white);
-  --ds-warning-outlined-disabled-border: var(--ds-neutral-800);
-  --ds-warning-outlined-disabled-color: var(--ds-neutral-600);
-  --ds-warning-outlined-hover-bg: var(--ds-warning-900);
-  --ds-warning-outlined-hover-border: var(--ds-warning-500);
-  --ds-warning-plain-active-bg: var(--ds-warning-700);
-  --ds-warning-plain-color: var(--ds-warning-300);
-  --ds-warning-plain-disabled-color: var(--ds-warning-800);
-  --ds-warning-plain-hover-bg: var(--ds-warning-800);
-  --ds-warning-soft-active-bg: var(--ds-warning-600);
-  --ds-warning-soft-bg: var(--ds-warning-900);
-  --ds-warning-soft-color: var(--ds-warning-200);
-  --ds-warning-soft-disabled-bg: var(--ds-warning-600);
-  --ds-warning-soft-disabled-color: var(--ds-warning-800);
-  --ds-warning-soft-hover-bg: var(--ds-warning-700);
-  --ds-warning-solid-active-bg: var(--ds-warning-800);
-  --ds-warning-solid-bg: var(--ds-warning-600);
-  --ds-warning-solid-color: var(--ds-common-white);
-  --ds-warning-solid-disabled-bg: var(--ds-neutral-600);
-  --ds-warning-solid-disabled-color: var(--ds-neutral-800);
-  --ds-warning-solid-hover-bg: var(--ds-warning-700);
+  /* Background */
+  --ds-background-body: theme(colors.zinc.900);
+  --ds-background-level1: theme(colors.zinc.800);
+  --ds-background-level2: theme(colors.zinc.700);
+  --ds-background-level3: theme(colors.zinc.600);
+  --ds-background-surface: theme(colors.zinc.900);
+  --ds-background-tooltip: theme(colors.white);
+  --ds-background-modal: theme(colors.zinc.900);
+  --ds-background-backdrop: rgba(0, 0, 0, 0.5);
+
+  /* Text */
+  --ds-text-disabled: theme(colors.zinc.700);
+  --ds-text-inverse: theme(colors.black);
+  --ds-text-placeholder: theme(colors.zinc.500);
+  --ds-text-primary: theme(colors.white);
+  --ds-text-secondary: theme(colors.zinc.200);
+  --ds-text-tertiary: theme(colors.zinc.300);
+
+  /* Divider */
+  --ds-divider: theme(colors.zinc.700);
+
+  /* Focus ring */
+  --ds-focus-visible: theme(colors.white);
+
+  /* Disabled */
+  --ds-disabled-bg: theme(colors.zinc.800);
+  --ds-disabled-color: theme(colors.zinc.600);
+
+  /* Data */
+  --ds-cyan-main: theme(colors.cyan.500);
+  --ds-indigo-main: theme(colors.indigo.400);
+  --ds-lime-main: theme(colors.lime.400);
+  --ds-orange-main: theme(colors.orange.400);
+  --ds-fuchsia-main: theme(colors.fuchsia.300);
+  --ds-pink-main: theme(colors.pink.300);
+  --ds-teal-main: theme(colors.teal.500);
+
+  /* Intents */
+  --ds-failure-main: theme(colors.red.500);
+  --ds-failure-outlined-border: theme(colors.red.600);
+  --ds-failure-outlined-color: theme(colors.white);
+  --ds-failure-outlined-hover-bg: theme(colors.red.600);
+  --ds-failure-outlined-hover-border: theme(colors.red.600);
+  --ds-failure-soft-bg: theme(colors.red.950);
+  --ds-failure-soft-color: theme(colors.red.200);
+  --ds-failure-soft-hover-bg: theme(colors.red.900);
+  --ds-failure-solid-bg: theme(colors.red.700);
+  --ds-failure-solid-color: theme(colors.white);
+  --ds-failure-solid-hover-bg: theme(colors.red.500);
+
+  --ds-neutral-main: theme(colors.white);
+  --ds-neutral-outlined-border: theme(colors.zinc.700);
+  --ds-neutral-outlined-color: theme(colors.white);
+  --ds-neutral-outlined-hover-bg: theme(colors.zinc.700);
+  --ds-neutral-outlined-hover-border: theme(colors.zinc.700);
+  --ds-neutral-plain-color: theme(colors.white);
+  --ds-neutral-plain-hover-bg: theme(colors.zinc.700);
+  --ds-neutral-soft-bg: theme(colors.zinc.800);
+  --ds-neutral-soft-color: theme(colors.white);
+  --ds-neutral-soft-hover-bg: theme(colors.zinc.700);
+  --ds-neutral-solid-bg: theme(colors.white);
+  --ds-neutral-solid-color: theme(colors.black);
+  --ds-neutral-solid-hover-bg: theme(colors.zinc.200);
+
+  --ds-primary-main: theme(colors.purple.400);
+  --ds-primary-outlined-border: theme(colors.purple.600);
+  --ds-primary-outlined-color: theme(colors.white);
+  --ds-primary-outlined-hover-bg: theme(colors.purple.600);
+  --ds-primary-outlined-hover-border: theme(colors.purple.600);
+  --ds-primary-soft-bg: theme(colors.purple.950);
+  --ds-primary-soft-color: theme(colors.purple.200);
+  --ds-primary-soft-hover-bg: theme(colors.purple.900);
+  --ds-primary-solid-bg: theme(colors.purple.700);
+  --ds-primary-solid-color: theme(colors.white);
+  --ds-primary-solid-hover-bg: theme(colors.purple.500);
+
+  --ds-success-main: theme(colors.emerald.500);
+  --ds-success-outlined-border: theme(colors.emerald.600);
+  --ds-success-outlined-color: theme(colors.white);
+  --ds-success-outlined-hover-bg: theme(colors.emerald.600);
+  --ds-success-outlined-hover-border: theme(colors.emerald.600);
+  --ds-success-soft-bg: theme(colors.emerald.950);
+  --ds-success-soft-color: theme(colors.emerald.200);
+  --ds-success-soft-hover-bg: theme(colors.emerald.900);
+  --ds-success-solid-bg: theme(colors.emerald.700);
+  --ds-success-solid-color: theme(colors.white);
+  --ds-success-solid-hover-bg: theme(colors.emerald.500);
+
+  --ds-warning-main: theme(colors.amber.400);
+  --ds-warning-outlined-border: theme(colors.amber.600);
+  --ds-warning-outlined-color: theme(colors.white);
+  --ds-warning-outlined-hover-bg: theme(colors.amber.600);
+  --ds-warning-outlined-hover-border: theme(colors.amber.600);
+  --ds-warning-soft-bg: theme(colors.amber.950);
+  --ds-warning-soft-color: theme(colors.amber.300);
+  --ds-warning-soft-hover-bg: theme(colors.amber.900);
+  --ds-warning-solid-bg: theme(colors.amber.500);
+  --ds-warning-solid-color: theme(colors.black);
+  --ds-warning-solid-hover-bg: theme(colors.amber.400);
 }
 
-@layer base {
-  html[data-theme="dark"] {
-    @include dark-theme;
+@mixin dark-inverse {
+  .inverse-theme {
+    @include light-theme;
   }
-
-  html[data-theme="light"] .inverse-theme {
-    @include dark-theme;
-  }
-
-  html[data-theme="dark"] .for-light {
+  .for-light {
     display: none;
-  }
-
-  html[data-theme="dark"] ::backdrop {
-    --ds-background-backdrop: rgba(10, 10, 10, 0.6);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]):not([data-theme="dark"]) {
-      @include dark-theme;
-    }
-
-    :root:not([data-theme="light"]):not([data-theme="dark"]) .for-light {
-      display: none;
-    }
   }
 }

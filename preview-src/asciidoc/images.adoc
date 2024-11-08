@@ -112,7 +112,7 @@ Click the Astra Vector icon image:../img/astra-vector-light.svg[title="Astra Vec
 
 [NOTE]
 ======
-You can define icons from https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Outlined[Material Icons,window=_blank] or an svg file using the customized `icon` macro or the `material-icons` role.
+You can define icons from https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Outlined[Material Icons,window=_blank] and https://lucide.dev/icons/[Lucide Icons,window=_blank]. You can also apply an svg file using the customized `icon` macro.
 
 Method 1: Inline icon macro with an svg file::
 The customized inline icon macro accepts a file path as it's target source. The file must be an svg file.
@@ -126,6 +126,8 @@ icon:ROOT:ui/icons/vector.svg[]
 
 Method 2: Inline icon macro with a material-icons target::
 The customized inline icon macro supports material icon names as it's target source prefixed with `material-icons:`. Ensure the name is lower case with underscores instead of spaces.
++
+This macro does not yet support Lucide icons.
 +
 This method supports light and dark mode automatically.
 +
@@ -151,12 +153,31 @@ thumb_up
 ----
 Inline material icons [.material-icons]#thumb_up#
 ----
++ 
+[.material-icons]#thumb_up# [.material-icons]#rocket_launch#
+
+Method 4: Lucide icons with HTML passthrough::
+Use block or inline HTML passthrough to create an icon element `<i class="icon-{icon-name}"></i>`.
++
+This method supports light and dark mode automatically.
++
+.Block passthrough
+[source]
+----
+++++
+<i class="icon-boom-box"></i>
+++++
+----
++
+.Inline passthrough
+[source]
+----
+Inline lucide icons +++<i class="icon-boom-box"></i>+++
+----
++
++++<i class="icon-boom-box"></i>+++ +++<i class="icon-atom"></i>+++ +++<i class="icon-moon"></i>+++
 ======
 
-[.material-icons]
-add_reaction
-
-Inline material icons [.material-icons]#thumb_up# [.material-icons]#support# [.material-icons]#code# [.material-icons]#rocket_launch# [.material-icons.text-2xl]#rocket_launch# [.material-icons.text-3xl]#rocket_launch#
 
 == Video
 

@@ -42,9 +42,11 @@ module.exports = (src, dest, preview) => () => {
       }),
     postcssUrl([
       {
-        filter: (asset) => new RegExp('^[~][^/]*(?:font|typeface)[^/]*/.*/files/.+[.](?:ttf|woff2?)$').test(asset.url),
+        filter: (asset) => new RegExp('.+[.](?:ttf|woff2?)(?:\\?[^\\s]*)?$').test(asset.url),
         url: (asset) => {
-          const relpath = asset.pathname.substr(1)
+          let relpath = asset.pathname
+          if (relpath.includes('lucide')) relpath = `lucide-static/font/${relpath}`
+          if (relpath.includes('~@fontsource')) relpath = relpath.replace('~', '')
           const abspath = require.resolve(relpath)
           const basename = ospath.basename(abspath)
           const destpath = ospath.join(dest, 'font', basename)
@@ -57,9 +59,7 @@ module.exports = (src, dest, preview) => () => {
     // only run tailwindcss in preview, datastax-docs-site repo has it's own tailwind cli step
     preview ? tailwindcss(tailwindconfig) : () => {},
     postcssAdvancedVars,
-    postcssVar({ preserve: preview }),
-    // NOTE to make vars.css available to all top-level stylesheets, use the next line in place of the previous one
-    //postcssVar({ importFrom: path.join(src, 'css', 'vars.css'), preserve: preview }),
+    postcssVar({ preserve: true }),
     preview ? postcssCalc : () => {}, // cssnano already applies postcssCalc
     autoprefixer,
     preview

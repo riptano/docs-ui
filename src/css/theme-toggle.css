@@ -1,0 +1,32 @@
+html[data-theme="light"]:not([data-theme-system="true"]) {
+  & #theme-toggle .thumb {
+    transform: translateX(0);
+    background-color: theme(colors.amber.300);
+  }
+  & #theme-toggle .toggle-button.light:hover {
+    background-color: transparent;
+  }
+}
+
+html[data-theme="dark"]:not([data-theme-system="true"]) {
+  & #theme-toggle .thumb {
+    transform: translateX(1.6125rem);
+    background-color: theme(colors.purple.500);
+  }
+  & #theme-toggle .toggle-button.dark:hover {
+    background-color: transparent;
+  }
+}
+
+html[data-theme-system="true"] {
+  & #theme-toggle .thumb {
+    transform: translateX(3.25rem);
+    background-color: var(--ds-neutral-solid-bg);
+  }
+  & #theme-toggle .toggle-button.system {
+    color: var(--ds-neutral-solid-color);
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}

@@ -14,6 +14,12 @@ const yaml = require('js-yaml')
 
 const ASCIIDOC_ATTRIBUTES = { experimental: '', icons: 'font', sectanchors: '', 'source-highlighter': 'highlight.js' }
 
+const algoliaTestKeys = {
+  algoliaAppId: 'R2IYF7ETH7',
+  algoliaIndexName: 'docsearch',
+  algoliaApiKey: '599cec31baffa4868cae4e79f180729b',
+}
+
 module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
   Promise.all([
     loadSampleUiModel(previewSrc),
@@ -37,7 +43,7 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
       for (const component of baseUiModel.site.components) {
         for (const version of component.versions || []) version.asciidoc = asciidoc
       }
-      baseUiModel = { ...baseUiModel, env: process.env }
+      baseUiModel = { ...baseUiModel, env: process.env, site: { ...baseUiModel.site, keys: algoliaTestKeys } }
       delete baseUiModel.asciidoc
       return [baseUiModel, layouts]
     })
