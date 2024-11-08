@@ -417,7 +417,7 @@
     word-wrap: anywhere;
   }
 
-  .doc .admonitionblock .icon {
+  .doc .admonitionblock td.icon {
     position: absolute;
     top: 0;
     left: 0;
@@ -431,13 +431,13 @@
     transform: translate(-0.25rem, -50%);
   }
   
-  .doc .admonitionblock .icon i {
+  .doc .admonitionblock td.icon i {
     display: inline-flex;
     align-items: center;
     height: 100%;
   }
 
-  .doc .admonitionblock .icon i::after {
+  .doc .admonitionblock td.icon i::after {
     font-size: 1rem;
     font-weight: 600;
     font-family: "Roboto Flex", sans-serif;

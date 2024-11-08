@@ -112,31 +112,57 @@ Click the Astra Vector icon image:../img/astra-vector-light.svg[title="Astra Vec
 
 [NOTE]
 ======
-You can define icons from https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Outlined[Material Icons,window=_blank] and https://lucide.dev/icons/[Lucide Icons,window=_blank]. You can also apply an svg file using the customized `icon` macro.
+You can define icons from https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Outlined[Material Icons,window=_blank] and https://lucide.dev/icons/[Lucide Icons,window=_blank] with the icon macro. You can also create custom icons with SVG files using the svg macro.
 
-Method 1: Inline icon macro with an svg file::
-The customized inline icon macro accepts a file path as it's target source. The file must be an svg file.
+Method 1: icon macro::
+The inline icon macro accepts a Lucide or Material icon name as the target source.
++
+This method supports light and dark mode automatically.
++
+[source,title="Lucide"]
+----
+// the icon macro uses lucide by default
+icon:boom-box[]
+// or specifiy lucide
+icon:lucide:boom-box[]
+
+// alt or title attribute create an aria-label
+icon:atom[title="Split the atom"]
+icon:moon[alt="That's no moon"]
+
+// customize with tailwind classes as the role
+With tailwind roles icon:star[role="text-amber-600 text-2xl"]
+
+// customize the size in px
+icon:star[size="60"] 
+----
++
+[source,title="Material"]
+----
+// specifiy material
+icon:material:chevron-down[]
+
+// alt or title attribute create an aria-label
+icon:material:air[alt="Whooosh"]
+
+// customize with tailwind classes as the role
+icon:material:directions-boat[role="text-amber-600 text-2xl"]
+
+// customize the size in px
+icon:material:thumb-up[size=60] 
+----
+
+Method 2: svg macro with icon role::
+Display a local SVG file with the icon role.
 +
 This methods supports using CSS variables within the svg.
 +
 [source]
 ----
-icon:ROOT:ui/icons/vector.svg[]
+svg:ROOT:ui/icons/vector.svg[role="icon"]
 ----
 
-Method 2: Inline icon macro with a material-icons target::
-The customized inline icon macro supports material icon names as it's target source prefixed with `material-icons:`. Ensure the name is lower case with underscores instead of spaces.
-+
-This macro does not yet support Lucide icons.
-+
-This method supports light and dark mode automatically.
-+
-[source]
-----
-icon:material-icons:thumb_up[]
-----
-
-Method 3: material-icons role::
+Method 3: block or inline span with material-icons role::
 Use the custom role `material-icons` on block or inline content. The content must be a material icon name in lower case. If there are spaces in the name, use underscores instead.
 +
 This method supports light and dark mode automatically.
@@ -156,7 +182,7 @@ Inline material icons [.material-icons]#thumb_up#
 + 
 [.material-icons]#thumb_up# [.material-icons]#rocket_launch#
 
-Method 4: Lucide icons with HTML passthrough::
+Method 4: HTML passthrough::
 Use block or inline HTML passthrough to create an icon element `<i class="icon-{icon-name}"></i>`.
 +
 This method supports light and dark mode automatically.
