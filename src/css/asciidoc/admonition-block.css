@@ -16,7 +16,7 @@
     flex-wrap: wrap;
   }
 
-  .doc .admonitionblock .icon {
+  .doc .admonitionblock td.icon {
     display: flex;
     gap: var(--ds-space-1);
     align-items: center;
@@ -45,31 +45,31 @@
     background: none;
   }
 
-  .doc .admonitionblock .icon::before {
+  .doc .admonitionblock td.icon::before {
     font-family: "Material Icons Outlined", sans-serif;
     font-size: calc(20 / var(--rem-base) * 1rem);
     font-weight: normal;
   }
 
   /* TIP, NOTE */
-  .doc .admonitionblock.tip .icon,
-  .doc .admonitionblock.note .icon {
+  .doc .admonitionblock.tip td.icon,
+  .doc .admonitionblock.note td.icon {
     background: var(--ds-success-soft-bg);
     color: var(--ds-text-primary);
   }
 
-  .doc .admonitionblock.note .icon::before {
+  .doc .admonitionblock.note td.icon::before {
     color: var(--ds-success-soft-color);
     content: "\e88e";
   }
 
-  .doc .admonitionblock.tip .icon::before {
+  .doc .admonitionblock.tip td.icon::before {
     color: var(--ds-success-soft-color);
     content: "\e0f0";
   }
 
   /* CAUTION */
-  .doc .admonitionblock.caution .icon {
+  .doc .admonitionblock.caution td.icon {
     background: var(--ds-warning-soft-bg);
     color: var(--ds-text-primary);
   }
@@ -78,14 +78,14 @@
     border: 1px solid var(--ds-warning-outlined-border);
   }
 
-  .doc .admonitionblock.caution .icon::before {
+  .doc .admonitionblock.caution td.icon::before {
     color: var(--ds-warning-soft-color);
     content: "\e88e";
   }
 
   /* WARNING, IMPORTANT */
-  .doc .admonitionblock.warning .icon,
-  .doc .admonitionblock.important .icon {
+  .doc .admonitionblock.warning td.icon,
+  .doc .admonitionblock.important td.icon {
     background: var(--ds-failure-soft-bg);
     color: var(--ds-text-primary);
   }
@@ -95,12 +95,12 @@
     border: 1px solid var(--ds-failure-outlined-border);
   }
 
-  .doc .admonitionblock.warning .icon::before {
+  .doc .admonitionblock.warning td.icon::before {
     color: var(--ds-failure-soft-color);
     content: "\f083";
   }
 
-  .doc .admonitionblock.important .icon::before {
+  .doc .admonitionblock.important td.icon::before {
     color: var(--ds-failure-soft-color);
     content: "\e160";
   }

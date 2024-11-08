@@ -12,7 +12,7 @@
   font-family: 'Material Icons Outlined', sans-serif;
   font-weight: normal;
   font-style: normal;
-  font-size: 1.25rem;
+  font-size: 1.25em;
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -28,5 +28,5 @@
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: 'liga';
-  vertical-align: middle;
+  vertical-align: sub;
 }
