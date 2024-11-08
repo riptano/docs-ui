@@ -6,7 +6,37 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{company} Astra | Preview Docs | PREVIEW Datastax Docs</title>
     <meta name="generator" content="Antora 1.0.0">
+<link rel="stylesheet" href="../_/css/vendor/docsearch.css">
 <link rel="stylesheet" href="../_/css/site.css">
+
+<link
+  rel="preload"
+  href="../_/font/material-icons-outlined-latin-400-normal.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="../_/font/roboto-flex-latin-wght-normal.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="../_/font/roboto-mono-latin-500-normal.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="../_/font/lucide.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
 
     <link rel="icon" href="https://www.datastax.com/favicon.ico">
     <meta property="article:published_time" content="">
@@ -83,42 +113,24 @@
 
 <script>var uiRootPath = '../_'</script>
 
-<link
-  rel="preload"
-  href="../_/font/material-icons-outlined-latin-400-normal.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="../_/font/roboto-flex-latin-wght-normal.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="../_/font/roboto-mono-latin-500-normal.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin
-/>
-
 <script>
-  function getTheme() {
-    var localStorage = window.localStorage.getItem("theme");
-    var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (localStorage) return localStorage;
-    if (prefersDark) return "dark";
-    return "light";
-  }
-  document.documentElement.setAttribute("data-theme", getTheme());
-</script>
+  function setTheme() {
+    var localStorage = window.localStorage.getItem("themePreference");
+    var systemPreference = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />  </head>
+    if (localStorage !== "dark" && localStorage !== "light") {
+      document.documentElement.setAttribute("data-theme", systemPreference);
+      document.documentElement.setAttribute("data-theme-system", true);
+      window.localStorage.removeItem("themePreference");
+    } else {
+      document.documentElement.setAttribute("data-theme", localStorage);
+    }
+  };
+  setTheme();
+</script>
+  </head>
   <body class="">
-<div class="navbar bg-body border-b z-40 fixed top-0 flex flex-col w-full h-32">
+<div class="navbar bg-body border-b z-40 fixed top-0 flex flex-col w-full h-20">
   <nav class="flex flex-auto items-center gap-2 lg:gap-4 p-4">
     <label
       for="nav-drawer-input"
@@ -219,234 +231,44 @@
 </svg>    </a>
     <div class="DocSearch" id="docsearch"></div>
     <button
-      class="w-10 ml-auto btn btn-neutral btn-outlined lg:w-auto"
-      id="get-support"
-    ><span class="material-icons lg:mr-2">support_agent</span><span
-        class="hidden lg:inline-block"
-      >Get Live Help</span>
+      class="w-10 ml-auto btn btn-neutral btn-outlined btn-small lg:w-auto flex items-center gap-1.5"
+      id="get-support">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.775 2.25H3.75C3.35218 2.25 2.97064 2.40804 2.68934 2.68934C2.40804 2.97064 2.25 3.35218 2.25 3.75V15.75L5.25 12.75H14.25C14.6478 12.75 15.0294 12.592 15.3107 12.3107C15.592 12.0294 15.75 11.6478 15.75 11.25V9.225" stroke="var(--ds-text-primary, black)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.5 6.75C14.7426 6.75 15.75 5.74264 15.75 4.5C15.75 3.25736 14.7426 2.25 13.5 2.25C12.2574 2.25 11.25 3.25736 11.25 4.5C11.25 5.74264 12.2574 6.75 13.5 6.75Z" stroke="var(--ds-failure-main, #DC2626)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="animate-fade-in-out"/>
+      </svg>
+      <span class="hidden lg:inline-block">Live Chat</span>
     </button>
-    <button class="btn btn-icon btn-neutral btn-outlined" id="theme-toggle">
-      <i
-        class="material-icons icon hidden text-[var(--ds-warning-300)] dark:block"
-      >light_mode</i>
-      <i
-        class="material-icons icon block text-[var(--ds-primary-400)] dark:hidden"
-      >dark_mode</i>
-    </button>
-  </nav>
- <nav class="global-nav motion-safe:scroll-smooth items-center flex gap-3 py-2 px-4 overflow-x-auto overflow-y-hidden no-scrollbar">
-  <a 
-    class="btn btn-plain btn-neutral flex gap-1" 
-    href="#"
-    >
-      <i class="material-icons text-xl">home</i>
-      Docs Home
-  </a>
-  <div class="m-0.5 border-l h-6 w-[1px]"></div>
-  <div class="dropdown">
-    <button id="nav-dropdown-1" class="group dropdown-trigger btn btn-plain btn-neutral flex gap-1" aria-haspopup="true" aria-expanded="false">
-      Astra DB
-      <i class="material-icons text-lg text-tertiary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180">expand_more</i>
-    </button>
-    <ul class="dropdown-content py-2 bg-body border rounded w-52 z-[1]" role="menu" aria-orientation="vertical" aria-labelledby="nav-dropdown-1">
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            Serverless
-            
-        </a>
-      </li> 
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            Dedicated
-            
-        </a>
-      </li> 
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            CLI
-            
-        </a>
-      </li> 
-    </ul>
-  </div>
-  <a 
-    class="btn btn-plain btn-neutral flex gap-1" 
-    href="#"
-    >
-      
-      RAGStack
-  </a>
-  
-  <div class="dropdown">
-    <button id="nav-dropdown-3" class="group dropdown-trigger btn btn-plain btn-neutral flex gap-1" aria-haspopup="true" aria-expanded="false">
-      DSE
-      <i class="material-icons text-lg text-tertiary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180">expand_more</i>
-    </button>
-    <ul class="dropdown-content py-2 bg-body border rounded w-52 z-[1]" role="menu" aria-orientation="vertical" aria-labelledby="nav-dropdown-3">
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            Mission Control
-            
-        </a>
-      </li> 
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            DSE 6.8
-            
-        </a>
-      </li> 
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            DSE 5.1
-            
-        </a>
-      </li> 
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            CLI
-            
-        </a>
-      </li> 
-    </ul>
-  </div>
-  <div class="dropdown">
-    <button id="nav-dropdown-4" class="group dropdown-trigger btn btn-plain btn-neutral flex gap-1" aria-haspopup="true" aria-expanded="false">
-      Streaming
-      <i class="material-icons text-lg text-tertiary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180">expand_more</i>
-    </button>
-    <ul class="dropdown-content py-2 bg-body border rounded w-52 z-[1]" role="menu" aria-orientation="vertical" aria-labelledby="nav-dropdown-4">
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            Astra Streaming
-            
-        </a>
-      </li> 
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            Luna Streaming
-            
-        </a>
-      </li> 
-    </ul>
-  </div>
-  <div class="dropdown">
-    <button id="nav-dropdown-5" class="group dropdown-trigger btn btn-plain btn-neutral flex gap-1" aria-haspopup="true" aria-expanded="false">
-      Open Source
-      <i class="material-icons text-lg text-tertiary motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180">expand_more</i>
-    </button>
-    <ul class="dropdown-content py-2 bg-body border rounded w-52 z-[1]" role="menu" aria-orientation="vertical" aria-labelledby="nav-dropdown-5">
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            Apache Pulsar Connector
-            
-        </a>
-      </li> 
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            CDC for Cassandra
-            
-        </a>
-      </li> 
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="https://docs.k8ssandra.io"
-          target="_blank">
-            K8ssandra
-            <i class="material-icons text-sm text-tertiary">open_in_new</i>
-        </a>
-      </li> 
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            Stargate
-            
-        </a>
-      </li> 
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            Starlight for JMS
-            
-        </a>
-      </li> 
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            Starlight for Kafka
-            
-        </a>
-      </li> 
-      <li>
-        <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1"
-          
-          href="#"
-          >
-            Starlight for Rabbit MQ
-            
-        </a>
-      </li> 
-    </ul>
-  </div>
-</nav>
-</div><div class="drawer lg:drawer-open">
+    <div role="group" id="theme-toggle" class="border flex items-center rounded-[3rem] h-8 px-1 gap-0.5" aria-label="Theme Selection Toggle">
+  <span class="thumb w-6 h-6 absolute rounded-full transition-all"></span>
+  <button 
+    class="toggle-button light w-6 h-6 flex items-center justify-center rounded-full hover:bg-[var(--ds-neutral-plain-hover-bg)] z-0 transition-all" 
+    aria-pressed="false" 
+    tabindex="0" 
+    value="light" 
+    aria-label="Light">
+      <i class="icon-sun"></i>
+  </button>
+  <button 
+    class="toggle-button dark w-6 h-6 flex items-center justify-center rounded-full hover:bg-[var(--ds-neutral-plain-hover-bg)] z-0 transition-all" 
+    aria-pressed="false" 
+    tabindex="0" 
+    value="dark" 
+    aria-label="Dark">
+      <i class="icon-moon"></i>
+  </button>
+  <button 
+    class="toggle-button system w-6 h-6 flex items-center justify-center rounded-full hover:bg-[var(--ds-neutral-plain-hover-bg)] z-0 transition-all" 
+    aria-pressed="false" 
+    tabindex="0" 
+    value="system" 
+    aria-label="System">
+      <i class="icon-monitor"></i>
+  </button>
+</div>  </nav>
+ </div><div class="drawer lg:drawer-open">
   <input id="nav-drawer-input" type="checkbox" class="drawer-toggle" />
-  <div class="grid drawer-content pt-32">
+  <div class="grid drawer-content pt-20">
     <div class="grid max-w-full h-full xl:gap-x-10 gap-y-3 px-3 py-4 mx-auto lg:px-6">
   <main class="w-[min(48rem,100%)] max-w-[48rem] mx-auto min-w-0 mb-8">
         <article class="doc">
@@ -647,12 +469,12 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
   </div>
 </footer></div>
   </div>
-  <div class="z-30 drawer-side pt-32">
+  <div class="z-30 drawer-side pt-20">
     <label for="nav-drawer-input" aria-label="close sidebar" class="drawer-overlay"></label>
     <nav  id="side-nav" 
-  class="h-full bg-level1 overflow-y-scroll flex flex-col w-[18.5rem] px-2 pt-2">
+  class="h-full bg-level1 dark:bg-body dark:border-r overflow-y-scroll flex flex-col w-[18.5rem] px-2 pt-2">
     <div class="flex items-start gap-1 mb-1">
-      <a class="component-home flex flex-grow py-1 px-2 text-h4 hover:bg-level2 rounded transition-colors !no-underline" href="#">Preview Docs</a>
+      <a class="component-home flex flex-grow py-1 px-2 text-h4 hover:bg-[var(--ds-neutral-plain-hover-bg)] rounded transition-colors !no-underline" href="#">Preview Docs</a>
       <div class="dropdown ml-auto">
   <button id="page-version-dropdown" title="Show other versions of page" class="group dropdown-trigger btn btn-soft btn-primary btn-small" aria-haspopup="true" aria-expanded="false">
     <span class="font-bold ml-1 text-xs">5.2</span>
@@ -661,28 +483,28 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
   <ul class="dropdown-content py-2 bg-body border rounded w-48 z-40" role="menu" aria-orientation="vertical" aria-labelledby="page-version-dropdown">
     <li>
       <a 
-        class="!no-underline w-full py-1 px-3 block hover:bg-level1 transition-colors"
+        class="!no-underline w-full py-1 px-3 block hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors"
         href="#">
           6.0
       </a>
     </li> 
     <li>
       <a 
-        class="!no-underline w-full py-1 px-3 block hover:bg-level1 transition-colors font-bold color-primary"
+        class="!no-underline w-full py-1 px-3 block hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors font-bold color-primary"
         href="#">
           5.2
       </a>
     </li> 
     <li>
       <a 
-        class="!no-underline w-full py-1 px-3 block hover:bg-level1 transition-colors"
+        class="!no-underline w-full py-1 px-3 block hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors"
         href="#">
           5.1
       </a>
     </li> 
     <li>
       <a 
-        class="!no-underline w-full py-1 px-3 block hover:bg-level1 transition-colors"
+        class="!no-underline w-full py-1 px-3 block hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors"
         href="#">
           5.0
       </a>
@@ -696,7 +518,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       class="nav-item-toggle collapse-trigger w-full group active" 
       aria-label="Page Templates" aria-expanded="false" aria-controls="1-page-templates">
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors text-caption text-overline py-2">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors text-caption text-overline py-2">
         Page Templates
         <i class="material-icons text-lg text-tertiary mr-auto self-start motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180 group-hover:text-primary">expand_more</i>
         
@@ -711,7 +533,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
        aria-current="page"
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors color-primary font-semibold">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors color-primary font-semibold">
         Full
         
     </span>
@@ -724,7 +546,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Landing
         
     </span>
@@ -737,7 +559,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Home
         
     </span>
@@ -750,7 +572,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Tutorial
         
     </span>
@@ -763,7 +585,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Integrations Overview
         
     </span>
@@ -776,7 +598,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Integrations Detail
         
     </span>
@@ -790,7 +612,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       class="nav-item-toggle collapse-trigger w-full group" 
       aria-label="Asciidoc Examples" aria-expanded="false" aria-controls="1-asciidoc-examples">
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors text-caption text-overline py-2">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors text-caption text-overline py-2">
         Asciidoc Examples
         <i class="material-icons text-lg text-tertiary mr-auto self-start motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out group-[.active]:rotate-180 group-hover:text-primary">expand_more</i>
         
@@ -805,7 +627,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Text formatting
         
     </span>
@@ -818,7 +640,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Lists
         
     </span>
@@ -831,7 +653,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Tables
         
     </span>
@@ -844,7 +666,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Images and media
         
     </span>
@@ -857,7 +679,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Code
         
     </span>
@@ -870,7 +692,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Tabsets
         
     </span>
@@ -883,7 +705,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Blocks
         
     </span>
@@ -896,7 +718,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         Admonitions
         
     </span>
@@ -909,7 +731,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         TEST Standardized client reference
         
     </span>
@@ -922,7 +744,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
       
       >
     <span 
-      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-level2 transition-colors">
+      class="nav-text flex items-center text-left gap-1 text-body-small text-primary rounded py-1 px-2 hover:bg-[var(--ds-neutral-plain-hover-bg)] transition-colors">
         TEST Unified API reference
         
     </span>
@@ -932,10 +754,10 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
     </div>
   </li>
 </ul>
-    <ul class="bg-level1 sticky bottom-0 mt-auto flex flex-col pt-3 pb-5">
+    <ul class="sticky bottom-0 mt-auto flex flex-col pt-3 pb-5">
   <li>
     <a
-      class="text-body-small text-primary hover:bg-level2 flex rounded p-1 !no-underline transition-colors"
+      class="text-body-small text-primary hover:bg-[var(--ds-neutral-plain-hover-bg)] flex rounded p-1 !no-underline transition-colors"
       href="https://www.datastax.com/"
       target="_self"
     >
@@ -945,7 +767,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
   </li>
   <li>
     <a
-      class="text-body-small text-primary hover:bg-level2 flex rounded p-1 !no-underline transition-colors"
+      class="text-body-small text-primary hover:bg-[var(--ds-neutral-plain-hover-bg)] flex rounded p-1 !no-underline transition-colors"
       href="/glossary"
       target="_blank"
     >
@@ -955,7 +777,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
   </li>
   <li>
     <a
-      class="text-body-small text-primary hover:bg-level2 flex rounded p-1 !no-underline transition-colors"
+      class="text-body-small text-primary hover:bg-[var(--ds-neutral-plain-hover-bg)] flex rounded p-1 !no-underline transition-colors"
       href="https://support.datastax.com/"
       target="_blank"
     >
@@ -965,7 +787,7 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
   </li>
   <li>
     <a
-      class="text-body-small text-primary hover:bg-level2 flex rounded p-1 !no-underline transition-colors"
+      class="text-body-small text-primary hover:bg-[var(--ds-neutral-plain-hover-bg)] flex rounded p-1 !no-underline transition-colors"
       href="https://downloads.datastax.com/"
       target="_blank"
     >
@@ -977,12 +799,19 @@ Process, analyze, and act on data as it&#8217;s generated. Whether you&#8217;re 
 </nav>
   </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.3"></script>
 <script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
 <script data-sync-storage-key="preferred-tab" async src="../_/js/vendor/tabs.js"></script>
 <script async src="../_/js/vendor/highlight.js"></script>
 <script async src="../_/js/vendor/zooming.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script async src="../_/js/vendor/floatingui.js"></script>
+<script src="../_/js/vendor/docsearch.js"></script>
+<script>
+  docsearch({
+    container: '#docsearch',
+    appId: 'R2IYF7ETH7',
+    indexName: 'docsearch',
+    apiKey: '599cec31baffa4868cae4e79f180729b',
+  })
+</script>
   </body>
 </html>

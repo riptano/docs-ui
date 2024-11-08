@@ -21,7 +21,7 @@
       {{#each ./items}}
       <li>
         <a 
-          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-level1{{#if (global-nav-active this)}} color-primary font-bold{{/if}}"
+          class="!no-underline w-full py-1 px-3 transition-colors flex gap-1 items-center hover:bg-[var(--ds-neutral-plain-hover-bg)]{{#if (global-nav-active this)}} color-primary font-bold{{/if}}"
           {{#if (global-nav-active this)}}aria-current="page"{{/if}}
           href="{{#if (eq urlType 'internal')}}{{{relativize url}}}{{else}}{{{url}}}{{/if}}"
           {{#if (eq urlType 'external')}}target="_blank"{{/if}}>
