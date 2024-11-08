@@ -1,0 +1,21 @@
+<script id="site-script" src="{{{uiRootPath}}}/{{{assets-manifest 'js/site.js' }}}" data-ui-root-path="{{{uiRootPath}}}"></script>
+<script data-sync-storage-key="preferred-tab" async src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/tabs.js' }}}"></script>
+<script async src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/highlight.js' }}}"></script>
+<script async src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/zooming.js' }}}"></script>
+<script async src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/floatingui.js' }}}"></script>
+{{#with site.keys}}
+{{#if (and algoliaAppId algoliaIndexName algoliaApiKey)}}
+<script src="{{{../uiRootPath}}}/{{{assets-manifest 'js/vendor/docsearch.js' }}}"></script>
+<script>
+  docsearch({
+    container: '#docsearch',
+    appId: '{{algoliaAppId}}',
+    indexName: '{{algoliaIndexName}}',
+    {{!-- This is the public API key which can be safely used in frontend code. --}}
+    apiKey: '{{algoliaApiKey}}',
+  })
+</script>
+{{/if}}
+{{/with}}
+{{> intercom}}
+{{> scarf}}
