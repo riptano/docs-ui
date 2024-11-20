@@ -79,8 +79,8 @@
 
   .icon {
     display: inline-block;
-    height: 1em;
-    width: 1em;
+    height: 1.25em;
+    width: 1.25em;
   }
 
   @media (pointer: fine) {
