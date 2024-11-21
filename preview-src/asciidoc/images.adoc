@@ -69,9 +69,10 @@ Use the custom `svg` macro to define an SVG image that uses CSS variables to sup
 [source,asciidoc]
 ----
 svg::ROOT:illustration.svg[alt="Alt text",width=400]
+svg::ROOT:illustration.svg[Alt text,400,275]
 ----
 
-The `svg` macro supports the following attributes: `width`, `height`, `role`, `alt`, and `title`.
+The `svg` macro supports the following attributes: `width`, `height`, `role`, `alt`, `ariaLabel` and `title`.
 
 [IMPORTANT]
 ====
@@ -114,24 +115,34 @@ Click icon:settings[name="Settings"] to configure your settings. // <.>
 
 icon:moon[alt="That's no moon"] // <.>
 
+icon:sun[ariaLabel="Day time"] // <.>
+
 icon:atom[title="Split the atom"] // <.>
 
-icon:star[role="text-amber-600 text-2xl"] // <.>
+icon:star[role="text-failure text-2xl"] // <.>
 
 icon:star[size="60"] // <.>
+
+icon:star[60] // <.>
 ----
 <.> Use the `name` attribute to add visible text to the right of the icon.
 
 <.> Use the `alt` attribute to define an `aria-label` label for the icon.
 The text is invisible but is read by screen readers.
-_Do not use `alt` if `name` or `title` is already defined._
+_Do not use `alt` if `name` is already defined._
 
-<.> The `title` attribute does the same thing as `alt`, except the text is also visible as a tooltip on hover.
-_Do not use `title` if `name` or `alt` is already defined._
+<.> Use the `ariaLabel` attribute to define an `aria-label` label for the icon. This is the same as `alt`.
+_Do not use `ariaLabel` if `name` is already defined._
+
+<.> The `title` attribute provides a visible tooltip on hover for pointer devices.
+_The `title` attribute is not read by most screen readers. Use `alt` or `ariaLabel` for accessibility._
+_The tooltip is not visible on touch devices._
 
 <.> Use the `role` attribute to apply Tailwind CSS classes to the icon.
 
 <.> Use the `size` attribute to define the icon size in pixels.
+
+<.> Use the first positional attribute to define the icon size in pixels. This is shorthand for the `size` attribute.
 
 You can invoke a Material icon with `\icon:material:icon-name[]`.
 All of the same attributes apply:
@@ -145,7 +156,7 @@ icon:material:air[alt="Whooosh"]
 
 icon:material:volume-up[title="Turn it up"]
 
-icon:material:directions-boat[role="text-amber-600 text-2xl"]
+icon:material:directions-boat[role="text-warning text-2xl"]
 
 icon:material:thumb-up[size=60]
 ----
@@ -215,7 +226,7 @@ Inline lucide icons +++<i class="icon-boom-box"></i>+++
 // +
 // icon:atom[title="Split the atom"]
 // +
-// icon:star[role="text-amber-600 text-2xl"]
+// icon:star[role="text-warning text-2xl"]
 // +
 // icon:star[size="60"]
 
@@ -227,7 +238,7 @@ Inline lucide icons +++<i class="icon-boom-box"></i>+++
 // +
 // icon:material:volume-up[title="Turn it up"]
 // +
-// icon:material:directions-boat[role="text-amber-600 text-2xl"]
+// icon:material:directions-boat[role="text-failure text-2xl"]
 // +
 // icon:material:thumb-up[size=60]
 
@@ -244,18 +255,22 @@ svg:ROOT:ui/icons/vector.svg[role="icon"] // <.>
 svg:ROOT:ui/icons/vector.svg[role="icon text-2xl"] // <.>
 
 Click svg:ROOT:ui/icons/vector.svg[role="icon text-2xl"] *Search* to run a similarity search based on the selected document's vector.
+
+svg:ROOT:ui/icons/vector.svg[width="60",height="60"] // <.>
 ----
 
 <.> The `icon` role adds CSS styles that pin the width and height of the image to the font size of the parent element.
 Without the `icon` role, the image displays as large as possible unless a width and height is set in the SVG file itself (not recommended).
 
-<.> Setting the `icon` role by itself usually leads to the icon appearing too small.
-You can control the size of the icon with Tailwind `text-*` utilities, with `text-2xl` being the ideal size when the icon is used within body text.
+<.> You can control the size of the icon with Tailwind `text-*` utilities, such as `text-2xl` to enlarge the icon.
+
+<.> You can also set the width and height of the svg directly.
 
 [IMPORTANT]
 ====
 Unlike <<font-icons,font icons>>, the `svg` macro doesn't automatically support light and dark mode.
 You'll need to add supported <<svg-images-css,CSS variables>> to the SVG file for the icon to display properly in light and dark mode.
+If the svg is a simple, single-color icon, you can use `currentColor` for all fill and stroke colors. This will automatically inherit the text color of the parent element or the body text color which is black or white depending on the theme.
 ====
 ======
 
