@@ -63,7 +63,7 @@ html[data-theme-system="true"] #theme-toggle .toggle-button.system:hover {
   /* Support for IE. */
   -webkit-font-feature-settings: 'liga';
           font-feature-settings: 'liga';
-  vertical-align: sub;
+  vertical-align: text-bottom;
 }
 
 @font-face {
@@ -3193,7 +3193,7 @@ html[data-theme-system="true"] #theme-toggle .toggle-button.system:hover {
 [class*=" icon-"], [class^=icon-] {
   font-size: 1.25em;
   line-height: 1;
-  vertical-align: sub;
+  vertical-align: text-bottom;
 }
 
 /* card */
@@ -4844,10 +4844,11 @@ sup {
     top: -0.5em;
   }
 
-.icon {
+svg.icon {
     display: inline-block;
     height: 1.25em;
     width: 1.25em;
+    vertical-align: text-bottom;
   }
 
 @media (pointer: fine) {
