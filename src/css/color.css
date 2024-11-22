@@ -15,6 +15,18 @@
     color: var(--ds-text-inverse);
   }
 
+  .text-warning {
+    color: var(--ds-warning-main);
+  }
+
+  .text-success {
+    color: var(--ds-success-main);
+  }
+
+  .text-failure {
+    color: var(--ds-failure-main);
+  }
+
   .text-link,
   .color-primary {
     color: var(--ds-primary-main);

@@ -3,5 +3,5 @@
 [class*=" icon-"], [class^=icon-] {
   font-size: 1.25em;
   line-height: 1;
-  vertical-align: sub;
+  vertical-align: text-bottom;
 }

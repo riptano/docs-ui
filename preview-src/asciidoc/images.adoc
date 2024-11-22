@@ -8,24 +8,24 @@
 == Block images
 
 .Optional title
-image::../img/screenshot.png[[alt="Screenshot of Astra Portal Home"]
+image::../img/screenshot.png[alt="Screenshot of Astra Portal Home"]
 
 === Sizing and alignment
 
 .width=400,align=left
-image::../img/screenshot.png[[alt="Screenshot of Astra Portal Home",width=400,align=left]
+image::../img/screenshot.png[alt="Screenshot of Astra Portal Home",width=400,align=left]
 
 .width=400 width,align=right
-image::../img/screenshot.png[[alt="Screenshot of Astra Portal Home",width=400,align=right]
+image::../img/screenshot.png[alt="Screenshot of Astra Portal Home",width=400,align=right]
 
 .width=400 width,align=center
-image::../img/screenshot.png[[alt="Screenshot of Astra Portal Home",width=400,align=center]
+image::../img/screenshot.png[alt="Screenshot of Astra Portal Home",width=400,align=center]
 
 === Float
 
 [.float-group]
 --
-image:../img/screenshot.png[[alt="Screenshot of Astra Portal Home",300,float=right,role=float-gap]
+image:../img/screenshot.png[alt="Screenshot of Astra Portal Home",300,float=right,role=float-gap]
 In AsciiDoc, creating paragraphs is a straightforward process that does not require any special markup. A paragraph can be defined as one or more lines of consecutive text that are logically grouped together. To differentiate between paragraphs, you simply need to insert at least one blank line between them.
 --
 
