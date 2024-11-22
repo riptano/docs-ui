@@ -456,7 +456,7 @@ The <code>icon</code> macro follows <a href="https://developers.google.com/style
 </div>
 <div class="paragraph">
 <p>Lucide is the default icon set.
-You can invoke a Lucide icon with either <code>icon:icon-name[]</code> or <code>icon:lucide:icon-name[]</code>:</p>
+You can invoke a Lucide icon with either <code>icon:ICON-NAME[]</code> or <code>icon:lucide:ICON-NAME[]</code>:</p>
 </div>
 <div class="listingblock">
 <div class="title">Lucide</div>
@@ -471,9 +471,7 @@ icon:atom[title="Split the atom"] <i class="conum" data-value="4"></i><b>(4)</b>
 
 icon:star[role="text-failure text-2xl"] <i class="conum" data-value="5"></i><b>(5)</b>
 
-icon:star[size="60"] <i class="conum" data-value="6"></i><b>(6)</b>
-
-icon:star[60] <i class="conum" data-value="7"></i><b>(7)</b></code></pre>
+icon:star[size="60"] or icon:star[60] <i class="conum" data-value="6"></i><b>(6)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -484,20 +482,26 @@ icon:star[60] <i class="conum" data-value="7"></i><b>(7)</b></code></pre>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Use the <code>alt</code> attribute to define an <code>aria-label</code> label for the icon.
+<td>Use the <code>alt</code> attribute to define an <code>aria-label</code> for the icon.
 The text is invisible but is read by screen readers.
-<em>Do not use <code>alt</code> if <code>name</code> is already defined.</em></td>
+<div class="paragraph">
+<p><em>Do not use <code>alt</code> if <code>name</code> or <code>ariaLabel</code> is already defined.</em></p>
+</div></td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Use the <code>ariaLabel</code> attribute to define an <code>aria-label</code> label for the icon. This is the same as <code>alt</code>.
-<em>Do not use <code>ariaLabel</code> if <code>name</code> is already defined.</em></td>
+<td>Identical to the <code>alt</code> attribute.
+<div class="paragraph">
+<p><em>Do not use <code>ariaLabel</code> if <code>name</code> or <code>alt</code> is already defined.</em></p>
+</div></td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>The <code>title</code> attribute provides a visible tooltip on hover for pointer devices.
-<em>The <code>title</code> attribute is not read by most screen readers. Use <code>alt</code> or <code>ariaLabel</code> for accessibility.</em>
-<em>The tooltip is not visible on touch devices.</em></td>
+<td>The <code>title</code> attribute provides a visible tooltip on hover for pointer devices (not visible on touch devices).
+<div class="paragraph">
+<p><em>The <code>title</code> attribute is not read by most screen readers, and therefore its use is discouraged.</em>
+<em>If used, make sure to also define <code>alt</code> or <code>ariaLabel</code> to ensure accessibility.</em></p>
+</div></td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
@@ -505,11 +509,8 @@ The text is invisible but is read by screen readers.
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Use the <code>size</code> attribute to define the icon size in pixels.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="7"></i><b>7</b></td>
-<td>Use the first positional attribute to define the icon size in pixels. This is shorthand for the <code>size</code> attribute.</td>
+<td>Use the <code>size</code> attribute to define the size of the icon in pixels.
+Alternatively, you can define the size in the first <a href="https://docs.asciidoctor.org/asciidoc/latest/attributes/positional-and-named-attributes/#positional">positional attribute</a> (shorthand for the <code>size</code> attribute).</td>
 </tr>
 </table>
 </div>
@@ -584,7 +585,7 @@ thumb_up</code></pre>
 <div class="openblock">
 <div class="content">
 <div class="paragraph">
-<p>Use block or inline HTML passthrough to create an icon element <code>&lt;i class="icon-{icon-name}"&gt;&lt;/i&gt;</code>.</p>
+<p>Use block or inline HTML passthrough to create an icon element <code>&lt;i class="icon-ICON-NAME"&gt;&lt;/i&gt;</code>.</p>
 </div>
 <div class="paragraph">
 <p>This method supports light and dark mode automatically.</p>
@@ -634,9 +635,9 @@ thumb_up</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">svg:ROOT:ui/icons/vector.svg[role="icon"] <i class="conum" data-value="1"></i><b>(1)</b>
 
-svg:ROOT:ui/icons/vector.svg[role="icon text-2xl"] <i class="conum" data-value="2"></i><b>(2)</b>
+Click svg:ROOT:ui/icons/vector.svg[role="icon"] *Search* to run a similarity search based on the selected document's vector.
 
-Click svg:ROOT:ui/icons/vector.svg[role="icon text-2xl"] *Search* to run a similarity search based on the selected document's vector.
+svg:ROOT:ui/icons/vector.svg[role="icon text-2xl"] <i class="conum" data-value="2"></i><b>(2)</b>
 
 svg:ROOT:ui/icons/vector.svg[width="60",height="60"] <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
@@ -645,16 +646,16 @@ svg:ROOT:ui/icons/vector.svg[width="60",height="60"] <i class="conum" data-value
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The <code>icon</code> role adds CSS styles that pin the width and height of the image to the font size of the parent element.
+<td>The <code>icon</code> role adds CSS styles that set the width and height of the image to an appropriate size relative to the font size of the parent element.
 Without the <code>icon</code> role, the image displays as large as possible unless a width and height is set in the SVG file itself (not recommended).</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>You can control the size of the icon with Tailwind <code>text-*</code> utilities, such as <code>text-2xl</code> to enlarge the icon.</td>
+<td>Manually control the icon size using Tailwind <code>text-*</code> utilities, such as <code>text-2xl</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>You can also set the width and height of the svg directly.</td>
+<td>Manually control the icon size using the <code>width</code> and <code>height</code> attributes.</td>
 </tr>
 </table>
 </div>
@@ -667,8 +668,11 @@ Without the <code>icon</code> role, the image displays as large as possible unle
 <td class="content">
 <div class="paragraph">
 <p>Unlike <a href="#font-icons">font icons</a>, the <code>svg</code> macro doesn&#8217;t automatically support light and dark mode.
-You&#8217;ll need to add supported <a href="#svg-images-css">CSS variables</a> to the SVG file for the icon to display properly in light and dark mode.
-If the svg is a simple, single-color icon, you can use <code>currentColor</code> for all fill and stroke colors. This will automatically inherit the text color of the parent element or the body text color which is black or white depending on the theme.</p>
+You&#8217;ll need to add supported <a href="#svg-images-css">CSS variables</a> to the SVG file for the icon to display properly in light and dark mode.</p>
+</div>
+<div class="paragraph">
+<p>If the svg is a simple, single-color icon, you can use <code>currentColor</code> for all fill and stroke colors.
+This will automatically inherit the text color of the parent element or the body text color which is black or white depending on the theme.</p>
 </div>
 </td>
 </tr>
