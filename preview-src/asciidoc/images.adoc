@@ -106,7 +106,7 @@ Use the `icon` macro to invoke font icons from https://lucide.dev/icons/[Lucide 
 The `icon` macro follows https://developers.google.com/style/ui-elements#buttons[accessibility standards] and provides built-in support for light and dark mode.
 
 Lucide is the default icon set.
-You can invoke a Lucide icon with either `\icon:icon-name[]` or `\icon:lucide:icon-name[]`:
+You can invoke a Lucide icon with either `\icon:ICON-NAME[]` or `\icon:lucide:ICON-NAME[]`:
 
 .Lucide
 [source,asciidoc]
@@ -121,28 +121,29 @@ icon:atom[title="Split the atom"] // <.>
 
 icon:star[role="text-failure text-2xl"] // <.>
 
-icon:star[size="60"] // <.>
-
-icon:star[60] // <.>
+icon:star[size="60"] or icon:star[60] // <.>
 ----
+
 <.> Use the `name` attribute to add visible text to the right of the icon.
 
-<.> Use the `alt` attribute to define an `aria-label` label for the icon.
+<.> Use the `alt` attribute to define an `aria-label` for the icon.
 The text is invisible but is read by screen readers.
-_Do not use `alt` if `name` is already defined._
++
+_Do not use `alt` if `name` or `ariaLabel` is already defined._
 
-<.> Use the `ariaLabel` attribute to define an `aria-label` label for the icon. This is the same as `alt`.
-_Do not use `ariaLabel` if `name` is already defined._
+<.> Identical to the `alt` attribute.
++
+_Do not use `ariaLabel` if `name` or `alt` is already defined._
 
-<.> The `title` attribute provides a visible tooltip on hover for pointer devices.
-_The `title` attribute is not read by most screen readers. Use `alt` or `ariaLabel` for accessibility._
-_The tooltip is not visible on touch devices._
+<.> The `title` attribute provides a visible tooltip on hover for pointer devices (not visible on touch devices).
++
+_The `title` attribute is not read by most screen readers, and therefore its use is discouraged._
+_If used, make sure to also define `alt` or `ariaLabel` to ensure accessibility._
 
 <.> Use the `role` attribute to apply Tailwind CSS classes to the icon.
 
-<.> Use the `size` attribute to define the icon size in pixels.
-
-<.> Use the first positional attribute to define the icon size in pixels. This is shorthand for the `size` attribute.
+<.> Use the `size` attribute to define the size of the icon in pixels.
+Alternatively, you can define the size in the first https://docs.asciidoctor.org/asciidoc/latest/attributes/positional-and-named-attributes/#positional[positional attribute] (shorthand for the `size` attribute).
 
 You can invoke a Material icon with `\icon:material:icon-name[]`.
 All of the same attributes apply:
@@ -195,7 +196,7 @@ Inline material icons [.material-icons]#thumb_up#
 HTML passthrough::
 +
 --
-Use block or inline HTML passthrough to create an icon element `<i class="icon-{icon-name}"></i>`.
+Use block or inline HTML passthrough to create an icon element `<i class="icon-ICON-NAME"></i>`.
 
 This method supports light and dark mode automatically.
 
@@ -226,7 +227,7 @@ Inline lucide icons +++<i class="icon-boom-box"></i>+++
 // +
 // icon:atom[title="Split the atom"]
 // +
-// icon:star[role="text-warning text-2xl"]
+// icon:star[role="text-failure text-2xl"]
 // +
 // icon:star[size="60"]
 
@@ -238,7 +239,7 @@ Inline lucide icons +++<i class="icon-boom-box"></i>+++
 // +
 // icon:material:volume-up[title="Turn it up"]
 // +
-// icon:material:directions-boat[role="text-failure text-2xl"]
+// icon:material:directions-boat[role="text-warning text-2xl"]
 // +
 // icon:material:thumb-up[size=60]
 
@@ -252,29 +253,31 @@ Use the inline `svg` macro to display a local SVG file as an icon.
 ----
 svg:ROOT:ui/icons/vector.svg[role="icon"] // <.>
 
-svg:ROOT:ui/icons/vector.svg[role="icon text-2xl"] // <.>
+Click svg:ROOT:ui/icons/vector.svg[role="icon"] *Search* to run a similarity search based on the selected document's vector.
 
-Click svg:ROOT:ui/icons/vector.svg[role="icon text-2xl"] *Search* to run a similarity search based on the selected document's vector.
+svg:ROOT:ui/icons/vector.svg[role="icon text-2xl"] // <.>
 
 svg:ROOT:ui/icons/vector.svg[width="60",height="60"] // <.>
 ----
 
-<.> The `icon` role adds CSS styles that pin the width and height of the image to the font size of the parent element.
+<.> The `icon` role adds CSS styles that set the width and height of the image to an appropriate size relative to the font size of the parent element.
 Without the `icon` role, the image displays as large as possible unless a width and height is set in the SVG file itself (not recommended).
 
-<.> You can control the size of the icon with Tailwind `text-*` utilities, such as `text-2xl` to enlarge the icon.
+<.> Manually control the icon size using Tailwind `text-*` utilities, such as `text-2xl`.
 
-<.> You can also set the width and height of the svg directly.
+<.> Manually control the icon size using the `width` and `height` attributes.
 
 [IMPORTANT]
 ====
 Unlike <<font-icons,font icons>>, the `svg` macro doesn't automatically support light and dark mode.
 You'll need to add supported <<svg-images-css,CSS variables>> to the SVG file for the icon to display properly in light and dark mode.
-If the svg is a simple, single-color icon, you can use `currentColor` for all fill and stroke colors. This will automatically inherit the text color of the parent element or the body text color which is black or white depending on the theme.
+
+If the svg is a simple, single-color icon, you can use `currentColor` for all fill and stroke colors.
+This will automatically inherit the text color of the parent element or the body text color which is black or white depending on the theme.
 ====
 ======
 
-// Click svg:ROOT:ui/icons/vector.svg[role="icon text-2xl"] *Search* to run a similarity search based on the selected document's vector.
+// Click svg:ROOT:ui/icons/vector.svg[role="icon"] *Search* to run a similarity search based on the selected document's vector.
 
 [#inline-images]
 == Inline images
