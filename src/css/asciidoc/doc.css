@@ -1045,15 +1045,23 @@
     padding-left: calc(28 / var(--rem-base) * 1rem);
   }
 
-  .doc a.external::after,
-  .doc a[href^="https://"]:not([href*="docs.datastax.com"]):not([href*="localhost"]):not([href*="127.0.0.1"]):not(.remove-ext-icon)::after,
-  .doc a[href^="http://"]:not([href*="docs.datastax.com"]):not([href*="localhost"]):not([href*="127.0.0.1"]):not(.remove-ext-icon)::after
-  {
-    font-family: "Material Icons Outlined", sans-serif;
-    content: "\e89e";
-    font-size: calc(16 / var(--rem-base) * 1rem);
-    vertical-align: bottom;
-    margin-left: var(--ds-space-h);
-    font-weight: normal;
+  .doc a.external,
+  .doc a[href^="https://"],
+  .doc a[href^="http://"] {
+    &:not(
+      .remove-ext-icon,
+      :has(img),
+      :has(svg),
+      [href*="docs.datastax.com"],
+      [href*="localhost"],
+      [href*="127.0.0.1"]
+    )::after {
+      font-family: "Material Icons Outlined", sans-serif;
+      content: "\e89e";
+      font-size: calc(16 / var(--rem-base) * 1rem);
+      vertical-align: bottom;
+      margin-left: var(--ds-space-h);
+      font-weight: normal;
+    }
   }
 }
