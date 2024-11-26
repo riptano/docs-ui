@@ -1,1 +1,7 @@
 @import "lucide-static/font/lucide.css";
+
+[class*=" icon-"], [class^=icon-] {
+  font-size: 1.25em;
+  line-height: 1;
+  vertical-align: text-bottom;
+}

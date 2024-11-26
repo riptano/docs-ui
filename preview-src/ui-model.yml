@@ -136,7 +136,7 @@ page:
       - content: Tables
         url: /asciidoc/tables.html
         urlType: internal
-      - content: Images and media
+      - content: Images, icons, and media
         url: /asciidoc/images.html
         urlType: internal
       - content: Code
