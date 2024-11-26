@@ -46,7 +46,7 @@ html[data-theme-system="true"] #theme-toggle .toggle-button.system:hover {
   font-family: 'Material Icons Outlined', sans-serif;
   font-weight: normal;
   font-style: normal;
-  font-size: 1.25rem;
+  font-size: 1.25em;
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -63,7 +63,7 @@ html[data-theme-system="true"] #theme-toggle .toggle-button.system:hover {
   /* Support for IE. */
   -webkit-font-feature-settings: 'liga';
           font-feature-settings: 'liga';
-  vertical-align: middle;
+  vertical-align: text-bottom;
 }
 
 @font-face {
@@ -3190,6 +3190,12 @@ html[data-theme-system="true"] #theme-toggle .toggle-button.system:hover {
 
 .icon-zoom-out:before { content: "\e1b7"; }
 
+[class*=" icon-"], [class^=icon-] {
+  font-size: 1.25em;
+  line-height: 1;
+  vertical-align: text-bottom;
+}
+
 /* card */
 
 /*
@@ -4838,10 +4844,11 @@ sup {
     top: -0.5em;
   }
 
-.icon {
+svg.icon {
     display: inline-block;
-    height: 1em;
-    width: 1em;
+    height: 1.25em;
+    width: 1.25em;
+    vertical-align: text-bottom;
   }
 
 @media (pointer: fine) {
@@ -5686,7 +5693,7 @@ sup {
     word-wrap: anywhere !important;
   }
 
-.doc .admonitionblock .icon {
+.doc .admonitionblock td.icon {
     position: absolute;
     top: 0;
     left: 0;
@@ -5705,7 +5712,7 @@ sup {
             transform: translate(-0.25rem, -50%);
   }
 
-.doc .admonitionblock .icon i {
+.doc .admonitionblock td.icon i {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -5715,7 +5722,7 @@ sup {
     height: 100%;
   }
 
-.doc .admonitionblock .icon i::after {
+.doc .admonitionblock td.icon i::after {
     font-size: 1rem;
     font-weight: 600;
     font-family: "Roboto Flex", sans-serif;
@@ -6466,19 +6473,39 @@ sup {
     padding-left: calc(28/var(--rem-base)*1rem);
   }
 
-.doc a.external::after,
-  .doc a[href^="https://"]:not([href*="docs.datastax.com"]):not([href*="localhost"]):not([href*="127.0.0.1"]):not(.remove-ext-icon)::after,
-  .doc a[href^="http://"]:not([href*="docs.datastax.com"]):not([href*="localhost"]):not([href*="127.0.0.1"]):not(.remove-ext-icon)::after
-  {
-    font-family: "Material Icons Outlined", sans-serif;
-    content: "\e89e";
-    font-size: 1rem;
-    font-size: calc(16/var(--rem-base)*1rem);
-    vertical-align: bottom;
-    margin-left: 0.25rem;
-    margin-left: var(--ds-space-h);
-    font-weight: normal;
-  }
+.doc a.external:not(
+      .remove-ext-icon,
+      :has(img),
+      :has(svg),
+      [href*="docs.datastax.com"],
+      [href*="localhost"],
+      [href*="127.0.0.1"]
+    )::after,
+      .doc a[href^="https://"]:not(
+      .remove-ext-icon,
+      :has(img),
+      :has(svg),
+      [href*="docs.datastax.com"],
+      [href*="localhost"],
+      [href*="127.0.0.1"]
+    )::after,
+      .doc a[href^="http://"]:not(
+      .remove-ext-icon,
+      :has(img),
+      :has(svg),
+      [href*="docs.datastax.com"],
+      [href*="localhost"],
+      [href*="127.0.0.1"]
+    )::after {
+      font-family: "Material Icons Outlined", sans-serif;
+      content: "\e89e";
+      font-size: 1rem;
+      font-size: calc(16/var(--rem-base)*1rem);
+      vertical-align: bottom;
+      margin-left: 0.25rem;
+      margin-left: var(--ds-space-h);
+      font-weight: normal;
+    }
 
 html[data-layout="landing"] main, html[data-layout="full"] main, html[data-layout="home"] main {
       max-width: 80rem;
@@ -6867,7 +6894,7 @@ html[data-theme="dark"] .doc .source-toolbox {
         flex-wrap: wrap;
   }
 
-.doc .admonitionblock .icon {
+.doc .admonitionblock td.icon {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -6920,7 +6947,7 @@ html[data-theme="dark"] .doc .source-toolbox {
     background: none !important;
   }
 
-.doc .admonitionblock .icon::before {
+.doc .admonitionblock td.icon::before {
     font-family: "Material Icons Outlined", sans-serif;
     font-size: 1.25rem;
     font-size: calc(20/var(--rem-base)*1rem);
@@ -6929,25 +6956,25 @@ html[data-theme="dark"] .doc .source-toolbox {
 
 /* TIP, NOTE */
 
-.doc .admonitionblock.tip .icon,
-  .doc .admonitionblock.note .icon {
+.doc .admonitionblock.tip td.icon,
+  .doc .admonitionblock.note td.icon {
     background: var(--ds-success-soft-bg);
     color: var(--ds-text-primary);
   }
 
-.doc .admonitionblock.note .icon::before {
+.doc .admonitionblock.note td.icon::before {
     color: var(--ds-success-soft-color);
     content: "\e88e";
   }
 
-.doc .admonitionblock.tip .icon::before {
+.doc .admonitionblock.tip td.icon::before {
     color: var(--ds-success-soft-color);
     content: "\e0f0";
   }
 
 /* CAUTION */
 
-.doc .admonitionblock.caution .icon {
+.doc .admonitionblock.caution td.icon {
     background: var(--ds-warning-soft-bg);
     color: var(--ds-text-primary);
   }
@@ -6956,21 +6983,21 @@ html[data-theme="dark"] .doc .source-toolbox {
     border: 1px solid var(--ds-warning-outlined-border);
   }
 
-.doc .admonitionblock.caution .icon::before {
+.doc .admonitionblock.caution td.icon::before {
     color: var(--ds-warning-soft-color);
     content: "\e88e";
   }
 
 /* WARNING, IMPORTANT */
 
-.doc .admonitionblock.warning .icon,
-  .doc .admonitionblock.important .icon {
+.doc .admonitionblock.warning td.icon,
+  .doc .admonitionblock.important td.icon {
     background: var(--ds-failure-soft-bg);
     color: var(--ds-text-primary);
   }
 
 
-  .doc .admonitionblock.\!important .icon {
+  .doc .admonitionblock.\!important td.icon {
     background: var(--ds-failure-soft-bg) !important;
     color: var(--ds-text-primary) !important;
   }
@@ -6985,17 +7012,17 @@ html[data-theme="dark"] .doc .source-toolbox {
     border: 1px solid var(--ds-failure-outlined-border) !important;
   }
 
-.doc .admonitionblock.warning .icon::before {
+.doc .admonitionblock.warning td.icon::before {
     color: var(--ds-failure-soft-color);
     content: "\f083";
   }
 
-.doc .admonitionblock.important .icon::before {
+.doc .admonitionblock.important td.icon::before {
     color: var(--ds-failure-soft-color);
     content: "\e160";
   }
 
-.doc .admonitionblock.\!important .icon::before {
+.doc .admonitionblock.\!important td.icon::before {
     color: var(--ds-failure-soft-color) !important;
     content: "\e160" !important;
   }
@@ -8247,6 +8274,10 @@ a.btn:hover {
 
 .text-left {
     text-align: left;
+}
+
+.text-base {
+    font-size: 1rem;
 }
 
 .text-sm {
