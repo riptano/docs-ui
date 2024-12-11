@@ -82,7 +82,9 @@ module.exports = (src, dest, preview) => () => {
     vfs
       .src('js/vendor/*([^.])?(.bundle).js', { ...opts, read: false })
       .pipe(bundle(opts))
-      .pipe(uglify({ output: { comments: /^! / } }))
+      // .pipe(uglify({ output: { comments: /^! / } }))
+      .pipe(map((file) => file.relative === 'js/vendor/floatingui.js')
+        ? through() : uglify({ output: { comments: /^! / } }))
       .pipe(gulpif(!preview, hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
       .pipe(vfs.dest(dest))
       .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
