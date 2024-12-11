@@ -5496,6 +5496,12 @@ svg.icon {
     margin: calc(16/var(--rem-base)*1rem) 0 0;
   }
 
+
+  .doc .\!tabs {
+    margin: 1rem 0 0 !important;
+    margin: calc(16/var(--rem-base)*1rem) 0 0 !important;
+  }
+
 .doc table.tableblock {
     font-size: 0.90625rem;
     font-size: calc(14.5/var(--rem-base)*1rem);
@@ -6524,6 +6530,10 @@ html[data-layout="landing"] .doc > h1.page:first-child, html[data-layout="full"]
 
 html[data-layout="landing"] #preamble, html[data-layout="full"] #preamble, html[data-layout="home"] #preamble {
       max-width: 650px;
+    }
+
+html[data-layout="landing"] .anchor, html[data-layout="full"] .anchor, html[data-layout="home"] .anchor {
+      display: none;
     }
 
 html[data-layout="landing"] .doc .olist li + li,
@@ -7588,6 +7598,36 @@ a.btn:hover {
     grid-template-rows: 1fr;
 }
 
+.\!dropdown .dropdown-content {
+    visibility: hidden;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    --tw-scale-x: .95;
+    --tw-scale-y: .95;
+    -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(.95) scaleY(.95);
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(.95) scaleY(.95);
+    -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .\!dropdown .dropdown-content {
+        -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+        -webkit-transition-duration: 300ms;
+                transition-duration: 300ms;
+        -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
 .dropdown .dropdown-content {
     visibility: hidden;
     position: fixed;
@@ -7618,6 +7658,19 @@ a.btn:hover {
     }
 }
 
+.\!dropdown .dropdown-content {
+
+    /* Shadow-100 */
+    -webkit-box-shadow:
+      0px 4px 5px 0px rgba(10, 10, 10, 0.08),
+      0px 1px 10px 0px rgba(10, 10, 10, 0.08),
+      0px 2px 4px 0px rgba(32, 41, 58, 0.14) !important;
+            box-shadow:
+      0px 4px 5px 0px rgba(10, 10, 10, 0.08),
+      0px 1px 10px 0px rgba(10, 10, 10, 0.08),
+      0px 2px 4px 0px rgba(32, 41, 58, 0.14) !important;
+  }
+
 .dropdown .dropdown-content {
 
     /* Shadow-100 */
@@ -7630,6 +7683,17 @@ a.btn:hover {
       0px 1px 10px 0px rgba(10, 10, 10, 0.08),
       0px 2px 4px 0px rgba(32, 41, 58, 0.14);
   }
+
+.\!dropdown .dropdown-content.active {
+    visibility: visible;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(1) scaleY(1);
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(1) scaleY(1);
+    -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    opacity: 1;
+}
 
 .dropdown .dropdown-content.active {
     visibility: visible;
@@ -8322,6 +8386,15 @@ a.btn:hover {
 
 .opacity-100 {
     opacity: 1;
+}
+
+.shadow {
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+    -webkit-box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .outline {
