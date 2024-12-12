@@ -834,6 +834,7 @@
     height: 1.75em;
     letter-spacing: -0.2ex;
     text-indent: -0.2ex;
+    margin-right: 0.25em;
   }
 
   .doc .conum[data-value]::after {

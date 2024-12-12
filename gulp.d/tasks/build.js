@@ -75,7 +75,9 @@ module.exports = (src, dest, preview) => () => {
       .pipe(uglify({ output: { comments: /^! / } }))
       // NOTE concat already uses stat from newest combined file
       .pipe(concat('js/site.js'))
-      .pipe(gulpif(!preview, hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
+      .pipe(gulpif(
+        !preview,
+        hash({ template: '<%= name %>-<%= hash %><%= ext %>', hashLength: 10, version: 'prod-35' })))
       .pipe(vfs.dest(dest))
       .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
       .pipe(vfs.dest(dest)),
@@ -85,14 +87,18 @@ module.exports = (src, dest, preview) => () => {
       // .pipe(uglify({ output: { comments: /^! / } }))
       .pipe(map((file) => file.relative === 'js/vendor/floatingui.js')
         ? through() : uglify({ output: { comments: /^! / } }))
-      .pipe(gulpif(!preview, hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
+      .pipe(gulpif(
+        !preview,
+        hash({ template: '<%= name %>-<%= hash %><%= ext %>', hashLength: 10, version: 'prod-35' })))
       .pipe(vfs.dest(dest))
       .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
       .pipe(vfs.dest(dest)),
     vfs
       .src('js/vendor/*.min.js', opts)
       .pipe(map((file, enc, next) => next(null, Object.assign(file, { extname: '' }, { extname: '.js' }))))
-      .pipe(gulpif(!preview, hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
+      .pipe(gulpif(
+        !preview,
+        hash({ template: '<%= name %>-<%= hash %><%= ext %>', hashLength: 10, version: 'prod-35' })))
       .pipe(vfs.dest(dest))
       .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
       .pipe(vfs.dest(dest)),
@@ -102,7 +108,9 @@ module.exports = (src, dest, preview) => () => {
     vfs
       .src(['css/site.css', 'css/vendor/*.css'], { ...opts, sourcemaps })
       .pipe(postcss((file) => ({ plugins: postcssPlugins, options: { file } })))
-      .pipe(gulpif(!preview, hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
+      .pipe(gulpif(
+        !preview,
+        hash({ template: '<%= name %>-<%= hash %><%= ext %>', hashLength: 10, version: 'prod-35' })))
       .pipe(vfs.dest(dest))
       .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
       .pipe(vfs.dest(dest)),
