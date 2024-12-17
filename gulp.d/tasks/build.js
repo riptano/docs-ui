@@ -77,7 +77,7 @@ module.exports = (src, dest, preview) => () => {
       .pipe(concat('js/site.js'))
       .pipe(gulpif(
         !preview,
-        hash({ template: '<%= name %>-<%= hash %><%= ext %>', hashLength: 10, version: 'prod-35' })))
+        hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
       .pipe(vfs.dest(dest))
       .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
       .pipe(vfs.dest(dest)),
@@ -89,7 +89,7 @@ module.exports = (src, dest, preview) => () => {
         ? through() : uglify({ output: { comments: /^! / } }))
       .pipe(gulpif(
         !preview,
-        hash({ template: '<%= name %>-<%= hash %><%= ext %>', hashLength: 10, version: 'prod-35' })))
+        hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
       .pipe(vfs.dest(dest))
       .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
       .pipe(vfs.dest(dest)),
@@ -98,7 +98,7 @@ module.exports = (src, dest, preview) => () => {
       .pipe(map((file, enc, next) => next(null, Object.assign(file, { extname: '' }, { extname: '.js' }))))
       .pipe(gulpif(
         !preview,
-        hash({ template: '<%= name %>-<%= hash %><%= ext %>', hashLength: 10, version: 'prod-35' })))
+        hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
       .pipe(vfs.dest(dest))
       .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
       .pipe(vfs.dest(dest)),
@@ -110,7 +110,7 @@ module.exports = (src, dest, preview) => () => {
       .pipe(postcss((file) => ({ plugins: postcssPlugins, options: { file } })))
       .pipe(gulpif(
         !preview,
-        hash({ template: '<%= name %>-<%= hash %><%= ext %>', hashLength: 10, version: 'prod-35' })))
+        hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))
       .pipe(vfs.dest(dest))
       .pipe(gulpif(!preview, hash.manifest('assets-manifest.json', { append: true })))
       .pipe(vfs.dest(dest)),
