@@ -49,7 +49,12 @@
       toolbox.appendChild(copy)
     }
     if (copy) {
-      copy.addEventListener('click', writeToClipboard.bind(copy, code))
+      copy.addEventListener('click', function () {
+        var text = code.innerText.replace(TRAILING_SPACE_RX, '')
+        if (code.dataset.lang === 'console' && text.startsWith('$ ')) text = extractCommands(text)
+        writeToClipboard(text, copy)
+        trackCopy(code.dataset.lang, title?.childNodes[0]?.nodeValue, text)
+      })
       content.prepend(toolbox)
     }
     if (lang && !title && !nolang) {
@@ -69,9 +74,7 @@
     return cmds.join(' && ')
   }
 
-  function writeToClipboard (code) {
-    var text = code.innerText.replace(TRAILING_SPACE_RX, '')
-    if (code.dataset.lang === 'console' && text.startsWith('$ ')) text = extractCommands(text)
+  function writeToClipboard (text, button) {
     window.navigator.clipboard.writeText(text).then(
       function () {
         const icon = this.querySelector('.material-icons')
@@ -83,8 +86,19 @@
         setTimeout(function () {
           icon.innerText = 'content_paste'
         }, 500)
-      }.bind(this),
+      }.bind(button),
       function () {}
     )
+  }
+
+  function trackCopy (language, title, text) {
+    if (window.analytics) {
+      var sample = text.slice(0, 50).replace(/\s+/g, ' ').trim()
+      window.analytics.track('Code Snippet Copied', {
+        snippetLanguage: language,
+        snippetTitle: title,
+        snippetSample: sample,
+      })
+    }
   }
 })()
