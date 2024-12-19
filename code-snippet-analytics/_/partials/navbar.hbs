@@ -1,0 +1,27 @@
+<div class="navbar bg-body border-b z-40 fixed top-0 flex flex-col w-full {{#if site.keys.globalNav}}h-32{{else}}h-20{{/if}}">
+  <nav class="flex flex-auto items-center gap-2 lg:gap-4 p-4">
+    {{#unless (eq page.layout 'home')}}
+    <label
+      for="nav-drawer-input"
+      class="btn btn-neutral btn-plain btn-icon drawer-button lg:hidden"
+    >
+      <i class="icon material-icons">menu_open</i>
+    </label>
+    {{/unless}}
+    <a href="{{#> logo-url}}{{{or site.url siteRootPath}}}{{/logo-url}}">
+      {{> logo}}
+    </a>
+    <div class="DocSearch" id="docsearch"></div>
+    <button
+      class="w-10 ml-auto btn btn-neutral btn-outlined btn-small lg:w-auto flex items-center gap-1.5"
+      id="get-support">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.775 2.25H3.75C3.35218 2.25 2.97064 2.40804 2.68934 2.68934C2.40804 2.97064 2.25 3.35218 2.25 3.75V15.75L5.25 12.75H14.25C14.6478 12.75 15.0294 12.592 15.3107 12.3107C15.592 12.0294 15.75 11.6478 15.75 11.25V9.225" stroke="var(--ds-text-primary, black)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.5 6.75C14.7426 6.75 15.75 5.74264 15.75 4.5C15.75 3.25736 14.7426 2.25 13.5 2.25C12.2574 2.25 11.25 3.25736 11.25 4.5C11.25 5.74264 12.2574 6.75 13.5 6.75Z" stroke="var(--ds-failure-main, #DC2626)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="animate-fade-in-out"/>
+      </svg>
+      <span class="hidden lg:inline-block">Live Chat</span>
+    </button>
+    {{> theme-toggle}}
+  </nav>
+ {{> global-nav}}
+</div>
