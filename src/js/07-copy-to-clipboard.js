@@ -52,9 +52,8 @@
       copy.addEventListener('click', function () {
         var text = code.innerText.replace(TRAILING_SPACE_RX, '')
         if (code.dataset.lang === 'console' && text.startsWith('$ ')) text = extractCommands(text)
-        var codeSample = text.slice(0, 50).trim()
         writeToClipboard(text, copy)
-        trackCopy(code.dataset.lang, title?.childNodes[0]?.nodeValue, codeSample)
+        trackCopy(code.dataset.lang, title?.childNodes[0]?.nodeValue, text)
       })
       content.prepend(toolbox)
     }
@@ -92,8 +91,9 @@
     )
   }
 
-  function trackCopy (language, title, sample) {
+  function trackCopy (language, title, text) {
     if (window.analytics) {
+      var sample = text.slice(0, 50).replace(/\s+/g, ' ').trim()
       window.analytics.track('Code Snippet Copied', {
         snippetLanguage: language,
         snippetTitle: title,
