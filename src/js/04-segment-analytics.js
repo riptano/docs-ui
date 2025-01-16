@@ -17,19 +17,13 @@
 
   const trackEvent = (name, payload) => {
     if (window.analytics) {
-      window.analytics.track(name, {
-        ...(payload || {}),
-        ...ketchConsentContext,
-      })
+      window.analytics.track(name, payload || {}, ketchConsentContext)
     }
   }
 
   const trackLinkEvent = (element, name, payload) => {
     if (window.analytics) {
-      window.analytics.trackLink(element, name, {
-        ...(payload || {}),
-        ...ketchConsentContext,
-      })
+      window.analytics.trackLink(element, name, payload || {}, ketchConsentContext)
     }
   }
 
