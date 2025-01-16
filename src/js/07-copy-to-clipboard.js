@@ -92,22 +92,12 @@
   }
 
   function trackCopy (language, title, text) {
-    if (window.analytics) {
+    if (window.trackEvent) {
       var sample = text.slice(0, 50).replace(/\s+/g, ' ').trim()
-      window.analytics.track('Code Snippet Copied', {
+      window.trackEvent('Code Snippet Copied', {
         snippetLanguage: language,
         snippetTitle: title,
         snippetSample: sample,
-        consent: {
-          categoryPreferences: {
-            advertising: 'behavioral_advertising',
-            ketch_purpose_code: 'ketch_purpose_code',
-            analytics: 'analytics',
-            data_broking: 'data_broking',
-            personalization: 'personalization',
-            essential_services: 'essential_services',
-          },
-        },
       })
     }
   }

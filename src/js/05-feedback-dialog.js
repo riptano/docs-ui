@@ -40,19 +40,9 @@
   form.onsubmit = (e) => {
     e.preventDefault()
     const message = form.elements.message.value
-    if (message && window.analytics) {
-      window.analytics.track('Feedback Form', {
+    if (message && window.trackEvent) {
+      window.trackEvent('Feedback Form', {
         message,
-        consent: {
-          categoryPreferences: {
-            advertising: 'behavioral_advertising',
-            ketch_purpose_code: 'ketch_purpose_code',
-            analytics: 'analytics',
-            data_broking: 'data_broking',
-            personalization: 'personalization',
-            essential_services: 'essential_services',
-          },
-        },
       })
     }
     form.elements.message.value = ''
