@@ -1,23 +1,2 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    {{#with site.keys.googleAnalytics}}
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','{{this}}');</script>
-    <!-- End Google Tag Manager -->
-    {{/with}}
-    {{#with site.keys.ketchSmartTagUrl}}
-    <script>!function(){window.semaphore=window.semaphore||[],window.ketch=function(){window.semaphore.push(arguments)};var e=document.createElement("script");e.type="text/javascript",e.src="{{this}}",e.defer=e.async=!0,document.getElementsByTagName("head")[0].appendChild(e)}();</script>
-    <script>
-    ketch('on', 'regionInfo', regionInfo => {
-        var customTextRegions = ['US-CA'];
-        if (customTextRegions.includes(regionInfo)) {
-            var preferenceCenterLinkElement = document.getElementById("preferenceCenterLink");
-            preferenceCenterLinkElement.textContent = "Do Not Sell My Personal Information";
-        }
-    })
-    </script>
-    {{/with}}
