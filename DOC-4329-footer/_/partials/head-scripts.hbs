@@ -1,38 +1,44 @@
 {{#with site.keys.segment}}
 <script>
 !function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="{{this}}";;analytics.SNIPPET_VERSION="5.2.1";
+analytics.load("{{this}}");
 analytics.page();
 }}();
 </script>
 {{/with}}
 
-{{!-- {{#with site.keys.ketchSmartTagUrl}} --}}
-<script>!function(){window.semaphore=window.semaphore||[],window.ketch=function(){window.semaphore.push(arguments)};var e=document.createElement("script");e.type="text/javascript",e.src="https://global.ketchcdn.com/web/v3/config/datastax/website_smart_tag/boot.js",e.defer=e.async=!0,document.getElementsByTagName("head")[0].appendChild(e)}();</script>
+{{#with site.keys.ketchSmartTagUrl}}
+<script>!function(){window.semaphore=window.semaphore||[],window.ketch=function(){window.semaphore.push(arguments)};var e=document.createElement("script");e.type="text/javascript",e.src="{{this}}",e.defer=e.async=!0,document.getElementsByTagName("head")[0].appendChild(e)}();</script>
 <script>
-if (ketch) {
-  ketch('showPreferences');
-
-  function saveConsent(consent) {
-    window.ketchConsent = consent;
-  };
-  ketch("on", "consent", (consent) => { 
-    saveConsent(consent);
-    // Only load Segment analytics if the user has consented to analytics
-    if (consent?.purposes?.analytics && window.analytics) {
-      window.analytics.load("{{../site.keys.segment}}");
-    }
-  });
-  ketch("on", "userConsentUpdated", saveConsent);
-  ketch("on", "regionInfo", regionInfo => {
-      var customTextRegions = ["US-CA"];
-      if (customTextRegions.includes(regionInfo)) {
-          var preferenceCenterLinkElement = document.getElementById("preferenceCenterLink");
-          preferenceCenterLinkElement.textContent = "Do Not Sell My Personal Information";
-      }
-  })
-}
+ketch('showPreferences');
 </script>
-{{!-- {{/with}} --}}
+<script>
+function saveConsent(consent) {
+  window.ketchConsent = consent;
+};
+ketch("on", "consent", (consent) => {
+  saveConsent(consent);
+  if (window.analytics) {
+    window.analytics.addSourceMiddleware(({ payload, next }) => {
+      if (window.ketchConsent) {
+        payload.obj.context.consent = {
+          categoryPreferences: window.ketchConsent?.purposes,
+        };
+      }
+      next(payload);
+    });
+  }
+});
+ketch("on", "userConsentUpdated", saveConsent);
+ketch("on", "regionInfo", regionInfo => {
+    var customTextRegions = ["US-CA"];
+    if (customTextRegions.includes(regionInfo)) {
+        var preferenceCenterLinkElement = document.getElementById("preferenceCenterLink");
+        preferenceCenterLinkElement.textContent = "Do Not Sell My Personal Information";
+    }
+})
+</script>
+{{/with}}
 
 <script>var uiRootPath = '{{{uiRootPath}}}'</script>
 
