@@ -92,9 +92,9 @@
   }
 
   function trackCopy (language, title, text) {
-    if (window.analytics) {
+    if (window.trackEvent) {
       var sample = text.slice(0, 50).replace(/\s+/g, ' ').trim()
-      window.analytics.track('Code Snippet Copied', {
+      window.trackEvent('Code Snippet Copied', {
         snippetLanguage: language,
         snippetTitle: title,
         snippetSample: sample,
