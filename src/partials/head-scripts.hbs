@@ -7,37 +7,8 @@ analytics.page();
 </script>
 {{/with}}
 
-{{#with site.keys.ketchSma rtTagUrl}}
+{{#with site.keys.ketchSmartTagUrl}}
 <script>!function(){window.semaphore=window.semaphore||[],window.ketch=function(){window.semaphore.push(arguments)};var e=document.createElement("script");e.type="text/javascript",e.src="{{this}}",e.defer=e.async=!0,document.getElementsByTagName("head")[0].appendChild(e)}();</script>
-<script>
-ketch('showPreferences');
-</script>
-<script>
-function saveConsent(consent) {
-  window.ketchConsent = consent;
-};
-ketch("on", "consent", (consent) => {
-  saveConsent(consent);
-  if (window.analytics) {
-    window.analytics.addSourceMiddleware(({ payload, next }) => {
-      if (window.ketchConsent) {
-        payload.obj.context.consent = {
-          categoryPreferences: window.ketchConsent?.purposes,
-        };
-      }
-      next(payload);
-    });
-  }
-});
-ketch("on", "userConsentUpdated", saveConsent);
-ketch("on", "regionInfo", regionInfo => {
-    var customTextRegions = ["US-CA"];
-    if (customTextRegions.includes(regionInfo)) {
-        var preferenceCenterLinkElement = document.getElementById("preferenceCenterLink");
-        preferenceCenterLinkElement.textContent = "Do Not Sell My Personal Information";
-    }
-})
-</script>
 {{/with}}
 
 <script>var uiRootPath = '{{{uiRootPath}}}'</script>
