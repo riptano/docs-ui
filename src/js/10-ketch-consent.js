@@ -3,6 +3,7 @@
 
   window.analytics.ready(() => {
     window.ketch('once', 'consent', onKetchConsent)
+    window.ketch('on', 'consent', onKetchConsentGtagTrack)
     window.ketch('on', 'userConsentUpdated', onKetchConsentUpdated)
   })
 
@@ -38,6 +39,26 @@
   // on - Each time the user changes the preferences, save them to the global variable
   const onKetchConsentUpdated = (consent) => {
     window.ketchConsent = consent
+  }
+
+  // On - each time the consent is loaded, track it to the gtag event
+  const onKetchConsentGtagTrack = (consent) => {
+    if (window.gtag &&
+        consent.purposes &&
+        'analytics' in consent.purposes &&
+        'targeted_advertising' in consent.purposes
+    ) {
+      const analyticsString = consent.purposes.analytics === true ? 'granted' : 'denied'
+      const targetedAdsString = consent.purposes.targeted_advertising === true ? 'granted' : 'denied'
+
+      const gtagObject = {
+        analytics_storage: analyticsString,
+        ad_personalization: targetedAdsString,
+        ad_storage: targetedAdsString,
+        ad_user_data: targetedAdsString,
+      }
+      window.gtag('consent', 'update', gtagObject)
+    }
   }
 
   // Use the analytics.addSourceMiddleware function to include the consent on all the events
