@@ -25,12 +25,14 @@
           data-track="Footer Terms of Use Link Clicked"
         >Terms of use</a>
         {{#with site.keys.ketchSmartTagUrl}}
-        |
-        <a
-          id="preferenceCenterLink"
-          href="https://www.datastax.com/preferences"
-          data-track="Footer Consent Preference Link Clicked"
-        >Manage Privacy Choices</a>
+        <span id="preferenceCenterContainer">
+          |
+          <a
+            id="preferenceCenterLink"
+            href="https://www.datastax.com/preferences"
+            data-track="Footer Consent Preference Link Clicked"
+          >Manage Privacy Choices</a>
+        </span>
         {{/with}}
       </span>
     </p>
