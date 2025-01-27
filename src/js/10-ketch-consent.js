@@ -32,7 +32,7 @@
   const onKetchConsent = (consent) => {
     window.ketchConsent = consent
     addKetchConsentToContextMiddleware()
-    window.analytics.page('Consent Update')
+    window.analytics.page()
     // loadScripts(); // Load any script if we have scripts to fire after ketch consent is fired.
   }
 
