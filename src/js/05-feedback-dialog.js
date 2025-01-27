@@ -40,8 +40,8 @@
   form.onsubmit = (e) => {
     e.preventDefault()
     const message = form.elements.message.value
-    if (message && window.analytics) {
-      window.analytics.track('Feedback Form', {
+    if (message && window.trackEvent) {
+      window.trackEvent('Feedback Form', {
         message,
       })
     }
