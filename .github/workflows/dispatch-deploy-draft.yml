@@ -15,7 +15,6 @@ jobs:
         with:
           owner: riptano
           repo: datastax-docs-site
-          github_token: ${{ secrets.DISPATCH_GITHUB_TOKEN }}
-          github_user: mlr
+          github_token: ${{ secrets.DOCS_GITHUB_PAT }}
           workflow_file_name: deploy-draft.yml
           client_payload: '{ "build_repository": "${{ github.event.repository.full_name }}", "build_branch": "main", "draft_branch": "${{ github.event.pull_request.head.ref }}", "pull_request_number": "${{ github.event.pull_request.number }}", "ui_bundle_repository": "${{ github.event.repository.full_name }}", "ui_bundle_branch": "${{ github.event.pull_request.head.ref }}" }'
