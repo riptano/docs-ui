@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+{{> head defaultPageTitle='Untitled'}}
+  </head>
+  <body class="{{#with (or page.attributes.role page.role)}} {{{this}}}{{/with}}">
+{{> body}}
+  </body>
+</html>
