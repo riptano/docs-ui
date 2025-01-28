@@ -56,7 +56,7 @@ jobs:
         if: ${{ success() && github.event.pull_request.number }}
         uses: peter-evans/create-or-update-comment@v3
         with:
-          token: ${{ secrets.COMMENT_GITHUB_TOKEN }}
+          token: ${{ secrets.DOCS_GITHUB_PAT }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             UI bundle preview build successful! :white_check_mark:
@@ -67,7 +67,7 @@ jobs:
         if: ${{ failure() && github.event.pull_request.number }}
         uses: peter-evans/create-or-update-comment@v3
         with:
-          token: ${{ secrets.COMMENT_GITHUB_TOKEN }}
+          token: ${{ secrets.DOCS_GITHUB_PAT }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             UI bundle preview build failure! :x:
@@ -79,9 +79,8 @@ jobs:
         uses: peter-evans/find-comment@v2
         id: fc
         with:
-          token: ${{ secrets.COMMENT_GITHUB_TOKEN }}
+          token: ${{ secrets.DOCS_GITHUB_PAT }}
           issue-number: ${{ github.event.pull_request.number }}
-          comment-author: 'mlr'
           body-includes: UI bundle preview build successful!
           direction: last
 
@@ -116,7 +115,7 @@ jobs:
           sleep 5 # Allow time for build to initiate
           build_url=$(curl -s -L \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.COMMENT_GITHUB_TOKEN }}" \
+            -H "Authorization: Bearer ${{ secrets.DOCS_GITHUB_PAT }}" \
             -H "X-GitHub-Api-Version: 2022-11-28" 'https://api.github.com/repos/${{ github.event.repository.full_name }}/pages/builds/latest' \
           | jq -r .url)
           echo "url=$build_url" >> $GITHUB_OUTPUT
@@ -128,7 +127,7 @@ jobs:
           for i in {1..60}; do
             build_status=$(curl -s -L \
               -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer ${{ secrets.COMMENT_GITHUB_TOKEN }}" \
+              -H "Authorization: Bearer ${{ secrets.DOCS_GITHUB_PAT }}" \
               -H "X-GitHub-Api-Version: 2022-11-28" '${{ steps.ghpages_build.outputs.url }}' \
             | jq -r .status)
 
@@ -153,7 +152,7 @@ jobs:
         if: ${{ steps.fc.outputs.comment-id != '' }}
         uses: peter-evans/create-or-update-comment@v3
         with:
-          token: ${{ secrets.COMMENT_GITHUB_TOKEN }}
+          token: ${{ secrets.DOCS_GITHUB_PAT }}
           comment-id: ${{ steps.fc.outputs.comment-id }}
           body: |
             Deployment successful! [View preview](${{ steps.draft_url.outputs.url }})
