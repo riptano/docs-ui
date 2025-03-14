@@ -18,7 +18,7 @@ ifdef::env-github[]
 endif::[]
 // Project URLs:
 :url-project: https://github.com/riptano/docs-ui
-:url-ui-preview: https://riptano.github.io/docs-ui/main
+:url-ui-preview: https://d5rxiv0do0q3v.cloudfront.net/docs-ui-drafts/main/index.html
 :url-ui-bundle-latest: {url-project}/releases/latest
 // :url-ci-pipelines: {url-project}/pipelines
 // :img-ci-status: {url-project}/badges/master/pipeline.svg
