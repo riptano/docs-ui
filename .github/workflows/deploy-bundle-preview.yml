@@ -8,16 +8,14 @@ on:
     branches:
       - '*'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Configure Git Credentials
-        uses: de-vri-es/setup-git-credentials@v2
-        with:
-          credentials: ${{ secrets.GIT_CREDENTIALS }}
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -26,25 +24,66 @@ jobs:
         with:
           node-version: 21.6.1
 
+      - name: Validate Branch Names
+        run: |
+          # Check if branch names contain invalid characters. Only alphanumeric, _, -, ., and / are allowed.
+          validate_branch_name() {
+              local branch_name="$1"
+              if [[ ! "$branch_name" =~ ^[a-zA-Z0-9/_\.-]+$ ]]; then
+                  echo "Error: Branch name contains invalid characters. Only alphanumeric, _, -, ., and / are allowed."
+                  exit 1
+              fi
+          }
+          validate_branch_name "${{ github.event.pull_request.head.ref }}"
+
+      - name: Extract Branch Names
+        id: extract_branch
+        run: |
+          # Extract and transform branch names
+          extract_branch() {
+              local input_branch="$1"
+              # Check if input_branch starts with "refs/heads/"
+              if [[ "$input_branch" == refs/heads/* ]]; then
+                  # Remove "refs/heads/" prefix safely using parameter expansion
+                  branch_name="${input_branch#refs/heads/}"
+                  echo "$branch_name"
+              else
+                  echo "$input_branch"
+              fi
+          }
+
+          # Transform branch names in form of `refs/heads/main` to `main`
+          draft_branch=$(extract_branch "${{ github.event.pull_request.head.ref }}")
+
+          # Replace / with - in the draft branch name to use as a directory name
+          draft_directory=$(echo "$draft_branch" | tr / -)
+
+          # Safe echo to $GITHUB_OUTPUT
+          {
+              echo "draft_branch=$draft_branch"
+              echo "draft_directory=$draft_directory"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Set Draft URL
+        id: draft_url
+        if: success()
+        run: |
+          echo "url=${{ vars.BUNDLE_PREVIEW_BASE_URL }}/docs-ui-drafts/${{ steps.extract_branch.outputs.draft_directory }}/index.html" >> $GITHUB_OUTPUT
+
       - name: Install Dependencies
         run: npm ci
 
-      - name: Extract Branch Names
-        shell: bash
-        run: |
-          # transform branch names in form of `refs/heads/main` to `main`
-          draft_branch=$(basename ${{ github.event.pull_request.head.ref || github.event.ref }})
-          echo "draft_branch=$draft_branch" >> $GITHUB_OUTPUT
-        id: extract_branch
-
       - name: Build UI Bundle Preview
+        if: success()
         run: |
           set -o pipefail
           gulp lint |& tee $GITHUB_WORKSPACE/build.log
           gulp preview:build |& tee $GITHUB_WORKSPACE/build.log
+        env:
+          NO_COLOR: 1
 
       - name: Check Build Result
-        id: logFail
+        id: buildLogFail
         if: failure()
         run: |
           MULTILINE_LOG=$(cat $GITHUB_WORKSPACE/build.log)
@@ -52,22 +91,28 @@ jobs:
           echo $MULTILINE_LOG >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
+      - name: Assemble Build Success Comment
+        if: ${{ success() && github.event.pull_request.number }}
+        run: |
+          build_success_comment="UI bundle preview build successful! :white_check_mark:"
+          build_success_comment+="\nDeploying bundle preview."
+
+          echo "BUILD_SUCCESS_COMMENT<<EOF" >> $GITHUB_ENV
+          echo -e "$build_success_comment" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
       - name: Create Build Success Comment
         if: ${{ success() && github.event.pull_request.number }}
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@v4
         with:
-          token: ${{ secrets.DOCS_GITHUB_PAT }}
           issue-number: ${{ github.event.pull_request.number }}
-          body: |
-            UI bundle preview build successful! :white_check_mark:
-            Deploying preview to GitHub Pages.
+          body: "${{ env.BUILD_SUCCESS_COMMENT }}"
           reactions: rocket
 
       - name: Create Build Failure Comment
         if: ${{ failure() && github.event.pull_request.number }}
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@v4
         with:
-          token: ${{ secrets.DOCS_GITHUB_PAT }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             UI bundle preview build failure! :x:
@@ -75,85 +120,87 @@ jobs:
           reactions: confused
 
       - name: Find Comment
-        if: ${{ success() && github.event.pull_request.number }}
-        uses: peter-evans/find-comment@v2
         id: fc
+        if: ${{ success() && github.event.pull_request.number }}
+        uses: peter-evans/find-comment@v3
         with:
-          token: ${{ secrets.DOCS_GITHUB_PAT }}
           issue-number: ${{ github.event.pull_request.number }}
           body-includes: UI bundle preview build successful!
           direction: last
 
-      - name: Deploy to GitHub Pages
+      - name: Configure AWS CLI
         if: success()
         run: |
-          git clone https://github.com/$GITHUB_REPOSITORY.git pages
-          cd pages
-          git checkout gh-pages
+          aws configure set aws_access_key_id ${{ secrets.DOCS_UI_AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.DOCS_UI_AWS_SECRET_ACCESS_KEY }}
+          aws configure set region us-west-2
 
-          # If there was previously a build for the preview, then remove it
-          # so we get a clean build. This is needed in case a follow up
-          # build of the same pull request contains content deletions.
-          rm -rf ${{ steps.extract_branch.outputs.draft_branch }}
-
-          mkdir -p ${{ steps.extract_branch.outputs.draft_branch }}
-          cp -r ../public/* ${{ steps.extract_branch.outputs.draft_branch }}/.
+      - name: Deploy to S3
+        if: success()
+        run: |
+          set -o pipefail
+          mkdir docs-ui-drafts
+          mv public docs-ui-drafts/${{ steps.extract_branch.outputs.draft_directory }}
+          cd docs-ui-drafts
 
           # Records the repository that originally triggered the build so we can post back
           # comments upon clean up of a stale draft if it still has an open pull request.
-          echo "${{ github.event.repository.full_name }}" > ${{ steps.extract_branch.outputs.draft_branch }}/.github_source_repository
+          echo "${{ github.event.repository.full_name }}" > ${{ steps.extract_branch.outputs.draft_directory }}/.github_source_repository
 
-          git add .
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git commit --allow-empty -m "Auto-deployed from GitHub Actions"
-          git push -u origin gh-pages
+          s3_params=(
+            # Hide upload progress for a cleaner sync log
+            --no-progress
+            # Because the build will produce new timestamps
+            # on each build, sync files based on size.
+            --size-only
+            --delete
+            --exclude "*"
+            --include "${{ steps.extract_branch.outputs.draft_directory }}/*"
+          )
 
-      - name: Obtain GitHub Pages build URL
-        if: success()
-        run: |
-          sleep 5 # Allow time for build to initiate
-          build_url=$(curl -s -L \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.DOCS_GITHUB_PAT }}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" 'https://api.github.com/repos/${{ github.event.repository.full_name }}/pages/builds/latest' \
-          | jq -r .url)
-          echo "url=$build_url" >> $GITHUB_OUTPUT
-        id: ghpages_build
+          echo "Deploying draft to S3." |& tee -a $GITHUB_WORKSPACE/deploy.log
+          echo "aws s3 sync . s3://${{ vars.BUNDLE_PREVIEW_S3_BUCKET_NAME }}/docs-ui-drafts ${s3_params[@]}" |& tee -a $GITHUB_WORKSPACE/deploy.log
+          aws s3 sync . "s3://${{ vars.BUNDLE_PREVIEW_S3_BUCKET_NAME }}/docs-ui-drafts" "${s3_params[@]}" |& tee -a $GITHUB_WORKSPACE/deploy.log
 
-      - name: Wait for Github Pages deployment
-        if: success()
-        run: |
-          for i in {1..60}; do
-            build_status=$(curl -s -L \
-              -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer ${{ secrets.DOCS_GITHUB_PAT }}" \
-              -H "X-GitHub-Api-Version: 2022-11-28" '${{ steps.ghpages_build.outputs.url }}' \
-            | jq -r .status)
+          # Update .github_source_repository file metadata to mark last modified time of the draft.
+          # This will allow us to later determine if a draft is stale and needs to be cleaned up.
+          echo "Marking last modified time of the draft." |& tee -a $GITHUB_WORKSPACE/deploy.log
+          echo "aws s3 cp --metadata '{\"touched\": \"now\"}' \
+            s3://${{ vars.BUNDLE_PREVIEW_S3_BUCKET_NAME }}/docs-ui-drafts/${{ steps.extract_branch.outputs.draft_directory }}/.github_source_repository \
+            s3://${{ vars.BUNDLE_PREVIEW_S3_BUCKET_NAME }}/docs-ui-drafts/${{ steps.extract_branch.outputs.draft_directory }}/.github_source_repository" \
+            |& tee -a $GITHUB_WORKSPACE/deploy.log
 
-            if [ "$build_status" == "built" ]; then echo "Deploy is complete."
-              exit 0
-            else
-              echo "Deploy is not complete. Status: $build_status. Retrying in 10 seconds..."
-              sleep 10
-            fi
-          done
-          echo "Deploy is still not complete after approximately 10 minutes."
-          exit 1
+          aws s3 cp --metadata '{ "touched": "now" }' \
+            s3://${{ vars.BUNDLE_PREVIEW_S3_BUCKET_NAME }}/docs-ui-drafts/${{ steps.extract_branch.outputs.draft_directory }}/.github_source_repository \
+            s3://${{ vars.BUNDLE_PREVIEW_S3_BUCKET_NAME }}/docs-ui-drafts/${{ steps.extract_branch.outputs.draft_directory }}/.github_source_repository \
+            |& tee -a $GITHUB_WORKSPACE/deploy.log
 
-      - name: Get GitHub Pages Preview URL
+      - name: Invalidate CloudFront Cache
         if: success()
         shell: bash
         run: |
-          echo "url=https://riptano.github.io/${{ github.event.repository.name }}/${{ steps.extract_branch.outputs.draft_branch }}/" >> $GITHUB_OUTPUT
-        id: draft_url
+          invalidation_batch="{ \"Paths\": { \"Quantity\": 1, \"Items\": [\"/docs-ui-drafts/${{ steps.extract_branch.outputs.draft_directory }}/*\"] }, \"CallerReference\": \"docs-ui-draft-files-$(date +%s)\" }"
 
-      - name: Update comment
+          echo $invalidation_batch | jq . |& tee -a "$GITHUB_WORKSPACE/deploy.log"
+          echo "Creating invalidation." |& tee -a "$GITHUB_WORKSPACE/deploy.log"
+          invalidation_id=$(aws cloudfront create-invalidation --distribution-id "${{ vars.BUNDLE_PREVIEW_CLOUD_FRONT_DISTRIBUTION_ID }}" --invalidation-batch "$invalidation_batch" --query 'Invalidation.Id' --output text |& tee -a "$GITHUB_WORKSPACE/deploy.log")
+
+          echo "Awaiting invalidation." |& tee -a "$GITHUB_WORKSPACE/deploy.log"
+          aws cloudfront wait invalidation-completed --distribution-id "${{ vars.BUNDLE_PREVIEW_CLOUD_FRONT_DISTRIBUTION_ID }}" --id "$invalidation_id" |& tee -a "$GITHUB_WORKSPACE/deploy.log"
+          echo "Invalidation complete." |& tee -a "$GITHUB_WORKSPACE/deploy.log"
+
+      - name: Update Comment
         if: ${{ steps.fc.outputs.comment-id != '' }}
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@v4
         with:
-          token: ${{ secrets.DOCS_GITHUB_PAT }}
           comment-id: ${{ steps.fc.outputs.comment-id }}
           body: |
-            Deployment successful! [View preview](${{ steps.draft_url.outputs.url }})
+            Deploy successful! [View preview](${{ steps.draft_url.outputs.url }})
           reactions: hooray
+
+      - name: Upload Deploy Log
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: deploy.log
+          path: ${{ github.workspace }}/deploy.log
