@@ -8,7 +8,7 @@
   })
 
   // If the user is in the US-CA region, change the text of the preference center link
-  // 3/19/25: Disabled this feature due to shifting CA legal requirements. Will re-enable with new textContent if needed.
+  // 3/19/25: Disabled this feature due to shifting CA legal requirements. Will re-enable with new textContent if needed
   // window.ketch('on', 'regionInfo', (regionInfo) => {
   //   const customTextRegions = ['US-CA']
   //   if (customTextRegions.includes(regionInfo)) {
