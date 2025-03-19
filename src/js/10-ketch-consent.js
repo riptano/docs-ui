@@ -8,15 +8,16 @@
   })
 
   // If the user is in the US-CA region, change the text of the preference center link
-  window.ketch('on', 'regionInfo', (regionInfo) => {
-    const customTextRegions = ['US-CA']
-    if (customTextRegions.includes(regionInfo)) {
-      const preferenceCenterLinkElement = document.getElementById('preferenceCenterLink')
-      if (preferenceCenterLinkElement) {
-        preferenceCenterLinkElement.textContent = 'Do Not Sell My Personal Information'
-      }
-    }
-  })
+  // 3/19/25: Disabled this feature due to shifting CA legal requirements. Will re-enable with new textContent if needed.
+  // window.ketch('on', 'regionInfo', (regionInfo) => {
+  //   const customTextRegions = ['US-CA']
+  //   if (customTextRegions.includes(regionInfo)) {
+  //     const preferenceCenterLinkElement = document.getElementById('preferenceCenterLink')
+  //     if (preferenceCenterLinkElement) {
+  //       preferenceCenterLinkElement.textContent = 'Do Not Sell My Personal Information'
+  //     }
+  //   }
+  // })
 
   // If the user is in the default jurisdiction, remove the preference center link
   window.ketch('on', 'jurisdiction', (jurisdiction) => {
