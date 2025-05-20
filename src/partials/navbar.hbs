@@ -3,12 +3,12 @@
     {{#unless (eq page.layout 'home')}}
     <label
       for="nav-drawer-input"
-      class="btn btn-neutral btn-plain btn-icon drawer-button lg:hidden"
+      class="btn btn-neutral btn-plain btn-icon drawer-button w-6 h-6 sm:h-10 sm:w-10 lg:hidden"
     >
       <i class="icon material-icons">menu_open</i>
     </label>
     {{/unless}}
-    <a href="{{#> logo-url}}{{{or site.url siteRootPath}}}{{/logo-url}}">
+    <a href="{{#> logo-url}}{{{or site.url siteRootPath}}}{{/logo-url}}" class="[&>svg]:w-[110px] sm:[&>svg]:w-[140px] md:[&>svg]:w-[172px]">
       {{> logo}}
     </a>
     <div class="DocSearch ml-auto md:mr-auto" id="docsearch"></div>
