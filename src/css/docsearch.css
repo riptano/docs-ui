@@ -49,10 +49,8 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
 }
 
 .DocSearch .DocSearch-Button {
-  @apply transition-colors;
+  @apply h-8 transition-colors md:h-10;
 
-  min-width: var(--ds-space-5);
-  height: var(--ds-space-5);
   border-radius: 6px;
   border: 1px solid var(--ds-neutral-outlined-border);
   margin: 0;
