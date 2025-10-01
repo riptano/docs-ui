@@ -16,7 +16,7 @@
       // Merge common properties with event-specific properties
       const eventProperties = {
         ...getCommonProperties(),
-        ...(payload || {})
+        ...(payload || {}),
       }
       window.analytics.track(name, eventProperties)
     }
@@ -32,7 +32,7 @@
     if (window.analytics) {
       const eventProperties = {
         ...getCommonProperties(),
-        ...(payload || {})
+        ...(payload || {}),
       }
       window.analytics.trackLink(element, name, eventProperties)
     }
