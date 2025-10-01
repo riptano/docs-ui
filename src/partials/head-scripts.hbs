@@ -1,12 +1,111 @@
 {{#with site.keys.segment}}
 <script>
-!function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="{{this}}";;analytics.SNIPPET_VERSION="5.2.1";
-analytics.load("{{this}}");
-}}();
+!function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="{{this}}";;analytics.SNIPPET_VERSION="5.2.1";}}();
+</script>
+<script src="https://consent.trustarc.com/get?name=trustarc-segment-wrapper-v1.1.js" async></script>
+<script>
+(function() {
+  function initSegmentWithTrustArc() {
+    if (typeof TrustArcWrapper !== 'undefined' && window.analytics) {
+      TrustArcWrapper.withTrustArc(window.analytics).load('{{this}}');
+    } else {
+      setTimeout(initSegmentWithTrustArc, 100);
+    }
+  }
+  initSegmentWithTrustArc();
+})();
 </script>
 {{/with}}
 
 {{#with site.keys.ibmAnalyticsEnabled}}
+<script>
+/* eslint-disable */
+// IBM Segment Common Properties - Required for all events
+const SEGMENT_COMMON_PROPERTIES = {
+  productTitle: '<ADD>',
+  productCode: '<ADD>',
+  productCodeType: '<ADD>',
+  ut30: '<ADD>'
+};
+
+// IBM Analytics Configuration
+window._ibmAnalytics = {
+  "settings": {
+    "name": "DataStax",
+    "tealiumProfileName": "ibm-subsidiary",
+  },
+  "trustarc": {
+    "privacyPolicyLink": "https://ibm.com/privacy"
+  },
+  "digitalData.page.services.google.enabled": true
+};
+
+window.digitalData = {
+  "page": {
+    "pageInfo": {
+      "ibm": {
+        "siteId": "IBM_" + _ibmAnalytics.settings.name,
+      },
+      "segment": {
+        "enabled": true,
+        "env": "prod",
+        "coremetrics": false,
+        "carbonComponentEvents": false,
+        "commonProperties": SEGMENT_COMMON_PROPERTIES
+      }
+    },
+    "category": {
+      "primaryCategory": "PC230"
+    }
+  }
+};
+
+// Google Consent Mode v2 - Set defaults before Google tags load
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+// Set default consent to denied
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied'
+});
+
+// TrustArc Consent Update Listener for Google Consent Mode
+(function() {
+  function updateGoogleConsent() {
+    if (typeof window.truste !== 'undefined' && window.truste.cma) {
+      var consent = window.truste.cma.callApi('getConsent', window.location.href) || {};
+
+      // Map TrustArc categories to Google consent types
+      // Category 0 = Required, 1 = Functional, 2 = Advertising, 3 = Analytics
+      var hasAdvertising = consent[2] === 1;
+      var hasAnalytics = consent[3] === 1;
+
+      gtag('consent', 'update', {
+        'ad_storage': hasAdvertising ? 'granted' : 'denied',
+        'ad_user_data': hasAdvertising ? 'granted' : 'denied',
+        'ad_personalization': hasAdvertising ? 'granted' : 'denied',
+        'analytics_storage': hasAnalytics ? 'granted' : 'denied'
+      });
+    }
+  }
+
+  // Listen for consent changes
+  if (window.addEventListener) {
+    window.addEventListener('cm_data_subject_consent_changed', updateGoogleConsent);
+    window.addEventListener('cm_consent_preferences_set', updateGoogleConsent);
+  }
+
+  // Initial check after TrustArc loads
+  if (document.readyState === 'complete') {
+    updateGoogleConsent();
+  } else {
+    window.addEventListener('load', updateGoogleConsent);
+  }
+})();
+</script>
 <script src="//1.www.s81c.com/common/stats/ibm-common.js" type="text/javascript" async="async"></script>
 {{/with}}
 
