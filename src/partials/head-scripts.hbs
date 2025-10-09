@@ -6,8 +6,8 @@ analytics.load("{{this}}");
 </script>
 {{/with}}
 
-{{#with site.keys.ibmAnalyticsEnabled}}
-<script src="//1.www.s81c.com/common/stats/ibm-common.js" type="text/javascript" async="async"></script>
+{{#with site.keys.ketchSmartTagUrl}}
+<script>!function(){window.semaphore=window.semaphore||[],window.ketch=function(){window.semaphore.push(arguments)};var e=document.createElement("script");e.type="text/javascript",e.src="{{this}}",e.defer=e.async=!0,document.getElementsByTagName("head")[0].appendChild(e)}();</script>
 {{/with}}
 
 <script>var uiRootPath = '{{{uiRootPath}}}'</script>
