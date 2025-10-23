@@ -1,106 +1,100 @@
-    {{!-- Add additional meta tags here --}}
+{{!-- Favicon / social --}}
+<link rel="icon" href="https://www.ibm.com/favicon.ico">
 
-    {{!-- apple touch icon --}}
-    {{!-- <link rel="apple-touch-icon" sizes="180x180" href="https://www.datastax.com/en/astra/_/img/apple-touch-icon-180x180.png"> --}}
-    <link rel="icon" href="https://www.ibm.com/favicon.ico">
-    <meta property="article:published_time" content="{{page.localdate}}">
-    <meta property="article:modified_time" content="{{page.docdate}}">
-    <meta property="article:author" content="DataStax, an IBM company">
-    {{!-- og --}}
-    <meta property="og:site_name" content="DataStax Documentation">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="{{page.canonicalUrl}}">
-    <meta property="og:title" content="{{> head-title}}">
-    <meta property="og:description" content="{{page.description}}">
-    <meta property="og:image" content="{{{site.url}}}{{{site.ui.url}}}/img/datastax-docs-banner.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="628">
-    <meta property="og:image:alt" content="DataStax Documentation">
-    {{!-- twitter --}}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="{{page.canonicalUrl}}">
-    <meta name="twitter:title" content="{{> head-title}}">
-    <meta name="twitter:description" content="{{page.description}}">
-    <meta name="twitter:image" content="{{{site.url}}}{{{site.ui.url}}}/img/datastax-docs-banner.png">
-    <script type="application/ld+json">
-    [
-    {{!-- {{commented expressions}} --}}
-    {{#if (eq  "{{{site.url}}}{{{site.homeUrl}}}" page.canonicalUrl)}}
+{{!-- Article meta --}}
+<meta property="article:published_time" content="{{page.localdate}}">
+<meta property="article:modified_time" content="{{page.docdate}}">
+<meta property="article:author" content="DataStax, an IBM company">
+
+{{!-- Open Graph --}}
+{{#if (eq "{{{site.url}}}{{{site.homeUrl}}}" page.canonicalUrl)}}
+<meta property="og:type" content="website">
+{{else}}
+<meta property="og:type" content="article">
+{{/if}}
+<meta property="og:site_name" content="DataStax Documentation">
+<meta property="og:url" content="{{page.canonicalUrl}}">
+<meta property="og:title" content="{{> head-title}}">
+<meta property="og:description" content="{{page.description}}">
+<meta property="og:image" content="{{{site.url}}}{{{site.ui.url}}}/img/datastax-docs-banner.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
+<meta property="og:image:alt" content="DataStax Documentation">
+
+{{!-- Twitter / X --}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{page.canonicalUrl}}">
+<meta name="twitter:title" content="{{> head-title}}">
+<meta name="twitter:description" content="{{page.description}}">
+<meta name="twitter:image" content="{{{site.url}}}{{{site.ui.url}}}/img/datastax-docs-banner.png">
+
+<script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "https://docs.datastax.com",
-        "name": "DataStax Documentation",
-        "url": "{{page.canonicalUrl}}",
-        "image": "{{{site.url}}}{{{site.ui.url}}}/img/datastax-docs-banner.png",
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+        "@type": "Organization",
+        "@id": "https://docs.datastax.com#organization",
+        "name": "DataStax, an IBM company",
+        "url": "https://docs.datastax.com",
+        "logo": "{{{site.url}}}{{{site.ui.url}}}/img/datastax-docs-banner.png",
         "sameAs": [
-             "https://www.ibm.com/products/datastax",
-             "https://github.com/datastax/",
-             "https://github.com/datastaxdevs/",
-             "https://www.youtube.com/@DataStax",
-             "https://www.youtube.com/@DataStaxDevs",
-             "https://en.wikipedia.org/wiki/DataStax"
-         ],
-        "publisher":{
-            "@type": "Corporation",
-            "@id": "https://www.ibm.com/products/datastax#organization",
-            "name": "DataStax, an IBM company",
-            "url": "https://www.ibm.com/products/datastax"
-        },
-        "author":{
-            "@type": "Corporation",
-            "@id": "https://www.ibm.com/products/datastax#organization",
-            "name": "DataStax, an IBM company"
+            "https://www.ibm.com/products/datastax",
+            "https://github.com/datastax/",
+            "https://github.com/datastaxdevs/",
+            "https://www.youtube.com/@DataStax",
+            "https://www.youtube.com/@DataStaxDevs",
+            "https://en.wikipedia.org/wiki/DataStax"
+        ],
+        "parentOrganization": {
+            "@type": "Organization",
+            "@id": "https://www.ibm.com#organization",
+            "name": "IBM",
+            "url": "https://www.ibm.com"
         }
-    },
-    {{else}}
-    {
-        "@context": "https://schema.org",
+        },
+        {
+        "@type": "WebSite",
+        "@id": "https://docs.datastax.com#website",
+        "name": "DataStax Documentation",
+        "url": "https://docs.datastax.com",
+        "publisher": { "@id": "https://docs.datastax.com#organization" }
+        },
+        {{#if (eq  "{{{site.url}}}{{{site.homeUrl}}}" page.canonicalUrl)}}
+        {
         "@type": "WebPage",
         "@id": "{{page.canonicalUrl}}",
-        "name":"{{page.title}}",
-        "inLanguage":"en-US",
-        "reviewedBy":{
-            "@type": "Corporation",
-            "@id": "https://www.ibm.com/products/datastax#organization",
-            "name": "DataStax, an IBM company"
-        },
-        "author":{
-            "@type": "Corporation",
-            "@id": "https://www.ibm.com/products/datastax#organization",
-            "name": "DataStax, an IBM company"
-        },
-        "isPartOf": {
-            "@type": "WebSite",
-            "@id": "https://docs.datastax.com",
-            "name": "DataStax Documentation"
-        },
-        "mainEntity":
-        {
-            "@type":"TechArticle",
-            "@id": "{{page.canonicalUrl}}#main_content",
-            "mainEntityOfPage": "true",
-            "datePublished":"{{page.localdate}}",
-            "dateModified":"{{page.docdate}}",
-            "headline": "{{page.title}}",
-            "description":"{{page.description}}",
-            "keywords":"{{page.keywords}}",
-            "image": "{{{site.url}}}{{{site.ui.url}}}/img/datastax-docs-banner.png",
-            "publisher":{
-                "@type": "Corporation",
-                "@id": "https://www.ibm.com/products/datastax#organization",
-                "name": "DataStax, an IBM company",
-                "url": "https://www.ibm.com/products/datastax"
-            },
-            "author":{
-                "@type": "Corporation",
-                "@id": "https://www.ibm.com/products/datastax#organization",
-                "name": "DataStax, an IBM company",
-                "url": "https://www.ibm.com/products/datastax"
-            }
+        "name": "{{page.title}}",
+        "inLanguage": "en-US",
+        "isPartOf": { "@id": "https://docs.datastax.com#website" },
+        "publisher": { "@id": "https://docs.datastax.com#organization" },
+        "primaryImageOfPage": "{{{site.url}}}{{{site.ui.url}}}/img/datastax-docs-banner.png"
         }
-     }
-    {{/if}}
+        {{else}}
+        {
+        "@type": "WebPage",
+        "@id": "{{page.canonicalUrl}}",
+        "name": "{{page.title}}",
+        "inLanguage": "en-US",
+        "isPartOf": { "@id": "https://docs.datastax.com#website" },
+        "reviewedBy": { "@id": "https://docs.datastax.com#organization" },
+        "author": { "@id": "https://docs.datastax.com#organization" },
+        "mainEntity": {
+            "@type": "TechArticle",
+            "@id": "{{page.canonicalUrl}}#main_content",
+            "mainEntityOfPage": true,
+            "datePublished": "{{page.localdate}}",
+            "dateModified": "{{page.docdate}}",
+            "headline": "{{page.title}}",
+            "description": "{{page.description}}",
+            "keywords": "{{page.keywords}}",
+            "image": "{{{site.url}}}{{{site.ui.url}}}/img/datastax-docs-banner.png",
+            "publisher": { "@id": "https://docs.datastax.com#organization" },
+            "author": { "@id": "https://docs.datastax.com#organization" }
+        }
+        }
+        {{/if}}
     ]
+    }
     </script>
