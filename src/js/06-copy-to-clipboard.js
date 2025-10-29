@@ -92,12 +92,22 @@
   }
 
   function trackCopy (language, title, text) {
-    if (window.trackEvent) {
+    if (window.analytics && window.getSegmentCommonProperties) {
       var sample = text.slice(0, 50).replace(/\s+/g, ' ').trim()
-      window.trackEvent('Code Snippet Copied', {
-        snippetLanguage: language,
-        snippetTitle: title,
-        snippetSample: sample,
+      var commonProps = window.getSegmentCommonProperties('UI Interaction')
+
+      // Map to IBM UI Interaction schema
+      window.analytics.track('UI Interaction', {
+        ...commonProps,
+        action: 'copied',
+        CTA: 'Copy Code',
+        namespace: 'code-snippet',
+        elementId: 'copy-button',
+        payload: {
+          language: language,
+          title: title,
+          sample: sample,
+        },
       })
     }
   }

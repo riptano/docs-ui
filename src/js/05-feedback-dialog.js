@@ -40,9 +40,19 @@
   form.onsubmit = (e) => {
     e.preventDefault()
     const message = form.elements.message.value
-    if (message && window.trackEvent) {
-      window.trackEvent('Feedback Form', {
-        message,
+    if (message && window.analytics && window.getSegmentCommonProperties) {
+      const commonProps = window.getSegmentCommonProperties('User Form')
+
+      // Map to IBM User Form schema
+      window.analytics.track('User Form', {
+        ...commonProps,
+        action: 'submitted',
+        formId: 'feedback_form',
+        formType: 'feedback',
+        field: 'feedback_message',
+        fieldType: 'text_field',
+        title: 'Give Feedback',
+        data: message,
       })
     }
     form.elements.message.value = ''
@@ -52,6 +62,20 @@
 
   const feedbackButtonYes = document.getElementById('feedback_button_yes')
   feedbackButtonYes.addEventListener('click', (e) => {
+    if (window.analytics && window.getSegmentCommonProperties) {
+      const commonProps = window.getSegmentCommonProperties('User Form')
+
+      // Track positive feedback button click
+      window.analytics.track('User Form', {
+        ...commonProps,
+        action: 'clicked',
+        formId: 'feedback_buttons',
+        formType: 'feedback',
+        field: 'helpful_yes',
+        fieldType: 'button',
+        title: 'Was This Helpful?',
+      })
+    }
     showThankYou()
   })
 
