@@ -24,13 +24,15 @@
           target="_blank"
           data-track="Footer Terms of Use Link Clicked"
         >Terms of use</a>
-        {{#with site.keys.ketchSmartTagUrl}}
+        {{#with site.keys.ibmSegment}}
         <span id="preferenceCenterContainer">
-          |
+          ·&nbsp;
           <a
             id="preferenceCenterLink"
-            href="https://www.datastax.com/preferences?redirect_to={{{../site.url}}}{{{../page.url}}}"
+            href="#"
+            onclick="if(typeof window !== 'undefined' && window.truste && window.truste.eu && window.truste.eu.clickListener) { window.truste.eu.clickListener(); } return false;"
             data-track="Footer Consent Preference Link Clicked"
+            style="cursor: pointer;"
           >Manage Privacy Choices</a>
         </span>
         {{/with}}
