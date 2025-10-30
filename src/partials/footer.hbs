@@ -1,32 +1,32 @@
 <footer class="footer [&_a]:text-link flex flex-col gap-6 border-t mt-auto pt-6 text-sm md:flex-row row-start-2 xl:peer-[.toc]:col-span-2">
   <div class="flex flex-col gap-6">
     <a
-      href="https://www.datastax.com"
+      href="https://www.ibm.com/products/datastax"
       target="_blank"
-      title="Go to the DataStax Website"
-      data-track="Footer datastax.com Link Clicked"
+      title="Go to the DataStax home page"
+      data-track="Footer Home Page Link Clicked"
       class="w-min !text-primary"
     >
     {{> logo}}
     </a>
     <p class="!m-0">
-      <span>©</span>
+      <span>© Copyright IBM Corporation</span>
       <span id="copyrightdate">{{year}}</span>
-      <span>DataStax, an IBM Company |
+      <span> |
         <a
-          href="https://www.datastax.com/legal/datastax-website-privacy-policy"
+          href="https://www.ibm.com/privacy"
           target="_blank"
           data-track="Footer Privacy Policy Link Clicked"
         >Privacy policy</a>
         |
         <a
-          href="https://www.datastax.com/legal/datastax-website-terms-use"
+          href="https://www.ibm.com/legal/terms"
           target="_blank"
           data-track="Footer Terms of Use Link Clicked"
         >Terms of use</a>
         {{#with site.keys.ibmSegment}}
         <span id="preferenceCenterContainer">
-          ·&nbsp;
+          |&nbsp;
           <a
             id="preferenceCenterLink"
             href="#"
@@ -49,32 +49,11 @@
   <div class="flex flex-col gap-6 md:ml-auto md:items-end">
     <div class="flex items-center gap-4">
       <a
-        href="https://discord.gg/datastax"
-        target="_blank"
-        title="Go to DataStax Developers Discord"
-        data-track="Footer Discord Link Clicked"
-        class="h-6 w-6 bg-[url('../img/social-discord.svg')] bg-no-repeat dark:invert"
-      ></a>
-      <a
         href="https://github.com/datastax"
         target="_blank"
         title="Go to DataStax GitHub"
         data-track="Footer Github Link Clicked"
         class="h-6 w-6 bg-[url('../img/social-github.svg')] bg-no-repeat dark:invert"
-      ></a>
-      <a
-        href="https://www.linkedin.com/showcase/datastaxdevs/"
-        target="_blank"
-        title="Go to DataStax Developers LinkedIn"
-        data-track="LinkedIn Link Clicked"
-        class="h-6 w-6 bg-[url('../img/social-linkedin.svg')] bg-no-repeat dark:invert"
-      ></a>
-      <a
-        href="https://twitter.com/datastaxdevs"
-        target="_blank"
-        title="Go to DataStax Developers X (Twitter)"
-        data-track="Footer Twitter Link Clicked"
-        class="h-6 w-6 bg-[url('../img/social-x.svg')] bg-no-repeat dark:invert"
       ></a>
       <a
         href="https://www.youtube.com/@DataStaxDevs"
@@ -86,13 +65,9 @@
     </div>
     <p class="!m-0 md:text-right">General Inquiries:
       <a
-        href="tel:+1-650-389-6000"
-        data-track="Footer Telephone Link Clicked"
-      >+1 (650) 389-6000</a>,
-      <a
-        href="mailto:info@datastax.com"
-        data-track="Footer Email Link Clicked"
-      >info@datastax.com</a>
+        href="https://www.ibm.com/contact/global"
+        data-track="Footer Contact Link Clicked"
+      >Contact IBM</a>
     </p>
   </div>
 </footer>
