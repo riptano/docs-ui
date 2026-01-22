@@ -17,7 +17,7 @@
 :astra_db: Astra DB
 :astra_stream: Astra Streaming
 :astra_ui: Astra Portal
-:support_url: https://support.datastax.com
+:support_url: https://www.ibm.com/mysupport/s/
 :glossary-url: https://docs.datastax.com/en/glossary/docs/index.html#
 
 📝 *_NOTE: This content was pulled from https://github.com/riptano/astra-vector-docs/pull/308[PR 308]_*
