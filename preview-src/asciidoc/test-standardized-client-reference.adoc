@@ -3,10 +3,10 @@
 :page-toclevels: 2
 :company: DataStax
 :product: Astra DB Serverless
-:db-serverless: Serverless (Non-Vector)
-:db-serverless-vector: Serverless (Vector)
+:db-serverless: Serverless (non-vector)
+:db-serverless-vector: Serverless (vector)
 :db-classic: Classic
-:evalproduct: DB Serverles
+:evalproduct: DB Serverless
 :astra-api: Data API
 :astra-cli: Astra CLI
 :url-astra: https://astra.datastax.com
@@ -17,7 +17,7 @@
 :astra_db: Astra DB
 :astra_stream: Astra Streaming
 :astra_ui: Astra Portal
-:support_url: https://support.datastax.com
+:support_url: https://www.ibm.com/mysupport/s/
 :glossary-url: https://docs.datastax.com/en/glossary/docs/index.html#
 
 📝 *_NOTE: This content was pulled from https://github.com/riptano/astra-vector-docs/pull/311[PR 311]_*

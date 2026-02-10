@@ -222,7 +222,7 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
     <p class="!text-link">Review common terms</p>
   ,role="!no-underline group after:hidden rounded bg-level1 p-4 flex flex-col gap-1 hover:bg-[var(--ds-primary-soft-bg)\] transition-colors duration-300"]
 
-  https://support.datastax.com/s/[
+  https://www.ibm.com/mysupport/s/[
     <i class="material-icons icon text-2xl text-[var(--ds-text-placeholder)\] group-hover:color-primary transition-colors duration-300">support</i>
     <h4 class="discrete !m-0 !text-primary text-display">Support</h4>
     <p class="!text-link">Access support resources</p>
