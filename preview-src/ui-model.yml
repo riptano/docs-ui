@@ -45,10 +45,6 @@ site:
           ]
         },
         { 
-          "title": "RAGStack",
-          "url": "#" 
-        },
-        { 
           "title": "DSE", 
           "items": [ 
             { "title": "Mission Control", "url": "#" },
