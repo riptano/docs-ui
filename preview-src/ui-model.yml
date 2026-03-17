@@ -57,7 +57,7 @@ site:
           "title": "Streaming", 
           "items": [ 
             { "title": "Astra Streaming", "url": "#" },
-            { "title": "Luna Streaming", "url": "#" }
+            { "title": "IBM Elite Support for Apache Pulsar", "url": "#" }
           ]
         },
         { 

@@ -104,7 +104,7 @@ collection.find(vector=[0.15, 0.1, 0.1, 0.35, 0.55])
     <div class="relative h-full p-2 md:p-4 text-primary rounded border flex items-center gap-3 bg-body transition-colors group-hover:border-[var(--ds-primary-outlined-hover-border)\] duration-300">
       <div class="w-10 h-10 p-3 rounded bg-level1 flex items-center justify-center"><i class="icon material-icons">nights_stay</i></div>
       <div>
-        <h4 class="discrete !m-0 !text-primary">Luna Support</h4>
+        <h4 class="discrete !m-0 !text-primary">IBM Elite Support</h4>
         <p class="text-tertiary">Expertise and support for DataStax products</p>
       </div>
     </div>
