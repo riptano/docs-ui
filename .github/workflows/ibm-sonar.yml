@@ -1,0 +1,58 @@
+name: IBM SonarQube Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sonarqube-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  sonarqube:
+    name: Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Fork PRs don't receive secrets, so the scan can't authenticate. Skip cleanly.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Decode Trust Store Certificate
+        env:
+          TRUSTSTORE_B64: ${{ secrets.IBM_SONARQUBE_CERT_TRUSTSTORE_BASE64 }}
+        run: |
+          set -euo pipefail
+          umask 077
+          printf '%s' "$TRUSTSTORE_B64" | base64 -d > "$RUNNER_TEMP/ibm_castorevpcprod"
+          [ -s "$RUNNER_TEMP/ibm_castorevpcprod" ] || {
+            echo "::error::Truststore decoded empty — check IBM_SONARQUBE_CERT_TRUSTSTORE_BASE64"; exit 1; }
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v5.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.IBM_SONARQUBE_API_TOKEN }}
+          SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
+        with:
+          # The `projectKey` and `projectName` values are repo-specific - update them if copying this workflow.
+          args: >
+            -D sonar.projectKey=544478-685614324
+            -D sonar.projectName=riptano/docs-ui
+            -D sonar.sources=.
+            -D sonar.scanner.truststorePath=${{ runner.temp }}/ibm_castorevpcprod
+            -D sonar.scanner.truststorePassword=${{ secrets.IBM_SONARQUBE_CERT_PASSWORD }}
+
+      - name: Clean Up Trust Store Certificate
+        if: always()
+        run: rm -f "$RUNNER_TEMP/ibm_castorevpcprod"
