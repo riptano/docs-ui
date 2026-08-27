@@ -34,6 +34,25 @@ jobs:
       SONAR_SOURCES: "."
 
     steps:
+      - name: Verify Configuration
+        env:
+          SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
+          SONAR_TOKEN: ${{ secrets.IBM_SONARQUBE_API_TOKEN }}
+          TRUSTSTORE_B64: ${{ secrets.IBM_SONARQUBE_CERT_TRUSTSTORE_BASE64 }}
+          CERT_PASSWORD: ${{ secrets.IBM_SONARQUBE_CERT_PASSWORD }}
+        run: |
+          set -uo pipefail
+          missing=()
+          [ -n "${SONAR_HOST_URL:-}" ]  || missing+=("vars.SONAR_HOST_URL")
+          [ -n "${SONAR_TOKEN:-}" ]     || missing+=("secrets.IBM_SONARQUBE_API_TOKEN")
+          [ -n "${TRUSTSTORE_B64:-}" ]  || missing+=("secrets.IBM_SONARQUBE_CERT_TRUSTSTORE_BASE64")
+          [ -n "${CERT_PASSWORD:-}" ]   || missing+=("secrets.IBM_SONARQUBE_CERT_PASSWORD")
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "::error::Missing required configuration: ${missing[*]}"
+            echo "Set at the org level. Check Settings > Secrets and variables > Actions, including each item's repository-access scope — org secrets can be limited to private repos or a selected list."
+            exit 1
+          fi
+
       - name: Checkout Repository
         uses: actions/checkout@v6
         with:
