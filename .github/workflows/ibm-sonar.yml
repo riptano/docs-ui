@@ -1,0 +1,112 @@
+name: IBM SonarQube Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sonarqube-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  sonarqube:
+    name: Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Fork PRs don't receive secrets, so the scan can't authenticate. Skip cleanly.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+
+    # Per-repo Sonar configuration. You must update SONAR_PROJECT_KEY and
+    # SONAR_PROJECT_NAME when copying this workflow to another repository, along
+    # with the branch filters above (i.e. if the repository uses `master`
+    # instead of `main`). Project key format is <org-id>-<project-id>. Only
+    # update SONAR_SOURCES if only a portion of the repository should be
+    # scanned.
+    #
+    # SONAR_EXCLUSIONS drops the Antora examples tree. Those snippets are not
+    # production code, and the .java ones can't be compiled, which aborts the scan.
+    #
+    # Setting this replaces the IBM instance's *overridable* exclusions (for
+    # example, `packages/**`) but not its forced-global ones — node_modules,
+    # venv, **/test/**, *.md and others still apply.
+    env:
+      SONAR_PROJECT_KEY: 544478-685614324
+      SONAR_PROJECT_NAME: riptano/docs-ui
+      SONAR_SOURCES: "."
+      SONAR_EXCLUSIONS: "**/modules/*/examples/**"
+
+    steps:
+      - name: Verify Configuration
+        env:
+          SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
+          SONAR_TOKEN: ${{ secrets.IBM_SONARQUBE_API_TOKEN }}
+          TRUSTSTORE_B64: ${{ secrets.IBM_SONARQUBE_CERT_TRUSTSTORE_BASE64 }}
+          CERT_PASSWORD: ${{ secrets.IBM_SONARQUBE_CERT_PASSWORD }}
+        run: |
+          set -uo pipefail
+          missing=()
+          [ -n "${SONAR_HOST_URL:-}" ]  || missing+=("vars.SONAR_HOST_URL")
+          [ -n "${SONAR_TOKEN:-}" ]     || missing+=("secrets.IBM_SONARQUBE_API_TOKEN")
+          [ -n "${TRUSTSTORE_B64:-}" ]  || missing+=("secrets.IBM_SONARQUBE_CERT_TRUSTSTORE_BASE64")
+          [ -n "${CERT_PASSWORD:-}" ]   || missing+=("secrets.IBM_SONARQUBE_CERT_PASSWORD")
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "::error::Missing required configuration: ${missing[*]}"
+            echo "Set at the org level. Check Settings > Secrets and variables > Actions, including each item's repository-access scope — org secrets can be limited to private repos or a selected list."
+            exit 1
+          fi
+
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Decode Trust Store Certificate
+        env:
+          TRUSTSTORE_B64: ${{ secrets.IBM_SONARQUBE_CERT_TRUSTSTORE_BASE64 }}
+        run: |
+          set -euo pipefail
+          umask 077
+          printf '%s' "$TRUSTSTORE_B64" | base64 -d > "$RUNNER_TEMP/ibm_castorevpcprod"
+          [ -s "$RUNNER_TEMP/ibm_castorevpcprod" ] || {
+            echo "::error::Truststore decoded empty — check IBM_SONARQUBE_CERT_TRUSTSTORE_BASE64"; exit 1; }
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v5.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.IBM_SONARQUBE_API_TOKEN }}
+          SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
+        with:
+          args: >
+            -D sonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
+            -D sonar.projectName=${{ env.SONAR_PROJECT_NAME }}
+            -D sonar.sources=${{ env.SONAR_SOURCES }}
+            -D sonar.exclusions=${{ env.SONAR_EXCLUSIONS }}
+            -D sonar.scanner.truststorePath=${{ runner.temp }}/ibm_castorevpcprod
+            -D sonar.scanner.truststorePassword=${{ secrets.IBM_SONARQUBE_CERT_PASSWORD }}
+
+      - name: Clean Up Trust Store Certificate
+        if: always()
+        run: rm -f "$RUNNER_TEMP/ibm_castorevpcprod"
+
+      - name: Link to Results
+        if: always()
+        env:
+          DASHBOARD_URL: https://sonarqube-prod.apps.wdc-sonarqube-prod.core.cirrus.ibm.com
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          url="${DASHBOARD_URL}/dashboard?id=${SONAR_PROJECT_KEY}"
+          if [ -n "$PR_NUMBER" ]; then
+            url="${url}&pullRequest=${PR_NUMBER}"
+          else
+            url="${url}&branch=${REF_NAME//\//%2F}"
+          fi
+          echo "[See analysis details on SonarQube]($url)" >> "$GITHUB_STEP_SUMMARY"
