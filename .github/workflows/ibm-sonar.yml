@@ -22,6 +22,17 @@ jobs:
     # Fork PRs don't receive secrets, so the scan can't authenticate. Skip cleanly.
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
 
+    # Per-repo Sonar configuration. You must update SONAR_PROJECT_KEY and
+    # SONAR_PROJECT_NAME when copying this workflow to another repository, along
+    # with the branch filters above (i.e. if the repository uses `master`
+    # instead of `main`). Project key format is <org-id>-<project-id>. Only
+    # update SONAR_SOURCES if only a portion of the repository should be
+    # scanned.
+    env:
+      SONAR_PROJECT_KEY: 544478-685614324
+      SONAR_PROJECT_NAME: riptano/docs-ui
+      SONAR_SOURCES: "."
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
@@ -45,14 +56,26 @@ jobs:
           SONAR_TOKEN: ${{ secrets.IBM_SONARQUBE_API_TOKEN }}
           SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
         with:
-          # The `projectKey` and `projectName` values are repo-specific - update them if copying this workflow.
           args: >
-            -D sonar.projectKey=544478-685614324
-            -D sonar.projectName=riptano/docs-ui
-            -D sonar.sources=.
+            -D sonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
+            -D sonar.projectName=${{ env.SONAR_PROJECT_NAME }}
+            -D sonar.sources=${{ env.SONAR_SOURCES }}
             -D sonar.scanner.truststorePath=${{ runner.temp }}/ibm_castorevpcprod
             -D sonar.scanner.truststorePassword=${{ secrets.IBM_SONARQUBE_CERT_PASSWORD }}
 
       - name: Clean Up Trust Store Certificate
         if: always()
         run: rm -f "$RUNNER_TEMP/ibm_castorevpcprod"
+
+      - name: Link to Results
+        if: always()
+        env:
+          DASHBOARD_URL: https://sonarqube-prod.apps.wdc-sonarqube-prod.core.cirrus.ibm.com
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          url="${DASHBOARD_URL}/dashboard?id=${SONAR_PROJECT_KEY}"
+          if [ -n "$PR_NUMBER" ]; then
+            url="${url}&pullRequest=${PR_NUMBER}"
+          fi
+          echo "[See analysis details on SonarQube]($url)" >> "$GITHUB_STEP_SUMMARY"
