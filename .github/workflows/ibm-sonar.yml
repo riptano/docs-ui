@@ -28,10 +28,18 @@ jobs:
     # instead of `main`). Project key format is <org-id>-<project-id>. Only
     # update SONAR_SOURCES if only a portion of the repository should be
     # scanned.
+    #
+    # SONAR_EXCLUSIONS drops the Antora examples tree. Those snippets are not
+    # production code, and the .java ones can't be compiled, which aborts the scan.
+    #
+    # Setting this replaces the IBM instance's *overridable* exclusions (for
+    # example, `packages/**`) but not its forced-global ones — node_modules,
+    # venv, **/test/**, *.md and others still apply.
     env:
       SONAR_PROJECT_KEY: 544478-685614324
       SONAR_PROJECT_NAME: riptano/docs-ui
       SONAR_SOURCES: "."
+      SONAR_EXCLUSIONS: "**/modules/*/examples/**"
 
     steps:
       - name: Verify Configuration
@@ -79,6 +87,7 @@ jobs:
             -D sonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
             -D sonar.projectName=${{ env.SONAR_PROJECT_NAME }}
             -D sonar.sources=${{ env.SONAR_SOURCES }}
+            -D sonar.exclusions=${{ env.SONAR_EXCLUSIONS }}
             -D sonar.scanner.truststorePath=${{ runner.temp }}/ibm_castorevpcprod
             -D sonar.scanner.truststorePassword=${{ secrets.IBM_SONARQUBE_CERT_PASSWORD }}
 
@@ -91,10 +100,13 @@ jobs:
         env:
           DASHBOARD_URL: https://sonarqube-prod.apps.wdc-sonarqube-prod.core.cirrus.ibm.com
           PR_NUMBER: ${{ github.event.pull_request.number }}
+          REF_NAME: ${{ github.ref_name }}
         run: |
           set -euo pipefail
           url="${DASHBOARD_URL}/dashboard?id=${SONAR_PROJECT_KEY}"
           if [ -n "$PR_NUMBER" ]; then
             url="${url}&pullRequest=${PR_NUMBER}"
+          else
+            url="${url}&branch=${REF_NAME//\//%2F}"
           fi
           echo "[See analysis details on SonarQube]($url)" >> "$GITHUB_STEP_SUMMARY"
