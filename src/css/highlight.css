@@ -1,112 +1,94 @@
-.hljs-comment {
-  color: var(--ds-text-tertiary);
-}
+/* Syntax highlighting for code blocks, for highlight.js 9 class names and the highlight.js 11
+   sub-scopes that differ. Colors come from the --ds-code-* variables in vars/light.css and
+   vars/dark.css; each has at least 4.5:1 contrast (WCAG AA) on the code block background.
+   Punctuation, operators, parameters, and names stay in the text color. */
 
+.hljs-comment,
 .hljs-quote {
-  color: var(--ds-text-tertiary);
-}
-
-.hljs-variable {
-  color: var(--ds-failure-main);
-}
-
-/* Placeholders such as <keyspace_name> in CQL synopses: italic, like variables in prose,
-   rather than the error color. */
-.hljs-template-variable {
-  color: var(--ds-text-secondary);
+  color: var(--ds-code-comment);
   font-style: italic;
 }
 
-.hljs-tag {
-  color: var(--ds-failure-main);
-}
-
-.hljs-name {
-  color: var(--ds-failure-main);
-}
-
-.hljs-selector-id {
-  color: var(--ds-failure-main);
-}
-
-.hljs-selector-class {
-  color: var(--ds-cyan-main);
-}
-
-.hljs-regexp {
-  color: var(--ds-cyan-main);
-}
-
-.hljs-deletion {
-  color: var(--ds-failure-main);
-}
-
-.hljs-number {
-  color: var(--ds-orange-main);
-}
-
-.hljs-built_in {
-  color: var(--ds-teal-main);
-}
-
-.hljs-builtin-name {
-  color: var(--ds-orange-main);
-}
-
-.hljs-literal {
-  color: var(--ds-orange-main);
-}
-
-.hljs-type {
-  color: var(--ds-orange-main);
-}
-
-.hljs-params {
-  color: var(--ds-orange-main);
-}
-
-.hljs-meta {
-  color: var(--ds-orange-main);
-}
-
-.hljs-link {
-  color: var(--ds-orange-main);
-}
-
-.hljs-attribute {
-  color: var(--ds-orange-main);
-}
-
-.hljs-string {
-  color: var(--ds-orange-main);
-}
-
-.hljs-symbol {
-  color: var(--ds-success-main);
-}
-
+/* Prompts, preprocessor lines, annotations, markup brackets, and list bullets. */
+.hljs-meta,
+.hljs-tag,
 .hljs-bullet {
-  color: var(--ds-success-main);
+  color: var(--ds-code-meta);
 }
 
-.hljs-addition {
-  color: var(--ds-success-main);
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-doctag,
+.hljs-meta-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-variable.language_ {
+  color: var(--ds-code-keyword);
 }
 
-.hljs-title {
-  color: var(--ds-cyan-main);
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-title.class_ {
+  color: var(--ds-code-type);
+}
+
+/* Names being defined or called: functions, classes, headings. */
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: var(--ds-code-title);
 }
 
 .hljs-section {
-  color: var(--ds-cyan-main);
+  font-weight: 600;
 }
 
-.hljs-keyword {
-  color: var(--ds-primary-main);
+/* Keys and setting names: JSON and YAML keys, XML attributes, CSS properties, options. */
+.hljs-attr,
+.hljs-attribute,
+.hljs-property,
+.hljs-symbol,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: var(--ds-code-attr);
 }
 
-.hljs-selector-tag {
-  color: var(--ds-primary-main);
+.hljs-link {
+  text-decoration: underline;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-meta-string,
+.hljs-meta .hljs-string,
+.hljs-addition {
+  color: var(--ds-code-string);
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-char.escape_,
+.hljs-variable.constant_ {
+  color: var(--ds-code-number);
+}
+
+/* Values supplied by the reader or the environment: variables, bind markers, and
+   placeholders such as <keyspace_name>, which are also italic, like variables in prose. */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-template-tag {
+  color: var(--ds-code-variable);
+}
+
+.hljs-template-variable {
+  font-style: italic;
+}
+
+.hljs-deletion {
+  color: var(--ds-code-deletion);
 }
 
 .hljs-emphasis {
@@ -114,5 +96,5 @@
 }
 
 .hljs-strong {
-  font-weight: 500;
+  font-weight: 600;
 }

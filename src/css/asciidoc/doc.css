@@ -764,7 +764,9 @@
     padding: var(--ds-space-2);
   }
 
-  .doc .language-console .hljs-meta {
+  /* Prompts (console $, cqlsh>) are not selected along with the commands after them. */
+  .doc .language-console .hljs-meta,
+  .doc .language-cql .hljs-meta {
     user-select: none;
   }
 
