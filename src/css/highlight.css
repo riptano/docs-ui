@@ -10,8 +10,11 @@
   color: var(--ds-failure-main);
 }
 
+/* Placeholders such as <keyspace_name> in CQL synopses: italic, like variables in prose,
+   rather than the error color. */
 .hljs-template-variable {
-  color: var(--ds-failure-main);
+  color: var(--ds-text-secondary);
+  font-style: italic;
 }
 
 .hljs-tag {

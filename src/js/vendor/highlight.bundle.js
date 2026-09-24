@@ -1,3 +1,9 @@
+/*! Syntax highlighting in this bundle:
+ * highlight.js 9.18.3 | BSD-3-Clause | Copyright (c) 2006, Ivan Sagalaev | https://github.com/highlightjs/highlight.js
+ * GraphQL grammar ported from highlight.js 11.12.0 | BSD-3-Clause | Copyright (c) 2006, Ivan Sagalaev
+ * highlightjs-curl 1.3.0 | Apache-2.0 | John Foster | https://github.com/highlightjs/highlightjs-curl
+ * highlightjs-cql 1.0.0 | Apache-2.0 | https://github.com/eric-schneider/highlightjs-cql
+ */
 ;(function () {
   'use strict'
 
@@ -17,6 +23,7 @@
   hljs.registerLanguage('dockerfile', require('highlight.js/lib/languages/dockerfile'))
   hljs.registerLanguage('elixir', require('highlight.js/lib/languages/elixir'))
   hljs.registerLanguage('go', require('highlight.js/lib/languages/go'))
+  hljs.registerLanguage('graphql', require('./languages/graphql.js'))
   hljs.registerLanguage('groovy', require('highlight.js/lib/languages/groovy'))
   hljs.registerLanguage('haskell', require('highlight.js/lib/languages/haskell'))
   hljs.registerLanguage('ini', ini)
@@ -40,8 +47,7 @@
   hljs.registerLanguage('scala', require('highlight.js/lib/languages/scala'))
   hljs.registerLanguage('shell', require('highlight.js/lib/languages/shell'))
   hljs.registerLanguage('sql', sql)
-  // Use SQL highlighter for CQL
-  hljs.registerLanguage('cql', sql)
+  hljs.registerLanguage('cql', require('./languages/cql.js'))
   hljs.registerLanguage('swift', require('highlight.js/lib/languages/swift'))
   hljs.registerLanguage('toml', ini)
   hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'))

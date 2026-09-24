@@ -18,7 +18,9 @@ const task = require('./gulp.d/tasks')
 const glob = {
   all: [srcDir, previewSrcDir],
   css: `${srcDir}/css/**/*.css`,
-  js: ['gulpfile.js', 'gulp.d/**/*.js', `${srcDir}/{helpers,js}/**/*.js`],
+  // src/js/vendor/languages holds grammars maintained elsewhere (see its README); they keep
+  // their upstream formatting, so lint and format skip them.
+  js: ['gulpfile.js', 'gulp.d/**/*.js', `${srcDir}/{helpers,js}/**/*.js`, `!${srcDir}/js/vendor/languages/**`],
 }
 
 const cleanTask = createTask({
