@@ -81,6 +81,84 @@ public class CurrentDateTime {
 }
 ----
 
+=== Syntax highlighting samples
+
+These samples show how each kind of token is colored in the languages the docs use most.
+
+.CQL: schema and queries
+[source,cql]
+----
+CREATE TABLE IF NOT EXISTS store.orders (
+  order_id uuid,
+  placed_at timestamp,
+  status text,
+  items list<frozen<map<text, int>>>,
+  embedding vector<float, 3>,
+  PRIMARY KEY ((order_id), placed_at)
+) WITH CLUSTERING ORDER BY (placed_at DESC)
+  AND comment = 'Orders by customer'
+  AND default_time_to_live = 0;
+
+SELECT order_id, writetime(status), toJson(items) FROM store.orders
+WHERE order_id = 6ab09bec-e68e-48d9-a5f8-97e6fb4c9b47
+  AND placed_at >= ? -- a bind marker
+ORDER BY embedding ANN OF [0.1, 0.2, 0.3] LIMIT 5;
+----
+
+.CQL: syntax summary with placeholders
+[source,cql]
+----
+CREATE TABLE [ IF NOT EXISTS ] [<keyspace_name>.]<table_name>
+  ( <column_name> <cql_type> [ STATIC ] [ PRIMARY KEY ] [ , ... ] )
+  [ WITH <table_options> ] ;
+----
+
+.CQL: cqlsh session
+[source,cql]
+----
+cqlsh> CONSISTENCY LOCAL_QUORUM
+cqlsh> USE store;
+cqlsh:store> SELECT order_id, status FROM orders LIMIT 1;
+
+ order_id                             | status
+--------------------------------------+--------
+ 6ab09bec-e68e-48d9-a5f8-97e6fb4c9b47 |    NEW
+
+(1 rows)
+----
+
+.GraphQL
+[source,graphql]
+----
+query getOrder($id: Uuid!) {
+  orders(value: { order_id: $id }) @cql_column(name: "orders") {
+    values { order_id status }
+  }
+}
+----
+
+.YAML
+[source,yaml]
+----
+# Audit logging in cassandra.yaml
+audit_logging_options:
+  enabled: true
+  logger:
+    - class_name: BinAuditLogger
+  included_categories: QUERY, DDL, AUTH
+----
+
+.XML
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<dependency>
+  <groupId>org.apache.cassandra</groupId>
+  <artifactId>java-driver-core</artifactId>
+  <version>${driver.version}</version> <!-- the release you use -->
+</dependency>
+----
+
 === Line wrapping
 
 .Line wrapping is turned off by default
