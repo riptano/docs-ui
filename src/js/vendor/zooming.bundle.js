@@ -1,3 +1,4 @@
+/*! zooming 2.1.1 | MIT | Copyright (c) 2017-present Desmond Ding | https://github.com/kingdido999/zooming */
 ;(function () {
   'use strict'
 

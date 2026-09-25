@@ -21,6 +21,21 @@ const postcssVar = require('postcss-custom-properties')
 const { Transform } = require('stream')
 const map = (transform) => new Transform({ objectMode: true, transform })
 const through = () => map((file, enc, next) => next(null, file))
+// Minifying drops some license notices (/*! ... */ comments), which the licenses of the bundled
+// libraries require us to keep, so record them first and put back any that are lost.
+const LICENSE_NOTICE_RX = /\/\*![\s\S]*?\*\//g
+const recordLicenseNotices = () =>
+  map((file, enc, next) => {
+    file.licenseNotices = [...new Set(file.contents.toString().match(LICENSE_NOTICE_RX))]
+    next(null, file)
+  })
+const restoreLicenseNotices = () =>
+  map((file, enc, next) => {
+    const code = file.contents.toString()
+    const lost = (file.licenseNotices || []).filter((notice) => !code.includes(notice))
+    if (lost.length) file.contents = Buffer.from(lost.join('\n') + '\n' + code)
+    next(null, file)
+  })
 const uglify = require('gulp-uglify')
 const vfs = require('vinyl-fs')
 const hash = require('gulp-hash')
@@ -84,9 +99,9 @@ module.exports = (src, dest, preview) => () => {
     vfs
       .src('js/vendor/*([^.])?(.bundle).js', { ...opts, read: false })
       .pipe(bundle(opts))
-      // .pipe(uglify({ output: { comments: /^! / } }))
-      .pipe(map((file) => file.relative === 'js/vendor/floatingui.js')
-        ? through() : uglify({ output: { comments: /^! / } }))
+      .pipe(recordLicenseNotices())
+      .pipe(gulpif((file) => file.relative !== 'js/vendor/floatingui.js', uglify({ output: { comments: /^! / } })))
+      .pipe(restoreLicenseNotices())
       .pipe(gulpif(
         !preview,
         hash({ template: '<%= name %>-<%= hash %><%= ext %>' })))

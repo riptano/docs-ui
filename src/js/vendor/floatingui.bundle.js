@@ -1,3 +1,6 @@
+/*! Floating UI | MIT | Copyright (c) 2021-present Floating UI contributors | https://github.com/floating-ui/floating-ui
+ * @floating-ui/dom 1.6.12, @floating-ui/core 1.6.8, @floating-ui/utils 0.2.8
+ */
 /**
  * Dropdown Example
  *
