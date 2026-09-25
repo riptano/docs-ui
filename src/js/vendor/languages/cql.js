@@ -668,8 +668,8 @@ function cql(hljs) {
     relevance: 0,
     contains: [{ begin: NAME_PART + '(?:\\.' + NAME_PART + ')?', endsParent: true, relevance: 0 }]
   }, KEYWORDS);
-  // DataStax Enterprise: DESCRIBE PENDING SEARCH INDEX is parsed outside the grammar, so
-  // PENDING is a keyword only in that phrase.
+  // DataStax Enterprise documents DESCRIBE PENDING SEARCH INDEX; PENDING is a keyword only in
+  // that phrase.
   var PENDING = { className: 'keyword', begin: /\bPENDING(?=\s+SEARCH\s+INDEX\b)/, relevance: 0 };
   // KEY is unreserved (a column may be called key), but PRIMARY KEY is always syntax.
   var PRIMARY_KEY = { className: 'keyword', begin: /\bPRIMARY\s+KEY\b/, relevance: 0 };
