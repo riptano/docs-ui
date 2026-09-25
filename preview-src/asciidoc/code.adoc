@@ -83,7 +83,7 @@ public class CurrentDateTime {
 
 === Syntax highlighting samples
 
-These samples show how each kind of token is colored in the languages the docs use most.
+These samples show how each kind of token is colored in the languages the docs use most, and in PowerShell.
 
 .CQL: schema and queries
 [source,cql]
@@ -157,6 +157,16 @@ audit_logging_options:
   <artifactId>java-driver-core</artifactId>
   <version>${driver.version}</version> <!-- the release you use -->
 </dependency>
+----
+
+.PowerShell
+[source,powershell]
+----
+# Install the Astra CLI on Windows
+$env:ASTRA_HOME = "C:\Tools\astra"
+New-Item -ItemType Directory -Force -Path $env:ASTRA_HOME | Out-Null
+Expand-Archive -Path "$env:TEMP\astra.zip" -DestinationPath $env:ASTRA_HOME -Force
+if (-not (Get-Command astra -ErrorAction SilentlyContinue)) { Write-Output "Add $env:ASTRA_HOME to PATH" }
 ----
 
 === Line wrapping
