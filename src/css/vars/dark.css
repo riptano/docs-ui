@@ -104,9 +104,9 @@
   --ds-code-comment: theme(colors.zinc.400);
   --ds-code-meta: theme(colors.zinc.400);
   --ds-code-keyword: theme(colors.purple.400);
-  --ds-code-type: theme(colors.cyan.400);
+  --ds-code-type: theme(colors.lime.400);
   --ds-code-title: theme(colors.pink.400);
-  --ds-code-attr: theme(colors.indigo.400);
+  --ds-code-attr: theme(colors.cyan.400);
   --ds-code-string: theme(colors.emerald.400);
   --ds-code-number: theme(colors.orange.400);
   --ds-code-variable: theme(colors.amber.400);
