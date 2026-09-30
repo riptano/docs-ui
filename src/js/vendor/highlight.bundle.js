@@ -1,10 +1,15 @@
+/*! Syntax highlighting in this bundle:
+ * highlight.js 9.18.3 | BSD-3-Clause | Copyright (c) 2006, Ivan Sagalaev | https://github.com/highlightjs/highlight.js
+ * GraphQL grammar ported from highlight.js 11.12.0 | BSD-3-Clause | Copyright (c) 2006, Ivan Sagalaev
+ * highlightjs-curl 1.3.0 | Apache-2.0 | John Foster | https://github.com/highlightjs/highlightjs-curl
+ * highlightjs-cql 1.0.0 | Apache-2.0 | https://github.com/eric-schneider/highlightjs-cql
+ */
 ;(function () {
   'use strict'
 
   var hljs = require('highlight.js/lib/highlight')
   var hljsCurl = require('highlightjs-curl')
   var sql = require('highlight.js/lib/languages/sql')
-  var ini = require('highlight.js/lib/languages/ini')
 
   hljs.registerLanguage('asciidoc', require('highlight.js/lib/languages/asciidoc'))
   hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
@@ -17,9 +22,10 @@
   hljs.registerLanguage('dockerfile', require('highlight.js/lib/languages/dockerfile'))
   hljs.registerLanguage('elixir', require('highlight.js/lib/languages/elixir'))
   hljs.registerLanguage('go', require('highlight.js/lib/languages/go'))
+  hljs.registerLanguage('graphql', require('./languages/graphql.js'))
   hljs.registerLanguage('groovy', require('highlight.js/lib/languages/groovy'))
   hljs.registerLanguage('haskell', require('highlight.js/lib/languages/haskell'))
-  hljs.registerLanguage('ini', ini)
+  hljs.registerLanguage('ini', require('highlight.js/lib/languages/ini'))
   hljs.registerLanguage('java', require('highlight.js/lib/languages/java'))
   hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
   hljs.registerLanguage('json', require('highlight.js/lib/languages/json'))
@@ -31,7 +37,9 @@
   hljs.registerLanguage('objectivec', require('highlight.js/lib/languages/objectivec'))
   hljs.registerLanguage('perl', require('highlight.js/lib/languages/perl'))
   hljs.registerLanguage('php', require('highlight.js/lib/languages/php'))
+  hljs.registerLanguage('powershell', require('highlight.js/lib/languages/powershell'))
   hljs.registerLanguage('properties', require('highlight.js/lib/languages/properties'))
+  hljs.registerLanguage('protobuf', require('highlight.js/lib/languages/protobuf'))
   hljs.registerLanguage('puppet', require('highlight.js/lib/languages/puppet'))
   hljs.registerLanguage('python', require('highlight.js/lib/languages/python'))
   hljs.registerLanguage('ruby', require('highlight.js/lib/languages/ruby'))
@@ -39,10 +47,8 @@
   hljs.registerLanguage('scala', require('highlight.js/lib/languages/scala'))
   hljs.registerLanguage('shell', require('highlight.js/lib/languages/shell'))
   hljs.registerLanguage('sql', sql)
-  // Use SQL highlighter for CQL
-  hljs.registerLanguage('cql', sql)
+  hljs.registerLanguage('cql', require('./languages/cql.js'))
   hljs.registerLanguage('swift', require('highlight.js/lib/languages/swift'))
-  hljs.registerLanguage('toml', ini)
   hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'))
   hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
   hljs.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'))

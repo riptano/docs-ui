@@ -98,6 +98,19 @@
   --ds-warning-solid-bg: theme(colors.amber.600);
   --ds-warning-solid-color: theme(colors.white);
   --ds-warning-solid-hover-bg: theme(colors.amber.700);
+
+  /* Code syntax highlighting (see highlight.css). Each color has at least 4.5:1
+     contrast (WCAG AA) on --ds-background-level1, the code block background. */
+  --ds-code-comment: theme(colors.zinc.500);
+  --ds-code-meta: theme(colors.zinc.500);
+  --ds-code-keyword: theme(colors.purple.700);
+  --ds-code-type: theme(colors.lime.700);
+  --ds-code-title: theme(colors.pink.700);
+  --ds-code-attr: theme(colors.sky.700);
+  --ds-code-string: theme(colors.emerald.700);
+  --ds-code-number: theme(colors.orange.700);
+  --ds-code-variable: theme(colors.amber.700);
+  --ds-code-deletion: theme(colors.red.700);
 }
 
 @mixin light-inverse {
