@@ -1,0 +1,42 @@
+/* Additions for the lunr-backed search modal (js/vendor/site-search.js). The modal reuses
+   DocSearch's markup, so @docsearch/css and docsearch.css style everything else. */
+
+/* The page row shows a snippet of the matching text under the title. */
+.DocSearch .DocSearch-Hit-path mark {
+  color: inherit;
+}
+
+/* DocSearch draws its "esc" key as an SVG; a text label keeps the same footprint. */
+.DocSearch .DocSearch-Escape-Key {
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+/* Hide the removed Algolia logo slot without collapsing the footer layout. */
+.DocSearch .DocSearch-Logo:empty {
+  min-width: 1px;
+}
+
+/* No layout shift: the button is in the page HTML from the start, so give it its final size. */
+#site-search-button .DocSearch-Button-Key svg {
+  display: block;
+}
+
+/* Tailwind's preflight makes SVGs block-level; center the no-results and error icons as
+   DocSearch intends. */
+.DocSearch .DocSearch-Screen-Icon svg {
+  margin: 0 auto;
+}
+
+/* Page rows carry a one-line text snippet; end it with an ellipsis instead of a hard cut. */
+.DocSearch .DocSearch-Hit-path {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Keep the row selected with the arrow keys clear of the sticky group heading. */
+.DocSearch .DocSearch-Dropdown {
+  scroll-padding-top: 40px;
+}

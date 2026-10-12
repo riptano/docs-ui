@@ -1,0 +1,11 @@
+{{!-- Site search powered by @antora/lunr-extension. The extension sets env.SITE_SEARCH_PROVIDER,
+generates search-index.js at the site root, and vendors lunr.js into the UI. This partial replaces
+the extension's default one: site-search.js renders a DocSearch-style modal and downloads lunr.js
+and the index only when the reader starts to search. It supports English-language indexes only
+(it doesn't load lunr-languages). --}}
+<script id="site-search-script" defer src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/site-search.js'}}}"
+  data-site-root-path="{{{siteRootPath}}}"
+  data-index-url="{{{siteRootPath}}}/search-index.js"
+  data-lunr-url="{{{uiRootPath}}}/js/vendor/lunr.js"
+  data-component="{{page.component.name}}"
+  data-snippet-length="120"></script>
