@@ -470,13 +470,29 @@ function cql(hljs) {
   // of a statement so that a column called "source" or "history" stays a name.
   var PROMPT_SOURCE = 'cqlsh(?::[A-Za-z0-9_"]+)?>';
   var COMMAND_WORD = either(V.cqlshLineCommands) + '\\b';
+  // A line can also start inside a statement that spans lines, where a command word is a
+  // name: a column definition (consistency text,), a list item (source,), a dotted path
+  // (history.year), or the left side of a comparison (source = 'x'). What follows such a
+  // name is never a command's argument. ASC and DESC count only on the same line, because
+  // DESC also starts a statement (a bare CONSISTENCY, then DESC KEYSPACES on the next line).
+  var NAME_FOLLOWS = '\\s*(?:[,)(.=>!]|<(?![A-Za-z_]))|\\s+(?:FROM|AS|IN|CONTAINS|LIKE|IS|BETWEEN)\\b|' +
+    '[ \\t]+(?:ASC|DESC)\\b';
+  // A type after the word makes it a column definition, except before FROM or TO, a column
+  // list, or a dotted name, where the word is COPY and the type name names a table
+  // (COPY date FROM 'f.csv', COPY date (a, b) TO 'f.csv').
+  var TYPE_FOLLOWS = '\\s+' + TYPE_START + '(?!\\s+(?:FROM|TO)\\b|\\s*[(.])';
+  var NOT_IN_STATEMENT = '(?!' + NAME_FOLLOWS + '|' + TYPE_FOLLOWS + ')';
+  // HELP's topics include type names (HELP TIMESTAMP), so a type after HELP makes it a name
+  // only when a comma or ) follows (help text,).
+  var COMMAND_AT_START = '(?:HELP\\b(?!' + NAME_FOLLOWS + '|\\s+' + TYPE_START + '[ \\t]*[,)])|(?!HELP\\b)' +
+    COMMAND_WORD + NOT_IN_STATEMENT + ')';
   var CQLSH_COMMAND = withKeywords({
     variants: [
       // At a line start or after a semicolon the matched text is consumed; highlight.js
       // colors it with this mode's keywords. It must not be re-scanned: a mode that begins
       // at a semicolon and ends on that same semicolon would restart there forever.
-      { begin: '^[ \\t]*' + COMMAND_WORD },
-      { begin: ';[ \\t]*' + COMMAND_WORD },
+      { begin: '^[ \\t]*' + COMMAND_AT_START },
+      { begin: ';[ \\t]*' + COMMAND_AT_START },
       // After a prompt the text is re-scanned, so that the prompt gets its own scope.
       { begin: PROMPT_SOURCE + '[ \\t]*' + COMMAND_WORD, returnBegin: true }
     ],
@@ -490,7 +506,7 @@ function cql(hljs) {
   // highlight.js colors with the mode's keywords. (A mode without an explicit end would end
   // at the first position after a nested prompt, before reaching COPY.)
   var COPY_COMMAND = withKeywords({
-    begin: STATEMENT_START + 'COPY\\b',
+    begin: STATEMENT_START + 'COPY\\b' + NOT_IN_STATEMENT,
     returnBegin: true,
     end: /\bCOPY\b/,
     relevance: 0,
@@ -624,7 +640,13 @@ function cql(hljs) {
   // DESC, or a DataStax Enterprise search-index option block ({ ... }) is a name, so it is
   // not colored as a keyword (WHERE key = 1; SELECT type, date; COLUMNS comment { ... }).
   var RELATION = '(?=\\s*(?:!=|<=|>=|=|<(?![A-Za-z_])|>|:(?![A-Za-z_":])|\\b(?:IN|CONTAINS|LIKE|IS|BETWEEN|NOT)\\b))';
-  var NAME_BEFORE_RELATION = { begin: '\\b' + NOT_A_NAME + IDENT + RELATION, relevance: 0 };
+  // A dotted path such as config.queryExecutorThreads is one name, even when its first part is
+  // a keyword elsewhere (ALTER SEARCH INDEX CONFIG ... SET config.queryExecutorThreads = 4).
+  var NOT_A_NAME_UNLESS_DOTTED = '(?!' + either(NOT_A_NAME_WORDS) + '\\b(?!\\.))';
+  var NAME_BEFORE_RELATION = {
+    begin: '\\b' + NOT_A_NAME_UNLESS_DOTTED + IDENT + '(?:\\.' + IDENT + ')*' + RELATION,
+    relevance: 0
+  };
   var NAME_BEFORE_RELATION_IN_WITH = { begin: '\\b' + NOT_AN_OPTION_NAME + IDENT + RELATION, relevance: 0 };
   var NAME_BEFORE_DELIMITER = {
     relevance: 0,
@@ -661,7 +683,13 @@ function cql(hljs) {
       objectAfter(['on'], ['table', 'keyspace', 'keyspaces', 'tables', 'index', 'type', 'view',
         'materialized', 'column', 'function', 'functions', 'aggregate', 'aggregates', 'role', 'roles',
         'mbean', 'mbeans', 'resource', 'user', 'trigger'].concat(DSE_OBJECT_WORDS)),
-      objectAfter(['table', 'into', 'update', 'keyspace', 'use', 'view', 'type', 'user'], [])
+      objectAfter(['table', 'into', 'update', 'keyspace', 'use', 'view', 'type', 'user'], []),
+      // GRANT ... TO role, RENAME id TO key. TO ROLE name (ADD IDENTITY), TO STDOUT (COPY),
+      // TO STORE (DataStax Enterprise backups), and ACCESS TO DATACENTERS are syntax.
+      {
+        begin: '\\bTO\\s+(?!' + either(NOT_OBJECT_BASE.concat(['stdout', 'store', 'stores', 'datacenters',
+          'cidrs'])) + '\\b)(?!ROLE[ \\t]+["\'<A-Za-z])(?=["A-Za-z])'
+      }
     ],
     end: /[;(]|$/,
     returnEnd: true,
@@ -671,6 +699,22 @@ function cql(hljs) {
   // DataStax Enterprise documents DESCRIBE PENDING SEARCH INDEX; PENDING is a keyword only in
   // that phrase.
   var PENDING = { className: 'keyword', begin: /\bPENDING(?=\s+SEARCH\s+INDEX\b)/, relevance: 0 };
+  // DataStax Enterprise search index schemas name XML elements and attributes:
+  // SET field[@name='x']@type='StrField'. An element path before [@ is a name, dotted or not
+  // (types.fieldType[@name='TextField']).
+  var XML_ELEMENT = { begin: '\\b' + IDENT + '(?:\\.' + IDENT + ')*(?=\\[@)', relevance: 0 };
+  // ADD FIELD name, DROP FIELD name, and ADD lowerCaseString name in ALTER SEARCH INDEX SCHEMA:
+  // the name after FIELD or lowerCaseString names a field, even a keyword such as comment,
+  // dotted or not. ALTER TABLE t ADD field text adds a column called field, so a type there
+  // ends the match.
+  var SEARCH_FIELD = withKeywords({
+    begin: '\\b(?:ADD\\s+(?:FIELD|lowerCaseString)|DROP\\s+FIELD)\\s+(?!' + TYPE_START + ')(?!' +
+      either(NOT_OBJECT_BASE) + '\\b)(?=["A-Za-z])',
+    end: /[;(]|$/,
+    returnEnd: true,
+    relevance: 0,
+    contains: [{ begin: NAME_PART + '(?:\\.' + NAME_PART + ')*', endsParent: true, relevance: 0 }]
+  }, { keyword: V.keywords + ' lowercasestring', literal: V.literals });
   // KEY is unreserved (a column may be called key), but PRIMARY KEY is always syntax.
   var PRIMARY_KEY = { className: 'keyword', begin: /\bPRIMARY\s+KEY\b/, relevance: 0 };
   var ELLIPSIS = { begin: /\.\.\./, relevance: 0 };
@@ -681,7 +725,7 @@ function cql(hljs) {
     TYPED_NAME, UDT_TYPED_NAME, QUOTED_NAME,
     PLACEHOLDER, BIND_MARKER, SPECIAL_FLOAT, NUMBER,
     FUNCTION_DECLARATION, TYPE_AFTER_KEYWORD, CAST_TYPE, genericType(false),
-    FUNCTION_CALL, OBJECT_NAME, PENDING, PRIMARY_KEY, NAME_BEFORE_DELIMITER,
+    FUNCTION_CALL, OBJECT_NAME, SEARCH_FIELD, XML_ELEMENT, PENDING, PRIMARY_KEY, NAME_BEFORE_DELIMITER,
     ELLIPSIS, OPERATOR
   ];
 
