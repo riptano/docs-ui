@@ -64,9 +64,9 @@
         data = data || {}
         var store = data.store || {}
         if (store.separator) lunr.tokenizer.separator = new RegExp(store.separator)
+        fixTokenSetKeys(lunr)
         // a site with nothing to index gets an empty file: search it as an empty index
         var index = data.index ? lunr.Index.load(derivePostings(data.index)) : emptyIndex(lunr)
-        guardTokenSet(index)
         engine = {
           lunr: lunr,
           index: index,
@@ -114,21 +114,25 @@
     return serialized
   }
 
-  // Lunr 2.3.9 compresses its term list into an automaton (TokenSet) that, for some vocabularies,
-  // also accepts a few words that are not in the index; a prefix or typo query that expands to one
-  // of them makes Index#query throw. Treat such words as having no matches.
-  function guardTokenSet (index) {
-    if (typeof Proxy === 'undefined') return
-    var empty = { _index: -1 }
-    index.fields.forEach(function (field) {
-      empty[field] = {}
-    })
-    var terms = index.invertedIndex
-    index.invertedIndex = new Proxy(terms, {
-      get: function (target, term) {
-        return term in target ? target[term] : empty
-      },
-    })
+  // lunr.Index.load compresses the index's word list into an automaton (TokenSet) by merging
+  // states that have the same key. In Lunr 2.3.9 the key joins each edge's character and target
+  // state id with nothing between them, so when words contain digits two different states can
+  // share a key ('1' -> state 676, and '1' -> state 6 plus '7' -> state 6, both give 01676). The
+  // merge then makes some indexed words unfindable (jvm17 in the full site) and accepts a few
+  // words that aren't in the index, which makes a prefix or typo query that reaches one throw.
+  // Ending each edge with a comma makes the keys unique. Runs before the first lunr.Index.load.
+  function fixTokenSetKeys (lunr) {
+    var proto = lunr.TokenSet.prototype
+    if (proto.toString.hasEdgeDelimiters) return
+    var toString = function () {
+      if (this._str) return this._str
+      var str = this.final ? '1' : '0'
+      var labels = Object.keys(this.edges).sort()
+      for (var i = 0; i < labels.length; i++) str += labels[i] + this.edges[labels[i]].id + ','
+      return str
+    }
+    toString.hasEdgeDelimiters = true
+    proto.toString = toString
   }
 
   // Scripts added with async = false download in parallel but run in the order they were added,
