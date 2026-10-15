@@ -341,6 +341,24 @@
     return heading.title != null ? heading.title : heading.text
   }
 
+  function findHeading (doc, id) {
+    for (var i = 0; i < doc.titles.length; i++) {
+      if (String(doc.titles[i].id) === id) return doc.titles[i]
+    }
+    return null
+  }
+
+  // The factor for how well a title or heading (normalized) matches the query: the whole query,
+  // the query as a phrase, every query word as typed, or every query word in some form. boosts
+  // holds the four factors in that order; any other title gets 1.
+  function matchBoost (text, match, boosts) {
+    if (text === match.query) return boosts[0]
+    if (match.multiWord && hasPhrase(text, match.query)) return boosts[1]
+    if (textHasAll(text, match.words)) return boosts[2]
+    if (textHasAll(text, match.probes)) return boosts[3]
+    return 1
+  }
+
   // Ranking. Lunr's BM25 score is scaled by where the words matched, modeled on Algolia's
   // DocSearch ranking: a page title beats a section heading, which beats body text, and an exact
   // or phrase match beats words that are merely all present. Pages that contain every query word
@@ -367,6 +385,9 @@
     },
     window.siteSearchRanking || {}
   )
+  // the factors matchBoost() applies, strongest match first
+  var TITLE_BOOSTS = [RANK.titleExact, RANK.titlePhrase, RANK.titleAllWords, RANK.titleAllStems]
+  var HEADING_BOOSTS = [RANK.headingExact, RANK.headingPhrase, RANK.headingAllWords, RANK.headingAllStems]
 
   function search (query) {
     var started = performance.now()
@@ -413,7 +434,7 @@
     }
     var docs = engine.store.documents
     var nq = normalize(query)
-    var multiWord = nq.indexOf(' ') > 0
+    var match = { query: nq, multiWord: nq.indexOf(' ') > 0, words: words, probes: probes }
     var pages = {}
     results.forEach(function (r) {
       var parts = r.ref.split('-')
@@ -440,26 +461,12 @@
       var cov = countTrue(matched) / terms.length
       var score = r.score * cov * cov
       if (parts.length > 1) {
-        var heading = null
-        for (var i = 0; i < doc.titles.length; i++) {
-          if (String(doc.titles[i].id) === parts[1]) {
-            heading = doc.titles[i]
-            break
-          }
-        }
+        var heading = findHeading(doc, parts[1])
         if (!heading) return
-        var ht = normalize(headingTitle(heading))
-        if (ht === nq) score *= RANK.headingExact
-        else if (multiWord && hasPhrase(ht, nq)) score *= RANK.headingPhrase
-        else if (textHasAll(ht, words)) score *= RANK.headingAllWords
-        else if (textHasAll(ht, probes)) score *= RANK.headingAllStems
+        score *= matchBoost(normalize(headingTitle(heading)), match, HEADING_BOOSTS)
         page.sections.push({ heading: heading, score: score })
       } else {
-        var tt = normalize(doc.title)
-        if (tt === nq) score *= RANK.titleExact
-        else if (multiWord && hasPhrase(tt, nq)) score *= RANK.titlePhrase
-        else if (textHasAll(tt, words)) score *= RANK.titleAllWords
-        else if (textHasAll(tt, probes)) score *= RANK.titleAllStems
+        score *= matchBoost(normalize(doc.title), match, TITLE_BOOSTS)
         page.pageScore = score
         page.textMatch = Object.keys(r.matchData.metadata).some(function (term) {
           return r.matchData.metadata[term].text
@@ -542,9 +549,11 @@
     var byLength = function (a, b) {
       return b.length - a.length
     }
+    prefixes.sort(byLength)
+    words.sort(byLength)
     var alts = []
-    if (prefixes.length) alts.push('(?:' + prefixes.sort(byLength).map(escapeRegExp).join('|') + ')\\w*')
-    if (words.length) alts.push('(?:' + words.sort(byLength).map(escapeRegExp).join('|') + ')(?!\\w)')
+    if (prefixes.length) alts.push('(?:' + prefixes.map(escapeRegExp).join('|') + ')\\w*')
+    if (words.length) alts.push('(?:' + words.map(escapeRegExp).join('|') + ')(?!\\w)')
     if (!alts.length) return null
     return new RegExp('(^|[^\\w])(' + alts.join('|') + ')', 'gi')
   }
@@ -663,7 +672,9 @@
       })
       list.unshift(entry)
       window.localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0, RECENT_MAX)))
-    } catch (e) {}
+    } catch (e) {
+      // storage can be unavailable or full (private browsing, quotas); recent searches are optional
+    }
   }
 
   function forgetRecent (url) {
@@ -672,7 +683,9 @@
         return r.url !== url
       })
       window.localStorage.setItem(RECENT_KEY, JSON.stringify(list))
-    } catch (e) {}
+    } catch (e) {
+      // as in saveRecent
+    }
   }
 
   function command (keys, label) {
@@ -999,21 +1012,25 @@
       e.preventDefault()
       activate(e)
     } else if (e.key === 'Tab') {
-      // keep focus inside the dialog, among the controls that are showing
-      var focusables = Array.prototype.filter.call(
-        ui.container.querySelectorAll('input, button:not([hidden]), a[href]'),
-        function (node) {
-          return node.getClientRects().length > 0
-        }
-      )
-      var at = focusables.indexOf(document.activeElement)
-      var next = e.shiftKey ? at - 1 : at + 1
-      if (at < 0 || next < 0 || next >= focusables.length) {
-        e.preventDefault()
-        var target = at < 0 ? focusables[0] : e.shiftKey ? focusables[focusables.length - 1] : focusables[0]
-        if (target) target.focus()
-      }
+      keepFocusInside(e)
     }
+  }
+
+  // Tab and Shift+Tab move among the dialog's controls that are showing, and wrap around at either
+  // end instead of leaving the dialog.
+  function keepFocusInside (e) {
+    var focusables = Array.prototype.filter.call(
+      ui.container.querySelectorAll('input, button:not([hidden]), a[href]'),
+      function (node) {
+        return node.getClientRects().length > 0
+      }
+    )
+    var at = focusables.indexOf(document.activeElement)
+    var next = e.shiftKey ? at - 1 : at + 1
+    if (at >= 0 && next >= 0 && next < focusables.length) return // the browser moves focus
+    e.preventDefault()
+    var target = e.shiftKey && at >= 0 ? focusables[focusables.length - 1] : focusables[0]
+    if (target) target.focus()
   }
 
   // While the dialog is open: Escape closes it wherever focus is, and focus can't stay on the
