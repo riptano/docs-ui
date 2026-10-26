@@ -26,24 +26,29 @@
     }
   }
 
-  /* eslint-disable max-len */
+  // Icons are Lucide glyphs from the UI's icon font (lucide-static). The lines that join a page's
+  // sections to it are drawn in CSS (site-search.css).
   var ICONS = {
-    search: '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" class="DocSearch-Search-Icon"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-    spinner: '<svg viewBox="0 0 38 38" stroke="currentColor" stroke-opacity=".5"><g fill="none" fill-rule="evenodd"><g transform="translate(1 1)" stroke-width="2"><circle stroke-opacity=".3" cx="18" cy="18" r="18"></circle><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"></animateTransform></path></g></g></svg>',
-    reset: '<svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 10l5.09-5.09L10 10l5.09 5.09L10 10zm0 0L4.91 4.91 10 10l-5.09 5.09L10 10z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-    page: '<svg width="20" height="20" viewBox="0 0 20 20"><path d="M17 6v12c0 .52-.2 1-1 1H4c-.7 0-1-.33-1-1V2c0-.55.42-1 1-1h8l5 5zM14 8h-3.13c-.51 0-.87-.34-.87-.87V4" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linejoin="round"></path></svg>',
-    section: '<svg width="20" height="20" viewBox="0 0 20 20"><path d="M13 13h4-4V8H7v5h6v4-4H7V8H3h4V3v5h6V3v5h4-4v5zm-6 0v4-4H3h4z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-    recent: '<svg width="20" height="20" viewBox="0 0 20 20"><g stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M3.18 6.6a8.23 8.23 0 1112.93 9.94h0a8.23 8.23 0 01-11.63 0"></path><path d="M6.44 7.25H2.55V3.36M10.45 6v5.6M10.45 11.6L13 13"></path></g></svg>',
-    select: '<svg width="20" height="20" viewBox="0 0 20 20" class="DocSearch-Hit-Select-Icon"><g stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3v4c0 2-2 4-4 4H2"></path><path d="M8 17l-6-6 6-6"></path></g></svg>',
-    tree: '<svg viewBox="0 0 24 54" class="DocSearch-Hit-Tree"><g stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v42M20 27H8.3"></path></g></svg>',
-    treeLast: '<svg viewBox="0 0 24 54" class="DocSearch-Hit-Tree"><g stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v21M20 27H8.3"></path></g></svg>',
-    noResults: '<svg width="40" height="40" viewBox="0 0 20 20" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 4.8c2 3 1.7 7-1 9.7h0l4.3 4.3-4.3-4.3a7.8 7.8 0 01-9.8 1m-2.2-2.2A7.8 7.8 0 0113.2 2.4M2 18L18 2"></path></svg>',
-    enter: '<svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg>',
-    down: '<svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg>',
-    up: '<svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg>',
-    remove: '<svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 10l5.09-5.09L10 10l5.09 5.09L10 10zm0 0L4.91 4.91 10 10l-5.09 5.09L10 10z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+    spinner: icon('loader-circle'),
+    reset: icon('x'),
+    page: icon('file-text'),
+    section: icon('hash'),
+    recent: icon('history'),
+    select: icon('corner-down-left', 'DocSearch-Hit-Select-Icon'),
+    tree: '<span class="DocSearch-Hit-Tree" aria-hidden="true"></span>',
+    treeLast: '<span class="DocSearch-Hit-Tree DocSearch-Hit-Tree--last" aria-hidden="true"></span>',
+    noResults: icon('search-x'),
+    enter: icon('corner-down-left', '', 'Enter key'),
+    down: icon('arrow-down', '', 'Arrow down'),
+    up: icon('arrow-up', '', 'Arrow up'),
+    remove: icon('x'),
   }
-  /* eslint-enable max-len */
+
+  // A Lucide icon, hidden from screen readers unless it has a label
+  function icon (name, className, label) {
+    var attrs = label ? ' role="img" aria-label="' + label + '"' : ' aria-hidden="true"'
+    return '<i class="icon-' + name + (className ? ' ' + className : '') + '"' + attrs + '></i>'
+  }
 
   // ---------------------------------------------------------------------------------------------
   // Index loading. Nothing is downloaded until the reader shows intent to search (hovering or
@@ -703,7 +708,6 @@
       '<header class="DocSearch-SearchBar">' +
       '<form class="DocSearch-Form" role="search" novalidate>' +
       '<label class="DocSearch-MagnifierLabel" for="site-search-input" id="site-search-label">' +
-      ICONS.search +
       '<span class="DocSearch-VisuallyHiddenForAccessibility">Search</span></label>' +
       '<div class="DocSearch-LoadingIndicator">' +
       ICONS.spinner +
@@ -1098,6 +1102,7 @@
     var keys = button.querySelectorAll('.DocSearch-Button-Key')
     if (IS_MAC && keys[0]) {
       keys[0].textContent = '⌘'
+      keys[0].classList.remove('DocSearch-Button-Key--text')
       button.setAttribute('aria-label', 'Search (Command+K)')
     }
     var prefetch = function () {
