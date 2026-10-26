@@ -1,5 +1,10 @@
-/*! site-search.js | lunr-backed search modal for the DataStax docs UI. It reuses the DocSearch v3
- * CSS class names (from @docsearch/css, MIT) so the existing DocSearch theme applies unchanged. */
+/*! Third-party code in the search dialog:
+ * DocSearch 3.7.0 | MIT | Copyright (c) 2015-present Algolia, Inc. | https://github.com/algolia/docsearch
+ *   (the dialog's markup and class names)
+ * Lunr 2.3.9 | MIT | Copyright (C) 2013 Oliver Nightingale | https://github.com/olivernn/lunr.js
+ *   (TokenSet toString(), adapted in fixTokenSetKeys())
+ */
+// Reusing DocSearch's markup lets @docsearch/css and src/css/docsearch.css style the dialog.
 /* global CustomEvent, performance */
 ;(function () {
   'use strict'
