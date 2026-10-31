@@ -1,0 +1,133 @@
+/* Additions for the lunr-backed search modal (js/vendor/site-search.js). The modal reuses
+   DocSearch's markup, so @docsearch/css and docsearch.css style everything else. */
+
+/* The page row shows a snippet of the matching text under the title. */
+.DocSearch .DocSearch-Hit-path mark {
+  color: inherit;
+}
+
+/* DocSearch draws its "esc" key as an SVG; a text label keeps the same footprint. */
+.DocSearch .DocSearch-Escape-Key {
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+/* Hide the removed Algolia logo slot without collapsing the footer layout. */
+.DocSearch .DocSearch-Logo:empty {
+  min-width: 1px;
+}
+
+/* The search button's Ctrl key is a text label, like esc in the dialog's footer. */
+#site-search-button .DocSearch-Button-Key--text {
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+/* The dialog's icons are Lucide glyphs from the UI's icon font. A Lucide glyph is 1.25 times its
+   font size, so each size below gives the box the replaced DocSearch SVG had (16px for 20px). */
+.DocSearch .DocSearch-Hit-icon,
+.DocSearch .DocSearch-Hit-action,
+.DocSearch .DocSearch-Reset,
+.DocSearch .DocSearch-LoadingIndicator,
+.DocSearch .DocSearch-Screen-Icon,
+.DocSearch .DocSearch-Commands-Key {
+  line-height: 1;
+}
+
+.DocSearch .DocSearch-Hit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.DocSearch .DocSearch-Hit-action {
+  justify-content: center;
+  font-size: 14.4px;
+}
+
+/* @docsearch/css shows the select icon only on the selected row, but its rule names an svg */
+.DocSearch .DocSearch-Hit-Select-Icon {
+  display: none;
+}
+
+.DocSearch .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-Select-Icon {
+  display: block;
+}
+
+.DocSearch .DocSearch-Reset,
+.DocSearch .DocSearch-LoadingIndicator {
+  font-size: 16px;
+}
+
+.DocSearch .DocSearch-LoadingIndicator i {
+  animation: site-search-spin 1s linear infinite;
+}
+
+@keyframes site-search-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .DocSearch .DocSearch-LoadingIndicator i {
+    animation: none;
+  }
+}
+
+.DocSearch .DocSearch-Screen-Icon {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.DocSearch .DocSearch-Commands-Key {
+  font-size: 12px;
+}
+
+/* The lines that join a page's matching sections to it: one down the side, one across to each
+   section (the last section's line stops there). */
+.DocSearch .DocSearch-Hit-Tree {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.DocSearch .DocSearch-Hit-Tree::before,
+.DocSearch .DocSearch-Hit-Tree::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  border: 0 solid currentColor;
+}
+
+.DocSearch .DocSearch-Hit-Tree::before {
+  top: calc(50% - 21px);
+  bottom: calc(50% - 21px);
+  border-left-width: 1.5px;
+}
+
+.DocSearch .DocSearch-Hit-Tree--last::before {
+  bottom: 50%;
+}
+
+.DocSearch .DocSearch-Hit-Tree::after {
+  top: 50%;
+  width: 12px;
+  border-top-width: 1.5px;
+}
+
+/* Page rows carry a one-line text snippet; end it with an ellipsis instead of a hard cut. */
+.DocSearch .DocSearch-Hit-path {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Keep the row selected with the arrow keys clear of the sticky group heading. */
+.DocSearch .DocSearch-Dropdown {
+  scroll-padding-top: 40px;
+}

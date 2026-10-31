@@ -3,6 +3,9 @@
 <script async src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/highlight.js' }}}"></script>
 <script async src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/zooming.js' }}}"></script>
 <script async src="{{{uiRootPath}}}/{{{assets-manifest 'js/vendor/floatingui.js' }}}"></script>
+{{#if env.SITE_SEARCH_PROVIDER}}
+{{> search-scripts}}
+{{else}}
 {{#with site.keys}}
 {{#if (and algoliaAppId algoliaIndexName algoliaApiKey)}}
 <script src="{{{../uiRootPath}}}/{{{assets-manifest 'js/vendor/docsearch.js' }}}"></script>
@@ -17,4 +20,5 @@
 </script>
 {{/if}}
 {{/with}}
+{{/if}}
 {{> scarf}}
