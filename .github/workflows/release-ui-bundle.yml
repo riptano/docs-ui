@@ -46,7 +46,7 @@ jobs:
          if: ${{ steps.skip_release.outputs.skip_release == '' }}
          run: |
            set -o pipefail
-           gulp bundle |& tee $GITHUB_WORKSPACE/build.log
+           npx gulp bundle |& tee $GITHUB_WORKSPACE/build.log
 
        - name: Get Last Release Number
          id: get_last_release_number
