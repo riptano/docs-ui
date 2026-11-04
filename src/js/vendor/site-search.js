@@ -731,7 +731,6 @@
       '<div class="DocSearch-Dropdown-Container" id="site-search-list"></div>' +
       '</div>' +
       '<div class="DocSearch-Footer">' +
-      '<div class="DocSearch-Logo"></div>' +
       '<ul class="DocSearch-Commands">' +
       command(ICONS.enter, 'to select') +
       command(ICONS.down + '</kbd><kbd class="DocSearch-Commands-Key">' + ICONS.up, 'to navigate') +
@@ -932,7 +931,7 @@
   }
 
   // Remembers the chosen hit for the start screen and announces the choice, so analytics can
-  // listen for 'site-search:select' (DocSearch fed Algolia Analytics; nothing is sent by default).
+  // listen for 'site-search:select' (nothing is sent by default).
   function remember (li) {
     var e = li._entry
     if (!e || !e.siteUrl) return
@@ -1102,7 +1101,7 @@
   }
 
   function initButton () {
-    var button = document.querySelector('#docsearch .DocSearch-Button, #site-search-button')
+    var button = document.querySelector('#site-search-button')
     if (!button) return
     var keys = button.querySelectorAll('.DocSearch-Button-Key')
     if (IS_MAC && keys[0]) {

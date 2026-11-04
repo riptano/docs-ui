@@ -11,7 +11,7 @@
     <a href="{{#> logo-url}}{{{or site.url siteRootPath}}}{{/logo-url}}" class="[&>svg]:w-[110px] sm:[&>svg]:w-[140px] md:[&>svg]:w-[172px]">
       {{> logo}}
     </a>
-    <div class="DocSearch ml-auto md:mr-auto" id="docsearch">
+    <div class="DocSearch ml-auto md:mr-auto">
       {{#if env.SITE_SEARCH_PROVIDER}}
       {{!-- Rendered here rather than by script so the header doesn't shift when the page loads --}}
       <button type="button" id="site-search-button" class="DocSearch DocSearch-Button" aria-label="Search (Control+K)">

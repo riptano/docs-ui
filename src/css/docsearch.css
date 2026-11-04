@@ -16,12 +16,6 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
   color: var(--ds-text-secondary);
 }
 
-.DocSearch .DocSearch-LoadingIndicator svg,
-.DocSearch .DocSearch-MagnifierLabel svg {
-  width: 20px;
-  height: 20px;
-}
-
 .DocSearch .DocSearch-Input {
   font-size: 1rem;
   font-weight: 400;
@@ -70,10 +64,6 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
   text-decoration: underline;
 }
 
-.DocSearch .DocSearch-Search-Icon {
-  display: none;
-}
-
 .DocSearch.DocSearch-Container {
   backdrop-filter: blur(4px);
 }
@@ -98,11 +88,9 @@ html[data-theme="dark"] .DocSearch .DocSearch-Modal {
   --docsearch-primary-color: var(--ds-text-primary);
   --docsearch-text-color: var(--ds-text-primary);
   --docsearch-spacing: var(--ds-space-2);
-  --docsearch-icon-stroke-width: 1.4;
   --docsearch-highlight-color: var(--ds-text-primary);
   --docsearch-muted-color: var(--ds-text-placeholder);
   --docsearch-container-background: var(--ds-background-backdrop);
-  --docsearch-logo-color: var(--ds-text-primary);
 
   /* modal */
   --docsearch-modal-width: 720px;

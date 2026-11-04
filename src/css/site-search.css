@@ -14,9 +14,10 @@
   letter-spacing: 0.02em;
 }
 
-/* Hide the removed Algolia logo slot without collapsing the footer layout. */
-.DocSearch .DocSearch-Logo:empty {
-  min-width: 1px;
+/* DocSearch's footer lays out its items from right to left, with its logo on the right. The
+   dialog has no logo, so keep the keyboard shortcuts on the left. */
+.DocSearch .DocSearch-Footer {
+  justify-content: flex-end;
 }
 
 /* The search button's Ctrl key is a text label, like esc in the dialog's footer. */
