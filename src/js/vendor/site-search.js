@@ -34,6 +34,7 @@
   // Icons are Lucide glyphs from the UI's icon font (lucide-static). The lines that join a page's
   // sections to it are drawn in CSS (site-search.css).
   var ICONS = {
+    search: icon('search'),
     spinner: icon('loader-circle'),
     reset: icon('x'),
     page: icon('file-text'),
@@ -713,6 +714,7 @@
       '<header class="DocSearch-SearchBar">' +
       '<form class="DocSearch-Form" role="search" novalidate>' +
       '<label class="DocSearch-MagnifierLabel" for="site-search-input" id="site-search-label">' +
+      ICONS.search +
       '<span class="DocSearch-VisuallyHiddenForAccessibility">Search</span></label>' +
       '<div class="DocSearch-LoadingIndicator">' +
       ICONS.spinner +

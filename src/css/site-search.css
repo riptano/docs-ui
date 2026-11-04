@@ -91,6 +91,16 @@
   font-size: 12px;
 }
 
+/* The magnifier in the search button and in the dialog's search field. It keeps the 18px width
+   of the Material glyph it replaced, so the text beside it stays where it was. */
+.DocSearch .DocSearch-Button-Container .icon-search,
+.DocSearch .DocSearch-MagnifierLabel .icon-search {
+  width: 18px;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--ds-text-primary);
+}
+
 /* The lines that join a page's matching sections to it: one down the side, one across to each
    section (the last section's line stops there). */
 .DocSearch .DocSearch-Hit-Tree {
