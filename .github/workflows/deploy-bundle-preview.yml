@@ -25,6 +25,8 @@ jobs:
           node-version-file: .nvmrc
 
       - name: Validate Branch Names
+        env:
+          BRANCH_NAME: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
           # Check if branch names contain invalid characters. Only alphanumeric, _, -, ., and / are allowed.
           validate_branch_name() {
@@ -34,10 +36,12 @@ jobs:
                   exit 1
               fi
           }
-          validate_branch_name "${{ github.event.pull_request.head.ref || github.ref_name }}"
+          validate_branch_name "$BRANCH_NAME"
 
       - name: Extract Branch Names
         id: extract_branch
+        env:
+          BRANCH_NAME: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
           # Extract and transform branch names
           extract_branch() {
@@ -53,7 +57,7 @@ jobs:
           }
 
           # Transform branch names in form of `refs/heads/main` to `main`
-          draft_branch=$(extract_branch "${{ github.event.pull_request.head.ref || github.ref_name }}")
+          draft_branch=$(extract_branch "$BRANCH_NAME")
 
           # Replace / with - in the draft branch name to use as a directory name
           draft_directory=$(echo "$draft_branch" | tr / -)
