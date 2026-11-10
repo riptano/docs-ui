@@ -1,6 +1,8 @@
 = DataStax Docs UI
 // Variables:
 :current-release:
+// The major version of Node.js in .nvmrc
+:nodejs-version: 24
 // Settings:
 :!example-caption:
 :experimental:
@@ -95,7 +97,7 @@ A more comprehensive tutorial can be found in the documentation at {url-antora-u
 To preview and bundle the UI, you need the following software on your computer:
 
 * {url-git}[git] (command: `git`)
-* {url-nodejs}[Node.js] (commands: `node` and `npm`)
+* {url-nodejs}[Node.js] {nodejs-version} (commands: `node` and `npm`)
 * {url-gulp}[Gulp CLI] (command: `gulp`)
 
 ==== git
@@ -119,30 +121,33 @@ node --version
 ----
 
 If this command fails with an error, you don't have Node.js installed.
-If the command doesn't report an https://nodejs.org/en[LTS version] of Node.js, it means you don't have a suitable version of Node.js installed.
+This project uses Node.js {nodejs-version}, which is set in its [.path]_.nvmrc_ file and is also what its GitHub Actions workflows use.
+If the command reports a different major version, you don't have a suitable version of Node.js installed.
 
 While you can install Node.js from the official packages, we strongly recommend that you use {url-nvm}[nvm] (Node Version Manager) to manage your Node.js installation(s).
 Follow the {url-nvm-install}[nvm installation instructions] to set up nvm on your machine.
 
-Once you've installed nvm, open a new terminal and install Node.js LTS using the following command:
+Once you've installed nvm, open a new terminal and install Node.js {nodejs-version} using the following command:
 
-[source,shell]
+[source,shell,subs=attributes+]
 ----
-nvm install --lts
+nvm install {nodejs-version}
 ----
 
 You can switch to this version of Node.js at any time using the following command:
 
-[source,shell]
+[source,shell,subs=attributes+]
 ----
-nvm use --lts
+nvm use {nodejs-version}
 ----
 
-To make Node.js LTS the default in new terminals, type:
+In the project folder, you can leave out the version (`nvm install` or `nvm use`), and nvm reads it from [.path]_.nvmrc_.
 
-[source,shell]
+To make Node.js {nodejs-version} the default in new terminals, type:
+
+[source,shell,subs=attributes+]
 ----
-nvm alias default node
+nvm alias default {nodejs-version}
 ----
 
 Now that you have Node.js installed, you can proceed with installing the Gulp CLI.
@@ -159,6 +164,9 @@ You can install the Gulp CLI globally (which resolves to a location in your user
 npm install -g gulp-cli
 ----
 
+nvm keeps globally installed packages separate for each version of Node.js.
+When you start using another version, such as when this project moves to a newer one, run this command again with that version active, or the `gulp` command fails with `command not found`.
+
 Verify the Gulp CLI is installed and on your PATH by running:
 
 [source,shell]
@@ -173,7 +181,8 @@ If you prefer to install global packages using Yarn, run this command instead:
 yarn global add gulp-cli
 ----
 
-Alternately, you can use the `gulp` command that is installed by the project's dependencies.
+Alternately, you can skip the global install and use the `gulp` command that the project's dependencies provide, which keeps working when you switch versions of Node.js.
+Once you've installed the project's dependencies, put `npx` in front of the `gulp` commands in this guide, as in the following command (the GitHub Actions workflows run Gulp this way):
 
 [source,shell]
 ----
