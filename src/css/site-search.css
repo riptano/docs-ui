@@ -132,7 +132,10 @@
   border-top-width: 1.5px;
 }
 
-/* Page rows carry a one-line text snippet; end it with an ellipsis instead of a hard cut. */
+/* End a title or snippet that's too long for its row with an ellipsis instead of a hard cut.
+   DocSearch sets text-overflow on the row, but the title and snippet are flex items, so it
+   doesn't reach them. */
+.DocSearch .DocSearch-Hit-title,
 .DocSearch .DocSearch-Hit-path {
   overflow: hidden;
   text-overflow: ellipsis;

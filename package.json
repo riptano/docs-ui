@@ -66,5 +66,12 @@
     "tailwindcss": "^3.3.5",
     "vinyl-fs": "~3.0",
     "zooming": "^2.1.1"
+  },
+  "allowScripts": {
+    "es5-ext": false,
+    "fsevents": false,
+    "gifsicle@4.0.1": true,
+    "jpegtran-bin@4.0.0": true,
+    "optipng-bin@6.0.0": true
   }
 }
