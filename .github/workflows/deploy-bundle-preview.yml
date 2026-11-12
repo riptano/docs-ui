@@ -17,14 +17,16 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 21.6.1
+          node-version-file: .nvmrc
 
       - name: Validate Branch Names
+        env:
+          BRANCH_NAME: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
           # Check if branch names contain invalid characters. Only alphanumeric, _, -, ., and / are allowed.
           validate_branch_name() {
@@ -34,10 +36,12 @@ jobs:
                   exit 1
               fi
           }
-          validate_branch_name "${{ github.event.pull_request.head.ref || github.ref_name }}"
+          validate_branch_name "$BRANCH_NAME"
 
       - name: Extract Branch Names
         id: extract_branch
+        env:
+          BRANCH_NAME: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
           # Extract and transform branch names
           extract_branch() {
@@ -53,7 +57,7 @@ jobs:
           }
 
           # Transform branch names in form of `refs/heads/main` to `main`
-          draft_branch=$(extract_branch "${{ github.event.pull_request.head.ref || github.ref_name }}")
+          draft_branch=$(extract_branch "$BRANCH_NAME")
 
           # Replace / with - in the draft branch name to use as a directory name
           draft_directory=$(echo "$draft_branch" | tr / -)
@@ -77,8 +81,8 @@ jobs:
         if: success()
         run: |
           set -o pipefail
-          gulp lint |& tee $GITHUB_WORKSPACE/build.log
-          gulp preview:build |& tee $GITHUB_WORKSPACE/build.log
+          npx gulp lint |& tee $GITHUB_WORKSPACE/build.log
+          npx gulp preview:build |& tee $GITHUB_WORKSPACE/build.log
         env:
           NO_COLOR: 1
 
@@ -103,7 +107,7 @@ jobs:
 
       - name: Create Build Success Comment
         if: ${{ success() && github.event.pull_request.number }}
-        uses: peter-evans/create-or-update-comment@v4
+        uses: peter-evans/create-or-update-comment@v5
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body: "${{ env.BUILD_SUCCESS_COMMENT }}"
@@ -111,7 +115,7 @@ jobs:
 
       - name: Create Build Failure Comment
         if: ${{ failure() && github.event.pull_request.number }}
-        uses: peter-evans/create-or-update-comment@v4
+        uses: peter-evans/create-or-update-comment@v5
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
@@ -122,7 +126,7 @@ jobs:
       - name: Find Comment
         id: fc
         if: ${{ success() && github.event.pull_request.number }}
-        uses: peter-evans/find-comment@v3
+        uses: peter-evans/find-comment@v4
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body-includes: UI bundle preview build successful!
@@ -191,7 +195,7 @@ jobs:
 
       - name: Update Comment
         if: ${{ steps.fc.outputs.comment-id != '' }}
-        uses: peter-evans/create-or-update-comment@v4
+        uses: peter-evans/create-or-update-comment@v5
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           body: |
@@ -199,7 +203,7 @@ jobs:
           reactions: hooray
 
       - name: Upload Deploy Log
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: deploy.log

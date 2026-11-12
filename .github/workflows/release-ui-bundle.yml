@@ -19,7 +19,7 @@ jobs:
            credentials: https://${{ secrets.DOCS_GITHUB_PAT }}@github.com
 
        - name: Checkout Repository
-         uses: actions/checkout@v4
+         uses: actions/checkout@v6
          with:
            fetch-depth: 0 # fetch tags too
 
@@ -34,9 +34,9 @@ jobs:
 
        - name: Setup Node.js
          if: ${{ steps.skip_release.outputs.skip_release == '' }}
-         uses: actions/setup-node@v4
+         uses: actions/setup-node@v6
          with:
-           node-version: 21.6.1
+           node-version-file: .nvmrc
 
        - name: Install Dependencies
          if: ${{ steps.skip_release.outputs.skip_release == '' }}
@@ -46,7 +46,7 @@ jobs:
          if: ${{ steps.skip_release.outputs.skip_release == '' }}
          run: |
            set -o pipefail
-           gulp bundle |& tee $GITHUB_WORKSPACE/build.log
+           npx gulp bundle |& tee $GITHUB_WORKSPACE/build.log
 
        - name: Get Last Release Number
          id: get_last_release_number

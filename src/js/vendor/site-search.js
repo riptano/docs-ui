@@ -19,7 +19,7 @@
   var MAX_PAGES = 12 // distinct pages shown for a query
   var MAX_SECTIONS = 3 // matching sections shown under a page
   var RECENT_KEY = 'site-search:recent:' + siteRootKey()
-  var RECENT_MAX = 6
+  var RECENT_MAX = 7 // as many as DocSearch keeps
   var PLATFORM = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || ''
   var IS_MAC = /(Mac|iPhone|iPod|iPad)/i.test(PLATFORM)
 
@@ -34,6 +34,7 @@
   // Icons are Lucide glyphs from the UI's icon font (lucide-static). The lines that join a page's
   // sections to it are drawn in CSS (site-search.css).
   var ICONS = {
+    search: icon('search'),
     spinner: icon('loader-circle'),
     reset: icon('x'),
     page: icon('file-text'),
@@ -713,6 +714,7 @@
       '<header class="DocSearch-SearchBar">' +
       '<form class="DocSearch-Form" role="search" novalidate>' +
       '<label class="DocSearch-MagnifierLabel" for="site-search-input" id="site-search-label">' +
+      ICONS.search +
       '<span class="DocSearch-VisuallyHiddenForAccessibility">Search</span></label>' +
       '<div class="DocSearch-LoadingIndicator">' +
       ICONS.spinner +
@@ -731,7 +733,6 @@
       '<div class="DocSearch-Dropdown-Container" id="site-search-list"></div>' +
       '</div>' +
       '<div class="DocSearch-Footer">' +
-      '<div class="DocSearch-Logo"></div>' +
       '<ul class="DocSearch-Commands">' +
       command(ICONS.enter, 'to select') +
       command(ICONS.down + '</kbd><kbd class="DocSearch-Commands-Key">' + ICONS.up, 'to navigate') +
@@ -765,6 +766,14 @@
     input.addEventListener('input', function () {
       reset.hidden = !input.value
       schedule()
+    })
+    // As in DocSearch, moving focus from the field to a button or a result clears the highlight,
+    // and coming back to the field highlights the first result (switching windows keeps it).
+    input.addEventListener('blur', function (e) {
+      if (ui && e.relatedTarget && ui.container.contains(e.relatedTarget)) setActive(-1)
+    })
+    input.addEventListener('focus', function () {
+      if (ui && activeIndex < 0 && items.length) setActive(0)
     })
     container.addEventListener('keydown', onModalKeydown)
     var setHeight = function () {
@@ -921,6 +930,10 @@
       var i = items.indexOf(li)
       if (i !== activeIndex) setActive(i, true)
     })
+    // as in DocSearch, clicking a result leaves focus in the field, so the highlight stays
+    li.addEventListener('mousedown', function (e) {
+      e.preventDefault()
+    })
     a.addEventListener('click', function (e) {
       remember(li)
       // a plain click follows the link and closes the dialog (it matters for links into this page)
@@ -932,7 +945,7 @@
   }
 
   // Remembers the chosen hit for the start screen and announces the choice, so analytics can
-  // listen for 'site-search:select' (DocSearch fed Algolia Analytics; nothing is sent by default).
+  // listen for 'site-search:select' (nothing is sent by default).
   function remember (li) {
     var e = li._entry
     if (!e || !e.siteUrl) return
@@ -992,13 +1005,16 @@
   }
 
   function activate (e) {
+    if (e.altKey) return // as in DocSearch, Alt+Enter does nothing
     if (pendingTimer) render() // act on what's typed now, not on the results of a keystroke ago
     if (!engine && ui.input.value.trim()) return // results aren't ready yet
     var li = items[activeIndex]
     if (!li) return
     var a = li.querySelector('a')
     remember(li)
-    if (e && (e.metaKey || e.ctrlKey)) {
+    // as in DocSearch, Ctrl+Enter, Cmd+Enter and Shift+Enter open the result in a new tab, and the
+    // dialog stays open
+    if (e.metaKey || e.ctrlKey || e.shiftKey) {
       window.open(a.href, '_blank', 'noopener')
     } else {
       close()
@@ -1011,17 +1027,26 @@
     if (e.key === 'Escape') {
       e.preventDefault()
       close()
-    } else if (e.key === 'ArrowDown') {
+    } else if (e.key === 'Tab') {
+      keepFocusInside(e)
+    } else if (document.activeElement === ui.input) {
+      onInputKeydown(e)
+    }
+  }
+
+  // As in DocSearch, the arrow keys and Enter act on the results only while the field has focus.
+  // On a result or a button, they do what they normally do: the arrow keys scroll the list, and
+  // Enter follows the link or presses the button.
+  function onInputKeydown (e) {
+    if (e.key === 'ArrowDown') {
       e.preventDefault()
       if (items.length) setActive((activeIndex + 1) % items.length)
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
-      if (items.length) setActive((activeIndex - 1 + items.length) % items.length)
-    } else if (e.key === 'Enter' && !(e.target.closest && e.target.closest('a, button'))) {
+      if (items.length) setActive(activeIndex < 1 ? items.length - 1 : activeIndex - 1)
+    } else if (e.key === 'Enter') {
       e.preventDefault()
       activate(e)
-    } else if (e.key === 'Tab') {
-      keepFocusInside(e)
     }
   }
 
@@ -1071,6 +1096,8 @@
       ui.container.querySelector('.DocSearch-Reset').hidden = false
     }
     ui.input.focus()
+    // as in DocSearch, text taken from the page's selection is selected, so typing replaces it
+    if (ui.input.value && !initialQuery) ui.input.select()
     document.addEventListener('keydown', onDocumentKeydown, true)
     document.addEventListener('focusin', onDocumentFocusin)
     window.addEventListener('resize', ui.setHeight)
@@ -1101,8 +1128,15 @@
     return tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA' || (target && target.isContentEditable)
   }
 
+  // Whether a keydown's key is a letter or a digit: a single character that is a digit or has an
+  // upper and a lower case, such as a, é or ж. (DocSearch tests the deprecated keyCode instead.)
+  function isLetterOrDigit (key) {
+    var oneChar = typeof key === 'string' && key.length === 1
+    return oneChar && (/^\d$/.test(key) || key.toLowerCase() !== key.toUpperCase())
+  }
+
   function initButton () {
-    var button = document.querySelector('#docsearch .DocSearch-Button, #site-search-button')
+    var button = document.querySelector('#site-search-button')
     if (!button) return
     var keys = button.querySelectorAll('.DocSearch-Button-Key')
     if (IS_MAC && keys[0]) {
@@ -1118,6 +1152,12 @@
     button.addEventListener('touchstart', prefetch, { once: true, passive: true })
     button.addEventListener('click', function () {
       open()
+    })
+    // As in DocSearch, typing a letter or digit while the button has focus starts a search with it
+    button.addEventListener('keydown', function (e) {
+      if (e.ctrlKey || e.metaKey || e.altKey || e.isComposing || !isLetterOrDigit(e.key)) return
+      e.preventDefault() // the dialog's field gets the character, not as a second keystroke
+      open(e.key)
     })
     window.addEventListener('keydown', function (e) {
       var key = e.key && e.key.toLowerCase()

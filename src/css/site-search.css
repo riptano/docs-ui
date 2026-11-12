@@ -14,9 +14,10 @@
   letter-spacing: 0.02em;
 }
 
-/* Hide the removed Algolia logo slot without collapsing the footer layout. */
-.DocSearch .DocSearch-Logo:empty {
-  min-width: 1px;
+/* DocSearch's footer lays out its items from right to left, with its logo on the right. The
+   dialog has no logo, so keep the keyboard shortcuts on the left. */
+.DocSearch .DocSearch-Footer {
+  justify-content: flex-end;
 }
 
 /* The search button's Ctrl key is a text label, like esc in the dialog's footer. */
@@ -88,6 +89,16 @@
 
 .DocSearch .DocSearch-Commands-Key {
   font-size: 12px;
+}
+
+/* The magnifier in the search button and in the dialog's search field. It keeps the 18px width
+   of the Material glyph it replaced, so the text beside it stays where it was. */
+.DocSearch .DocSearch-Button-Container .icon-search,
+.DocSearch .DocSearch-MagnifierLabel .icon-search {
+  width: 18px;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--ds-text-primary);
 }
 
 /* The lines that join a page's matching sections to it: one down the side, one across to each
