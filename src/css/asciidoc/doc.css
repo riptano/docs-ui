@@ -262,6 +262,8 @@
     overflow-x: auto;
   }
 
+  .doc > table.tableblock,
+  .doc > table.tableblock + *,
   .doc .tablecontainer,
   .doc .tablecontainer + *,
   .doc :not(.tablecontainer) > table.tableblock,
