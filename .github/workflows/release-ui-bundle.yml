@@ -13,11 +13,6 @@ jobs:
      runs-on: ubuntu-latest
 
      steps:
-       - name: Configure Git Credentials
-         uses: de-vri-es/setup-git-credentials@v2
-         with:
-           credentials: https://${{ secrets.DOCS_GITHUB_PAT }}@github.com
-
        - name: Checkout Repository
          uses: actions/checkout@v6
          with:
