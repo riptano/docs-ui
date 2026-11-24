@@ -2,6 +2,26 @@
   .doc {
     hyphens: auto;
     counter-reset: step;
+    /* aka overflow-wrap; used when hyphens are disabled or aren't sufficient. break-word rather
+       than anywhere, which would also let flex and grid items, such as wrapped tab titles, shrink
+       below their longest word */
+    word-wrap: break-word;
+  }
+
+  /* Under break-word, a flex item can't shrink below its longest word, so a word too long for the
+     column, such as a property path in a reference heading, would push the page sideways. A
+     section heading's text is one flex item, as is an image's title, so they break such a word
+     with anywhere; a step's number, a flex item of its own, doesn't. The page title and a summary
+     don't either: with inline markup, their text is several flex items, which anywhere would
+     squeeze mid-word */
+  .doc h2:not(.discrete),
+  .doc h3:not(.discrete),
+  .doc h4:not(.discrete),
+  .doc h5:not(.discrete),
+  .doc h6:not(.discrete),
+  .doc .imageblock > .title,
+  .doc .videoblock > .title {
+    word-wrap: anywhere;
   }
 
   .doc h1,
@@ -168,6 +188,7 @@
   .doc code,
   .doc pre {
     hyphens: none;
+    word-wrap: normal; /* code keeps its own wrapping; a long token in a block scrolls with it */
   }
 
   .doc pre {
@@ -256,10 +277,69 @@
 
   .doc table.tableblock {
     font-size: calc(14.5 / var(--rem-base) * 1rem);
+    word-wrap: normal; /* table widths aren't computed as expected when word-wrap is enabled */
   }
 
-  .doc .scrolltable {
+  /* In a table they wrap like the text around them */
+  .doc table.tableblock h2,
+  .doc table.tableblock h3,
+  .doc table.tableblock h4,
+  .doc table.tableblock h5,
+  .doc table.tableblock h6,
+  .doc table.tableblock .imageblock > .title,
+  .doc table.tableblock .videoblock > .title {
+    word-wrap: inherit;
+  }
+
+  /* A table that doesn't fit scrolls in its box (09-table-scroll.js), which fades out at each edge
+     with more of the table behind it, over as much as is hidden, up to a limit */
+  .doc .tablecontainer {
+    --table-fade: min(var(--table-hidden, 0px), var(--ds-space-4));
+
     overflow-x: auto;
+    scroll-margin-top: 9rem; /* clears the fixed header when focus scrolls a tall box into view */
+  }
+
+  .doc .tablecontainer[data-overflow="right"] {
+    mask-image: linear-gradient(to left, transparent, black var(--table-fade));
+  }
+
+  .doc .tablecontainer[data-overflow="left"] {
+    mask-image: linear-gradient(to right, transparent, black var(--table-fade));
+  }
+
+  .doc .tablecontainer[data-overflow="left right"] {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black var(--table-fade),
+      black calc(100% - var(--table-fade)),
+      transparent
+    );
+  }
+
+  .doc .tablecontainer:focus-visible {
+    mask-image: none;
+    outline: 2px solid var(--ds-focus-visible);
+    outline-offset: 2px;
+  }
+
+  /* Print shows the whole table: the box neither scrolls nor fades, and words in a table break
+     where needed so it fits the page. That can also break a long word in a narrow column, and in
+     a table much wider than the page, even short words in narrow columns. Here rather than in
+     print.css, which the site's build and docs-ui's preview put before this layer. */
+  @media print {
+    .doc .tablecontainer {
+      overflow: visible;
+    }
+
+    .doc .tablecontainer[data-overflow] {
+      mask-image: none;
+    }
+
+    .doc .tablecontainer > table.tableblock {
+      word-wrap: anywhere;
+    }
   }
 
   .doc > table.tableblock,
@@ -835,6 +915,7 @@
   .doc .step h4::after {
     counter-increment: step;
     content: counter(step) ". ";
+    word-wrap: normal; /* a flex item of its own in the heading, which anywhere would break */
   }
 
   .doc .conum[data-value] {
